@@ -1,0 +1,178 @@
+% !TEX encoding =  UTF-8 Unicode
+% -*- program: xelatex -*-
+\documentclass[a4paper, 12pt,twoside, openright]{memoir}
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+\usepackage{fontspec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[autostyle=true,french=guillemets]{csquotes}
+\usepackage{xparse}
+%\usepackage[notes,natbib,isbn=false,backend=biber]{biblatex-chicago}  
+%,style=authortitle-dw
+%http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
+\usepackage[backend=biber,natbib=true, isbn=false,url=false,style=authoryear,sorting=nyt,hyperref]{biblatex}
+\addbibresource[datatype=bibtex]{library.bib}
+
+\makeatletter
+
+\newrobustcmd*{\parentexttrack}[1]{%
+  \begingroup
+  \blx@blxinit
+  \blx@setsfcodes
+  \blx@bibopenparen#1\blx@bibcloseparen
+  \endgroup}
+
+\AtEveryCite{%
+  \let\parentext=\parentexttrack%
+  \let\bibopenparen=\bibopenbracket%
+  \let\bibcloseparen=\bibclosebracket}
+
+\makeatother
+
+% % EPIGRAPH 1
+\usepackage{epigraph}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+% % EPIGRAPH 2
+
+%\usepackage{epigraph,varwidth}
+%
+%\renewcommand{\epigraphsize}{\small}
+%\setlength{\epigraphwidth}{0.6\textwidth}
+%\renewcommand{\textflush}{flushright}
+%\renewcommand{\sourceflush}{flushright}
+%% A useful addition
+%\newcommand{\epitextfont}{\itshape}
+%\newcommand{\episourcefont}{\scshape}
+%
+%\makeatletter
+%\newsavebox{\epi@textbox}
+%\newsavebox{\epi@sourcebox}
+%\newlength\epi@finalwidth
+%\renewcommand{\epigraph}[2]{%
+%\vspace{\beforeepigraphskip}
+%{\epigraphsize\begin{\epigraphflush}
+%\epi@finalwidth=\z@
+%\sbox\epi@textbox{%
+%\varwidth{\epigraphwidth}
+%\begin{\textflush}\epitextfont#1\end{\textflush}
+%\endvarwidth
+%}%
+%\epi@finalwidth=\wd\epi@textbox
+%\sbox\epi@sourcebox{%
+%\varwidth{\epigraphwidth}
+%\begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
+%\endvarwidth
+%}%
+%\ifdim\wd\epi@sourcebox>\epi@finalwidth 
+%\epi@finalwidth=\wd\epi@sourcebox
+%\fi
+%\leavevmode\vbox{
+%\hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
+%\vskip1.75ex
+%\hrule height \epigraphrule
+%\vskip.75ex
+%\hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
+%}%
+%\end{\epigraphflush}
+%\vspace{\afterepigraphskip}}}
+%\makeatother
+%\NewDocumentCommand\trule{O{0.4pt}O{0pt}}{
+%\vskip0pt\vtop to0pt{
+%\noindent\raisebox{#2}{\vbox{\leavevmode\hrule height#1}}}
+%}
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+
+\setmainfont[Mapping=tex-text, % E.g. -- -> en-dash
+Numbers=OldStyle,
+UprightFeatures={LetterSpace=-0.9},
+ItalicFeatures={LetterSpace=0.9},    % To cancel -0.9 tracking
+SmallCapsFeatures={LetterSpace=10.0},
+]{Garamond Premier Pro}
+
+
+\nonzeroparskip
+
+%\linespread{1.125}\selectfont
+
+\MakeOuterQuote{"}
+
+%%% Package pour les sources des figures (subfloat)
+\usepackage[format=hang,  font={small, rm,md,sl}, margin=5pt, singlelinecheck=false, labelformat=empty]{subfig}
+
+%%% Package pour faire des mini tables des matières 
+\usepackage{titletoc}
+
+%http://tex.stackexchange.com/questions/66796/how-to-get-two-tableofcontents-general-and-detailled/66806#66806
+%\usepackage[explicit]{titlesec}
+
+% %TEXT BIDON
+\usepackage{lipsum}
+
+%%% Package pour les sites internet
+\usepackage{url}
+
+\definecolor{light-gray}{gray}{0.85}
+\definecolor{colboxcolor}{gray}{0.9}
+
+%http://tex.stackexchange.com/questions/66796/how-to-get-two-tableofcontents-general-and-detailled/66806#66806
+\usepackage[explicit]{titlesec}
+%\titleformat{name=\section,numberless} {\normalfont\Large\bfseries}{}{0em}{#1\addcontentsline{ptc}{section}{#1}}
+%\titleformat{name=\section} {\normalfont\Large\bfseries}{}{0em}{#1\addcontentsline{ptc}{section}{#1}}
+
+\pagestyle{ruled}
+
+\newcommand\partialtocname{ Table des mati\`eres}
+\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
+\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
+\makeatletter
+\newcommand\Mprintcontents{%
+\ToCtitle
+\ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
+\ToCrule}
+\makeatother
+
+\usepackage[pdfusetitle]{hyperref} % Creates hyperlinks and index in the PDF document, preferably load after biblatex
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+\begin{document}
+
+\chapterstyle{bringhurst}
+
+\listoftodos
+
+%\setupshortlof
+
+\renewcommand\contentsname{Introduction}
+\tableofcontents
+
+%\listoftables
+%\listoffigures
+
+\include{Partie0}
+
+\include{Partie1}
+
+\include{Partie2}
+
+\include{Partie3}
+
+\include{Annexes}
+
+%\bibliography{biblihadri_v1}
+
+\listoftables
+
+\listoffigures
+
+\printbibliography
+
+\end{document}
