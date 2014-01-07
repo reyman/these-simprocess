@@ -16,184 +16,157 @@ A la fin du chapitre 1, voilà quels sont les enjeux :
 %- ecqtg2013; présentation de l'historique et présentation "atechnique" de ce que nous avons fait.
 %- construire = évaluer, doit etre une certitude a la fin du chapitre 1 
 
+PLAN
+- Il nous faut construire une nouvelle démarche pour la construction et l'évaluation de modèle,
+- Hors on sais que ce n'est pas possible de réaliser une méthode commune à tout les géographes, en dehors des poncifs classique ( Qu'il faut présenter peut être ? )
+	- Dérouler les pratiques types existantes : Simple, Simple + face Validity,
+	- Systématique qui intègre les limites evoqués, systématique + équifinalité 
+- On sais qu'il y a plusieurs dimensions, dont la dimension temporelle + collective, on propose de formaliser ça correctement
+- De plus on voit bien qu'il est impossible de résoudre l'ensemble des problématiques posé par un usage collectif dans un projet seul (cf Thomas)
+- Pourquoi ne pas s'inspirer alors de ce qui a fait la réussite dans la construction de méthodes ou d'outils( cf stats, etc)
+- De fait, on propose de se baser sur la notion d'écosystème, un support moteur pour l'implémentation des outils, et pour le support des normes récentes en terme de scientificité.
+- Ecosystème vs plateforme existantes
+- Les WMS
+- OpenMole
+- Intégration des limites dans des outils, trois blocs : création, exploration, visualisation
+- Couplage des outils
+
 Le premier chapitre a été l’occasion de mettre en avant un certain nombre de facteurs limitant dans la construction, l'exploration et l'évaluation des modèles agent en géographie. Il en ressort dans ce chapitre un cahier des charges complexe qui doit tenir compte a de multiples échelles de réalisation des dimensions autant technique, méthodologique qu’institutionnelle contenu dans cette problématique pour l'évaluation de modèles.
 
-Afin d'illustrer concrètement cette complexité, voici une question parmis d'autres dont la résolution est un fil directeur dans le développement de cet outil : Comment favoriser, promouvoir une validation collective des modèles finalement réalisés ?
+Afin d'illustrer concrètement cette complexité, voici un relevé non exhaustif des implications qui découle d'une question oeuvrant dans le développement de cet outil : Comment favoriser, promouvoir une validation collective des modèles finalement réalisés ? Autrement dit, quels sont les points qu'il est essentiel de soulever pour essayer de concrétiser cette dimension collective dans la réalisation de nos outils.
 
-Sur le plan institutionel déjà, comment peut on questionner le modèle de publication des modèles afin de lui donner le statut d'objet de recherche à part entière ?  Et quel moyen peuvent être mis en oeuvre pour que la légitimité de ce modèle soient reconnu en tant que tel par les instances déterminant les standard scientifique ? 
-
-Sur le plan méthodologique cette fois ci, comment donne t on à voir et à modifier l'historique d'un processus de construction, nécessaire à l'évaluation de la démarche de modélisation ? Et comment justifie t on de la connaissance ainsi produite par un tel développement incrémental ? Comment assure t on une ouverture interdisciplinaire à l'évaluation tout en restant ancré dans notre discipline ?
+Sur le plan méthodologique, comment donne t on à voir et à modifier l'historique d'un processus de construction, nécessaire à l'évaluation de la démarche de modélisation ? Et comment justifie t on de la connaissance ainsi produite par un tel développement incrémental ? Comment assure t on une ouverture interdisciplinaire à l'évaluation tout en restant ancré dans notre discipline ?
 
 Sur le plan technique les questions sont encore plus nombreuses, et s'adresse à différents objets, différents niveau d'abstraction : Quel format d'échange pourrait encapsuler à la fois modèle et expérimentations? Comment envisage t on la reproductibilité des expérimentations conduites ? Comment maintient on un historique de construction d'un modèle ? et dans le cadre d'une famille de modèles ? Comment ajouter, modifier, coupler de nouveaux outils ? etc.  
 
-De plus il existe une forte interdépendance entre ces dimensions, ce qui ne facilite pas la mise en place d'une typologie. Ainsi la mise en place d'un nouveau standard pour la publication de modèle trouve forcément sa solution à la fois dans un questionnement d'ordre méthodologique, et la mise en oeuvre de solution technique. Mais cette relation qui pourrait de prime abord apparaitre linéaire ne l'est pas, l'amélioration des techniques s'inscrivant dans une boucle de rétro-action vertueuse avec les questionnements qui les ont nourris :  la réflexion sur les outils nourrit la méthodologie, et de façon complémentaire l'évolution des méthodologies fait apparaître de nouveaux besoins en terme d'outils.
+Sur le plan institutionel, comment peut on questionner le modèle de publication des modèles afin de lui donner le statut d'objet de recherche à part entière ?  Et quel moyen peuvent être mis en oeuvre pour que la légitimité de ce modèle soient reconnu en tant que tel par les instances déterminant les standard scientifique ? 
 
-Cet exemple en appele bien d'autres, et il montre à quel point il est important de rapeller dans chacune des solutions qui seront retenues ces implications d'ordre méthodologique, institutionelle ou technique intervenant ou motivant nos décisions.
+De plus il existe une forte interdépendance entre ces dimensions, ce qui ne facilite pas la mise en place d'une typologie. Ainsi la mise en place d'un nouveau standard pour la publication de modèle trouve forcément sa solution à la fois dans un questionnement d'ordre méthodologique, et la mise en oeuvre de solution technique. 
+%Mais cette relation qui pourrait de prime abord apparaître linéaire ne l'est pas, l'amélioration des techniques s'inscrivant dans une boucle de rétro-action vertueuse avec les questionnements qui les ont nourris :  la réflexion sur les outils nourrit la méthodologie, et de façon complémentaire l'évolution des méthodologies fait apparaître de nouveaux besoins en terme d'outils. 
 
-[Il faut surement parler des obj avant ... ]
+Cet exemple en appelle bien d'autres, et il montre à quel point il est important de rapeller dans chacune des solutions qui seront retenues ces implications d'ordre méthodologique, institutionelle ou technique intervenant ou motivant nos décisions.
 
-Quels sont les freins déjà identifiés,  et quelles solutions peuvent être apportés de façon générales, ou particulières dans chacune des briques ?
+Construction des connaissances autour du modèle nécessite des outils tant pour l'évaluation au cours de la construction (nécessite d'avoir introduit multi-agent / enjeu multi-agent), que pour l'évaluation par les pairs (dimension collective). 
 
-=> Accès aux outils, quel barrières ? : formation limite niveau technique; institutionel limite niveau ouverture sur autres disciplines
-=> Accès à la puissance de calcul, quel barrières ? : formation limite niveau technique; institutionel limite acces à la ressources 
-=> Accès à la publication, quel barrières ? : limite niveau technique , limite niveau institutionel, limite nature de l'objet 
+
+=> Je suis géographe, je dispose d'une problématique solide, je veux construire un nouveau modèle, quel méthode je peux utiliser ? Quels outils sont à ma disposition ? Comment je les utilise ?
+
+\section{Une approche critique des démarches stéréotype des pratiques existantes}
+
+\subsubsection{L'approche historique}
+
+Cette approche est qualifié d'historique car elle se fonde sur les premières expériences opérés lors du rapprochement entre les tenants de la disciplines informatiques spécialisé dans le multi-agents et les géographes.
+Bien que largement fructueuse, cette coopération a permis de lever un certain nombres de défaut dans la méthodologie appliqué pour la construction des modèles. Alternant phase de conception et phase de réalisation, il n'en reste pas moins que le modèle est avant tout perçu comme un produit avant tout résultat d'un travail d'implémentation réalisé par les informaticiens. La validation interne est mis en oeuvre dans un dialogue unilatéral entre géographes et informaticiens, ce qui donne lieu dans un premier temps à mille incompréhensions, du fait du différentiel sur les objectifs poursuivis par chacun des communiquants.
+
+=> La prise en main opéré par les géographes va avec l'apparition d'une nouvelle approche.
+
+\subsubsection{L'approche courante}
+
+Une nouvelle approche de la modélisation misant sur l'autonomie de l'expérimentateur s'est considérablement développé ces dernières années. Entre autre cause, ce processus s'est appuyé sur la démocratisation et la diffusion de logiciels de modélisation beaucoup plus accessibles, largement assisté par la multiplication des canaux de diffusion facilitant l'accès à un processus  d'auto-apprentissage pour de nombreux chercheurs en sciences humaines et sociales. L'arrivée de plateforme tel que Netlogo a ainsi permis de diminuer drastiquement le coût d'accès technique permettant à un individu non formé d'atteindre rapidement ce "seuil d'expressivité" nécessaire pour décrire et itérer dans un langage formalisé adaptés ces principales problématiques de recherches.
+
+Ce processus de percolation oeuvrant à la frontière entre ingénierie informatique et sciences humaines et sociales a été largement accompagné et relayé par de multiples canaux de diffusion.  De façon non exhaustive on retrouve pêle-mêle la sortie récente de manuels d'apprentissage dirigés par les principaux porteurs de la discipline comme Nigel Gilbert \autocite{Gilbert2008} ou Volter Grimm \autocite{Grimm2011}, la mise en place d'écoles d'étés internationales dédiés à la modélisation de systèmes complexes en France (ISCPIF) ou à l'étranger (Santa Fe Institute) , l'appuie de réseau de formation fédérateur comme le réseau MAPS ou MEXICO, ou encore la création récente de Master dédié à la modélisation de systèmes complexes comme Erasmus Mondus, et évidemment de très nombreuses publications dans des revues spécialisées comme JASSS.
+
+Toutefois, comme remarqué dans le chapitre 1 [TODO] très peu de publications donnent à voir ce processus cumulatif désignant la construction du modèle. Certes les manuels \autocite{Gilbert2008} \autocite{Grimm2011}, mais aussi les références invoqué par les référents historiques sur la Validation comme Sargent, ou Balci, évoque depuis longtemps la nécessité d'une approche incrémentale dans la construction des modèles \autocite[32]{Gilbert2008}. Toutefois, ces guides de bonne pratiques qui ont le mérite de rendre explicite les étapes sont rarement projeté dans le temps suivant  un cas concret, et ne donnent pas à voir une ou plusieurs "méthode type" qui permettrait de réfléchir le processus de construction à l'oeuvre dans la fabrication d'un modèle. La faute à la nature contextuelle de l'évaluation ? Impossible de savoir.  
+
+\autocite{Gilbert2008} dans son manuel tente bien par exemple de mettre en garde le modélisateur du danger qu'il y aurait à prendre cette méthode comme un unique processus cumulatif désignant la production d'une connaissance originale, et il évoque sans détour la problématique de l'équifinalité \autocite[31-32]{Gilbert2008} dans le cadre de modèle aussi simple. Toutefois, cette mise en garde est rendu totalement incompréhensible au lecteur par les phrases qui précède : " The primary criterion of validation is whether the model shows the macro-level regularities that the research is seeking to explain. If it does, this begins to evidence that the interactions and behaviors programmed into the agents explain why the regularities appear". Charge donc au modélisateur de trouver comment justifier la valeur de la connaissance extraite de son modèle en considérant cette mise en garde sur l'équifinalité. Car ce qui est donné à voir avec cette méthode, ce n'est pas l'historique de réflexion qui mène à la construction du modèle, mais le résultat final, qui résulte d'un processus cumulatif qui fonctionne par incrément d'étape. Ce manque d'exemples, de traces, établissant le processus de construction dans les publications de simulations de modèle peu donc rapidement laisser le modélisateur en herbe au mieux perplexe, au pire démuni quand il s'agit de faire face au jugement de ses pairs. \autocite{Manzo2007a}.   
+
+A défaut de réelle méthode , le processus de "face validity" est régulièrement évoqué comme processus intervenant durant la "validation interne", celui ci permettant entre autre de guider la construction du modèle. Basé sur une calibration approximative du modèle, l'évaluation qualitative plus que quantitative des dynamiques observés en sorties de simulation permet à l'expert de déterminer si la représentation en sortie du système est suffisamment  satisfaisante pour envisager la continuation de la construction, ou si un retravail est d'ores et déjà à envisager.
+
+Cette technique de construction des modèles quand elle est utilisé dans ce contexte n'est pas satisfaisante pour plusieurs raisons. Un essai-erreur qui peux prendre du temps, et s'avérer catastrophique
+> Historisation du processus difficile, qui est souvent vu comme cumulatif.. 
+> Limité en complexité
+> 
+
+Cette approche est problématique en de nombreux points, on peut comparer aux limites qui ont été formalisés précédemment.
+
++ permet effectivement l'incrémentalité +
++ incrémentalité se fait dans un cadre non historicisé la plupart du temps +
+
+\section{Une nouvelle démarche ?}
+
+Construction se fait en deux temps, d'abords outils ensuite formalisation de leur utilisation dans une démarche générique de construction incrémentale : 
+> Construire les outils dans un cadre d'utilisation collectif, comment ? Quel sont les points clef nécessaires à une telle mise en application ?
+> Une démarche de construction, proposition d'une trajectoire parmis d'autres dans l'usage de ces outils.
+
+\subsection{Opérationaliser la démarche incrémentale pour la construction des modèles dans des outils }
+
+Dans le cadre d'une démarche incrémentale, ces limites sont à mettre en relation avec les \textit{challenges} régulièrement évoqués pour la construction et l'exploration de modèles agents \autocite{Doran2000} \autocite{Crooks2008}.
+
+Pb Choix du niveau d'abstraction pour les mécanismes
+Pb Choix d'implémentation des mécanismes
+Pb BlackBox modelling
+Pb Stochasticité
+Pb Espace de paramètres très large
+Pb Choix des indicateurs observés
+Pb Equifinalité
+
+Ces \textit{challenges} doivent pouvoir être intégrés dans des outils tenant compte de cette double perspective à la fois temporelle et collective qui prévaut dans la construction de cette nouvelle démarche.
 
 Cet appel ne peux être contenu dans une solution singulière ou adhoc de developpement qui se concentrerai autour de la mise en oeuvre d'une méthode ou de plusieurs outils. Ce travail qui avait été entamé par Thomas Louail et moi-meme autour du modèle Simpop2 à vite révéler l'ampleur d'un telle tâche, impossible à réaliser sans disposer d'une équipe entière interdisciplinaire et dévoué au projet. La solution est plutot donc à recherche du coté d'une plateforme capable de supporter la mise en oeuvre de notre méthodologie, tout en restant ouverte sur l'extérieur. 
 
-Car ce projet suit un objectif double, dérouler des cas d'utilisation concrets pour l'exploration et la construction de modèles en géographie, le tout dans une démarche intégrée suffisamment généralisante pour admettre la réutilisation de ces même outils dans une toute autre configuration. Si le premier objectif s'adresse à une communauté, le deuxième ouvre sur des perspectives d'utilisation beaucoup plus large. Autrement dit, il s'agit de garantir l'indépendance et la réutilisation des outils tout en problématisant leur utilisation dans des constructions méthodologique que nous jugeont pertinentes pour l'exploration et la construction de modèles en géographie.
+Car ce projet suit un objectif 
+le, dérouler des cas d'utilisation concrets pour l'exploration et la construction de modèles en géographie, le tout dans une démarche intégrée suffisamment généralisante pour admettre la réutilisation de ces même outils dans une toute autre configuration. Si le premier objectif s'adresse à une communauté, le deuxième ouvre sur des perspectives d'utilisation beaucoup plus large. Autrement dit, il s'agit de garantir l'indépendance et la réutilisation des outils tout en problématisant leur utilisation dans des constructions méthodologique que nous jugeont pertinentes pour l'exploration et la construction de modèles en géographie.
 
-L'objectif est la mise en place d'un outil qui fait office d'attracteur,  capable d'intégrer des outils et des méthodes, mais aussi d'incubateur capable de catalyser un processus de standardisation des outils ou méthodes qui s'appuient dessus. Les freins ainsi identifiés peuvent alors être intégré dans une vision beaucoup plus élargie.
+\subsection{Faire de cette démarche une construction ouverte au niveau collectif}
 
-a) Accessibilité 
-		Outils : 
-			Les outils développés seront accessibles par des non initiés et la complexité sera masqué si c'est possible.
-		Méthodes:
-			Les méthodes que l'on définit ici comme le résultat d'un ensemble de couplages possibles entre un ou plusieurs outils,  devront être accessible par des non initiés, et la complexité sera là aussi masqué, tout en restant accessible
-		Institutionel/Extérieur :
-			Le développement d'une communauté organisé autour d'un système de publications des outils et des méthodes 
-b) Réplicabilité 
-	Outils:
-		Les outils  fonctionnent de façon autonome et de la même façon quelque soit le système sur lequel il tourne
-	Méthodes :
-		Les couplages fonctionnent de façon autonome et de la même façon quelque soit le système sur lequel il tourne
-	Institutionel: 
-	 	L'ouverture du code source pour les outils et les méthodes
-c) Extensibilité 
-	Outils : 
-		La possibilité d'ajouter, de modifier chacun des outils
-	Méthodes
-		La possibilité d'ajouter, de modifier les couplages entres outils
-	Institutionel
-		Une inscription des outils et des méthodes dans un cadre interdisciplinaire
+Dans le chapitre 1 nous avons également vu que ces problématiques doivent pouvoir être exposés à une évaluation collective pour que l'évaluation par les pairs puissent fonctionner.
 
- Pour soutenir et engendrer de tels écosystèmes, comme l'on pu être les SIG à une autre époque, alors il nous manque encore probablement des éléments clefs, dont certain ne peuvent être prévu à l'avance, car ils sont partie de la dynamique d'émergence de l'outil : la qualité des outils mis à disposition, la présence d'une bibliothèque d'exemple, une documentation réactive et de qualité, et tout autant d'élément qui ne peuvent être soutenu que si il y a constitution d'une communauté d'utilisateurs. A ce titre, il est souvent dit qu'un projet open-source met entre 5 et 8 ans pour atteindre un niveau de maturité suffisant pour émerger (ref).  
+\subsubsection{Historique du processus démontre l'insuffisance d'une solution ad-hoc}
+
+Deux exemples dans l'histoire de la géographie =>
+
+\subsubsection{L'émergence de méthodes statistiques standardisés }
+
+\subsubsection{L'exemple de Geoda comme outil fédérateur de communautés}
+
+Ces deux exemples nous permettent d'identifier plusieurs processus sur lequel nous pouvons nous baser pour définir un outil correspondant à nos besoins. 
+
+Processus de catalyse : L'objectif est la mise en place d'un outil qui fait office d'attracteur,  capable d'intégrer des outils et des méthodes, mais aussi d'incubateur capable de catalyser un processus de standardisation des outils ou méthodes qui s'appuient dessus. Les freins ainsi identifiés peuvent alors être intégré dans une vision beaucoup plus élargie.
+
+ ARG Une vision + élargie, insuffisance de la démarche historique, l'interdisciplinarité à notre secours 
  
- \textbf{Peut etre l'ocasion de parler de rapatrier ce qui était écrit dans l'introduction ? }
- 
- 
-Parle des sys de wf en général, support à ce type de projet ....
-Mais aucun ne convient ... reste à dire pourquoi
-sauf openMOLE ! et pile poil il rempli tout ou partie des objectifs ! 
+ ARG Appel à l'ecosystème des sys complexes
 
-Nous avons isolé trois catégories sur lequel ces thèmes vont être appliqué : construction, exploration, visualisation. A partir de cette décomposition, et en s'appuyant sur des leviers techniques à même de répondre aux enjeux de ces thèmes transversaux, il s'agira de donner corps à une démarche intégrée encapsulant no
+\subsection{La notion d'écosystème}
 
-De la même façon qu'un modèle doit être soumis à différentes entrées pour mesurer sa robustesse, il en est de même pour l'outils qui doit être mis en place.
+ARG Découplage informatique, un serpents de mer difficile à tuer
 
-La méthodologie de construction des modèles adoptés s'appuie  sur une complexification guidés par l'acquisition plus ou moins automatique de connaissance directe (dynamique interprétable en tant que telle), et indirecte (dynamique restant à interpréter) apporté par l'exploration des modèles. 
+Trois catégories d'outils, chacun fournissant le meilleur pour une tâche donnée.
 
-Pour désigner notre approche de construction incrémentale nous avons choisi de parler de démarche intégré. Le terme intégré désigne notre capacité à mobiliser différents outils à différents moments de la vie du modèle, avec toujours un même objectif, extraire de la connaissance du modèle pour avancer dans sa complexification.
+Pour soutenir et engendrer de tels écosystèmes, comme l'on pu être les SIG à une autre époque, alors il nous manque encore probablement des éléments clefs, dont certain ne peuvent être prévu à l'avance, car ils sont partie de la dynamique d'émergence de l'outil : la qualité des outils mis à disposition, la présence d'une bibliothèque d'exemple, une documentation réactive et de qualité, et tout autant d'élément qui ne peuvent être soutenu que si il y a constitution d'une communauté d'utilisateurs. A ce titre, il est souvent dit qu'un projet open-source met entre 5 et 8 ans pour atteindre un niveau de maturité suffisant pour émerger (ref).
 
+ => Relire les limites de la validation au travers d'un cadre formel pour questionner l'existant, et proposer de nouvelles avancées.
 
-Ce chapitre propose de concrétiser cette méthodologie de construction incrémentale en usant des outils adaptés pour gérer la reproductibilité des expériences, en tenant compte des contraintes liés à la stochasticité .
+\subsection{Définir une grille de lecture pour questionner l'existant}
 
-Cette décomposition peut être vues en deux temps 
+, il s'agit dans cette partie de faire une relecture des enjeux à la lumière de trois blocs types d'outils que nous pensons susceptible d'être mobilisé de façon isolé ou dans le cadre d'un couplage pour la réalisation de nos expérimentations.
 
-Guidé par la volonté de dépasser tout ou partie de ces limites, ce chapitre évoque maintenant la construction d'un outil multi-forme mené par une é
-équipe interdisciplinaire sur plusieurs années, et qui peut être abordée sous deux angles : 
-- le premier angle pose de façon générale la question des outils pour la construction, l'exploration, la visualisation de modèles et de données issues de modèles ,
-- le deuxième angle cherche à identifier et mettre en valeur les articulations entre ces outils pour dégager des méthodologies standard appuyant les modélisateurs dans l'effort d'extraction de connaissance dans les modèles.
+Ajout de la dimension temporelle se fait dans le cadre de la démarche en fait, pour évaluer les besoins en terme d'outils : passage à l'échelle
 
-Afin d'aborder ces questionnements de façon sereine, il est proposé dans ce chapitre de découpler notre analyse en deux niveaux, celui des outils, et celui des couplages entre les outils. Trois briques sont identifiés et doivent pouvoir être abordé de façon à la fois indépendante, mais aussi dans le cadre d'un couplage avec les autres briques : construction, expérimentation, visualisation
-
-Construction : Netlogo / Simpuzzle + janet
-Experimentation (voir Amblard) : Une seule, Des millions
-Visualisation : ?
-
-De façon transversale deux grands thèmes doivent être abordés dans chacun des grands blocs que nous avons isolés :
->  La réplicabilité est une notion qui opère à deux échelles, au niveau de chacune des briques composant l'outil, mais également dans l'articulation résultat d'un couplage entre les outils
-> La stochasticité est de la même façon un élément qui intervient tout au long de la chaine de traitement, dans la création des modèles, leur exploration et leur visualisation (décrire un peu plus)
-
-Réplicabilité => permettre la diffusion à court terme, et donc la standardisation à long terme
-Réplicabilité au niveau des modèles, mais aussi au niveaux des explorations
+Partir de la notion de "Communauté" pour déterminer les "Enjeux"
+Dimension Collective = < Accessible + Extensible + Replicable > ==> O visé : Communication résultats, Discussion scientifique, Formation
+Appliqué à 2 echelles d'analyse = < Outils | Couplage entre Outils > 
+Et trois bloc d'outils = < Construction | Experimentation | Visualisation >
 
 
-\subsection{Leviers techniques}
+\subsection{Plateforme existantes pour la simulation de modèles multi-agents}
+
+De nombreux outils permettent aujourd'hui de développer tout ou partie de ce qu'il est plus courant d'apeller le méta-formalismes agents \autocite{Treuil2008}. 
+
+Parmis les plus connus, on trouve Swarm, Repast et Repast Symphony, Netlogo,  Mason et GeoMason, Gamma. Ceux ci se présentent au développeur de modèle sous différentes formes, qui peuvent être de type plate-forme intégré, ou de type librairie logicielle. Si la tendance actuelle semble tendre vers le développement de plate-forme et l'utilisation de DSL comme en témoigne les dernières avancées dans Repast Symphony et Gamma, les librairies historiques de développement agent comme Repast et Swarm se présentent d'abord comme des extensions de langage, Swarm pour Objective-C, et Repast pour Java. Ce mode de développement semble être sur le déclin au profit d'approche plus \textit{user-friendly} avec des plateformes disposant d'interface graphique, mettant à disposition un langage dédié (DSL) d'acceptation graphique ou textuelle pour l'implémentation de tout ou partie du méta-modèle agent. De forme hybrides ces plateformes tendent également à intégrer des outils pour l'exploration et le suivi des modèles agents dont elles supportent l’exécution. C'est à ce titre qu'il nous faut nous pencher sur ces solutions pour évaluer leur adéquation avec le cahier des charges que nous avons établis précédemment.
+
+=> Pourquoi ces approches ne nous suffisent pas rapport aux catégories d'outils isolés, et aux challenges auquel ils se rapportent ? 
+
+\subsection{La solution des  WfMS ( Workflow Management System )}
+
+Description / Etat de l'art de l'existant et insuffisance relevé parmis l'existant ...
 
 
-Le cercle est vicieux, car l'absence de cas concret décrivant la construction et l'évaluation de modèles nourrit d'une certaines façon la méfiance, voire la défiance envers les outils et la méthodologie à l’œuvre pour dégager de la connaissance des modèles. Ce qui a de multiple conséquence, car la publication est le moyen standard de diffusion d'un outil ou d'une méthodologie, et son absence se ressent tant sur le plan institutionel (formation adapté, revue, ateliers, accès aux ressources informatiques, etc.) que sur le plan des communautés (groupes de chercheurs isolés dans un courant mainstream dominant, etc.)
+\subsection{Le projet OpenMOLE (Open MOdeL Experiment)}
 
-Le developpement de cette démarche intégré ne peux être faite qu'à l'intersection entre problématique théorique et problématique technique : Comment developpe t on des modèles pour en extraire de la connaissance ? Quels sont les facteurs pouvant limiter l'extraction de cette connaissance ? Comment peut on développer des outils ouvert sur d'autres extractions ?
+\subsubsection{Historique du projet}
 
-// Trois blocs types pour décrire les outils : construction, exploration, visualisation
-
-\subsection{Existant}
-
-\subsection{Proposition}
-
-La standardisation n'est pas un processus simple à identifier.
-Déjà, il faut déterminer quel est l'objet à même d'être standardisé, s'agit t il d'un outil, d'une méthode, ou deux deux ?
-Si on se replonge dans l'histoire des statistiques en géographie, ou des outils d'analyse spatiale en géomatique, il est tout à fait possible de voir le chemin parcouru en terme de standardisation. 
-
-De plus ce concept se veut un construit en partie subjectif, car il fait appel à une représentation sur l'utilisation plus ou moins accepté par une communauté, d'un autre coté, ce construit finit par donner lieu à une formalisation plus objective une fois le construit stabilisé.  
-
-De plus l'analyse de ce qui fait "standardisation" ne peut se faire sans faire appel à la nature de l'objet standardisé, ainsi il ne s'agit probablement pas du même processus à l'oeuvre dans la standardisation d'un logiciel ou d'une méthodologie. Bien qu'il soit difficile de mesurer ce qui fait cette alchimie, il s'agit quand même d'essayer d'isoler quelques facteur déclencheurs qui peuvent motiver la standardisation de nos méthodes ou outils.
-
-Les enjeux sont transverses, et s'applique à chacun des niveaux d'utilisation de la démarche, ainsi la standardisation est opérante :
-* au niveau des outils
-* au niveau du couplage entre les outils
-
-a) la recherche ou le développement d'outils innovants sur plusieurs plans : création, exploration, visualisation
-
-Ces outils peuvent être subdivisé en trois groupes d'utilisation : construction, exploration et visualisation. Chacun de ces blocs est censé répondre aux différentes problématiques évoqués dans le chapitre 1.
-
-b) réunis dans une seule plateforme à volonté standardisante,  disposant d'un formalisme textuel ou graphique pour accéder et coupler ces outils 
-
-c) et doté d'outils pour favoriser la réplication, la diffusion, la création d'outils, et de couplage d'outils
-
-d) mobilisé dans des cas d'utilisation; guides pour la résolution de problèmes posés par l'exploration et la construction de modèles
-
-Comment il n'est pas possible d'intuiter l'ensemble des combinaisons d'outils permettant d'accéder à une meilleur exploration des modèles.
-
-une base solide pour la standardisation des outils sur un même plan mobiliser des outils existants ou innovants pour tenter de lever tout ou partie des problèmes que nous avons cernés comme limitant la création et la diffusion des modèles : 
-pour la première fois une ou plusieurs trajectoires tangible la construction et l'évaluation d'un ou de plusieurs modèles en géographie, 
-
-
-
-La difficulté tient du fait que plusieurs problématiques sont transversales à ces différents blocs et jouent sur le couplage et la nature des outils à mobiliser dans notre démarche.
-
-\begin{itemize}
-\item La stochasticité 
-\item Le niveau de réalisation; est on dans une phase de prototypage ou d'optimisation ?
-\end{itemize}
-
-la stochasticité, la prise en compte de deux niveaux de développements logiciels, 
-
-  qui doit être prise en compte dans les trois catégories. Celle ci seront abordés en détail plus tard catégorie par catégorie, mais nous pouvons d'ores et déjà proposé ici un extrait des problématiques posés par la gestion de la stochasticité par les différents outils : 
-
-\begin{itemize}
-\item La qualité du générateur aléatoire et la réplicabilité des simulations doit être garantie dans les outils permettant de développer des modèles.
-\item Dans le cadre des différents outils pour l'exploration à la simulation la stochasticité joue comme souvent indicateur de robustesse : qualité et gestion des générateurs aléatoires utilisés dans le cadre des plan d'expériences, mesure de la robustesse des trajectoires donnés par les méta-heuristiques à l'oeuvre pour dresser des cartes des dynamiques à l'oeuvre dans les modèles, etc.  
-\item La stochasticité amène la réplication des simulations, et donc la mise en avant d'une dimension supplémentaire qui doit être prise en compte par les outils pour garantir la bonne exploration des résultats de simulations. 
-\end{itemize}
-
-La nécessité d'avoir deux niveaux de réalisation dans le cycle de vie de construction des modèles, les outils adaptés pour un prototypage rapide ne sont pas les même que les outils nécessaire à l'optimisation logicielle. 
-
-est une problématique de fond qui doit être envisagé dans chacun des modules, pour la construction, l'exploration et la visualisation.
-
-L'ensemble de cette démarche s'appuie et participe au développement d'un logiciel open-source, openMOLE. 
-
-Le cahier des charges pour la réalisation de ce projet se doit de répondre point par point aux problème soulevés dans le chapitre 1, et peut être défini ainsi : 
-
-- Standardisation n'est pas synonyme de cloisonnement. En ce sens la méthodologie proposé reste un cas d'utilisation qui n'a pas pour vocation l'universalité, et reste nous en sommes conscient très lié à nos pratiques de laboratoire. Celle ci doit donc être faiblement couplé avec les outils qu'elle mobilise, pour ne pas couper des innovations à même d'emerger dans des disciplines autres des systèmes complexes.
-
-- Ouverture 
-
-Il s'agit d'un guide pour la construction de modèle qui laisse grande liberté dans la mobilisation d'outils  qui existent quasi indépendamment les uns des autres.
-
-\section{Réplicabilité}
-\lipsum[1]
-
-\section{Gestion de la stochasticité}
-\lipsum[1]
-Exploration + Visualisation
-
-\section{Visualisation}
-\lipsum[1]
-
-\section{Partage}
-
-\begin{quotation} Probably the most important attribute any model should have is transparency. It should be readily understandeable to any potential user with a reasonable investment of effort [...] A transparent model is still about as likely to be wrong, but at least concerned persons can investigate the points at which they disagree.\sourceatright{\autocite{Lee1973}}
-\end{quotation}
+\subsubsection{Apports de ce WfMS}
 
 \stopcontents[chapters]
 

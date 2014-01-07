@@ -5,12 +5,12 @@
 \setdefaultlanguage{french}
 \usepackage{fontspec}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[autostyle=true,french=guillemets]{csquotes}
+\usepackage[autostyle=true,french=guillemets,maxlevel=3]{csquotes}
 \usepackage{xparse}
 %\usepackage[notes,natbib,isbn=false,backend=biber]{biblatex-chicago}  
 %,style=authortitle-dw
 %http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
-\usepackage[backend=biber,natbib=true, isbn=false,url=false,style=authoryear,sorting=nyt,hyperref]{biblatex}
+\usepackage[backend=biber,natbib=true, isbn=false,url=false,style=authoryear, maxcitenames=1, maxbibnames=999, sorting=nyt, hyperref]{biblatex}
 \addbibresource[datatype=bibtex]{library.bib}
 
 \makeatletter
@@ -26,6 +26,10 @@
   \let\parentext=\parentexttrack%
   \let\bibopenparen=\bibopenbracket%
   \let\bibcloseparen=\bibclosebracket}
+
+\newcommand{\longfullcite}{%
+\AtNextCite{\defcounter{maxnames}{99}}%
+\fullcite}
 
 \makeatother
 
