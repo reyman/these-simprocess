@@ -1,37 +1,183 @@
 % !TEX encoding =  UTF-8 Unicode
 % -*- program: xelatex -*-
-\documentclass[a4paper, 12pt,twoside, openright]{memoir}
+% -*- root: These.tex -*-
+\documentclass[a4paper, 11pt,twoside, openright]{memoir}
 \usepackage{polyglossia}
 \setdefaultlanguage{french}
+\setotherlanguage{english}
 \usepackage{fontspec}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[autostyle=true,french=guillemets,maxlevel=3]{csquotes}
 \usepackage{xparse}
+\usepackage{graphicx}
+\usepackage[protrusion=true]{microtype}
+
 %\usepackage[notes,natbib,isbn=false,backend=biber]{biblatex-chicago}  
 %,style=authortitle-dw
 %http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
-\usepackage[backend=biber,natbib=true, isbn=false,url=false,style=authoryear, maxcitenames=1, maxbibnames=999, sorting=nyt, hyperref]{biblatex}
+\usepackage[backend=biber,backref=true, natbib=true, isbn=false, doi=true, url=true, style=authoryear,maxcitenames=1, maxbibnames=999, sorting=nyt, refsection=chapter, hyperref]{biblatex}
+
+%% QUOTE FRENCH ITALICS
+\DeclareQuoteStyle{english}
+  {\mkfrenchopenquote{\guillemotleft}\em}
+  {\em\mkfrenchclosequote{\guillemotright}}
+  {\textquotedblleft\em}
+  {\em\textquotedblright}
+
+%\footnotesinmargin
+\footmarkstyle{[#1]~}
+\setlength{\footmarkwidth}{-1sp}
+\setlength{\footmarksep}{0pt}
+\setlength{\footparindent}{0pt}
+\renewcommand{\foottextfont}{\scriptsize\raggedright}
+
+\sidecapmargin{outer}
+\setsidecappos{t}
+
+%%SIDE CAPTION LITTLE START
+
+%\def\mybibdoicolor{\color{blue!75!black}} %change color to suit.
+
+% \DeclareSourcemap{
+%   \maps[datatype=bibtex]{
+%     \map{
+%       \step[ % copies url to doi field if it starts with http://dx.doi.org/
+%         fieldsource=url,
+%         match=\regexp{http://dx.doi.org/(.+)},
+%         fieldtarget=doi,
+%       ]
+%     \step[ % removes http://dx.doi.org/ string from doi field
+%       fieldsource=doi,
+%       match=\regexp{http://dx.doi.org/(.+)},
+%       replace=\regexp{$1}
+%     ]
+%     }
+%   \map{ % removes url + urldate field from all entries that have a doi field
+%    \step[fieldsource=doi, final]
+%    \step[fieldset=url, null]
+%    \step[fieldset=urldate, null]
+%    }
+%  }
+% }
+
+\DefineBibliographyStrings{french}{%
+  url = {@Téléchargement},
+}
+
+\DeclareFieldFormat{url}{%
+  \ifhyperref
+    {\href{#1}{\bibstring{url}}}
+    {\url{#1}}}
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{
+      \step[fieldsource=file]
+      \step[fieldset=url, origfieldval]
+      \step[fieldsource=url, match=\regexp{\\_}, replace=\regexp{_}]
+      \step[fieldsource=url, 
+        match=\regexp{:home/srey/TRAVAUX/THESE/REPOSITORY_PDF/RANGE/(.+):\w*$},
+        replace={http://bib.unthinkingdepths.fr/$1}]
+    }
+  }  
+}
+
+\usepackage{ragged2e}
+
+\renewcommand*{\sidecapstyle}{%
+  \ifscapmargleft
+    \captionstyle{\justifying\scriptsize}%
+  \else
+    \captionstyle{\justifying\scriptsize}%
+  \fi}
+%%SIDE CAPTION LITTLE END
+
+
 \addbibresource[datatype=bibtex]{library.bib}
 
+%\tolerance=1000
+
+%%SIDEAWAY START
+% \renewcommand*{\sidecapstyle}{%
+% \captionnamefont{\bfseries}%
+% \slshape%
+% }
+
+% \renewcommand*{\sidecapfloatwidth}{0.5\linewidth}
+% \setsidecaps{0.1\textwidth}{.55\textwidth}
+% \sidecapmargin{outer}
+% \setsidecappos{b}
+% \strictpagecheck
+% \sidecapraise 0.05\textheight
+
+% \newrobustcmd*{\parentexttrack}[1]{%
+%   \begingroup
+%   \blx@blxinit
+%   \blx@setsfcodes
+%   \blx@bibopenparen#1\blx@bibcloseparen
+%   \endgroup}
+
+% \AtEveryCite{%
+%   \let\parentext=\parentexttrack%
+%   \let\bibopenparen=\bibopenbracket%
+%   \let\bibcloseparen=\bibclosebracket}
+%%SIDEAWAY END
+
+%%SIDECAPTION START
+%% http://blog.oak-tree.us/index.php/2011/03/26/latex01-raggedmarginalia
+% \makeatletter
+% \newcounter{pl}
+% \newcommand\ragmarpar[1]{%
+% \stepcounter{pl}\label{pl-\thepl}%
+% \ifthenelse{\isodd{\pageref{pl-\thepl}}}%
+% {\marginpar{\raggedright #1}}
+% {\marginpar{\raggedleft #1}}
+% }
+% \renewcommand*{\sidecapstyle}{%
+% \stepcounter{pl}\label{pl-\thepl}%
+% \ifthenelse{\isodd{\pageref{pl-\thepl}}}%
+% {\captionstyle{\raggedright}}
+% {\captionstyle{\raggedleft}}}
+% %%SIDECAPTION END
+% \makeatother
+
 \makeatletter
+%\renewcommand{\fnum@figure}[1]{\textbf{\figurename~\thefigure}}
+\renewcommand{\fnum@figure}{\textbf{Figure~\thefigure~--}}
+\makeatother
 
-\newrobustcmd*{\parentexttrack}[1]{%
-  \begingroup
-  \blx@blxinit
-  \blx@setsfcodes
-  \blx@bibopenparen#1\blx@bibcloseparen
-  \endgroup}
+%\precaption{\raggedright}
+\captiondelim{\newline}
+\captionstyle{\centerlastline}% for title
+\setlength{\belowcaptionskip}{\onelineskip}
+\setlength{\footnotesep}{\onelineskip}
 
-\AtEveryCite{%
-  \let\parentext=\parentexttrack%
-  \let\bibopenparen=\bibopenbracket%
-  \let\bibcloseparen=\bibclosebracket}
+%% FOOTNOTE COLORING START
+\makeatletter
+\renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{BurntOrange}\@thefnmark}}}
+%\renewcommand\@makefntext[1]{%
+%  \parindent 1em\noindent
+%            \hb@xt@1.8em{%
+%                \hss\@textsuperscript{\normalfont\@thefnmark}}#1}
+%% FOOTNOTE COLORING END
+\makeatother
+
+%\makeatletter
+%	\renewcommand*\@makefnmark{{\normalfont (\@thefnmark)}}
+%\makeatother 
+
+
+
+%\makeatletter \renewcommand\@makefntext[1]{ %
+%\noindent\makebox[0.2em][r]{\@makefnmark}#1} 
+%\makeatother
 
 \newcommand{\longfullcite}{%
 \AtNextCite{\defcounter{maxnames}{99}}%
 \fullcite}
 
-\makeatother
+\setcounter{secnumdepth}{3}
+
 
 % % EPIGRAPH 1
 \usepackage{epigraph}
@@ -39,9 +185,9 @@
 \setlength\epigraphrule{0pt}
 \usepackage{etoolbox}
 
-\makeatletter
+
+
 \patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
-\makeatother
 
 % % EPIGRAPH 2
 
@@ -101,15 +247,13 @@ ItalicFeatures={LetterSpace=0.9},    % To cancel -0.9 tracking
 SmallCapsFeatures={LetterSpace=10.0},
 ]{Garamond Premier Pro}
 
-
 \nonzeroparskip
 
 %\linespread{1.125}\selectfont
 
-\MakeOuterQuote{"}
-
 %%% Package pour les sources des figures (subfloat)
-\usepackage[format=hang,  font={small, rm,md,sl}, margin=5pt, singlelinecheck=false, labelformat=empty]{subfig}
+% Incompatible with FIGURE NAME
+%\usepackage[format=hang,  font={small, rm,md,sl}, margin=5pt, singlelinecheck=false, labelformat=empty]{subfig}
 
 %%% Package pour faire des mini tables des matières 
 \usepackage{titletoc}
@@ -133,6 +277,7 @@ SmallCapsFeatures={LetterSpace=10.0},
 
 \pagestyle{ruled}
 
+\makeatletter
 \newcommand\partialtocname{ Table des mati\`eres}
 \newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
 \newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
@@ -143,9 +288,27 @@ SmallCapsFeatures={LetterSpace=10.0},
 \ToCrule}
 \makeatother
 
-\usepackage[pdfusetitle]{hyperref} % Creates hyperlinks and index in the PDF document, preferably load after biblatex
+
+%http://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+%http://tex.stackexchange.com/questions/17218/make-hyperref-take-pdfinfo-from-title-and-author
+\usepackage[hidelinks, pdfusetitle]{hyperref} % Creates hyperlinks and index in the PDF document, preferably load after biblatex
+\usepackage{ifnextok}
+\usepackage{xcolor}
+
+\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
+\newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1} {\raggedright\mybibdoicolor{DOI: \detokenize{#1}}}}}
 
 \usepackage[colorinlistoftodos]{todonotes}
+
+%%START ORANGE TEXT FOR LINK
+\makeatletter
+\def\tilblank#1{#1\IfNextToken\@sptoken{ \color{black}}{%
+  \IfNextToken\egroup{}{\tilblank}}}
+\makeatother
+\let\svat @
+\catcode`@=\active
+\def@{\color{BurntOrange}\svat\tilblank}
+%%END ORANGE TEXT FOR LINK
 
 \begin{document}
 
@@ -163,11 +326,11 @@ SmallCapsFeatures={LetterSpace=10.0},
 
 \include{Partie0}
 
-\include{Partie1}
+%\include{Partie1}
 
-\include{Partie2}
+%\include{Partie2}
 
-\include{Partie3}
+%\include{Partie3}
 
 \include{Annexes}
 

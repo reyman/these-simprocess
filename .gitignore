@@ -20,3 +20,6 @@
 *.run*
 *.synctex*
 *.lot
+*.*~
+/ignore
+*.odt

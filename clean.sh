@@ -1,0 +1,15 @@
+rm *.fls
+rm *.aux
+rm *.xml
+rm *.bcf
+rm *.out
+rm *.lof
+rm *.log
+rm *.ptc
+rm *.rtf
+rm *.toc
+rm *.fdb*
+rm *.bbl
+rm *.bcf
+rm *.blg
+rm *.tdo
