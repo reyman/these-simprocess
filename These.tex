@@ -1,10 +1,11 @@
 % !TEX encoding =  UTF-8 Unicode
 % -*- program: xelatex -*-
-% -*- root: These.tex -*-
 \documentclass[a4paper, 11pt,twoside, openright]{memoir}
 \usepackage{polyglossia}
 \setdefaultlanguage{french}
 \setotherlanguage{english}
+\setotherlanguage[variant=ancient]{greek}
+\setotherlanguage{latin}
 \usepackage{fontspec}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[autostyle=true,french=guillemets,maxlevel=3]{csquotes}
@@ -17,12 +18,46 @@
 %http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
 \usepackage[backend=biber,backref=true, natbib=true, isbn=false, doi=true, url=true, style=authoryear,maxcitenames=1, maxbibnames=999, sorting=nyt, refsection=chapter, hyperref]{biblatex}
 
+
+%% QUOTE FRENCH ITALICS
+\makeatletter
+
+\newcommand{\FrameTitle}[2]{%
+\fboxrule=\FrameRule \fboxsep=\FrameSep
+\fbox{\vbox{\nobreak \vskip -0.7\FrameSep
+\rlap{\strut#1}\nobreak\nointerlineskip% left justified
+\vskip 0.7\FrameSep
+\hbox{#2}}}}
+\newenvironment{framewithtitle}[2][\FrameFirst@Lab\ (cont.)]{%
+\def\FrameFirst@Lab{\textbf{#2}}%
+\def\FrameCont@Lab{\textbf{#1}}%
+\def\FrameCommand##1{%
+\FrameTitle{\FrameFirst@Lab}{##1}}%
+\def\FirstFrameCommand##1{%
+\FrameTitle{\FrameFirst@Lab}{##1}}%
+\def\MidFrameCommand##1{%
+\FrameTitle{\FrameCont@Lab}{##1}}%
+\def\LastFrameCommand##1{%
+\FrameTitle{\FrameCont@Lab}{##1}}%
+\MakeFramed{\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\makeatother
+
 %% QUOTE FRENCH ITALICS
 \DeclareQuoteStyle{english}
   {\mkfrenchopenquote{\guillemotleft}\em}
   {\em\mkfrenchclosequote{\guillemotright}}
   {\textquotedblleft\em}
   {\em\textquotedblright}
+
+%% QUOTE LATIN ITALICS
+\DeclareQuoteStyle{latin}
+  {\mkfrenchopenquote{\guillemotleft}\em}
+  {\em\mkfrenchclosequote{\guillemotright}}
+  {\textquotedblleft\em}
+  {\em\textquotedblright}
+
+\definecolor{shadecolor}{gray}{0.9}
 
 %\footnotesinmargin
 \footmarkstyle{[#1]~}
