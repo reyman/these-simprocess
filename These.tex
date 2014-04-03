@@ -18,6 +18,8 @@
 %http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
 \usepackage[backend=biber,backref=true, natbib=true, isbn=false, doi=true, url=true, style=authoryear,maxcitenames=1, maxbibnames=999, sorting=nyt, refsection=chapter, hyperref]{biblatex}
 
+\setparaheadstyle{\normalsize\itshape}
+\setafterparaskip{1ex}
 
 %% QUOTE FRENCH ITALICS
 \makeatletter
@@ -128,7 +130,7 @@
 %%SIDE CAPTION LITTLE END
 
 
-\addbibresource[datatype=bibtex]{library.bib}
+\addbibresource[datatype=bibtex]{Library/library.bib}
 
 %\tolerance=1000
 

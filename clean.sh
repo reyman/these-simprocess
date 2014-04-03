@@ -13,3 +13,5 @@ rm *.bbl
 rm *.bcf
 rm *.blg
 rm *.tdo
+rm *.*~
+rm *.lot
