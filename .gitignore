@@ -5,7 +5,7 @@
 *.mtc*
 *.pdf
 *.rtf
-*.txt
+log.txt
 *.mat
 *.maf
 *.bcf

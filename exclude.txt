@@ -1,0 +1,5 @@
+*.htm
+*.html
+.htpasswd
+DavLock.pag
+DavLock.dir
