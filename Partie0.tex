@@ -682,9 +682,53 @@ Autrement dit, ce n'est pas tant \enquote{le modèle} que ce qu'il y a \enquote{
 
 => Validation comme nouvel enjeu ?
 
+\section{La validation, point de départ d'une nouvelle démarche}
+
 \subsection{Comment construire des modèles de systèmes complexes qui participe à la production de connaissance}
 
-Que cela soit dans la première vague de critique des années 1970 ou la deuxième plus récente qui suit le développement agent, un point commun se retrouve dans nos capacités à vérifier les modèles ainsi construit.
+Que cela soit dans la première vague de critique des années 1970 ou la deuxième plus récente qui suit le développement agent, un point commun se retrouve dans nos capacités à vérifier les modèles ainsi construit. 
+
+\hl{Mettre ici les ref en question pour les différentes dates}
+
+\subsection{introduction}
+
+\subsection{Historique des termes et flou de la notion}
+
+Les termes \foreignquote{english}{Validation & Verification} ou \textit{V\&V} proviennent à l'origine de l'ingénierie des systèmes, et peuvent être rattaché au concept de \enquote{qualité} tel quel est définit par la famille de règle ISO établit par l'organisation mondiale de normalisation. Décomposable en plusieurs branches cette disciplines à part possède une branche dédié à l'expertise logicielle. De ce fait, il n'existe pas réellement de définition ni de théories ou méthodologies officiellement acceptable, l'acceptation des termes pouvant varier fortement selon les branches d'application. Toutefois on trouve dans des livres dédié à la définition d'une terminologie standard dans les disciplines, telle que le \textit{PMBOK guide}, résultats d'un travail certifié par des associations ou des organismes étatiques telle que IEEE et ANSI. Ce dernier propose une définition générale de la vérification et validation en ces termes : 
+
+\foreignquote{english}{Verification and validation (V\&V) processes are used to determine whether the development products of a given activity conform to the requirements of that activity and whether the product satisfies its intended use and user needs.}
+
+et revient ensuite plus spécifiquement sur les termes : 
+
+\begin{itemize}
+\item \textbf{Validation} \foreignquote{english}{The assurance that a product, service, or system meets the needs of the customer and other identified stakeholders. It often involves acceptance and suitability with external customers. Contrast with verification.}
+\item \textbf{Verification} \foreignquote{english}{The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition. It is often an internal process. Contrast with validation.}
+\end{itemize}
+
+Ces définitions apparaissent dans de nombreuses publications, toute disciplines confondues, y compris en géographie. Elle offre un cadre structurant et relativement neutre pour penser le processus de construction des modèles en général, et propose une terminologie suffisamment claire pour la mise en œuvre de pratiques standardisées. 
+
+Toutefois, et c'est surement là le prix à payer d'une telle généricité, celle ci ne semblent pas prendre en compte le contexte d'application ou s'opère la validation. Ainsi, comme le fait remarquer \textcite{Kleijnen1995} en citant astucieusement une note de bas de page de \textcite{Barlas1990}, cela peut poser des problèmes dans certaines disciplines, ne serait ce que par exemple en philosophie, ou il n'est pas impossible de voir dans certaines publications les termes inversé. 
+
+Le rapport à la validation questionnant la valeur des connaissances dégagé des modèles, le recours à la dimension philosophique des termes est dès le départ évidente, et cela dès l'apparition des premières publications sur le sujet. Thomas H. Naylor, un économiste formés à l'informatique dans la branche des \foreignquote{english}{management sciences} \autocite{Stricklin1995} est un des premiers en 1967 \autocite{Naylor1967} à publier sur la notion de validation; notion qu'il met spontanément en tension avec les débats qui agitent la communauté des philosophes sur ces questions à cette période. 
+
+Bien qu'il soit cité plus souvent comme littérature historique par les spécialistes de la question, il reste une référence opérationelle encore reprise et adaptées dans les plus récents ouvrages d'enginérie, preuve de la pregnance de ces propositions chez certains corps de métiers touchant à la simulation.  
+
+par les Encore cité en 2014 dans la littérature, et écrits sont diffusé auprès des ouvrages inter-disciplinaires traitant de la simulation, 
+
+, une démarche de validation des modèles qui se fait en référence aux débats au coeur de la philosophie des sciences. 
+
+Dans cette partie, il s'agit donc de mettre en avant ces débats philosophiques en les reliant aux nouvelles problématiques de construction des modèles tel qu'elle apparaissent aux tournant des années 1970.
+
+Quel sont les moyens offerts de cette validation ? Existe-il une spécificité de cette validation dans son application en science sociale, et plus spécifiquement en géographie, et qui n'est pas prise en compte dans ces définitions ?
+
+Plusieurs débats viennent encadrer à la fois la validation mais aussi le support opérationel de cette validation. Autrement dit, comment détermine t on si un modèle est validé ou pas, et quel est la nature de cette validation opère sur un substrat particulier, qui en fait une expérience sur le réel de second ordre.
+
+ Les termes officieux sont finalement bien trop généraux pour envisager de les appliquer tel quel dans notre domaine de compétence. Ainsi, les définitions de la \textit{V\&V} dans le cadre de l'ingénierie logicielle dédié à la simulation seront plus éclairantes dans le cadre de notre étude. Le nombre de définition s'en trouve alors réduit, les plus connues et appliqués étant sûrement celles donnés par Kleijnen, Sargent ou encore la plus historique, celle de Naylor {Naylor1967}. Il est possible d'en retrouver par ailleurs en feuilletant les \textit{Proceedings of the Winter Simulation Conference} ou la problématique de la V&V est régulièrement réévalué au regard des nouvelles connaissances. 
+
+ une notion difficile à saisir du fait de son rattachement à un débat philosophique, nécessaire dès lors qu'il s'agit d'évaluer la connaissance produite par les modèles.
+
+Ce rapport entre  
+
 
 En effet, la question de la \enquote{Vérification} des modèles, au sens philosophique du terme (valeur de vérité), reste indépassable du fait des multiples biais amenant l'observateur à toujours questionner la valeur de cette connaissance qui résulte d'un transfert entre les résultats d'un modèle volontairement imparfait (\enquote{simplifié}, donc réducteur par définition), et la \enquote{réalité} dans toute sa complexité \autocite{OSullivan2004}. Les termes \enquote{Vérification} et  \enquote{Validation} sont couramment rencontrés dans notre discipline, mais sous des acceptions différentes tenant souvent au transfert des terminologies entre ingénierie \autocite{Sargent1984} d\autocite{Balci1998} et philosophie, ce qui conduit à  des débats terminologiques sans fin \autocite{David2009}. 
 
@@ -712,9 +756,9 @@ La notion de \enquote{laboratoire virtuel} traditionnellement limité à l'expé
 
 %Comme \autocite{Amblard2006} le propose, nous remplacerons donc le terme de \enquote{Validation}, qui prête à confusion, par celui d’\enquote{évaluation}, qui n'est pas sans rappeler la notion d'utilité telle que définie dans la citation ci dessus.
 
-\section{La validation, point de départ d'une nouvelle démarche}
 
-\subsection{L'insufisance d'une démarche isolé}
+
+\subsection{La validation, l'expérimentation et le laboratoire}
 
 Dans le cadre de cette thèse, nous défendrons une \enquote{évaluation} de modèle qui se confond presque complètement avec la méthodologie de construction qui la soutient. Cette \enquote{ validation interne } doit selon nous être systématisée au regard de la \enquote{ validation externe } qui mesure classiquement la correspondance entre données simulées et observées face à la question posée. C’est en cela que la démarche que nous proposons est \enquote{ systématique }. Les opérations nécessaires à la \enquote{ validation interne } telles que l'introduction, la modification, ou la suppression d'hypothèses, s’effectuent donc à la mesure de leur apport qualitatif et quantitatif dans l'explication de la dynamique globale sur laquelle se fonde la \enquote{ validation externe }. Autrement dit, c'est la recherche d'une cohérence qualitative autant que quantitative de la dynamique interne qui nous guide dans notre recherche de correspondance avec les données observées.
 
