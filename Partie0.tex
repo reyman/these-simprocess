@@ -722,14 +722,46 @@ Ces définitions apparaissent dans de nombreuses publications, toute disciplines
 
 Le rapport à la validation questionnant la valeur des connaissances dégagé des modèles, le recours à la dimension philosophique des termes est dès le départ évidente, et cela dès l'apparition des premières publications sur le sujet. Thomas H. Naylor, un économiste formés à l'informatique dans la branche des \foreignquote{english}{management sciences} \autocite{Stricklin1995} est un des premiers en 1967 \autocite{Naylor1967} à publier sur la notion de validation dans son article \foreignquote{Verification of Computer simulation models}; notion qu'il met spontanément en tension avec les débats qui agitent la communauté des philosophes sur ces questions à cette période. 
 
+C'est du fait de cette contiguité entre approche philosophique de la validation, et approche pratique tel quel se pratique dans le processus de modélisation que naissent la plupart des ambiguités, notamment au niveau des termes, 
+
+Ainsi, comme le fait remarquer \textcite{Kleijnen1995} en citant astucieusement une note de bas de page de \textcite{Barlas1990}, cela peut poser des problèmes dans certaines disciplines, ne serait ce que dans l'usage des termes, comme par exemple en philosophie où il n'est pas impossible de voir les termes inversés.
+
+Si l'approche plus récente de Sargent a permis de définir une démarche générique, elle exclue du débat l'utilisation subjective des termes et renvoie chaque discipline à ses propres usages.
+
+
+
 Bien qu'il soit cité plus souvent comme une \enquote{référence historique} par les spécialistes de la question comme Sargent, la démarche proposé par Naylor reste une référence tout à fait opérationnelle et influente \autocite{Nance2002}, encore reprise et adaptée dans les plus récents ouvrages d’ingénierie \footnote{Jerry Banks dans son livre régulièrement réédité \textit{Discrete-Event System Simulation} propose toujours aux lecteurs de valider leur modèle en s'appuyant sur une version synthétique et modernisé de l'approche proposé par Naylor}, preuve de la prégnance de ces propositions chez certains corps de métiers touchant à la simulation.
 
 \paragraph{Le débat historique opposant validation Objectiviste et Relativiste}
 
-Pour certains auteurs comme Barlas et Carpenter \autocite{Barlas1990}, cette vision historique de la validation tel que donné par Naylor est la cause de nombreux malentendus et critiques qui touchent encore aujourd'hui la validation de modèles, notamment lorsqu'ils sont construit comme des systèmes faisant interagir des chaînes complexes de causalités, comme c'est le cas dans le cadre des systèmes dynamique ou des modèles multi-agents dont le support conceptuel et formel est à trouver dans les outils du paradigme systémique. \textcite{Kleindorfer1998} réalise en 1998 l'arbitrage d'un débat qui oppose selon lui d'un coté l'\enquote{objectivisme} de Naylor, et de l'autre la vision \enquote{relativiste} de Barlas et Carpenter. 
+L'approche proposé par Naylor est intéressante car celle ci montre en un certain sens que la validation passe par un faisceau d'approche complémentaire, qui sont pour lui au nombre de trois : le rationalisme cartésien, l'empirisme, et la \foreignquote{positive economics} de Friedman. Ces trois points de vues se rapportent à une vision de la validation extrêmement binaire, dont on peut dire qu'elle est aujourd'hui obsolète dans la littérature actuelle.
+
+
+%% FIXME : EN COURS !!
+Un témoignage important est quand même celui de Jay W. Forester, figure historique qui a donné naissance aux systèmes dynamiques, qui va affronter dès la publication d' « industrial dynamics » des critiques extrémement vive qui remettent en cause la scientificité de son modèle, en s'attaquant à sa méthode de validation.
+
+The first exposition of the system dynamics paradigm as it relates to model validity
+was given in Chapter 13 of Industrial Dynamics (1961) by Jay Forrester. […] 
+
+Forrester also criticizes the illusion that using fixed statistical significance levels brings objectivity to the validation procedure. [...]
+
+He makes the stronger claim that “the validity of a model should not be separated from the validity and the feasibility of the goals themselves.” Since reaching an agreement on the feasibility of the goals cannot be achieved through a formal algorithmic process, validation becomes very much a matter of social discussion. […] (également évoqué dans Amblard donc peut être à déplacer?)
+
+Another nontraditional view of Forrester is his willingness to accept “qualitative” model validation. He argues that a negative attitude toward qualitative validation procedures is not justifiable, since “a preponderant amount of human knowledge is in nonquantitative form” (1961, 128). 
+
+Finally, Forrester sees explanatory power as being at least as important as predictive power in model validation. Forrester’s views on model validity correspond to the relativist/holistic philosophy of science. {Barlas1990}
+
+
+\foreignquote{english}{To verify or validate any kind of model (e.g management science models) means to prove the model to be true. But to prove that a model is \enquote{true} implies (1) that we have established a set of criteria for differentiating between those models which are \enquote{true} and those which are not \enquote{ true }, and (2) that we have the possibility to apply these criteria to any given models} {Naylor1967}
+
+Pour certains auteurs comme \textcite{Kleindorfer1998}, cette vision historique de la validation tel que donné par Naylor est la cause de nombreux malentendus et critiques qui touchent encore aujourd'hui la validation de modèles, notamment lorsqu'ils sont construit comme des systèmes faisant interagir des chaînes complexes de causalités, comme c'est le cas dans le cadre des systèmes dynamique ou des modèles multi-agents dont le support conceptuel et formel est à trouver dans les outils du paradigme systémique. \textcite{Kleindorfer1998} réalise en 1998 l'arbitrage d'un débat qui oppose selon lui d'un coté l'\enquote{objectivisme} représenté par Naylor, et de l'autre la vision \enquote{relativiste} opposé représenté par Barlas et Carpenter \autocite{Barlas1990}. 
+
+\textcite{Kleindorfer1998} a bien résumé en quoi tenait ces deux pôles, ainsi un objectiviste extrême \foreignquote[english]{[...] believes that model validation can be divorced from the model builder and its context. He or she maintains that models are either valid or invalid, and that validation is an algorithmic process which is not open to interpretation or debate.} alors que par contraste un relativiste extrême \foreignquote{english}{[...] believes that the model and model builder are inseparable. As such, all models are equally valid or invalid and model validity is a matter of opinion.}
+
+Ces deux pôles sont intenables en tant que tel, mais chacun d'eux portent une part de vrai qui les rendent tout deux intéressants. Tout en sachant que les deux représente des caricatures, pour \textcite{Kleindorfer1998} la plupart des scientifiques intègre spontanément l'une et l'autre approches dans leur pratiques de validation.
 
 => 
-Ainsi, comme le fait remarquer \textcite{Kleijnen1995} en citant astucieusement une note de bas de page de \textcite{Barlas1990}, cela peut poser des problèmes dans certaines disciplines, ne serait ce que dans l'usage des termes, comme par exemple en philosophie où il n'est pas impossible de voir les termes inversés.
+
 
 \paragraph{La limitation des approche en ingénierie pour la validation en science sociale}
 
@@ -767,6 +799,8 @@ Ainsi dans le cadre de notre étude, le terme \enquote{vérification}  \foreignq
 L’existence de théories alternatives multiples est une constante dans l’histoire des sciences humaines. L'étude de l'objet social est un construit contextuel qui se nourrit d'une multiplicité des point de vues. C'est à ce titre que Jean-Claude Passeron \autocite{Passeron2006} nous met en garde contre une tentative de vérification des modèles qui serait décorrélée de tout contexte historique. Pour lui le faillibilisme poppérien qui se cache derrière la méthode hypothético déductive ne peut pas s'appliquer à la construction de théorie dans le cadre des sciences humaines et sociales. L'équifinalité est à ce titre un moteur permettant de confronter nos théories sur un objet social  qu'il est impossible de tout façon impossible de voir dans son unicité. 
 
 Le processus de modélisation apporte une dimension supplémentaire à l'analyse de chacun de ces points de vue.Car il est hélas impossible de prouver par les modèles qu'il n'y a pas un tout autre ensemble de fait stylisés ou d'interactions qui soit capable d'arriver à la même observation, enlevant de fait toute unicité d’une explication \enquote{scientifique} au point de vue représenté par le modèle. L'équifinalité est donc à ce titre une limitation indépassable à la connaissance qui peut être déduite de nos modèles.
+
+
 
 Le terme \enquote{validation} quant à lui est souvent entendu pour définir un état qualifiant la correspondance entre des observations empiriques et les sorties de la simulation. Compte tenu de la notion d'équifinalité, cet état de correspondance ne suffit pas à prouver que le modèle représente bien la \enquote{réalité}, dans la mesure où l’unicité de cette adéquation peut être remise en cause par le jeu de nouvelles hypothèses. 
 
