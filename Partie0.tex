@@ -438,6 +438,8 @@ Malgré la levée d'un certain nombre de contraintes, et le nouveau souffle port
 
 Le type de formalisation mathématique qu'ils utilisent pour engendrer une dynamique leur permet de provoquer des modifications qualitatives de la structure spatiale des villes. \autocite{Pumain1984} pour appuyer auto-organisation ..
 
+Si la forme prise par la question de la validation des modèles de simulation est amené à évoluer pour suivre les apports successifs des outils informatique, le fond du problème reste quand à lui identique, et on connait les limitation que posent 
+
 \section{La validation des modèles de simulation}
 \label{sec:constante_problematique}
 
@@ -455,7 +457,7 @@ Les modèles d’agents employés en géographie ont la particularité d’avoir
 
 %Le laboratoire Géographie-cités a été pionnier dans l’application à la géographie des systèmes multi-agents, notamment avec la série des modèles Simpop réalisés en collaboration avec des informaticiens (Bura et al., 1996, Sanders et al., 2007, Pumain, 2012) mais aussi avec des modèles d’agents développés directement avec des logiciels simplifiés comme Netlogo (Banos…). L’évolution des modèles ne se limite pas à l’emploi de logiciels mais participe plus généralement des réflexions de la communauté scientifique intéressée par les systèmes complexes. Le GDRE S4 (Simulation Spatiale pour les Sciences Sociales) a par exemple inscrit son action parmi les premiers projets de l’Institut des Systèmes Complexes de Paris-Ile-de-France (ISC-PIF) fondé par Paul Bourgine \todo{ (ref) }. L’UMR  Géographie-cités est devenue en 2011 l’antenne  de l’Institut des systèmes complexes à l’Université Paris I et acquiert du matériel pour sa propre autonomie de fonctionnement.
 
-Toutefois, là ou on aurait pu attendre une amélioration sur les questions de la validation des modèles de simulation agents, on se rend compte qu'un certain nombre de problématiques persistent et limitent toujours la diffusion des modèles en dehors du cercle bienveillant de l'inter-disciplinarité \autocite{Richiardi2006}. Ce problème, loin d'être un isolat touchant uniquement les sciences humaines et sociales, existe également dans d'autres disciplines, comme en écologie, où même lorsque les modèles sont publiés, l'absence de protocole pour répliquer, évaluer le modèle est courant \autocite{Grimm1999}. \hl {ref à vérifier}
+Toutefois, là ou naivement on aurait pu attendre une amélioration sur les questions de la validation des modèles de simulation agents, on se rend compte qu'un certain nombre de problématiques persistent et limitent toujours la diffusion des modèles en dehors du cercle bienveillant de l'inter-disciplinarité \autocite{Richiardi2006}. Ce problème, loin d'être un isolat touchant uniquement les sciences humaines et sociales, existe également dans d'autres disciplines, comme en écologie, où même lorsque les modèles sont publiés, l'absence de protocole pour répliquer, évaluer le modèle est courant \autocite{Grimm1999}. \hl {ref à vérifier}
 
 A juste titre donc, l'absence de protocole pour l'évaluation des modèles est cité comme un des nombreux écueils avec lequel se bat toujours la discipline \autocite{Heath2009}, comme en témoigne les discussions réccurentes de nombreux auteurs sur un sujet dont la complexité touche à une dimension technique, que méthodologique ou philosophique. Autant d'auteurs \autocite{Richiardi2006} \autocite{Fagiolo2007} \autocite{Moss2008} \autocite{Windrum2007} \autocite{Barlas1996} \autocite{Amblard2003} \autocite{OSullivan2004} \autocite{Doran2000} \autocite{Crooks2012} \autocite{Rouchier2013} dont il faudra développer les discussions.  
 
@@ -492,6 +494,7 @@ Compte tenu de cette persistance des problématiques dans le temps, au delà de 
 Un retour sur la démarche de construction des modèles en géographie s'avère nécessaire pour comprendre les éléments qui nous ont échappés dans la continuité de cette problématique qu'est la validation des modèles. En s'appuyant sur les témoignage de \autocite{Batty2001, Pumain2003} on parvient très bien à décrire ce basculement opéré à la charnière des années 1970, alors même que les géographes accède peu à peu aux concepts opérant dans le paradigme systémique \autocite{Harvey1969}, et que l'insuffisance des démarches de construction de modèles devient prégnante 
 
 \hl{bof}
+
 \subsection{Une problématique complexe}
 
 Les termes \foreignquote{english}{Validation \& Verification} ou \textit{V\&V} proviennent à l'origine de l'ingénierie des systèmes, et peuvent être rattaché au concept de \enquote{qualité} tel quel est définit par la famille de règle ISO établit par l'organisation mondiale de normalisation. Décomposable en plusieurs branches cette disciplines à part possède une branche dédié à l'expertise logicielle. De ce fait, il n'existe pas réellement de définition ni de théories ou méthodologies officiellement acceptable, l'acceptation des termes pouvant varier fortement selon les branches d'application. Toutefois on trouve dans des livres dédié à la définition d'une terminologie standard dans les disciplines, telle que le \textit{PMBOK guide}, résultats d'un travail certifié par des associations ou des organismes étatiques telle que IEEE et ANSI. Ce dernier propose une définition générale de la vérification et validation en ces termes : 
@@ -505,18 +508,18 @@ et revient ensuite plus spécifiquement sur les termes :
 \item \textbf{Verification} \foreignquote{english}{The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition. It is often an internal process. Contrast with validation.}
 \end{itemize}
 
-Les termes tels qu'ils sont définis sont finalement bien trop généraux pour envisager de les appliquer tel quel dans notre domaine de compétence. Ainsi, les définitions de la \textit{V\&V} appliqué dans le cadre de l'ingénierie logicielle dédié à la simulation seront déjà plus éclairantes dans le cadre de notre étude. Les auteurs et les définitions s'en trouvent fortement réduit, les plus connues et appliqués étant sûrement celles donnés par \textcite{Kleijnen1995}, \textcite{Sargent2010} ou encore la plus historique et toujours employé, celle de Naylor {Naylor1966, Naylor1967}.
+Les termes tels qu'ils sont définis sont finalement bien trop généraux pour envisager de les appliquer tel quel dans notre domaine de compétence. Ainsi, les définitions de la \textit{V\&V} appliqué dans le cadre de l'ingénierie logicielle dédié à la simulation seront déjà plus éclairantes dans le cadre de notre étude. Les auteurs et les définitions s'en trouvent fortement réduit, les plus connues et appliqués étant sûrement celles donnés par \textcite{Kleijnen1995}, \textcite{Sargent2010} ou encore la plus historique et toujours employé, celle de Naylor {Naylor1966, Naylor1967}. 
+
+La validation questionnant la valeur des connaissances dégagé des modèles \hl{A détailler cet argument ici ?}, le recours à la dimension philosophique des termes est dès le départ évidente, et cela dès l'apparition des premières publications sur le sujet. Thomas H. Naylor, un économiste formés à l'informatique dans la branche des \foreignquote{english}{management sciences} \autocite{Stricklin1995} est un des premiers en 1967 \autocite{Naylor1967} à publier sur la notion de validation dans son article \foreignquote{Verification of Computer simulation models}; notion qu'il met spontanément en tension avec les débats qui agitent la communauté des philosophes sur ces questions à cette période. 
+
+Mais ce sujet ne saurait être traité sans évoqués les transformations que subit dans cette même période la discipline géographique, dans sa réflexion des objets géographiques, au contact du paradigme systémique, dont la percolation chez les géographes s'observe dans la nouveauté le champs lexical, les méthodes, mais également les techniques.
 
 \subsubsection{Un débat technique}
 
 \subsubsection{Un débat méthodologique}
 
-
-Le rapport à la validation questionnant la valeur des connaissances dégagé des modèles \hl{A détailler cet argument ici ?}, le recours à la dimension philosophique des termes est dès le départ évidente, et cela dès l'apparition des premières publications sur le sujet. Thomas H. Naylor, un économiste formés à l'informatique dans la branche des \foreignquote{english}{management sciences} \autocite{Stricklin1995} est un des premiers en 1967 \autocite{Naylor1967} à publier sur la notion de validation dans son article \foreignquote{Verification of Computer simulation models}; notion qu'il met spontanément en tension avec les débats qui agitent la communauté des philosophes sur ces questions à cette période. 
-
 \subsubsection{Un débat philosophique}
 
-Le tournant explicatif des années 1970 est au croisement entre ces trois questions, et pose  
 
 \subsection{Le tournant explicatif des années 1970} 
 \label{ssec:transition_annee70}
@@ -526,6 +529,22 @@ Dans l'histoire de la géographie américaine, le début des années 1970 est ma
 Les acteurs prônant une démarche scientifique teintés de néo-positivisme largement inspiré des sciences physiques sont alors la cible idéale de ces nouveaux acteurs, et vont alors subir un large front de critique. Gregory, dont on mobilise le point de vue pour critiquer la vision néo-positiviste/positiviste en géographie, utilise ce dernier argument de façon conjointe avec la pensée d'Habermas pour charger les dérives entraînées par les méthodes quantitatives, et proposer un autre style de pensée axé sur la réconciliation d'un point de vue structuraliste, phénoménologique et critique pour entre autre éviter l'écueil du \enquote{fétichisme spatial}. A la lecture d'ouvrage comme ceux de Gregory, dont la démarche de dépassement n'est pas sans levée des critiques pertinentes, il nous semble a posteriori que sa vision du mouvement quantitatif est en partie biaisé, d'une part parce que la réalité des pratiques peut tout à fait s'éloigner des discours tenus par quelques leaders d'opinion, tel qu'Harvey ou Bunge, et d'autres part parce que les critiques externes au mouvement, comme Gregory font mine d'ignorer une partie des transformations qui opère depuis le début des années 1970 en interne dans les pratiques visés. Ainsi, afin de montrer que la discipline géographique n'a pas attendue l'émergence de tels discours parfois extrémistes, nous avons aperçu dans la section \ref{ssec:crise_mutation} que les modèles de simulation économiques spatialisés, ont adoptés au vu de leur maigre résultats une démarche plus explicative permises entre autre par l'évolution des moyens de simulations, et que cette confrontation avec la problématique de validation a été formulé comme centrale par les modélisateurs pionniers et cela de façon explicite dans des ouvrages collectifs abordant cette question \autocite{Marble1972}. Si sur le fond il n'y a rien de critiquable à vouloir développer un autre style de pensée en opposition les excès de certains usages des méthodes quantitatives, sur la forme il en résultent chez certains géographes l'émergence d'un amalgame malheureux qui associe un peu trop rapidement méthode quantitative positiviste, et modèle d'inspiration économique néo-libéraliste \autocite[61-64]{Paterson1984}. Dualité opposant géographe (et géographie) qualitativiste/quantitativiste encore brandi aujourd'hui comme un processus supposé constructif \autocite{Sheppard2001}. 
 
 La section \ref{sssec:realite_neopositiviste} propose de déconstruire avec les arguments disponibles ce point de vue qui voudrait l'application pratique de la méthodologie néo-positiviste comme un support crédible à l'explication dans la construction de modèles en géographie. Une fois cette proposition écartée, la question du devenir des pratiques de \foreignquote{english}{model-building} mobilisé par la géographie quantitative doit être vue sous un autre angle, celui de la reification du paradigme systémique comme expression formelle adapté à l'analyse complexe des objets géographiques \ref{sssec:progressive_systemique}.
+
+Au coeur de la théorie des "système ouverts" les concepts d'équifinalité, de hierarchisation de statistique sont dans leur opérationalisation \ref{subsec:operationaliser_concept} autant d'incitation à utiliser les récents progrès de l'informatique des années 1950-60 pour explorer un univers, non pas tant complexe dans sa description (comme en témoigne Simon, des problèmes complexes peuvent très bien être dérivé de règle simple) mais dans la multiplicité d'approche (trajectoire, échelles, interactions) qu'elles permettent.
+
+Outre le fait que cette ouverture s'accompagne d'innovation méthodologiques permettant l'opérationalisation des concepts, s'ouvre en parallèle avec la chute du néo-positivisme de nouveaux débats autour de l'explication \autocite{Hedstrom2010} à la fois chez les praticiens (les \enquote{mécanismes générateurs} de Boudon, les \foreignquote{english}{causal-mechanisms} plus récents des biologistes, les \foreignquote{english}{generative mechanisms} d'Epstein) mais également chez les philosophes des sciences en biologie (Salmon, Machamer, etc.) où les thèses de Popper-Hempel, bien que souvent cités, sont en réalité rarement appliqués ou même appliquables dans les faits. \autocite{Bechet2013} 
+
+L'enjeu ici est d'autant plus important qu'il se double d'une réalité opérationelle, faisant des problématiques de sous-détermination (Quine) ou d'équifinalité (Bertalanffy) des concepts tout à fait tangibles, dont la manipulaton débordent du cercle des philosophes des sciences pour venir parasiter les débats des modélisateurs en SHS, dont la qualité des explications avancées doit s'adapter à cet horizon infranchissable, et se réinventer dans des discours, des méthodologies plus spécifiques.
+
+% glissement vers ABM?
+
+%Ces problématiques sont depuis lors des incontournables pour qui veut entamer une discussion sur la \enquote{validation}, la sous-détermination des Théorie par les données de Quine, ou l'équifinalité de Bertalanffy étant des contraintes indépassables avec lesquels notre raisonnement doit s'adapter pour constuire des modèles explicatifs \enquote{malgré tout}. 
+
+Bien que ce niveau de discours épistémologique paraisse décalé face à des pratiques qui s'organise dans une logique tout à fait indépendante, les débats récents ont montrés qu'une assise épistémologique plus explicite pouvait dans le cadre de nos construction de modèle être non plus vu comme un défaut, mais comme un atout pour mieux faire face au critiques. Les sociologues \autocite{Hedstrom2010, Elsenbroich2012, Squazzoni2010, Manzo2007} et les économistes \autocite{Epstein1996} semblent être ces dernières années les principaux acteurs de ce type de rapprochements dans la communauté agents 
+
+Mais ce débat n'est qu'un premier filtre, une autre épistémologie vient se greffer sur la notion de \enquote{laboratoire virtuel} et questionne cette fois ci, non plus tant le résultat obtenu via l'expérimentation, que la condition de sa transférabilité au réel.
+
+Les décennies qui vont suivre vont voir s'affronter plusieurs débats sur la validation, tant sur le point philosophique que méthodologique.
 
 %La section \ref{ssec:crise_mutation} traitait du renouveau de la simulation de modèle en énumérant simplement les évolutions techniques et méthodologiques sans forcément pointer les débats qui accompagne ces transformations et qui touche à la problématique de la \enquote{vérification}, une problématique qui sera plus développé dans cette partie de la thèse.
 
@@ -782,26 +801,27 @@ Sur ce point, le géographe épistémologue Olivier Orain \autocite{Orain2001} d
 \paragraph{Conclusion}
 Dans ces deux moments, il ne semble pas y avoir de rupture évidente, ni dans l'intégration des isomorphismes en géographie, une pratique effective depuis longtemps dans la discipline - on pensera par exemple aux mathématiques et aux systèmes de projection - , ni dans la convergence entre certains de ces nouveaux concepts et les objets géographiques étudiés - la région étant par exemple le réceptacle idéal, quasi naturel, d'une démarche de raisonnement multi-échelle -
 
-\subsection{De nouveaux outils mathématique pour l'explication}
+\subsection{La spécialisation des problématiques de validation}
 \label{ssec:nvx_outils_explication}
 
-Les avancées mathématiques et informatiques entamé dans les années 1950 émergent véritablement dans les années 1970 et donne enfin corps au concept systémique.
+Les avancées mathématiques et informatiques entamés dans les années 1950 émergent véritablement dans les années 1970 et donne enfin corps au concept systémique.
 
-Pour \textcite[137]{Pumain2002} l'impact se situe bien au delà de ce que l'on est en droit d'attendre d'une simple innovation technologique, car selon elle \enquote{Non seulement les formalisations mathématiques associées au développement des théories systémiques modifient la représentation des objets géographiques, mais elles permettent de renouveler la question de la causalité en géographie.}
+Pour \textcite[137]{Pumain2002} l'impact se situe bien au delà de ce que l'on est en droit d'attendre d'une simple innovation technologique, car \enquote{Non seulement les formalisations mathématiques associées au développement des théories systémiques modifient la représentation des objets géographiques, mais elles permettent de renouveler la question de la causalité en géographie.}
 
 C'est Wilson, un autre physicien britannique, qui viendra en 1970 améliorer le modèle en y introduisant la notion d'entropie, dans une filiation qui tient de l'analogie entre théorie de l'information et thermodynamique, analogie réalisé au préalable par les cybernéticiens.
 
 \textcite[137]{Pumain2002} À la représentation de la rencontre fortuite de séries indépendantes en un lieu, qui rend compte d’une combinaison locale spécifique d’éléments, se substitue celle d’une cohérence évolutive, soumise certes à la contingence selon les bifurcations qui jalonnent la formation d’un objet géographique. L’image parfois pesante de l’\enquote{inertie} attribuée aux structures héritées de l’espace géographique est remplacée par la notion d’adaptabilité, induisant des ajustements permanents de ces structures au changement, selon une conception évolutive de la résilience
 
-Sous détermination, etc viennent ici !
+Sous détermination, etc. viennent ici !
 Développement de nouveaux outils pour traiter de la sous détermination des lois ...
 
 La problématique de la validation s'en retrouve renforcé.
 
-\subsubsection{Paradigme systémique et sous détermination des lois par les données}
+
+
+\subsubsection{Paradigme systémique et sous-détermination des lois par les données}
 
 Le passage à une causalité systémique va de paire avec le développement des outils à même de traiter cette dernière. A DEVELOPPER
-
 
 L'observation dans des espaces et des temporalités très différentes \autocite{Pumain1997} de cette distribution rang-taille comparable à une loi puissance ou une loi log-normale ouvre, à condition qu'on s'attache non pas à la finalité de l'objet lui même, un champs d'étude très vaste, qui ne semble pas pouvoir être résumé dans une loi universelle.
 
@@ -818,15 +838,13 @@ En portant l'emphase non plus sur le résultat, mais sur l'étude du processus, 
 
 La rupture des années 1970 
 
-Au coeur de la théorie des "système ouverts" les concepts d'équifinalité, de hierarchisation de statistique sont dans leur opérationalisation \ref{subsec:operationaliser_concept} autant d'incitation à utiliser les récents progrès de l'informatique des années 1950-60 pour explorer un univers, non pas tant complexe dans sa description (comme en témoigne Simon, des problèmes complexes peuvent très bien être dérivé de règle simple) mais dans la multiplicité d'approche (trajectoire, échelles, interactions) qu'elles permettent.
 
 \autocite[114]{Pouvreau2013}
 Tout processus d’équilibre peut être formulé téléologiquement [...] Toutes les lois systémiques ont
 la particularité que ce qui apparaît pour l’ensemble du système comme un processus causal
 d’équilibre peut être formulé téléologiquement pour les parties 1 .
 Ce qui correspond à un processus causal d’équilibre apparaît pour la partie comme un événement
-téléologique, en ce que l’action de cette dernière semble dirigée vers le « but » consistant à prendre
-sa place « convenable » dans le tout 2
+téléologique, en ce que l’action de cette dernière semble dirigée vers le « but » consistant à prendre sa place « convenable » dans le tout 2
 
 Enfin la crise des années 1970, et le retour à des modèles plus sobres, que l'on espère mieux maitrisé pour évoquer une complexité des objets géographiques.
 
@@ -836,19 +854,12 @@ et qui va continuer par la suite avec les travaux de Sanders sur Lotka Volterra,
 
 Pour les concepts c'est évoqué par la suite ?. 
 
-D'un point de vue opérationel dans la construction des modèles, Batty \autocite{Batty2001} \autocite[13]{Batty2008} c'est le modèle de Forrester \autocite{Forrester1969} qui polarise le mieux ce changement de perspective dans la démarche de construction des modèles. Provenant d'une toute autre source que les modèles urbain réalisé jusqu'à la fin des années 1970, celui ne va pas sans déclencher au mieux une certaine curiosité \autocite{Lee1973} , et au pire un véritable raz de marée de critique, d'abord chez les géographes\autocite{Tobler1970a} mais aussi de la part du grand public, entraînant parfois des réactions violente tant l'affaire est médiatisé \autocite[9]{Forrester1989}. 
 
-D'un point de vue interne, le modèle \textit{Urban Dynamics} n'introduit pas tant d'originalité par rapport aux éléments acquis par la rencontre entre la vision d'Hagerstrand et les pionniers universitaires systémistes 10 ans auparavant, les premiers modèles de simulation qui implémente la dimension temporelle, stochastique, dans le premier langage Fortran (le seule langage scientifique de l'époque) étant daté d'avant 1965. Plus que sur les aspects géographiques, le modèle étant aspatial, \autocite{Batty2001} nous fait remarquer que c'est sur le point de la validation que la polarisation du débat s'effectue; car comment valider un modèle qui ne s'appuie sur aucune données autres que des valeurs de paramètres ?
 
 A voir la modélisation comme un laboratoire virtuel parfait pour l'expérimentation, pourquoi ne pas pousser l'analogie jusqu'à rétablir l'équilibre entre théorie et expérimentation dans la construction des connaissances ? C'est un peu le choix établie par les tenants de l'abduction,  en réaction du modèle fermé sur les loi de HD - ND de Hempel-Popper propose le rétablissement d'un autre processus d'inférence souvent nommé par les anglo-saxon, IBE ou \foreignquote{english}{Inference to Best Explanation}. La surprise comme moteur de nouvelle découverte, surprise dont on se rend compte avec Morgan2005 qu'elle est au coeur d'un question épistémologique propre à la simulation.
 
 impossible si on se place dans la stricte boucle fait . Pourquoi ne peut on pas prendre encore un peu plus de hauteur, et proposer un deuxième niveau de surprise, celui cette fois ci des outils, qui comme on a pu déjà le sous entendre dans le développement de ces introduction, joue un rôle tout aussi important dans le dévoilement de nouvelles questions. Pour reprendre la métaphore développé par Arnaud Banos \autocite[22]{Banos2013} à ce sujet, que se passe t-il si on remplace la machette utilisé pour l'exploration de l'aventurier dans cette jungle des hypothèses, son expérience ne risque elle pas d'être tout à fait différente ? Une lame qui devient tronçonneuse ne donne elle pas à voir un espace-temps tout à fait différent ? et un gps ne lui permettrait il pas de mieux savoir par quel endroit est on déjà passé ? Un équipement fait de géo-visualisation, de géo-computation, dont Arnaud Banos et d'autres avant lui ont développés pour y voir plus clair dans les choix que tout modélisateur est amené à prendre dans la construction d'un modèle.
 
-Forrester donner à voir avec son langage graphique la structure causale de son modèle, une première qui démontre aussi la puissance d'un outils dans la démocratisation et la diffusion des techniques mais aussi des théories (systémique). L'analyse systémique aurait elle eu un tel succès si elle n'avait pas trouvé par l'usage de ces langages graphiques un nouveau crayon, qu'il faut encore apprendre à bien manier, pour organiser cette complexité ? Car Forrester ne fait pas que mettre en lumière avec un langage graphique adapté des éléments de vocabulaire de la cybernétique, il offre avec son langage DYNAMO le pendant opérationnel de celui ci, qui de graphique devient informatique. 
-
-Peut on donner à présent le même langage graphique pour donner à voir la structure de nos expérimentations, une idée qui n'a rien de récente, et s'avère déjà largement utilisés pour visualiser toute sortes de chaîne de traitements, suivant des buts aussi varié qui vont de l'expérimentation artistique à l'expérimentation statistique.
-
-Les géographes n'en reste pas là pour la plupart, et s'intéresse à la machinerie mathématique sur lequel s'appuie ce langage, qui reprend principalement les principes de l'école mathématiques des systèmes dynamiques, encore en pleine construction dans les années 1970, avec les apports des tenants physiciens de la systémique, entre autre l'école de Prigogine et l'école de Haiken.
 
 %La démarche de construction de connaissance opéré dans l'activité de modélisation procède à une transformation dont \autocite{Forrester1969} est en quelque sorte le déclencheur, sinon le démonstrateur. En plein marasme \autocite{Lee1973} celui ci a le mérite de proposer une vision de la ville qui non seulement ne passe pas inapercu au yeux du public, mais qui rompt aussi avec la facon dont sont construit la plupart des modèles urbains existants. \autocite{Batty2001} En présentant un modèle complexe de simulation, aspatial, impossible à calibrer, \footnote{Ce modèle complexe sera largement critiqué à raison, mais aura quand même un impact important en engendrant une lignée de modèles \autocite[307]{Batty1976}.} qui s'appuie uniquement sur des données pour le paramétrage des hypothèses, et non pas sur une comparaison avec des données réelles, Forrester s'attire de très nombreuses critiques. Pourtant paradoxalement, c'est en montrant les effet contre intuitif de certaines politique publiques sur la ville que celui ci démontre l'importance et l'innovation de sa démarche. Il poursuit dans la même voie que d'autres avant lui \autocite{Orcutt1960} \autocite{Hagerstrand1967} et montre cette force de déduction que l'on peut tirer à partir de modèles dynamiques beaucoup plus parcimonieux que les équivalent statiques \autocite{Batty1976} et surtout il démontre avec la présentation d'effet contre intuitif le résultats de phénomène non linéaire jusque là difficile à imaginer avec les modèles statique à l'équilibre. 
 
@@ -861,32 +872,92 @@ Autrement dit, ce n'est pas tant \enquote{le modèle} que ce qu'il y a \enquote{
 \section{La validation, point de départ d'une nouvelle démarche}
 \label{sec:validation}
 
-%\subsection{Comment construire des modèles de systèmes complexes qui participe à la production de connaissance}
-%\label{ssec:prod_connaissance}
-
-Que cela soit dans la première vague de critique des années 1970 ou la deuxième plus récente qui suit le développement agent, un point commun se retrouve dans nos capacités à vérifier les modèles ainsi construit. 
-
-Denise P + Léna S : synergétique, simpop2
-
-Barlas1996 => Only three of all the articles published in System Dynamics Review (between 1985 and 1995) deal with model validity/Validation,
-
-\hl{Mettre ici les ref en question pour les différentes dates}
-
 \subsection{introduction}
 
-Dans cette partie, il s'agit donc de mettre en avant ces débats philosophiques en les reliant aux nouvelles problématiques de construction des modèles tel qu'elle apparaissent aux tournant des années 1970.
+%Dans cette partie, il s'agit donc de mettre en avant ces débats philosophiques en les reliant aux nouvelles problématiques de construction des modèles tel qu'elle apparaissent aux tournant des années 1970.
 
-Quel sont les moyens offerts de cette validation ? Existe-il une spécificité de cette validation dans son application en science sociale, et plus spécifiquement en géographie, et qui n'est pas prise en compte dans ces définitions ?
+%Quel sont les moyens offerts de cette validation ? Existe-il une spécificité de cette validation dans son application en science sociale, et plus spécifiquement en géographie, et qui n'est pas prise en compte dans ces définitions ?
 
-Plusieurs débats viennent encadrer à la fois la validation mais aussi le support opérationel de cette validation. Autrement dit, comment détermine t on si un modèle est validé ou pas, et quel est la nature de cette validation opère sur un substrat particulier, qui en fait une expérience sur le réel de second ordre.
+%Plusieurs débats viennent encadrer à la fois la validation mais aussi le support opérationel de cette validation. Autrement dit, comment détermine t on si un modèle est validé ou pas, et quel est la nature de cette validation opère sur un substrat particulier, qui en fait une expérience sur le réel de second ordre.
+
+L'apport de nouvelle techniques vient remettre en cause le schéma classique de validation principalement porté par Naylor.
+
+\paragraph{La rupture symbolique du modèle de Forrester}
+
+Celle ci est multiple, d'abord sur le plan structurel
+
+mais cette rupture est plus symbolique 
+
+Un objectif largement atteint par \textcite{Forrester1969, Forrester1971}, dont le modèle \textit{Urban Dynamics}.
+
+Provenant d'une toute autre inspiration et construit selon un tout autre modèle que les modèles urbain réalisé jusqu'à la fin des années 1970, le modèle textit{Urban Dynamics} de \textcite{Forrester1969} fait une entrée très remarquée dans le milieu des \textit{policies}. Celui met en jeu une ville abstraite et isolée, non-spatialisé, ou interragissent de façon a-spatialisés de multiples mécanismes regroupés par activités et organisés en chaine causale. Le modèle ne fait appel à aucune données pour calibrer ou vérifier les sorties générées, et à ce titre il ne peut être considé comme un modèle décisionnel sérieux pour les \textit{policy analysis} de l'époque. \autocite{Lee1973}. Soumis à une très forte médiatisation pour l'époque, les critiques sur le modèle se font parfois vives tant du coté des citoyens \autocite{Forrester1989, Forrester2007} que des universitaires géographes \autocite{Tobler1970a}.
+
+D'un point de vue purement technique, le modèle \textit{Urban Dynamics} n'introduit pas tant d'originalité par rapport aux éléments acquis par la rencontre entre la vision d'Hagerstrand et les pionniers universitaires 10 ans auparavant; après tout les premiers modèles de simulation qui implémente la dimension temporelle, stochastique, dans le premier langage Fortran, étant daté d'avant 1965.
+
+L'étude des processus de diffusion suppose assez naturellement que les géographes intégrent le temps dans leurs analyses, et il a été vu que spontanément la simulation a été percu dans de nombreuses disciplines comme un formidable outil d'expérimentation permettant la projection et l'évaluation dans le temps de multiples hypothèses \ref{ssec:labo_virtuelle}. Pourtant cette approche a mis plus de temps à percoler dans l'analyse des systèmes urbains en géographie; ou la simulation est mobilisé sans rarement \footnote{Quelques modèles dérogent toutefois à la règle et intègre une quasi-dynamique... \hl{ref} } y intégrer la dimension temporelle, un constat pour lequel \textcite[296-297]{Batty1976} nous donne quelques pistes de compréhensions : 
+
+\foreignquote{english}{There are, however, good reasons why the comparative static approach has been widely applied. The status of theory in urban economic and geographic systems with regard to time is almost non-existent. [...] Yet there are severe problems in trying to develop dynamic theory, two of which are worthy of some discussion.[...]
+
+Perhaps the major problem concerns the ability to observe or monitor the urban system. Unlike the physical sciences in which the effect of critical variables on the system of interest can be isolated in the laboratory, such a search for cause and effect is practically impossible in social systems. Thus, there are many instances when it is difficult, if not impossible, to disentangle one cause from another in the changing behaviour of such systems. This is a fundamental limitation which is referred to here as the observational dilemma.
+
+A second problem concerns that hoary perennial data. [...] data are often difficult to assemble for one cross-section in time, and the collection of time series data is usually a formidable and sometimes infeasible undertaking. Furthermore, such data often become less consistent and sparser as earlier time periods are needed and, frequently, the time periods between points at which data have been collected, are too large to be useful for dynamic modelling}
+
+Une forme d'auto-censure au nom du principe de parcimonie, où l'absence du temps si elle permet de simplifier l'analyse, mène toutefois à des interpretations absurdes ou impossibles, qui ne tiennent pas compte des évolution de structures sur lesquels s'appuient les interactions.
+
+On situe l'originalité du programme de Forrester sur au moins deux plan. 
+
+Dynamo est un langage orienté pour la simulation, et dispose donc d'outils facilitant la description, l'intégration et la mise en relation dans le temps de processus décrit à l'aide d'équation différentielle. 
+
+Le vocabulaire graphique à base de \textit{stock and flow} est en partie directement traduisible en terme d'opérateurs dans le programme, ce qui permet véritablement de voir la structure causale du modèle en un coup d'oeil. Les interactions entre mécanismes deviennent explicites, et compréhensible dans un langage dont le niveau d'abstraction n'est pas forcément celui du programmeur.  Bien que le seul usage du langage graphique ne permettent pas la reproduction des modèles par un tiers, le fait qu'il soit standardisé permet de stimuler les échanges à la fois dans un processsus interne de conception/construction du modèle, ou externe avec des publications.
+
+Le modèle français AMORAL piloté par des géographes Grenoblois - dont on trouve le récit dans un ouvrage dédiés à l'analyse des systèmes en Géographie - retranscrit très bien dans un cas d'utilisation concret cette première expérience d'application d'une modélisation dynamique par analyse systémique. 
+
+Car c'est là l'autre force du vocable graphique de Forrester, c'est d'avoir permis le passage d'une description systémique   
+
+Au regard de la géographie des modèles urbains, la plupart des modèles sont statiques, à l'équilibre.   incluant le temps ont étés développés.
+
+
+cela avec un langage standardisé, 
+
+  une première qui démontre aussi la puissance d'un outils dans la démocratisation et la diffusion des techniques mais aussi des théories (systémique). L'analyse systémique aurait elle eu un tel succès si elle n'avait pas trouvé par l'usage de ces langages graphiques un nouveau crayon, qu'il faut encore apprendre à bien manier, pour organiser cette complexité ? Car Forrester ne fait pas que mettre en lumière avec un langage graphique adapté des éléments de vocabulaire de la cybernétique, il offre avec son langage DYNAMO le pendant opérationnel de celui ci, qui de graphique devient informatique. 
+
+%Peut on donner à présent le même langage graphique pour donner à voir la structure de nos expérimentations, une idée qui n'a rien de récente, et s'avère déjà largement utilisés pour visualiser toute sortes de chaîne de traitements, suivant des buts aussi varié qui vont de l'expérimentation artistique à l'expérimentation statistique.
+
+Les géographes n'en reste pas là pour la plupart, et s'intéresse à la machinerie mathématique sur lequel s'appuie ce langage, qui reprend principalement les principes de l'école mathématiques des systèmes dynamiques, encore en pleine construction dans les années 1970, avec les apports des tenants physiciens de la systémique, entre autre l'école de Prigogine et l'école de Haiken.
+
+
+Pour \textcite{Batty1971, Batty1976, Batty2001, Batty2008} ce modèle est celui qui polarise le mieux ce changement de perspective dans la démarche de construction des modèles. 
+
+La position de Forrester parait plus compréhensible dès lors qu'on s'intéresse d'un peu plus près à sa vision de la modélisation et à l'utilisation qu'il souhaite en faire dans le cadre des politiques publiques. Pour lui, le problème n'est pas tant les données, dont on finit toujours par les obtenir, \foreignquote{english}{ [...] but rather inability to perceive the consequences of information we already possess.}. Les gens mobilisent pour l'interprétation des données des modèles mentaux, hors souvent ils se trompent, et les conséquences de leur intuitions amènent alors à constater la faillite des politiques ainsi menés. Pour \textcite{Forrester1971}, l'usage de modèle de simulation permet de re-projeter ces modèles mentaux faillibles sur des modèles informatiques dont la construction nécessite la formulation d'hypothèses de façon plus explicite, plus compréhensible, et sur lequel il est possible de dialoguer de façon plus constructive. Il n'est plus question de choisir fonction d'un seul scenario, mais de plusieurs, avec la possibilité de projetter et d'évaluer dans le temps les conséquences de dynamiques complexes sur un système simplifié envers un objectifs donné, et cela avec la garantie d'une fiabilité bien au delà de ce le seul esprit humain ne pourrait espérer. Avec souvent un résultat sans appel, \foreignquote{english}{[...] behavior is different from what people have assumed.} Un comportement qu'il arrive à démontrer par le jeu des rétro-action des mécanismes de son modèle \textit{Urban Dynamics}, qui illustre les effets tout à fait contre-intuitifs de certaines politiques publiques.
 
 
 
-\paragraph{Le débat historique opposant validation Objectiviste et Relativiste}
+L'apport 
 
-Bien qu'il soit cité plus souvent comme une \enquote{référence historique} par les spécialistes de la question comme Sargent, la démarche proposé par Naylor reste une référence tout à fait opérationnelle et influente \autocite{Nance2002}, encore reprise et adaptée dans les plus récents ouvrages d’ingénierie \footnote{Jerry Banks dans son livre régulièrement réédité \textit{Discrete-Event System Simulation} propose toujours aux lecteurs de valider leur modèle en s'appuyant sur une version synthétique et modernisé de l'approche proposé par Naylor}, preuve de la prégnance de ces propositions chez certains corps de métiers touchant à la simulation.
 
-Si l'approche proposé par Naylor est intéressante car celle ci montre en un certain sens que la validation des modèles n'est pas l'histoire d'un seul dogme, mais d'un faisceau d'approche complémentaires qu'il regroupe dans une démarche nommé \textit{Multi Stage Validation} contenant : le rationalisme cartésien, l'empirisme, et la \foreignquote{positive economics} de Friedman.
+
+Le bouleversement méthodologique apporté par l'opérationalisation de concept jusque là exprimé uniquement sous forme de graphique est énorme. 
+
+Plus que sur les aspects géographiques, le modèle étant aspatial, \autocite{Batty2001} nous fait remarquer que c'est sur le point de la validation que la polarisation du débat s'effectue; car comment valider un modèle qui ne s'appuie sur aucune données autres que des valeurs de paramètres ? Comment discuter de cette longue suite de mécanismes reliés les uns aux autres par des interaction complexes, difficile ou impossible à vérifier empiriquement ?
+
+La critique de \textcite{Tobler1970a} est très explicite sur ce point, \textit{Urban Dynamics} \foreignquote{english}{[...] is a classical non-linear deterministic equilibrium model, but of great complexity. Herein lies its importance for it is rather grandiosely conceived. [...] Not only the values of the parameters, but also which variables are chosen for consideration and how they are interconnected, are critical. [...] the danger is that his model has not really been tested empirically, thus the policy implications may be wrong, and the model - because of its complexity - is extremely difficult to test. A very careful study of the many assumptions of the model are required. Also required are more competing models, thus the book’s greatest achievement may be the competition which it stimulates.} 
+
+Le modèle de simulation devient dans l'établissement de sa structure la projection d'\enquote{un point de vue}, ici celui de Forrester et de ses collaborateurs, et l'attention ne se porte plus tant sur le résultat que sur le bien fondé des hypothèses mobilisés par Forrester pour établir ce résultat. Même si il s'agit d'une lecture \foreignquote{latin}{a posteriori}, la dernière phrase de Tobler semble particulièrement révélatrice de l'effet stimulant que de tels modèles, dont la structure est explicitement visible, peuvent avoir sur la communauté; une première preuve qui appuie l'hypothèse d'une validation des modèles de simulation possible seulement au travers d'une lecture collective, un point sur lequel il faudra revenir par la suite.
+
+Autre problème soulevé par \textcite{Tobler1970a} mais aussi \textcite{Batty2001}, le risque pour des modèles n'impliquant pas la vérification par les données (sur les hypothèses, mais aussi en sortie) de tomber dans une situation similaire à la \textit{Forrester strategy}, dont le modèle serait là uniquement pour \enquote{élever} le débat.
+
+%!! PENSER À REMPLIR PROBLEMATIQUE VALIDATION -lena, allen, problématique calibration- dans SECTION PRÉCEDENTE SUR TOURNANT SIMULATION ANNES 1970 + PARLER PETER ALLEN QUELQUE PART , SOIT ICI SOIT AU DESSUS +
+
+C'est ainsi que 
+Pour finir, bien qu'encore listé dans les catalogues de démarches pour la validation, la formulation de la validation donné par Naylor n'est plus suffisante, car elle se focalise uniquement sur les sorties du modèles, ce qui dans un cadre explicatif tel que le nôtre, ne constitue qu'une toute petite partie de l'explication. Un constat valide peu importe la technique utilisé, ainsi de façon beaucoup plus récente \textcite[106]{Amblard2006} nous rapelle que dans le cadre des modèles agents, ou le modélisateur cherche à évaluer la portée explicative de ces hypothèses, \enquote{[...] la recherche de similitudes avec les données, si elle peut être utile, ne peut absolument pas être un critère unique et définitif de validation}
+
+Dès lors on est en mesure de poser la question suivante, quels sont les critères de cette nouvelle forme de validation ?
+
+\paragraph{Validation Objectiviste et Relativiste}
+
+Bien qu'il soit cité plus souvent comme une \enquote{référence historique} par les spécialistes de la \textit{Validation \& Verification} comme Sargent, la démarche proposé par Naylor reste une référence influente et tout à fait opérationnelle \autocite{Nance2002}, encore reprise et adaptée dans les plus récents ouvrages d’ingénierie \footnote{Jerry Banks dans son livre régulièrement réédité \textit{Discrete-Event System Simulation} propose toujours aux lecteurs de valider leur modèle en s'appuyant sur une version synthétique et modernisé de l'approche proposé par Naylor}, preuve de la prégnance de ces propositions chez certains corps de métiers touchant à la simulation.
+
+L'approche proposé par Naylor est intéressante car celle ci montre en un certain sens que la validation des modèles n'est pas l'histoire d'un seul dogme, mais d'un faisceau d'approche complémentaires, qu'il regroupe dans une démarche nommé \textit{Multi Stage Validation} contenant : le rationalisme cartésien, l'empirisme, et la \foreignquote{positive economics} de Friedman.
 
 Malgré cette ouverture sur la philosophie des sciences, ces trois points de vues se rapportent à une vision de la validation assez rigide, comme en témoigne cette citation tiré de l'article de \textcite{Naylor1967} : \foreignquote{english}{To verify or validate any kind of model (e.g management science models) means to prove the model to be true. But to prove that a model is \enquote{true} implies (1) that we have established a set of criteria for differentiating between those models which are \enquote{true} and those which are not \enquote{ true }, and (2) that we have the possibility to apply these criteria to any given models}
 
@@ -894,9 +965,9 @@ Pour \textcite{Kleindorfer1998}, cette vision historique de la validation tel qu
 
 Défini comme une méthode empiriste par \textcite{Barlas1990} \footnote{Pour Barlas et Carpenter \textcite{Barlas1996} il existe deux camps philosophiques opposés : \foreignquote{english}{The traditional reductionist Logica1 positivist school (including empiricism, rationalism, verificationism and the “strong” falsificationism) would see a valid model as an objective representation of a real system. The model can be either “correct” or “incorrect”; once the model confronts the empirical facts, its truth or falsehood would be automatically revealed. In this philosophy, validity is seen as a matter of accuracy, rather than usefulness  \autocite{Barlas1990}. The opposing school (including more recent relativistic, holistic and pragmatist philosophies), in contrast, would see a valid model as one of many possible ways of describing a real situation. “No particular representation is superior to others in any absolute sense, although one could prove to be more effective. No model can claim absolute objectivity, for every model carries in it the modeler’s worldview. Models are not true or false, but lie on a continuum of usefulness.” \autocite{Barlas1990}.}}, la validation formalisé proposé par Naylor ne se réalise en effet qu'à l'aune des données disponibles, et se rapproche dans sa description plus d'un résultat binaire qui se réfère plus au cadre d'évaluation des positivistes logiques.
 
-Ce cadre logique plus que pratique est obsolète en philosophie des sciences, et ne garantit pas plus l'obtention d'une quelconque \enquote{vérité} que d'autres méthodes depuis la critique de Quine sur l'indétermination entre théories et données. De plus, les séries de données sont pour la plupart du temps difficile, sinon impossible à obtenir en science humaine, d'autant plus lorsque on tente d'observer des processus à l’œuvre dans un système complexe ou sa résultante imprévisible qualifié d'émergence, la simulation étant justement mobilisé pour pallier à cet inconvénient.
+Ce cadre logique plus que pratique est obsolète en philosophie des sciences, et ne garantit pas plus l'obtention d'une quelconque \enquote{vérité} que d'autres méthodes depuis la critique de Quine sur l'indétermination entre théories et données. De plus, les séries de données sont pour la plupart du temps difficile, sinon impossible à obtenir en science humaine, d'autant plus lorsque on tente d'observer des processus à l’œuvre dans un système complexe ou sa résultante imprévisible qualifié d'émergence, la simulation étant dans ce cas là justement mobilisé pour pallier à cet inconvénient.
 
-La naissance des systèmes dynamiques de Forrester allant de pair avec cette nouvelle méthode de construction des modèles autorisant la construction de structure causale beaucoup plus complexe que les précédentes techniques de simulation, il apparaît normal que celui ci se heurte dès l'apparition de cet outil aux premières critiques des tenants de cette logique binaire.
+La naissance des systèmes dynamiques de Forrester allant de pair avec cette nouvelle méthode de construction des modèles autorisant la construction de structure causale beaucoup plus complexe que les précédentes techniques de simulation. dès la publication d' \textit{industrial dynamics} des critiques extrémement vive qui remettent en cause la scientificité de son modèle, en opposant à sa méthode de validation à celle plus binaire proposé tel que proposé par Naylor.
 
 A ce titre, \textcite{Barlas1990} fait de Forrester le premier défenseur d'une validation plus en accord avec cette nouvelle méthode de construction des modèles, plus adapté à l'explication de processus complexe, comme en témoigne ces quelques extraits tirés de l'article : 
 
@@ -912,13 +983,14 @@ Finally, Forrester sees explanatory power as being at least as important as pred
 
 %Une critique qui tient à la structuration des modèles , notamment lorsqu'ils sont construit comme des systèmes faisant interagir des chaînes complexes de causalités, comme c'est le cas dans le cadre des systèmes dynamique ou des modèles multi-agents, dont le support conceptuel et formel est plutôt à trouver dans les outils du paradigme systémique. 
 
-Barlas en lui même ne rejette pas les méthodes quantitatives \textcite[188]{Barlas1996}, pas plus on l'imagine que Forrester, seulement ils mettent en avant le fait que la procédure de validation ne peut se limiter à une description objective, universelle, orienté seulement vers la prédiction.
+Attention ici à ne pas se tromper de cible, \textcite[188]{Barlas1996} en lui même ne rejette pas les méthodes quantitatives, pas plus que Forrester, seulement ils mettent en avant le fait que la procédure de validation ne peut se limiter à une validation totalement objective, universelle, et blâme le fait fait qu'on puisse penser l'explication au seul terme des prédictions qu'elles peuvent apporter. 
 
-Pour finir, bien qu'encore listé dans les catalogues de démarches pour la validation, celui ci ne nous intéresse pas tellement dans le cadre de nos pratiques, car il se focalise uniquement sur les sorties du modèles, ce qui dans un cadre explicatif tel que le nôtre, ne constitue qu'une toute petite partie de la validation. Ainsi, \textcite[106]{Amblard2006} dans le cadre des modèles agents, nous rappelle que dans un cadre ou le modélisateur cherche à évaluer la portée explicative de ces hypothèses, \enquote{[...] la recherche de similitudes avec les données, si elle peut être utile, ne peut absolument pas être un critère unique et définitif de validation}
+
 
 % Rapprochement entre Sargent et Amblard
 
-Une hypothèse partagé par In short, it is often said that a system dynamics model must generate the “right output behavior for the right reasons.”
+Une hypothèse partagé par 
+In short, it is often said that a system dynamics model must generate the “right output behavior for the right reasons.”
 
 Au contraire, toute série de données qui serait dans un contexte explicatif parfaitement bien estimés par un modèle, qu'il soit de régression ou de simulation, soulève bien souvent chez le chercheur en science sociale un scepticisme immédiat quand aux différentes hypothèses mobilisées pour en arriver à un tel résultat.
 
@@ -926,8 +998,6 @@ Au contraire, toute série de données qui serait dans un contexte explicatif pa
 ----
 
 %% FIXME : EN COURS !!
-Un témoignage important est quand même celui de Jay W. Forester, figure historique qui a donné naissance aux systèmes dynamiques, qui va affronter dès la publication d' \textit{industrial dynamics} des critiques extrémement vive qui remettent en cause la scientificité de son modèle, en s'attaquant à sa méthode de validation.
-
 
 \textcite{Kleindorfer1998} a bien résumé en quoi tenait ces deux pôles, ainsi un objectiviste extrême \foreignquote{english}{[...] believes that model validation can be divorced from the model builder and its context. He or she maintains that models are either valid or invalid, and that validation is an algorithmic process which is not open to interpretation or debate.} alors que par contraste un relativiste extrême \foreignquote{english}{[...] believes that the model and model builder are inseparable. As such, all models are equally valid or invalid and model validity is a matter of opinion.}
 
@@ -953,16 +1023,11 @@ Les termes \enquote{Vérification} et  \enquote{Validation} sont couramment renc
 
 Il y a donc en permanence dans l'activité du modélisateur l'illustration de multiples tensions qui font de celle ci une expérience parmis d'autres, et nous rapproche déjà d'un point de vue plus proche d'une vision relativiste qu'objectiviste. L'historique d'un modèle se lisant tout autant au travers des choix d'hypothèses exercés par le modélisateur tout au long de son expérience de modélisation, que dans la lecture de l'objet finalisé. Une tension entre d'un coté la volonté d'expliquer des données par un ensemble d'hypothèses explicatives respectant un critère de parcimonie, et de l'autre coté cette volonté naturelle du modélisateur à tenter d'expliciter un maximum de cette variabilité vis à vis de la séries de données dont on dispose, et dont on sais par ailleurs que celle ci est déjà loin d'être neutre, exhaustive ou exempt d'erreurs.
 
-
-
-
 => 
 
 Si l'approche plus récente de Sargent a certes permis de définir une démarche générique, elle exclue volontairement du débat le contexte subjectif de leur utilisation, et renvoie chaque discipline à l'explicitation de ses propres usages guidant l'avancement dans le processus incrémental de validation. \hl{Il en est de même pour la plupart des guides existant ...}
 
 Ainsi dans le cadre de notre étude, le terme \enquote{vérification}  \foreignquote{english}{[...] stands for absolute thruth } \autocite{David2009} \autocite{Oreskes1994} et se rapporte avant tout ici à la notion d'équifinalité \autocite{OSullivan2004} En dehors de toute considération technique, cette équifinalité qui décrit le fait que m-modèles créés par les scientifiques peuvent représenter la même réalité ( ou modèle de la réalité ), est tout à la fois un moteur et une limitation dans notre capacité de construction des connaissances. 
-
-
 
 
 \paragraph{La limitation des approche en ingénierie pour la validation en science sociale}
@@ -1032,7 +1097,7 @@ A ce titre, le recours au calibrage, et la recherche de cohérence interne dans 
 % Un point de vue partagé par {Batty2001} ce qui permettrai d'introduire la notion de système complexe également !
 
 Ainsi plus que les solutions techniques, c'est dans le processus de discussion et d'échange autour des hypothèses admises dans les modèles que notre connaissance sur les phénomènes réels est amenée à progresser. Par la mobilisation, l'hybridation, la confrontation de modèles ou briques de modèle issues d'angles de vues inter-disciplinaires,  on met en œuvre une grande discussion à même d'éclairer cette dynamique globale qui serait de toute façon insaisissable dans sa globalité. {cf transcidisciplinarité de morin ?}
- 
+
 \autocite{Rouchier2013} s'appuyant sur une définition de \todo{Gilbert et Artweiler} décrit cette forme de validation basée sur la réutilisation et l'enrichissement collectif des modèles comme étant post-moderne, \enquote{ dans la mesure ou elle base la valeur d'un modèle au regard de son usage par une communauté d'usagers }. Il y a donc dans le processus d'évaluation des modèles de simulation une dimension collective qui ne peut plus être niés dans l'établissement d'outil et de méthodologie . De façon plus générale, \autocite{Rouchier2013} évoque et décrit bien dans un article récent \enquote{  Construire la discipline \enquote{ Simulation Agent }} la nature de ce mouvement structurant qui œuvre dans la construction de communauté scientifique. Celui ci prend forme autour de revues revendiquant une large ouverture inter-disciplinaire, tel que JASSS, qui font alors office de catalyseur en supportant, relayant ces discussions de fond, à la fois sur le plan méthodologique et technique.
 
 Pour pousser l'analogie du \enquote{laboratoire virtuel} encore plus loin, il s'agirait alors d'ouvrir ce laboratoire aux autres scientifiques, d'en faire \enquote{place publique} afin de montrer l'histoire de nos protocoles, de nos modèles, de nos résultats \foreignquote{latin}{in vivo}, en assumant au passage toutes les contraintes que cela suppose. Dès lors, comment ne pas mettre en relation la complexification de cette représentation avec une épistémologie des pratiques du laboratoire tel que développés par Ian Hacking, ou Bruno Latour , et d'évaluer nos experimentation au regard d'un réseau de résultat cohérent, et non plus de théories dont on ne peut pas plus donner au final de réalité qu'à celle donnés à nos expérimentation ? 
@@ -1061,7 +1126,6 @@ Dans sa conclusion \autocite{Rouchier2013} mise sur le développement de la cré
 
 
 \input{positionRecherche}
-
 
 \printbibliography[heading=subbibliography]
 

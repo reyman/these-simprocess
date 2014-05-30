@@ -1,9 +1,35 @@
+% -*- root: These.tex -*-
 
 \section{Position de recherche}
 
-En admettant que la démarche de construction de modèle soit équivalent à son exploration des modèles autour du principe d'évaluation, l'évaluation devient un élément indissociable de notre démarche de construction des modèles, impose pour être réalisé la mise en oeuvre et le respect d'un certain nombre de principes que la recherche est censé organiser : Collectif, Dynamique, Flexible, Puissance, Reproductibilité, Extensibilité. 
+%Cette réflexion menant à la construction d'une démarche systématique pour l'évaluation et la construction de modèle de simulation doit certes être mené dans le cadre d'une amélioration de nos pratiques, mais nous avons vu que cet effort n'avait pas pour vocation première l'établissement d'un standard. En effet, la diversité de ces même pratiques rend impossible et réducteur une telle approche. 
 
-Dans notre volonté de proposer une démarche systématisant la construction et l'évaluation des modèles, le contexte historique doit être pris en compte, et il nous faut prendre le partie que ce n'est pas la proposition d'une n-ième méthodologie à vocation englobante, universalisante qui sera capable à elle seule de lever ces barrières, et cela même si elle prend acte de cette dimension collective dans sa formulation (reproductibilité des modèles, des expérimentations).
+% L'impossibilité d'une démarche englobante universelle
+
+Dans la section précédente, un historique de la validation a permis de voir quelles limites récurrentes pouvait expliquer la difficulté de développement des pratiques de validation. Dans cette section, il s'agit de développer une position de recherche qui prenne à la fois en compte l'analyse précédente, tout en la projettant dans un contexte de recherche plus actuel, marqué par le retour à des critères de scientificité plus strict. 
+
+\paragraph{Le choix d'une plateforme intégrée}
+
+Il nous faut dès à présent prendre le parti que ce n'est pas la seule proposition d'une n-ième méthodologie à vocation englobante, universalisante qui sera capable à elle seule d'embrasser l'ensemble des problématiques soulevés par la \enquote{validation} des modèles.
+
+L'évaluation est une opération hautement contextuelle \hl{(ref section précédente)}, ce qui nous empeche logiquement d'anticiper l'ensemble des objectifs, et des pratiques qui peuvent être celles de la communauté géographique. 
+
+D'autre part le processus d'évaluation contient une part de réalisation qui tient d'une confrontation avec le collectif \hl{(ref section précédente)}, ce qui suppose une ouverture peut compatible avec une méthodologie trop rigide comme pourrait l'être une méthodologie englobante.
+
+L'autonomie de l'objet modèle tient également dans les multiples trajectoires transformantes qu'il peut être amené à développer dans le temps, par l'attribution de nouveaux objectifs, de nouvelles échelles d'analyses. \autocite{Banos2013a}
+
+Enfin, dernier argument, peut être le plus fort, est celui du temps écoulé depuis la naissance du \enquote{problème de la validation}; à ce jour il existe relativement peu de méthodologie clef en main qui s'attaque de front à cette problématique, la plupart se bornant seulement à l'établissement de guides de bonne pratiques, ou de listes d'outils (mathématiques, statistiques, informatiques) disponible.
+
+Parmis les tentatives les plus connues, l'approche POM (Pattern Oriented Modelling) proposé en écologie par Grimm et Railsback vient compléter les précédents efforts de standardisation déjà réalisé avec ODD. La méthodologie POM ne propose qu'une échelle de description, centré autour de la construction du modèle. Non rattaché à un support informatique en particulier, l'auteur vise avant tout pour transmettre son message sur l'utilisation de Netlogo, et de ses outils intégrés pour l'exploration comme le Behavior Space \autocite{Grimm2011}. 
+
+L'accroche d'un public aux multiples visages, qu'ils soient experts ou débutants, est un enjeu tout à fait compris par une partie de la communauté des modélisateurs. Netlogo a permis de redonner une part d'indépendance aux chercheurs des sciences sociales, qui trouvent dans cet outil une facilité d'intégration et d'execution qui se veux le prolongement naturel, quasi instinctif et matérialisé d'une discussion scientifique. Une prothèse permettant à tout scientifique qui la supporte, de matérialiser dans un temps record une idée, et de la communiquer au monde. On se rapproche ici d'un système de communication ou le cout d'entrée est très faible par rapport aux gains supposés. Il existe toutefois un bémol, si Netlogo répond parfaitement à cette fonction de prototypage, et s'avère parfaitement adapté s'attire les faveurs d'un public novice découvrant la modélisation, il ne répond pas aux attentes des modélisateurs désirant évaluer leur modèle.
+
+Cette approche, malgré des qualités indégnables, ne permet pas de couvrir l'ensemble des problématiques qui se posent à un modélisateur lorsqu'il s'agit de construire ou d'évaluer un modèle, deux activités dont on a vu qu'elle était très proches en réalités. \hl{A completer par une description plus complete ou une référence vers cette méthodologie} 
+
+La diversité et la complémentarité des approches est un point central dans l'étude des systèmes complexes; par un ensembles de couplage entre des outils conçu sur une base autonome et standard;
+
+Autrement dit, ce projet s'inscrit dans un objectif double, il s'agit à la fois de garantir l'indépendance et la réutilisation des outils dans de multiples configurations, tout en problématisant leur utilisation dans des constructions méthodologique (ou cas d'utilisation) que nous jugeont pertinent pour l'exploration et la construction de modèles en géographie. De ce fait ils participent à l'évolution d'une plateforme appropriable par tout les points de vues, non réducteur car flexible dans le cadre de nos pratiques, et appuyant en plusieurs points cette dimension collective pour la construction et l'évaluation de modèle.
+% Construction = Evaluation 
 
 Moto : \enquote{Si je ne peux pas évaluer le modèle à ta place, je peux par contre te donner les meilleurs outils pour que tu puisse le faire} 
 = en te donnant les moyen d'etre autonome cad
@@ -19,6 +45,22 @@ But a atteindre,
 
 L'accès à l'outil informatique pour la construction est en voie de démocratisation, comme en témoigne de nombreux indicateurs, tant sociologiques extérieurs (génération petite poucette de Michel Serres), que politique (programmation de formation américain), qui s'exprime par le développement et la démocratisation de plateforme de programmation accessible à tous : Scratch, Blocky, Vixle (https://www.kickstarter.com/projects/realityfoil/vixle-a-game-engine-for-everyone)
 Un support qui maintenant date des premiers travaux du MIT avec Logo/StarLogo ... etc
+
+\paragraph{Les objets d'études}
+
+Deux modes d'exploration co-existe et diffère de par la fonction qu'il leur est attribué. L'exploration via l'utilisation des outils interne au modèle (indicateurs et visualisation temps réel), qui permettent entre autre un retour immédiat lors de la construction, et un autre niveau d'exploration, celui qui nous intéressent plus directement, qui permet de cartographier par le biais d'outils adaptés les comportements en sortie de tout modèle de simulation de type agent. 
+
+Dans un premier scénario, le \enquote{modèle} et \enquote{l'exploration de modèles} sont considérés dans un  comme deux objets indépendants, c'est à dire dont le développement peut tout à fait être dissociés. Le choix fait ici d'un couplage faible entre les deux objets d'études permet de garantir l'indépendance du modèle de simulation vis à vis de l'exploration, et inversement. Il en résulte une forme de généricité qui permet d'envisager l'application de tout type d'exploration envers tout type de modèle de simulation, c'est un premier point fort de la plateforme, un coût d'entrée qui se veut minimum pour l'utilisateur, quelque soit l'état d'avancement de son modèle de simulation.
+
+Dans un deuxième scénario, plus dynamique, la plateforme est utilisé comme support à la création du modèle de simulation. On s'interesse alors au dialogue entre 
+
+L'activité de modélisation mobilise un dialogue étroit entre le modèle et ces deux modes d'explorations. Toutefois, on estime que le deuxième mode est le seul qui permette à l'heure actuelle une évaluation des modèles satisfaisante aux yeux des critères scientifiques. Un point détaillé par la suite. \hl{(pourquoi ? )}
+
+De ce dialogue entre modèle de simulation et exploration du modèle nait l'activité de modélisation, la seule qui puisse ici déboucher sur un modèle évalué.
+
+Cette activité de dialogue entraine une relation de dépendance temporaire entre ces objets, qui permet à la fois d'envisager l'amélioration du modèle de simulation au vu des connaissances acquises dans l'exploration, mais également d'envisager l'amélioration, la standardisation ou la spécialisation des méthodes d'exploration au vu des résultats retournés. 
+
+ selon que l'on veut développer de nouvelles méthodes d'analyses . qui une fois mobilisés dans l'activité de modélisation 
 
 \paragraph{Le support de niveau de dialogues différents}
 
@@ -36,6 +78,8 @@ Objectif : Pour le moment il n'existe pas vraiment d'intermédiaire efficace sur
 
 --
 %FIXME : Est ce que les points sont hierarchiques ou pas ? 
+
+En admettant que la démarche de construction de modèle soit équivalent à son exploration des modèles autour du principe d'évaluation, l'évaluation devient un élément indissociable de notre démarche de construction des modèles, impose pour être réalisé la mise en oeuvre et le respect d'un certain nombre de principes que la recherche est censé organiser : Collectif, Dynamique, Flexible, Puissance, Reproductibilité, Extensibilité. 
 
 \paragraph{1 - Collectif}
 
@@ -161,14 +205,10 @@ Sur ce dernier point, une première réflexion révélatrice de cette expérienc
 
 \subsection{D'une démarche systématique à une démarche intégrée}
 
-Cette réflexion menant à la construction d'une démarche systématique pour l'évaluation et la construction de modèle de simulation doit certes être mené dans le cadre d'une amélioration de nos pratiques, mais nous avons vu que cet effort n'avait pas pour vocation première l'établissement d'un standard. En effet, la diversité de ces même pratiques rend impossible et réducteur une telle approche. 
-Un autre point de vue défendu ici, montre qu'il est plus intéressant de retranscrire cette diversité par un ensembles de couplage entre des outils conçu sur une base autonome et standard;
-
-Autrement dit, ce projet s'inscrit dans un objectif double, il s'agit à la fois de garantir l'indépendance et la réutilisation des outils dans de multiples configurations tout en problématisant leur utilisation dans des constructions méthodologique (ou cas d'utilisation) que nous jugeont pertinent pour l'exploration et la construction de modèles en géographie. De ce fait ils participent à la création d'un écosystème appropriable par tout les points de vues, non réducteur car flexible dans le cadre de nos pratiques, et appuyant en plusieurs points cette dimension collective pour la construction et l'évaluation de modèle.
 
 Deux niveaux de discussion doivent être envisagé, le modèle d'une part, et l'exploration de ce modèles d'autres part.
 
-Une réflexion en terme d'outils, une réflexion en terme de couplage entre les outils, une réflexion en terme de plateforme support garantissant une dimension collective à cette réflexion.
+%Une réflexion en terme d'outils, une réflexion en terme de couplage entre les outils, une réflexion en terme de plateforme support garantissant une dimension collective à cette réflexion.
 
 L'objectif est la mise en place d'un outil qui fait office d'attracteur,  capable d'intégrer des outils et des méthodes, mais aussi d'incubateur capable de catalyser un processus de standardisation des outils ou méthodes qui s'appuient dessus. 
 
