@@ -1,4 +1,4 @@
 #!/bin/sh
-xelatex These.tex
+xelatex -shell-escape These.tex
 biber These
-xelatex These.tex
+xelatex -shell-escape These.tex

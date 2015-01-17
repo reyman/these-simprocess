@@ -2,3 +2,195 @@
 
 \section{Simprocess}
 \label{sec:simprocess}
+
+\subsection{Le système de workflow OpenMOLE}
+
+\subsubsection{Historique}
+
+
+
+\subsubsection{Principes et mise en oeuvre}
+
+
+\subsection{Algorithmes Evolutionnaire}
+
+% Présentation de l'interet de ces techniques
+
+\subsubsection{historique}
+
+Barricelli (1953) et Friedman
+
+Généticien Alex Fraser (1957)
+et Bremerman (1958)
+
+Conrad Pattee
+
+DeJong2006a p23 renvoie à Fogel1998 , auquel je rajoute Fogel2006
+
+On a déjà rapidement décrit dans la section à propos de l'Artificial Life \ref{p:heritage_complexe} les deux voies possibles qu'il était possibler d'emprunter dans l'intéret porté sur la définition du processus naturel d'évolution. 
+
+Il existe en effet au moins deux façon aujourd'hui d'introduire des développements informatiques se rapportant à ce processus évolutif. D'un coté, les tentatives de reproduction plus ou moins fidèles des différents mécanismes à l'oeuvre dans le processus d'évolution semblent plus mettre en avant un objectif de compréhension, alors que la focalisation sur ces même mécanisme pour leur seul capacité d'apprentissage tend à s'éloigner de la réalité biologique pour s'orienter plus vers le développement d'algorithmes rejoignant a posteriori la regroupement unifié d'algorithmes désignés comme métaheuristiques \Anote{note_metaheuristique}. Autrement dit, là ou des chercheurs vont tenter de reproduire au mieux le processus d'évolution dans ce qu'il a de créatif, de non optimisé, de coévolutif car construit par \Anote{note_pattee_semantic_closure} et avec l'environnement, d'autres vont reprendre ce même processus en vue d'une évolution si possible borné et dirigé par la résolution d'un ou de plusieurs objectifs défini de façon fixe et extrinseque \autocites{Taylor2001, Taylor2012}.
+
+Lorsqu'on s'intéresse de plus pres à la littérature scientifique de ces algorithmes regroupés depuis Fogel sous le terme d'\foreignquote{english}{Evolutionary Computation} (EC), on constate pour tout une partie des publications une de-contextualisation complète de leur utilisation. La question d'une similitude initiale avec le vivant n'étant le plus souvent évoqué que pour illustrer des racines historiques éloignés. Ce qui peut apparaitre comme une forme de surspécialisation est en quelques sorte le prix à payer d'une évolution de la discipline avant tout dirigé par une communauté de chercheurs informatiques dirigés par la performance et la généricité d'application sur des classes de problèmes de plus en plus étendues.
+
+Si aujourd'hui on peut observer un tel cloisonnement, un regard sur l'histoire de la discipline tend à montrer tout l'inverse, car nombreux sont les pionniers ayant développés des intérets simultanés pour ces deux approches : les expériences très longtemps resté inconnue du mathématicien Barricelli dès 1954 \Anote{barricelli_multi_utilisation}, l'approche du généticien Fraser qui décrit et simule l'évolution de population génétique dès 1957, les travaux de Patte et Conrad avec EVOLVE à la fin des années 1960, les algorithmes génétiques \Anote{holland_multi_utilisation} de Holland, un disciple de Burks.
+
+Il existe toutefois une littérature scientifique parallèle qui continue de motiver la rencontre autour de disciplines scientifiques ayant un intéret pour la recherche en Artificial Life. 
+
+C'est le cas par exemple de la biologie, ou de l'écologie \autocite{Hamblin2013} qui organisent autour de publication transverses la réflexion sur la reintroduction des outils tel qu'ils sont développés en informatique, entrainant de fait aussi la création et l'évolution de ces derniers \autocite{Hogeweg2011}. C'est le cas en écologie, ou on voit comment les différentes approches peuvent parfaitement se cotoyer  : \foreignquote{english}{The first of these requires the application of the evolutionary process in much the same way as it has been traditionally applied within A-Life: as a means to dynamically adjust agent parameter values to support their viability and reproduction within the virtual environment. [...] The second approach we suggest employs artificial evolution to match simulation patterns against data gathered from the level of specific species up to data concerning specific ecosystems. Once the parameters of the system have been optimised so as to reproduce the patterns observed in field data, the evolution algorithm is turned off. The model may then be employed to answer questions relating to the specific ecosystem and species that it represents. Unfortunately it may not then be used to study the evolution of these specific species in specific environments. This is a shortcoming of the artificial evolution algorithm (it does not model real evolution in detail) that would be worth overcoming.} \autocite{Dorin2008} Mais également en biologie, ou on imagine l'importance que peuvent avoir les travaux de \textcites{Taylor2001}[221]{Taylor1999} pour la mise en oeuvre de modèle de simulation dirigé vers l'émergence créative de nouveau phénotype dans un environnement ouvert \autocite[33]{Taylor1999}. Une critique récurrente adressé aux modèles d'auto-organisation actuel \autocite{Pumain2003}, encore incapable de simuler l'émergence de nouvelle structure, de nouvelle entités de façon crédible. 
+
+Dans la branche de recherche que nous voulons éclairer ici, les développements ne se mesure plus en fonction d'un critère de réalisme biologique, mais en fonction de critères se rapportant à la capacité de résolution des algorithmes existants : rapidité, diversité, etc.
+
+\textcite{DeJong2006a} retient trois foyers de développement indépendants importants pour le développement de cette deuxième branche dans les années 1960, la Technical University de Berlin avec Rechenberg et Schwefel, UCLA à la même période avec Fogel, et l'université du Michigan avec Holland.
+
+De ces trois branches vont émerger courant des années 1970 ce que \textcite{DeJong2006a} qualifie de \textit{Evolutionary Algorithms (EA)} canoniques. Autrement dit, ce sont des algorithmes matures, qui ont prouvé leur capacité à produire des solutions dans un contexte précis : Evolutionary Programming (EP), Evolution Strategy (ES), Genetic Algorithm (GA)
+
+Ils vont représenter la base d'un développement qui va s'accélerer dans les années 1980, avec la création de variation ou l'extension de ces algorithmes à de nouveaux problèmes. Les années 1990 vont quand à elle consacré la rencontre et l'unification des différentes approches jusqu'à alors mené de façon assez indépendante si on en croit De Jong.  Réuni dans les même conférences, et les meme journaux, cette unification se traduit à la fois par la reconnaissance d'un seul terme fédérateur de la discipline \textit{Evolutionary Computation (EC)}. Parmi les conséquences les plus visible on notera l'hybridation accéléré entre les différentes idées, et la remise à plat théorique. \autocite[23-31]{DeJong2006a} 
+
+Dans la discipline informatique nommé  intègre un certain nombre d'algorithme inspiré de la biologie  autour d'un vocabulaire et de concept clef reprenant de façon très stylisé les éléments de la métaphore biologique.
+
+
+
+
+Mais c'est seulement à partir des années 1980, et avec l'avénement de capacité de calcul plus conséquente, que ce type d'algorithme va connaitre plus de succès. 
+
+
+C'est sous ce terme Evolutionary computation qu'on retrouve cette forme de spécialisation Back1997
+DeJong2006a
+
+
+
+En 1997, dans une publication introduisant l'EC dans la série renommée des \textit{IEEE Transactions}, voici ce que disent les auteurs Bach, Hammel et Schwefel à propos des objectifs de cette discipline :
+
+\foreignquote{english}{We argue that the most signicant advantage of using evolutionary search lies in the gain of exibility and adaptability to the task at hand, in combination with robust performance (although this depends on the problem class) and global search characteristics. In fact, evolutionary computation should be understood as a general adaptable concept for problem solving, especially well suited for solving difficult optimization problems, rather than a collection of related and ready-to-use algorithms. The majority of current implementations of evolutionary algorithms descend from three strongly related but independently developed approaches: genetic algorithms,evolutionary programming , and evolution strategies. [...] 
+The fundamental difference in the evolutionary computation approach is to adapt the method to the problem at hand. In our opinion, evolutionary algorithms should not be considered as off-the-peg, ready-to-use algorithms butrather as a general concept which can be tailored to most of the real-world applications that often are beyond solution by means of traditional methods. Once a successful EC-framework has been developed it can be incrementally adapted to the problem under consideration, to changes of the requirements of the project, to modiffications of the
+model and to the change of hardware resources.} \autocite{Back1997a}
+
+On observe également une autre classe d'algorithmes d'optimisation basé non plus sur la métaphore évolutive par reproduction (même si l'hybridation est envisageable), mais sur les capacités d'auto-organisations observés chez certains animaux comme les fourmis, les abeilles qui ont d'abord inspiré les développements de plateformes informatique adaptés à l'émergence de ce type de comportements, avant d'être repris et utilisé par la suite pour résoudre des problèmes d'optimisation : PSO (Particle Swarm Optimization), ACO (Ant Colony Algorithms), ABC (Artificial Bee Colony)
+
+\subsubsection{Vocabulaire et concept clef}
+
+
+
+
+\hl{Principe général}
+
+Un recoupement des concepts développés au travers des trois version canoniques permet la construction d'une définition générique. Ces concepts clef peuvent ainsi être repris non seulement pour décrire les version canoniques mais également pour développer de nouvelles variantes d'algorithmes, en correspondance avec la vision de Bach.
+
+\textcite{DeJong2006a} propose de retenir dans un cadre de construction commun le schéma d'éxecution suivant : 
+
+\begin{itemize}
+\item Une population de taille constante $m$ évolue au cours du temps
+\item La population courante est utilisé comme une source de parents pour produire une progéniture de taille $n$
+\item La population étendue ainsi constitué est réduites de $m + n$ à $m$ individus.
+\end{itemize}
+
+Les classes d'élements amenés à varier sont ainsi les suivantes : 
+
+\begin{itemize}
+\item une population de taille m
+\item une progéniture de taille n
+\item une méthode de selection des parents
+\item une méthode de selection des survivants
+\item un ensemble d'opérateurs pour la reproduction
+\item une méthode interne pour la représentation des individus
+\end{itemize}
+
+
+$g := 1$ to $G_{max}$
+
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{How to write algorithms}
+\end{algorithm}
+
+((Schéma))
+
+A partir d'une description minimale et communément accepté de ce processus ont dérivés de nouveaux blocs, et de nouveaux schéma d'organisation
+
+La modularité de cette architecture a déjà pu par chance être saisie dans le développement de librairies logicielles 
+
+
+Les librairies logicielles permettant la mise en oeuvre d'algorithmes évolutionnaires existent dans de très nombreux langages informatiques.
+
+
+\subsubsection{Quelle utilité pour les librairies d'algorithmes génétiques}
+
+\subsubsection{Un point rapide sur les nombreuses librairies existantes}
+
+\subsubsection{La nécessité d'une librairie couplé avec la modélisation}
+
+\begin{itemize}
+	\item Une architecture extensible et modulaire
+	\item Une mise en oeuvre accessible aux débutants
+	\item Une prise en charge automatique et transparente des architecture multi-coeur 
+	\item La mise à disposition d'une collection d'algorithmes evolutionnaire mono et multi-critères 
+\end{itemize}
+
+Mais si on se contente d'évoquer seulement ces objectifs là, on reste dans une construction isolé dont il faut encore l'interfacer, la relier, à l'execution de nos modèles de simulation.
+
+La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie. 
+
+Dans notre étude, les \textit{individus} représentent une instance de simulation,
+
+
+
+\paragraph{BehaviorSearch}
+
+La librairie \textit{BehaviorSearch} developpé par Railsback pour Netlogo intègre une librairie d'algorithme génétique.
+
+\paragraph{MGO et OpenMOLE}
+
+Le choix est fait ici de développé une librairie MGO utilisable de façon indépendante, ou de façon couplé à openMOLE. 
+
+Les objectifs motivant la construction d'une nouvelle librairie sont les suivants : 
+
+
+
+L'étape suivante est donc le couplage de cette librairie avec openMOLE 
+
+
+- La possibilité d'utiliser des algorithmes génétique avec une grille de calcul
+
+
+Martin Oderskys’
+
+
+\begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
+import fr.iscpif.mgo._
+import math._
+import util.Random
+
+trait ZDT4 extends GAProblem with MGFitness {
+
+  def min = Seq.fill(genomeSize)(0.0)
+  def max = 1.0 :: Seq.fill(genomeSize - 1)(5.0)
+
+  type P = Seq[Double]
+
+  override def express(g: Seq[Double], rng: Random) = Seq(f1(g), f2(g))
+  override def evaluate(p: P, rng: Random) = p
+
+  def f1(x: Seq[Double]) = x(0)
+  def f2(x: Seq[Double]) = g(x) * (1 - sqrt(x(0) / g(x)))
+  def g(x: Seq[Double]) =
+    1 + 10 * (genomeSize - 1) + (1 until genomeSize).map 
+    { i => pow(x(i), 2) - 10 * cos(4 * Pi * x(i)) }.sum
+}
+}
+\end{minted}
+
+\subsection{Une brique logicielle dédiée à la visualisation de résultats}
+
+
