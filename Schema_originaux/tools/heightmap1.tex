@@ -1,0 +1,87 @@
+% Plot of the probability that two people out of n people have the
+% same birthday.
+% Author: Martin Thoma
+% Source: ../plotting-graphs-with-pgfplots/
+
+%showframe=true,left=0cm,top=0cm,right=0cm,nohead,nofoot
+\documentclass{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{varwidth}
+
+\pgfplotsset{compat=1.8}
+
+\pgfplotsset{
+  compat=1.8,
+  colormap={whitered}{color(0cm)=(white); color(2cm)=(orange!75!red)},
+  colormap={white}{color(0cm)=(white); color(1cm)=(white)}
+}
+
+%\pgfplotsset{
+%compat=1.8,
+%
+%}
+
+
+\begin{document}
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+  \begin{axis}
+  [view={210}{60},
+  width=0.5\linewidth,  %% now needed
+  colormap name=whitered ] 
+   \addplot3[surf, draw=black, mesh/ordering=y varies] table  {heightmap1.dat};
+  \end{axis}
+\end{tikzpicture}
+% second graphic↓ don't leave blank line
+\begin{tikzpicture}
+  \begin{axis}
+  [view={210}{60},
+  width=0.5\linewidth,  %% now needed
+  colormap name=whitered ]
+   \addplot3[surf, draw=black, mesh/ordering=y varies] table  {heightmap1.dat};
+  \end{axis}
+\end{tikzpicture}
+
+
+\end{figure}
+
+
+
+%\begin{tikzpicture}
+%    \begin{axis}[
+%        width=15cm, height=8cm,     % size of the image
+%        grid = major,
+%        grid style={dashed, gray!30},
+%        %xmode=log,log basis x=10,
+%        %ymode=log,log basis y=10,
+%        xmin=0,     % start the diagram at this x-coordinate
+%        xmax=62,    % end   the diagram at this x-coordinate
+%        ymin=0,     % start the diagram at this y-coordinate
+%        ymax=1.1,   % end   the diagram at this y-coordinate
+%        /pgfplots/xtick={0,5,...,60}, % make steps of length 5
+%        extra x ticks={23},
+%        extra y ticks={0.507297},
+%        axis background/.style={fill=white},
+%        ylabel=probability of at least one birthday-collision,
+%        xlabel=people,
+%        tick align=outside]
+%
+%      % import the correct data from a CSV file
+%      \addplot table [id=exp]{data.csv};
+%
+%      % mark x=23
+%      \coordinate (a) at (axis cs:23,0.507297);
+%      \draw[blue, dashed, thick](a -| current plot begin) -- (a);
+%      \draw[blue, dashed, thick](a |- current plot begin) -- (a);
+%
+%      % plot the stirling-formulae
+%      \addplot[domain=0:60, red, thick] 
+%        {1-(365/(365-x))^(365.5-x)*e^(-x)}; 
+%    \end{axis} 
+%\end{tikzpicture}
+
+\end{document}
