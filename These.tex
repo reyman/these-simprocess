@@ -15,6 +15,21 @@
 \usepackage{soul}
 \usepackage{minted}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{amssymb}
+\usepackage{amsmath,mathtools}
+%\usepackage{showframe}
+\usepackage{enumitem}
+
+
+\newsubfloat{figure}
+
+\definecolor{fftttt}{rgb}{1,0.2,0.2}
+\definecolor{ttttff}{rgb}{0.2,0.2,1}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
+\setcounter{equation}{0}
 
 %http://tex.stackexchange.com/questions/144943/footnote-non-inline-syntax
 \usepackage{sepfootnotes}
@@ -126,14 +141,17 @@
   }  
 }
 
+%% JUSTIFICATION PART OF SIDE CAPTION
+%% http://tex.stackexchange.com/questions/165740/reduce-size-and-justify-font-of-caption-using-memoir
 \usepackage{ragged2e}
 
 \renewcommand*{\sidecapstyle}{%
-  \ifscapmargleft
+ \ifscapmargleft
     \captionstyle{\justifying\scriptsize}%
   \else
     \captionstyle{\justifying\scriptsize}%
   \fi}
+
 %%SIDE CAPTION LITTLE END
 
 
@@ -191,9 +209,7 @@
 \makeatother
 
 %\precaption{\raggedright}
-\captiondelim{\newline}
-\captionstyle{\centerlastline}% for title
-\setlength{\belowcaptionskip}{\onelineskip}
+%\setlength{\belowcaptionskip}{\onelineskip}
 \setlength{\footnotesep}{\onelineskip}
 
 %% FOOTNOTE COLORING START
