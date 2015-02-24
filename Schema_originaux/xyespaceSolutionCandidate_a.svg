@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="40.337189mm"
+   height="40.022873mm"
+   viewBox="0 0 142.92705 141.81333"
+   id="svg7659"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="xyespaceSolutionCandidate_a.svg">
+  <defs
+     id="defs7661">
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4235"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4238"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4235-8"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4238-6"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="-90.952211"
+     inkscape:cy="79.888362"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:window-width="1883"
+     inkscape:window-height="1176"
+     inkscape:window-x="37"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7664">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-52.216527,-816.76391)">
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 70.836749,921.66105 119.376041,0"
+       id="path361580-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 70.83675,901.65753 119.37604,0"
+       id="path361580-6-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 70.657499,881.53478 119.376041,0"
+       id="path361580-6-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 70.655892,861.55952 119.376048,0"
+       id="path361580-6-37"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 70.613062,841.39043 119.376048,0"
+       id="path361580-6-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 170.01945,940.5665 0,-119.37604"
+       id="path361580-6-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 150.01593,940.5665 0,-119.37604"
+       id="path361580-6-2-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 129.89318,940.74575 0,-119.37604"
+       id="path361580-6-3-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 109.91792,940.74736 0,-119.37605"
+       id="path361580-6-37-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-opacity:0.50196078;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.5, 0.5;stroke-dashoffset:0;stroke-opacity:0.29411765"
+       d="m 89.748831,940.79019 0,-119.37605"
+       id="path361580-6-1-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
+       d="m 70.285714,821.97892 0,119.64286 119.642856,0"
+       id="path3340"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="166.02734"
+       y="955.03394"
+       id="text8322"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan8324"
+         x="166.02734"
+         y="955.03394"
+         style="font-size:15px">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="55.313057"
+       y="844.31964"
+       id="text8322-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan8324-2"
+         x="55.313057"
+         y="844.31964"
+         style="font-size:15px">y</tspan></text>
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2"
+       r="2.6637053"
+       cy="861.45312"
+       cx="90.005127"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:1;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4"
+       r="2.6637053"
+       cy="881.49164"
+       cx="109.95435"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:1;fill:#729fcf;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-8"
+       r="2.6637053"
+       cy="881.3844"
+       cx="90.028572"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-4"
+       r="2.6637053"
+       cy="861.51105"
+       cx="109.94188"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-8"
+       r="2.6637053"
+       cy="901.63824"
+       cx="110.00513"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-81"
+       r="2.6637053"
+       cy="921.67676"
+       cx="129.95435"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:1;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-8-1"
+       r="2.6637053"
+       cy="921.56952"
+       cx="110.02856"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:1;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-4-4"
+       r="2.6637053"
+       cy="901.69617"
+       cx="129.94188"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-4-4-4"
+       r="2.6637053"
+       cy="881.479"
+       cx="130.17857"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="display:inline;opacity:0.80286734;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-2-4-8-9"
+       r="2.6637053"
+       cy="901.46149"
+       cx="90.050507"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.3992"
+       y="904.25574"
+       id="text338733"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735"
+         x="93.3992"
+         y="904.25574"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">a</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.399193"
+       y="884.27362"
+       id="text338733-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-7"
+         x="93.399193"
+         y="884.27362"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">b</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.483124"
+       y="864.33978"
+       id="text338733-98"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4"
+         x="93.483124"
+         y="864.33978"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">c</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="113.43491"
+       y="904.23785"
+       id="text338733-98-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3"
+         x="113.43491"
+         y="904.23785"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="113.29205"
+       y="884.30927"
+       id="text338733-98-6-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3-2"
+         x="113.29205"
+         y="884.30927"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">f</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="133.55991"
+       y="924.27356"
+       id="text338733-98-6-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3-28"
+         x="133.55991"
+         y="924.27356"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="133.25633"
+       y="904.32709"
+       id="text338733-98-6-5-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3-28-0"
+         x="133.25633"
+         y="904.32709"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="133.61348"
+       y="884.25568"
+       id="text338733-98-6-5-9-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3-28-0-0"
+         x="133.61348"
+         y="884.25568"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">j</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="113.58908"
+       y="864.28107"
+       id="text338733-98-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-4"
+         x="113.58908"
+         y="864.28107"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">g</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="113.62653"
+       y="924.36981"
+       id="text338733-98-6-80"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/solution_vers_objectifs2"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan338735-4-3-8"
+         x="113.62653"
+         y="924.36981"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:sans-serif;-inkscape-font-specification:sans-serif">d</tspan></text>
+  </g>
+</svg>

@@ -18,10 +18,86 @@
 \usepackage{amssymb}
 \usepackage{amsmath,mathtools}
 %\usepackage{showframe}
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
+\usepackage{amstext}    % defines the \text command, needed here
+\usepackage{array}
+\usepackage[l2tabu]{nag}
+
+%%%%%%%%%%%%%%%%%%
+% SVG 
+%%%%%%%%%%%%%%%%%%
+% SVG not working because bug 
+% see http://tex.stackexchange.com/questions/84837/svg-from-inkscape-doesnt-work-in-xelatex
+% ghostscript + inkscape needed
+%\usepackage{svg}
+%
+% OR use
+%
+%\usepackage{epstopdf}
+%
+%\newcommand{\executeiffilenewer}[3]{%
+%    \ifnum\strcmp{\pdffilemoddate{#1}}%
+%        {\pdffilemoddate{#2}}>0{\immediate\write18{#3}}
+%    \fi}
+%
+%\newcommand{\includesvg}[1]{%
+%    \executeiffilenewer{#1.svg}{#1.pdf}%
+%        {inkscape -z -D --file=#1.svg --export-pdf=#1.pdf --export-latex}%
+%    \input{#1.pdf_tex}}
 
 
-\newsubfloat{figure}
+%%%%%%%%%%%%%%%%%%
+% BLANK UNDER SIDE CAPTION 
+% http://tex.stackexchange.com/questions/227312/remove-blank-space-before-text-under-figure-when-using-sidecaption-and-memoir-cl/228412#228412
+
+\makeatletter
+\renewcommand*{\m@mscapopboxes}{%
+  \m@mcalcscapraise%
+  \usebox{\m@mscap@fbox}%\m@mscapcheckside
+  \ifscapmargleft%
+  \rlap{\kern-\m@mscaplkern%
+    \raisebox{\m@mscapraise}{\smash[b]{\usebox{\m@mscap@capbox}}}%
+  }%
+  \else%
+    \rlap{\kern\sidecapsep%
+      \raisebox{\m@mscapraise}{\smash[b]{\usebox{\m@mscap@capbox}}}%
+    }%
+  \fi%
+  \gdef\m@mscapthisside{}%
+  \@mem@scap@afterhook%
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+% SIDE CAPTION 
+
+\newsubfloat{figure}{}
+\newsubfloat{table}{}
+
+\captiontitlefont{\normalfont}% title font
+\precaption{\raggedright}% for Caption N
+\captiondelim{\newline}% newline*
+\captionstyle{\raggedright}% for title
+\setlength{\belowcaptionskip}{\onelineskip}
+%%%%%%%%%%%%%%%%%%$
+
+%%%%%%%%%%%%%%%%%%
+% SUB CAPTION 
+% http://tex.stackexchange.com/questions/49448/controlling-the-subcaption-space-in-memoir
+\loosesubcaptions
+%\subcaptionsize{ hsizei }
+%\subcaptionlabelfont{ hfontspeci }
+%\subcaptionfont{ hfontspeci }
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+% Enumitem global option
+% http://tex.stackexchange.com/questions/10684/vertical-space-in-lists
+\setlist[itemize]{noitemsep}
+\setlist[enumerate]{noitemsep}
+%%%%%%%%%%%%%%%%%%
 
 \definecolor{fftttt}{rgb}{1,0.2,0.2}
 \definecolor{ttttff}{rgb}{0.2,0.2,1}
@@ -42,6 +118,8 @@
 
 \setparaheadstyle{\normalsize\itshape}
 \setafterparaskip{1ex}
+
+%\usepackage[font=scriptsize]{caption}
 
 %% QUOTE FRENCH ITALICS
 \makeatletter
@@ -92,6 +170,25 @@
 
 \sidecapmargin{outer}
 \setsidecappos{t}
+%\setsidecaps{\marginparsep}{\marginparwidth}
+
+
+% BOX LEGEND 
+% some color definitions
+\definecolor{tangoBlue1}{RGB}{114,159,207}
+\definecolor{tangoOrange1}{RGB}{245,121,0}
+\definecolor{tangoRed1}{RGB}{239,41,41}
+\definecolor{tangoBlack1}{RGB}{0,0,0}
+\definecolor{tangoGrey1}{RGB}{136,138,133}
+
+% normal box
+\newcommand{\sqbox}[1]{%
+  \begin{tikzpicture}%[baseline={(a.base)}]
+     \fill[#1] (0,0) rectangle (1.2ex,1.2ex);
+  \end{tikzpicture}%
+  }
+
+
 
 %%SIDE CAPTION LITTLE START
 
@@ -140,6 +237,8 @@
     }
   }  
 }
+
+\strictpagecheck
 
 %% JUSTIFICATION PART OF SIDE CAPTION
 %% http://tex.stackexchange.com/questions/165740/reduce-size-and-justify-font-of-caption-using-memoir
@@ -206,6 +305,7 @@
 \makeatletter
 %\renewcommand{\fnum@figure}[1]{\textbf{\figurename~\thefigure}}
 \renewcommand{\fnum@figure}{\textbf{Figure~\thefigure~--}}
+\renewcommand{\fnum@table}{\textbf{Tableau~\thetable~--}}
 \makeatother
 
 %\precaption{\raggedright}

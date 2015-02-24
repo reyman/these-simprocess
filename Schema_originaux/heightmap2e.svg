@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="54.206474mm"
+   height="52.233192mm"
+   viewBox="0 0 192.07018 185.07824"
+   id="svg5192"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="heightmap2e.svg">
+  <defs
+     id="defs5194">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect7710-83-2-3-2"
+       is_visible="true"
+       pattern="m 647.37436,235.18926 c 0.41738,0.58153 0.65864,1.24458 0.74219,1.91992 l -25.51172,0 0,1 25.51368,0 c -0.082,0.67452 -0.32354,1.33076 -0.74415,1.90235 l 6.55469,-2.41016 -6.55469,-2.41211 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect7710-83-2-3"
+       is_visible="true"
+       pattern="m 635.71555,224.70403 c 0.41738,0.58153 0.65864,1.24458 0.74219,1.91992 l -25.51172,0 0,1 25.51368,0 c -0.082,0.67452 -0.32354,1.33076 -0.74415,1.90235 l 6.55469,-2.41016 -6.55469,-2.41211 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect7710-7-4-8-1-1-6"
+       is_visible="true"
+       pattern="m 533.16657,272.52693 c 0.41738,0.58153 0.65864,1.24458 0.74219,1.91992 l -25.51172,0 0,1 25.51367,0 c -0.082,0.67452 -0.32353,1.33076 -0.74414,1.90235 l 6.55469,-2.41016 -6.55469,-2.41211 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect7710-2-6"
+       is_visible="true"
+       pattern="m 540.76953,239 c 0.41738,0.58153 0.65864,1.24458 0.74219,1.91992 l -25.51172,0 0,1 25.51368,0 c -0.082,0.67452 -0.32354,1.33076 -0.74415,1.90235 l 6.55469,-2.41016 L 540.76953,239 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart-2-6"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4235-24-5"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend-8-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4238-1-9"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-110.06919"
+     inkscape:cy="18.438211"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-left="0.1"
+     fit-margin-top="0.1"
+     fit-margin-right="0.1"
+     fit-margin-bottom="0.1"
+     inkscape:window-width="1163"
+     inkscape:window-height="1896"
+     inkscape:window-x="37"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5197">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-519.95585,-850.33615)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart-2-6);marker-end:url(#Arrow2Lend-8-1)"
+       d="m 540,852.36218 0,170.00002 170,0"
+       id="path3340-70-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="684.67017"
+       y="1035.0601"
+       id="text8322-86-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan8324-9-4"
+         x="684.67017"
+         y="1035.0601"
+         style="font-size:15px">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-891.1582"
+       y="531.70667"
+       id="text8322-8-6-1"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><tspan
+         sodipodi:role="line"
+         id="tspan8324-5-4-0"
+         x="-891.1582"
+         y="531.70667"
+         style="font-size:15px">f(x)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 548.5,892.36218 c 0,0 16.5,9 21.5,19 5,10 5,26 16.5,23 10.34264,-2.69808 13.5,-27 20,-25 8.61528,2.65085 4.5,55.99999 14.5,55.99999 10,0 10.5,-59.99999 20.5,-59.99999 10,0 11,3.75 25.5,15.25 10.58447,8.39458 17.77463,13.83455 23.5,-5.25 3,-10 13.5,16.5 13.5,16.5"
+       id="path31285-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssssssc"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-6"
+       r="2.6637053"
+       cy="920.04047"
+       cx="593.43115"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-8-6"
+       r="2.6637053"
+       cy="931.04047"
+       cx="583.93115"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#3465a4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-92-8"
+       r="2.6637053"
+       cy="915.04047"
+       cx="666.93115"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-52-8"
+       r="2.6637053"
+       cy="897.79047"
+       cx="564.18115"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 594.79723,908.10369 c -0.46506,0.65024 -1.07181,1.06272 -1.71779,1.27628 -0.14356,-0.85676 -0.3149,-1.71082 -0.52671,-2.55962 -0.80392,-3.22778 -2.34674,-6.33457 -4.77044,-8.6754 l 0,0 0,0 c -1.46443,-1.38863 -3.39423,-2.10619 -5.29372,-2.4665 -2.05974,-0.40084 -4.15879,-0.45088 -6.22303,-0.34173 l -10e-6,0 c -1.74793,0.091 -3.48646,0.30007 -5.2059,0.60007 l 0,0 c -0.536,0.0935 -1.07135,0.1961 -1.60507,0.31082 l 0,0 0,0 c -0.14763,0.0317 -0.29569,0.0645 -0.44405,0.0989 -0.039,0.009 -0.0782,0.0183 -0.11759,0.0277 -0.014,0.003 -0.0284,0.007 -0.0424,0.0103 l 0.23329,0.97241 c 0.0132,-0.003 0.0268,-0.007 0.0401,-0.01 0.0373,-0.009 0.0749,-0.0178 0.11265,-0.0265 0.14179,-0.0329 0.28457,-0.0645 0.42818,-0.0954 l 1e-5,0 0,0 c 0.51915,-0.11162 1.0417,-0.21178 1.56668,-0.30335 l 0,0 0,0 c 1.68471,-0.29362 3.38329,-0.49817 5.08603,-0.58654 l 0,0 0,0 c 2.01422,-0.10281 4.03199,-0.0585 5.97916,0.32447 1.7881,0.36137 3.55087,0.99208 4.7926,2.20597 l 10e-6,0 c 2.26532,2.16702 3.71583,5.11455 4.4935,8.1976 0.20605,0.81855 0.37254,1.64731 0.51222,2.4837 -0.68307,0.0127 -1.37184,-0.16494 -2.02491,-0.53083 1.26294,2.30694 2.27132,4.97718 3.34715,7.57965 0.52312,-2.76724 1.13804,-5.50744 1.38005,-8.49225 z"
+       id="path3411-5-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc"
+       inkscape:path-effect="#path-effect7710-2-6"
+       inkscape:original-d="m 568.96504,896.86221 c 0,0 13.33842,-3.30342 18.4768,1.63684 5.05816,4.86313 5.30816,11.61313 5.97631,18.09679"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#3465a4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-9-4-3"
+       r="2.6637053"
+       cy="906.29053"
+       cx="656.68115"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 583.47951,921.24387 c -0.39737,0.58691 -0.92919,1.04356 -1.53118,1.36368 -0.56499,-1.45675 -1.14031,-2.90102 -1.64451,-4.35988 -0.42931,-1.25513 -0.83163,-2.50092 -0.91486,-3.75425 -0.0385,-0.87991 0.0715,-1.7949 0.62075,-2.30405 0.76288,-0.78521 1.92775,-1.19 2.99206,-0.99438 l 0,0 c 1.14238,0.17974 2.20497,0.83109 3.19524,1.57781 l 3.69494,3.78066 0.71297,-0.69728 -3.74697,-3.82865 c -1.05644,-0.82481 -2.28247,-1.55619 -3.68556,-1.81788 l 0,0 c -1.41767,-0.23376 -2.87753,0.26621 -3.87705,1.27995 -0.79691,0.86692 -1.00132,2.03862 -0.9039,3.07417 l 0,0 c 0.1049,1.4117 0.52466,2.74291 0.96722,4.0105 0.5143,1.48866 1.09399,2.94528 1.65752,4.39698 -0.65641,0.1704 -1.3548,0.19348 -2.03329,0.0246 1.51262,1.66589 2.99826,3.25616 4.33357,5.06583 0.21371,-2.23905 0.17623,-4.56589 0.16305,-6.81784 z"
+       id="path3411-0-4-0-49-0-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc"
+       inkscape:path-effect="#path-effect7710-7-4-8-1-1-6"
+       inkscape:original-d="m 590.24222,916.21101 c 0,0 -6.36733,-8.66945 -10.58342,-4.36538 -2.53612,2.58904 1.79857,9.50561 3.6586,16.21582"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 671.79237,904.93839 c -0.62764,0.31101 -1.31925,0.42708 -1.99663,0.39824 0.20681,-1.34237 0.35578,-2.69877 0.3757,-4.07432 0.0254,-1.36565 -0.0932,-2.80183 -0.66004,-4.13181 l 0,0 c -0.5198,-1.19733 -1.52163,-2.17109 -2.77304,-2.60507 -1.129,-0.32386 -2.23208,0.1354 -3.00328,0.77791 -1.00111,0.78546 -1.78482,1.77128 -2.4762,2.76713 l -2.44093,4.22883 0.86519,0.49924 2.41795,-4.19172 c 0.66837,-0.94635 1.37557,-1.84751 2.24668,-2.51316 l 10e-6,0 c 0.67773,-0.47918 1.46945,-0.88622 2.06921,-0.62127 0.9628,0.31712 1.76596,1.1079 2.17704,2.05614 l 0,0 c 0.49522,1.11708 0.58632,2.41627 0.5775,3.72085 -0.0147,1.3118 -0.15991,2.62211 -0.3642,3.93605 -0.65699,-0.17497 -1.26958,-0.48195 -1.78683,-0.90867 0.53861,1.91524 0.9129,4.02827 1.35851,6.08673 1.13637,-1.77357 2.33987,-3.48739 3.41336,-5.4251 z"
+       id="path3411-1-3-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cac"
+       inkscape:path-effect="#path-effect7710-83-2-3"
+       inkscape:original-d="m 659.24291,902.54461 c 0,0 4.01344,-8.68213 7.33759,-7.55402 4.88567,1.65804 2.78056,9.92525 1.79947,15.37307"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <circle
+       style="opacity:0.80286734;fill:#3465a4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3354-54-92-8-3"
+       r="2.6637053"
+       cy="923.86224"
+       cx="679.5"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 685.45005,915.99477 c -0.6607,0.21596 -1.35749,0.20212 -2.01543,0.0556 0.24562,-0.74473 0.4375,-1.51072 0.54451,-2.30355 0.22162,-1.7427 -0.39209,-3.54544 -1.69791,-4.74611 -1.03553,-0.88757 -2.41102,-1.06742 -3.62041,-0.96993 -1.47743,0.0901 -2.90014,0.46783 -4.25873,0.92724 l 0,0 c -1.23172,0.41395 -2.43156,0.90904 -3.6022,1.45648 l 0,0 c -0.37565,0.17558 -0.74925,0.3572 -1.11982,0.54629 l 0,0 c -0.10327,0.0527 -0.20651,0.10609 -0.30954,0.1605 -0.0275,0.0145 -0.055,0.0291 -0.0824,0.0438 0.008,-0.004 -0.0375,0.0202 -0.03,0.0162 l 0.46706,0.88422 c 0.003,-0.002 0.026,-0.014 0.0289,-0.0156 0.0265,-0.0142 0.053,-0.0283 0.0796,-0.0423 0.0996,-0.0526 0.20001,-0.10455 0.30092,-0.15604 l 0,-10e-6 c 0.35904,-0.18323 0.72228,-0.35979 1.08873,-0.5311 l 0,0 c 1.14314,-0.53412 2.30797,-1.0152 3.49716,-1.41444 l 0,0 0,0 c 1.32057,-0.44042 2.65671,-0.80136 3.99901,-0.87692 1.09058,-0.0368 2.22284,0.0575 2.89072,0.71313 l 10e-6,0 c 1.0609,0.94036 1.56772,2.45292 1.37725,3.8756 -0.0894,0.71804 -0.26632,1.42284 -0.49943,2.11998 -0.62145,-0.27299 -1.17851,-0.64412 -1.65028,-1.06451 0.36873,1.5809 0.30167,3.55235 0.26078,5.46812 1.4855,-1.21085 3.02864,-2.3999 4.35149,-4.14658 z"
+       id="path3411-1-3-9-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cac"
+       inkscape:path-effect="#path-effect7710-83-2-3-2"
+       inkscape:original-d="m 669.48751,911.61563 c 0,0 9.33367,-5.08353 12.46411,-2.25072 2.67191,2.41788 1.7199,5.50583 -0.85218,10.77687"
+       inkscape:export-filename="/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/FigurePartie2/heightmap2e.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+  </g>
+</svg>

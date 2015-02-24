@@ -25,3 +25,6 @@ log.txt
 *.odt
 /Library/
 /old_tex/
+.idea
+scripts/project/
+scripts/target/
