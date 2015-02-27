@@ -24,6 +24,14 @@
 \usepackage[l2tabu]{nag}
 
 %%%%%%%%%%%%%%%%%%
+% PENALTIES
+% MARCHE PAS
+% http://tex.stackexchange.com/questions/191273/how-to-prevent-a-page-break-before-an-itemize-or-enumerate-list-continued?rq=1
+\makeatletter
+  \@beginparpenalty=10000
+\makeatother
+
+%%%%%%%%%%%%%%%%%%
 % SVG 
 %%%%%%%%%%%%%%%%%%
 % SVG not working because bug 
