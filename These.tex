@@ -22,6 +22,25 @@
 \usepackage{amstext}    % defines the \text command, needed here
 \usepackage{array}
 \usepackage[l2tabu]{nag}
+\usepackage{tcolorbox} 
+\usepackage{morewrites} %slow slow slow
+
+%%%%%%%%%%%%%%%%%%
+% INLINE BOX A LA STACK OVERFLOW
+
+\definecolor{lgray}{gray}{0.95}
+\definecolor{light-gray}{gray}{0.50}
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}% Rule colour
+%\makeatletter
+%\newcommand\keyword[1]{\colorbox{light-gray}{\texttt{#1}}}
+%\makeatother
+
+\makeatletter
+\newtcbox{\keyword}{on line,boxrule=0.5pt,arc=2pt,coltext=mycolor,colback=light-gray,colframe=lgray,boxsep=0pt,left=3pt,right=3pt,top=2pt,bottom=2pt, before upper={\rule[-3pt]{0pt}{10pt}}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
 % PENALTIES
@@ -29,7 +48,7 @@
 % http://tex.stackexchange.com/questions/191273/how-to-prevent-a-page-break-before-an-itemize-or-enumerate-list-continued?rq=1
 \makeatletter
   \@beginparpenalty=10000
-\makeatother
+
 
 %%%%%%%%%%%%%%%%%%
 % SVG 
@@ -241,7 +260,7 @@
       \step[fieldsource=url, match=\regexp{\\_}, replace=\regexp{_}]
       \step[fieldsource=url, 
         match=\regexp{:home/srey/TRAVAUX/THESE/REPOSITORY_PDF/RANGE/(.+):\w*$},
-        replace={http://bib.unthinkingdepths.fr/$1}]
+        replace={http://bib.unthinkingdepths.fr/seb/pdf/$1}]
     }
   }  
 }

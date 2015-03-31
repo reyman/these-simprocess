@@ -138,7 +138,7 @@ Afin de mieux comprendre cette table de propriétés un peu abstraite, il est pr
 
 Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou \textit{Knapsack}, on a déjà vu que le nombre de combinaisons à évaluer lors d'une augmentation du nombre d'éléments participant à la définition du problème devient très vite problématique si on cherche à trouver une solution optimale exacte. Si on prend le cas d'un exemple plus ludique d'optimisations discrètes dans la branche des jeux (\textit{Combinatorial game theory}), le nombre de combinaisons légales possibles pour un plateau de 19 par 19 dans le jeu de GO chinois est estimé par \textcite{Tromp2007} à $2.08168199382×10^{170}$ . Même si certains auteurs comme Tromp estime qu'un tel calcul sera possible d'ici quelques mois \Anote{tromp_appel_calcul}, les problématiques posés par ce jeu mettent au défi les meilleurs programmes en intelligence artificielle \autocite{Bouzi2001}, et cela malgré des progrès spectaculaires ces dernières années, via notamment l'utilisation d'heuristique plus efficace que les approches classiques \Anote{mcts_go}.  Dans le cas d'un problème continu discrétisé, comme la recherche des meilleures valeurs de paramètres pour une simulation, la mise en oeuvre d'un plan factoriel complet (d'autres types de stratégies beaucoup plus fines existent) pose un problème double. 
 
-\Anotecontent{tromp_appel_calcul}{Tromp a lancé un \href{http://tromp.github.io/go/legal.html}{@site} internet pour collecter la ressource disponible nécessaire pour ce calcul. Celui-ci estime la charge de travail à fournir pour obtenir un résultat à 10 à 13 serveurs, possédant au moins 8 processeurs et 512 Gb de RAM, pendant 5 à 9 mois.}
+
 
 \hl{Correction orthographe à faire}
 D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède 5 paramètres, chacun de ces paramètres étant discrétisé en 10 pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique (10 réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à 2 années de calcul... La parallélisation d'un tel calcul, c'est à dire son execution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
@@ -678,7 +678,7 @@ On a déjà rapidement décrit dans la section à propos de l'Artificial Life \r
 
 Il existe en effet au moins deux façons aujourd'hui d'introduire des développements informatiques se rapportant à ce processus évolutif. D'un côté, les tentatives de reproduction plus ou moins fidèles des différents mécanismes à l'oeuvre dans le processus d'évolution mettent en avant un objectif de compréhension, alors que la focalisation sur ces mêmes mécanismes pour leur seule capacité d'apprentissage tend à s'éloigner de la réalité biologique pour s'orienter plus vers le développement d'algorithmes désignés comme métaheuristiques. Autrement dit, là ou des chercheurs vont tenter de reproduire au mieux le processus d'évolution dans ce qu'il a de créatif, de non optimisé, de coévolutif car construit par \Anote{note_pattee_semantic_closure} et avec l'environnement, d'autres vont reprendre ce même processus en vue d'une évolution si possible bornée et dirigée par la résolution efficace d'un ou de plusieurs objectifs définis de façon fixe et extrinsèque \autocites{Taylor2001, Taylor2012}.
 
-Lorsqu'on s'intéresse de plus près à la littérature scientifique de ces algorithmes regroupés depuis Fogel sous le terme d'\foreignquote{english}{Evolutionary Computation} (EC), on constate pour toute une partie des publications une de-contextualisation complète de leur utilisation. La question d'une similitude initiale avec le vivant n'étant le plus souvent évoquée que pour illustrer des racines historiques éloignées. Ce qui peut apparaitre comme une forme de surspécialisation est en quelque sorte le prix à payer d'une évolution de la discipline avant tout dirigée par une communauté de chercheurs informatiques motivés par la recherche d'algorithmes performants et d'applications génériques.
+Lorsqu'on s'intéresse de plus près à la littérature scientifique de ces algorithmes regroupés depuis Fogel sous le terme d'\foreignquote{english}{Evolutionary Computation} (EC), on constate pour toute une partie des publications une de-contextualisation complète de leur utilisation. La question d'une similitude initiale avec le vivant n'étant le plus souvent évoquée que pour illustrer des racines historiques éloignées, alors qu'une meilleure connaissance de cette histoire pourrait au mieux participer d'une amélioration des algorithmes, et au pire au moins éviter la persistance de certains malentendus \autocite{DeJong1993a}. Ce qui peut apparaitre comme une forme de surspécialisation est en quelque sorte le prix à payer d'une évolution de la discipline avant tout dirigée par une communauté de chercheurs informatiques motivés par la recherche d'algorithmes performants et d'applications génériques.
 
 Si aujourd'hui on peut observer un tel cloisonnement, un regard sur l'histoire de la discipline tend à montrer tout l'inverse, car nombreux sont les pionniers ayant développé des intérêts simultanés pour ces deux approches : les expériences très longtemps restées inconnue du mathématicien Barricelli dès 1954 \Anote{barricelli_multi_utilisation}, l'approche du généticien \textcite{Fraser1957} qui décrit et simule l'évolution de population génétique dès 1957 \Anote{fraser_comment}, les travaux de Pattee et Conrad avec EVOLVE à la fin des années 1960 \autocite{Conrad1970}, les algorithmes génétiques \Anote{holland_multi_utilisation} de Holland, un élève de Burks, un scientifique dont on a déjà vu dans le paragraphe \ref{p:va_automate_cellulaire} qu'il était proche de Von Neumman.
 
@@ -698,7 +698,7 @@ Les années 1990 vont quant à elles consacrer la rencontre et l'unification de 
 
 Si on se concentre plus précisément sur la branche multi-objectif de la discipline, la première introduction théorique d'une stratégie s'appuyant sur le calcul de l'optimum de Pareto pour définir un classement original des solutions évalués est présenté à la page 197 de \textcite[197]{Goldberg1989}. Cette technique nommé \textit{Non Dominated Sorting} (NDS) \autocite[40-43]{Deb2001}, probablement la plus efficace et plus célèbre, sera reprise et implémenté presque dix ans plus tard en 1994, dans l'algorithme célèbre NSGA (Non dominated Sorting Algorithm) de Deb et Srinivas.
 
-Les travaux de \textcite{Goldberg1989} ont influencé tout une génération de chercheurs à partir de cette simple ébauche théorique de tri basé sur la dominance de Pareto, et nombreux sont ceux qui se sont par la suite appuyés \autocite[175, 235]{Deb2001} sur les informations du calcul de dominance pour développer diverses stratégies d'attribution de \textit{fitness}, comme MOGA (Fonseca et Flemings 1993), NPGA (Horn et Nafpliotis 1994), NSGA (Deb et Srinivas 1994), et bien d'autres \autocite[14]{Zitzler1999a}. Ce que l'on peut considérer comme la génération suivante d'algorithmes, que \textcite{Coello2006} \Anote{coello_note} fait démarrer avec l'apparition de l'élitisme \Anote{note_elitisme}, est plus axée encore sur l'efficacité de ces derniers avec notamment l'ouverture d'une branche de recherche développant des métriques de performance, et de nouveaux standards de mesures \autocites{Coello2006, Zitzler2003}, dont on s'aperçoit qu'elles sont devenues nécessaires pour comparer correctement les algorithmes entre eux \autocite[14-15]{Zitzler1999a}. Parmi ces nouveaux algorithmes, devenus depuis canonique, on trouve PAES (Knwoles and Corne 2000), SPEA (\autocite{Zitzler1999}), ou encore NSGA 2 (Deb 2000) etc. On trouve à ce sujet un état de l'art et des exemples de calculs à la main pour ces différents algorithmes dans un des premiers et très bon ouvrage de synthèse de \textcite{Deb2001}, aux chapitres 5 et 6. Il est toutefois à noter, comme le fait déjà Golberg en 1989, que cette problématique de recherche d'une solution à un problème multi-critères, puis multi-objectifs est d'origine bien plus ancienne, et a pu servir de support à la mise en oeuvre de techniques plus ou moins similaire à celle de Pareto. Ainsi, les premières traces en EA d'un intérêt théorique et parfois pratique de ces problèmes semblent remonter à Box et Draper (1957), Fogel (1966), Rosenberg (1967) \autocite[174-175]{Deb2001}. Mais la première implémentation informatique est en général attribuée à David Schaffer, avec son travail de thèse (1984) et l'implémentation de l'algorithme d'optimisation VEGA (\textit{Vector Evaluated Genetic Algorithm}). Un autre état de l'art sur l'optimisation multi-objectifs s'appuyant sur Pareto en dehors des techniques purement évolutionnaire est également possible. C'est grâce à l'existence de ce cadre formel mathématique permettant la description d'un problème d'optimisation, tel que nous l'avons un peu abordé dans la section précédente en s'appuyant sur les écrits de \autocite{Weise2011}, que \textcite[50-79]{Deb2001} indique par exemple comment certaines de ces stratégies hors EC ont été pour certaine également transférées avec plus ou moins de succès aux EA \textcite[171-237]{Deb2001}.
+Les travaux de \textcite{Goldberg1989} ont influencé tout une génération de chercheurs à partir de cette simple ébauche théorique de tri basé sur la dominance de Pareto, et nombreux sont ceux qui se sont par la suite appuyés \autocite[175, 235]{Deb2001} sur les informations du calcul de dominance pour développer diverses stratégies d'attribution de \textit{fitness}, comme MOGA (Fonseca et Flemings 1993), NPGA (Horn et Nafpliotis 1994), NSGA (Deb et Srinivas 1994), et bien d'autres \autocite[14]{Zitzler1999a}. Ce que l'on peut considérer comme la génération suivante d'algorithmes, que \textcite{Coello2006} \Anote{coello_note} fait démarrer avec l'apparition de l'élitisme \Anote{note_elitisme}, est plus axée encore sur l'efficacité de ces derniers avec notamment l'ouverture d'une branche de recherche développant des métriques de performance, et de nouveaux standards de mesures \autocites{Coello2006, Zitzler2003}, dont on s'aperçoit qu'elles sont devenues nécessaires pour comparer correctement les algorithmes entre eux \autocite[14-15]{Zitzler1999a}. Parmi ces nouveaux algorithmes, devenus depuis canonique, on trouve PAES (Knwoles and Corne 2000), SPEA (\autocite{Zitzler1999}), ou encore NSGA 2 (Deb 2000) etc. On trouve à ce sujet un état de l'art et des exemples de calculs à la main pour ces différents algorithmes dans un des premiers et très bon ouvrage de synthèse de \textcite{Deb2001}, aux chapitres 5 et 6. Il est toutefois à noter, comme le fait déjà Golberg en 1989, que cette problématique de recherche d'une solution à un problème multi-critères, puis multi-objectifs est d'origine bien plus ancienne, et a pu servir de support à la mise en oeuvre de techniques plus ou moins similaire à celle de Pareto. Ainsi, les premières traces en EA d'un intérêt théorique et parfois pratique de ces problèmes semblent remonter à Box et Draper (1957), Fogel (1966), Rosenberg (1967) \autocite[174-175]{Deb2001}. Mais la première implémentation informatique est en général attribuée à David Schaffer, avec son travail de thèse (1984) et l'implémentation de l'algorithme d'optimisation VEGA (\textit{Vector Evaluated Genetic Algorithm}) \autocite{Schaffer1985}. Un autre état de l'art sur l'optimisation multi-objectifs s'appuyant sur Pareto en dehors des techniques purement évolutionnaire est également possible. C'est grâce à l'existence de ce cadre formel mathématique permettant la description d'un problème d'optimisation, tel que nous l'avons un peu abordé dans la section précédente en s'appuyant sur les écrits de \autocite{Weise2011}, que \textcite[50-79]{Deb2001} indique par exemple comment certaines de ces stratégies hors EC ont été pour certaine également transférées avec plus ou moins de succès aux EA \textcite[171-237]{Deb2001}.
 
 Enfin on notera qu'il existe également une autre classe proche d'algorithmes d'optimisation basée sur une observation des mécanismes naturels, celle-ci n'étant plus basée sur la métaphore évolutive par reproduction (même si l'hybridation est envisageable), mais sur les capacités d'organisation et d'auto-organisation observées chez certains animaux comme les fourmis, les abeilles. Ces comportements ont d'abord inspiré les développements de plateformes informatiques adaptées à l'émergence de ce type de comportements, avant d'être repris et utilisé de façon beaucoup plus abstraites par la suite pour résoudre des problèmes d'optimisation. Aujourd'hui regroupées sous le terme de \foreignquote{english}{Swarm Intelligence}, ce sont par exemple les algorithmes PSO (Particle Swarm Optimization), ACO (Ant Colony Algorithms), ABC (Artificial Bee Colony), etc.
 
@@ -714,15 +714,17 @@ Les éléments communs retenues sont les suivants :
 \item La population étendue ainsi constitué est réduites de $m + n$ à $m$ individus.
 \end{itemize}
 
+\hl{a completer avec schéma expliquant les différentes etapes de l'algorithme générique en EA}
+
 % En général puis recentrage sur les détails ?
 \paragraph{Les avantages et les inconvénients d'une terminologie spécifique}
 
-En 2014 une publication sur le blog du spécialiste de la discipline Thomas Weise's \Anote{billet_weise} revient longuemment sur les problématiques de ce vocabulaire inspiré par la biologie et ancré dans les différentes branches composantes l'EC. Il retient quatre problématiques dans l'usage de cette terminologie, parmi lesquels l'incompatibilité des terminologies entre les différentes branches, la dissonance entre la terminologie et la réalité d'application des algorithmes, le fait que l'optimisation au sens naturel n'est pas forcément une bonne optimisation, le fait également que cette terminologie sonne comme anti-profesionelle \Anote{note_pengouin}. Le plus grand problème étant dans ce cadre l'invention de néologisme ne faisant référence ni au domaine biologique, ni au domaine informatique. Ce n'est pas la seule voix à se faire entendre sur ce sujet, comme l'article de \textcite{Sorensen2013b} qui pointent clairement les dérives néfastes associées à l'usage systématique et surtout non réellement argumentée de nouvelle analogies ou métaphores, que celle-ci soit biologique ou pas ...
+En 2014 une publication sur le blog du spécialiste de la discipline Thomas Weise's \Anote{billet_weise} revient longuemment sur les problématiques de ce vocabulaire inspiré par la biologie et ancré dans les différentes branches composantes l'EC. Il retient quatre problématiques dans l'usage de cette terminologie, parmi lesquels l'incompatibilité des terminologies entre les différentes branches, la dissonance entre la terminologie et la réalité d'application des algorithmes, le fait que l'optimisation au sens naturel n'est pas forcément une bonne optimisation, le fait également que cette terminologie sonne comme anti--professionnelle \Anote{note_pengouin}. Le plus grand problème étant dans ce cadre l'invention de néologisme ne faisant référence ni au domaine biologique, ni au domaine informatique. Ce n'est pas la seule voix à se faire entendre sur ce sujet, comme l'article de \textcite{Sorensen2013b} qui pointe clairement les dérives néfastes associées à l'usage systématique et surtout non réellement argumenté de nouvelles analogies ou métaphores, que celle-ci soit biologique ou pas ...
 
-Si la perspective d'un changement d'annotation et de vocabulaire est probablement conçu comme une étape majeure dans la progression et l'unification d'une discipline depuis quelques années déjà sur la voie de la maturité, Weise tout en pronant au maximum la bonne parole continue comme beaucoup d'autres à utiliser cette terminologie \autocite{Weise2011}, très ancrée dans un folklore qui tient à l'historique de la discipline. La librairie logicielle MGO décrite par la suite s'appuie elle aussi sur cette terminologie, aussi nous n'utiliserons donc les terminologies alternatives proposés par Weise que sous forme de complément, afin de ne pas introduire trop de distance entre les termes décrivant les algorithmes dans ce manuscrit et la réalité du programme tel qu'il est conçu pour le moment.
+Si la perspective d'un changement d'annotation et de vocabulaire est probablement conçue comme une étape majeure dans la progression et l'unification d'une discipline depuis quelques années déjà sur la voie de la maturité, Weise tout en prônant au maximum la bonne parole continue comme beaucoup d'autres à utiliser cette terminologie \autocite{Weise2011}, très ancrée dans un folklore qui tient à l'historique de la discipline. La librairie logicielle MGO décrite par la suite s'appuie elle aussi sur cette terminologie, aussi nous n'utiliserons donc les terminologies alternatives proposées par Weise que sous forme de complément, afin de ne pas introduire trop de distance entre les termes décrivant les algorithmes dans ce manuscrit et la réalité du programme tel qu'il est conçu pour le moment.
 
 \begin{table}[!htbp]
-\begin{sidecaption}[fortoc]{Tableau de correspondance entre les notations à consonnance biologiques et les notations plus génériques liés à l'optimisation, lorsque celles-ci existent. Une traduction appuyée sur la section précédente, et les travaux de \textcite{Weise2011}}
+\begin{sidecaption}[fortoc]{Tableau de correspondance entre les notations à consonances biologiques et les notations plus génériques liées à l'optimisation, lorsque celles-ci existent. Une traduction appuyée sur la section précédente, et les travaux de \textcite{Weise2011}}
 	[tab:ptraduction]
 	\centering
 	\begin{tabular}{ll}
@@ -744,65 +746,65 @@ Si la perspective d'un changement d'annotation et de vocabulaire est probablemen
   \end{sidecaption}
 \end{table}
 
-\paragraph{Les avantages et les inconvénients}
+\paragraph{Les avantages et les inconvénients des EA}
 
-Origine : Deb2001, Fogel2000, Back1997, \autocite[104,105]{DeJong2006a}
+Ces deux listes comparant les avantages et les inconvénients des algorithmes évolutionnaires sont tirés des ouvrages de Deb2001, Fogel2000, Back1997, \autocite[104,105]{DeJong2006a} mais également Openshaw qui a exploré ces techniques en géographie. \hl{ref a completer}
 
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
 	
-	\item Evaluation d'une population entière par génération, ce qui n'est pas le cas de nombre de techniques fournissant une seule solution par execution d'algorithme.
-	\item Facile à paralléliser, une propriété étudié très tot, voire \autocite[444]{Alba2002} 
+	\item Evaluation d'une population entière par génération, ce qui n'est pas le cas de nombre de techniques fournissant une seule solution par exécution d'algorithme.
+	\item Facile à paralléliser, une propriété étudiée très tôt \autocite[444]{Alba2002} 
 	\item Ne demande a priori aucune connaissance de la forme du paysage, même si en réalité c'est un plus pour bien choisir et paramétrer les métaheuristiques
 	\item Applicable à des problèmes continus, discrets, ou les deux.
 	\item Ne demande pas forcément de repartir de zéro entre chaque analyse en comparaison à d'autres algorithmes
-	\item Le nombre de degré de liberté pour modifier une métaheuristique est très important, ce qui augmente les chances de trouver une combinaison adapté à un problème complexe donné
-	\item Les principes de mise en oeuvre sont relativement facile à comprendre
+	\item Le nombre de degrés de liberté accessible pour modifier une métaheuristique est très important, ce qui augmente les chances de trouver une combinaison adaptée à un problème complexe donné
+	\item Les principes de mise en oeuvre sont relativement faciles à comprendre
     \item Efficace, même sous une forme canonique
     \item Capacité à explorer de très large espace de recherche
 \end{enumerate}
 
-Désavantages, limitations : 
+Les désavantages, limitations : 
+
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
 	\item le fonctionnement reste opaque, et le résultat n'est souvent pas tractable mathématiquement
-	\item Stochasticité demande réplication
-	\item Non garantie d'un optimum global
-	\item Le nombre de degré de liberté demande une certaine forme expertise pour en tirer le meilleur partie, la construction d'un EA optimal pour un problème donné étant progressif, incrémental
-    \item Trop facile à comprendre, il en résulte une certain illusion quant au capacité \enquote{magique} de ce type d'algorithme.
-    \item Necessite une source conséquente de puissance pour réaliser de grand nombres de calculs en parallèle 
-    \item Meme si les résultats sont meilleurs avec ce type d'approche, celle(ci a ses limites, et les performances se dégrade avec l'augmentation de l'espace de recherche (dimensionalité) et ou le nombre d'objectifs (limite de l'approche Pareto) Zitzler1999a page 24 cite Fonseca Flemming 1995
+	\item la stochasticité demande la mise en oeuvre de réplication
+	\item pas de garantie de trouver un optimum global
+	\item le nombre de degrés de liberté demande une certaine forme expertise pour en tirer le meilleur parti, la construction d'un EA optimal pour un problème donné étant progressif, incrémental
+    \item trop facile à comprendre, il en résulte une certaine illusion quant aux capacités \enquote{magiques} de ce type d'algorithme.
+    \item necessite une source conséquente de puissance pour réaliser de grands nombres de calculs en parallèle 
+    \item les performances se dégrade avec l'augmentation de l'espace de recherche (dimensionnalité) ou le nombre d'objectifs (on touche les limites de l'approche Pareto) \hl{ref Zitzler1999a page 24 cite Fonseca Flemming 1995}
 \end{enumerate}
 
-Optimisation de paramètres est un domaine d'application reconnu des EA du fait aussi de la facilité de mapping entre vecteur de paramètres et génome \autocite[83]{DeJong2006a}
+\hl{2 paragraphe qui suivent à replacer au bon endroit}
 
-Dans la lignée des objectifs définis dans le chapitre 3, cette branche spécifique des EA est celle qui est à la fois la faciles d'accès en terme de compréhension pour les débutants tout en restant également suffisament de flexibilité et d'efficacité pour convenir à notre utilisation. 
+L'optimisation de paramètres est un domaine d'application reconnu des EA du fait aussi de la facilité de mapping entre vecteur de paramètres et génome \autocite[83]{DeJong2006a}
 
-De plus certains désavantages sont de conséquences plus limités dans le cadre de nos objectifs. En effet, pour le profil d'utilisateur modélisateur que nous visons la garantie d'un optimum global n'est pas la priorité immédiate en comparaison de l'importance d'accéder rapidement à des premiers résultats via un premier EA générique exécutable, qu'il pourra de toute façon ensuite améliorer du fait de la nature métaheuristique de ces algorithmes. De façon similaire, le fait que le résultat ne soit pas tractable mathématiquement n'est pas vraiment problématique dans le cadre des systèmes complexes, ou ce type d'observation est justement une propriété récurrente des systèmes que l'on cherche à simuler pour mieux les comprendre. 
+Dans la lignée des objectifs définis dans le chapitre 3, cette branche spécifique des EA est celle qui est à la fois la facile d'accès en terme de compréhension pour les débutants tout en restant également suffisament flexible et efficace pour convenir à notre utilisation. 
 
-Enfin, il est important de noter que cette classe d'algorithmes accueille les approches les plus efficaces pour la résolution de problèmes multi-objectifs, une propriété courante des problèmes abordés dans notre discipline, car les modèles de simulation construisent souvent leur crédibilité aux croisements de multiples critères. (\hl{POM, cf problème inverse calibration déjà expliqué plus haut})
+De plus certains désavantages sont de conséquences plus limitées dans le cadre de nos objectifs. En effet, pour le profil d'utilisateur modélisateur que nous visons la garantie d'un optimum global n'est pas la priorité immédiate en comparaison de l'importance d'accéder rapidement à des premiers résultats via un premier EA générique exécutable, qu'il pourra de toute façon ensuite améliorer du fait de la nature métaheuristique de ces algorithmes. De façon similaire, le fait que le résultat ne soit pas tractable mathématiquement n'est pas vraiment problématique dans le cadre des systèmes complexes, ou ce type d'observation est justement une propriété récurrente des systèmes que l'on cherche à simuler pour mieux les comprendre. 
 
-
-\hl{/..../}
-
+Enfin, il est important de noter que cette classe d'algorithmes accueille les approches les plus efficaces pour la résolution de problèmes multi-objectifs, une propriété courante des problèmes abordés dans notre discipline, car les modèles de simulation construisent souvent leur crédibilité aux croisements de multiples critères. (\hl{POM, cf problème inverse calibration déjà expliqué en chapitre 3?})
 
 \hl{Introduction à un algorithme simplifié, soit sous forme d'algorithme, soit sous forme de schéma}
 
-\begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{How to write algorithms}
-\end{algorithm}
+% \begin{algorithm}[H]
+%  \KwData{this text}
+%  \KwResult{how to write algorithm with \LaTeX2e }
+%  initialization\;
+%  \While{not at end of this document}{
+%   read current\;
+%   \eIf{understand}{
+%    go to next section\;
+%    current section becomes this one\;
+%    }{
+%    go back to the beginning of current section\;
+%   }
+%  }
+%  \caption{How to write algorithms}
+% \end{algorithm}
 
-Chacun de ces items ouvre quasiment la voie à des sous domaines d'expertises spécifiques. Voici un apercu cumulatif des élements susceptibles de varier d'un algorithme à un autre, et d'une application à une autre, dont certain sont hérités de la nature métaheuristique des EC, puis de la nature spécifique des EA, et enfin de la nature multi-objectifs (*) : \autocite[69,72,115]{DeJong2006a}[264-269]{Weise2011}[91]{Liefooghe2010} : 
+%Chacun de ces items ouvre quasiment la voie à des sous-domaines d'expertises spécifiques.
+Voici un aperçu cumulatif des élements susceptibles de varier d'un algorithme à un autre, et d'une application à une autre, dont certain sont hérités de la nature métaheuristique des EC, puis de la nature spécifique des EA, et enfin de la nature multi-objectifs (*) : \autocite[69,72,115]{DeJong2006a}[264-269]{Weise2011}[91]{Liefooghe2010} : 
 
 \begin{itemize}
 \item la stratégie de représentation interne d'une solution 
@@ -812,119 +814,182 @@ Chacun de ces items ouvre quasiment la voie à des sous domaines d'expertises sp
 \item le groupe d'opérateurs choisi et la stratégie d'utilisation de ces opérateurs dans le processus de reproduction
 \item le choix d'une fonction de translation \textit{gpm} entre $\mathbb{G}$ et $\mathbb{X}$
 \item (*) les stratégies de préservation de la diversité
-\item (*) les stratégies élitiste de selection et de maintien des survivants
+\item (*) les stratégies élitistes de sélection et de maintien des survivants
 \item (*) la méthode d'attribution d'une \textit{fitness} $v$
 \item le critère d'arrêt
 \end{itemize}
 
-Si cette liste de classe de choix permet de cerner de façon plus globale les questions à se poser lorsqu'on construit ce type d'algorithmes, cette représentation est encore trop vague, trop linéaire, et ne rend pas compte de la plasticité et des contraintes voulu ou imposé par la construction dynamique d'un algorithme véritablement adapté au problème. Les dépendances entre éléments de la liste n'apparaissent pas dans cette représentation, or pour chacun des choix réalisés par l'expérimentateur a lieu un recalcul des degrés de liberté, ce qui entraine l'apparition ou la disparition de nouveaux choix, en fonction des dépendances existantes entre chaque éléments. \Anote{reflexion_DeJong}
+Si cette liste de classe de choix permet de cerner de façon plus globale les questions à se poser lorsqu'on construit ce type d'algorithmes, cette représentation est encore trop vague, trop linéaire, et ne rend pas compte de la plasticité et des contraintes voulues ou imposées par la construction dynamique d'un algorithme véritablement adapté au problème. Les dépendances entre éléments de la liste n'apparaissent pas dans cette représentation, or pour chacun des choix réalisés par l'expérimentateur a lieu un recalcul des degrés de liberté, ce qui entraine l'apparition ou la disparition de nouveaux choix, en fonction des dépendances existantes entre chaque élément. \Anote{reflexion_DeJong}
 
-Par exemple, le choix d'une représentation interne d'une solution sous forme de vecteur de binaire, réel ou encore mixte, de taille dynamique ou fixe, doublé ou non de paramètres spécifiques de convergence, joue de façon assez logique sur les choix disponibles dans chacunes de ces classes. Ainsi le groupe d'opérateurs choisi pour manipuler ces vecteurs lors de la reproduction ne seront pas les même selon qu'on manipule des éléments Binaires ou Réels.
+Par exemple, le choix d'une représentation interne d'une solution sous forme de vecteur de binaire, réel ou encore mixte, de taille dynamique ou fixe, doublé ou non de paramètres spécifiques de convergence, joue de façon assez logique sur les choix disponibles dans chacune de ces classes. Ainsi le groupe d'opérateurs choisis pour manipuler ces vecteurs lors de la reproduction des individus ne seront pas les mêmes selon qu'on manipule des éléments Binaires ou Réels.
 
-De plus, il faut imaginer que chaque stratégie est accompagnée de son lots de paramètres associés, et ce n'est qu'à terme d'une construction, lorsque le choix d'une combinaisons d'éléments est actée que la liste de paramètres définitives apparait de façon claire à l'expérimentateur.
+De plus, il faut imaginer que chaque stratégie est accompagnée de son lot de paramètres associés, et ce n'est qu'à terme d'une construction, lorsque le choix d'une combinaison d'éléments est actée, que la liste de paramètres définitive de la métaheuristique apparait de façon claire à l'expérimentateur.
 
-Enfin, dans notre cas, où il est question d'utiliser ces algorithmes évolutionnaires en s'appuyant sur toute la puissance informatique disponible, de nombreux nouveaux choix \autocite[221-224]{DeJong2006a} émergent à la lumière des modèles plus poussé de parallélisation des EA. Par exemple la mise en place d'une stratégie de parallélisation en ilôts, dont on verra un peu plus loin qu'elle est optimale pour une utilisation sur une grille de calcul, pose les nouvelles questions suivantes :
+Enfin, dans notre cas, où il est question d'utiliser ces algorithmes évolutionnaires en s'appuyant sur toute la puissance informatique disponible, de nombreux nouveaux choix \autocite[221-224]{DeJong2006a} émergent à la lumière des modèles plus poussés de parallélisation des EA. Par exemple la mise en place d'une stratégie de parallélisation en ilôts de population, dont on verra un peu plus loin qu'elle est optimale pour une utilisation des métaheuristiques sur une grille de calcul, pose les nouvelles questions suivantes :
 
 \begin{itemize}
-	\item quels sont les stratégies de migration des individus entre les différentes populations ?
+	\item quelles sont les stratégies de migration des individus entre les différentes populations ?
 	\item combien d'ilots sont nécessaires ?
-	\item les population initiale des ilots est elle identique ou différente ?
+	\item les populations initiales de chaque ilot sont elles identiques ou différentes ?
 	\item quelle topologie d'ilot est la plus adaptée ?
 	\item etc.
 \end{itemize}
 
-C'est un aperçu des problèmes que nous tenterons de résoudre avec la construction d'une librairie logicielle à l'architecture originale, couplé avec openMOLE pour gérer la partie parallélisation, et qui sera exposée dans les sections suivantes.
+C'est un aperçu des problèmes que nous tenterons de résoudre avec la construction d'une librairie logicielle à l'architecture originale, couplé avec openMOLE pour gérer la partie parallélisation, et qui sera exposé dans les sections suivantes.
 
-Une partie de la modularité inhérente aux métaheuristiques a déjà pu par chance être saisie dans le développement de nombreuses librairies logicielles, il est alors légitime de se poser la question suivante, pourquoi développer et surtout maintenir une nouvelle librairie ? 
+Une partie de la modularité inhérente aux métaheuristiques a déjà pu par chance être saisie dans le développement de nombreuses librairies logicielles, il est alors légitime de se poser la question suivante, \textit{pourquoi développer et surtout maintenir une nouvelle librairie ? }
 
-Les raisons de ce choix sont guidées par une observation critique des librairies existantes, et la volonté de satisfaire au mieux les critères évoqués dans le chapitre 3 \hl{ref section}.
+Les raisons de ce choix sont guidées par une observation critique des librairies existantes, réalisée un peu plus loin dans cette section, et la volonté de satisfaire au mieux les critères évoqués dans le chapitre 3 \hl{ref section}.
 
-Il est question de mettre en place une librairie de construction d'algorithmes évolutionnaires, exposant une syntaxe lisible exposant le schéma interne d'algorithmes connus et des plus efficaces pour résoudre des problèmes d'optimisation. Destiné à un public novice, 
+%\paragraph{Expression au niveau de l'expérimentation : }
 
+%\begin{enumerate}
 
-\paragraph{Expression au niveau de l'expérimentation : }
+%\item{Besoin de plus de flexibilité ?} 
 
-\begin{enumerate}
+%\end{enumerate}
 
-\item{Besoin de plus de flexibilité ?} 
-
-\end{enumerate}
-
-
-
-Qu'est ce qui fait la facilité de prise en main ? Respecter les pratiques existantes, tout en étant offrant des solutions alternatives lorsque le modélisateur en a besoin. 
+% Faire un rapel vers la grille.
+% MODYSS !
 
 \paragraph{Au niveau utilisateur, cas d'utilisation orienté vers les métaheuristiques}
 
+MGO devra être supporté par une architecture qui répond aux exigences différentes d'un public novice et expert, ce qui suppose une analyse de la possible évolution des besoins.  
+
+\hl{a developper} Qu'est ce qui fait la facilité de prise en main ? Respecter les pratiques existantes, tout en offrant des solutions alternatives dès que le modélisateur en ressent le besoin, si possible à moindre coût. 
+
+\begin{enumerate}
+	\item{\textbf{Besoin de plus de flexibilité ?}} L'algorithme évolutionnaire proposé en l'état (canonique) ne donne pas de bons résultats, le programme doit permettre d'accéder \textbf{facilement} à toute la combinatoire offerte par la variation des différents composants intégrant cette branche des métaheuristiques. 
+
+	\item{\textbf{Besoin de plus de puissance ?}} Fonctionnel sur une machine standard, les algorithmes évolutionnaires doivent pouvoir tirer parti de ressource informatique plus importante de façon locale (multi-coeur) ou distribuée (cluster, grille de calcul), et cela en utilisant les méthodes adaptées. Ce passage d'une exécution locale à une exécution distribué doit être possible le plus \textbf{facilement} possible.
+
+	\item{\textbf{Besoin de plus d'extensibilité ?}} Je ne trouve pas le composant nécessaire à la construction d'une métaheuristique adaptée à mon problème, quels sont les outils mis à ma disposition pour que je puisse ajouter le ou les composants facilement, à moindre cout, sans que l'ensemble du programme ne soit affecté par mes modifications ?
+\end{enumerate}
+
+
+
+En résumé, Mgo doit assurer \hl{repetition ici, a revoir} :
+
+\begin{itemize}
+	\item La mise à disposition d'une collection d'algorithmes évolutionnaire mono et multi-objectifs, directement utilisable 
+	\item mais également extensible et modifiable car décrit dans une syntaxe lisible exposant la structure interne en partie modulaire de ces métaheuristique.  
+	\item Une prise en charge automatique et transparente des architecture multi-coeur locale ou distribué 
+\end{itemize}
+
+Mais si on se contente d'évoquer seulement ces objectifs-là, on reste dans une construction isolée dont il faut encore l'interfacer, la relier, à l'exécution de nos modèles de simulation. Ce qui suppose d'un point de vue technique la prise en compte d'un certain nombre de problématiques techniques qui tiennent déjà en réalité d'expertises très différentes.  
+
+Un processus au coeur de l'optimisation, car c'est bien sur la base des résultats fournis par l'évaluation d'une population de modèles, devant encore être passés au crible des critères objectifs définis par les modélisateurs, que l'optimiseur va se baser pour cheminer vers des solutions quasi optimales.
+
+\paragraph{Au niveau utilisateur, cas d'utilisation orienté vers la modélisation }
+
 \begin{enumerate}
 
-	\item{\textbf{Besoin de plus de flexibilité ?}} L'algorithme évolutionnaires proposé en l'état ne donne pas de bons résultats, le programme doit permettre d'accéder \textbf{facilement} à toute la combinatoire offerte par la variation des différents composants intégrant cette branche des métaheuristiques. 
+	\item{\textbf{Changement de simulateur ?}} Mon modèle évolue pour changer de plateforme de simulation, en passant par exemple de Netlogo à Gamma. Est-il possible de conserver mon expérience définissant l'optimisation et les paramètres de l'optimisation au cours de ce changement ? Autrement dit, changer le moteur implique-t-il le changement automatique de toute la voiture ? 
+	
+	\item{\textbf{Bibliothèque d'exemples disponible ?}} Existe-t-il une bibliothèque d'expérimentations comportant un ou plusieurs exemples ou patron(s) pour une utilisation du modèle de simulation avec des métaheuristiques ?
+	
+	\item{\textbf{Liens entre logiciels de modélisation et ressources informatiques ?}} L'utilisateur doit-il réaliser lui-même la brique logicielle permettant le couplage entre le simulateur et les différents logiciels spécialisés pour utiliser des ressources informatiques distribuées ?
 
-	\item{\textbf{Besoin de plus de puissance ?}} Fonctionnel sur une machine standard, les algorithmes évolutionnaires doivent pouvoir tirer parti de ressource informatique plus importante de façon locale (multi-coeur) ou distribué (cluster, grille de calcul), et cela en utilisant les méthodes adaptés. Ce passage d'une execution locale à une execution distribué doit être possible \textbf{facilement}.
+	\item{\textbf{Comment se définissent les expériences ?}} Existe-t-il des facilités pour décrire les plans d'expériences ? Comment le modèle est-il intégré dans une chaîne de traitement comportant une optimisation par métaheuristique ? Comment réalise-t-on le mapping entre les paramètres du modèle et la représentation interne d'une solution ? Comment décrire et transmettre les fonctions objectifs aux algorithmes pour évaluer les sorties du modèle une fois exécuté ?
+	
+	\item{\textbf{Quels supports d'interactions ?}} Est-ce que les fonctionnalités sont accessibles par une manipulation interactive dans un logiciel ou par le biais de commandes dans des scripts ?
 
-	\item{\textbf{Besoin de plus d'extensibilité ?}} Je ne trouve pas le composant nécessaire à la construction d'une métaheuristique adapté à mon problème, quels sont les outils mis à ma disposition pour que je puisse ajouter le ou les composants facilement, à moindre cout, sans que l'ensemble du programme ne soit affecté par mes modifications. 
+	\item{\textbf{Quelle reproductibilité ?}} Au-delà de la simple réplication des simulations, quel niveau de reproductibilité, quelle confiance peut-on attendre d'un couplage de logiciels aussi complexe ?
 
 \end{enumerate}
 
-\paragraph{Au niveau utilisateur, cas d'utilisation orienté vers le couplage (simulation - metaheuristique) }
+\paragraph{Au niveau institutionel, cas d'utilisation orienté vers le déploiement }
 
-\begin{enumerate}
+Question de la distribution des algorithmes évolutionnaires. Quel cas d'utilisation est le plus aisé à mettre en place dans des laboratoires de science humaines ?
 
-	\item{} Mon modèle évolue pour changer de plateforme (Netlogo -> Gamma), mais l'optimisation et les paramètres de l'optimisation reste si possible en place et fonctionnel.
-	\item{} Existe-t-il une bibliothèque d'expérimentations comportant un ou plusieurs exemple ou patron(s) pour une utilisation du modèle de simulation avec des métaheuristiques ?
-	\item{} Comment sont définit les fonctions objectifs ?
-	\item{} Comment sont définit les mapping entre paramètres du modèles et représentation interne d'une solution ?
-	\item{} Est ce que ces fonctionalités sont accessible par une manipulation interactive ou par le biais de scripts ?
+\hl{en cours}
 
-\end{enumerate}
+% Les questions à ce niveau là sont encore plus nombreuses.
 
-% MODYSS !
+% - Modulation de l'accès à la puissance informatique indépendante du modèle : Intégré à OpenMOLE, le couplage doit apparaitre comme transparent, tout en restant hautement flexible ce qui suppose l'existence de primitive de plus haut niveau qui assure la partie parallélisation nécessaire à l'usage confortable de tels algorithmes.
 
-\paragraph{Au niveau technique}
+% - Découpler les plateformes de simulation 
 
-- Modulation de l'accès à la puissance informatique indépendante du modèle : Intégré à OpenMOLE, le couplage doit apparaitre comme transparent, tout en restant hautement flexible ce qui suppose l'existence de primitive de plus haut niveau qui assure la partie parallélisation nécessaire à l'usage confortable de tels algorithmes.
+% - Supporter différents niveau de parallélisme au niveau des métaheuristiques
 
+% - La facilité d'ajout de nouveaux composants
 
-- Découpler les plateformes de simulation 
-- Supporter différents niveau de parallélisme au niveau des métaheuristiques
+% - Une bibliothèque d'algorithmes canonique à disposition
 
-- La facilité d'ajout de nouveaux composants
-- Une bibliothèque d'algorithmes canonique à disposition
-- La documentation 
+% - La documentation 
 
-Dans l'association entre modèle de simulation et métaheuristique : Modalités de jointure entre le modèle de simulation \enquote{tel qu'il est développé} et la librairie d'algorithme évolutionnaire.
+% Dans l'association entre modèle de simulation et métaheuristique : Modalités de jointure entre le modèle de simulation \enquote{tel qu'il est développé} et la librairie d'algorithme évolutionnaire.
 
-- Séparation entre modèle de simulation 
-- 
+% - Séparation entre modèle de simulation 
+% - 
 
-Deux phases ? 
-- Usage indépendant
-- Usage associé à openMOLE
+% Deux phases ? 
+% - Usage indépendant
+% - Usage associé à openMOLE
 
+% fait apparaitre l'optimisation comme une étape supplémentaire dans l'expérimentation, 
 
+% %BehaviorSearch follows in the tradition of NetLogo [Wilensky, 1999, 2001; Tisue & Wilensky, 2004], and Logo [Papert, 1980] before it, in embracing the twin design goals of “low threshold” and “high ceiling”. By this we mean that the BehaviorSearch tool should be both easy for beginners to learn and use (“low threshold”), while also providing advanced features that will allow expert modelers to engage in cutting-edge research and analysis (“high ceiling”). To be clear, the “low threshold” goal for NetLogo, which aims to support use by elementary school students, is lower than that of BehaviorSearch, which primarily targets NetLogo’s research audience. However, increasingly NetLogo is being used by undergraduates or even high school or middle school students who are developing agent-based models for research projects, and we would like BehaviorSearch to be accessible to these audiences, as well as researchers from various disciplines who are non-expert programmers but have adopted ABM methodologies for their research. Just as NetLogo strives to make the creation of agent-based models accessible to children and novices, BehaviorSearch aims to facilitate model analysis by making search and optimization techniques accessible to all modelers.
 
-fait apparaitre l'optimisation comme une étape supplémentaire dans l'expérimentation, 
+% State of the Art
+% Flexibilité
 
-%BehaviorSearch follows in the tradition of NetLogo [Wilensky, 1999, 2001; Tisue & Wilensky, 2004], and Logo [Papert, 1980] before it, in embracing the twin design goals of “low threshold” and “high ceiling”. By this we mean that the BehaviorSearch tool should be both easy for beginners to learn and use (“low threshold”), while also providing advanced features that will allow expert modelers to engage in cutting-edge research and analysis (“high ceiling”). To be clear, the “low threshold” goal for NetLogo, which aims to support use by elementary school students, is lower than that of BehaviorSearch, which primarily targets NetLogo’s research audience. However, increasingly NetLogo is being used by undergraduates or even high school or middle school students who are developing agent-based models for research projects, and we would like BehaviorSearch to be accessible to these audiences, as well as researchers from various disciplines who are non-expert programmers but have adopted ABM methodologies for their research. Just as NetLogo strives to make the creation of agent-based models accessible to children and novices, BehaviorSearch aims to facilitate model analysis by making search and optimization techniques accessible to all modelers.
-
-State of the Art
-Flexibilité
-
-Facilité de parallélisation 
-Facilité de construction
+% Facilité de parallélisation 
+% Facilité de construction
 
 \subsection{Un point rapide sur les solutions EC existantes}
 
-Les librairies logicielles permettant la mise en oeuvre d'algorithmes évolutionnaires existent dans de très nombreux langages informatiques. Les \textit{Survey} ou \textit{state of the art} sont régulièrement mis à jour dans cette discipline, et il est inutile de se substituer ici à ce type de travaux en évoquant les avantages et les inconvénients comparés de toutes ces librairies. Le lecteur pourra se référer à l'étude très complètes de \textcite{Parejo2012} comparant selon 271 critères 11 des plus importantes plateformes sur les 33 qu'ils ont identifiés. De notre coté, on se contentera d'illustrer ce que l'on considère comme les principaux défaut du point de vue de notre grille de lecture en selectionnant un ou plusieurs librairies parmis les plus usités.
+Les librairies logicielles permettant la mise en oeuvre d'algorithmes évolutionnaires existent dans de très nombreux langages informatiques. Les \textit{Survey} ou \textit{state of the art} sont régulièrement mis à jour dans cette discipline, et il est inutile de se substituer ici à ce type de travaux en évoquant les avantages et les inconvénients comparés de toutes ces librairies. Le lecteur pourra se référer à l'étude très complète de \textcite{Parejo2012} comparant selon 271 critères 11 des plus importantes plateformes sur les 33 qu'ils ont identifiés. On se contentera ici d'illustrer ce que l'on considère comme les principaux défauts du point de vue de notre grille de lecture en sélectionnant pour cette critique une ou plusieurs librairies parmis les plus usitées.
 
 Un premier filtre permet d'éliminer toute celle qui ne s'adresse qu'à une seule branche des EA, ou qui n'implémente aucun des algorithmes multi-objectifs. 
 
-Un deuxième filtre permet d'éliminer également toute les librairies qui sont intégrés à un logiciel, impossible à utiliser en dehors de celui-ci. Le cas particulier des logiciels de modélisations (simulateurs) intégrant des algorithmes EC sera toute de même abordé afin de situer les limites de ces approches.
+Un deuxième filtre permet d'éliminer également toutes les librairies qui sont intégrées à un logiciel, donc impossibles à utiliser en dehors de celui-ci. Le cas particulier des logiciels de modélisations (simulateurs) intégrant des algorithmes EC sera tout de même abordé dans la section suivante afin de situer les limites de ces approches. Comme la librairie logicielle réalisée doit être compatible a minima avec plusieurs logiciels de modélisations existants, il ne parait pas intéressant de partir vers une solution se basant sur l'extension de ces derniers. 
 
-Un troisième filtre, 
+Afin de satisfaire les objectifs que nous avons fixés, la librairie doit pouvoir fonctionner avec OpenMOLE, car une des tâches de ce dernier va être d'orchestrer de façon transparente la parallélisation de ces algorithmes évolutionnaires, ce qui suppose une interaction assez fine entre les deux outils, et un langage informatique compatible avec Java ou Scala, les deux langages sur lesquels est construit OpenMOLE.
 
-Afin de satisfaire les objectifs que nous avons fixés, la librairie doit pouvoir fonctionner avec OpenMOLE, car une des tâches de ce dernier va être d'orchestrer de façon transparente la parallélisation de ces algorithmes evolutionnaires, ce qui suppose une interaction assez fine entre les deux outils, et un langage informatique compatible avec Java ou Scala, les langages sur lequel est construits OpenMOLE.
+\subsubsection{Les approches intégrées}
 
+\paragraph{Les tentatives isolées}
+
+Openshaw Diplock,
+Hepenstall et al, 
+etc.
+
+\hl{en cours}
+
+\paragraph{Le {BehaviorSearch} de Stonedahl}
+
+La librairie \textit{BehaviorSearch} développée par Railsback pour Netlogo intègre une librairie d'algorithme génétique.
+
+Les solutions existantes de couplage, comme le \textit{behavior search} déjà évoqué dans \hl{la section XX} ne sont pas entièrement satisfaisantes, cela sur plusieurs points déjà évoqués et résumés ci-dessous, auxquels on rajoute de nouveaux inconvénients propres à la manipulation avancé des métaheuristiques : 
+
+a) Le cycle de vie d'un modèle ne se limite pas forcément à l'établissement d'un seul modèle Netlogo, mais plusieurs, et de complexité différente. Si Netlogo est un outil indispensable de par la force et la rapidité de concrétisation d'une idée scientifique qu'il permet, les scientifiques auto-didacte peuvent rapidement être piégés par des problématiques tenant plus de la \enquote{science informatique} que de leur domaine initial.
+
+b) Le niveau de prise en charge de l'expérimentation est insuffisant pour assurer une recherche reproductible au-delà du seul modèle. Par là il faut comprendre que le protocole scientifique supportant l'évaluation du modèle de simulation n'est pas accessible, or tout comme le modèle, celui-ci possède sa propre voie de construction, et porte au contact du premier une responsabilité dans l'évolution des choix de sa structure interne. Autrement dit, sans la présence de ces deux supports de connaissances, c'est toute une discussion collective qui est rendue plus complexe, alors même que celle-ci se révèle comme un support important, voire même constitutive de ce processus de validation.
+
+c) Le support du parallélisme implicite à ce type de métaheuristique EC en local, c'est-à-dire sur un ordinateur personnel, même lorsqu'il est associé à des techniques pour réduire le nombre d'exécutions des modèles de simulation (en utilisant par exemple du \textit{fitness caching} \autocite[245]{Stonedahl2011a}), ne semble pas suffisants pour une utilisation confortable et répétée d'algorithmes métaheuristiques multi-objectifs. Ces derniers pouvant demander pour des modèles relativement simples et optimisés jusqu'à plusieurs millions d'executions, résultat d'une accumulation d'expérimentation nécessaire pour la construction et l'évaluation du modèle de simulation \autocites{Schmitt2014, Cottineau2014b}. Le framework théorique QBME (\textit{Query-Based Model Exploration}) de Stonedhal est intéressant, et ressemble par certains aspects à la méthodologie POM de Grimm, et permet comme dans cette dernière de questionner la progression du modèle sous la forme d'une question inversée par rapport au questionnement plus traditionnel. On ne se demande plus \enquote{Quels comportements vais je obtenir avec ce jeu de paramètres} mais plutôt \enquote{Quels types de paramètres m'a permis d'obtenir (ou de ne pas obtenir) un certain comportement ?}. Ce type d'analyse se base sur la construction de multiples critères d'évaluation, potentiellement contradictoire, questionnant la dynamique du modèle, et qui il me semble, se rattache plus à l'expression d'une analyse multi-objectifs. Or, les algorithmes proposés par le \textit{BehaviorSearch} se limitent pour le moment à des algorithmes mono-objectif que les cas d'utilisation réels risquent de très rapidement mettre en défaut.
+
+d) Le support ne permet pas à l'heure actuelle de jouer \enquote{facilement} avec les briques mises à disposition par les métaheuristiques, ce qui on l'a vu précédemment va à l'encontre de l'esprit de tels algorithmes. Même si une certaine extensibilité du logiciel a été prévu par le concepteur, sa mise en oeuvre demande des connaissances supplémentaires dans un autre langage de programmation que Netlogo (Scala ou Java), ce qui vient encore surcharger un peu plus les prérequis d'un utilisateur débutant qui doit déjà explorer le domaine des algorithmes évolutionnaires.
+
+Même si l'auteur est effectivement d'accord avec le concepteur du \textit{BehaviorSearch} pour dire que cet outil constitue en lui même déjà un grand pas vers la démocratisation de techniques d'expérimentation plus évoluées jugées nécessaire pour améliorer les pratiques des débutants, nous pensons qu'il est possible d'aller encore beaucoup plus loin. A ce titre, le couplage que nous visons dans ce projet se rapproche des visions d'avenir évoqués par le concepteur, dont la dernière version du logiciel est daté de 2013 \textcite[295]{Stonedahl2011a} \foreignquote{english}{In the not-so-distant future I envision in a “begin parallel search” button appearing in toolkits like NetLogo that would seamlessly launch dozens or hundreds of simultaneous genetic algorithms searches on a remote grid/cluster, reporting back the most promising results to the user as they are discovered in real-time.} La différence c'est que ce bouton n'est pas envisagé dans Netlogo, car ce n'est pas le propre de cet outil, mais dans un logiciel tel qu'openMOLE, dont la fonction est entièrement dédié à l'exécution de tâche en parallèle sur des environnements locaux (un ou plusieurs processus d'une machine), ou distribués (sur une grille de calcul, ou un cluster d'université)
+
+Si on envisage en effet la construction de modèles sur la base d'une alternance régulière entre construction de modèle et évaluation, il est tout à fait possible et même certain que l'expérimentateur soit un jour ou l'autre confronté à une ou plusieurs limitations provenant de la chaine de progression naturelle prévue par les concepteurs de cet outil \foreignquote{english}{Netlogo(for building the model) => Behavior Space (for simple model analysis) => BehaviorSearch (for more advanced analysis and exploration)} \autocite[340]{Stonedahl2011a} ? Quels sont les choix à disposition des modélisateurs débutants ayant expérimenté l'une ou l'autre de ces difficultés ? (\hl{A voir si cela ne remonte pas dans le chapitre 3 pour clôturer la partie netlogo})
+
+En résumé, les librairies déjà intégrées au logiciel de modélisation, comme le \textit{BehaviorSearch} de Netlogo, sont limitées en termes d'algorithmes, d'accès la puissance informatique nécessaire, et reste liées à un seul et unique support alors même que le modèle peut être amené à migrer de plateforme. On en déduit que cette solution, bien qu'utile pour du prototypage et de l'apprentissage, ne permet pas d'envisager sereinement la construction d'un modèle ou d'une expérimentation sur une durée plus longue.
+
+\paragraph{Les algorithmes EC dans Mason}
+
+Le framework de développement de simulation multi-agent MASON (\textit{Multi-Agent Simulation Of ...}) présenté pour la première fois en 2003 tient d'un effort conjoint entre la section d'\textit{Evolutionary Computation} du laboratoire de science informatique et le \textit{Center for Social Complexity} tout deux de la George Mason University. Ecrit en Java, solidement documenté, de développement ancien, associé depuis les débuts à un laboratoire spécialisé auteur d'une librairie datant de 1998 dédié aux EC nommée ECJ (1998), les deux logiciels étant développés par les mêmes personnes et régulièrement mis à jour ... ce framework apparait au premier abord comme un challenger sérieux pouvant se substituer à Netlogo sur des projets plus complexes. 
+
+MASON se situe sur la même ligne de développement que les librairies de développement multi-agents plus anciennes comme Swarm, Ascape, ou Repast. Tout comme ces dernières, la généricité, la performance et la modularité sont des composantes de l'application au coeur des préoccupations de Sean Luke, un des développeurs à l'origine du projet. 
+
+Une des spécificités très fortes de MASON, et qui rend cette librairie vraiment différente des trois autres, tient dans son histoire particulière. Si on en croit le développeur Sean Luke \Anote{sean_luke_mason}, c'est à la suite de sa thèse en 1998 et du développement de la librairie ECJ \Anote{sean_luke_ecj} dédié aux algorithmes d'EC, que celui-ci a ressenti le besoin d'une nouvelle librairie en accord avec ses problématiques de recherches en robotiques. A cette époque déjà, il utilise ECJ pour optimiser le comportement de robots opérant dans un environnement partagé, un domaine de recherche dont on a vu dans la section \hl{ref} que la simulation multi-agents était très liée historiquement. Cette pratique nécessite l'exécution de centaines de milliers de simulations, à la recherche de combinaisons de paramètres satisfaisants les critères dirigeant l'optimisation. La rapidité d'exécution d'une simulation devient un élément clef dès lors que ce sont des milliers, voire des millions de simulations qui doivent être executées en parallèle. C'est donc tout naturellement que celui-ci a initié sa propre librairie de simulation multi-agent, orienté vers l'utilisation efficiente des architectures multi-coeurs et depuis peu multi-ordinateurs (extension D-Mason). MASON étant conçu en parallèle de la librairie \href{http://cs.gmu.edu/~eclab/projects/ecj/}{@ECJ}, les deux outils fonctionnent très bien ensemble, et permettent l'exploitation de ressources informatiques dans des environnements distribués, initialement des clusters \autocite[211]{Luke2014}, bien qu'une \href{http://www.parabon.com/dev-center/origin}{@extension} apparemment payante permette de faire du \textit{Grid Computing}.
+
+ECJ ou Mason sont des outils à destination de développeurs spécialistes lorsqu'il s'agit de coupler les deux outils. Ce point de vue est délibérement assumé par l'auteur dans le manuel de MASON \Anote{sean_luke_masondifficile}, et ECJ \Anote{sean_luke_ecjdifficile}. 
+ 
+Il est toutefois intéressant de voir que malgré des optiques de développements différentes et une réalisation inverse à la nôtre, l'objectif motivant la construction est le même, mettre à disposition des ressources informatiques nécessaires à l'utilisation de méta-heuristiques pour l'évaluation de modèles de simulation. En effet, là ou Luke justifie d'un nouveau framework agent pour rendre efficiente l'utilisation de sa librairie d'EC, c'est pour nous la démarche inverse qui prime, et c'est la nécessité d'intégrer l'optimisation comme pratique standard dans la construction d'un modèle qui justifie d'un framework EC adapté. Les deux approches sont complémentaires, et cette question de l'efficience légitime tout à fait un changement de support de modélisation dès lors qu'on essaye de complexifier les modèles. Car comment évaluer un modèle de simulation dont une seule des exécutions dure plusieurs heures ? Notre approche se veut toutefois plus respectueuse des pratiques existantes, et la réalisation support de l'exploration du modèle, une fois mise en oeuvre, doit concéder aux utilisateurs la même facilité d'accès aux EC, qu'ils utilisent Netlogo, Mason, ou une plateforme de leur initiative.
+
+Notre approche semble se situer d'un point de vue de l'expérience utilisateur entre ces deux voies présentées précédemment.
 
 \subsubsection{Les librairies standards}
 
@@ -951,85 +1016,48 @@ Logiciels de l'INRA
 
 \href{http://jgap.sourceforge.net/}{JGAP}
 
-\subsubsection{Les approches intégrées}
 
-\paragraph{Le {BehaviorSearch} de Stonedahl}
+\subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
 
-La librairie \textit{BehaviorSearch} developpé par Railsback pour Netlogo intègre une librairie d'algorithme génétique.
+%La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie. 
 
-Les solutions existantes de couplage, comme le \textit{behavior search} déjà évoqués dans \hl{la section XX}, ne sont pas entièrement satisfaisantes, cela sur plusieurs points déjà évoqués et résumé ci dessous, auquels on rajoute de nouveaux inconvénients propre à la manipulation avancé des métaheuristique : 
+%Dans notre étude, les \textit{individus} représentent une instance de simulation,
 
-a) Le cycle de vie d'un modèle ne se limite pas forcément à l'établissement d'un seul modèle Netlogo, mais plusieurs, et de complexité différentes. Si Netlogo est un outil indispensable de par la force et la rapidité de concrétisation d'une idée scientifique qu'il permet, les scientifiques non développeur peuvent rapidement être piégé par des problématiques tenant plus de la science informatique que de leur domaine initial. 
+\subsection{Bref historique du \textit{framework} MGO}
 
-b) Le niveau de prise en charge de l'expérimentation est insuffisant pour assurer une recherche reproductible au delà du seul modèle. Par là il faut comprendre que le protocole scientifique supportant l'évaluation du modèle de simulation n'est pas accessible, or tout comme le modèle, celui-ci possède sa propre voie de construction, et porte au contact du premier une responsabilité dans l'évolution des choix de sa structure interne. Autrement dit, sans la présence de ces deux supports de connaissances, c'est toute une discussion collective qui est rendu plus complexe, alors même que celle-ci se révèle comme un support important, voire même constitutif de ce processus de validation.
+\hl{a verifier avec Romain pour la date de début}
 
-c) Le support du parallélisme en local, c'est à dire sur un ordinateur personnel, même lorsqu'il est associé à des techniques pour réduire le nombres d'éxecution des modèles de simulation (\textit{fitness caching} \autocite[245]{Stonedahl2011a}), ne semble pas suffisants pour une utilisation confortable et répétés d'algorithmes métaheuristiques multi-objectif. Ces derniers pouvant demander pour des modèles relative simple et optimisé jusqu'à plusieurs millions d'executions, résultat d'une accumulation d'expérimentation nécessaire pour la construction et l'évaluation du modèle de simulation \autocites{Schmitt2014, Cottineau2014b}. Le framework théorique QBME (Query-Based Model Exploration) de Stonedhal est intéressant, et ressemble par certains aspects à la méthodologie POM de Grimm, et permet comme dans cette dernière de questionner la progression du modèle sous la forme d'une question inversé par rapport au questionnement plus traditionnel. On ne se demande plus \enquote{Quels comportements vais je obtenir avec ce jeu de paramètres} mais plutôt \enquote{Quels type de paramètres m'a permis d'obtenir (ou de ne pas obtenir) un certain comportement ?}. Ce type d'analyse se base sur la construction de multiples critères d'évaluation, potentiellement contradictoire, questionnant la dynamique du modèle, et qui il me semble, se rattache plus à l'expression d'une analyse multi-objectifs. Or, les algorithmes proposés par le \textit{BehaviorSearch} se limitent pour le moment à des algorithmes mono-objectif que les cas d'utilisation réels risquent de très rapidement mettre en défaut.
+Le projet démarre un peu avant 2010, à l'Institut des Systèmes Complexes, principalement sous l'impulsion de Romain Reuillon, Salma Mesmoudi et Evelyne Luthon. Un premier prototype est utilisé pour isoler un ensemble viable de trajectoire dans un processus maitrisé d'affinage de camembert. La définition de ce problème constitue un problème multi-objectifs nécessitant l'usage de ressources informatiques importantes, si possible parallélisé, pour être résolu de façon exhaustive. C'est à la convergence d'une triple expertise, entre génie des procédé agro-alimentaire, expertise dans le domaine des EC et du calcul distribué que nait le premier prototype de ce programme \autocite{Mesmoudi2010}
 
-d) Le support ne permet pas à l'heure actuelle de jouer \enquote{facilement} avec les briques mises à disposition par les métaheuristiques, ce qui on l'a vu précédemment va à l'encontre de l'esprit de tels algorithmes. Même si une certaine extensibilité du logiciel à été prévu par le concepteur, sa mise en oeuvre demande des connaissances supplémentaires dans un autre langage de programmation que Netlogo (Scala ou Java), ce qui vient encore surcharger un peu plus les prérequis d'un utilisateur débutant qui doit déjà explorer le domaine des algorithmes evolutionnaires.
+Bien que conçue dès le départ pour être adossée à OpenMole, cette librairie pour le moment de conception très classique va subir un redéveloppement majeur en 2011 sous l'impulsion de Gabriel Cardoso, Romain Reuillon et Sébastien Rey-Coyrehourcq, avec la migration progressive d'une architecture classique vers une architecture construite sur la base d'un système inter-connecté de composants, décrits par la suite, et toujours en cours de développement. 
 
-Même si l'auteur est effectivement d'accord avec le concepteur du \textit{BehaviorSearch} pour dire que cet outil constitue en lui même déjà un grand pas vers la démocratisation de techniques d'expérimentations plus évolués jugés nécessaire pour améliorer les pratiques des débutants, nous pensons qu'il est possible d'aller encore beaucoup plus loin. A ce titre, le couplage que nous visons dans ce projet se rapproche des visions d'avenir évoqués par le concepteur, dont la dernière version du logiciel est daté de 2013 \textcite[295]{Stonedahl2011a} \foreignquote{english}{In the not-so-distant future I envision in a “begin parallel search” button appearing in toolkits like NetLogo that would seamlessly launch dozens or hundreds of simultaneous genetic algorithms searches on a remote grid/cluster, reporting back the most promising results to the user as they are discovered in real-time.} La différence c'est que ce bouton n'est pas envisagé dans Netlogo, car ce n'est pas le propre de cet outil, mais dans un logiciel tel qu'openMOLE, dont la fonction est entièrement dédié à l'execution de tâche en parallèle sur des environnements locaux (un ou plusieurs processus d'une machine), ou distribués (sur une grille de calcul, ou un cluster d'université)
+Ce redéveloppement poursuit un triple objectif initial, a) il s'agit d'affirmer MGO comme un framework totalement indépendant implémentant les tout derniers algorithmes issus de la littérature méta-heuristique, b) s'appuyant sur les dernières innovations en génie logiciel permettant de dévoiler la structure interne des méta-heuristiques, c) pour faciliter leur modification, leur extension d) dirigé par un objectif de parallélisation grâce à un meilleur couplage de ce framework avec openMOLE.
 
-Si on envisage en effet la construction de modèles sur la base d'une alternance régulière entre construction de modèle et évaluation, il est tout à fait possible et même certain que l'expérimentateur sera un jour ou l'autre confronté à une ou plusieurs limitations provenant de la chaine de progression naturelle prévu par les concepteurs de cet outil \foreignquote{english}{Netlogo(for building the model) => Behavior Space (for simple model analysis) => BehaviorSearch (for more advanced analysis and exploration)} \autocite[340]{Stonedahl2011a} ? Quels sont les choix à disposition des modélisateurs débutants ayant expérimenté l'une ou l'autre de ces difficultés ? (\hl{A voir si cela ne remonte pas dans le chapitre 3 pour cloturer la partie netlogo})
+%tout en servant d'architecture support pour l'exploitation et la création de toutes nouvelles méta-heuristiques, c) dont certaines adaptés pour exploiter la puissance informatique à disposition d'environnements distribués.
 
-En résumé, les librairies déjà intégré au logiciel de modélisation, comme le \textit{BehaviorSearch} de Netlogo, sont limités en termes d'algorithmes, d'accès la puissance informatique nécessaire, et reste lié à un seul support alors même que le modèle peut être amené à migrer de plateforme. On en déduit que cette solution, bien qu'utile pour du prototypage et de l'apprentissage, ne permet pas d'envisager sereinement la construction d'un modèle ou d'une expérimentation plus complexe.
+L'enjeu est donc double, les algorithmes doivent pouvoir s'exécuter indépendamment d'openMOLE, comme une librairie standard, mais les composants constitutifs doivent également pouvoir être adapté sous forme de tâches intégrées dans un workflow openMOLE permettant la mise en oeuvre de version parallélisés de ces derniers. 
 
-\paragraph{Les algorithmes EC dans Mason}
-
-Le framework de développement de simulation multi-agent MASON, présenté pour la première fois en 2003, (Multi-Agent Simulation Of ...) tient d'un effort conjoint entre la section d'Evolutionary Computation du laboratoire de science informatique et le \textit{Center for Social Complexity} tout deux de la George Mason University. Ecrit en Java, solidement documenté, de développement ancien, associé depuis les débuts à un laboratoire spécialisé auteur d'une librairie datant de 1998 dédié aux EC nommé ECJ (1998), les deux logiciels étant développés par les même personnes et régulièrement mis à jour ... ce framework apparait au premier abord comme un challenger sérieux pouvant se substituer à Netlogo sur des projets plus complexes. 
-
-MASON se situe sur la même ligne de développement que les librairies de développement multi-agents plus anciennes comme Swarm, Ascape, ou Repast. Tout comme ces dernières, la généricité, la performance et la modularité sont des composantes de l'applications au coeur des préoccupation de son créateur. 
-
-Une des spécificité très forte de MASON, qui rend cette librairie vraiment différentes des trois autres, tient dans son histoire particulière. Si on en croit le développeur Sean Luke \Anote{sean_luke_mason}, c'est à la suite de sa thèse en 1998 et du développement de la librairie ECJ \Anote{sean_luke_ecj} dédié aux algorithmes d'EC, que celui-ci a ressenti le besoin d'une nouvelle librairie en accord avec ses problématiques de recherches en robotiques. A cette époque déjà, il utilise ECJ pour optimiser le comportements de robots opérant dans un environnement partagé, un domaine de recherche dont on a vu dans la section \hl{ref} que la simulation multi-agent était très liés historiquement. Cette pratique nécessite l'execution de centaines de milliers de simulations, à la recherche de combinaisons de paramètres satisfaisants les critères dirigeant l'optimisation. La rapidité d'execution d'une simulation devient un éléments clef dès lors que ce sont des milliers, voires des millions de simulations qui doivent être executés en parallèles. C'est donc tout naturellement que celui-ci a initié sa propre librairie de simulation multi-agent, orienté vers l'utilisation efficiente des architectures multi-coeurs et depuis peu multi-ordinateurs (extension D-Mason). MASON étant conçu en parallèle de la librairie \href{http://cs.gmu.edu/~eclab/projects/ecj/}{@ECJ}, les deux outils fonctionent très bien ensemble, et permettent l'exploitation de ressources informatiques dans des environnements distribués, initialement des clusters \autocite[211]{Luke2014}, bien qu'une \href{http://www.parabon.com/dev-center/origin}{@extension} apparemment payante permettent de faire du Grid Computing.
- 
-Il est intéressant de voir que malgré des optiques de développements différentes et une réalisation inverse à la nôtre, l'objectif motivant la construction est le même, mettre à disposition des ressources informatiques nécessaires à l'utilisation de méta-heuristiques pour l'évaluation de modèles de simulation. En effet, là ou Luke justifie d'un nouveau framework agent pour rendre efficient l'utilisation de sa librairie d'EC, c'est pour nous la démarche inverse qui prime, et c'est la nécessité d'intégrer l'optimisation comme pratique standard dans la construction d'un modèle qui justifie d'un framework EC adapté. Les deux approches sont complémentaires, et cette question de l'efficience légitime tout à fait un changement de support de modélisation dès lors qu'on essaye de complexifier les modèles. Car comment évaluer un modèle de simulation dont une seule des executions dure plusieurs heures ? Notre approche est toutefois beaucoup plus respectueuse des pratiques existantes, et la réalisation une fois mise en oeuvre doit concéder aux utilisateurs la même facilité d'accès aux EC, qu'il utilise Netlogo, Mason, ou une plateforme de leur initiative.
-
-ECJ ou Mason sont des outils à destination de developpeur, voire de développeur spécialiste lorsqu'il s'agit de coupler les deux outils. Ce point de vue est délibérement assumé par l'auteur dans le manuel de MASON \Anote{sean_luke_masondifficile}, et ECJ \Anote{sean_luke_ecjdifficile}. 
-
-
-Notre approche semble se situer d'un point de vue de l'expérience utilisateur entre ces deux voies.
-
-\subsubsection{Le choix d'un nouveau couplage, openMOLE et MGO}
-
-Question de la distribution des algorithmes évolutionnaires. Quel cas d'utilisation est le plus aisé à mettre en place dans des laboratoires de science humaines ?
-
-
-\begin{itemize}
-	\item Une architecture extensible et modulaire
-	\item Une mise en oeuvre accessible aux débutants
-	\item Une prise en charge automatique et transparente des architecture multi-coeur 
-	\item La mise à disposition d'une collection d'algorithmes evolutionnaire mono et multi-objectifs
-\end{itemize}
-
-- La possibilité d'utiliser des algorithmes génétique avec une grille de calcul
-
-Mais si on se contente d'évoquer seulement ces objectifs là, on reste dans une construction isolé dont il faut encore l'interfacer, la relier, à l'execution de nos modèles de simulation.
-La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie. 
-
-
-Initié en 
-
-
-Dans notre étude, les \textit{individus} représentent une instance de simulation,
+En résumé, MGO fournit les briques et les algorithmes méta-heuristique utilisant ces briques, alors que OpenMOLE réutilise les briques dans des workflow décrivant de nouvelles versions parallélisés de ces algorithmes.
 
 \subsection{Des principes de conception innovants}
 
-Écrite dans le langage informatique Scala, cette librairie s'appuie sur la possibilité d'application d'une technique informatique particulière permettant une plus grande souplesse dans la manipulation des différentes briques composant les algorithmes evolutionnaires, sans sacrifier l'extensibilité et en garantissant une plus grande lisibilité à destination d'un public moins initiés.
+Écrite dans le langage informatique Scala, cette librairie s'appuie sur la possibilité d'application d'une technique informatique particulière permettant une plus grande souplesse dans la manipulation des différentes briques composant les algorithmes evolutionnaires, sans sacrifier l'extensibilité et en garantissant une plus grande lisibilité sur la structure interne de ces algorithmes à destination d'un public moins initié.
 
-Cette technique est plus connu sous le nom d'\textit{injection de dépendance} (\textit{dependency injection}). Le meilleur moyen de comprendre cette technique est encore de donner un exemple pour illustrer son fonctionnement sans utiliser de jargon informatique.
+Cette technique est plus connue sous le nom d'\textit{injection de dépendance} (\textit{dependency injection}). Le meilleur moyen de comprendre cette technique est encore de donner un exemple pour illustrer son fonctionnement sans utiliser de jargon informatique.
 
 \foreignquote{english}{When you go and get things out of the refrigerator for yourself, you can cause problems. You might leave the door open, you might get something Mommy or Daddy doesn't want you to have. You might even be looking for something we don't even have or which has expired.
 
 What you should be doing is stating a need, \enquote{I need something to drink with lunch,} and then we will make sure you have something when you sit down to eat.}
 
-Ce qui signifie que le programme informatique, tout comme le petit garcon ou la petite fille de notre exemple, fait état de ses besoins minimum à l'utilisateur pour être fonctionnel. Ce qui est intéressant avec cette technique, c'est qu'elle intègre spontanément les principe dit d'inversion de contrôle (\textit{Inversion Control}) et d'inversion de dépendance (\textit{Dependency Inversion}).
+Ce qui signifie que le programme informatique, tout comme le petit garçon ou la petite fille de notre exemple, fait état de ses besoins minimums à l'utilisateur pour être fonctionnel. Ce qui est intéressant avec cette technique, c'est qu'elle intègre spontanément le principe dit d'inversion de contrôle (\textit{Inversion Control}) et d'inversion de dépendance (\textit{Dependency Inversion}).
 
-Le premier principe d'inversion de contrôle renvoie à la possibilité d'externalisation du programme ou des composants du programme. Les appels ne sont plus limité à un contrôle interne, statique, et peuvent être commandé par des appels extérieurs, par un utilisateur, ou un autre programme, souvent de façon dynamique. C'est typiquement ce qu'on observe lorsqu'un utilisateur manipule une interface graphique. Chaque action réalisé, comme par exemple l'appuie par l'utilisateur d'un bouton sur cette interface, renvoie à l'execution d'un ou de plusieurs bouts de code dans le programme, de façon dynamique, sans que cette invocation en particulier soit décrite physiquement dans le programme. De nombreux langages intègrent ou étendent ce principe sous diverses noms et techniques : \textit{Events} et \textit{Callbacks}, \textit{Reactive programming}, \textit{Observer Pattern}, etc.
+Le premier principe d'inversion de contrôle renvoie à la possibilité d'externalisation du programme ou des composants du programme. Les appels ne sont plus limités à un contrôle interne, statique, et peuvent être commandés par des appels extérieurs, par un utilisateur, ou un autre programme, souvent de façon dynamique. C'est typiquement ce qu'on observe lorsqu'un utilisateur manipule une interface graphique. Chaque action réalisée, par exemple l'appui par l'utilisateur d'un bouton sur cette interface, renvoie à l'execution d'un ou de plusieurs bouts de code dans le programme, de façon dynamique, sans que cette invocation en particulier soit décrite physiquement dans le programme. De nombreux langages intègrent ou étendent ce principe sous divers noms et techniques : \textit{Events} et \textit{Callbacks}, \textit{Reactive programming}, \textit{Observer Pattern}, etc.
 
-L'inversion de dépendance est un principe un peu plus complexe à comprendre, et celui-ci pourra surement être mieux compris avec l'appel à un schéma simplifié, comme celui de la figure \ref{fig:decouplage_principe}. Celui-ci questionne la façon dont les dépendances sont fixés entre les composants de notre programme informatique. Le fait que les dépendances soit fixés par le composant lui même est une inversion de controle, et le fait que celui ci les obtiennent de l'extérieur, et non pas par une création interne est une inversion de dépendance (voir \ref{subfig_decouplage:b}).
+L'inversion de dépendance est un principe un peu plus complexe à comprendre, et celui-ci pourra surement être mieux compris avec l'appel à un schéma simplifié, comme celui de la figure \ref{fig:decouplage_principe}. Celui-ci questionne la façon dont les dépendances sont fixées entre les composants de notre programme informatique. Le fait que les dépendances soient fixées par le composant lui-même est caractéristique d'une inversion de contrôle, et le fait que celui-ci les obtienne de l'extérieur, et non pas par une création interne est une inversion de dépendance (voir \ref{subfig_decouplage:b}).
 
-L'avantage de voir le déroulement d'un programme de cette façon, c'est que chaque composant est définit en fonction d'une tâche en particulier, si possible la plus atomique possible, afin de maximiser sa réutilisation, et de limiter les effets de bords en cas de remplacement de celui-ci. C'est un jeu de brique, vous definissez les briques de façon à pouvoir les réutiliser si possible dans toutes vos constructions, si possible sans avoir à les modifier. Ce faisant vous n'avez pas à vous soucier de ce que font ou permettent les autres briques, en dehors de celle dont vous dépendez pour fonctionner correctement.
+L'avantage de voir le déroulement d'un programme de cette façon, c'est que chaque composant est défini en fonction d'une tâche en particulier, si possible la plus atomique possible, afin de maximiser sa réutilisation, et de limiter les effets de bords - c'est à dire les comportements imprévus - en cas de remplacement de celui-ci. C'est un jeu de brique, vous définissez les briques de façon à pouvoir les réutiliser si possible dans toutes vos constructions, et si possible sans avoir à les remodifier. Ce faisant vous n'avez pas à vous soucier de ce que font ou permettent les autres briques autour de vous, en dehors de celle dont vous dépendez pour fonctionner correctement.
 
-Le flôt d'éxecution du programme ne s'appuie plus sur une description statiques des dépendances entre objets composants le système, qui rendent sa modification plus difficile. Ainsi, dans notre cadre, l'inversion de contrôle renvoie à l'expression des dépendances entre composants d'un programme, celles-ci étant fournies au cas par cas pour chaque composant de façon automatique par le reste du programme, car nécessaire à son fonctionnement. On lui préfère une description sous forme de graphe de composants. Chaque composant du graphe fait états de ses besoins pour fonctioner, ce qui le rend en partie indépendant du reste du fonctionnement du programme. Lors de l'execution, le programme se déroule en interpretant de façon dynamique le graphe de composant tel qu'il a été définit par l'utilisateur. 
+Le flot d'exécution du programme ne s'appuie plus sur une description statique des dépendances entre objets composants le système, qui rendent au départ sa modification plus difficile. Ainsi, dans notre cadre, l'inversion de contrôle renvoie à l'expression des dépendances entre composants d'un programme, celles-ci étant fournies au cas par cas pour chaque composant de façon automatique par le reste du programme, car nécessaire à son fonctionnement. On lui préfère une description sous forme de graphe de composants. Chaque composant du graphe fait état de ses besoins pour fonctioner, ce qui le rend en partie indépendant du reste du fonctionnement du programme. Lors de l'exécution, le programme se déroule en interprétant de façon dynamique le graphe de composants tel qu'il a été défini par l'utilisateur. 
 
 \begin{figure}[!htbp]
   \begin{sidecaption}[fortoc]{Illustrations simplifiées des stratégies possibles pour découpler des composants logiciels entres eux. \parbox{\marginparwidth}{
@@ -1051,64 +1079,220 @@ Le flôt d'éxecution du programme ne s'appuie plus sur une description statique
  \end{sidecaption}
 \end{figure}
 
-
-Si on recontextualise ces principes à notre problèmatique, les classes de composants nécessaire à l'execution minimale d'un algorithme évolutionnaire dans MGO sont décrites dans la figure \ref{fig:cake_classe}, et s'appuie sur le travail déjà décrits de la communauté pour unifier la description des algorithmes.
-
+Si on recontextualise ces principes à notre problématique, les classes de composants nécessaires à l'exécution minimale d'un algorithme évolutionnaire dans MGO sont décrites dans la figure \ref{fig:cake_classe}, et s'appuie sur le travail déjà décrit de la communauté des EA pour unifier la description de ces algorithmes.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Classe de composants nécessaires pour l'execution d'un EC.}[fig:cake_classe]
+	\begin{sidecaption}[fortoc]{Classe de composants nécessaires pour l'exécution d'un EA.}[fig:cake_classe]
 		\centering
 		\includegraphics[width=0.7\linewidth]{cake_example.pdf}{
 		}
   \end{sidecaption}
 \end{figure}
 
-Chacune de ces classes de composants est définit comme nécessaire pour le fonctionnement d'un algorithme d'évolution, dont la mise en dynamique du comportement générique est implémenté dans le composant Evolution. Tant que l'utilisateur n'aura pas fourni un composant compatible avec chacun de ces types de composants, alors le composant Evolution ne pourra pas s'executer. Le programme est définit comme un texte à trou, les boites sont bien placés, et le programme prêt à être executé suivant cet ordre, seulement ce n'est qu'un patron, une image, et cet ensemble de boite dont seule une partie de la logique à été intégré, doit encore être complété. C'est un peu comme un puzzle dans lequel il manque des pièces, vous devez soit créer de nouvelle pièces, soit retrouver les pièces qui respectent la forme de chaque trou pour que le puzzle soit de nouveau complet. 
+Chacune de ces classes de composants est définie comme nécessaire pour le fonctionnement d'un algorithme d'évolution, dont la mise en dynamique du comportement générique est implémentée dans le composant \keyword{Evolution}. Tant que l'utilisateur n'aura pas fourni un composant compatible avec chacun de ces types de composants, alors le composant \keyword{Evolution} ne pourra pas s'exécuter. Le programme est défini comme un texte à trou, les boites sont bien placées, et le programme prêt à être exécuté suivant cet ordre, seulement ce n'est qu'un patron, une image, et cet ensemble de boites dont seule une partie de la logique a été intégrée, doit encore être complété par l'utilisateur. C'est un peu comme un puzzle dans lequel il manque des pièces, vous devez soit créer de nouvelles pièces, soit retrouver les pièces qui respectent la forme de chaque emplacement pour que le puzzle soit de nouveau complet. 
 
-L'inversion de controle détaillé dans les paragraphes précédents se matérialise de nouveau ici au travers du fait que c'est l'utilisateur qui définit sa composition, en s'assurant avec l'aide des instructions du programmes que les dépendances propres au fonctionnement de chacun des composants sont bien fournies. Tout programme ne remplissant pas les conditions renverra un message d'erreur à son execution. En ce sens MGO est probablement plus un \textit{framework} qu'une librairie logicielle \Anote{martin_fowler}. L'avantage d'une telle approche c'est que l'application peut être livrée avec un vaste catalogue de pièce correspondant à chaque emplacement, laissant à l'utilisateur la possibilité de choisir sa propre combinaisons, voire même de créer ses propres pièces si il estime quel sont manquantes. 
+L'inversion de contrôle détaillée dans les paragraphes précédents se matérialise de nouveau ici au travers du fait que c'est l'utilisateur qui définit sa composition, en s'assurant avec l'aide des instructions du programme que les dépendances propres au fonctionnement de chacun des composants sont bien fournies. Tout programme ne remplissant pas les conditions renverra un message d'erreur à son execution. En ce sens MGO est probablement plus un \textit{framework} qu'une librairie logicielle \Anote{martin_fowler}. L'autre avantage d'une telle approche c'est que l'application peut être livrée avec un vaste catalogue de pièces compatible avec chaque type d'emplacement, laissant à l'utilisateur la possibilité de choisir sa propre combinaison, voire même de créer ses propres pièces s'il estime quelles sont manquantes. 
 
-Ils existent différentes techniques pour que cette technique puisse être mise en oeuvre, mais en Scala, l'implémentation la plus courante et la plus utilisé est connu sous le nom de \foreignquote{english}{Cake Pattern}, \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection}, accessible nativement dans le langage car pensé et implémenté par son créateur Martin Odersky.
+Ils existent différentes techniques pour qu'une telle architecture puisse être mise en oeuvre. Par exemple l'utilisation mixte de \textit{classe abstraite} et d'\textit{interfaces} permettent dans de nombreux langage informatique, comme Java ou C#, de reproduire le découplage entre composants tel qu'on la vu dans la figure \ref{fig:decouplage_principe}. 
 
-Le défaut de cette technique, c'est qu'il rend la lecture du code source plus difficile, du fait de ce morcellement dans l'appel des différentes fonctions.
+En réalité, pour certains programmeurs \autocite{Odersky} ce type de techniques, dont l'existence, les avantages et les contraintes ont largement été discutés, ne constitue pas selon lui la meilleure réponse d'un point de vue informatique pour garantir la totale réutilisabilité des composants informatiques. Il faut savoir à ce sujet qu'il existe en informatique une branche de recherche tourné vers la construction de langage de programmation aux caractéristiques innovantes. Ainsi les propriétés du langage Scala utilisé pour implémenter MGO expose la solution fournie par Martin Odersky à cette question de recherche que représente la recherche d'une meilleure modularité des programmes informatiques. Tout comme les années 1980, Smalltalk a introduit une autre façon de structurer les programmes avec le langage orienté objet, Scala permet ici de penser la modularité des composants en usant d'un couplage d'abstractions ( \textit{abstract type members}, \textit{explicit self-types}, \textit{modular mixin composition}) de forme originale. Autrement dit, ce que Scala va nous permettre d'exprimer comme degré de modularité lors de la description informatique de nos composants constitue en soit une innovation qui n'est pas présente, ou présente sous des formes trop complexe vis à vis de notre cahier des charges, dans bien d'autres langages informatiques.
+
+%Si l'utilisation de classe abstraite est donc intéressante, elle ne résout pas tout les problèmes à elle seule. Ainsi par exemple, lorsqu'on utilise des classes abstraites, il n'est pas possible d'utiliser des dépendances cycliques entre composants, et la nécessité de respecter un ordre d'initialisation entre composants devient également rapidement une contrainte. 
+
+%Scala permet par exemple de définir des \keyword{traits} qui possède des caractéristiques plus intéressant que des classes abstraites ou des interfaces, tout en assurant à minima un comportement similaire. Il est par exemple possible d'assembler, de mixer de façon dynamique plusieurs traits, et l'addition des comportements se fait automatiquement.
+
+%Il est également possible de définir des traits qui contiennent totalité ou seulement partie d'une implémentation. Ce type de programmation n'est pas permises par d'autres langage informatique, comme Java par exemple. 
+
+Connue sous le nom de \foreignquote{english}{Cake Pattern}, \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection}, l'ensemble des techniques permettant d'accéder à cette modularité est donc présente de façon native dans le langage, car pensé et implémenté par son créateur \autocite{Odersky}.
+
+%Utilisé de façon complémentaire ces deux techniques permettent une grande flexibilité, une méthode ou un attribut est définit comme abstrait, et son implémentation doit être apportée par un composant externe.
+
+%utilisant le cake pattern ( abstract type members, explicit self-types, modular mixin composition )
+
+\paragraph{Mobiliser les bons composants}
+
+Un des grand défaut de cette technique, c'est qu'elle rend souvent la lecture du code source plus difficile du point de vue d'un observateur extérieur. Le programme est en effet morcelé dans un ensemble de composants contenant chacun une petite partie de la logique du programme total, assemblé par le compilateur avant l'execution du programme. De plus lorsque l'utilisateur choisit un composant, celui-ci ne fait pas qu'offrir de nouvelles alternatives à l'utilisateur, il en retire également, comme on pourrait s'attendre lorsqu'on manipule un arbre de dépendance complexe.
+
+\hl{legende a faire, probleme entre les deux exemples.}
+
+\begin{figure}[!htbp]
+	\begin{sidecaption}[fortoc]{Illustration d'un premier scénario dans la selection de composant parmis les types $X$, et $Z$}[fig:composant_expli1]
+		\centering
+		\includegraphics[width=0.7\linewidth]{dependanceExemple.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
+
+Si on considère un programme simplifié ayant besoin de deux types de composants pour fonctionner : $X$ et $Z$. Dans le premier scenario \ref{fig:composant_expli1}, l'utilisateur à choisi le composant $Z(a1)$ autonome, ainsi que le composant $X(a3)$. Ce dernier, contrairement au composant $X(a1)$ et $X(a2)$, dépend de nouveaux composant définis sur la ligne $b$ du schéma. On voit que dans les nombreux composants disponibles dans cette catégorie, seuls quelque uns s'avérent compatible avec le reste de la configuration de composant choisi par l'utilisateur. Que se passe t il lorsque l'utilisateur choisi pour $Z$ le deuxième composant $Z(2a)$ ? 
+
+\begin{figure}[!htbp]
+	\begin{sidecaption}[fortoc]{Illustration d'un deuxième scénario dans la selection de composant parmis les types $X$, et $Z$.}[fig:composant_expli2]
+		\centering
+		\includegraphics[width=0.7\linewidth]{dependanceExemple2.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
+
+C'est ce scénario qui est développé dans l'exemple \ref{fig:composant_expli2}. On voit que le choix de $Z(2a)$ implique de nouvelles restriction de choix dans la branche $X$, mais aussi la possibilité de nouveaux choix. Ainsi $X(b2)$ qui n'était pas compatible avec le composant $Z(a1)$ devient compatible avec au moins un des composants de $Z$, à savoir ici le composant $Z(b1)$ dont dépend $Z(a2)$ selectionné par l'utilisateur.
+
+%Prenons un exemple simple, si l'utilisateur décide de ne pas utiliser de composant pour l'\keyword{Archive} des meilleurs individus, alors c'est tout un ensemble de stratégies dépendant de l'existence de ce composant dans le programme qui ne peux plus être mobilisé.
+
+\paragraph{Définition d'une méta-heuristique dans MGO}
+
+L'implémentation d'un algorithme méta-heuristique prend cette forme dans MGO : 
+
+\begin{listing}[H]
+
+\begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
+
+trait NSGAII <: Evolution
+  with BinaryTournamentSelection
+  with TournamentOnRankAndDiversity
+  with NonDominatedSorting
+  with SBXCrossover
+  with PolynomialGAMutation
+  with GAGenome
+  with Crowding
+  with Pareto
+  with NonStrictDominance
+  with NoArchive
+  with GeneticBreeding
+  with MGFitness
+
+\end{minted}
+\caption{Exemple de définition d'une méta-heuristique dans MGO}
+\label{alg:nsga2}
+\end{listing}
+
+La structure interne des composants constitutif de l'algorithme NSGA2 est lisible. Chacune des briques peut être remplacé ou modifié à partir du moment ou les conditions de dépendance entre composants sont respectés. 
+
+\begin{figure}[!htbp]
+	\begin{sidecaption}[fortoc]{Schéma de dépendance existant entre les différents types de composants pour la définition de l'algorithme NSGA2 sous MGO}[fig:cake_classe]
+		\centering
+		\includegraphics[width=0.8\linewidth]{diagrammeclassemgo.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
+
+Avoir accès de façon lisible permet de mieux comprendre les différences entres les différents algorithmes. Prenons un exemple simple de construction d'algorithme génétique multi-objectif utilisant l'algorithme de classement de solution candidates dites du \textit{Non Dominated Sorting} (NDS), tiré de \autocite{Goldberg1989} et implémenté par Deb dans NSGA \autocite{Deb1994} puis NSGA2 \autocite{Deb2001}. Pour fonctionner dans ces deux variantes, élitistes ou non élitistes, ce composant à besoin que l'utilisateur choisisse deux autres composants de type \keyword{Ranking}, et de type \keyword{Diversity}. Dans sa version non elitiste, le composant Diversity n'est pas utilisé.
+
+Dans cet algorithme, les individus $x$ de la population $p_1$ sont partitioné selon un premier critère $c_1$, et de l'ensemble de partition ainsi formé, on ne retient que là premiere pour former un front $f$. Les individus de ce front sont supprimé de la population $p$, puis on recommence cette opération $n$ fois, cela jusqu'à ce que la somme des individus contenu dans l'ensemble des fronts $f_n$ soit égale à la population attendue pour $p_2$. Dans une utilisation non élitiste de cet algorithme, comme dans NSGA, la population $p_1 = p_2$. Dans une version élitiste, comme celle de NSGA2, la population $p_1$ contient également la progéniture (offspring), donc $p_2 = p_1 / 2$. Comme tout les individus de $p_1$ ne pourront pas participer à $p_2$, l'inclusion du dernier front dans $p_2$ doit être géré comme un cas particulier, et nécessite potentiellement d'être tronqué de façon intelligente, pour éviter de perdre en diversité. On fait donc appel à une méthode supplémentaire de calcul de diversité qui constitue en soit un deuxième critère de selection $c_2$ définissant les individus les uns par rapport aux autres.
+
+Le choix d'un composant \keyword{Ranking} va déterminer quel va être le critère $c_1$ utilisé, et le choix d'un composant \keyword{Diversity} va déterminer selon quel critère $c_2$ les individus participant au dernier front vont être selectionnés. 
+
+On voit bien que les stratégies permettant de fixer ces deux critères peuvent être de nature très différentes. Pour $c_1$ le critère permettant de créer les ensembles le plus classique est le critère de dominance de Pareto définit par le composant du même nom \keyword{ParetoRanking}, mais d'autres critères sont tout à fait envisageable. 
+
+Inversement, la même brique atomique définissant le calcul de dominance de Pareto est ainsi utilisé pour différents algorithmes canoniques, comme MOGA ou bien NSGA2. Ainsi là ou NSGA va utiliser cette brique plusieurs fois dans le composant NDS, MOGA va utiliser ce composant une seule fois en l'encapsulant dans un autre composant qui implémente la façon dont MOGA partitionne les individus.
+
+Pour $c_2$, le critère utilisé par NSGA2 est une distance de crowding, mais là aussi d'autres variantes existe, comme par exemple le calcul d'hypervolume de Ziztler, Baume.
+
+Le défaut majeur d'une telle approche, c'est qu'elle ne renseigne immédiatemment l'expérimentateur sur les choix valides ou invalides qui sont à sa disposition, et celui-ci peut alors se perdre dans une logique d'execution du code très éclaté. Pour résoudre ce problème, deux stratégies sont mise en oeuvre, la première c'est celle que l'on observe dans le listing \ref{alg:nsga2}, à savoir l'implémentation pré-existante dans le framework de plusieurs algorithmes évolutionnaires canonique prêt à l'emploi, et donc également prêt à être modifié, comme CMAES \autocite{Hansen}, NSGA2 \autocite{Deb2001}, ou SMS-EMOA \autocite{Beume2007}.
+
+\hl{Capture d'écran à faire avec mathieu}
+
+Un outil est également en cours de développement par Mathieu Leclaire pour explorer ce type de graphe. Nommé Janet, cette application est capable de lire et de reconstruire le graphe de dépendance entre les différents composants d'un programme qu'on lui donne à explorer. A partir de là, il autorise l'experimentateur à composer son propre graphe de façon totalement interactive, en cliquant sur les composants du graphe. 
+
+A chaque selection de composant dans le graphe, l'ensemble des dépendances est recalculé afin de montrer à l'utilisateur quelle dépendance sont accessible de façon valide à partir de ses choix. Enfin \textit{JANET} est capable de générer un squelette de code similaire à celui exprimé dans le listing \ref{alg:nsga2}, utilisable directement comme nouvel algorithme.
+
+\paragraph{Définition d'un problème d'optimisation}
+
+\hl{a finir peut etre avec un exemple concret de définition d'algorithme génétique usant d'une fonction test.}
+
+\begin{listing}[H]
+
+\begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
+
+trait Schaffer extends GAProblem with MGFitness {
+
+  def genomeSize = 1
+  def min = Seq.fill(genomeSize)(-100000.0)
+  def max = Seq.fill(genomeSize)(100000.0)
+
+  type P = Seq[Double]
+
+  override def express(g: Seq[Double], rng: Random) = Seq(f1(g(0)), f2(g(0)))
+  override def evaluate(p: P, rng: Random) = p
+
+  def f1(x: Double) = pow(x, 2)
+  def f2(x: Double) = pow(x - 2, 2)
+
+}
+
+\end{minted}
+\caption{Exemple de définition d'un problème multi-objectifs dans MGO}
+\label{alg:Schaffer}
+\end{listing}
+
+La librairie est conçu de façon à être totalement indépendante, car elle intègre à la fois les concepts nécessaire à la définition du problème, et la résolution d'un problème. En ce sens, elle peut donc être utilisé ou intégré à n'importe quel autre logiciel qui respecte le formalisme mis en place.
+
+Le listing \ref{alg:Schaffer} est un exemple de définition d'un problème d'optimisation dans MGO. Dans celui-ci, il s'agit de résoudre la fonction test F2 multi-objectif de Schaffer \textcite[94]{Schaffer1985}, déjà définit dans l'équation \ref{eq:schaffer}.
+
+La ligne 5 contient la signature du composant, et indique à MGO qu'il s'agit d'un problème de type algorithmes génétique \keyword{GAProblem} de type multi-objectif \keyword{MGFitness}.
+
+Pour que le composant \keyword{GAProblem} soit opérationel, celui-ci a besoin que l'utilisateur lui fournisse un certain nombre d'élements en entrée : une taille de génome \keyword{genomeSize}, une type de Phenotype \keyword{P}, la définition des fonctions \keyword{express(...)} et \keyword{evaluate(...)}.
+
+Si on regarde les dépendances de \keyword{GAProblem}, alors on voit qu'il dépend de \keyword{Problem}, lui même étant défini comme étant une extension d'évolution. Concrétement cela veut dire que le problème Schaffer ne pourra être résolu que si l'ensemble des composantes cumulées de \keyword{GAProblem} , \keyword{Problem} et \keyword{Evolution} sont satisfaites au moment de la résolution, défini dans la section ci dessous.
+
+Les fonctions $f1$ et $f2$ prennent un seul et même paramètre de variation $x$ non contraint. La taille \keyword{genomeSize} du génome est donc fixé à 1, et la définition \keyword{min} et \keyword{max} de sa variation est fixé ici à $-10^{5}$ et $10^{5}$.
+
+Le type \emph{P} indique la nature du phénotype attendu pour ce problème. Dans notre cas la représentation d'une solution candidate dans l'espace de solution $\mathbb{X}$ correspond à un vecteur de réels \emph{Seq[Double]} qui accueille le résultat des fonctions objectifs $f1$ et $f2$.
+
+Les deux fonctions \keyword{express(...)} et \keyword{evaluate(...)} doivent également être définies, et fixe les règles de constitution d'un Individu, une structure de données permettant de regrouper le génome, le résultat des fonctions objectifs pour ce genome, ainsi que le résultat de la future fitness.
+
+\begin{itemize}[label=\textbullet]
+\litem{\keyword{express}} prend en paramètre un vecteur de double qui correspond à la taille du génome. Dans le cas de Schaffer, il n'y a qu'un seul paramètre $x$, donc le génome $g$ est de taille 1, et donc $g(0)$ correspond forcément à la seule valeur $x$ contenu dans le génome. Cette fonction retourne l'expression de la fonction objective à évaluer, donc un vecteur contenant l'expression des deux fonctions objectives $f1$ et $f2$.
+
+\litem{\keyword{evaluate}} est une fonction qui prend un phénotype et renvoie une fitness.
+
+\end{itemize}
+
+%difference par rapport aux autres librairies ? 
+
+Dans le cas d'une simulation, \keyword{express} est la fonction qui va executer le modèle de simulation et récupèrer les valeurs en sortie, alors que \keyword{evaluate} applique les fonctions objectifs sur le phénotype. Un individu dans la population est une structure de données composé du Genome (paramètres du modèles), du résultat de la fonction \keyword{express} qui transforme un Génome en Phénotype, et du résultat de la fonction \keyword{evaluate} qui transforme un Phenotype en Fitness.
+
+\paragraph{Execution d'un problème d'optimisation}
+
+\begin{listing}[H]
+
+\begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
+
+object TestNSGAII extends App {
+
+  val resolve =
+    new Schaffer with NSGAII with CounterTermination {
+      def steps = 1000
+      def mu = 200
+      def lambda = 200
+      def genomeSize = 1
+    }
+
+  implicit val rng = newRNG(42)
+
+  val res =
+    resolve.evolve.untilConverged {
+      s => println(s.generation)
+    }
+}
+
+\end{minted}
+\caption{Evaluation d'un problème multi-objectif à l'aide de l'algorithme NSGA2}
+\label{alg:Evaluation_Schaffer}
+\end{listing}
+
+Dans l'implémentation \ref{alg:Evaluation_Schaffer}, la variable \keyword{resolve}  contient la définition de la marche à suivre : il s'agit ici de résoudre le problème \keyword{Schaffer} (voir \ref{alg:Schaffer}) en utilisant la métaheuristique \keyword{NSGA2} (voir \ref{alg:nsga2}) en utilisant un indicateur de fin d'optimisation de type compteur de génération \kewyord{CounterTermination}. 
 
 
 \subsubsection{La mise en oeuvre du couplage MGO - openMOLE }
 
-Le choix est fait ici de développé une librairie MGO utilisable de façon indépendante, ou de façon couplé à openMOLE. 
+Si MGO est effectivement parfaitement utilisable de façon autonome, elle ne bénéficie pas dans ce mode d'utilisation des algorithmes dédiés pour une utilisation sur des environnements distribués.
 
-Les objectifs motivant la construction d'une nouvelle librairie sont les suivants : 
+Or c'est bien cette utilisation que nous voulons rendre disponible aux modélisateurs, à la différence des librairies intégrés existantes, comme par exemple behaviorSearch que l'on a déjà décrit dans la \ref{section xx}.
 
-
-
-L'étape suivante est do nc le couplage de cette librairie avec openMOLE 
+Dans une première version du couplage entre MGO et openMOLE c'était à l'utilisateur de définir et de relier manuellement dans un workflow les différents composants constitutif d'une métaheuristique. Les workflows, assez complexe et uniquement accessible au format script, se sont mis rapidement à faire quelques centaines de lignes.
 
 
-Martin Oderskys’
 
-
-\begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
-import fr.iscpif.mgo._
-import math._
-import util.Random
-
-trait ZDT4 extends GAProblem with MGFitness {
-
-  def min = Seq.fill(genomeSize)(0.0)
-  def max = 1.0 :: Seq.fill(genomeSize - 1)(5.0)
-
-  type P = Seq[Double]
-
-  override def express(g: Seq[Double], rng: Random) = Seq(f1(g), f2(g))
-  override def evaluate(p: P, rng: Random) = p
-
-  def f1(x: Seq[Double]) = x(0)
-  def f2(x: Seq[Double]) = g(x) * (1 - sqrt(x(0) / g(x)))
-  def g(x: Seq[Double]) =
-    1 + 10 * (genomeSize - 1) + (1 until genomeSize).map 
-    { i => pow(x(i), 2) - 10 * cos(4 * Pi * x(i)) }.sum
-}
-}
-\end{minted}
+%Le choix est fait ici de développé une librairie MGO utilisable de façon indépendante, ou de façon couplé à openMOLE. 
 
 \section{Une brique logicielle dédiée à la visualisation de résultats}
 
