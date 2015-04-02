@@ -1105,18 +1105,24 @@ En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_n
 
 Connue sous le nom de \foreignquote{english}{Cake Pattern}, \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection}, l'ensemble des techniques permettant d'accéder à cette modularité est donc présente de façon native dans le langage, car pensé et implémenté par son créateur \autocite{Oderskyxx}.
 
-
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Mixin exemple. \parbox{\marginparwidth}{
-	\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-	        \item bla. 
-	        \item blabla.
-	        \item blablabla.
-	\end{enumerate}}}[fig:principe_mixin]
-  		\centering
-		\includegraphics[width=1.0\linewidth]{exemple_mixin.pdf}{
-		}
-  \end{sidecaption}
+	\begin{sidecaption}[fortoc]{Un exemple plus proche de l'implémentation, appuyé par une version UML orienté Scala, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveau objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
+\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
+       \item Un diagramme UML pour illustrer un scénario de dépendance entre trois composants exemples \keywordmin{A}, \keywordmin{B}, et \keywordmin{C}. Le composant A utilise une fonction run qui nécessite la définition d'une \keywordmin{methode\_b} et d'une \keywordmin{methode\_c} provenant d'un composant de type \keywordmin{B} et \keywordmin{C}. 
+       \item Un premier scenario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1. On apelle mixin cette abstration informatique qui permet de composer différents trait en Scala.
+       \item Dans ce deuxième scénario, on illustre la nécessité de rédéfinir dans D2 les attributs, mais également les méthodes, qui n'ont pas été apporté par des composants extérieurs.
+\end{enumerate}}}[fig:principe_mixin]
+	\centering
+	\subbottom[]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin.pdf}
+		\label{subfig_principe_mixin_a}}
+	\subbottom[]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin2.pdf}
+		\label{subfig_principe_mixin_b}}
+	\subbottom[]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin3.pdf}
+		\label{subfig_principe_mixin_c}}
+	\end{sidecaption}
 \end{figure}
 
 %Utilisé de façon complémentaire ces deux techniques permettent une grande flexibilité, une méthode ou un attribut est définit comme abstrait, et son implémentation doit être apportée par un composant externe.
@@ -1214,7 +1220,7 @@ A chaque selection de composant dans le graphe, l'ensemble des dépendances est 
 
 \hl{a finir peut etre avec un exemple concret de définition d'algorithme génétique usant d'une fonction test.}
 
-\begin{listing}[H]
+\begin{listing}[!htbp]
 
 \begin{minted}[linenos=true,frame=single,fontsize=\footnotesize]{scala}
 
