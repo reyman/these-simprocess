@@ -24,23 +24,90 @@
 \usepackage[l2tabu]{nag}
 \usepackage{tcolorbox} 
 \usepackage{morewrites} %slow slow slow
+\usepackage[section]{placeins}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+
 
 %%%%%%%%%%%%%%%%%%
-% INLINE BOX A LA STACK OVERFLOW
+% some color definitions
+\definecolor{tangoBlue1}{RGB}{114,159,207}
+\definecolor{tangoOrange1}{RGB}{245,121,0}
+\definecolor{tangoRed1}{RGB}{239,41,41}
+\definecolor{tangoBlack1}{RGB}{0,0,0}
+\definecolor{tangoGrey1}{RGB}{136,138,133}
+\definecolor{tangoGrey2}{gray}{0.95}
+\definecolor{tangoGrey3}{gray}{0.50}
+
+\definecolor{fftttt}{rgb}{1,0.2,0.2}
+\definecolor{ttttff}{rgb}{0.2,0.2,1}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 
 \definecolor{lgray}{gray}{0.95}
 \definecolor{light-gray}{gray}{0.50}
 \definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}% Rule colour
+
+
+% CIRCLE step MACRO
+% http://tex.stackexchange.com/questions/18870/defining-an-new-itemize-like-environment-where-itemfoo-passes-foo-to-a-macro
+
+%\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\newcommand*\circled[1]{\smash{\tikz[baseline=(char.base)]{
+            \node[anchor=text, shape=circle,fill,draw,inner sep=0pt,text=white,minimum size=1.3em] (char) {#1\strut};}}}
+
+\newcommand*\circledTask[1]{\smash{\tikz[baseline=(char.base)]{
+            \node[anchor=text, shape=circle,font=\scriptsize\bfseries, fill=white,draw,inner sep=0pt,text=black,minimum size=2em] (char) {#1\strut};}}}
+
+
+% TASK MACRO DESCRIPTION ITEMIZE
+% http://tex.stackexchange.com/questions/18870/defining-an-new-itemize-like-environment-where-itemfoo-passes-foo-to-a-macro
+
+
+\makeatletter
+\newcommand{\mydefaultlabel}{%
+    \@gobble{mydefaultlabel}% unique definition
+}
+
+\newcommand{\mymakelabel}[1]{%
+    \begingroup
+    \def\@tempa{#1}%
+    \def\@tempb{\@itemlabel}%
+    \ifx\@tempa\@tempb
+    \endgroup
+        \hss \llap{\textcolor{blue}{\rule{1em}{1em}}}%
+    \else
+    \endgroup
+        \hss \llap{%
+    \circledTask{#1}%
+        }%
+    \fi
+}
+
+\newenvironment{myitemize}{%
+    \itemize
+    \let\makelabel\mymakelabel
+    \let\@itemlabel\mydefaultlabel
+}{%
+    \enditemize
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%
+% INLINE BOX A LA STACK OVERFLOW
+
 %\makeatletter
 %\newcommand\keyword[1]{\colorbox{light-gray}{\texttt{#1}}}
 %\makeatother
 
 \makeatletter
-\newtcbox{\keyword}{on line,boxrule=0.5pt,arc=2pt,coltext=mycolor,colback=light-gray,colframe=lgray,boxsep=0pt,left=3pt,right=3pt,top=2pt,bottom=2pt, before upper={\rule[-3pt]{0pt}{10pt}}}
-\newtcbox{\keywordmin}{on line,fontupper=\scriptsize, boxrule=0.5pt,arc=2pt,coltext=mycolor,colback=light-gray,colframe=lgray,boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=1pt, before upper={\rule[-3pt]{0pt}{5pt}}}
+%\newtcbox{\keyword}{on line,boxrule=0.5pt,arc=2pt,coltext=tangoBlack1,colback=light-gray,colframe=lgray,boxsep=0pt,left=3pt,right=3pt,top=2pt,bottom=2pt, before upper={\rule[-3pt]{0pt}{10pt}}}
+
+\newtcbox{\keyword}{on line, fontupper=\scriptsize\ttfamily, boxrule=0.5pt,arc=2pt,coltext=tangoBlack1,colback=tangoGrey2, colframe=tangoGrey1, boxsep=0pt, left=2pt,right=2pt, top=0pt, bottom=0pt,extrude top by=3pt,extrude bottom by=3pt }
+
+\newtcbox{\keywordmin}{on line, fontupper=\scriptsize\ttfamily, boxrule=0.5pt, arc=2pt, coltext=tangoBlack1, colback=tangoGrey2, colframe=tangoGrey1, boxsep=0pt, left=3pt, right=3pt, top=2pt, bottom=2pt, shrink tight, extrude by=2pt}
+
 \makeatother
-
-
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
@@ -100,7 +167,6 @@
 
 %%%%%%%%%%%%%%%%%%
 % SIDE CAPTION 
-
 \newsubfloat{figure}{}
 \newsubfloat{table}{}
 
@@ -123,15 +189,11 @@
 %%%%%%%%%%%%%%%%%%
 % Enumitem global option
 % http://tex.stackexchange.com/questions/10684/vertical-space-in-lists
-\setlist[itemize]{noitemsep}
-\setlist[enumerate]{noitemsep}
+% equivalent local [noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+%\setlist[itemize]{noitemsep}
+%\setlist[enumerate]{noitemsep}
 %%%%%%%%%%%%%%%%%%
 
-\definecolor{fftttt}{rgb}{1,0.2,0.2}
-\definecolor{ttttff}{rgb}{0.2,0.2,1}
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\usepackage{pgf,tikz}
-\usetikzlibrary{arrows}
 
 \setcounter{equation}{0}
 
@@ -200,14 +262,6 @@
 \setsidecappos{t}
 %\setsidecaps{\marginparsep}{\marginparwidth}
 
-
-% BOX LEGEND 
-% some color definitions
-\definecolor{tangoBlue1}{RGB}{114,159,207}
-\definecolor{tangoOrange1}{RGB}{245,121,0}
-\definecolor{tangoRed1}{RGB}{239,41,41}
-\definecolor{tangoBlack1}{RGB}{0,0,0}
-\definecolor{tangoGrey1}{RGB}{136,138,133}
 
 % normal box
 \newcommand{\sqbox}[1]{%
@@ -433,6 +487,7 @@ Numbers=OldStyle,
 UprightFeatures={LetterSpace=-0.9},
 ItalicFeatures={LetterSpace=0.9},    % To cancel -0.9 tracking
 SmallCapsFeatures={LetterSpace=10.0},
+Ligatures=Common,
 %]{Ubuntu}
 ]{Garamond Premier Pro}
 

@@ -50,7 +50,7 @@ Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes 
 \subsection{Le domaine des algorithmes métaheuristiques, une sous-discipline de l'Optimisation}
 
 \subsubsection{Q'est ce que l'optimisation ?}
-\label{ssec:Optimisation}
+\label{sssec:Optimisation}
 
 Pour \textcite[22]{Weise2011}, l'optimisation \foreignquote{english}{ [...] is the process of solving an optimization problem, i. e., finding suitable solutions for it}, un problème d'optimisation nécessitant de trouver \foreignquote{english}{ [...] an input value $x^*$ for which a mathematical function $f$ takes on the smallest possible value (while usually obeying to some restrictions on the possible values of $x^*$ )}, la notation mathématique astérisque $^*$ désignant ici une valeur optimale.
 
@@ -79,7 +79,7 @@ On retrouve parfois rangé \enquote{en vrac} dans la classe des \textit{approxim
 %On nomme métaheuristique (\textit{metaheuristic}) ce type d'algorithmes s'appuyant sur des heuristiques (\textit{heuristic}).
 
 \subsubsection{Quelle définition peut on donner pour une heuristique (\textit{heuristic}) ? }
-\label{ssec:heuristique}
+\label{sssec:heuristique}
 
 Le terme heuristique \textit{heuristic} vient du Grec \textit{heuriskein} que l'on peut traduire par \foreignquote{english}{to find}, ou \foreignquote{english}{to discover}. D'usage plus large que dans la simple discipline informatique, nous retiendrons ici ce terme seulement sous son sens spécifique contextuel à l'optimisation. Rattaché à la définition d'un problème (\textit{problem dependent}), on définit une heuristique comme une mesure approximative pour définir la qualité d'une solution candidate \autocite[34]{Weise2011}.
 
@@ -97,7 +97,7 @@ La forme prise par une heuristique est variable, et peut aller comme vu ci-dessu
 Il faut toutefois éviter de considérer les heuristiques comme appartenant à la seule classe des \textit{approximate algorithms}, car le terme ne se laisse pas facilement enfermer dans une typologie trop simple. En effet de multiples problèmes trouvent une solution exacte jusqu'à un certain niveau de complexification, à partir duquel on fait généralement appel aux heuristiques, soit par un appel à d'autres méthodes intégrant des heuristiques, soit par une intégration d'heuristiques aux méthodes existantes. Ainsi de nombreuses classes d'heuristiques sont utilisées de façon transversale, et apparaissent donc aussi comme composantes manipulées dans la classes des \textit{approximation algorithms}. L'heuristique gloutonne \textit{greedy algorithm} \Anote{greedy_description} apparaît de façon transversale à la fois comme une solution d'approximation pour le \textit{Knapsack Problem} (KP) mais également comme moteur dans le cadre d'algorithmes déterministes exacts comme la recherche du plus court chemin de Djikstra. Un autre algorithme nommé \textit{A*} (\textit{A-Star}) qui englobe Djikstra comme cas particulier, est quant à lui capable de fournir tout à la fois une mesure exacte ou approximée en fonction de l'heuristique injectée et du niveau de complexité du problème abordé. 
 
 \subsubsection{Quelle définition peut on donner pour une métaheuristique (\textit{metaheuristic}) ?}
-\label{ssec:metaheuristique}
+\label{sssec:metaheuristique}
 
 Le terme métaheuristique est d'origine plus moderne \autocite{Glover1986}, et a permis d'englober a posteriori des algorithmes jusque là qualifiés d'heuristiques. C'est le cas par exemple d'une bonne partie des algorithmes évolutionnaires, qui émergent principalement au cours des années 1960-1970. Cette remarque d'ordre historique est à l'origine d'une première ambiguité entre les termes auquelle il faut encore ajouter les inquiétudes exprimées par \textcite{Luke2013}. Pour ce dernier, le terme métaheuristique est en réalité plutôt malheureux pour définir cette catégorie d'algorithmes, car contrairement à ce que laisse entendre ce terme, \textit{une heuristique pour ou à propos d'une heuristique}, ce n'est pas de cela dont il s'agit ici.
 
@@ -314,7 +314,7 @@ Autrement dit, il faut retenir qu'une solution candidate fait partie d'un espace
 On peut s'appuyer sur l'exemple de bras robotisé donné par \autocite{Weise2011} pour illustrer ce cas. On a d'un côté les paramètres de positionnement des éléments de bras d'un robot, contraint par la structure théorique de celui-ci, et de l'autre l'expression spatiale finale du bras représentatif de cette combinaison de paramètres dans l'espace des solutions possibles, potentiellement infini, et dont on n'a pas la maitrise directe. L'optimiseur s'appuie ensuite sur l'évaluation de cette configuration spatiale à l'aide des critères qu'on lui a donné pour induire des opérations non pas dans l'espace d'expression spatialisé du bras, mais dans l'espace de recherche des vecteurs de paramètres permettant l'amélioration de ce résultat.
 
 \subsubsection{Une formulation mathématique standardisée pour encadrer les problèmes d'optimisations et les métaheuristiques}
-\label{ssec:math_opti}
+\label{sssec:math_opti}
 
 %search space p 82
 %structure p 101
@@ -426,26 +426,26 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 \begin{sidecaption}[fortoc]{Tableau de résultats des fonction objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}}
 	[tab:pranking]
 	\centering
-	\begin{tabular}{>{$}l<{$}>{$}l<{$} >{$}l<{$} >{$}l<{$}}
+	\begin{tabular}{>{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$}}
 			\toprule
-			\text{solutions candidates} & f_1 & f_2 & \text{dominé par} \\
+			\text{solutions candidates} & f_1 & f_2 & \text{dominé par} & v_1 & v_2 \\
 			\midrule
-			a      & 3.5    & 1    &  \varnothing \\
-			b      & 3      & 1,5  &  \varnothing \\
-			c      & 2      & 2    &  \varnothing \\
-			d      & 1      & 3    &  \varnothing \\
-			e      & 0.5    & 4    &  \varnothing \\
-			f      & 0.5    & 4.5  &  \{e \}  \\
-			g      & 1.5    & 4.5  &  \{d,e,f,h \} \\
-			h      & 1.5    & 3.5  &  \{d \} \\
-			i      & 2      & 3.5  &  \{c,d,h \} \\
-			j      & 2.5    & 3    &  \{c,d \} \\
-			k      & 3.5    & 2    &  \{a,b,c \} \\
-			l      & 4.5    & 1    &  \{a \} \\
-			m      & 4.5    & 2.5  &  \{a,b,c,k,l \} \\
-			n      & 4      & 4    &  \{a,b,c,d,e,h,i,j,k,o \} \\
-			o      & 3      & 4    &  \{b,c,d,e,h,i,j \} \\
-			p      & 5     & 4.5   &  \{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o \} \\
+			a      & 3.5    & 1    &  \varnothing & 0 & 0 \\ 
+			b      & 3      & 1,5  &  \varnothing & 0 & 0 \\
+			c      & 2      & 2    &  \varnothing & 0 & 0 \\
+			d      & 1      & 3    &  \varnothing & 0 & 0 \\
+			e      & 0.5    & 4    &  \varnothing & 0 & 0 \\
+			f      & 0.5    & 4.5  &  \{e \}  & 1 & 0 \\
+			g      & 1.5    & 4.5  &  \{d,e,f,h \} & 4 & 0 \\
+			h      & 1.5    & 3.5  &  \{d \} & 1 & 0 \\
+			i      & 2      & 3.5  &  \{c,d,h \} & 3 & 0 \\
+			j      & 2.5    & 3    &  \{c,d \} & 2 & 0 \\
+			k      & 3.5    & 2    &  \{a,b,c \} & 3 & 0 \\
+			l      & 4.5    & 1    &  \{a \} & 1 & 0 \\
+			m      & 4.5    & 2.5  &  \{a,b,c,k,l \} & 5 & 0 \\
+			n      & 4      & 4    &  \{a,b,c,d,e,h,i,j,k,o \} & 10 & 0 \\
+			o      & 3      & 4    &  \{b,c,d,e,h,i,j \} & 7 & 0 \\
+			p      & 5     & 4.5   &  \{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o \} & 15 & 0 \\
 			\bottomrule
 	\end{tabular}
   \end{sidecaption}
@@ -671,8 +671,10 @@ La description des étapes de la figure résumé \ref{fig:resume_opti} sont les 
 La branche des métaheuristiques EC que nous allons étudier plus spécifiquement s'appuie sur l'observation de phénomènes naturels, comme l'évolution, ou l'organisation, pour la construction et la mise en oeuvre d'algorithmes mimant certaines propriétés intéressantes de ces processus, cela sans être rattaché à une contrainte de réalisme biologique.
 
 \subsection{Les métaheuristiques bio-inspirées, la branche des Algorithmes Evolutionnaires}
+\label{ssec:EA}
 
 \subsubsection{Un rapide historique de la discipline}
+\label{sssec:historique_EA}
 
 On a déjà rapidement décrit dans la section à propos de l'Artificial Life \ref{p:heritage_complexe} les deux voies qu'il était possible d'emprunter dans l'intéret porté sur la définition du processus naturel d'évolution. 
 
@@ -703,6 +705,7 @@ Les travaux de \textcite{Goldberg1989} ont influencé tout une génération de c
 Enfin on notera qu'il existe également une autre classe proche d'algorithmes d'optimisation basée sur une observation des mécanismes naturels, celle-ci n'étant plus basée sur la métaphore évolutive par reproduction (même si l'hybridation est envisageable), mais sur les capacités d'organisation et d'auto-organisation observées chez certains animaux comme les fourmis, les abeilles. Ces comportements ont d'abord inspiré les développements de plateformes informatiques adaptées à l'émergence de ce type de comportements, avant d'être repris et utilisé de façon beaucoup plus abstraites par la suite pour résoudre des problèmes d'optimisation. Aujourd'hui regroupées sous le terme de \foreignquote{english}{Swarm Intelligence}, ce sont par exemple les algorithmes PSO (Particle Swarm Optimization), ACO (Ant Colony Algorithms), ABC (Artificial Bee Colony), etc.
 
 \subsubsection{Les principes sous-jacent aux EA}
+\label{ssec:principesEA}
 
 Afin de pouvoir mettre en oeuvre la possibilité d'une telle souplesse dans l'adaptation de l'algorithme à une problématique d'optimisation donnée, \textcite[49]{DeJong2006a} a considéré la construction d'un modèle conceptuel plus abstrait capable d'englober dans sa description les mécanismes d'au moins ces trois version canoniques GA, ES et EP. Les concepts clef qui se dégagent d'une telle prise de distance peuvent ainsi être repris non seulement pour décrire les version canoniques mais également pour développer de nouvelles variantes ou extensions d'algorithmes. 
 
@@ -938,6 +941,7 @@ Question de la distribution des algorithmes évolutionnaires. Quel cas d'utilisa
 % Facilité de construction
 
 \subsection{Un point rapide sur les solutions EC existantes}
+\label{ssec:EC_existantes}
 
 Les librairies logicielles permettant la mise en oeuvre d'algorithmes évolutionnaires existent dans de très nombreux langages informatiques. Les \textit{Survey} ou \textit{state of the art} sont régulièrement mis à jour dans cette discipline, et il est inutile de se substituer ici à ce type de travaux en évoquant les avantages et les inconvénients comparés de toutes ces librairies. Le lecteur pourra se référer à l'étude très complète de \textcite{Parejo2012} comparant selon 271 critères 11 des plus importantes plateformes sur les 33 qu'ils ont identifiés. On se contentera ici d'illustrer ce que l'on considère comme les principaux défauts du point de vue de notre grille de lecture en sélectionnant pour cette critique une ou plusieurs librairies parmis les plus usitées.
 
@@ -948,6 +952,7 @@ Un deuxième filtre permet d'éliminer également toutes les librairies qui sont
 Afin de satisfaire les objectifs que nous avons fixés, la librairie doit pouvoir fonctionner avec OpenMOLE, car une des tâches de ce dernier va être d'orchestrer de façon transparente la parallélisation de ces algorithmes évolutionnaires, ce qui suppose une interaction assez fine entre les deux outils, et un langage informatique compatible avec Java ou Scala, les deux langages sur lesquels est construit OpenMOLE.
 
 \subsubsection{Les approches intégrées}
+\label{sssec:approche_integree}
 
 \paragraph{Les tentatives isolées}
 
@@ -1018,12 +1023,14 @@ Logiciels de l'INRA
 
 
 \subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
+\label{sssec:choix_lib_EA}
 
 %La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie. 
 
 %Dans notre étude, les \textit{individus} représentent une instance de simulation,
 
 \subsection{Bref historique du \textit{framework} MGO}
+\label{ssec:historique_mgo}
 
 \hl{a verifier avec Romain pour la date de début}
 
@@ -1095,7 +1102,7 @@ L'inversion de contrôle détaillée dans les paragraphes précédents se matér
 
 Ils existent différentes techniques pour qu'une telle architecture puisse être mise en oeuvre. Par exemple l'utilisation mixte de \textit{classe abstraite} et d'\textit{interfaces} permettent dans de nombreux langage informatique, comme Java ou C\#, de reproduire le découplage entre composants tel qu'on la vu dans la figure \ref{fig:decouplage_principe}. 
 
-En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_note_cake} ce type de techniques, dont l'existence, les avantages et les contraintes ont largement été discutés, ne constitue pas selon lui la meilleure réponse d'un point de vue technique pour garantir une meilleure réutilisabilité des composants informatiques. Il faut savoir à ce sujet qu'il existe en informatique une branche de recherche tourné vers la construction de langage de programmation aux caractéristiques innovantes. Ainsi les propriétés du langage Scala utilisé pour implémenter MGO expose la solution fournie par Martin Odersky à cette question de recherche que représente la recherche d'une meilleure modularité des programmes informatiques. Tout comme dans les années 1980, le langage Smalltalk d'Alan Kay a introduit une autre façon de structurer les programmes avec le paradigme Orienté Objet, Scala permet ici de penser de façon originale la modularité des composants en usant d'un tout nouveau couplage de différentes abstractions informatiques ( \textit{abstract type members}, \textit{explicit self-types}, \textit{modular mixin composition}). Autrement dit, ce que Scala va nous permettre d'exprimer comme degré de modularité lors de la description informatique de nos composants constitue en soit une innovation qui n'est pas présente, ou présente sous des formes trop complexe vis à vis de notre cahier des charges, dans bien d'autres langages informatiques.
+En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_note_cake} ce type de techniques, dont l'existence, les avantages et les contraintes ont largement été discutés, ne constitue pas selon lui la meilleure réponse d'un point de vue technique pour garantir une meilleure réutilisabilité des composants informatiques. Il faut savoir à ce sujet qu'il existe en informatique une branche de recherche tourné vers la construction de langage de programmation aux caractéristiques innovantes. Ainsi les propriétés du langage Scala utilisé pour implémenter MGO expose la solution fournie par Martin Odersky à cette question de recherche que représente la recherche d'une meilleure modularité des programmes informatiques. Tout comme dans les années 1980, le langage Smalltalk d'Alan Kay a introduit une autre façon de structurer les programmes avec le paradigme Orienté Objet, Scala permet ici de penser de façon originale la modularité des composants en usant d'un tout nouveau couplage de différentes abstractions informatiques ( \textit{abstract type members}, \textit{explicit self-types}, \textit{modular mixin composition}) \Anote{note_informatique_mixin}. Autrement dit, ce que Scala va nous permettre d'exprimer comme degré de modularité lors de la description informatique de nos composants constitue en soit une innovation qui n'est pas présente, ou présente sous des formes trop complexe vis à vis de notre cahier des charges, dans bien d'autres langages informatiques.
 
 %Si l'utilisation de classe abstraite est donc intéressante, elle ne résout pas tout les problèmes à elle seule. Ainsi par exemple, lorsqu'on utilise des classes abstraites, il n'est pas possible d'utiliser des dépendances cycliques entre composants, et la nécessité de respecter un ordre d'initialisation entre composants devient également rapidement une contrainte. 
 
@@ -1103,13 +1110,16 @@ En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_n
 
 %Il est également possible de définir des traits qui contiennent totalité ou seulement partie d'une implémentation. Ce type de programmation n'est pas permises par d'autres langage informatique, comme Java par exemple. 
 
-Connue sous le nom de \foreignquote{english}{Cake Pattern}, \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection}, l'ensemble des techniques permettant d'accéder à cette modularité est donc présente de façon native dans le langage, car pensé et implémenté par son créateur \autocite{Oderskyxx}.
+Souvent apellé de façon jargonnesque \foreignquote{english}{Cake Pattern} pour la possibilité de composition qu'elles offrent (comme dans un cake, un gateau dont la recette peut accueillir une très grande variété d'étapes, de composantes), ces outils aussi connus sous le nom \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection} regroupent  l'ensemble des techniques permettant d'accéder à cette modularité est donc présente de façon native dans le langage, car pensé et implémenté par son créateur \autocite{Oderskyxx}.
+
+
+La figure \ref{fig:principe_mixin} expose les différentes 
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[fortoc]{Un exemple plus proche de l'implémentation, appuyé par une version UML orienté Scala, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveau objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
        \item Un diagramme UML pour illustrer un scénario de dépendance entre trois composants exemples \keywordmin{A}, \keywordmin{B}, et \keywordmin{C}. Le composant A utilise une fonction run qui nécessite la définition d'une \keywordmin{methode\_b} et d'une \keywordmin{methode\_c} provenant d'un composant de type \keywordmin{B} et \keywordmin{C}. 
-       \item Un premier scenario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1. On apelle mixin cette abstration informatique qui permet de composer différents trait en Scala.
+       \item Un premier scenario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1.
        \item Dans ce deuxième scénario, on illustre la nécessité de rédéfinir dans D2 les attributs, mais également les méthodes, qui n'ont pas été apporté par des composants extérieurs.
 \end{enumerate}}}[fig:principe_mixin]
 	\centering
@@ -1266,18 +1276,18 @@ Les fonctions $f1$ et $f2$ prennent un seul et même paramètre de variation $x$
 
 Le type \emph{P} indique la nature du phénotype attendu pour ce problème. Dans notre cas la représentation d'une solution candidate dans l'espace de solution $\mathbb{X}$ correspond à un vecteur de réels \emph{Seq[Double]} qui accueille le résultat des fonctions objectifs $f1$ et $f2$.
 
-Les deux fonctions \keyword{express(...)} et \keyword{evaluate(...)} doivent également être définies, et fixe les règles de constitution d'un Individu, une structure de données permettant de regrouper le génome, le résultat des fonctions objectifs pour ce genome, ainsi que le résultat de la future fitness.
+Les deux fonctions \keyword{express(...)} et \keyword{evaluate(...)} doivent également être définies car elles sont utilisés par le composant \keyword{Evolution}, et fixe les règles de constitution d'un \keyword{Individu}, une structure de données permettant de regrouper le génome, le résultat des fonctions objectifs pour ce genome, ainsi que le résultat de la future fitness.
 
-\begin{itemize}[label=\textbullet]
+\begin{itemize}[label=\textbullet, noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]
 \litem{\keyword{express}} prend en paramètre un vecteur de double qui correspond à la taille du génome. Dans le cas de Schaffer, il n'y a qu'un seul paramètre $x$, donc le génome $g$ est de taille 1, et donc $g(0)$ correspond forcément à la seule valeur $x$ contenu dans le génome. Cette fonction retourne l'expression de la fonction objective à évaluer, donc un vecteur contenant l'expression des deux fonctions objectives $f1$ et $f2$.
 
-\litem{\keyword{evaluate}} est une fonction qui prend un phénotype et renvoie une fitness.
+\litem{\keyword{evaluate}} est une fonction qui prend un phénotype et renvoie un vecteur de valeur correspondant à l'évaluation des fonctions objectifs. Ici les valeurs de $f1$ et $f2$
 
 \end{itemize}
 
-%difference par rapport aux autres librairies ? 
+Dans le cas d'une simulation, \keyword{express} est la fonction qui va executer le modèle de simulation et récupèrer les valeurs en sortie, qui constitue le Phénotype. On voit bien ici que le phénotype ne permet pas forcément de discriminer les résultats de deux simulations, autant il peut s'agir d'indicateur réutilisable directement comme fonction objectifs, autant il peut également s'agir de données brutes qui peuvent être analysé en de multiples façons.  La fonction \keyword{evaluate} applique le vecteur de fonctions objectifs sur ces mesures en sortie de simulation. Un \keyword{Individu} dans la \keyword{Population} est une structure de données composée d'un Genome (paramètres du modèles), du résultat de la fonction \keyword{express} qui transforme un Génome en Phénotype, et du résultat de la fonction \keyword{evaluate} qui transforme un Phenotype en vecteur de valeurs d'objectifs.
 
-Dans le cas d'une simulation, \keyword{express} est la fonction qui va executer le modèle de simulation et récupèrer les valeurs en sortie, alors que \keyword{evaluate} applique les fonctions objectifs sur le phénotype. Un individu dans la population est une structure de données composé du Genome (paramètres du modèles), du résultat de la fonction \keyword{express} qui transforme un Génome en Phénotype, et du résultat de la fonction \keyword{evaluate} qui transforme un Phenotype en Fitness.
+%difference par rapport aux autres librairies ? 
 
 \paragraph{Execution d'un problème d'optimisation}
 
@@ -1316,7 +1326,103 @@ Si MGO est effectivement parfaitement utilisable de façon autonome, elle ne bé
 
 Or c'est bien cette utilisation que nous voulons rendre disponible aux modélisateurs, à la différence des librairies intégrés existantes, comme par exemple behaviorSearch que l'on a déjà décrit dans la \ref{section xx}.
 
-Dans une première version du couplage entre MGO et openMOLE c'était à l'utilisateur de définir et de relier manuellement dans un workflow les différents composants constitutif d'une métaheuristique. Les workflows, assez complexe et uniquement accessible au format script, se sont mis rapidement à faire quelques centaines de lignes.
+On a vu précédemment que la recherche d'une architecture logicielle modulaire était avant tout guidé par la nature elle même très modulaire des métaheuristique. L'histoire MGO tel qu'avancé dans la section \ref{ssec:historique_mgo}, un autre objectif à guider la réalisation d'un framework aussi modulaire. 
+
+% evaluate et express sont dans la meme tache dans OpenMOLE
+
+Avant mars 2012, le couplage entre MGO et openMOLE est réalisé par l'utilisateur lors de la définition des workflows. Grâce à la nature autonome et modulaire des composantes fournies par l'univers du framework MGO, la logique d'execution d'une métaheuristique peut facilement être retranscrite dans le référentiel d'openMOLE. Les tâches d'un workflow vont tout simplement encapsuler les appels et les objets spécifiques aux différentes composantes de la métaheuristique, en apportant la logique nécessaire à une execution de certaines de ces composantes dans un environnement de calcul distribué. 
+
+Autrement dit, la logique d'execution générique d'une métaheuristique décrite dans la composante \keyword{Evolution} est instancié (par exemple on choisit d'implémenter NSGA2) puis éclaté dans un ensemble de tâches dont l'organisation est guidé à la fois par la reproduction de cette optimisation, mais aussi par la parallélisation de certaines de ces tâches. 
+
+Un tel workflow doit également s'aclimater de toute la logique d'experimentation pour un modèle de simulation. Des tâches intermédiaires font donc leur apparition dans le workflow pour gérer un plan d'expérience particulier.
+
+La nature intrinsèquement parallèle des algorithmes evolutionnaires tient dans la possibilité d'évaluer non pas les solutions candidates une par une, mais bien d'un seul coup, par l'évaluation de l'ensemble des solutions candidates d'une population à un instant $t$. La première étape a donc été de distribuer l'évaluation des solutions candidates sur un environnement distribué, afin de bénéficier d'une execution quasi simultanée de l'ensemble de la population.
+
+\begin{figure}[H]
+	\begin{sidecaption}[fortoc]{wf openmole \sqbox{tangoBlue1}}[fig:openmole_wf]
+		\centering
+		\includegraphics[width=1.1\linewidth]{wf_openmole_mgo_1.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
+
+On considère les paramètres suivant, une population initiale de génomes $n$, et le nombre de réplication à executer pour chacun de ces génomes équivalent à $r$; Autrement dit, à chaque itération $t$ de l'algorithme d'optimisation, c'est $n$ jeu de valeur de paramètres différentes (équivalent génome) qui vont chacune être testé $r$ fois avec des graines aléatoires différentes. Soit un total final de $n * r * t$ simulations. 
+
+Avant de rentrer dans les détails du workflow, il est également important de rapeller que dans celui-ci, un \keyword{Genome}, et par la suite un \keyword{Individu} dans une \keyword{Population}, sont deux dénominations qui désignent avant tout un jeu de valeur de paramètres, même si un individu représente on va le voir un peu plus que çà. Autrement dit, quant on discute ici de la qualité d'un \keyword{Individu} et de son positionnement dans l'espace des objectifs \mathbb{Y}, c'est sous entendu en référence au jeu de valeur de paramètre qui a permis d'obtenir ce même \keyword{Individu}.
+
+Le premier niveau de workflow (étape \circled{1} dans la figure \ref{fig:openmole_wf}) opérant de façon locale sur la machine ou le serveur de l'utilisateur est décrit ainsi : 
+
+%\begin{itemize}[label=\textbullet]
+
+\begin{myitemize}
+
+\item[G] Cette tâche définit comment le problème va être représenté par le \keyword{Genome} durant l'optimisation. C'est aussi à ce moment là que le mapping est réalisé avec les paramètres du modèles, avec par défaut 1 gène par paramètre $p$ du modèle. Cette tâche génère ensuite un ensemble de génomes $g_i \in \{g\}, i \in \{1 \dotsc n\}$ chacun étant initialisé par des valeurs de paramètres aléatoires.
+
+\item[Eg] Cette première tâche d'exploration execute un plan d'expérience qui associe à chaque \keyword{Genome} $g_i$ une liste de graines aléatoires  - ou \textit{seeds} - $\{s_i\}$. Cette liste d'éléments $s_{i,r} , s_{i,r} \in \{s_i\}, r \in \{1 \dotsc r\}$ est de taille égale au nombre de réplications $r$ définies en paramètre de l'expérimentation. De ce plan d'expérience résulte la création d'un ensemble $\{w\}$ de sous workflows équivalent au nombre de génomes initial $n$. Chaque $w_i$ est organisé selon la description du deuxième niveau de workflow décrit ci-dessous, distribué de façon transparente sur un des noeud de la grille de calcul par openMOLE (étape \circled{2} dans la figure \ref{fig:openmole_wf}) avec pour paramètre d'entrée le vecteur $(g_i, \{s_i\})$.
+
+\item[Ag] Chaque sous workflow $w_i$ s'executant sur grille renvoie un \keyword{Individu} évalué, une structure de donnée qui associe pour chaque \keyword{Genome} $g_i$, un \keyword{Phenotype} et un vecteur d'objectifs $f_i$. Cette tâche d'aggrégation collecte ces individus auprès de l'ensemble des sous workflow de façon à former un ensemble d'\keyword{Individu} formant une nouvelle \keyword{Population} $P$. Cette dernière est ensuite transmise pour examen à la tâche suivante \textit{Ev}.
+
+\item[Ev] Cette tâche contient le coeur de l'algorithme d'optimisation, dont le comportement est fonction de l'algorithme évolutionnaire selectionné ou composé, et des paramètres choisi par l'utilisateur pour celui-ci. Dans une première phase, la population nouvellement constituée est fusionnée avec la population d'individu de la génération précédente. Une fitness est attribuée à chaque individu de cette nouvelle population, ce qui permet de caractériser la qualité de chacune de ces solutions dans l'espace des objectifs de façon relative à l'algorithme utilisé. S'ensuit alors une première phase élitiste de selection qui opère sur la base de ce score. Les individus selectionnés participent ensuite de nouveau à un tirage au sort pour tenter d'intégrer le pool d'individu (\textit{mating pool}) participant à la reproduction, étape durant laquelle emerge un ensemble de nouveaux génomes à évaluer, transmis à la tâche \textit{Ev} pour une nouvelle distribution.
+\end{myitemize}
+
+Le deuxième niveau de workflow (étape \circled{3} dans la figure \ref{fig:openmole_wf}), celui qui s'execute sur un noeud distant de la grille de calcul, contient les tâches suivantes :
+
+\begin{myitemize}
+
+\item[X] Cette tâche extrait les valeurs de paramètre du génome $g_i$ qui est donné en entrée de ce sous workflow, et les transmets avec l'ensemble des $r$différentes \textit{seeds} de l'ensemble $\{s_i\}$ à une nouvelle tâche d'exploration \textit{Es} 
+
+\item[Es] définit un nouveau plan d'expérience pour exécuter l'ensemble des réplications $s_{i,r}$ sur ce noeud local de la grille. A chaque réplication du modèle de simulation est associé un jeu de valeur de paramètre tel qu'il a été extrait du génome $g_i$ (toujours identique donc), ainsi qu'une \textit{seed}, prise dans $s_{i,r}$ avec $r$ différent pour chaque réplication.
+
+\item[M] exécute le modèle de simulation avec la graine aléatoire $s_{i,r}$ et le jeu de valeur de paramètre fourni. Cette étape est équivalente à la constitution du Phénotype.
+
+\item[Obj] applique aux résultats de la simulation les fonctions objectifs définis par l'utilisateur dans le workflow
+
+\item[As] récupère les vecteurs de valeurs objectifs associées à chaque réplication du modèle de simulation, et les aggrege selon une fonction statistique choisi par l'utilisateur, une moyenne ou une médiane par exemple.
+
+\item[Ind] crée un \keyword{Individu}, une structure de donnée associant le \keyword{Genome} $g_i$ évalué et le vecteur objectifs précédemment agregé. La \textit{seed} n'est pas conservé dans cette expérience ou on recherche avant tout un comportement robuste à l'aléa.
+
+\end{myitemize}
+
+Les premiers workflows \Anote{cas_utilisation_wfom}, assez complexes et uniquement accessibles au format scripts, ont rapidement constituées des fichiers de plusieurs centaines de lignes. Cette évolution, difficilement prévisible, est rapidement devenu à la fois problématique pour la maintenance  mais également la compréhension de tels expérimentations. Un obstacle vis à vis de notre principal objectif, mettre à disposition des modélisateurs un outil dont le premier avantage est sa lisibilité et sa facilité de mise en oeuvre. 
+
+En effet, si les métaheuristiques se doivent effectivement d'être modifiable, ce n'est pas forcément cet aspect qui prime pour une utilisation dans la modélisation; qui subit une fois la base du modèle réalisé des cycles de développements assez courts en définitive, ceux ci se limitant la plupart du temps à des ajouts, des modifications, ou des retraits d'hypothèse. L'utilisation de méta-heuristique, même canonique, est un premier palier d'utilisation pour tenter de discriminer au plus vite les modèles de simulation. Dans ce cas c'est bien les propriétés d'efficacité et d'indépendance au problème que l'on mobilise dans l'utilisation de métaheuristique. La modification plus fine est un cas d'utilisation qui vise une adaptation spécifique de la réponse d'une métaheuristique à un problème, ce qui nécessite de la part de celui-ci une variabilité moindre que dans le cas d'un construction de modèle.
+
+Si l'execution d'un tel workflow est déjà un premier pas vers une systématisation dans l'application de ces techniques d'optimisation à l'exploration des modèles de simulations, il faut soulever un autre point important aux yeux de l'utilisateur. Quelle performance peut on en effet attendre d'un tel workflow d'optimisation distribué lorsqu'il est appliqué sur un modèle de simulation relativement rapide en Netlogo ?
+
+Si $n=200$, $r = 30$, $t=2000$, cela équivaut donc à 12 millions de simulations. Pour nous donner une durée d'execution, il faut encore multiplier par la durée d'exécution du modèle : un modèle jugé relativement rapide s'executant en moyenne en 2 minute sous Netlogo revient à cumuler environ 46 années de calcul sur un seul processeur. Sur une grille de calcul disposant de 1000 processeurs, cette durée descend à 17 jours. Sachant que de tels algorithmes évolutionnaire ne garantissent pas d'optimum global, ceux ci doivent également être répliqué afin de vérifier si l'algorithme, malgré notre vigilance sur les paramètres de celui-ci, ne serait pas malheureusement tombé dans un optimum local ?
+
+On comprend dès lors que chaque minutes qui peut être gagné sur l'exécution de ce modèle est autants de temps gagné sur la rapidité avec laquelle on est capable d'effectuer un retour d'expérience sur notre modèle à partir de ces résultats. 
+
+
+Un triple retour d'experience, pour MGO, pour openMOLE, pour le modèle.
+
+Un choix difficile s'offre au modélisateur voulant explorer de façon plus systématique 
+
+Quelles questions ?
+- Comment effectuer une recherche plus exhaustive des comportements des modèles ?
+- Comment discriminer les résultats d'un front de Pareto, quelle experise humaine ?
+
+Quels apprentissages ?
+- Quels biais dans les modèles stochastique ?
+- Nombre de réplications nécessaires, suffisantes ? 
+- Quel retour sur la thématique ?
+
+Quelques pistes ?
+- quels critères d'arrets ?
+- quel espilon sur les objectifs ?
+- quelle possibilité de réévaluation ?
+- aller vers des algorithmes utilisant la grille de façon plus efficace
+- réécrire les modèles
+- réduire le nombre d'objectif
+- réduire le nombre de réplication 
+- réduire la population d'individu
+- réduire la durée de l'expérimentation
+
+
+
+
+
+\textbf{Après + description !!}
 
 
 
