@@ -2,10 +2,55 @@
 
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
 
-\section{Le système de workflow OpenMOLE}
+\section{Accéder à des ressources informatiques adaptés, le logiciel OpenMOLE}
 \label{sec:openMOLE}
 
+Evidemment il faut citer le travail important réalisé sur le prototype par Amblard, à la fois dans le démocratisation de la validation, mais également dans les outils.
+
+\subsection{Quel accès à la ressources}
+
+%Note : Montre le fait que HPC est un probleme qui n'est pas nouveau chez les géographes, et que certains avait déjà préssenti son utilité, pas que pour la modélisation : openshaw HPC
+
+
+Du coté de l'utilisation des ressources HPC existantes habituellement à disposition des sciences physique et mathématique, un dossier administratif indiquant la nature du projet scientifique et le temps de calcul moyen doit être déposé plusieurs mois à l'avance, avant d'être approuvé. Là encore, nous sommes très éloignés des pratiques, mais également des besoins en SHS. 
+Si on regarde à l'inverse du coté des sciences physique, ce type d'accès est en train de se normaliser, et devient accessible dans le cadre de formations. La \enquote{Maison de la Simulation} dispose par exemple pour les travaux pratiques de ces formations d'un accès dédiés au ressources HPC disponibles sur le campus du plateau de Saclay. 
+
+Le Grid Computing, même si il offre des limites évidentes pour certains usages (bande passante limité, mémoire sur chaque noeud limité, communication entre les noeuds impossible, etc.) s'avère en revanche très intéressante par la flexibilité d'emploi qu'elle permet.
+
+Ces modalités d'accès sont donc beaucoup plus intéressante du point de vue d'un modélisateur dont l'activité de construction nécessite d'évaluer très régulièrement ses modèles de simulation par l'usage de techniques diverses, toutes relativement exigente sur les aspects computationels : analyse de sensibilité, plan d'expérience divers, usage d'algorithmes d'optimisation pour la calibration ou l'exploration des comportements du modèles, etc. 
+
+L'accès administratif est géré par des organisations virtuelles délivrant des certificats d'accès à la ressource d'un an renouvelable. La ressource est donc disponible de façon illimité et relativement immédiate (moyennant la rapidité de transferts des programmes sur la ressource distance, et la charge existante de la grille auquelle on accède) dès lors qu'on possède un de ces certificat. 
+
+De multiples équipements informatiques implenté et accessible à des mailles géographiques différentes, d'utilisation pour la production ou la recherche, sont réunis et accessible aux chercheurs par le biais de divers portails administratifs. Apellé Organisation Virtuelle (\textit{Virtual Organization}), ces entités administratives virtuelles régissent l'attribution des ressources d'une grille en fonction des différents accords passés entre acteurs intervenant dans la constitution de la grille, et cela selon divers critères qui peuvent être d'ordre thématique, technique, de zones géographiques, etc.
+
+En France c'est depuis 2010 le GIS France-Grilles (vo.france-grille.fr) qui mène cette mission de mutualisation entre les différents acteurs public (Laboratoires, Méso-Centres, Centres nationaux) et privé au niveau national (Initiative Nationale de Grille ou NGI), mais aussi européen en étant le partenaire et représentant francais de l'EGI (European Grid Infrastructure). Pilotés par des institutions scientifiques majeures (MESR, CNRS, CEA, INRA, INRIA, INSERM, CPU, RENATER), ce GIS coordone la mise en place d'une grille de calcul nationale a priori accessible à tout les disciplines scientifiques par le biais de différentes VO. D'après les statistiques 2012, sur 700 utilisateurs regroupés en 89 VO rattachés à la VO france grille, seulement 12 utilisateurs sont enregistrés dans la catégorie systèmes complexes, et 0 pour les sciences sociales. Sur 1450 référencements entre 2010 et 2013, la collection HAL maintenue par France-Grilles pointant les publications utilisateurs de cette grille nationale, il y'a 1 seule publication référencé en science de l'homme et de la société. Aujourd'hui il y'en environ une dizaine de référencé, provenant en majorité des géographes.
+
+Dans le cadre des SHS en France, il y a également la mise à disposition de ressources informatique par la collaboration au CNRS entre le \href{http://cc.in2p3.fr/}{@CC-IN2P3} et l'ancien TGE Adonis devenu TGIR \href{http://www.huma-num.fr/}{@Huma-Num}. Human-Num offre une liste de service à disposition des laboratoires, dans lequel figure un accès à des ressources informatiques de type grille de calcul par le biais de l'IN2P3, accessible via la technologie Grid-Engine. 
+
+https://hal.archives-ouvertes.fr/FRANCE-GRILLES
+https://hal.archives-ouvertes.fr/FRANCE-GRILLES/search/index/q/%2A/domain_t/shs/
+GRID2-FR
+
+Des formations sont évidemment ouvertes dans ces différents instituts, mais non seulement ces organisations ne sont pas connus de la plupart des géographes, et de plus le niveau technique nécessaire à la compréhension de ces formations est trop complexe et trop éloigné du domaine de compétence des géographes pour que ceux ci s'y présentent spontanément. 
+
+Autrement dit, et sans cette formation, une fois l'utilisateur connecté à une grille de calcul, que le curseur du terminal informatique clignote dans le vide, quels sont ensuite les manipulations, les commandes à connaitre et à réaliser pour exécuter nos calculs en parallèle sur cette infrastructure ? 
+
+Voici ce pour quoi openMOLE est un outils indispensable pour faire le liens entre les usages en SHS, et ces ressources distribués.
+
+Les géographes francais utilisant actuellement la grille de calcul pour l'execution de simulation sont rattachés à la VO des système complexe européenne (\textit{vo.complex-systems.eu}), et sont principalement issue du laboratoire Géographie-Cités à Paris, et du laboratoire GEOLAB de Limoges.
+
+Sans cette collaboration à la fois humaine et technique avec l'Institut des systèmes complexes de Paris (ISC-PIF), ce premier contact avec le \textit{Grid Computing} n'aurait probablement pas pu se faire.
+
+ mais reste encore très éloigné de la sphère des pratiques et des formations actuelles, peu de monde ayant le niveau technique suffisant pour mettre en oeuvre l'amorce technique nécessaire à la bonne utilisation de cette ressource informatique, fourni ici sous sa forme la plus brute \Anote{human_num_note}. 
+
+ GRID2-FR est l'autorité de certification du CNRS, le laboratoire doit être enregistré auprès de cet organisme pour pouvoir ensuite récupérer des certificats.
+
+% Cette plateforme peut elle faire autre chose ? Vais je pouvoir partager mon modele ou mon experience avec d'autres scientifiques ?
+
+Dans un article daté de 2015, johnatan dursi 
+\href{http://www.dursi.ca/hpc-is-dying-and-mpi-is-killing-it/}{hpc is dying}
 \subsection{Historique}
+
 
 \subsection{Principes et mise en oeuvre}
 
@@ -33,6 +78,62 @@
 %\subsubsection{Quelle utilité pour la construction et l'évaluation de modèle de simulation ?}
 
 %Le chapitre 1 se terminait déjà sur la difficulté pour calibrer les modèles. Le chapitre 2 a prouvé que la construction et l'évaluation d'un modèle était deux processus indissociables, 
+
+
+% Fil plus chronologique, guidé par les besoins !
+
+% - Accéder au HPC et Grid Computing
+% 
+
+% - Présentation modèles exemples
+% - OpenMOLE
+% - MGO
+%
+% Plan temporaire MGO :
+% - Présentation besoins / objectifs.
+% - Insufisance EC existant (2.2.3.1 actuel)
+% - Présentation plus large de la discipline + encadré resituant SLocal 
+% - Mise en oeuvre MGO
+%	- Historique 
+%   - Principe conception innovant
+% - Mise en oeuvre couplage MGO - openMOLE
+% - Premier prototype, bilan autour de l'expérience SLocal
+
+% Prise de recul sur la méthodologie, accointance et critique de la méthode POM avancé par Grimm ?
+
+\subsection{Objectifs}
+
+Plutot que de parler d'objectifs initiaux, je crois que le déroulé de notre expérience ces 5 dernières années prend une forme plus modeste de jalons, qui releve parfois plus d'une intuition motrice 
+
+L'idée d'une évaluation plus encadré des modèles de simulation développé au laboratoire s'inscrit d'une part dans les travaux  suite au travaux de thèse de Thomas Louail, et  préliminaire réalisés et de Clara Schmitt, 
+
+En ce sens, la frustration a été de façon étonnante je crois, un élément moteur dans l'émergence d'une écosystème ouvert à l'intégration  .
+
+ 2009 et 2010, l'objectif partait d'un certains nombre de frustration prenant racine  dans l'observation des limites des pratiques existantes dans le laboratoire et dans la littérature, pour évaluer les modèles existants, mais également les modèles en cours de construction.
+
+  - celle de ne pas comprendre la dynamique de nos modèles, pourtant encore très simple
+  - la constatation dans la littérature d'une certaine d'outils support des méthodes
+  
+  - très peu de réutilisabilité des comportements implémentés : vous vous trouver devant un choix d'implémentation, lequel sera le bon ? 
+
+
+Ces frustrations ont données naissance à plusieurs pistes de développement d'outils : SimPuzzle, MGO.
+
+
+- Construire une méthodologie autour d'un prototype
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Le chapitre 3 a fait le point sur les enjeux d'une solution globale capable de prendre en compte toute les dimensions rattaché au bon déroulement de cette construction.
 
@@ -138,12 +239,28 @@ Afin de mieux comprendre cette table de propriétés un peu abstraite, il est pr
 
 Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou \textit{Knapsack}, on a déjà vu que le nombre de combinaisons à évaluer lors d'une augmentation du nombre d'éléments participant à la définition du problème devient très vite problématique si on cherche à trouver une solution optimale exacte. Si on prend le cas d'un exemple plus ludique d'optimisations discrètes dans la branche des jeux (\textit{Combinatorial game theory}), le nombre de combinaisons légales possibles pour un plateau de 19 par 19 dans le jeu de GO chinois est estimé par \textcite{Tromp2007} à $2.08168199382×10^{170}$ . Même si certains auteurs comme Tromp estime qu'un tel calcul sera possible d'ici quelques mois \Anote{tromp_appel_calcul}, les problématiques posés par ce jeu mettent au défi les meilleurs programmes en intelligence artificielle \autocite{Bouzi2001}, et cela malgré des progrès spectaculaires ces dernières années, via notamment l'utilisation d'heuristique plus efficace que les approches classiques \Anote{mcts_go}.  Dans le cas d'un problème continu discrétisé, comme la recherche des meilleures valeurs de paramètres pour une simulation, la mise en oeuvre d'un plan factoriel complet (d'autres types de stratégies beaucoup plus fines existent) pose un problème double. 
 
-
-
 \hl{Correction orthographe à faire}
 D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède 5 paramètres, chacun de ces paramètres étant discrétisé en 10 pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique (10 réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à 2 années de calcul... La parallélisation d'un tel calcul, c'est à dire son execution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
 
 Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}.
+
+% ENCADRER ?
+\paragraph{Simpop Local}
+
+% Exemple pour illustrer ca au travers des problèmes SLocal qu'on a eu ? 
+
+% Jonction des trois fonctions objectifs
+
+% Plutot une argumentation pour justifier de la nécessité d'explorer rapidement les modèles. Mais dans un deuxième temps, sur les analyses de sensibilités, car analyse de sensibilité c'est pas tip top
+
+Lors de l'implémentation une deuxième vague de paramètres est à prendre en compte lors des expérimentations. En effet lorsque vient la nécessité d'implémenter les hypothèses dans un programme informatique, le modélisateur doit faire face à la fois aux ambiguités du langage naturel, mais doit également prendre en compte des externalités qui interfere avec l'image du modèle conceptuel. 
+
+Les informaticiens sont habitués à cette exercice de décomposition, recomposition qui permet de passer d'une description très abstraite, à une implémentation fonctionelle, par exemple dans la manipulation de base de données. Seulement ici, ce n'est pas tant la qualité fonctionelle qui guide l'implémentation du modèle mais bien la qualité de similarité avec le modèle conceptuel. L'implémentation . C'est cette fameuse étape de vérification qui est censé nous garantir que le modèle dit bien ce que l'on veut qu'il dise.
+
+Toute nouvelle variable exogène à ce modèle conceptuel rentre donc soit dans la catégorie des omissions involontaire, jalon naturel d'une bonne progression dans un raisonnement scientifique, soit dans la catégorie des paramètre a-thématique informatique, dont on ne peut s'empecher de penser qu'ils interferent et dégradent forcément ce bel édifice scientifique en cours de construction.
+
+
+
 
 Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, cas nous verrons que les méta-heuristique opérant dans des espace de paramètres discret mais aussi continu, sans qu'une discrétisation préalable soit nécessaire en amont.
 
@@ -869,8 +986,6 @@ MGO devra être supporté par une architecture qui répond aux exigences différ
 	\item{\textbf{Besoin de plus d'extensibilité ?}} Je ne trouve pas le composant nécessaire à la construction d'une métaheuristique adaptée à mon problème, quels sont les outils mis à ma disposition pour que je puisse ajouter le ou les composants facilement, à moindre cout, sans que l'ensemble du programme ne soit affecté par mes modifications ?
 \end{enumerate}
 
-
-
 En résumé, Mgo doit assurer \hl{repetition ici, a revoir} :
 
 \begin{itemize}
@@ -1139,7 +1254,7 @@ La figure \ref{fig:principe_mixin} expose les différentes
 
 %utilisant le cake pattern ( abstract type members, explicit self-types, modular mixin composition )
 
-\paragraph{Mobiliser les bons composants}
+\subsubsection{Mobiliser les bons composants}
 
 Un des grand défaut de cette technique, c'est qu'elle rend souvent la lecture du code source plus difficile du point de vue d'un observateur extérieur. Le programme est en effet morcelé dans un ensemble de composants contenant chacun une petite partie de la logique du programme total, assemblé par le compilateur avant l'execution du programme. De plus lorsque l'utilisateur choisit un composant, celui-ci ne fait pas qu'offrir de nouvelles alternatives à l'utilisateur, il en retire également, comme on pourrait s'attendre lorsqu'on manipule un arbre de dépendance complexe.
 
@@ -1167,7 +1282,7 @@ C'est ce scénario qui est développé dans l'exemple \ref{fig:composant_expli2}
 
 %Prenons un exemple simple, si l'utilisateur décide de ne pas utiliser de composant pour l'\keyword{Archive} des meilleurs individus, alors c'est tout un ensemble de stratégies dépendant de l'existence de ce composant dans le programme qui ne peux plus être mobilisé.
 
-\paragraph{Définition d'une méta-heuristique dans MGO}
+\subsubsection{Définition d'une méta-heuristique dans MGO}
 
 L'implémentation d'un algorithme méta-heuristique prend cette forme dans MGO : 
 
@@ -1194,7 +1309,7 @@ trait NSGAII <: Evolution
 \label{alg:nsga2}
 \end{listing}
 
-La structure interne des composants constitutif de l'algorithme NSGA2 est lisible. Chacune des briques peut être remplacé ou modifié à partir du moment ou les conditions de dépendance entre composants sont respectés. 
+La structure interne des composants constitutif de l'algorithme NSGA2 est lisible dès lors qu'on a déjà étudié le fonctionnement de métaheuristique. Chacune des briques (ici une par ligne) peut être remplacé ou modifié à partir du moment ou les conditions de dépendance entre composants sont respectés. 
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[fortoc]{Schéma de dépendance existant entre les différents types de composants pour la définition de l'algorithme NSGA2 sous MGO}[fig:cake_classe]
@@ -1212,6 +1327,7 @@ Le choix d'un composant \keyword{Ranking} va déterminer quel va être le critè
 
 On voit bien que les stratégies permettant de fixer ces deux critères peuvent être de nature très différentes. Pour $c_1$ le critère permettant de créer les ensembles le plus classique est le critère de dominance de Pareto définit par le composant du même nom \keyword{ParetoRanking}, mais d'autres critères sont tout à fait envisageable. 
 
+\hl{ A corriger avec les evolutions proposés}
 Inversement, la même brique atomique définissant le calcul de dominance de Pareto est ainsi utilisé pour différents algorithmes canoniques, comme MOGA ou bien NSGA2. Ainsi là ou NSGA va utiliser cette brique plusieurs fois dans le composant NDS, MOGA va utiliser ce composant une seule fois en l'encapsulant dans un autre composant qui implémente la façon dont MOGA partitionne les individus.
 
 Pour $c_2$, le critère utilisé par NSGA2 est une distance de crowding, mais là aussi d'autres variantes existe, comme par exemple le calcul d'hypervolume de Ziztler, Baume.
@@ -1226,7 +1342,7 @@ Un outil est également en cours de développement par Mathieu Leclaire pour exp
 
 A chaque selection de composant dans le graphe, l'ensemble des dépendances est recalculé afin de montrer à l'utilisateur quelle dépendance sont accessible de façon valide à partir de ses choix. Enfin \textit{JANET} est capable de générer un squelette de code similaire à celui exprimé dans le listing \ref{alg:nsga2}, utilisable directement comme nouvel algorithme.
 
-\paragraph{Définition d'un problème d'optimisation}
+\subsubsection{Définition d'un problème d'optimisation}
 
 \hl{a finir peut etre avec un exemple concret de définition d'algorithme génétique usant d'une fonction test.}
 
@@ -1320,15 +1436,74 @@ object TestNSGAII extends App {
 
 Dans l'implémentation \ref{alg:Evaluation_Schaffer}, la variable \keyword{resolve}  contient la définition de la marche à suivre : il s'agit ici de résoudre le problème \keyword{Schaffer} (voir \ref{alg:Schaffer}) en utilisant la métaheuristique \keyword{NSGA2} (voir \ref{alg:nsga2}) en utilisant un indicateur de fin d'optimisation de type compteur de génération \keyword{CounterTermination}. 
 
+\hl{verifier mu et lambda dans le code MGO}
+Les variables \keyword{steps} (nombre d'itération avant arrêt de la métaheuristique), \keyword{mu} (), \keyword{lambda} (), \keyword{genomeSize} (taille du génome) sont des variables qui n'ont pas trouvé de valeur dans la composition du graphe de dépendance reliant les différents composants, le compilateur fait donc remonter (sous forme d'erreur à la compilation) la nécessité de définir ces variables aux derniers niveau de définition, qui constitue la tête de l'arbre, afin que ceux ci soient renseignés par l'utilisateur.
+
+
 \subsubsection{La mise en oeuvre du couplage MGO - openMOLE }
 
-Si MGO est effectivement parfaitement utilisable de façon autonome, elle ne bénéficie pas dans ce mode d'utilisation des algorithmes dédiés pour une utilisation sur des environnements distribués.
+Dans la section justifiant la création d'une nouveau framework dédié aux méta-heuristiques, on a abordé des points d'objectifs à la fois centré sur les capacités finale de MGO en tant que framework flexible, extensible, autonome; mais également sur les capacités tout autres attendues pour une utilisation de ce framework dans un outil spécialisé dans la distribution transparente des calculs, openMOLE.
+
+Concevoir des logiciels capable de s'exectuer sur des environnement distribués est une spécialité informatique en tant que telle, usant de technologie et de jargon déjà difficile d'accès à des développeurs spécialisé, et donc encore moins accessible à un public plus inter-disciplinaire comme les chercheurs en SHS. 
+
+Il n'est donc pas question d'associer, du moins dans un premier temps, une myriade d'interface au framework MGO à destination d'un couplage direct avec les technologies \textit{HPC} ou de \textit{Grid Computing}. Il me semble être beaucoup plus intéressant de ne pas complexifier outre mesure la librairie MGO, et de profiter du fait qu'il s'agit d'un \textit{framework} pour composer des métaheuristiques plus adaptés à l'usage maximum qui peut être fait des ressources disponibles. En soit, MGO peut dans sa version autonome satisfaire un public scientifique exigeant sur le volet d'une recherche théorique dans le domaine des méta-heuristiques, tout en proposant dans un plugin pour openMOLE, des métaheuristiques adaptés à un tout autre public, attiré par l'efficience de ces algorithmes pour des cas d'utilisation très spécifique qui n'ont que très peu avoir avec les \textit{benchmarks} que l'ont trouve par exemple dans la littérature des EA. Dans cette configuration, composer ces propres métaheuristiques reste toujours possible, mais demande un peu plus de connaissance technique pour modifier le code du plugin faisant l'interface entre MGO et openMOLE. Le tableau \ref{tab:resume_public_cible} aborde de façon synthétique ces deux points de vue utilisateurs par rapport aux principales qualités attendues du programme : Flexibilité, Extensibilité, Utilisabilité.
+
+% http://www.tablesgenerator.com/latex_tables#
+% Ajouter une couleur sur la partie +++ a mettre en valeur coté plugin MGO
+
+\begin{table}[!htbp]
+\begin{sidecaption}[fortoc]{Résumé des avantages et des inconvénients à atteindre selon le public cible. \parbox{\marginparwidth}{
+\begin{enumerate}[label={},noitemsep,  parsep=0pt, partopsep=0pt, labelindent=0pt,leftmargin=*]
+		\item $-$ assez difficile 
+		\item $-{}-$ difficile 
+		\item $-{}-{}-$ très difficile
+		\item $+$ assez facile
+		\item $++$ facile
+		\item $+++$ très facile
+\end{enumerate}}}
+	[tab:resume_public_cible]
+	\centering
+	\begin{tabular}{llllll}
+		\toprule
+		\multicolumn{2}{l}{\multirow{2}{*}{}} & \multicolumn{2}{l}{modélisateur} & \multicolumn{2}{l}{informaticien} \\ \cline{3-6} 
+		\multicolumn{2}{l}{} & Plugin Mgo & Mgo & Plugin Mgo & Mgo \\ 
+		\midrule
+		(1) & Flexible & $-{}-$ & $+$ & $+$ & $+++$ \\
+		(2) & Extensible & $-{}-{}-$ & $-$ & $+$ & $++$ \\
+		(3) & Utilisable & $+++$ & $+$ & $+++$ & $+++$ \\
+		\bottomrule
+		\end{tabular}
+  \end{sidecaption}
+\end{table}
+
+\begin{enumerate}[label=(\arabic*)]
+\item Du point de vue de la flexibilité des métaheuristiques proposés, c'est à dire de la possibilité de combinaisons de composants offertes par MGO, elle est censé être identique que cela soit dans le plugin ou directement avec MGO. Toutefois, cette flexibilité est beaucoup plus difficile à mettre en oeuvre dans le plugin pour des non informaticiens, car la logique d'exécution des métaheuristiques est éclatée dans différentes tâches d'un workflow openmole afin que certaines d'entre elles soient parallélisés (voir la section suivante \ref{p:prototype_fonctionel}). De nouveaux algorithmes métaheuristiques spécialisés pour une utilisation sur grille de calcul font également leur apparition dans le plugin, et constitue des worflow beaucoup plus complexes, assez difficilement accessibles à la modification par des modélisateurs géographes.
+
+\item Ajouter ou modifier de nouveaux algorithmes dans le plugin openMOLE nécessite de maitriser sufisament bien à la fois l'ensemble du vocabulaire (aussi apellé \textit{Domain Specific Language} DSL openMOLE) nécessaire pour définir des workflows, mais également le langage de programmation Scala qui dans le plugin est mélé de façon beaucoup plus complexe à ce vocabulaire. Une fois ces premières connaissances acquise, et avant même de pouvoir créer de nouvelles méta-heuristiques, il faudra comprendre en observant les métaheuristiques déjà implémenté comment d'une part les composants MGO sont encapsulés et chainés dans un workflow complexe mélant Scala et le DSL openMOLE, et d'autre part comment ce workflow voit sa complexité encapsulé dans un élément de vocabulaire nouveau accessible directement au niveau du DSL. Si ce travail peut effectivement être réalisé sans trop de difficulté par un informaticien un peu expérimenté, l'exercice paraitra très difficile voire hors de portée à un modélisateur géographe.
+
+\item L'utilisation du plugin dans openMOLE doit être rendu le plus simple possible pour le modélisateur et l'informaticien. En revanche l'utilisation du framework de façon autonome demande pour un modélisateur quelque compétences techniques supplémentaires pour installer les logiciels adéquats permettant de modifier et compiler MGO. Une fois cette barrière technique dépassé, la connaissance du langage Java ou Scala est certe nécessaire pour modifier ou ajouter des composants, mais elle ne l'est pas forcément lorsqu'il s'agit d'imbriquer et de paramétrer les composants correctement.
+
+\end{enumerate}
+
+En effet, si les métaheuristiques se doivent effectivement d'être modifiable, ce n'est pas forcément cet aspect qui prime pour une utilisation dans la modélisation; qui subit une fois la base du modèle réalisé des cycles de développements assez courts en définitive, ceux ci se limitant la plupart du temps à des ajouts, des modifications, ou des retraits d'hypothèse. L'utilisation de méta-heuristique, même canonique, est un premier palier d'utilisation pour tenter de discriminer au plus vite les modèles de simulation. Dans ce cas c'est bien les propriétés d'efficacité et d'indépendance au problème que l'on mobilise dans l'utilisation de métaheuristique. La modification plus fine est un cas d'utilisation qui vise une adaptation spécifique de la réponse d'une métaheuristique à un problème, ce qui nécessite de la part de celui-ci une variabilité moindre que dans le cas d'un construction de modèle.
+
+
+La mise à disposition de ce framework dans le cadre d'un plugin pour openMOLE fait intervenir de tout nouveaux objectifs, cette fois ci relatifs aux intéréts des modélisateurs.
+
+Si le framework MGO est parfaitement utilisable de façon autonome, celui-ci ne bénéficie pas dans ce mode d'utilisation des algorithmes dédiés pour une utilisation sur des environnements distribués.
 
 Or c'est bien cette utilisation que nous voulons rendre disponible aux modélisateurs, à la différence des librairies intégrés existantes, comme par exemple behaviorSearch que l'on a déjà décrit dans la \ref{section xx}.
 
-On a vu précédemment que la recherche d'une architecture logicielle modulaire était avant tout guidé par la nature elle même très modulaire des métaheuristique. L'histoire MGO tel qu'avancé dans la section \ref{ssec:historique_mgo}, un autre objectif à guider la réalisation d'un framework aussi modulaire. 
+On a vu précédemment que la recherche d'une architecture logicielle modulaire était avant tout guidé par la nature elle même très modulaire des métaheuristique. 
+
+
+
+L'histoire MGO tel qu'avancé dans la section \ref{ssec:historique_mgo}, un autre objectif à guider la réalisation d'un framework aussi modulaire. 
 
 % evaluate et express sont dans la meme tache dans OpenMOLE
+
+\subsection{Premiere prototype fonctionel}
+\label{p:prototype_fonctionel}
 
 Avant mars 2012, le couplage entre MGO et openMOLE est réalisé par l'utilisateur lors de la définition des workflows. Grâce à la nature autonome et modulaire des composantes fournies par l'univers du framework MGO, la logique d'execution d'une métaheuristique peut facilement être retranscrite dans le référentiel d'openMOLE. Les tâches d'un workflow vont tout simplement encapsuler les appels et les objets spécifiques aux différentes composantes de la métaheuristique, en apportant la logique nécessaire à une execution de certaines de ces composantes dans un environnement de calcul distribué. 
 
@@ -1348,7 +1523,7 @@ La nature intrinsèquement parallèle des algorithmes evolutionnaires tient dans
 
 On considère les paramètres suivant, une population initiale de génomes $n$, et le nombre de réplication à executer pour chacun de ces génomes équivalent à $r$; Autrement dit, à chaque itération $t$ de l'algorithme d'optimisation, c'est $n$ jeu de valeur de paramètres différentes (équivalent génome) qui vont chacune être testé $r$ fois avec des graines aléatoires différentes. Soit un total final de $n * r * t$ simulations. 
 
-Avant de rentrer dans les détails du workflow, il est également important de rapeller que dans celui-ci, un \keyword{Genome}, et par la suite un \keyword{Individu} dans une \keyword{Population}, sont deux dénominations qui désignent avant tout un jeu de valeur de paramètres, même si un individu représente on va le voir un peu plus que çà. Autrement dit, quant on discute ici de la qualité d'un \keyword{Individu} et de son positionnement dans l'espace des objectifs \mathbb{Y}, c'est sous entendu en référence au jeu de valeur de paramètre qui a permis d'obtenir ce même \keyword{Individu}.
+Avant de rentrer dans les détails du workflow, il est également important de rapeller que dans celui-ci, un \keyword{Genome}, et par la suite un \keyword{Individu} dans une \keyword{Population}, sont deux dénominations qui désignent avant tout un jeu de valeur de paramètres, même si un individu représente on va le voir un peu plus que çà. Autrement dit, quant on discute ici de la qualité d'un \keyword{Individu} et de son positionnement dans l'espace des objectifs $\mathbb{Y}$, c'est sous entendu en référence au jeu de valeur de paramètre qui a permis d'obtenir ce même \keyword{Individu}.
 
 Le premier niveau de workflow (étape \circled{1} dans la figure \ref{fig:openmole_wf}) opérant de façon locale sur la machine ou le serveur de l'utilisateur est décrit ainsi : 
 
@@ -1383,9 +1558,7 @@ Le deuxième niveau de workflow (étape \circled{3} dans la figure \ref{fig:open
 
 \end{myitemize}
 
-Les premiers workflows \Anote{cas_utilisation_wfom}, assez complexes et uniquement accessibles au format scripts, ont rapidement constituées des fichiers de plusieurs centaines de lignes. Cette évolution, difficilement prévisible, est rapidement devenu à la fois problématique pour la maintenance  mais également la compréhension de tels expérimentations. Un obstacle vis à vis de notre principal objectif, mettre à disposition des modélisateurs un outil dont le premier avantage est sa lisibilité et sa facilité de mise en oeuvre. 
-
-En effet, si les métaheuristiques se doivent effectivement d'être modifiable, ce n'est pas forcément cet aspect qui prime pour une utilisation dans la modélisation; qui subit une fois la base du modèle réalisé des cycles de développements assez courts en définitive, ceux ci se limitant la plupart du temps à des ajouts, des modifications, ou des retraits d'hypothèse. L'utilisation de méta-heuristique, même canonique, est un premier palier d'utilisation pour tenter de discriminer au plus vite les modèles de simulation. Dans ce cas c'est bien les propriétés d'efficacité et d'indépendance au problème que l'on mobilise dans l'utilisation de métaheuristique. La modification plus fine est un cas d'utilisation qui vise une adaptation spécifique de la réponse d'une métaheuristique à un problème, ce qui nécessite de la part de celui-ci une variabilité moindre que dans le cas d'un construction de modèle.
+Les premiers workflows \Anote{cas_utilisation_wfom}, assez complexes et uniquement accessibles au format scripts, ont rapidement constituées des fichiers de plusieurs centaines de lignes. Cette évolution dans la taille des workflows est rapidement devenu problématique à la fois pour la maintenance mais également pour la lisibilité de tels expérimentations. Un obstacle vis à vis de notre principal objectif, mettre à disposition des modélisateurs un outil dont le premier avantage est sa facilité de mise en oeuvre et sa réutilisabilité. 
 
 Si l'execution d'un tel workflow est déjà un premier pas vers une systématisation dans l'application de ces techniques d'optimisation à l'exploration des modèles de simulations, il faut soulever un autre point important aux yeux de l'utilisateur. Quelle performance peut on en effet attendre d'un tel workflow d'optimisation distribué lorsqu'il est appliqué sur un modèle de simulation relativement rapide en Netlogo ?
 
@@ -1400,7 +1573,7 @@ Un choix difficile s'offre au modélisateur voulant explorer de façon plus syst
 
 Quelles questions ?
 - Comment effectuer une recherche plus exhaustive des comportements des modèles ?
-- Comment discriminer les résultats d'un front de Pareto, quelle experise humaine ?
+- Comment discriminer les résultats d'un front de Pareto, quelle expertise humaine ?
 
 Quels apprentissages ?
 - Quels biais dans les modèles stochastique ?
