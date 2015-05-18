@@ -126,7 +126,6 @@ If you go to \href{http://www.casa.ucl.ac.uk/movies-weblog/Melbourne-1982-Movie.
 
 \Anotecontent{note_documentation_ccalcul}{Il existe une littérature dédié à l'utilisateur, mais celle-ci semble très difficile à se procurer aujourd'hui, car probablement peu considéré sur le plan scientifique, et techniquement obsolète. Celle-ci contient néammoins une trace des usages qu'il conviendrait de sauvegarder. On notera par exemple la présence d'un \textit{Guide du nouvel utilisateur CIRCE} \autocite{LISH1980}, de listes normalisées de logiciels \textit{LISTLOG} présente au CNUSC, d'un groupe d'utilisateur comme celui géré par Bernard Gaulle, etc. }
 
-\Anotecontent{cibois_geographe}{Dans une correspondance privé daté de mai 2015, Philippe Cibois m'a indiqué avoir vu relativement peu de géographes dans cette unité.}
 
 \Anotecontent{massonie_1978}{Toujours sur son \href{http://jean-philippe.massonie.pagesperso-orange.fr/science/informatique.html}{@site} personnel, voici ce que dit Jean-Philippe Massonie sur l'acquisition d'un AppleII en 1978 par rapport à l'IRIS alors en place : \enquote{ AppleII : En 1978, mon labo ayant quelques argents, on achète un AppleII avec une télévision couleur et une imprimante et deux lecteurs de disquettes. Le prix ? On pourrait s'acheter maintenant deux PowerPC et une imprimante laser. Honnêtement, on voulait faire joujou.
 
@@ -139,11 +138,38 @@ voir l'essai sur Feynman par David Hillis : \href{http://longnow.org/essays/rich
 }
 \Anotecontent{relation_france}{relation avec Pomeau}
 
-\Anotecontent{simd_def}{Une instruction par processeur executé de façon simultané et controlé en amont}
+\Anotecontent{simd_def}{SIMD pour \textit{Single Instruction Multiple Datastream} est une classe de la taxonomie de Flynn's : Une instruction par processeur est executé de façon simultané sur de multiples données, ce qui suppose souvent un controle en amont.}
 
-\Anotecontent{mimd_def}{MIMD pour \textit{Multiple Instruction Multiple Data}.Chaque processeur est autonome sur son traitement}
+\Anotecontent{mimd_def}{MIMD pour \textit{Multiple Instruction Multiple Datastream} est une classe de la taxonomie de Flynn's : \foreignquote{english}{The MIMD class of parallel architecture consists of multiple processors (of any type) and some form of interconnection. From the programmer’s point of view each processor executes independently but to cooperatively execute to solve a single problem although some form of synchronization is required to pass information and data between processors.[...]The primary characteristic of a large MIMD multi-processor system is the nature of the memory address
+space. If each processor element has its own address space (distributed memory), the only means of communication between processor elements is through message passing. If the address space is shared (shared memory), communication is through the memory system.} \autocite[696]{Flynn2012}}
 
 \Anotecontent{hiebeler_parcours}{Le travail de Hiebeler avec Langton, suite à une correspondance privé :  during the summer 1989 to 1990 on Cell Sim, then after you go to Thinking Machines, and you return to Santa Fe in Oct 1992 to fall 1993 to work on SWARM C, then summer 1994 to work on SWARM objC}
 
 \Anotecontent{ouppy_marseille}{Ajouter ref sur proocedings des Houches, France 1989 ; Hiebeler 1990}
+
+\Anotecontent{top_500_note}{\foreignquote{english}{The most commonly known ranking of supercomputer installations around the world is the TOP500 list. It uses the equally well-known LINPACK benchmark as a single figure of merit to rank 500 of the world’s most powerful supercomputers. The often-raised question about the relation between the TOP500 list and HPCC can be addressed by recognizing the positive aspects of the former. In particular, the longevity of the TOP500 list gives an unprecedented view of the high-end arena across the turbulent era of Moore’s law [] rule and the emergence of today’s prevalent computing paradigms. The predictive power of the TOP list is likely to have a lasting influence in the future, as it has had in the past.} \autocite[845]{hum}}
+
+\Anotecontent{DMM}{A Distributed-Memory Multiprocessor (DMM) is built
+by connecting nodes, which consist of uniprocessors or of shared memory multiprocessors (SMPs), via a network, also called Interconnection Network (IN) or Switch. While the terminology is fuzzy, Cluster generally refers to a DMM mostly built of commodity components, while Massively Parallel Processor (MPP) generally refers to a DMM built of more specialized components that can scale to a larger number of nodes and is used for large, compute-intensive tasks - in particular, in scientific computing.}
+
+%standard MPI qui marque le début d'une fin de reigne des architectures couteuse de type SIMD pour la diffusion d'architecture MIMD, dont on va voir qu'elle sont par la suite totalement démocratisé par des approches comme Beowulf.
+
+%MPI standard à expliquer (page 1184 - 1190)
+
+\Anotecontent{loosely_sync}{Pour simplifier, un noeud ne peut pas écrire sur le noeud de destination du message tant que celui-ci n'est pas prêt à recevoir ce message.}
+
+\Anotecontent{exemple_simd_mimd}{ \textcite[91-92]{Openshaw2000} propose de prendre un exemple simple pour mesurer la différence de fonctionnement qu'implique l'utilisation de chacune des architectures. On ne traite ici que les plus courantes. Imaginons un problème nécessitant l'examen de 100 feuilles d'examen, chacune avec 5 questions. On dispose d'une ensemble de correcteurs pour traiter ces questions de façon parallèle. 
+\begin{enumerate}
+	\item{\textbf{SIMD - Data Parallel}} (CM-1 par exemple) : Un superviseur envoie à chaque correcteurs un lot de feuilles à traiter. Il attend que toutes les feuilles soient distribués, puis il annonce le traitement à réaliser par chacune des correcteurs : \enquote{Tout le monde traite la première question de la feuille d'examen !}, puis une fois que tout le monde a fini et que le résultat est rapporté au superviseur, celui-ci annonce \enquote{ Tout le monde traite la deuxième question de la feuille d'examen}, etc. Si une correcteur met plus de temps à traiter une feuille, alors tout le monde doit l'attendre. Si il y a moins de feuille disponible à traiter que de correcteurs, alors ceux-ci ne feront rien durant la durée des traitement, ce qui représente un certain gachis de ressources.
+
+	\item{\textbf{MIMD - Shared Memory}} Il n'y a aucun superviseur. Chaque correcteur se voit attribuer un ensemble unique de feuilles à traiter, si possible en tenant compte de sa rapidité ( on parle alors de load-balancing). Les feuilles sont disponibles sur un seul et unique tas disposé au fond de la salle, partagé par tout les correcteurs.  Le temps de complétion de la tâche correspond alors au temps pris par le plus lent des correcteurs pour corriger le tas de feuille qui lui a été attribué.
+
+	\item{\textbf{MIMD - Distributed Memory}} Deux types de corrections alternatives sont possibles a) Chaque correcteur reçoit par le biais d'un courrier (équivalent à un message sur une interconnection réseau) une attribution de parcelle contenant un ensemble de feuilles à corriger, qu'il traitera en fonction de son propre emploi du temps. Les feuilles sont donc corrigé en parallèle par chacun des correcteurs, qui renvoie ses corrections au service central par courrier une fois seulement sa tâche terminée. b) Si le service de courrier est très rapide, alors il est plus intéressant de récupèrer chaque feuille dès qu'elle est corrigée, et on en renvoie une autre au correcteur. Ainsi, que le correcteur soit lent ou rapide, les feuilles à corriger plus ou moins longues, ou un mélange de ces différents comportements, personne n'est plus amené à perdre de temps dans ce cas.
+\end{enumerate}}
+
+\Anotecontent{idris}{Informations tirés de la page de description des deux calculateurs disponible sur le site du laboratoire CNRS de l'\href{http://www.idris.fr/}{@IDRIS}.}
+
+\Anotecontent{openshaw_virus}{ \foreignquote{english}{Most geographers involved in GIS (and elsewhere social scientists) are already the hapless but seemingly willing victims of a virulent form of \enquote{let others do the programming for us} form of computer escapism. As a result, they are likely to be forever restricted to software packages they have little or no control over and which more or less determine what they can and cannot do. Others, who perhaps should now better, seem to have been lulled into complacency by the increased computing power offered by PCs. They ask \enquote{What is the point of high-performance computing when with a bit of Fortran or Pascal or C programming I can do all I want on my PC?} Indeed, some others will tell you that \enquote{what they did in 1991 on a mainframe they can now do on a PC}, while some really clever folk can do it in Unix with awk! This is all true. The point is that, sadly, thus is a very negative and backward-looking perspective. What these people are doing today is more or less what they first did, albeit with considerably greater difficulty, five or ten or twenty or more years ago, and they appear to think that what was good for them when they did research is also good for you when you do your research. This is not progress but regress! It is both simultaneously very understandable and an
+unfortunate neglect of the immense potential that HPC systems have to offer.} \autocite[2]{Openshaw2000}}
+
 
