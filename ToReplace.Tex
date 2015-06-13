@@ -15,43 +15,32 @@ Guermond va décider d'embaucher directement dans leur équipes des mathématici
 
 %Il semble bien donc que cela soit par la construction d’une coopération entre géographes et disciplines plus rompu à l’informatique, comme les statistiques, mathématiques ou la physique que se construisent majoritairement en France les nouveaux modèles de simulations.
 
-La découverte en 1990 de tout nouveaux paradigme technologique comme la programmation orienté objet, ou les langages acteurs, supports principaux de la modélisation agents se fait donc soit par le biais d’informaticiens devenus géographes, ou par la mise en oeuvre de collaborations. Celle-ci, riche d’enseignement, ont permis de façon conjointe avec la démocratisation des outils de modélisations de faire évoluer progressivement ce schéma initial finalement assez rigide de collaboration avec les informaticiens, jusqu’à la constitution d’une équipe inter-disciplinaire qualifié non seulement pour raccrocher les tout derniers dévelopement informatiques, mais également capable de proposer ces outils dans un référentiel technique susceptible je pense d'intéresser une partie des géographes modélisateurs.
-
 %Un autre marqueur intéressant peut être soulevé, révélateur d'une époque ou le programme informatique n'a pas encore acquis de valeur patrimoniale, est celui d'une absence totale de stratégie pour la sauvegarde des modèles de simulations ainsi réalisés. Pour un modèle tel que Simpop 1 réalisé au début des années 1990, il est étonnant de retrouver les compte rendu de réunion semaine par semaine parfaitement conservé sous leur formes papiers et éléctroniques, mais aucune version éléctronique archivé, la gestion de cet aspect étant délégué de façon implicite au travail des informaticiens. Comme si la seule vrai valeur du modèle résidait plus dans sa fonction explicative, formalisatrice, permise par sa construction, plutôt que dans sa capacité à produire et reproduire un résultat.
 
-Ce que ne dit pas Openshaw dans sa métaphore, c’est que ce transfert de compétence, s’accompagne aussi d’un mouvement de démocratisation des techniques chez les géographes. Si certains géographes anglo-saxons des années 1970 ont pour certains accès à cette double compétence informatique dans leur formations (Batty par exemple programme depuis ses débuts, les différents pionniers américains Marble, Pitts, etc.), ce n’est par exemple pas le cas en France en Géographie, ou une phase d’acquisition des techniques informatiques, mathématiques et statistiques constitue un préalable à une plus large diffusion de la toute nouvelle géographie quantitative. 
 
 Il n’y a pas je crois de travail de synthèse existant permettant d'acter en géographie la “possible” expression de ce désengagement des géographes dans la formation en “programmation”, et la façon dont elle pourrait se traduire à la fois dans les enseignements et son impact sur les projets dans les laboratoires de recherche plus spécialisé dans la modélisation. Car cette démocratisation de l’outil, si elle permet le passage  plutot \enquote{heureux} de certaine de ces techniques dans le vocabulaire courant du géographe (AFC; ACP; SIG; etc.) \autocite{Pumain2002} elle dessert également une autre vision de l'informatique, celle de l'informatique \enquote{boite-noire}. En effet qu’advient t il de la programmation comme activité “créative” dès lors que son autre fonction principale définissant l’apprentissage de celle-ci comme un \enquote{passage obligé vers d’autres applications} disparait au profit de logiciel plus simple à utiliser ? \textcite[4]{LeBerre1987} cite ainsi à propos de sa formation à l’informatique opéré dans un contrat entre la DGRST et le groupe Dupont, \enquote{il m’a fait refuser l’utilisation de l’informatique presse bouton, dangereuse pour le travail scientifique, et qui malheureusement se répand avec la diffusion des micro-ordinateurs}
 
 Ce mouvement est peut être en train de s'inverser avec les efforts de la génération de modélisateurs précédentes, et l'avénement de support plus accessible pour la modélisation. Si ce combat n'est pas encore gagné, un autre nous attend déjà, il s'agit maintenant de ré-engager les géographes modélisateurs à utiliser la puissance mise à disposition par le HPC.
 
-\begin{table}[!htbp]
-\begin{sidecaption}[fortoc]{Classement basé sur la brochure pour les 20 ans du centre, ainsi que les dernières informations disponible sur le site de l'IDRIS}
-	[tab:prankingIDRIS]
-	\centering
-	\begin{tabular}{@{}llllll@{}}
-\toprule
-\multicolumn{6}{c}{A l'IDRIS (1993 - maintenant)} \\ \midrule
-Durée & Identifiant machine & Nom & Type & Processeurs & Puissance \\ \midrule
-1993-1999 & Vectoriel Cray C98 & Atlas & vectoriel & 8 & 7,6 GFlops \\
-1994-1999 & Vectoriel Cray C94 & Axis & vectoriel & 4 & 3,8 GFlops \\
-1995-1997 & Cray T3D & Kaos & processeurs & 128 & 19,2 GFlops \\
-1996-2002 & Cray T3E & Aleph & processeurs & 256 & 153,6 GFlops \\
-1999-2006 & NEC & Uqbar & vectoriel & 38 & 304 GFlops \\
-2002-2008 & IBM power 4 & Zahir & processeurs & 1024 & 6,5 TFlops \\
-2008-2012 & IBM Blue Gene & Babel & processeurs & 40960 & 139 TFlops \\
-2013 & IBM x3750 & Ada & coeurs & 10624 & 230 TFlops \\
-2013 & IBM Blue Gene & Turing & coeurs & 98304 & 1258 TFlops \\ \bottomrule
-\end{tabular}
-\end{sidecaption}
-\end{table}
 
 
- tentatives qui n'ont malheureusement pas abouti à l'époque, probablement du fait d'un argument qu'à également énoncé Openshaw en 88 : La puissance de calcul et les méthodes associés (les techniques multi-objectif progressent par exemple surtout à partir des années 1990 ! voir section \ref{sssec:historique_EA}) alors disponible n'était vraiment pas suffisante pour ce type d'application.
 
-Cela dit, trente ans plus tard, pourquoi le modèle de Peter Allen n'a toujours pas été réévalué à la lumière de nouvelles techniques d'analyse dont l'évolution s'est calé sur une puissance informatique disponible presque mille fois plus importante qu'au début des années 1990 ?
+----
 
-Pour donner un ordre d'idée sur l'évolution des moyens de calcul disponible au CNRS de 1990 à 2015 on peut regarder l'évolution des supercalculateurs de l'IDRIS (ex-CIRCE fondé en 1993) dans le tableau \ref{tab:prankingIDRIS} : entre les deux calculateurs vectoriels Cray disponible en 93/94, le premier bond réalisé en 1996 par le passage à un autre type d'architecture parallèle, et la puissance aujourd'hui disponible sur les calculateurs Ada et Turing, on est passé du GFlops au PFlops (1 PFlops = 1000000 GFlops). 
+Un point déjà évoqué au début de notre exposé, les géographes modélisateurs ayant déjà expérimenté certains de ces challenges guidés par les évolutions technologiques. 
 
-On verra que ce n'est pas la seule révolution des années 1990, et que la présence de cette puissance à disposition, même si elle devrait être un motif suffisant pour amener les géographes à imaginer de possibles applications, doit encore être complété pour sa démocratisation par un mode d'accès plus adapté aux usages réels des modélisateurs.
+Dirigées vers l'usage du HPC pour l'exploration de modèle de simulation, des tentatives de calibration du modèle de Peter Allen se font dès les années 1980, guidées de façon automatique par un algorithme de minimisation basé sur une fonction objectif minimisant les écarts entre données simulées et données empiriques. Preuve que dans l'activité de modélisation, l'usage du HPC a aussi pu être à un moment donné motivé par un autre besoin plus méthodologique, que cette seule absence effective de micro-ordinateur pour exécuter les modèles.
+
+Ce qui nous amène à un deuxième argument pouvant également expliquer la durabilité des relations avec certains centres de calculs. En effet, dans certains cas, les challenges scientifique d'hier sont aussi restés pour certains des challenges scientifiques d'aujourd'hui. La nécessité d'accès à une ressource informatique de puissance supérieure à un micro, reste comme dans le cas d'exploration des modèles de simulation, toujours une réalité.
+
+
+
+En ce qui concerne la seconde question questionnant les usages HPC en SHS et en géographie vis à vis de leur \enquote{apparente} absence sur ce terrain, il faut bien noter que cet état de fait n'a pas toujours été vrai. Se posera donc ensuite la question suivante, que s'est il donc passé pour que l'on constate aujourd'hui une telle absence des géographes sur ce terrain ?
+
+Avant de revenir plus en détail sur l'évolution des pratiques vers le HPC à Géographie-Cités, il me paraissait important de questionner cette absence d'intérét général pour le HPC, en les mettant en perspective d'une certaine actualité questionnant les pratiques l'enseignement de l'informatique.
+
+Car si ce n'est pas vraiment l'absence de challenges, ou de géographes trop aventureux qui a pu faire oublier à la majeure partie des géographes cette existence de ressources informatiques inespérées au-delà du simple micro-ordinateur, alors quelles pistes de réflexion nous reste-t-il  ?
+
+% transition à refaire.
+Cette première tentative sera aussi l'occasion pour nous de faire le lien (section \ref{ssec:hist_pratiques}) entre cette première période d'accès à l'informatique, l'expression d'un premier besoin latent, la transformation du paysage dans le HPC, et l'installation puis la transformation des pratiques dans ce laboratoire Géographie-Cités, marquant un retour, espérons cette fois-ci définitif, vers l'usage du HPC pour l'exploration de nos modèles de simulation.
 
