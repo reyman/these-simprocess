@@ -11,7 +11,7 @@
 \usepackage[autostyle=true,french=guillemets,maxlevel=3]{csquotes}
 \usepackage{xparse}
 \usepackage{graphicx}
-\usepackage[protrusion=true]{microtype}
+\usepackage[protrusion=true,final]{microtype}
 \usepackage{soul}
 \usepackage{minted}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
@@ -117,6 +117,10 @@
 \makeatletter
   \@beginparpenalty=10000
 
+%http://tex.stackexchange.com/questions/20585/fixing-an-overfull-box/20610#20610
+\emergencystretch=1.5em
+% MONTRE LES PROBLEMES
+%\overfullrule=1mm
 
 %%%%%%%%%%%%%%%%%%
 % SVG 
