@@ -143,7 +143,7 @@ Cette façon de penser, il me semble que les géographes modélisateurs en ont s
 
 L'accession successive à de nouvelles technologies a toujours servi à développer un projet scientifique qui se nourrit de cette multiplicité d'approches. Il faut y voir un processus d'accumulation, et non pas une succession poussée par une mode ou une autre.
 
-Si on prend l'exemple de la théorie évolutive des villes de Denise Pumain, force est constater que pratiquement toutes les nouveautés, technologiques et/ou paradigmatiques susceptibles d'un apport théorique ou méthodologique servant cette théorie (et par extension les objets géographiques concernés), ont été mis en perspective de façon critique dans chaque publication : les outils statistiques uni et multi-variés, les analyses factorielles, les systèmes dynamiques non linéaires, les réseaux de neurones, les automates cellulaires, la modélisation agent, tout a été testé avant d'être intégré dans la boite des outils potentiellement re-mobilisable. Car il n'y a pas une technique meilleure qu'une autre, mais bien une combinatoire de techniques uniques, constitutives d'un raisonnement scientifique, dans lequel chacune peut exposer tour à tour de multiples facettes (\hl{ref vers sssec:communautes_jasss}.
+Si on prend l'exemple de la théorie évolutive des villes de Denise Pumain, force est constater que pratiquement toutes les nouveautés, technologiques et/ou paradigmatiques susceptibles d'un apport théorique ou méthodologique servant cette théorie (et par extension les objets géographiques concernés), ont été mis en perspective de façon critique dans chaque publication : les outils statistiques uni et multi-variés, les analyses factorielles, les systèmes dynamiques non linéaires, les réseaux de neurones, les automates cellulaires, la modélisation agent, tout a été testé avant d'être intégré dans la boite des outils potentiellement re-mobilisable. Car il n'y a pas une technique meilleure qu'une autre, mais bien une combinatoire de techniques uniques, constitutives d'un raisonnement scientifique, dans lequel chacune peut exposer tour à tour de multiples facettes  + ref communauté jass.
 
 Il n'est pas interdit donc de penser que les progrès de la computation, si on cherche bien, apportent toujours au modélisateur de son époque les moyens de devenir un meilleur aventurier, pour reprendre l'image de l'explorateur donné par \textcite[22]{Banos2013} ou encore en citant la vision Openshaw \foreignquote{english}{Computation permits the investigator to test theory by simulation, to create new theory by experimentation, to obtain a view of the previously invisible, to explore the previously unexplorable, and to model the previously unmodellable.}
 
@@ -977,6 +977,19 @@ Dans ces conditions, vivre l'inter-disciplinarité c'est accepter d'un point de 
 
 Les travaux qui paraissent en 2014, puis 2015 sont le fruit d'une inter-disciplinarité \textbf{vécue}, j'insiste sur ce dernier mot car on parle souvent plus d'inter-disciplinarité qu'on ne la pratique réellement, avec ses défis \autocite{Chapron2014} qui s'inscrit délibérement dans le mouvement \enquote{slow science}.
 
+
+
+
+
+
+ 2009 et 2010, l'objectif partait d'un certains nombre de frustration prenant racine  dans l'observation des limites des pratiques existantes dans le laboratoire et dans la littérature, pour évaluer les modèles existants, mais également les modèles en cours de construction.
+
+  - celle de ne pas comprendre la dynamique de nos modèles, pourtant encore très simple
+  - la constatation dans la littérature d'une certaine d'outils support des méthodes
+
+  - très peu de réutilisabilité des comportements implémentés : vous vous trouver devant un choix d'implémentation, lequel sera le bon ?
+
+
 Entre 2009 et 2010, deux rencontres
 
 - Première rencontre avec Thomas Louail, Denise Pumain, Hélène Mathian, Léna Sanders autour de Simpop2
@@ -1008,6 +1021,10 @@ Cet héritage disciplinaire solide fournit à notre étude un réseau, des prati
 
 
 
+Ces frustrations ont données naissance à plusieurs pistes de développement d'outils : SimPuzzle, MGO.
+
+
+- Construire une méthodologie autour d'un prototype
 
 
 
@@ -1081,43 +1098,35 @@ Evidemment il faut citer le travail important réalisé sur le prototype par Amb
 
 % Prise de recul sur la méthodologie, accointance et critique de la méthode POM avancé par Grimm ?
 
-\subsection{Le modèle SimpopLOCAL}
+\subsection{Présentation des modèles utilisés}
 
-Le modèle SimpopLocal a subi de nombreux redéveloppements, que cela soit dans sa version Netlogo, Scala, et enfin dans son intégration dans SimPuzzle.
+Le choix est fait dans cette section de faire appel à la fois un modèle jouet (pour la compréhension générale), mais également un modèle réel (pour montrer que cela marche).  
 
-Parmis les idées qui ont motivés cette équipe,
+\paragraph{un modèle jouet sur les fourmis}
 
-\subsection{Objectifs}
+Le modèle de simulation \textbf{Ants} est une reproduction par \textcite{Wilensky1997} d'un modèle originellement en StarLogo en Netlogo. Celui-ci est disponible sur le \href{http://ccl.northwestern.edu/netlogo/models/Ants}{@site} de Netlogo, et par défaut dans la bibliothèque de modèle du logiciel.
 
-Plutot que de parler d'objectifs initiaux, je crois que le déroulé de notre expérience ces 5 dernières années prend une forme plus modeste de jalons, qui releve parfois plus d'une intuition motrice
+ants.png
 
-L'idée d'une évaluation plus encadré des modèles de simulation développé au laboratoire s'inscrit d'une part dans les travaux  suite au travaux de thèse de Thomas Louail, et  préliminaire réalisés et de Clara Schmitt,
+Dans ce modèle Netlogo, une colonie de fourmis fourrage à la recherche de nourriture. Chaque fourmi suit un ensemble de règles simple, mais la colonie prise dans son ensemble réagit de façon complexe. Quand une fourmis trouve un morceau de nourriture, elle ramène celle-ci dans son nid, en laissant une empreinte chimique derrière elle. Lorsque les autres fourmis renifle cette trace, elle suive la piste jusqu'à la nourriture. Plus le nombre de fourmis rapportant de la nourriture vient à augmenter, plus la piste chimique est renforcé par leur passage. 
 
-En ce sens, la frustration a été de façon étonnante je crois, un élément moteur dans l'émergence d'une écosystème ouvert à l'intégration  .
+Ce modèle est constitué de trois paramètres : 
 
- 2009 et 2010, l'objectif partait d'un certains nombre de frustration prenant racine  dans l'observation des limites des pratiques existantes dans le laboratoire et dans la littérature, pour évaluer les modèles existants, mais également les modèles en cours de construction.
+\begin{itemize}[label=\textbullet]
+\item Une $Population$ de fourmis initiale
+\item Un taux $Evaporation-rate$ qui controle l'évaporation de la trace chimique 
+\item un taux $Diffusion-rate$ qui controle la diffusion de la trace chimique
+\end{itemize}
 
-  - celle de ne pas comprendre la dynamique de nos modèles, pourtant encore très simple
-  - la constatation dans la littérature d'une certaine d'outils support des méthodes
+\paragraph{un modèle théorique : SimpopLocal}
 
-  - très peu de réutilisabilité des comportements implémentés : vous vous trouver devant un choix d'implémentation, lequel sera le bon ?
+Seul un résumé de SimpopLocal sera présenté ici, car la présentation du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}. Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif du fait qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse, je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans l'un ou l'autre des participants, que cela soit dans la construction des modèles ou de certains graphiques, l'exploration des modèles, l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences apellés pour la co-construction d'un tel projet, les acteurs sont liés dans leur travaux au jour le jour par une forme plus ou moins forte d'inter-dépendance \autocite{Chapron2014}.
 
+Le modèle de simulation réel, \textbf{simpopLocal} est 
 
-Ces frustrations ont données naissance à plusieurs pistes de développement d'outils : SimPuzzle, MGO.
-
-
-- Construire une méthodologie autour d'un prototype
-
-
-
-
-
-
-Le chapitre 3 a fait le point sur les enjeux d'une solution globale capable de prendre en compte toute les dimensions rattaché au bon déroulement de cette construction.
+Le modèle SimpopLocal a subi de nombreux redéveloppements, que cela soit dans sa version Netlogo, Scala, et enfin dans son intégration dans SimPuzzle. Les \textit{workflow} utilisés pour explorer ce modèle sont quasi similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
 
 Le \textit{framework} MGO (Multi Goal Optimization)
-
-Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes evolutionnaires (\textit{Evolutionary Algorithms} ou EA), il est nécessaire de donner quelques éléments de contexte et de définitions plus généraux concernant la branche d'étude dans lequel ceux-ci se situent. Il faut par ailleurs mettre en garde le lecteur que la plupart des définitions et des analyses présentés ici sont inspirés ou extraits d'ouvrages de synthèses à destination d'un public très large \autocites{Weise2011, Luke2013, Brownlee2012}. Par conséquent il faut garder à l'esprit que plusieurs de ces termes peuvent être discutés, enrichis, critiqués ou prendre des sens différents dans chacune des sous branche (voir figure \ref{fig:S_OverviewOptimisation}) que compte ce domaine très général qu'est l'optimisation.
 
 \begin{figure}[h]
 \begin{sidecaption}[fortoc]{ Vue d'ensemble des algorithmes d'optimisation repris de l'état de l'art très complet de \textcite[32]{Weise2011}}[fig:S_OverviewOptimisation]
@@ -1127,6 +1136,8 @@ Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes 
 \end{figure}
 
 \subsection{Le domaine des algorithmes métaheuristiques, une sous-discipline de l'Optimisation}
+
+Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes evolutionnaires (\textit{Evolutionary Algorithms} ou EA), il est nécessaire de donner quelques éléments de contexte et de définitions plus généraux concernant la branche d'étude dans lequel ceux-ci se situent. Il faut par ailleurs mettre en garde le lecteur que la plupart des définitions et des analyses présentés ici sont inspirés ou extraits d'ouvrages de synthèses à destination d'un public très large \autocites{Weise2011, Luke2013, Brownlee2012}. Par conséquent il faut garder à l'esprit que plusieurs de ces termes peuvent être discutés, enrichis, critiqués ou prendre des sens différents dans chacune des sous branche (voir figure \ref{fig:S_OverviewOptimisation}) que compte ce domaine très général qu'est l'optimisation.
 
 \subsubsection{Q'est ce que l'optimisation ?}
 \label{sssec:Optimisation}
@@ -1222,7 +1233,7 @@ D'une part ce choix ne résout en rien la problématique combinatoire. Donnons u
 
 Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}.
 
-% ENCADRER ?
+% ENCADRE ?
 \paragraph{Simpop Local}
 
 % Exemple pour illustrer ca au travers des problèmes SLocal qu'on a eu ?
@@ -1236,9 +1247,6 @@ Lors de l'implémentation une deuxième vague de paramètres est à prendre en c
 Les informaticiens sont habitués à cette exercice de décomposition, recomposition qui permet de passer d'une description très abstraite, à une implémentation fonctionelle, par exemple dans la manipulation de base de données. Seulement ici, ce n'est pas tant la qualité fonctionelle qui guide l'implémentation du modèle mais bien la qualité de similarité avec le modèle conceptuel. L'implémentation . C'est cette fameuse étape de vérification qui est censé nous garantir que le modèle dit bien ce que l'on veut qu'il dise.
 
 Toute nouvelle variable exogène à ce modèle conceptuel rentre donc soit dans la catégorie des omissions involontaire, jalon naturel d'une bonne progression dans un raisonnement scientifique, soit dans la catégorie des paramètre a-thématique informatique, dont on ne peut s'empecher de penser qu'ils interferent et dégradent forcément ce bel édifice scientifique en cours de construction.
-
-
-
 
 Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, cas nous verrons que les méta-heuristique opérant dans des espace de paramètres discret mais aussi continu, sans qu'une discrétisation préalable soit nécessaire en amont.
 
@@ -1443,6 +1451,49 @@ En résumé, à chaque association d'un vecteur de fonction objectif $\vec{f}$ e
 
 C'est à partir du positionnement des solutions candidates dans cet espace $\mathbb{Y}$ que l'optimiseur va décider de la prochaine solution candidate à évaluer.
 
+
+\begin{framewithtitle}[bla]{bla}
+
+Pour le modèle \textbf{Ants}, on a vu qu'il existait trois paramètres pouvant être amené à varier en entrée du modèle. 
+
+Les paramètres d'évaporation $Evaporation-rate$ et $Diffusion-rate$ varie chacun dans le domaine \mathbb{R}, entre les valeurs 0.0 et 99.0 auquel on associe maintenant trois fonctions objectifs.
+
+Le paramètre de population est réglé par défaut à 125 fourmis dans la colonie, mais il est également possible de le faire varier sur N. 
+
+
+Si à l'initialisation 
+
+  sera susceptible auquel vous même vous n'aviez pas pensé lors de la création du modèle.
+
+ la définition des valeurs possible de paramètres va exposer votre 
+
+Les fonctions objectifs se base chacune sur le temps écoulé entre le début de la simulation $t_0$ et le temps indiqué pour la disparition complète d'un tas de nourriture $t_n$.
+
+\begin{enumerate}
+\item $f_1$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 1 disparait.
+\item $f_2$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 2 disparait.
+\item $f_3$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 3 disparait.
+\end{enumerate}
+
+Imaginons par exemple que je fasse tourner une première simulation avec des paramètres pris au hasard (population = 60, diffusion = 25, xx) , voici comment la projection se présente entre l'espace des paramètres, et l'espace des objectifs.
+
+Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentative pour trouver le meilleur jeu de valeur de paramètres qui mimise les trois fonctions objectifs risque de produire des combinaisons de valeur de paramètres qui poseront problèmes. Effectivement que se passe-t-il dans notre modèle si les paramètres sont les suivants ?
+
+\begin{enumerate}
+\item $population = 0, Evaporation-rate = 25.5 , Diffusion-rate=24.6$
+\item $population = 250, Evaporation-rate = 0.0 , Diffusion-rate=0.0$
+\end{enumerate}
+
+Plusieurs pistes peuvent être indiqué pour éviter ou limiter l'apparition de comportement pouvant bloquer lors de l'exploration :
+- Soit vous fixer certains de ces paramètres lorsque c'est possible
+- Soit vous identifiez à l'avance les combinaisons de jeu de valeur de paramètres et vous les interdisez à l'optimiseur
+- Soit vous introduisez un artefact dans votre modèle limitant le nombre de tortue disponible pour une espèce donnée
+- Soit vous introduisez des critères d'arret dans votre modèle beaucoup plus restrictif
+
+Un autre type d'erreur peut encore intervenir, la combinatoire de paramètre pouvant faire apparaitre des erreurs dans le déroulement de votre programme.
+
+\end{framewithtitle}
+
 \textit{Dès lors, comment ce choix se fait-il dans une perspective multi-objectifs a priori contradictoires ?}
 
 \begin{figure}[!hbtp]
@@ -1554,8 +1605,8 @@ Ce qui dans le cas d'une minimisation se traduit mathématiquement par les condi
 
 % TODO : A CORRIGER ABSOLUMENT AVEC WEISE !!
 \begin{align*}
-	(x_1 \dashv x_2) \Leftrightarrow &\forall i \in 1 \dotsc n \Rightarrow - i f_i (x_1) \leq i f_i (x_2) \land \\
-	&\exists j \in 1 \dotsc n : j f_j (x_1) < - j f_j (x_2)
+	(x_1 \dashv x_2) \Leftrightarrow &\forall i \in 1 \dotsc n \Rightarrow  f_i (x_1) \leq f_i (x_2) \land \\
+	&\exists j \in 1 \dotsc n : f_j (x_1) < f_j (x_2)
 \end{align*}
 
 Cette notion de \textit{domination} ($\succ$) \Anote{notation_dominance} permet de dégager ces trois possibilités
@@ -1621,10 +1672,11 @@ Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non domi
   \end{sidecaption}
 \end{table}
 
-Les solutions admises parmi le front de Pareto (voir figure \ref{fig:frontoptimal}) sont donc ici toutes celles qui ne sont pas dominées faiblement ($\succeq$), ce qui revient à exclure les points $f$ et $l$ du front optimum $\{a,b,c,d,e\}$ car ils sont dominés faiblement ($e \succeq f$); alors que dans le cadre d'une dominance forte ($\succ \succ$), ceux-ci auraient fait partie du front $\{a,b,c,d,e,f,l\}$. En effet si on prend toujours le cas de $e$ et $f$, la condition testant que $e$ est strictement meilleur que $f$ sur tous les objectifs n'est pas remplie. %Cet ensemble de cardinalité forcément inférieure ou égale est qualifié \enquote{d'ensemble fort non dominé} (\textit{Strongly non dominated set}).
+Les solutions admises parmi le front de Pareto (voir figure \ref{fig:frontoptimal}) sont donc ici toutes celles qui ne sont pas dominées faiblement ($\succeq$), ce qui revient à exclure les points $f$ et $l$ du front optimum $\{a,b,c,d,e\}$ car ils sont dominés faiblement ($e \succeq f$); alors que dans le cadre d'une dominance forte ($\succ \succ$), ceux-ci auraient fait partie du front $\{a,b,c,d,e,f,l\}$. En effet si on prend toujours le cas de $e$ et $f$, la condition testant que $e$ est strictement meilleur que $f$ sur tous les objectifs n'est pas remplie. 
 
+%Cet ensemble de cardinalité forcément inférieure ou égale est qualifié \enquote{d'ensemble fort non dominé} (\textit{Strongly non dominated set}).
 
-Le front de Pareto pour $\succ \succ$ est plus \textbf{grand} que le front de Pareto pour $ \succ $. Or $\succ \succ$ est \textbf{plus stricte} que $\succ$. Observons de plus près le cas litigieux, c'est à dire pour le point $f$ et $l$, car $f_1 = e_1$
+Le front de Pareto pour $\succ \succ$ est plus \textbf{grand} que le front de Pareto pour $ \succ $. Or $\succ \succ$ est \textbf{plus stricte} que $\succ$. Le raisonnement est contre-intuitif, par conséquent nous allons le dérouler plus en détail par la suite en observant de plus près le cas litigieux, c'est à dire pour le point $f$ et $l$, car $f_1 = e_1$
 
 On examine si $f$ doit être exclu de l'ensemble Front de Pareto $FP$ dans les deux cas, pour une dominance forte ($\succ \succ$) et une dominance faible ($\succeq$)
 
@@ -1635,26 +1687,21 @@ On examine si $f$ doit être exclu de l'ensemble Front de Pareto $FP$ dans les d
      & \text{tel que }  x \succ \succ f
 \end{align*}
 
-On teste tous les éléments de $FP$, le seul qui pose question est $e$ : est ce que $e \succ \succ f$ ?
+On teste tous les éléments de $FP$, le seul qui pose question est le point $e$, on pose donc la question suivante, est ce que $e \succ \succ f$ ?
 
-\textbf{Par conséquent} comme $f_1(e) = f_1(f)$ , $e$ ne domine pas fortement $f$. N'étant pas en mesure d'établir un ordre total entre ces valeurs, il est impossible d'exclure $f$ de $FP$, et donc $ f \in FP_{\succ \succ}$
+\textbf{Non,} car $f_1(e) = f_1(f)$ , et donc $e$ ne domine pas fortement $f$. N'étant pas en mesure d'établir un ordre entre ces valeurs, il est impossible d'exclure $f$ de $FP$, et donc $ f \in FP_{\succ \succ}$
 
 \textbf{2) Dans le cas d'une dominance faible : }
 
 On reprend la définition qui nous est donné, $ e \succeq f$ si
-\begin{enumerate}
+\begin{enumerate}[label=(\arabic*),labelindent=\parindent,leftmargin=*]
 \item $ \forall_i \ e_i \leq f_i$
 \item $ \exists_j \ e_j < f_j$
 \end{enumerate}
 
-Or (1) est bien $True$ d'après le Tableau 2.3, il est donc possible d'écrire $e_1 \leq f_1$ et $e_2 \leq f_2$
-
-
-(2) est également $True$ car $e_2 < f_2$
-
+Or (1) est bien $True$ d'après le tableau \ref{tab:pranking}, il est donc possible d'écrire $e_1 \leq f_1$ et $e_2 \leq f_2$ Le cas (2) est également $True$ car $e_2 < f_2$
 
 \textbf{Par conséquent}, le fait que (1) et (2) soit égal à $True$ permet, à la différence de la dominance forte, de discriminer $e$ par rapport à $f$, ce qui fait  que $e_2 \succeq f_2$. Donc $f \notin FP_{\succeq}$
-\end{document}
 
 \begin{figure}[!htb]
 	\begin{sidecaption}[fortoc]{Tracé du front optimum à partir du calcul des individus non dominés, cf. l'ensemble vide $\varnothing$ dans le tableau \ref{tab:pranking}}[fig:frontoptimal]
@@ -2518,6 +2565,8 @@ L'histoire MGO tel qu'avancé dans la section \ref{ssec:historique_mgo}, un autr
 \subsection{Premiere prototype fonctionel}
 \label{p:prototype_fonctionel}
 
+La constitution d'un premier prototype fonctionnel constitue pour l'équipe un triple retour d'expérience, pour MGO, pour openMOLE, et évidemment pour le modèle utilisé, à savoir Simpop Local.
+
 Avant mars 2012, le couplage entre MGO et openMOLE est réalisé par l'utilisateur lors de la définition des workflows. Grâce à la nature autonome et modulaire des composantes fournies par l'univers du framework MGO, la logique d'execution d'une métaheuristique peut facilement être retranscrite dans le référentiel d'openMOLE. Les tâches d'un workflow vont tout simplement encapsuler les appels et les objets spécifiques aux différentes composantes de la métaheuristique, en apportant la logique nécessaire à une execution de certaines de ces composantes dans un environnement de calcul distribué.
 
 Autrement dit, la logique d'execution générique d'une métaheuristique décrite dans la composante \keyword{Evolution} est instancié (par exemple on choisit d'implémenter NSGA2) puis éclaté dans un ensemble de tâches dont l'organisation est guidé à la fois par la reproduction de cette optimisation, mais aussi par la parallélisation de certaines de ces tâches.
@@ -2577,10 +2626,9 @@ Si l'exécution d'un tel workflow est déjà un premier pas vers une systématis
 
 Si $n=200$, $r = 30$, $t=2000$, cela équivaut donc à 12 millions de simulations. Pour nous donner une durée d'execution, il faut encore multiplier par la durée d'exécution du modèle : un modèle jugé relativement rapide s'executant en moyenne en 2 minute sous Netlogo revient à cumuler environ 46 années de calcul sur un seul processeur. Sur une grille de calcul disposant de 1000 processeurs, cette durée descend à 17 jours. Sachant que de tels algorithmes évolutionnaire ne garantissent pas d'optimum global, ceux ci doivent également être répliqué afin de vérifier si l'algorithme, malgré notre vigilance sur les paramètres de celui-ci, ne serait pas malheureusement tombé dans un optimum local ?
 
-On comprend dès lors que chaque minutes qui peut être gagné sur l'exécution de ce modèle est autant de temps gagné sur la rapidité avec laquelle on est capable d'effectuer un retour d'expérience sur notre modèle à partir de ces résultats.
+Les premières explorations du modèle SimpopLocal ont été faites suivant ce workflow à partir d'avril 2011, mais c'est seulement en septembre 2011 que le couplage est présenté aux géographes à l'ECQTG d'Athènes, puis à des informaticiens à la conférence V2CS à Paris.
 
-
-Un triple retour d'experience, pour MGO, pour openMOLE, et pour le modèle.
+Il y a deux possibilités pour gagner en temps de calcul et permettre un retour d'expérience sur leur modèle plus rapide pour les modélisateurs. En effet, soit le modèle de simulation peut être optimisé, soit l'algorithme métaheuristique distribuant les simulations peut encore être amélioré. Seule la deuxième voie offre un gain de temps générique, quelque soit le modèle. Dans le cas de simpopLocal, la première voie a également été exploré, et le modèle écrit initialement en Netlogo, a d'abord accueilli un plugin en Scala pour externaliser les traitements les plus long, avant d'être finalement réécrit complétement en Scala.
 
 
 - Amélioration de la rapidité d'exécution via application de nouvelle méthode de parallélisme des GA
