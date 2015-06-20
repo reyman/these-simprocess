@@ -1234,7 +1234,12 @@ D'une part ce choix ne résout en rien la problématique combinatoire. Donnons u
 Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}.
 
 % ENCADRE ?
-\paragraph{Simpop Local}
+\paragraph{Le cas simpop Local}
+\begin{framewithtitle}[bla]{Exemple de Curse Dimensionality avec Simpop Local}
+
+
+\end{framewithtitle}
+
 
 % Exemple pour illustrer ca au travers des problèmes SLocal qu'on a eu ?
 
@@ -1242,11 +1247,6 @@ Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est 
 
 % Plutot une argumentation pour justifier de la nécessité d'explorer rapidement les modèles. Mais dans un deuxième temps, sur les analyses de sensibilités, car analyse de sensibilité c'est pas tip top
 
-Lors de l'implémentation une deuxième vague de paramètres est à prendre en compte lors des expérimentations. En effet lorsque vient la nécessité d'implémenter les hypothèses dans un programme informatique, le modélisateur doit faire face à la fois aux ambiguités du langage naturel, mais doit également prendre en compte des externalités qui interfere avec l'image du modèle conceptuel.
-
-Les informaticiens sont habitués à cette exercice de décomposition, recomposition qui permet de passer d'une description très abstraite, à une implémentation fonctionelle, par exemple dans la manipulation de base de données. Seulement ici, ce n'est pas tant la qualité fonctionelle qui guide l'implémentation du modèle mais bien la qualité de similarité avec le modèle conceptuel. L'implémentation . C'est cette fameuse étape de vérification qui est censé nous garantir que le modèle dit bien ce que l'on veut qu'il dise.
-
-Toute nouvelle variable exogène à ce modèle conceptuel rentre donc soit dans la catégorie des omissions involontaire, jalon naturel d'une bonne progression dans un raisonnement scientifique, soit dans la catégorie des paramètre a-thématique informatique, dont on ne peut s'empecher de penser qu'ils interferent et dégradent forcément ce bel édifice scientifique en cours de construction.
 
 Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, cas nous verrons que les méta-heuristique opérant dans des espace de paramètres discret mais aussi continu, sans qu'une discrétisation préalable soit nécessaire en amont.
 
@@ -1451,46 +1451,68 @@ En résumé, à chaque association d'un vecteur de fonction objectif $\vec{f}$ e
 
 C'est à partir du positionnement des solutions candidates dans cet espace $\mathbb{Y}$ que l'optimiseur va décider de la prochaine solution candidate à évaluer.
 
-
 \begin{framewithtitle}[bla]{bla}
 
 Pour le modèle \textbf{Ants}, on a vu qu'il existait trois paramètres pouvant être amené à varier en entrée du modèle. 
 
-Les paramètres d'évaporation $Evaporation-rate$ et $Diffusion-rate$ varie chacun dans le domaine \mathbb{R}, entre les valeurs 0.0 et 99.0 auquel on associe maintenant trois fonctions objectifs.
 
-Le paramètre de population est réglé par défaut à 125 fourmis dans la colonie, mais il est également possible de le faire varier sur N. 
+Les paramètres d'évaporation $Evaporation-rate$ et $Diffusion-rate$ varie chacun dans le domaine $\mathbb{R}$, entre les valeurs $0.0$ et $99.0$ auquel on associe maintenant trois fonctions objectifs.
 
+Le paramètre de population est réglé par défaut à $125$ fourmis dans la colonie, mais il est également possible de le faire varier sur $\mathbb{N}$ entre $0$ et $250$. 
 
-Si à l'initialisation 
+\begin{itemize}[noitemsep,nolistsep]
+\item L'espace $\mathbb{X}$ est un cube $\{\mathbb{N},\mathbb{R},\mathbb{R}\}$ de bornes $\{[0,250], [0,99.0], [0,99.0]\}$
+\item L'espace $\mathbb{Y}$ associe pour un point $x \in \mathbb{X}$ un point de valeur ${f_1,f_2,f_3}$ dans le domaine non borné $\{\mathbb{R},\mathbb{R},\mathbb{R}\}$
+\end{itemize}
 
-  sera susceptible auquel vous même vous n'aviez pas pensé lors de la création du modèle.
+Les fonctions objectifs $\{f_1,f_2,f_3\}$  se base chacune sur le temps écoulé entre le début de la simulation $t_0$ et le temps indiqué pour la disparition complète d'un tas de nourriture.
 
- la définition des valeurs possible de paramètres va exposer votre 
-
-Les fonctions objectifs se base chacune sur le temps écoulé entre le début de la simulation $t_0$ et le temps indiqué pour la disparition complète d'un tas de nourriture $t_n$.
-
-\begin{enumerate}
+\begin{enumerate}[noitemsep,nolistsep]
 \item $f_1$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 1 disparait.
 \item $f_2$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 2 disparait.
 \item $f_3$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 3 disparait.
 \end{enumerate}
 
-Imaginons par exemple que je fasse tourner une première simulation avec des paramètres pris au hasard (population = 60, diffusion = 25, xx) , voici comment la projection se présente entre l'espace des paramètres, et l'espace des objectifs.
+Pour pouvoir rapporter ces valeurs à l'optimiseur, encore faut-il que cette simulation se finisse d'une façon ou d'une autre. Il faut donc fixer \textbf{une condition d'arrêt} pour remplacer le clic sur le bouton stop effectué par l'utilisateur dans Netlogo. La condition d'arrêt la plus simple ici est de stopper la simulation lorsque il n'y a plus aucune nourriture disponible.
 
-Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentative pour trouver le meilleur jeu de valeur de paramètres qui mimise les trois fonctions objectifs risque de produire des combinaisons de valeur de paramètres qui poseront problèmes. Effectivement que se passe-t-il dans notre modèle si les paramètres sont les suivants ?
+Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentatives pour trouver le meilleur jeu de valeur de paramètres qui mimise les trois fonctions objectifs risque de produire des combinaisons qui peuvent mettre le modèle ou les hypothèses du modèle en difficulté. \textit{Effectivement que se passe-t-il dans notre modèle de simulation si les valeurs de paramètres sont les suivants ? }
 
-\begin{enumerate}
-\item $population = 0, Evaporation-rate = 25.5 , Diffusion-rate=24.6$
-\item $population = 250, Evaporation-rate = 0.0 , Diffusion-rate=0.0$
-\end{enumerate}
+\begin{table}[H]
+\centering
+\caption{Testons ces conditions avec une même graine aléatoire (42)}
+\label{tab:experience}
+\begin{tabular}{lllll}
+\hline
+  & $Population$ & $Evaporation-Rate$ & $Diffusion-Rate$ & $t_{stop}$ \\ \hline
+1 & 125        & 25.0             & 25.0  & 1554 \textit{ticks} \\
+2 & 0          & 25.0             & 25.0  & $\infty$ \\
+3 & 25         & 25.0             & 25.0  & 8825 \textit{ticks} \\
+4 & 125        & 0.0              & 0.0   & 1374 \textit{ticks} \\
+5 & 125        & 99.0             & 0.0   & 1261 \textit{ticks} \\
+6 & 125        & 0.0              & 99.0  & 1201 \textit{ticks} \\ 
+7 & 125        & 99.0             & 99.0  & 1254 \textit{ticks} \\ \hline
+\end{tabular}
+\end{table}
 
-Plusieurs pistes peuvent être indiqué pour éviter ou limiter l'apparition de comportement pouvant bloquer lors de l'exploration :
-- Soit vous fixer certains de ces paramètres lorsque c'est possible
-- Soit vous identifiez à l'avance les combinaisons de jeu de valeur de paramètres et vous les interdisez à l'optimiseur
-- Soit vous introduisez un artefact dans votre modèle limitant le nombre de tortue disponible pour une espèce donnée
-- Soit vous introduisez des critères d'arret dans votre modèle beaucoup plus restrictif
+Dans Le cas (2) la simulation ne s'arrête jamais, car la condition d'arrêt n'est jamais rempli. Ce comportement n'est clairement pas intéressant et risque tout simplement de bloquer l'exploration réalisé par la métaheuristique, il faut donc fixer un seuil > 0 à cette population initiale de fourmis.
 
-Un autre type d'erreur peut encore intervenir, la combinatoire de paramètre pouvant faire apparaitre des erreurs dans le déroulement de votre programme.
+Le cas (3) montre qu'avec moins de fourmis, il faut beaucoup plus de temps à la simulation pour que la condition d'arrêt soit rempli. Il peut donc y'avoir une très forte variabilité dans les durées d'execution du modèle en fonction des valeurs de paramètres selectionné pour évaluation.
+
+Le cas (4,5,6) sont intéressant, car ils sont susceptible de produire des résultats contre-intuitifs. En effet, en terme de durée d'execution totale, on obtient pour cette graine aléatoire de meilleurs résultats qu'avec des valeur de paramètres pris au hasard (1). Cela s'explique par le débordement et la mise en défaut des mécanismes prévu initialement par le modélisateur, car les fourmis ne captent les traces chimique qu'entre $0.05$ et $2$. Or la diffusion ou l'évaporation se cumule en partant d'une valeur unitaire à $60$, qui est l'équivalent de la trace chimique déposé sur chaque patch pour une fourmi ayant trouvé de la nourriture. Donc dans tout ces ce cas là, les mécanismes du modèle sont quasi-inneficace, et se rapport au cas (3) qui met en jeu une simple marche aléatoire des fourmis.
+
+\textit{L'optimiseur sera-t-il capable de trouver de meilleures valeurs dans cette zone d'activation ?} Si non, il faudra revoir les paramètres ou le fonctionnement de notre mécanisme guidant le comportement de dépot et de détection de trace de chaque fourmi.
+
+Plusieurs pistes peuvent être indiqués au modélisateur pour éviter ou limiter l'apparition de comportement pouvant bloquer l'exploration :
+
+\begin{itemize}[noitemsep,nolistsep]
+	\item Fixer les valeurs de paramètres pouvant poser problème, quitte à les faire varier par la suite
+	\item Identifiez en amont les combinaisons de jeu de valeurs de paramètres susceptible de poser problème, pour ensuite les interdire à l'optimiseur
+	\item Introduire un paramètre ou un mécanisme artefact (c'est à dire qui est extérieur aux hypothèses originales) dans le modèle, par exemple en limitant le nombre de tortue évoluant pour une espèce donnée
+	\item Introduire des critères d'arrêt plus restrictif 
+	\item Pénaliser les comportements posant problèmes dans les fonction objectifs
+\end{itemize}
+
+Un autre type d'erreur peut encore intervenir lors de telle exploration, la combinatoire de paramètre pouvant faire apparaitre des erreurs dans le déroulement de votre programme (division par zéro, comportement innatendus, dépassement mémoire, etc.) En ce sens, ce type d'exploration participe de la validation interne du modèle.
 
 \end{framewithtitle}
 
