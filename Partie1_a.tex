@@ -963,8 +963,7 @@ Avec pour point commun cette expérience d'une exploration semi-manuelle et asse
 
 \enquote{Le nouveau travail de modélisation entrepris pour cette thèse s’inscrit dans la continuité des travaux de recherche présentés dans ce chapitre. Il adopte l’approche multi-agents et plus particulièrement le concept de modélisation géographique développé pour les modèles de la famille Simpop qui semble particulièrement adapté pour étudier et simuler la dynamique des systèmes urbains. Mais pour ne pas tomber dans les mêmes écueils d’évaluation, de difficulté technique devant l’exploration massive, d’impossibilité d’appropriation des modèles Simpop existants, etc., une modification de l’approche de modélisation est nécessaire. Nous verrons dans la partie suivante que ces limitations classiques aux modèles multi-agents peuvent être surmontées grâce à la définition de principes de modélisation et à l’utilisation systématique d’outils et méthodes d’exploration adaptés.} \autocite[113]{Schmitt2014}
 
-Si la littérature proposé de façon interne au laboratoire (Hélène Mathian et Léna Sanders), ou en externe dans la littérature agent \autocites{Amblard2006,Sargent2010, Gilbert2008}, apporte certes des méthodologies, des conseils, pour la construction et l'exploration des modèles, elle est par contre quasiment vierge de tout outil, plateforme, logiciels informatique supportant ou facilitant la \enquote{validation}, ou plutôt l'évaluation de modèles \autocite{Amblard2006}  (ou presque, il y'avait en effet les travaux de \textcite{Amblard2003}, dont les projets en filiations vont recroiser notre chemin début 2010, mais nous ne le savions pas encore à l'époque). (voir section ?)
-
+Si la littérature proposé de façon interne au laboratoire (Hélène Mathian et Léna Sanders \autocite{Mathian2014}), ou de façon externe dans la littérature agent \autocites{Amblard2006, Sargent2010, Gilbert2008}, apporte certes des méthodologies, des conseils, pour la construction et l'exploration des modèles, elle est par contre quasiment vierge de tout outil, plateforme, logiciels informatique supportant ou facilitant la \enquote{validation}, ou plutôt l'évaluation de modèles \autocite{Amblard2006}  (ou presque, il y'avait en effet les travaux de \textcite{Amblard2003}, dont les projets en filiations vont recroiser notre chemin début 2010, mais nous ne le savions pas encore à l'époque). (voir section ?)
 
 
 --
@@ -1102,31 +1101,68 @@ Evidemment il faut citer le travail important réalisé sur le prototype par Amb
 
 Le choix est fait dans cette section de faire appel à la fois un modèle jouet (pour la compréhension générale), mais également un modèle réel (pour montrer que cela marche).  
 
-\paragraph{un modèle jouet sur les fourmis}
+\subsubsection{un modèle jouet sur les fourmis}
 
 Le modèle de simulation \textbf{Ants} est une reproduction par \textcite{Wilensky1997} d'un modèle originellement en StarLogo en Netlogo. Celui-ci est disponible sur le \href{http://ccl.northwestern.edu/netlogo/models/Ants}{@site} de Netlogo, et par défaut dans la bibliothèque de modèle du logiciel.
 
-ants.png
+\begin{figure}[H]
+		\centering
+	 	\includegraphics[width=.6\linewidth]{ants.png}
+\end{figure}
 
 Dans ce modèle Netlogo, une colonie de fourmis fourrage à la recherche de nourriture. Chaque fourmi suit un ensemble de règles simple, mais la colonie prise dans son ensemble réagit de façon complexe. Quand une fourmis trouve un morceau de nourriture, elle ramène celle-ci dans son nid, en laissant une empreinte chimique derrière elle. Lorsque les autres fourmis renifle cette trace, elle suive la piste jusqu'à la nourriture. Plus le nombre de fourmis rapportant de la nourriture vient à augmenter, plus la piste chimique est renforcé par leur passage. 
 
 Ce modèle est constitué de trois paramètres : 
-
-\begin{itemize}[label=\textbullet]
+\begin{itemize}[label=\textbullet,noitemsep,nolistsep]
 \item Une $Population$ de fourmis initiale
 \item Un taux $Evaporation-rate$ qui controle l'évaporation de la trace chimique 
 \item un taux $Diffusion-rate$ qui controle la diffusion de la trace chimique
 \end{itemize}
 
-\paragraph{un modèle théorique : SimpopLocal}
+\subsubsection{un modèle de simulation appliqué SimpopLocal}
 
-Seul un résumé de SimpopLocal sera présenté ici, car la présentation du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}. Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif du fait qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse, je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans l'un ou l'autre des participants, que cela soit dans la construction des modèles ou de certains graphiques, l'exploration des modèles, l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences apellés pour la co-construction d'un tel projet, les acteurs sont liés dans leur travaux au jour le jour par une forme plus ou moins forte d'inter-dépendance \autocite{Chapron2014}.
+Seul un résumé du projet SimpopLocal sera présenté ici, car la présentation détaillé du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015} (joint en annexe) , un article paru dans JASSS en 2015 \autocite{Reuillon2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}. 
 
-Le modèle de simulation réel, \textbf{simpopLocal} est 
+Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaire pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette inter-disciplinarité \autocite{Chapron2014}.
 
-Le modèle SimpopLocal a subi de nombreux redéveloppements, que cela soit dans sa version Netlogo, Scala, et enfin dans son intégration dans SimPuzzle. Les \textit{workflow} utilisés pour explorer ce modèle sont quasi similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
+Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
 
-Le \textit{framework} MGO (Multi Goal Optimization)
+Activité d'exploration semble être le pivot central par lequel évolue notre outillage, et notre activité de modélisation.
+
+1 - Les centaines d'heures accumulés pendant toute la durée du projet avec Romain et Mathieu autour de la construction de workflows pour le modèle permettent de tester, debugger, améliorer la syntaxe utilisé pour les workflow, mais aussi de tester la robustesse du logiciels sur un cas d'utilisation concret sur temps long.
+
+2 - Les différentes campagnes d'explorations menées vont avoir des retombées sur la construction MGO, et le couplage entre entre openMOLE et MGO, ce qui en retour améliore les explorations.
+
+	a) Intégration et Amélioration des algorithmes génétiques pour openMOLE
+		- EA Steady State, Ilots permettent de mieux utiliser le parallélisme des méta-heuristique et donc de rendre plus efficiente les explorations appuyés sur cette utilisation
+
+	b) Simplification des Workflows pour l'exploration utilisant des meta-heuristique 
+
+3 - Boucle reliant l'activité d'exploration et l'activité de construction des modèles. 
+
+	a ) L'exploration des résultats a posteriori s'avère incertaine et trop couteuse (durée d'execution, volume données), ce qui nous renvoie à un questionnement a priori des modèles en utilisant des méta-heuristiques ( Exploration <-> Modèlisation )
+		- prototype de calibration par inversion \autocite{Schmitt2015}
+
+	b) L'exploration permet d'avoir un retour sur les hypothèses et la façon dont elles sont implémentées ( Exploration > Modèlisation ), mais la construction modifie aussi la façon dont on va penser l'exploration
+		- construction par incrément EBIMM
+		
+
+4 - Boucle liant l'activité de construction MGO, Activité de construction du modèle, Exploration des modèles
+
+	a) Amène le développement ou l'amélioration de méta-heuristique pour l'exploration, dont l'application impacte en retour le développement des modèle (Exploration -> Mgo -> Modèle )
+	- Hypervolume / SMSMOEA \autocite{Schmitt2015} 
+	- Cp-Profile \autocite{Reuillon2015} 
+	- PSE \autocite{Cherel2015}
+
+	b) Amène l'amélioration MGO et redeveloppement des modèles pour être capable de construire et d'explorer des familles de modèles : SimPuzzle.
+
+	c) Réécriture des modèles
+
+5 - Boucle liant OpenMole et 
+
+%Le \textit{framework} MGO (Multi Goal Optimization)
+
+\subsection{Le domaine des algorithmes métaheuristiques, une sous-discipline de l'Optimisation}
 
 \begin{figure}[h]
 \begin{sidecaption}[fortoc]{ Vue d'ensemble des algorithmes d'optimisation repris de l'état de l'art très complet de \textcite[32]{Weise2011}}[fig:S_OverviewOptimisation]
@@ -1134,8 +1170,6 @@ Le \textit{framework} MGO (Multi Goal Optimization)
  \includegraphics[width=.9\linewidth]{overview_optimisation_algorithm.png}
   \end{sidecaption}
 \end{figure}
-
-\subsection{Le domaine des algorithmes métaheuristiques, une sous-discipline de l'Optimisation}
 
 Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes evolutionnaires (\textit{Evolutionary Algorithms} ou EA), il est nécessaire de donner quelques éléments de contexte et de définitions plus généraux concernant la branche d'étude dans lequel ceux-ci se situent. Il faut par ailleurs mettre en garde le lecteur que la plupart des définitions et des analyses présentés ici sont inspirés ou extraits d'ouvrages de synthèses à destination d'un public très large \autocites{Weise2011, Luke2013, Brownlee2012}. Par conséquent il faut garder à l'esprit que plusieurs de ces termes peuvent être discutés, enrichis, critiqués ou prendre des sens différents dans chacune des sous branche (voir figure \ref{fig:S_OverviewOptimisation}) que compte ce domaine très général qu'est l'optimisation.
 
@@ -1234,9 +1268,27 @@ D'une part ce choix ne résout en rien la problématique combinatoire. Donnons u
 Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}.
 
 % ENCADRE ?
-\paragraph{Le cas simpop Local}
-\begin{framewithtitle}[bla]{Exemple de Curse Dimensionality avec Simpop Local}
 
+\begin{framewithtitle}[Curse Dimensionality]{Exemple de Curse Dimensionality avec Simpop Local}
+
+Le tableau ci-dessous présente le domaine de variations retenue par les experts pour les 5 paramètres du modèle agent Simpop Local, ainsi que le domaine de variation extrait de l'ensemble des meilleures valeurs de paramètres trouvées lors du calibrage \autocite{Schmitt2014, Schmitt2015}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+                   & Explored Domain & Solutions Domain          \\ \midrule
+$P_{creation}$     & {[}0,1{]}       & ~{[} \SI{1.1e-06} ; \SI{1.3e-06} {]} \\
+$P_{diffusion}$    & {[}0,1{]}       & ~{[} \SI{6.7e-07} ; \SI{6.9e-07} {]} \\
+$InnovationImpact$ & {[}0,2{]}       & ~{[} \SI{7.7e-03} ; \SI{8.4e-03} {]} \\
+$DistanceDecay$    & {[}0,4{]}       & ~{[} 0.66; 0.75 {]}       \\
+$R_{max}$          & {[}1,40000{]}   & ~{[} 10090; 10465 {]}     \\
+Volume             & 320000          & ~ \SI{4.7e-16}{}               \\ \bottomrule
+\end{tabular}
+%\caption{Valeur }
+%\label{my-label}
+\end{table}
+Quelque soit finalement la résolution du plan d'expérience envisagé par l'utilisateur, celui-ci n'avait dans ce cas là que peu de chance de soulever l'existence d'une zone de solutions potentielle dans un espace de résolution aussi fin; seule l'usage d'une méta-heuristique pouvait detecter cette zone de validité du modèle, dans un volume qui représente au final $\SI{4.7e-16}{} / \num{320000} = \SI{1.5e-21}{} $ du volume total.
 
 \end{framewithtitle}
 
@@ -1246,7 +1298,6 @@ Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est 
 % Jonction des trois fonctions objectifs
 
 % Plutot une argumentation pour justifier de la nécessité d'explorer rapidement les modèles. Mais dans un deuxième temps, sur les analyses de sensibilités, car analyse de sensibilité c'est pas tip top
-
 
 Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, cas nous verrons que les méta-heuristique opérant dans des espace de paramètres discret mais aussi continu, sans qu'une discrétisation préalable soit nécessaire en amont.
 
