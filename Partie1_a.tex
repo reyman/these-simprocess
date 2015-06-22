@@ -925,28 +925,25 @@ T : Toutes les conditions sont réunies pour expérimenter ce retour au HPC dans
 
 % Contingence avec Centre de calcul, expérience cumulé Arnaud, Denise, Clara, moi, Thomas, et un prototype en cours de construction.
 
-Il n'est pas question dans cette section de faire un n-ème historique des pratiques à Géographie-Cités, car c'est un sujet déjà très bien traité dans de multiples thèses. Sur les aspects historiques et l'apport géographiques des modèles de simulation réalisés au laboratoire Géographie-Cités, le lecteur pourra donc se référer aux thèses récentes de \autocites{Glisse, Louail2010, Schmitt2014, Cottineau2014b}
+Il n'est pas question dans cette section de faire un nouvel historique des projets de simulation Agents à Géographie-Cités, car c'est un sujet déjà très bien traité au travers de multiples thèses. Sur les aspects historiques et l'apport géographiques des modèles de simulation réalisés au laboratoire Géographie-Cités, le lecteur pourra donc se référer aux thèses récentes de \autocites{Glisse, Louail2010, Schmitt2014, Cottineau2014b}
 
-Je préfère insister ici sur les aspects saillants d'une aventure scientifique résolument ancré dans l'inter-disciplinarité, mais également dans ce que l'on appelle parfois la \foreignquote{english}{slow science}.
-
-Il nous aura en effet fallu presque 4 années de travail, et de multiples tentatives d'écritures, pour finalement réussir à produire une première publication \autocite{Schmitt2015} présentant un prototype de méthodologie s'articulant autour d'un modèle (SimpopLocal), et d'une plateforme HPC (OpenMOLE).
+Je préfère insister ici sur les aspects saillants d'une aventure scientifique résolument ancré dans l'inter-disciplinarité, mais également dans ce que l'on appelle parfois la \foreignquote{english}{slow science}. En effet, il nous aura en effet fallu presque 4 années de travail, et de multiples campagnes d'expérimentations, pour finalement réussir à produire une première publication \autocite{Schmitt2015} présentant un prototype de méthodologie s'articulant autour d'un modèle (SimpopLocal), et d'une plateforme HPC (OpenMOLE).
 
 Un embryon dont la plus grande force était déjà je crois de montrer la faisabilité d`un tel projet : \enquote{ Oui, regardez, il est possible d'utiliser une approche HPC pour évaluer vos simulations !}
 
 %J'ai voulu faire cet historique car en définitive je n'ai jamais vraiment cru aux hasards de telles rencontres. Les belles histoires comme çà, c'est louche. On s'est quelque fois demandé si nous n'avions pas été manipulé, ou du moins fortement dirigé, par des directeurs de thèse - c'est bien connu - omnipotent.
 
-
 \paragraph{Première synergie, avant 2010}
 
-Les termes vont peut être paraitre un peu fort, mais il me semble à l'époque qu'il y'avait de notre part une certaine frustration à voir des modèles de simulation non calibré, non évalué. C'est sur cette base je crois qu'une synergie opère autour des premiers efforts portés par Thomas Louail.
+Les termes vont peut être paraitre un peu fort, mais il me semble à l'époque qu'il y'avait de notre part une certaine frustration vis à vis des pratiques existantes. C'est sur cette base je crois qu'une synergie opère autour des premiers efforts portés par Thomas Louail.
 
-C'est du moins sur cette thématique là que mon stage de master 2 s'était construit en 2009, sous la direction de Thomas Louail et Denise Pumain \autocite{Rey2009}. A l'époque les entrées/sorties du modèle de simualtion SIMPOP2 ne sont pas satisfaisantes (documentation des entrées, documentation des sorties, format d'import des paramètres et d'export des résultats), et il est impossible de faire varier \enquote{facilement} les paramètres du modèles dans un plan d'expérience établi au préalable. Certes, ces expériences ne sont pas impossible, Hélène Mathian ayant déjà menés plusieurs campagnes d'analyses sur les sorties des modèles SIMPOP, en partie grâce à des scripts SAS permettant de générer des rapports synthétiques. C'est d'ailleurs grâce à l'expertise, et les outils développés par Hélène Mathian que Clara Schmitt (également encadrée par Denise et Thomas) \autocite{Schmitt2008} peut réaliser en 2008 des expérimentations et des analyses de sensibilités sur ce modèle, dans le cadre de son stage de fin d'année d'école d'ingénieur.
+C'est du moins sur cette thématique là que mon stage de master 2 s'était construit en 2009, sous la direction de Thomas Louail et Denise Pumain \autocite{Rey2009}. A l'époque les entrées/sorties du modèle de simualtion SIMPOP2 ne sont pas satisfaisantes (documentation des entrées, documentation des sorties, format d'import des paramètres et d'export des résultats), et il est impossible de faire varier \enquote{facilement} les paramètres du modèles dans un plan d'expérience établi au préalable. Certes, ces expériences ne sont pas impossible, Hélène Mathian ayant déjà menés plusieurs campagnes d'analyses sur les sorties des modèles SIMPOP, en partie grâce à des scripts SAS permettant de générer des rapports synthétiques. C'est d'ailleurs grâce à l'expertise, et les outils développés par Hélène Mathian que Clara Schmitt (également encadrée par Denise Pumain, Anne Bretagnolle, Thomas Louail ) \autocite{Schmitt2008} peut réaliser en 2008 des expérimentations et des analyses de sensibilités sur ce modèle, dans le cadre de son stage de fin d'année d'école d'ingénieur.
 
-L'expérience est cependant pénible pour les différents utilisateurs, et les chaînes de manipulations nécessaire pour l'execution des simulations et le traitement des données comportent de nombreuses étapes manuelles, limitant de fait la tenue d'expérimentations à plus grande échelle. L'objectif du stage de 2009 est clair, il faut standardiser les entrées/sorties d'une part pour que les executions de simulations puissent suivre des plan d'expérience formulés en amont par les géographes, d'autre part pour que les analyses en sortie sur les résultats puissent eux aussi être automatisées, stockées, et exploitées si possible collectivement. Un projet extrait des problématiques de fond abordé dans la thèse de Thomas Louail \autocite[132-145]{Louail2010}.
+L'expérience reste fastidieuse pour les utilisateurs, car les chaînes de manipulations nécessaire pour l'execution des simulations et le traitement des données comportent de nombreuses étapes manuelles, nécessitant l'intervention de manipulateurs experts, limitant de fait la tenue d'expérimentations à plus grande échelle. L'objectif du stage de 2009 est clair, il faut standardiser les entrées/sorties d'une part pour que les executions de simulations puissent suivre des plan d'expérience formulés en amont par les géographes, d'autre part pour que les analyses en sortie sur les résultats puissent eux aussi être automatisées, stockées, et exploitées si possible collectivement. Il s'agit également de rendre cette expertise visible, et modifiable, en faisant en sorte que les différentes analyses en sorties de simulations soit extraite de leurs positions actuellement inacessible dans une chaine de traitement complexe, maitrisé/maitrisable par seulement quelques personnes. Un projet extrait des problématiques de fond abordé dans la thèse de Thomas Louail \autocite[132-145]{Louail2010}.
 
 \enquote{Les deux campagnes de simulation sur l’Europe et les Etats-Unis ont mis en lumières les difficultés de la pratique expérimentale sur des modèles ambitieux mais complexes. Ces difficultés entraînent un besoin de normalisation et de systématisation dans l’expérimentation \textit{in silico}. Nos efforts ne doivent donc pas porter sur le seul cas particulier de Simpop2, mais s’inscrire dans un projet de plus grande envergure et de plus long terme, qui vise à offrir aux géographes un ensemble d’outils interopérables, dont l’action commune pousse plus loin l’automatisation du processus d’expérimentation, et qui surtout soient neutres par rapport aux modèles qu’ils permettent d’exploiter. Simpop2 et son application Etats-Unis nous serviront de banc de test, mais notre objectif est bien sûr que ces outils puissent également servir à exploiter les futurs modèles développées au laboratoire.} \autocite[132]{Louail2010}
 
-Toute les idées d'une plateforme pour l'execution de modèle de simulation sont donc déjà là, ou presque...
+Il s'agit donc d'une réflexion dont on ne voit pas pourquoi celle-ci ne s'étendrait pas à tout les modèles de simulation développés dans le futur. Toute les idées d'une plateforme pour l'execution de modèle de simulation sont donc déjà là, ou presque...
 
 Mon encadrant et aujourd'hui ami Thomas Louail est à l'époque un doctorant informaticien en immersion dans le laboratoire de Géographie-Cités. Rattaché à une équipe spécialisé dans le développement de modèle multi-agent du laboratoire d'informatique IBISC - LIS, Thomas Louail entrevoit également de nouvelles possibilités pour calibrer des modèles, au contact notamment des travaux de deux de ses collègues informaticien, Benoit Calvez et Guillaume Hutzler. Ces derniers travaillent à l'époque sur la calibrage de modèles agents en utilisant des algorithmes génétiques \autocites{Calvez2005,Calvez2007}. Egalement passioné par cette problématique, \textcite[139-141]{Louail2010} dessine très clairement dans sa thèse ce que l'application de telles techniques d'optimisation peuvent avoir de profitables pour la simulation en géographie :
 
@@ -965,6 +962,55 @@ Avec pour point commun cette expérience d'une exploration semi-manuelle et asse
 
 Si la littérature proposé de façon interne au laboratoire (Hélène Mathian et Léna Sanders \autocite{Mathian2014}), ou de façon externe dans la littérature agent \autocites{Amblard2006, Sargent2010, Gilbert2008}, apporte certes des méthodologies, des conseils, pour la construction et l'exploration des modèles, elle est par contre quasiment vierge de tout outil, plateforme, logiciels informatique supportant ou facilitant la \enquote{validation}, ou plutôt l'évaluation de modèles \autocite{Amblard2006}  (ou presque, il y'avait en effet les travaux de \textcite{Amblard2003}, dont les projets en filiations vont recroiser notre chemin début 2010, mais nous ne le savions pas encore à l'époque). (voir section ?)
 
+Pour résumé, fin 2009 nous étions il me semble dans une situation de frustration 
+\begin{itemize}[noitemsep,nolistsep]
+\item  vis à vis des modèles et des explorations existants au laboratoire, difficilement reproductible et réplicables (manque de documentation technique, chaîne de traitement des entrées,sorties manuelles, etc.)
+
+\item vis à vis des différentes campagnes d'explorations déjà réalisé, dont ont sait en lisant cette littérature sur la validation qu'elles sont insuffisantes pour assurer le bien fondé de la structure interne des modèles, fragilisant de fait les interprétations avancés par les géographes 
+
+\item vis à vis également de la littérature sur la validation, les préceptes étant répétés \textit{ad nauseam}, sans que des outils ou des méthodologies soit proposé pour application sur des cas concret guidant la construction et l'évaluation des modèles. 
+
+\item vis à vis de l'expérience même de construction, il n'était plus question de faire développer un modèle de simulation sous contrat externe avec un informaticien, comme cela avait pu être le cas avec la plupart des modèles de la famille Simpop. %Ce qui suppose aussi un format de développement des modèles adaptés.
+
+\end{itemize}
+
+Les projets ainsi posés sur le papier ne demandait qu'à être réalisé, mais c'était sans la mise en route d'une deuxième synergie, sous l'impulsion d'Arnaud Banos, co-directeur de la thèse de Clara Schmitt.
+
+\paragraph{Deuxième synergie, avant 2010}
+
+A la différence des projets de modèles de simulation déjà réalisé au laboratoire, le développement de ceux-ci ne seront pas portée par un informaticien. 
+
+On peux identifier trois grand mode de fonctionnement pour la création de modèle de simulation dans un laboratoire :
+
+- Dans un premier cas, il s'agit du mode de construction le plus classique mis en oeuvre par les informaticiens. Les géographes prennent commande d'un modèle, fournissent les informations nécessaires, et des réunions d'avancements sont faites pour ajuster régulièrement. Les acteurs restent dans leur role respectif, l'information est ségmenté et il n'y a pas de transfert de compétence, \autocite[10]{Louail2010} parle d'une collaboration \enquote{faiblement couplé}
+
+- Dans un second cas, il s'agit toujours de réaliser des modèles en géographie par des doctorant en informatique. A cette différence que cette fois-ci la thèse se fait en \enquote{immersion} chez les géographes. Le transfert de compétence n'est pas complet, il s'agit toujours d'une collaboration, mais celle-ci se fait de façon plus étroite, avec la mise en place d'une acculturation progressive entre les deux parties \enquote[11]{Louail2010}. Le travail de Benoit Glisse sur \textbf{Simpop2} et de Thomas Louail sur \textbf{Simpop2}, \textbf{Eurosim} et \textbf{SimpopNano}, tient de ce type de coopération.
+
+- Dans un troisième cas, les géographes s'approprie directement l'outil de modélisation, et développe des compétences en informatique qui leur permettent de nouer un dialogue constructif avec les informaticiens. L'informaticien est toujours utile, mais à terrain de jeu égal, il met sa compétence informatique non pas \enquote{en retrait}, mais \enquote{au service des} problématiques abordés dans le modèle. Le dialogue se construit, se perfectionne, autour d'un objet commun, mais avec des problématiques qui elles ne sont pas nécessairement identique. Arnaud Banos parle d'un processus de co-construction, gagnant-gagnant pour les différentes parties qui accepte les règles du jeu de cette mise en danger disciplinaire.
+
+C'est sur ce troisième mode qu'un groupe de travail se réunit de façon régulière dès janvier 2010, autour de la feuille de route des modèles prévu dans le cadre de la thèse de Clara Schmitt.  Clara Schmitt doit en effet construire plusieurs modèles de simulation (\textbf{SimpopLocal}, \textbf{SimpopNet}, \textbf{SimpopClim}) dans le cadre de son projet de thèse. Composé principalement d'Arnaud Banos, Denise Pumain, Clara Schmitt et moi-même, les réunions de travail s'organisent très vite autour d'un premièr prototype de \textbf{SimpopLocal} en Netlogo. A ce moment là, je pense que tout le monde est convaincu de l'intérét de Netlogo comme support pour cultiver nos idées : Clara est en train de se former rapidement à ce langage, Arnaud est notre maitre à penser par son expérience dans le logiciel, et moi-même je suis plutot partant par une telle équipée. Ayant eu à modifier avec l'aide de Thomas des parti cryptique et non documenté du modèle Simpop 2, développé en Objective-C par un informaticien avant tout accro à l'optimisation;  Netlogo me parait à ce moment là le meilleur vecteur de communication avec les géographes. D'autant plus que c'est sur cette plateforme que j'ai appris à connaitre la simulation agent, et à découvrir au passage ce que pouvait être l'inter-disciplinarité, lors d'un stage encadré au tout début 2009 par Florent Le Néchet, Hélène Mathian, Mathieu Delage, Thomas Louail sur le projet \textbf{AccesSim} \autocite{Delage2010}.
+
+ Les versions vont se succèder sur Netlogo pendant plus de deux ans, en alternant très rapidement entre phase de conception, phase de réalisation, et première phase d'exploration.  
+
+Arnaud Banos est à ce moment là résident à l'institut des systèmes complexe, il encadre un projet CIFRE de simulation avec le projet SIMTRAP de Jéremy Fiegel. En partenariat avec la RATP, l'utilisation de Netlogo est alors un pari pour l'inter-disciplinarité \autocite[53]{Banos2013}
+
+
+ Simpop est une production commune du groupe de travail, et il ne s'agit ni d'une commande, ni d'un travail encadré par une seule thèse par un informaticien, que celui-ci soit extérieur (Simpop) ou plus en immersion avec les géographes dans le laboratoire (Simpop2 \autocite{}, SimpopNano \autocite{Louail2010}).
+
+Il est prévu initialement que je co-développe le modèle SimpopLocal avec Arnaud Banos et Clara Schmitt. Ce modèle devient le prototype 
+
+Arnaud Banos vise l'autonomie des participant, et moi-même ayant déjà réalisé  il est décidé de réaliser le modèle SimpopLocal en Netlogo, premier modèle au coeur de la thèse de Clara, sur la base d'
+
+
+
+
+La première vient du fait que la thèse ici présenté co-évolue dans le temps et dans les thématiques abordés avec les réalisations d'une autre doctorante au laboratoire Géographie-Cités. Ainsi, c'est avec l'aide de Clara Schmitt, ingénieur agronome également titulaire d'un master 2 de Géographie, que nous allons travailler pendant plus d'une année et demi à la réalisation d'un modèle porteur des problématiques chères à la thèse de Clara Schmitt, sur lequel nous reviendrons également dans ce manuscrit.
+
+C'est à peu près a ce moment là, et sous l'impulsion d'Arnaud Banos, alors président de l'Institut des Systèmes Complexes de Paris Ile-De-France, que va naître dans une nouvelle impulsion, une deuxième collaboration avec Romain Reuillon et Mathieu Leclaire, tout deux ingénieurs créateurs d'un logiciel développé dans l'objectif de répondre à des problématiques qui nous le verrons, viendront recouper directement des besoins précédemment évoqués pour l'exploration et l'analyse du modèle.
+
+à fait favorable au changement des pratiques dans la construction et l'évaluation des modèles de simulation 
+
+% Résurgence de la problématique HPC.
 
 --
 
@@ -975,10 +1021,6 @@ Il faut s'imaginer sur quelles bases les outils ont été développés. Romain e
 Dans ces conditions, vivre l'inter-disciplinarité c'est accepter d'un point de vue logiciel la construction d'une maison sur des sables mouvants. Vous vous arretez de soutenir la maison une semaine, un jour parfois, et la voilà à terre.
 
 Les travaux qui paraissent en 2014, puis 2015 sont le fruit d'une inter-disciplinarité \textbf{vécue}, j'insiste sur ce dernier mot car on parle souvent plus d'inter-disciplinarité qu'on ne la pratique réellement, avec ses défis \autocite{Chapron2014} qui s'inscrit délibérement dans le mouvement \enquote{slow science}.
-
-
-
-
 
 
  2009 et 2010, l'objectif partait d'un certains nombre de frustration prenant racine  dans l'observation des limites des pratiques existantes dans le laboratoire et dans la littérature, pour évaluer les modèles existants, mais également les modèles en cours de construction.
@@ -998,15 +1040,12 @@ Entre 2009 et 2010, deux rencontres
 - Troisième rencontre avec Romain Reuillon, Mathieu Leclaire, Jeremy Figel
 
 
-
-
  ,  et illustre depuis bientot 4 ans un travail d'équipe tel qu'il peut s'établir au jour le jour, amenant avec lui ses forces et ces faiblesses. De par son articulation, tout l'enjeu de cette thèse sera je l'espère, de prouver, que oui, le total fait bien plus que la somme des parties.
 
 Deux grandes collaboration viendront successivement marquer profondément la nature, l'avancement et le contenu de mes travaux.
 
-La première vient du fait que la thèse ici présenté co-évolue dans le temps et dans les thématiques abordés avec les réalisations d'une autre doctorante au laboratoire Géographie-Cités. Ainsi, c'est avec l'aide de Clara Schmitt, ingénieur agronome également titulaire d'un master 2 de Géographie, que nous allons travailler pendant plus d'une année et demi à la réalisation d'un modèle porteur des problématiques chères à la thèse de Clara Schmitt, sur lequel nous reviendrons également dans ce manuscrit.
 
-C'est à peu près a ce moment là, et sous l'impulsion d'Arnaud Banos, alors président de l'Institut des Systèmes Complexes de Paris Ile-De-France, que va naître dans une nouvelle impulsion, une deuxième collaboration avec Romain Reuillon et Mathieu Leclaire, tout deux ingénieurs créateurs d'un logiciel développé dans l'objectif de répondre à des problématiques qui nous le verrons, viendront recouper directement des besoins précédemment évoqués pour l'exploration et l'analyse du modèle.
+
 
 Loin d'être nouvelle et teinté de maladresse, ces collaborations participent d'un processus qui s'inscrit et prolonge un mouvement historique, qui de ce fait évolue, et se renouvelle sans cesse depuis ces 30 40? dernières années au laboratoire Géographie-Cités (+ref ancien ?, ArcheoMedes, Transmondyn). Car c'est ainsi  au gré de rencontres inter-disciplinaires parfois hasardés, mais le plus souvent recherchés, que se mêlent, se confrontent, s'exposent à la fois les expériences humaines et techniques.
 
@@ -1127,55 +1166,6 @@ Bien que les travaux autour de ce modèle de simulation puissent apparaitre comm
 
 Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
 
-Activité d'exploration semble être le pivot central par lequel évolue notre outillage, et notre activité de modélisation.
-
-1 - Les centaines d'heures accumulés pendant toute la durée du projet avec Romain et Mathieu autour de la construction de workflows pour le modèle permettent de tester, debugger, améliorer la syntaxe utilisé pour les workflow, mais aussi de tester la robustesse du logiciels sur un cas d'utilisation concret sur temps long.
-
-2 - Les différentes campagnes d'explorations menées vont avoir des retombées sur la construction MGO, et le couplage entre entre openMOLE et MGO, ce qui en retour améliore les explorations.
-
-	a) Intégration et Amélioration des algorithmes génétiques pour openMOLE
-		- EA Steady State, Ilots permettent de mieux utiliser le parallélisme des méta-heuristique et donc de rendre plus efficiente les explorations appuyés sur cette utilisation (Aout 2012) 
-
-	b) Simplification des Workflows pour l'exploration utilisant des meta-heuristique (à partir de Mars 2012)
-
-3 - Boucle reliant l'activité d'exploration et l'activité de construction des modèles. 
-
-	a ) L'exploration des résultats a posteriori s'avère incertaine et trop couteuse (durée d'execution, volume données), ce qui nous renvoie à un questionnement a priori des modèles en utilisant des méta-heuristiques ( Exploration <-> Modèlisation )
-		- prototype de calibration par inversion \autocite{Schmitt2015}
-
-	b) L'exploration permet d'avoir un retour sur les hypothèses et la façon dont elles sont implémentées ( Exploration > Modèlisation ), mais la construction modifie aussi la façon dont on va penser l'exploration
-		- construction par incrément EBIMM
-		
-
-4 - Boucle liant l'activité de construction MGO, Activité de construction du modèle, Exploration des modèles
-
-	a) Amène le développement ou l'amélioration de méta-heuristique pour l'exploration, dont l'application impacte en retour le développement des modèle (Exploration -> Mgo -> Modèle )
-	- Hypervolume / SMSMOEA (Juillet 2012) \autocite{Schmitt2015} 
-	- Cp-Profile \autocite{Reuillon2015} 
-	- PSE \autocite{Cherel2015}
-	- Epsilon Dominance (Decembre 2012)
-	- Re-Evaluation de l'archive (Mars 2013)
-
-	b) Amène l'amélioration MGO et l'utilisation de SimPuzzle pour construire et d'explorer des familles de modèles
-		- Création de SimFamilly (mai 2014)
-
-	c) Les modèles peuvent être amené à être réécrit pour satisfaire des raisons de performance, ou de modularité
-		- Réécriture SimpopLocal (mars-avril 2012)
-		- Intégration SimpopLocal dans SimPuzzle (Avril 2013)
-		- Intégration Marius dans Simpuzzle (Mai 2013)
-
-	d) Les modèles sont modifiés pour être utilisé par les métaheuristiques, et celle-ci mettent à l'epreuve en retour l'implémentation du modèle vis à vis des objectifs fixés. Ce processus intervient dans la validation interne des modèles en soulevant les erreurs, les comportement contre-intuitif, les zones de valeurs de paramètres bloquant, ou les conditions d'arrêt trop ou pas assez stricte pour l'exploration. L'introduction d'objectifs sous forme de critère multiples pour évaluer les sorties de la simulation de façon automatique participe également de la formalisation et de la construction des connaissances, entrainant souvent pour les modélisateurs un retour sur l'empirie.
-		- SimpopLocal \autocites{Schmitt2014,Schmitt2015}
-		- Marius \autocite{Cottineau2014b}
-
-5 - Boucle liant OpenMole et Mgo, le framework est repensé pour être plus beaucoup modulaire, et donc plus facilement utilisable sous forme de tâche dans openMOLE. 
-	- Mai 2011, redeveloppement MGO
-
-6 - Construction d'outils d'AD intégré à openMOLE pour la visualisation de sorties d'exploration (Janvier - Mai 2013)
-
-7 - Construction d'outils plus d'AD pour l'exploration de sortie de simulation de la famille SIMPOP 
-	- Varius (début 2015)
-	- TrajPOP (septembre 2011)
 
 
 %Le \textit{framework} MGO (Multi Goal Optimization)
@@ -1283,7 +1273,14 @@ Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou 
 \hl{Correction orthographe à faire}
 D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède 5 paramètres, chacun de ces paramètres étant discrétisé en 10 pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique (10 réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à 2 années de calcul... La parallélisation d'un tel calcul, c'est à dire son execution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
 
-Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}.
+\begin{figure}[htbp]
+	\begin{sidecaption}[fortoc]{Illustration des effets de la \textit{Curse Dimensionality} sur un plan d'expérience de 9 points entre 0 et 1 exclus. }[fig:curse]
+	 \centering
+	 	\includegraphics[width=.9\linewidth]{plot3d.pdf}
+	\end{sidecaption}
+\end{figure}
+
+Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}. On peut voir un peu mieux sur l'illustration \ref{fig:curse} les effets d'un tel phénomène.
 
 % ENCADRE ?
 
@@ -1567,7 +1564,14 @@ Dans Le cas (2) la simulation ne s'arrête jamais, car la condition d'arrêt n'e
 
 Le cas (3) montre qu'avec moins de fourmis, il faut beaucoup plus de temps à la simulation pour que la condition d'arrêt soit rempli. Il peut donc y'avoir une très forte variabilité dans les durées d'execution du modèle en fonction des valeurs de paramètres selectionné pour évaluation.
 
-Le cas (4,5,6) sont intéressant, car ils sont susceptible de produire des résultats contre-intuitifs. En effet, en terme de durée d'execution totale, on obtient pour cette graine aléatoire de meilleurs résultats qu'avec des valeur de paramètres pris au hasard (1). Cela s'explique par le débordement et la mise en défaut des mécanismes prévu initialement par le modélisateur, car les fourmis ne captent les traces chimique qu'entre $0.05$ et $2$. Or la diffusion ou l'évaporation se cumule en partant d'une valeur unitaire à $60$, qui est l'équivalent de la trace chimique déposé sur chaque patch pour une fourmi ayant trouvé de la nourriture. Donc dans tout ces ce cas là, les mécanismes du modèle sont quasi-inneficace, et se rapport au cas (3) qui met en jeu une simple marche aléatoire des fourmis.
+Le cas (4,5,6) sont intéressant, car ils sont susceptible de produire des résultats contre-intuitifs. En effet, en terme de durée d'execution totale, on obtient pour cette graine aléatoire de meilleurs résultats qu'avec des valeur de paramètres pris au hasard (1). Un mauvais paramétrage produit un effet d'aspiration qui fait que des fourmis normasont détournés par une piste olfactive.
+
+\begin{figure}[H]
+	 \centering
+	 	\includegraphics[width=.9\linewidth]{ant.pdf}
+\end{figure}
+
+Cela peut également s'expliquer par le débordement et la mise en défaut des mécanismes prévu initialement par le modélisateur, car les fourmis ne captent les traces chimique qu'entre $0.05$ et $2$. Or la diffusion ou l'évaporation se cumule en partant d'une valeur unitaire à $60$, qui est l'équivalent de la trace chimique déposé sur chaque patch pour une fourmi ayant trouvé de la nourriture. Donc dans tout ces ce cas là, les mécanismes du modèle sont quasi-inneficace, et se rapport au cas (3) qui met en jeu une simple marche aléatoire des fourmis.
 
 \textit{L'optimiseur sera-t-il capable de trouver de meilleures valeurs dans cette zone d'activation ?} Si non, il faudra revoir les paramètres ou le fonctionnement de notre mécanisme guidant le comportement de dépot et de détection de trace de chaque fourmi.
 

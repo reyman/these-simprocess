@@ -33,24 +33,16 @@ val ants =
     gEvaporationRate := 25.0
   )
 
-val modelCapsule = Capsule(ants)
-
 // Define the output variables
 val medNumberFood1 = Val[Double]
 val medNumberFood2 = Val[Double]
 val medNumberFood3 = Val[Double]
 
 // We compute three median
-val statistic =
+val agg =
   StatisticTask() set (
     inputs += i,
     outputs += i,
-    inputs += gPopulation,
-    inputs += gDiffusionRate,
-    inputs += gEvaporationRate,
-    outputs += gPopulation,
-    outputs += gDiffusionRate,
-    outputs += gEvaporationRate,
     statistics += (food1, medNumberFood1, median),
     statistics += (food2, medNumberFood2, median),
     statistics += (food3, medNumberFood3, median)
@@ -58,14 +50,15 @@ val statistic =
 
 val exploration = Capsule(ExplorationTask(i in (0.0 to 5.0 by 1.0)))
 
-//val statSlot = Capsule(statistic)
-val statSlot = Slot(Capsule(statistic))
-exploration -- statSlot
-
 val env = LocalEnvironment(10)
 
 val seedFactor = seed in (UniformDistribution[Int]() take 2)
-val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
+
+// val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
+
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 2)), strainer = true)
+
+val aggSlot = Slot(agg)
 
 // Define the hooks to collect the results
 val displayOutputs = ToStringHook(i, seed, food1, food2, food3)
@@ -73,5 +66,34 @@ val displayMedians = ToStringHook(medNumberFood1, medNumberFood2, medNumberFood3
 val saveHook = AppendToCSVFileHook(resPath + "replication.csv", i, gPopulation, gDiffusionRate, gEvaporationRate, medNumberFood1, medNumberFood2,medNumberFood3)
 
 // Execute the workflow
-val ex = exploration -< (replicateModel  + (modelCapsule on env hook displayOutputs) + (statSlot hook (displayMedians, saveHook)) ) start
+//val ex = (exploration -< replicateModel -< modelCapsule on env hook displayOutputs >- (statSlot hook (displayMedians, saveHook))) + (replicateModel -- statSlot) start
+val ex = (exploration -< replication -< ants  >- (aggSlot hook (displayMedians, saveHook))) + (replication -- aggSlot) start
+
+-----
+
+val i = Val[Double]
+val seed = Val[Int]
+val res = Val[Double]
+val s = Val[Double]
+
+val exploration = Capsule(ExplorationTask(i in (0.0 to 100.0 by 1.0)))
+
+val model =
+ ScalaTask("val res = i * 2") set (
+   inputs += i,
+   outputs += res
+ )
+
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 2)), strainer = true)
+
+val agg =
+ StatisticTask() set (
+   inputs += i,
+   outputs += i,
+   statistics += (res, s, median)
+ )
+
+val aggSlot = Slot(agg)
+
+val ex = (exploration < replication -< model > (aggSlot hook ToStringHook(i, s))) + (replication -- aggSlot) start
 

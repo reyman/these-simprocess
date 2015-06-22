@@ -355,3 +355,68 @@ La dépendance à la ressource informatique se renforce en réalité encore un p
 % simulation permet de développer cette causalité ...
 % Systeme dynamique, non linéarité, permet avancée fondamentale dans les questionnements, révélateur aussi de l'apport des techniques / méthodologies...
 % Basculement vers explicatif !
+
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+Activité d'exploration semble être le pivot central par lequel évolue notre outillage, et notre activité de modélisation.
+
+1 - Les centaines d'heures accumulés pendant toute la durée du projet avec Romain et Mathieu autour de la construction de workflows pour le modèle permettent de tester, debugger, améliorer la syntaxe utilisé pour les workflow, mais aussi de tester la robustesse du logiciels sur un cas d'utilisation concret sur temps long.
+
+2 - Les différentes campagnes d'explorations menées vont avoir des retombées sur la construction MGO, et le couplage entre entre openMOLE et MGO, ce qui en retour améliore les explorations.
+
+	a) Intégration et Amélioration des algorithmes génétiques pour openMOLE
+		- EA Steady State, Ilots permettent de mieux utiliser le parallélisme des méta-heuristique et donc de rendre plus efficiente les explorations appuyés sur cette utilisation (Aout 2012) 
+
+	b) Simplification des Workflows pour l'exploration utilisant des meta-heuristique (à partir de Mars 2012)
+
+3 - Boucle reliant l'activité d'exploration et l'activité de construction des modèles. 
+
+	a ) L'exploration des résultats a posteriori s'avère incertaine et trop couteuse (durée d'execution, volume données), ce qui nous renvoie à un questionnement a priori des modèles en utilisant des méta-heuristiques ( Exploration <-> Modèlisation )
+		- prototype de calibration par inversion \autocite{Schmitt2015}
+
+	b) L'exploration permet d'avoir un retour sur les hypothèses et la façon dont elles sont implémentées ( Exploration > Modèlisation ), mais la construction modifie aussi la façon dont on va penser l'exploration
+		- construction par incrément EBIMM
+		
+
+4 - Boucle liant l'activité de construction MGO, Activité de construction du modèle, Exploration des modèles
+
+	a) Amène le développement ou l'amélioration de méta-heuristique pour l'exploration, dont l'application impacte en retour le développement des modèle (Exploration -> Mgo -> Modèle )
+	- Hypervolume / SMSMOEA (Juillet 2012) \autocite{Schmitt2015} 
+	- Cp-Profile \autocite{Reuillon2015} 
+	- PSE \autocite{Cherel2015}
+	- Epsilon Dominance (Decembre 2012)
+	- Re-Evaluation de l'archive (Mars 2013)
+
+	b) Amène l'amélioration MGO et l'utilisation de SimPuzzle pour construire et d'explorer des familles de modèles
+		- Création de SimFamilly (mai 2014)
+
+	c) Les modèles peuvent être amené à être réécrit pour satisfaire des raisons de performance, ou de modularité
+		- Réécriture SimpopLocal (mars-avril 2012)
+		- Intégration SimpopLocal dans SimPuzzle (Avril 2013)
+		- Intégration Marius dans Simpuzzle (Mai 2013)
+
+	d) Les modèles sont modifiés pour être utilisé par les métaheuristiques, et celle-ci mettent à l'epreuve en retour l'implémentation du modèle vis à vis des objectifs fixés. Ce processus intervient dans la validation interne des modèles en soulevant les erreurs, les comportement contre-intuitif, les zones de valeurs de paramètres bloquant, ou les conditions d'arrêt trop ou pas assez stricte pour l'exploration. L'introduction d'objectifs sous forme de critère multiples pour évaluer les sorties de la simulation de façon automatique participe également de la formalisation et de la construction des connaissances, entrainant souvent pour les modélisateurs un retour sur l'empirie.
+		- SimpopLocal \autocites{Schmitt2014,Schmitt2015}
+		- Marius \autocite{Cottineau2014b}
+
+5 - Boucle liant OpenMole et Mgo, le framework est repensé pour être plus beaucoup modulaire, et donc plus facilement utilisable sous forme de tâche dans openMOLE. 
+	- Mai 2011, redeveloppement MGO
+
+6 - Construction d'outils d'AD intégré à openMOLE pour la visualisation de sorties d'exploration (Janvier - Mai 2013)
+
+7 - Construction d'outils plus d'AD pour l'exploration de sortie de simulation de la famille SIMPOP 
+	- Varius (début 2015)
+	- TrajPOP (septembre 2011)
