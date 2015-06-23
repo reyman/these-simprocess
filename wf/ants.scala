@@ -5,7 +5,8 @@ val seed = Val[Int]
 
 val i = Val[Double]
 
-val resPath = "/iscpif/users/rey/ANTS/RESULTS/"
+//val resPath = "/iscpif/users/rey/ANTS/RESULTS/"
+val resPath = "/home/srey/results/"
 
 // Define the output variables
 val food1 = Val[Double]
@@ -15,7 +16,7 @@ val food3 = Val[Double]
 // Define the NetlogoTask
 val cmds = Seq("random-seed ${seed}", "run-to-grid")
 val ants =
-  NetLogo5Task("/iscpif/users/rey/ANTS/ants.nlogo", cmds) set (
+  NetLogo5Task("/home/srey/netlogo/ants/ants.nlogo", cmds) set (
     // Map the OpenMOLE variables to NetLogo variables
     netLogoInputs += (gPopulation, "gpopulation"),
     netLogoInputs += (gDiffusionRate, "gdiffusion-rate"),
@@ -25,12 +26,7 @@ val ants =
     netLogoOutputs += ("final-ticks-food3", food3),
     // The seed is used to control the initialisation of the random number generator of NetLogo
     inputs += seed,
-    outputs += seed,
-    // Define default values for inputs of the model
-    seed := 42,
-    gPopulation := 125.0,
-    gDiffusionRate := 25.0,
-    gEvaporationRate := 25.0
+    outputs += seed
   )
 
 // Define the output variables
@@ -40,23 +36,29 @@ val medNumberFood3 = Val[Double]
 
 // We compute three median
 val agg =
-  StatisticTask() set (
+  Capsule(StatisticTask() set (
     inputs += i,
     outputs += i,
     statistics += (food1, medNumberFood1, median),
     statistics += (food2, medNumberFood2, median),
     statistics += (food3, medNumberFood3, median)
-  )
+  ), strainer = true)
 
-val exploration = Capsule(ExplorationTask(i in (0.0 to 5.0 by 1.0)))
+val exploration = Capsule(
+    ExplorationTask(i in (0.0 to 10.0 by 1.0)) set (
+        gPopulation := 125.0,
+        gDiffusionRate:= 25.0,
+        gEvaporationRate := 25.0,
+        outputs += (gPopulation,gDiffusionRate,gEvaporationRate))
+    )
 
-val env = LocalEnvironment(10)
+val env = LocalEnvironment(15)
 
-val seedFactor = seed in (UniformDistribution[Int]() take 2)
+val seedFactor = seed in (UniformDistribution[Int]() take 10)
 
 // val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
 
-val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 2)), strainer = true)
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 100)), strainer = true)
 
 val aggSlot = Slot(agg)
 
@@ -67,7 +69,7 @@ val saveHook = AppendToCSVFileHook(resPath + "replication.csv", i, gPopulation, 
 
 // Execute the workflow
 //val ex = (exploration -< replicateModel -< modelCapsule on env hook displayOutputs >- (statSlot hook (displayMedians, saveHook))) + (replicateModel -- statSlot) start
-val ex = (exploration -< replication -< ants  >- (aggSlot hook (displayMedians, saveHook))) + (replication -- aggSlot) start
+val ex = (exploration -< replication  -< (ants on env) >- (aggSlot hook (displayMedians, saveHook))) + (replication -- aggSlot) start
 
 -----
 
@@ -76,7 +78,7 @@ val seed = Val[Int]
 val res = Val[Double]
 val s = Val[Double]
 
-val exploration = Capsule(ExplorationTask(i in (0.0 to 100.0 by 1.0)))
+val exploration = Capsule(ExplorationTask(i in (0.0 to 9.0 by 1.0)))
 
 val model =
  ScalaTask("val res = i * 2") set (
@@ -84,7 +86,7 @@ val model =
    outputs += res
  )
 
-val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 2)), strainer = true)
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 10)), strainer = true)
 
 val agg =
  StatisticTask() set (
