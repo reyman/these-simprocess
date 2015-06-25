@@ -58,7 +58,7 @@ val seedFactor = seed in (UniformDistribution[Int]() take 10)
 
 // val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
 
-val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 100)), strainer = true)
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 1000)), strainer = true)
 
 val aggSlot = Slot(agg)
 
