@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{trait} \PYGdefault{n+nc}{Schaffer} \PYGdefault{k}{extends} \PYGdefault{n+nc}{GAProblem} \PYGdefault{k}{with} \PYGdefault{n+nc}{MGFitness} \PYGdefault{o}{\PYGdefaultZob{}}
+
+  \PYGdefault{k}{def} \PYGdefault{n}{genomeSize} \PYGdefault{k}{=} \PYGdefault{l+m+mi}{1}
+  \PYGdefault{k}{def} \PYGdefault{n}{min} \PYGdefault{k}{=} \PYGdefault{n+nc}{Seq}\PYGdefault{o}{.}\PYGdefault{n}{fill}\PYGdefault{o}{(}\PYGdefault{n}{genomeSize}\PYGdefault{o}{)(\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{100000.0}\PYGdefault{o}{)}
+  \PYGdefault{k}{def} \PYGdefault{n}{max} \PYGdefault{k}{=} \PYGdefault{n+nc}{Seq}\PYGdefault{o}{.}\PYGdefault{n}{fill}\PYGdefault{o}{(}\PYGdefault{n}{genomeSize}\PYGdefault{o}{)(}\PYGdefault{l+m+mf}{100000.0}\PYGdefault{o}{)}
+
+  \PYGdefault{k}{type} \PYGdefault{k+kt}{P} \PYGdefault{o}{=} \PYGdefault{n+nc}{Seq}\PYGdefault{o}{[}\PYGdefault{k+kt}{Double}\PYGdefault{o}{]}
+
+  \PYGdefault{k}{override} \PYGdefault{k}{def} \PYGdefault{n}{express}\PYGdefault{o}{(}\PYGdefault{n}{g}\PYGdefault{k}{:} \PYGdefault{k+kt}{Seq}\PYGdefault{o}{[}\PYGdefault{k+kt}{Double}\PYGdefault{o}{],} \PYGdefault{n}{rng}\PYGdefault{k}{:} \PYGdefault{k+kt}{Random}\PYGdefault{o}{)} \PYGdefault{k}{=} \PYGdefault{n+nc}{Seq}\PYGdefault{o}{(}\PYGdefault{n}{f1}\PYGdefault{o}{(}\PYGdefault{n}{g}\PYGdefault{o}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{)),} \PYGdefault{n}{f2}\PYGdefault{o}{(}\PYGdefault{n}{g}\PYGdefault{o}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{)))}
+  \PYGdefault{k}{override} \PYGdefault{k}{def} \PYGdefault{n}{evaluate}\PYGdefault{o}{(}\PYGdefault{n}{p}\PYGdefault{k}{:} \PYGdefault{k+kt}{P}\PYGdefault{o}{,} \PYGdefault{n}{rng}\PYGdefault{k}{:} \PYGdefault{k+kt}{Random}\PYGdefault{o}{)} \PYGdefault{k}{=} \PYGdefault{n}{p}
+
+  \PYGdefault{k}{def} \PYGdefault{n}{f1}\PYGdefault{o}{(}\PYGdefault{n}{x}\PYGdefault{k}{:} \PYGdefault{k+kt}{Double}\PYGdefault{o}{)} \PYGdefault{k}{=} \PYGdefault{n}{pow}\PYGdefault{o}{(}\PYGdefault{n}{x}\PYGdefault{o}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{o}{)}
+  \PYGdefault{k}{def} \PYGdefault{n}{f2}\PYGdefault{o}{(}\PYGdefault{n}{x}\PYGdefault{k}{:} \PYGdefault{k+kt}{Double}\PYGdefault{o}{)} \PYGdefault{k}{=} \PYGdefault{n}{pow}\PYGdefault{o}{(}\PYGdefault{n}{x} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{2}\PYGdefault{o}{,} \PYGdefault{l+m+mi}{2}\PYGdefault{o}{)}
+
+\PYGdefault{o}{\PYGdefaultZcb{}}
+\end{Verbatim}

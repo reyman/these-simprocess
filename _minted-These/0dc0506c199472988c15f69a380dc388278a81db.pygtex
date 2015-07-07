@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{trait} \PYGdefault{n+nc}{NSGAII} \PYGdefault{k}{\PYGdefaultZlt{}:} \PYGdefault{n+nc}{Evolution}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{BinaryTournamentSelection}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{TournamentOnRankAndDiversity}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{NonDominatedSorting}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{DynamicGACrossover}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{DynamicGAMutation}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{GAGenomeWithSigma}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{Crowding}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{Pareto}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{NonStrictDominance}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{NoArchive}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{GeneticBreeding}
+  \PYGdefault{k}{with} \PYGdefault{n+nc}{MGFitness}
+\end{Verbatim}

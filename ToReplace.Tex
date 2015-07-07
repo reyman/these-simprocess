@@ -7,7 +7,6 @@ article Pumain D., Saint-Julien T., Sanders L., 1986, Urban dynamics of some Fre
 
 Replication supports model validation because validation is a process that determines a correspondence between the outputs from an implemented model and real-world measures. If the replicated model produces different outputs than the original model then that raises questions as to which outputs correspond more to real world data. If the replicated model's outputs are closer to the real world data that lends support to the validity of the replicated model as compared with the original model. More importantly, model replication raises questions about the details of the original modeling decisions and how they correspond to the real world. These questions help clarify whether there is sufficient correspondence between the original model and the real world. Replication forces the model replicater to examine the face validity of the original model by re-evaluating the original mapping between the real world and the conceptual model, since the replicater must re-implement those same concepts.
 
-
 --
 
 %Il semble bien donc que cela soit par la construction d’une coopération entre géographes et disciplines plus rompu à l’informatique, comme les statistiques, mathématiques ou la physique que se construisent majoritairement en France les nouveaux modèles de simulations.
@@ -28,7 +27,6 @@ Un point déjà évoqué au début de notre exposé, les géographes modélisate
 Dirigées vers l'usage du HPC pour l'exploration de modèle de simulation, des tentatives de calibration du modèle de Peter Allen se font dès les années 1980, guidées de façon automatique par un algorithme de minimisation basé sur une fonction objectif minimisant les écarts entre données simulées et données empiriques. Preuve que dans l'activité de modélisation, l'usage du HPC a aussi pu être à un moment donné motivé par un autre besoin plus méthodologique, que cette seule absence effective de micro-ordinateur pour exécuter les modèles.
 
 Ce qui nous amène à un deuxième argument pouvant également expliquer la durabilité des relations avec certains centres de calculs. En effet, dans certains cas, les challenges scientifique d'hier sont aussi restés pour certains des challenges scientifiques d'aujourd'hui. La nécessité d'accès à une ressource informatique de puissance supérieure à un micro, reste comme dans le cas d'exploration des modèles de simulation, toujours une réalité.
-
 
 
 En ce qui concerne la seconde question questionnant les usages HPC en SHS et en géographie vis à vis de leur \enquote{apparente} absence sur ce terrain, il faut bien noter que cet état de fait n'a pas toujours été vrai. Se posera donc ensuite la question suivante, que s'est il donc passé pour que l'on constate aujourd'hui une telle absence des géographes sur ce terrain ?
@@ -74,7 +72,6 @@ Cette première tentative sera aussi l'occasion pour nous de faire le lien (sect
 On a pu observer dans le chapitre 1 et au travers de la section précédente que la validation recoupe tout à la fois des niveaux de discours différents, mais également une multiplicité de problématiques, dont les racines remontent à l'invention de la simulation sur ordinateur. Il est intéressant de montrer par la suite que ces questions ne s'attachent en réalité que très partiellement aux supports informatiques permettant la construction des modèles de simulation. 
 
 \hl{Il semblerait qu'on puissent isoler quelques personnes qui à cet époque semble agir aux travers de leurs actions comme catalyseur d'une tendance plus profonde probablement entamé de façon symétrique en Europe et aux Etats-Unis.}
-
 
 En effet, après avoir rapelé l’avènement au début des années 1990 du méta-formalisme agent comme support préférentiel de modélisation dans les sciences humaines et sociales, nous verrons que bon nombre de questions persistent, et se cristallise encore aujourd'hui dans des revendications pour l'émergence d'un protocole standard. Un objectif difficile à atteindre, celui mettant à la fois en tension la nécessité d'une contextualisation propre à la validation, et la nécessité d'une généricité propre à la standardisation.
 
@@ -319,21 +316,7 @@ Batty est probablement un des premiers géographes à faire ce travail d'état d
 
 Une chose est sûre pour ce qui est de la recherche de paramètres, on perçoit très tôt chez certains géographes la nécessité d'optimiser cette étape, rendue improductive et dangereuse du fait de la non-linéarité des modèles \enquote{The trial and error method of searching for best-parameter values by running the model exhaustively through a range of parameter values or combinations thereof represents a somewhat blunt approach to model calibration. [...] Moreoever, as each run of the model can be expensive or take a large amount of time, few applications have attempted to find systematically the optimum parameter values [...] Clearly, then, there is a need for the introduction of methodes suitable for calibrating intrinsically non-linear models of spatial interaction.} \autocite[155]{Batty1976}
 
-L'appel à l'utilisation de nouvelles méthodes pour l'exploration des modèles déjà lancés par \textcite{Batty1976}, est par la suite repris de façon implicite par \textcite{Openshaw1996}. Celui-ci publie en 1996 avec un collègue de Leeds un article sur les algorithmes génétiques, la méthode la plus efficace disponible alors pour explorer des espaces de paramètres de façon efficace. La conclusion est explicite :
 
-\foreignquote{english}{The results demonstrate that even GA en ES can provide very good solutions for spatial interaction model calibration, albeit sometimes at the expense of considerable extra compute times. [...] It would also be worth considering the use of other forms of global optimization method; [....] As computer hardware becomes faster, the attraction of simple, relatively assumption-free, and highly robust approaches to global parameter estimation can only grow and allow the geographical model builder to worry less about the problems of parameter estimation and focus more on the task of model design.}\autocite{Openshaw1996}
-
-La course à la puissance informatique nécessaire pour explorer et calibrer les modèles ne fait en réalité que commencer. Les méthodes sont encore en cours de développement, et leur usage s'avère extrêmement coûteux sur le plan informatique.
-
-Se pose alors la question suivante, l'incapacité à calibrer un modèle de simulation n'est-elle pas un problème qui limite de facto l'évolution en crédibilité de l'outil simulation ? 
-
-Concernant ce problème plus large de la validation, dont le calibrage n'est qu'une facette, le changement de paradigme explicatif et l'ouverture sur la complexité a soulevé un débat qui dépasse en réalité la seule problématique technique. Il ne suffit plus de garantir un résultat pour que le modèle soit considéré comme valide, sa structure causale est elle aussi considérée comme le résultat d'un processus social, et dont la contenance doit normalement être validée terme à terme avec le domaine empirique; or c'est celle-là même qu'on ne peut observer dans le cadre d'un système complexe. (cf \textit{observational dilemna} de \textcite[296]{Batty1976} :
-
-\foreignquote{english}{Perhaps the major problem concerns the ability to observe or monitor the urban system. Unlike the physical sciences in which the effect of critical variables on the system of interest can be isolated in the laboratory, such a search for cause and effect is practically impossible in social systems. Thus, there are many instances when it is difficult, if not impossible, to disentangle one cause from another in the changing behaviour of such systems. This is a fundamental limitation which is referred to here as the observational dilemma.}
-
-La dernière phrase d'Openshaw prend alors tout son sens, et en nous rappelant que la construction de modèle est un processus incrémental, il fait indirectement écho à l'évaluation elle aussi incrémentale d'une structure causale où chaque mécanisme lorsqu'il est ajouté/enlevé, remet en cause l'exploration précédente. Dès lors, la systématisation de cette calibration devient \textbf{le seul moyen de garantir une construction} qui serait faite en tout connaissance de cause, en mesurant, et donc en discutant l'apport de chacune des hypothèses durant le processus de calibration.
-
-La dépendance à la ressource informatique se renforce en réalité encore un peu plus avec la nécessité d'explorer les modèles, non plus lorsqu'ils sont terminés, mais dès que la première brique est posée. 
 
 \hl{Introduire la section suivante}
 
@@ -437,13 +420,16 @@ Validation interne / externe F. Amblard ?
 
 aussi les critiques de \textcite{Conte2007} vis à vis de cette phrase si souvent partagé
 
-Cette pratique d'une épistémologie \textit{bottom-up} venant des modélisateurs, et parfois des épistémologues assumant volontier cette démarche \autocite{Varenne2014}, même si elle peut apparaitre décalé face aux pratiques, permet toutefois de se défendre en cas d'attaque.
 
 C'est aussi là d'ailleurs que le travail de Varenne réalisé au cours des années 2000 \autocites{Varenne2008, Varenne2013} apparait assez audacieux, en proposant une typologie de fonctions épistémiques flexible et cumulable, il propose une grille de lecture permettant d'intégrer à la fois la diversité des approches dans les disciplines (inter) mais également l'évolution de ces même approches à l'intérieur d'une discipline (intra). Un découplage qui permet une définition plus fine des rapports que peuvent entretenir chacune des disciplines entre le modèle et la simulation.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Cette pratique d'une épistémologie \textit{bottom-up} venant des modélisateurs, et parfois des épistémologues assumant volontier cette démarche \autocite{Varenne2014}, même si elle peut apparaitre décalé face aux pratiques, permet toutefois de se défendre en cas d'attaque.
+
 Une erreur dans laquelle est malheureusement tombé \textcite{Yanoff2008}, qui a jugé ce travail sans être au courant des codes, des discussions en cours à l'oeuvre dans cette communauté. Or d'une part il existe une méthodologie implicte à la construction de tel modèles, et d'autres part si on veut parler de la validation en SHS, on est obliger de traiter la question du collectif de part le rôle important qu'il joue cette fois-ci dans la Validation, non pas dans l'absolu et détaché de tout contexte, mais par les pairs en SHS \autocite{Rouchier2013, Ahrweiler2005}. \hl{on en parle aussi plus loin ! } \autocite{}
 
-
+%%%%%%%%%%%%%%%%%%
 
 Une des force des \enquote{mécanismes générateurs}, c'est qu'il introduisent de façon beaucoup plus détaillé ce rapport liant hypothèses du modèle et données. Un travail que l'on retrouve de façon équivalente chez les géographes.
 
@@ -451,24 +437,13 @@ Une des force des \enquote{mécanismes générateurs}, c'est qu'il introduisent 
 Le challenge véritable ce n'est pas tant la Validation et la Verification, de toute façon insoluble, mais la façon explicite et positive dont on va gérer l'équifinalité et la sous-détermination qui caractérise les modèles de simulations en sciences humaines et sociales.
 
 
-Si Chattoe reconnait bien que l'existence d'une sortie unique peut effectivement être un problème, l'attaque mené par Grüne-Yanoff, qui suppose l'absence de méthode ( et c'est là surement le plus grand tort de ce modèle, de ne pas avoir assez mis en avant leur méthodologie de construction) ne peux en aucun cas être généralisé à l'ensemble des autres modèles agents en SHS. 
 
-It is good, in scientific terms, that those \enquote{outside} a particular field should be free to criticise it. However, it is reasonable that potential critics should know enough about what they are criticising to make relevant objections.
-
-As well as disregarding the social science context within which AS research occurs,
-Grüne-Yanoff also fails to acknowledge that AS already has an explanatory methodology laid out succinctly in the standard textbook for the field (Gilbert and Troitzsch 2005, 15-18). What distinguishes AS from statistics, in particular, is that a model is not simply \enquote{fitted} to data but that the individual level assumptions that generate the data to be compared with  \enquote{reality} are  \enquote{more or less} validated independently.
-
-This is what researchers were trying to do in the Anasazi study (Grüne-Yanoff, 544) when they drew on behavioural data from “comparable” traditional studies (in the absence of the Anasazi themselves) and although Grüne-Yanoff discusses this as a weakness, he does not give it credit as part of a recognised methodology. Of course, as Grüne-Yanoff points out, in the context of an extinct society, this independent validation may itself be problematic (we do not know how to choose modern societies which are “like” the Anasazi because the whole point is that we don’t know enough about the Anasazi) but that remains a point against the example and not the methodology per se.
-
-Cette équifinalité, Epstein n'a jamais voulu la cacher
-
-seule n'intervient qu'en partie dans cette question, car il s'intègre, au titre de nombreux autres outils, dans une démarche méthodologique plus générale et englobante \autocite{}. Aborder la validation du seul point de vue de l'outil est à mon sens une erreur, car comme l'ont déjà noté Hélène Mathian et Léna Sanders \autocite{Mathian2014}, les géographes concoivent la démarche, ou plutot les démarches de construction de connaissance sur les objets spatiaux en mobilisant non pas un, mais des modèles parmis un ensembles à leur dispositions. Tous sont construction, et donc tous sont faux à des degrés divers. La question de la validation prise hors de son contexte thématique n'a pas de sens dans un cadre pratique de construction de connaissances, mais tout cela à déjà été dit, et c'est pour cela que nous préférons dans la pratique nous concentrer en tant que modélisateur, sur l'évaluation des modèles de simulations, plutot que sur leur validation. \autocite{Amblard2006}
-
+seule n'intervient qu'en partie dans cette question, car il s'intègre, au titre de nombreux autres outils, dans une démarche méthodologique plus générale et englobante \autocite{}. Aborder la validation du seul point de vue de l'outil est à mon sens une erreur, car comme l'ont déjà noté Hélène Mathian et Léna Sanders , les géographes concoivent la démarche, ou plutot les démarches de construction de connaissance sur les objets spatiaux en mobilisant non pas un, mais des modèles parmis un ensembles à leur dispositions. Tous sont construction, et donc tous sont faux à des degrés divers. La question de la validation prise hors de son contexte thématique n'a pas de sens dans un cadre pratique de construction de connaissances, mais tout cela à déjà été dit, et c'est pour cela que nous préférons dans la pratique nous concentrer en tant que modélisateur, sur l'évaluation des modèles de simulations, plutot que sur leur validation. \autocite{Amblard2006}
 
 
 La modélisation comme processus abductif renvoie en alternance aux données et aux modèle de données, qui elle même renvoie aux hypothèses et aux implémentations de ces hypothèses, aux indicateurs et à la façon dont on les a construit, etc. A l'image des autres outils, il peut être mobilisé de façon hypothético-déductive, ou de façon 
 
-Les hypothèses mobilisés existe sur un autre temporalités, en dehors de cette sphère de la validation par les modèles.
+ %De par l'influence qu'il a eu dans la formulation d'autre modèles, continue d'être le support de discussion autour des mécanismes et de démarches innovantes visant à mieux cartographier sa dynamique interne, preuve que la tâche de compréhension même factuelle du modèle n'est ni facile, ni abandonné \autocites{, Janssen2009}.
 
 Pour Openshaw, 
 
@@ -502,19 +477,13 @@ A : Les approches appliqués les plus sérieuse nous paraissent celle de Grimm, 
 
 = Les géographes interviennent dans cette communautée, exprime forme de détachement
 
-A vouloir mettre en évidence un protocole de validation générique axé autour du seul modèle de simulation, on applanit sans le vouloir une démarche de construction des connaissances mobilisant un ensemble de modèle et de méthode. Il est important de rapeller sans cesse le poids de cet héritage disciplinaire à l'interface de questionnement plus génériques, comme le font régulièrement dans notre discipline Hélène Mathian, Léna Sanders, et plus récemment Cottineau2014b.
-
-Les géographes modélisateurs, même si ils interviennent également au contact de cette communauté, continuent pour certains à développer une approche ou le SMA n'est qu'un outil parmis d'autres hérités d'une longue histoire de la géographie avec la simulation. La question de la validation prise sous la forme de \enquote{construction de connaissances} s'inscrit dans une démarche beaucoup plus globale ou interviennent des multiplicité de modèles et de méthodes.
 
 En ce sens l'équifinalité n'est pas un problème.
 
 = Geographes \textbf{centré sur la démarche} et non sur l'outil
 
-Pour raccrocher cette remarque avec les dernières analyses portant sur l'usage des techniques de simulation en géographie, les observateurs (Varenne) tout autant que les acteurs \autocite{Sanders2013}\Anote{sanders_couplage_spirale} de ces pratiques tendent à mettre en avant une tendance croissante à la pluri-formalisation croissante des modèles agents, preuve que cette multiplicité des formalismes et des techniques est de plus en plus considérée comme une richesse dans l'approche de systèmes complexes.
+Pour raccrocher cette remarque avec les dernières analyses portant sur l'usage des techniques de simulation en géographie,
 
-Dans son analyse sur la place de l'explication en analyse spatiale, \textcite{Sanders2000} voit plus dans le rapport de l'outil à la démarche adoptée (exploratoire ou hypothético-deductif) une question d'interprétation, ce qui contextualise encore un peu plus la place de l'outil \enquote{Ce sont en effet la manière dont l'outil est inséré dans une chaîne de réflexion et de traitement et l'interprétation des informations figurant en entrée et en sortie qui permettent de donner le statut descriptif ou explicatif d'une démarche.} Avant de conclure un peu plus loin à la fin de son analyse \enquote{[...]il n'y a pas de relation simple et fixe, ni entre les niveaux d'observation et la nature des explications, ni entre les outils de l'analyse spatiale et l'explication. La variété des approches permet de diversifier les éclairages sur les phénomènes que l'on cherche à expliquer. Nos démarches en analyse spatiale consistent ainsi davantage à \enquote{éclairer} qu'à \enquote{démontrer} et identifier des jeux de causalités bien stricts.}
-
-Pour Maryvonne le Berre encore, \enquote{Il n’y a donc pas d’adaptation de la géographie à la technique mais recherche d’une technique adaptée à chaque objet d’étude géographique}. \textcite{Sanders2013} expose une idée assez similaire de pré-existance des concepts sur l'outils, car pour elle \enquote{La comparaison entre famille de modèles montre qu'il existe des décalages temporels entre la construction conceptuelle d'un champ et la mise au point d'outils appropriés pour la tester. Dans une certaine mesure on peut avancer que les outils \enquote{ont rattrapé} les concepts dans ce champ de recherche.}
 
 = Reste qu'il faut quand meme un support à ce developpement
 
@@ -527,6 +496,14 @@ Pour Maryvonne le Berre encore, \enquote{Il n’y a donc pas d’adaptation de l
 
 
 
+\paragraph{L'extension de l'\textit{observational dilemna} à la définition des critères d'évaluation}
+
+
+Il en est de même avec les hypothèses, dont la représentativité sur le système observé en fonction de la question posé  de la mise en valeurs initiales dans le domaine d'expertise et de critères de validation ,
+
+\Anotecontent{hermann_hypothesis}{Le \textit{hypothesis-testing} proposé par Hermann propose d'évaluer avec ce critère la capacité du système simulé à reproduire dans sa dynamique des interactions constatés dans le système observé}
+
+A ce titre la construction des indicateurs que l'on juge capable de caractériser correctement un système observé s'appuie sur une base de connaissance elle même résultat d'un construit. Ainsi, considérer comme pertinente la comparaison terme à terme d'une chaîne d'interaction entre système observés et système simulés \Anote{hermann_hypothesis} revient implicitement à accepter comme satisfaisante une longue et inévitable chaîne d'erreur cumulée, elle même issue d'un long processus de construction (les bases de données en science humaines ne se construisent pas en un jour) qui biaise tout autant la qualité des données initiales (construction d'enquête, de relevés, d'observations), que les structures qui les encadrent (un modèle de répartition par classe d'age par exemple). C'est pourtant sur cette base que le modélisateur doit s'appuyer pour extraire, au regard d'une expertise qui intègre un savoir aussi bien quantitatif que qualitatif, des hypothèses sur les composants et les interactions entre composants dont la pertinence de leur présence dans le modèle s'avère elle même discutable vis à vis de la question posé ..
 
 
 
@@ -534,3 +511,85 @@ Pour Maryvonne le Berre encore, \enquote{Il n’y a donc pas d’adaptation de l
 
 
 
+
+
+
+En un sens, s'appuyer sur l'expression de dynamique \enquote{vraisemblables} pour formuler des hypothèses impactant la suite du raisonnement, et les mécanismes suivant à ajouter au modèle, tel que le propose en substance la \textit{face validity}, semble être une erreur pouvant couter beaucoup de temps de redéveloppement à posteriori.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESTE SUR HERMANN, dont je sais pas quoi faire ... 
+
+
+
+
+L'autre élément de réflexion apportés ici par Hermann est celui d'un mise en dynamique des critères d'évaluation au sein de la construction du modèle, un des éléments qui a aussi été repris par la V\&V, comme on le décrit par la suite.
+
+\foreignquote{english}{Because \enquote{a complex model can predict real-world outcomes correctly and yet be wrong in many details} \autocite[64]{Pool1965} an investigator may wish to pursue validity approaches which focus on the internal structure of the model at an earlier stage in the operation of the simulation.} \autocite[226]{Hermann1967} 
+
+En résumé, Hermann nous propose une lecture de la validation
+- en fonction d'objectifs redéfinissant ce qu'on peut attendre ou ne pas attendre de la validation
+- en fonction de critères mesurant la cohérence interne des modèles, ceux-ci ne pouvant pas être seulement historiques si l'objectif est l'explication
+- une méthode incrémentale de construction des modèles basé sur la confrontation entre hypothèses et critères d'évaluations
+
+% Ouverture sur les patterns ?
+% REPETITION
+\Anotecontent{hermann_doute}{Malgré le développement de ces différentes techniques, Hermann reste très prudent sur la possibilité d'inférer des conclusions à partir des simulations dans son propre domaine d'étude : \foreignquote{english}{Until more validation exercices are conducted, it is premature to accept or reject simulation as an important new tool for studying political phenomenon} \autocite{Hermann1967b}}
+
+Sachant toutes ces limitations et la perfection de toute façon impossible, Hermann entretient toutefois l'espoir\Anote{hermann_doute}, par la mise en œuvre répétés de ces multiples méthodes qui guident et interrogent la construction du modèle au travers de perspectives différentes, de dessiner une carte relative de la confiance que l'on peut accorder à un modèle; cela toujours en gardant à l'esprit que ce résultat n'est pas généralisable, et reste lié aux objectifs ayant motivé la construction du modèle, comme le résume bien sa conclusion :
+
+\foreignquote{english}{(1) The validation of a simulation or game is always a matter of degree. Moreover, a given operating model may be relatively more valid by some criteria than by others. (2) The validation of an operating model cannot be separated from the purpose for which it is designed and conducted. Therefore, a simulation or game relatively valid for one objective may be not be equally valid for another. (3) Given multiple validity strategies, several of the broadly applicable criteria may be reasonably applied in a particular sequence. [...] (4) The use of human participants in games significantly alters the required validation procedures. Although some major problems are reduced by this introduction of real properties, the net result would appear to make the estimation of validity more complex.} \textcite{Hermann1967}
+
+\paragraph{La nécessité d'une approche dynamique et multi-critère}
+
+(( Multi Critères de nature différentes ))
+(( Quel représentativité ? == Equifinalité et lien avec Observational dilemna ))
+
+ Une première ouverture ici au problème de l'équifinalité, un argument souvent utilisé par les detracteurs de la simulation qui voit dans l'introduction de cette variabilité l'échec prévisible de toute explication, alors que vue d'une façon positive elle permet au contraire d'assumer tout autant la réalité d'une multiplicité de facteur explicatif propre à la spécificité des SHS et de la géographie, que la possibilité d'évolution de modèle devenues autonomes. Ces points seront rediscuté de façon plus complète dans la section \hl{ref section}
+
+pour lui tient dans donc la multiplication des points de vues sur le modèle, et la mobilisation d'un ensemble de critères venant de façon incrémentale contraindre positivement ou négativement la dynamique du modèle, nous éclairant en retour sur la pertinence des hypothèses en jeu.
+
+Dès lors, le point de vue dynamique devient inévitable pour comprendre un jeu d'alternance jusque là éludé, l'alternance entre l'exploration et la conception du modèle. (Cf ce qu'a déjà théorisé Amblard)
+
+
+. même indépendante et donc tout devrait reposer sur les seules capacités d'inférences de l'observateur, comme le présente Livet ? Ou peut on aller un plus loin, et définir une grille de critères pour jauger de notre capacité à inférer, comme le suppose Hermann lorsqu'il met en relation  ? 
+
+
+
+Les hypothèses n'étant pas la réalité, et ne voulant pas être la réalité, alors la validation d'un modèle n'a de sens que face une grille d'évaluation adapté, qui permet la mise en confrontation toute relative des hypothèses avec d'autres hypothèses. (bulle ? )
+
+ C'est sur ce point particulier que l'on va insister par la suite;
+
+\paragraph{Quelles critères pour quelles réalités d'un phénomène ? }
+
+Cette notion de critères appelle de suite à poser la question de la mesure des phénomènes à comparer, et de leur traduction dans des critères représentatif du système observé.
+
+\textcite{Hermann1967, Hermann1967b} propose d'établir non pas une méthode, mais une série de méthodes complémentaires, dont il détaille pour chacune d'elle les qualités et les faiblesses pour la comparaison entre système modélisé et système de référence. Chaque méthode constitue ce qu'il appelle un \textit{validation criteria} , un type de critère de validation générique dont le choix et la mise en œuvre effective est déterminé par le modélisateur en fonction des objectifs poursuivis.
+
+
+
+
+
+
+
+
+
+
+L'activité de construction et de mobilisation des critères permettant de questionner le modèle lors de sa construction révèle en réalité une modélisation, questionnante et importante que la construction en elle-même du modèle de simulation.  %Dès lors pour de telles constructions, ne faudrait-il pas parler d'une construction guidé par l'évaluation comme l'a déjà introduit \autocite{Amblard2006} ? 
+
+
+
+Les deux activités pourrait même apparaitre comme indissociable, la complexification des modèles apellant fort probablement l'introduction toujours plus grande de critères pour en mesurer la cohérence interne.
+
+
+Or si il est courant d'établir un modèle conceptuel pour cristaliser un jeu d'hypothèse à mobiliser dans une simulation, la plannification des critères pour mesurer l'impact réel de ces hypothèses dans la dynamique du modèle est moins courante, et pourtant celle-ci semble tout autant nécessaire. Il faut dire aussi que ceux-ci, tout comme les mécanismes ajoutés, ne sont pas toujours connus par avance, et oblige là encore à voir l'activité de modélisation comme une activité de raisonnement qui mérite toute sa place dans les publications. L'histoire ayant mené à la construction d'un modèle et des critères qui l'acccompagne devenant aussi important et discutable que le résultat final publié.
+
+%Ce degré de représentativité tel que définit par Hermann étant la mesure à un instant \textit{t} de la construction d'un modèle, de la réponse d'un jeu d'hypothèses selectionnés pour leurs potentialité supposés à satisfaire à un ensemble de critères. Des critères également selectionnés pour représenter au mieux un ou plusieurs aspects du système observé. \hl{Bof, à reformuler}

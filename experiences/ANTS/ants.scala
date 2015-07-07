@@ -5,18 +5,20 @@ val seed = Val[Int]
 
 val i = Val[Double]
 
-//val resPath = "/iscpif/users/rey/ANTS/RESULTS/"
-val resPath = "/home/srey/results/"
+val resPath = "/iscpif/users/rey/ANTS/RESULTS/"
+//val resPath = "/home/srey/results/"
 
 // Define the output variables
 val food1 = Val[Double]
 val food2 = Val[Double]
 val food3 = Val[Double]
 
+// NetLogo5Task("/home/srey/netlogo/ants/ants.nlogo", cmds) set (
+
 // Define the NetlogoTask
 val cmds = Seq("random-seed ${seed}", "run-to-grid")
 val ants =
-  NetLogo5Task("/home/srey/netlogo/ants/ants.nlogo", cmds) set (
+  NetLogo5Task("/iscpif/users/rey/ANTS/ants.nlogo", cmds) set (
     // Map the OpenMOLE variables to NetLogo variables
     netLogoInputs += (gPopulation, "gpopulation"),
     netLogoInputs += (gDiffusionRate, "gdiffusion-rate"),
@@ -45,7 +47,7 @@ val agg =
   ), strainer = true)
 
 val exploration = Capsule(
-    ExplorationTask(i in (0.0 to 10.0 by 1.0)) set (
+    ExplorationTask(i in (0.0 to 100.0 by 1.0)) set (
         gPopulation := 125.0,
         gDiffusionRate:= 25.0,
         gEvaporationRate := 25.0,
@@ -54,18 +56,17 @@ val exploration = Capsule(
 
 val env = LocalEnvironment(15)
 
-val seedFactor = seed in (UniformDistribution[Int]() take 10)
 
 // val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
 
-val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 1000)), strainer = true)
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 100)), strainer = true)
 
 val aggSlot = Slot(agg)
 
 // Define the hooks to collect the results
 val displayOutputs = ToStringHook(i, seed, food1, food2, food3)
 val displayMedians = ToStringHook(medNumberFood1, medNumberFood2, medNumberFood3)
-val saveHook = AppendToCSVFileHook(resPath + "replication.csv", i, gPopulation, gDiffusionRate, gEvaporationRate, medNumberFood1, medNumberFood2,medNumberFood3)
+val saveHook = AppendToCSVFileHook(resPath + "replication_100_100.csv", i, gPopulation, gDiffusionRate, gEvaporationRate, medNumberFood1, medNumberFood2,medNumberFood3)
 
 // Execute the workflow
 //val ex = (exploration -< replicateModel -< modelCapsule on env hook displayOutputs >- (statSlot hook (displayMedians, saveHook))) + (replicateModel -- statSlot) start
