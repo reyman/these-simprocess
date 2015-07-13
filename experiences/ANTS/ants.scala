@@ -59,14 +59,14 @@ val env = LocalEnvironment(15)
 
 // val replicateModel = Replicate(modelCapsule, seedFactor, statSlot)
 
-val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 100)), strainer = true)
+val replication = Capsule(ExplorationTask(seed in (UniformDistribution[Int]() take 10)), strainer = true)
 
 val aggSlot = Slot(agg)
 
 // Define the hooks to collect the results
 val displayOutputs = ToStringHook(i, seed, food1, food2, food3)
 val displayMedians = ToStringHook(medNumberFood1, medNumberFood2, medNumberFood3)
-val saveHook = AppendToCSVFileHook(resPath + "replication_100_100.csv", i, gPopulation, gDiffusionRate, gEvaporationRate, medNumberFood1, medNumberFood2,medNumberFood3)
+val saveHook = AppendToCSVFileHook(resPath + "replication_100_10.csv", i, gPopulation, gDiffusionRate, gEvaporationRate, medNumberFood1, medNumberFood2,medNumberFood3)
 
 // Execute the workflow
 //val ex = (exploration -< replicateModel -< modelCapsule on env hook displayOutputs >- (statSlot hook (displayMedians, saveHook))) + (replicateModel -- statSlot) start

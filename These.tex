@@ -30,6 +30,17 @@
 \usepackage{multirow,multicol}
 \usepackage[load-configurations = abbreviations]{siunitx}
 
+% SPACE
+% http://tex.stackexchange.com/questions/148337/remove-space-below-section-in-memoir
+%\OnehalfSpacing
+%\setaftersecskip{1sp}
+%\setaftersubsecskip{1sp}
+%\setaftersubsubsecskip{1sp}
+
+\setparaheadstyle{\normalsize\itshape}
+\setafterparaskip{1ex}
+\setbeforeparaskip{1ex}
+
 %%%%%%%%%%%%%%%%%%
 % some color definitions
 \definecolor{tangoBlue1}{RGB}{114,159,207}
@@ -48,6 +59,51 @@
 \definecolor{light-gray}{gray}{0.50}
 \definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}% Rule colour
 
+\title{Une plateforme intégrée pour la construction et l'évaluation de modèles de simulation en géographie}
+\author{Sébastien Rey-Coyrehourcq}
+\date{2015}
+
+\newcommand{\polimi}{Université Panthéon-Sorbonne\xspace}
+\newcommand{\dei}{Ecole Doctorale de Géographie de Paris\xspace}
+\newcommand{\POLIMI}{\uppercase{\polimi}}
+\newcommand{\DEI}{\uppercase{\dei}}
+
+% titles:
+\renewcommand{\maketitlehooka}{%
+  %\license %COMMENT THIS TO REMOVE THE DISCLAIMER NOTE
+  \centering
+  \includegraphics[width=2.5cm]{figures/polimi-logo}\\[.5cm]
+  \POLIMI\\
+  \emph{\dei}\\[.2cm]
+ Thèse de doctorat pour obtenir le grade de Docteur de l'Université Paris 1 en géographie, présentée et soutenue le 13 octobre 2015.
+  \par
+  \hrulefill
+  \vfill}
+\renewcommand{\maketitlehookb}{\vfill}
+\renewcommand{\maketitlehookc}{%
+  \vfill
+  \begin{flushleft}
+    Directrice :\\
+    \textbf{Prof. Denise Pumain}\\[.3cm]
+    Co-directrice :\\
+    \textbf{Prof. Letizia Tanca}\\[.3cm]
+   Membres du Jury:\\
+    \textbf{bla}
+  \end{flushleft}
+  \vfill}
+\preauthor{\begin{flushright}Thèse de doctorat de:\\\bfseries}
+\postauthor{\end{flushright}}
+
+
+%Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
+% (the first line of paragraph at the end of a page)
+\widowpenalty=10000
+\clubpenalty=1000
+\brokenpenalty=8000\relax
+
+\makeatletter
+\@beginparpenalty=10000
+\makeatother
 
 % CIRCLE step MACRO
 % http://tex.stackexchange.com/questions/18870/defining-an-new-itemize-like-environment-where-itemfoo-passes-foo-to-a-macro
@@ -208,11 +264,11 @@
 
 %\usepackage[notes,natbib,isbn=false,backend=biber]{biblatex-chicago}  
 %,style=authortitle-dw
+%\citeindextrue
 %http://tex.stackexchange.com/questions/16765/biblatex-author-year-square-brackets
 \usepackage[backend=biber,backref=true, natbib=true, isbn=false, doi=true, url=true, style=authoryear,maxcitenames=1, maxbibnames=999, sorting=nyt, refsection=chapter, hyperref]{biblatex}
 
-\setparaheadstyle{\normalsize\itshape}
-\setafterparaskip{1ex}
+
 
 %\usepackage[font=scriptsize]{caption}
 
@@ -241,6 +297,19 @@
 \makeatother
 
 %% QUOTE FRENCH ITALICS
+
+\renewcommand{\mktextquote}[6]{%
+  #1%
+  \iflanguage{english}{\itshape}{}% ADDED
+  #2#4#3#6#5%
+}
+\renewcommand{\mkblockquote}[4]{%
+  \iflanguage{english}{\itshape}{}% ADDED
+  #1#2#3#4%
+}
+
+%\renewcommand\mkblockquote[4]{\enquote{#1#2#3}#4}
+
 \DeclareQuoteStyle{english}
   {\mkfrenchopenquote{\guillemotleft}\itshape}
   {\itshape\mkfrenchclosequote{\guillemotright}}
@@ -425,7 +494,9 @@
 \AtNextCite{\defcounter{maxnames}{99}}%
 \fullcite}
 
-\setcounter{secnumdepth}{3}
+\setsecnumdepth{subsubsection}
+
+%\setcounter{secnumdepth}{3}
 
 %Controle minitoc
 \setcounter{tocdepth}{3}
@@ -498,7 +569,7 @@ Ligatures=Common,
 %]{Ubuntu}
 ]{Garamond Premier Pro}
 
-\nonzeroparskip
+%\nonzeroparskip
 
 %\linespread{1.125}\selectfont
 
@@ -563,29 +634,43 @@ Ligatures=Common,
 
 \begin{document}
 
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+\frontmatter
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Remerciements}
+\chapter*{Remerciements}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Notes de lecture}
+\chapter*{Notes de lecture}
+
+\cleardoublepage
+
 \chapterstyle{bringhurst}
 
-\listoftodos
+%\listoftodos
 
 %\setupshortlof
 
-\renewcommand\contentsname{Introduction}
 \tableofcontents
+
+\mainmatter
 
 %\listoftables
 %\listoffigures
+\renewcommand\contentsname{Introduction}
 
 \include{Partie0}
 
 \include{Partie1}
 
-%\include{Partie2}
-
-%\include{Partie3}
-
 \include{Annexes}
-
-%\bibliography{biblihadri_v1}
 
 \listoftables
 
