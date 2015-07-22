@@ -38,8 +38,8 @@
 %\setaftersubsubsecskip{1sp}
 
 \setparaheadstyle{\normalsize\itshape}
-\setafterparaskip{1ex}
-\setbeforeparaskip{1ex}
+\setafterparaskip{2ex}
+\setbeforeparaskip{2ex}
 
 %%%%%%%%%%%%%%%%%%
 % some color definitions
@@ -98,7 +98,7 @@
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \widowpenalty=10000
-\clubpenalty=1000
+\clubpenalty=5000
 \brokenpenalty=8000\relax
 
 \makeatletter
@@ -298,23 +298,26 @@
 
 %% QUOTE FRENCH ITALICS
 
-\renewcommand{\mktextquote}[6]{%
-  #1%
-  \iflanguage{english}{\itshape}{}% ADDED
-  #2#4#3#6#5%
-}
+% \renewcommand{\mktextquote}[6]{%
+%   #1%
+%   \iflanguage{english}{\itshape}{}% ADDED
+%   #2#4#3#6#5%
+% }
+% \renewcommand{\mkblockquote}[4]{%
+%   \iflanguage{english}{\itshape}{}% ADDED
+%   #1#2#3#4%
+% }
+
 \renewcommand{\mkblockquote}[4]{%
-  \iflanguage{english}{\itshape}{}% ADDED
-  #1#2#3#4%
-}
+  \openautoquote#1\closeautoquote#2#3#4} 
 
 %\renewcommand\mkblockquote[4]{\enquote{#1#2#3}#4}
 
 \DeclareQuoteStyle{english}
-  {\mkfrenchopenquote{\guillemotleft}\itshape}
-  {\itshape\mkfrenchclosequote{\guillemotright}}
-  {\textquotedblleft\itshape}
-  {\itshape\textquotedblright}
+  {\itshape\mkfrenchopenquote{\guillemotleft}}
+  {\mkfrenchclosequote{\guillemotright}}
+  {\textquotedblleft}
+  {\textquotedblright}
 
 %% QUOTE LATIN ITALICS
 \DeclareQuoteStyle{latin}
@@ -494,7 +497,8 @@
 \AtNextCite{\defcounter{maxnames}{99}}%
 \fullcite}
 
-\setsecnumdepth{subsubsection}
+\setsecnumdepth{paragraph}
+%\setsecnumdepth{subsubsection}
 
 %\setcounter{secnumdepth}{3}
 
@@ -644,6 +648,8 @@ Ligatures=Common,
 \phantomsection
 \addcontentsline{toc}{chapter}{Remerciements}
 \chapter*{Remerciements}
+
+
 
 \cleardoublepage
 \phantomsection
