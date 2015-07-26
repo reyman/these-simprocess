@@ -2,8 +2,8 @@ setwd("/home/srey/TRAVAUX/THESE/REPOSITORY_GIT/simprocess-these/experiences/ANTS
 repli <- read.csv2("medNumberFood3_repli.csv")
 colnames(repli) <- sub(pattern="X", replacement="", x=colnames(repli))
 
-boxplot(repli,data=repli, main="Variations de la médiane sur l'objectif de Population de 10 séries de réplications",
-        xlab="Nombre de réplications par série", ylab="Objectif de Population") 
+boxplot(repli,data=repli, main="Variations de la médiane sur l'objectif food1 de 10 séries de réplications",
+        xlab="Nombre de réplications par série", ylab="Objectif medianFood3") 
 
 
 setwd("/home/srey/insync_reyman64/PROJETS/GEOCITES/EXPERIENCE/exploration_scattrplot_ants")

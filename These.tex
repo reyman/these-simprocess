@@ -1,11 +1,15 @@
 % !TEX encoding =  UTF-8 Unicode
 % -*- program: xelatex -*-
 \documentclass[a4paper, 11pt,twoside, openright]{memoir}
+%http://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
+\usepackage{etex}
+\reserveinserts{28}
 \usepackage{polyglossia}
 \setdefaultlanguage{french}
 \setotherlanguage{english}
 \setotherlanguage[variant=ancient]{greek}
 \setotherlanguage{latin}
+\usepackage{fnbreak}
 \usepackage{fontspec}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[autostyle=true,french=guillemets,maxlevel=3]{csquotes}
@@ -22,13 +26,15 @@
 \usepackage{amstext}    % defines the \text command, needed here
 \usepackage{array}
 \usepackage[l2tabu]{nag}
-\usepackage{tcolorbox} 
+\usepackage[many]{tcolorbox}  
 \usepackage{morewrites} %slow slow slow
 \usepackage[section]{placeins}
 \usepackage{pgf,tikz}
 \usetikzlibrary{arrows}
 \usepackage{multirow,multicol}
 \usepackage[load-configurations = abbreviations]{siunitx}
+\usepackage[flushleft]{threeparttable}
+%\usepackage[hang]{footmisc}
 
 % SPACE
 % http://tex.stackexchange.com/questions/148337/remove-space-below-section-in-memoir
@@ -36,6 +42,16 @@
 %\setaftersecskip{1sp}
 %\setaftersubsecskip{1sp}
 %\setaftersubsubsecskip{1sp}
+
+\let\origfootnote\footnote
+%\DeclareNewFootnote{default}
+\usepackage{bigfoot}
+
+%http://tex.stackexchange.com/questions/3045/keep-all-footnotes-on-the-according-page
+%\addtolength{\topskip}{0pt plus 10pt}
+
+\raggedbottom
+\enlargethispage{\baselineskip}
 
 \setparaheadstyle{\normalsize\itshape}
 \setafterparaskip{2ex}
@@ -98,11 +114,21 @@
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \widowpenalty=10000
-\clubpenalty=5000
+\clubpenalty=10000
 \brokenpenalty=8000\relax
+
+%http://tex.stackexchange.com/questions/103139/modify-bigfoot-rules-for-footnote-page-breaks
+\footnotewidowpenalty=1000
+\footnoteclubpenalty=1000
+\finalfootnotewidowpenalty=1000
+\interfootnotelinepenalty=1000
+
+\sloppybottom
+\looseness=-1
 
 \makeatletter
 \@beginparpenalty=10000
+\@itempenalty=5000
 \makeatother
 
 % CIRCLE step MACRO
@@ -165,6 +191,24 @@
 \newtcbox{\keywordmin}{on line, fontupper=\scriptsize\ttfamily, boxrule=0.5pt, arc=2pt, coltext=tangoBlack1, colback=tangoGrey2, colframe=tangoGrey1, boxsep=0pt, left=3pt, right=3pt, top=2pt, bottom=2pt, shrink tight, extrude by=2pt}
 
 \makeatother
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+% Better than framewithtitle
+% http://tex.stackexchange.com/questions/195499/memoir-boxed-example-environment
+\newtcbtheorem[number within=chapter]{testiv}{Encadré}{   
+ outer arc=0pt,arc=0pt, breakable, enhanced}{tha}
+
+\newtcbtheorem[number within=chapter]{testv}{Encadré}{   
+ outer arc=0pt,
+ arc=0pt,
+ breakable,
+ enhanced,
+ colback=white,
+ colframe=black,
+ colbacktitle=white,
+ titlerule=0pt,
+ fonttitle=\normalcolor\itshape}{thb}
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
@@ -257,6 +301,8 @@
 
 
 \setcounter{equation}{0}
+
+
 
 %http://tex.stackexchange.com/questions/144943/footnote-non-inline-syntax
 \usepackage{sepfootnotes}
@@ -670,11 +716,13 @@ Ligatures=Common,
 
 %\listoftables
 %\listoffigures
-\renewcommand\contentsname{Introduction}
 
 \include{Partie0}
 
 \include{Partie1}
+
+
+\include{conclusion}
 
 \include{Annexes}
 
