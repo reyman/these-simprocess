@@ -1027,14 +1027,6 @@ Fin janvier 2010, alors même que les réunions commencent pour la conception du
 
 Le gain probable d'une mise en commun des connaissances et des outils parait de suite évident aux deux parties. D'un côté il y'a une réflexion qui se place en continuité d'un long héritage de modélisation en géographie, dont les problèmes d'automatisation des expérimentations ont été cristalisés à la fois dans la thèse de Thomas Louail, et dans mon sujet de thèse; et d'un autre côté, les développeurs d'OpenMOLE animés par les même problématiques, sont à la recherche de cas d'utilisation\Anote{evolution_openmole} pour encadrer un outil encore en train d'évoluer, mais qui intègre déjà une bonne partie des possibilités que nous avions imaginées pour notre plateforme. Un accord de coopération est acté quelques semaines à peine après la première rencontre, une preuve aussi que ces arguments de rapprochements était assez fort.
 
-\begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{}[fig:openmole_wf]
-		\centering
-		\includegraphics[width=0.4\linewidth]{task_diversity.pdf}{
-		}
-  \end{sidecaption}
-\end{figure}
-
 \paragraph {Genèse d'OpenMOLE}
 
 A l'origine il y a le projet \textbf{SimExplorer} présenté dans la thèse de  Frédéric Amblard en 2003 \autocite{Amblard2003}. Cet outil expose déjà dans sa conception et son implémentation bien des idées qui seront reprise sans le savoir dans nos démarches. En effet, bien que cet outil soit cité dans cette publication de référence sur la validation pour le multi-agent en sciences humaines et sociales \autocite{Amblard2006}, de façon étrange, ce prototype ne trouvera pas écho auprès des géographes avant sa re-découverte en 2010, au travers d'un successeur en filiation directe, à savoir OpenMOLE.
@@ -1055,23 +1047,32 @@ Lors du passage de direction à Réné Doursat, Mathieu Leclaire est embauché e
 
 \paragraph {Les concepts du logiciel en quelques mots}
 
-OpenMOLE permet de construire, de modifier, et d'exécuter des workflows sur des environnements de calculs distribués. Un \textbf{\textit{workflow}} peut être vu comme une chaîne de traitement classique, composée de différentes tâches/traitements liés les unes avec les autres par des \textbf{transitions}. A la différence d'autres moteur de \textit{workflow} existant (Taverna, Kepler, etc.), OpenMOLE peut intégrer n'importe quels types de \textbf{tâches} à ses workflows du moment que celles-ci existent soit sous forme native, soit sous forme de plugin au logiciel. C'est le cas du plugin Netlogo, développé à l'origine pour le modèle de Jéremy Fiegel, dont la réutilisation nous a permis d'intégrer le modèle SimpopLocal à des workflows sans aucun problèmes. OpenMOLE est capable de gérer des workflows ayant des \textbf{topologies complexes}, avec des boucle, des conditions de déclenchement sur les transitions, des aggregations, etc. Une des particularité d'OpenMOLE est également l'atomicité des tâches qui permet d'envisager la parallélisation des \textit{workflows} sans que l'utilisateur n'ai a géré aucun des inconvénients habituellement liés à la gestion de la concurrence :
+OpenMOLE permet de construire, de modifier, et d'exécuter des workflows sur des environnements de calculs distribués. Un \textbf{\textit{workflow}} peut être vu comme une chaîne de traitement classique, composée de différentes tâches/traitements liés les unes avec les autres par des \textbf{transitions}. A la différence d'autres moteur de \textit{workflow} existant (Taverna, Kepler, etc.) OpenMOLE peut intégrer n'importe quels types de \textbf{tâches} à ses workflows du moment que celles-ci existent soit sous forme native, soit sous forme de plugin au logiciel (figure \ref{fig:openmole_tasks}). C'est le cas du plugin Netlogo, développé à l'origine pour le modèle de Jéremy Fiegel, dont la réutilisation nous a permis d'intégrer le modèle SimpopLocal à des workflows sans aucun problèmes. OpenMOLE est capable de gérer des workflows ayant des \textbf{topologies complexes}, avec des boucle, des conditions de déclenchement sur les transitions, des aggregations, etc. Une des particularité d'OpenMOLE est également l'atomicité des tâches qui permet d'envisager la parallélisation des \textit{workflows} sans que l'utilisateur n'ai a géré aucun des inconvénients habituellement liés à la gestion de la concurrence :
+
+\begin{figure}[!htbp]
+	\begin{sidecaption}[fortoc]{Les tâches peuvent être de nature multiples.}[fig:openmole_tasks]
+		\centering
+		\includegraphics[width=0.4\linewidth]{task_diversity.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
+
 
 \foreignblockquote{english}[{\cite[7]{Reuillon2013}}]{In workflows, a task is an atomic execution component. Several tasks are linked with each-others by transitions to design the topology. More specifically, in OpenMOLE tasks are all portable, reentrant, immutable software components which can be run concurrently. This means that tasks have been designed so they have no interfering side effects. Therefore they can be safely dispatched on several threads, processes or computers. As far as we know, this conception of portable tasks is also a unique feature of OpenMOLE among all the workflow platforms. For us, this feature is crucial, as it makes it possible to delegate the workload entirely transparently from a user perspective, enabling the cloud aspect of OpenMOLE.}
 
-La plus grande différence avec une chaine de traitement classique, c'est que n'importe laquelle de ces tâches peut voir son \textbf{execution déléguée} sur des \textbf{environnements de calcul haute performance (HPC)} de façon automatique et transparente dès lors qu'elles intègrent \textbf{un plan d'expérience}. Le mieux est encore de donner un exemple très simple de \textit{workflow} permettant d'exécuter un modèle de simulation. 
+La plus grande différence avec une chaine de traitement classique, c'est que n'importe laquelle de ces tâches peut voir son \textbf{execution déléguée} sur des \textbf{environnements de calcul haute performance (HPC)} de façon automatique et transparente avec (ou sans) la déclaration d'un \textbf{un plan d'expérience}.
 
 Chaque tâche comporte des \textbf{entrées} et des \textbf{sorties} en fonction du traitement. Les \textit{workflows} s'executent un peu comme un fluide que l'on aurai relaché dans un environnement contraint, en s'écoulant d'un point de départ fixé par l'utilisateur, celui-ci suivant les transitions de tâche en tâche chargé des informations qu'on lui a transmises à chaque traitement, jusqu'à parvenir à un point d'arrivée. Leurs valeurs des entrées sont connues au moment ou la tâche est executé, à partir des résultats qui ont été produits et transmis au flux d'exécution par l'execution des tâches précédentes. Car après chaque traitement, les tâches peuvent transmettre à ce flux des sorties qui seront transmises jusqu'à la tâche suivante.
 
-Enfin, les \textit{workflows} peuvent être construit en utilisant un langage informatique dédié\Anote{dsl} (\textit{Domain Specific Language} DSL) ou composé de façon interactive et graphique en utilisant une interface utilisateur. On trouvera beaucoup plus de détails sur l'ensemble de ces concepts dans les publications associés au logiciel \autocites{Reuillon2008a, Reuillon2013}, mais également sur le \href{http://www.openmole.org}{@site} internet de celui-ci.
+Enfin, les \textit{workflows} peuvent être construit en utilisant un langage informatique dédié\Anote{dsl} (\textit{Domain Specific Language} DSL) ou composé de façon interactive et graphique en utilisant une interface utilisateur. On trouvera beaucoup plus de détails sur l'ensemble de ces concepts dans les publications associés au logiciel \autocites{Reuillon2008a, Reuillon2013}, mais également sur le \href{http://www.openmole.org}{@site} internet de celui-ci. Le mieux est encore de donner un exemple très simple et visuel de \textit{workflow} permettant d'exécuter quelques réplications d'un modèle de simulation Netlogo, comme le présente la figure \ref{fig:openmole_wfire}. 
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Exemple de plan d'expérience faisant seulement varier la graine aléatoire du modèle Netlogo \foreignquote{english}{Fire}. Ce modèle de simulation très simple permet de simuler le déplacement d'un feu dans une surface boisé dont on peut faire varier la densité. C'est un exemple que l'on trouve également dans le papier \textcite{Reuillon2013}.}[fig:openmole_wf]
+	\begin{sidecaption}[fortoc]{Exemple de plan d'expérience faisant seulement varier la graine aléatoire du modèle Netlogo \foreignquote{english}{Fire}. Ce modèle de simulation très simple permet de simuler le déplacement d'un feu dans une surface boisé dont on peut faire varier la densité. C'est un exemple que l'on trouve également dans le papier \textcite{Reuillon2013}.}[fig:openmole_wfire]
 	 \centering
-	 \subbottom[Cette première phase de création du \textit{workflow} nécessite de paramétrer les deux premières tâches \textbf{Et (Exploration task)} et \textbf{Nt (Netlogo task)}. La tâche d'exploration \textbf{Et} nécessite le choix d'un \textit{sampling} pour ensuite être capable de générer le plan d'expérience. Le modèle Netlogo doit définir ses entrées et ses sorties : le paramètre de $densite$ du modèle est fixé à une valeur de $60$, mais la \textbf{{\$seed}} doit être passée en entrée de la tâche au moment de son exécution pour que le modèle fonctionne. La sortie attendue du modèle correspond au pas de temps $t$ marquant l'extinction définitive du feu et l'arrêt du modèle : $t_{end of fire}$ ]{
+	 \subbottom[Cette première phase de création du \textit{workflow} nécessite de paramétrer les deux premières tâches \textbf{Et (Exploration task)} et \textbf{Nt (Netlogo task)}. La tâche d'exploration \textbf{Et} nécessite le choix d'un \textit{sampling} pour ensuite être capable de générer le plan d'expérience. Le modèle Netlogo doit définir ses entrées et ses sorties : le paramètre de $densite$ du modèle est fixé à une valeur de $60$, mais la \textbf{{\$seed}} doit être passée en entrée de la tâche au moment de son exécution pour que le modèle fonctionne. La sortie attendue du modèle correspond au pas de temps $t$ marquant l'extinction définitive du feu et l'arrêt du modèle : $t_{end-of-fire}$ ]{
 	 	\includegraphics[width=.8\linewidth]{leftdoenetlogo.pdf}
 	 	\label{left_netlogo}}\qquad
-	 \subbottom[Le \textit{workflow} est executé. La première étape est de générer le plan d'expérience, c'est à ce moment là que les \textbf{{\$seed}} sont générées puis appariées avec les futures exécutions du modèle (8 seed pour 8 réplications du modèle). OpenMOLE gère toute la partie distribution des calculs, et les modèles instancié avec les bon paramètres sont donc exécutés dans différents endroits de la planète. Une fois l'exécution des tâches achevées, les $8$ valeurs de $t_{end of fire}$ sont récupérées et agrégées dans un tableau par la tâche \textbf{At (Aggregation task)}]{
+	 \subbottom[Le \textit{workflow} est executé. La première étape est de générer le plan d'expérience, c'est à ce moment là que les \textbf{{\$seed}} sont générées puis appariées avec les futures exécutions du modèle (8 seed pour 8 réplications du modèle). OpenMOLE gère toute la partie distribution des calculs, et les modèles instancié avec les bon paramètres sont donc exécutés dans différents endroits de la planète. Une fois l'exécution des tâches achevées, les $8$ valeurs de $t_{end-of-fire}$ sont récupérées et agrégées dans un tableau par la tâche \textbf{At (Aggregation task)}]{
 		\includegraphics[width=.8\linewidth]{rightdoenetlogo.pdf}
 		\label{right_netlogo}}
 	\end{sidecaption}
@@ -1090,7 +1091,7 @@ Enfin, les \textit{workflows} peuvent être construit en utilisant un langage in
 \item Le logiciel cumule déjà plusieurs années de développements, les concepts semblent robustes et déjà éprouvés dans des applications concrètes \autocite{Mesmoudi2010}.
 \end{enumerate}
 
-Le logiciel est encore dans un stade expérimental lorsque nous commencons à nous emparer des concepts pour produire nos premiers \textit{workflows}.L'interface graphique étant encore incomplète, c'est principalement par l'usage de scripts OpenMOLE que seront faites la plupart de ces expérimentations. De très nombreux allers-retours vont être nécessaires avec l'équipe des deux ingénieurs pour arriver à construire les tous premiers \textit{workflows} utilisant Netlogo, car cette tâche spécifique doit encore être confronté à quelques cas utilisations imprévus (notamment sur la conversion de types entre l'API Java de Netlogo et OpenMole en Scala) pour que son utilisation soit vraiment exemptes de bugs. 
+Le logiciel est encore dans un stade expérimental lorsque nous commencons à nous emparer des concepts pour produire nos premiers \textit{workflows}.L'interface graphique étant encore incomplète, c'est principalement par l'usage de scripts OpenMOLE que seront faites la plupart de ces expérimentations. De très nombreux allers-retours vont être nécessaires avec l'équipe des deux ingénieurs pour arriver à construire les tous premiers \textit{workflows} utilisant Netlogo, car cette tâche spécifique doit encore être confronté à quelques cas utilisations imprévus (notamment sur la conversion de types entre l'API Java de Netlogo et OpenMOLE en Scala) pour que son utilisation soit vraiment exemptes de bugs. 
 
 %SimpopLocal_h3_grille.nlogo qui tourne sur la grille en juin 2010, seule la seed est amené à varier pour le moment.
 
@@ -1107,7 +1108,7 @@ Dans un premier temps, il est seulement prévu de s'appuyer sur OpenMOLE pour co
  \end{sidecaption}
 \end{figure}
 
-Dans le projet initial, une interface logicielle doit permettre aux géographes de piloter la construction, l'execution, et la sauvegarde des expérimentations, mais aussi la selection et la construction de rapport automatiques à executer. Cela revient à construire un générateur de workflow capable d'envoyer les modèles de simulation sur grille de calcul et de stocker automatiquement les résultats dans une base de données, exploitable de différentes façon : construction de rapport automatique, consultation des rapports sur un wiki, visualisation des données dans un SIG, etc.
+Dans le projet initial, une interface logicielle doit permettre aux géographes de piloter la construction, l'execution, et la sauvegarde des expérimentations, mais aussi la selection et la construction de rapport automatiques à executer. Cela revient à construire un générateur de workflow capable d'envoyer les modèles de simulation sur grille de calcul et de stocker automatiquement les résultats dans une base de données, exploitable de différentes façon : construction de rapports automatiques, consultation des rapports sur un wiki, visualisation des données dans un SIG, etc.
 
 Au début de l'année 2011, juste après la première campagne de calibrage du modèle SimpopLocal utilisant des algorithmes évolutionnaires (on reviendra par la suite sur cette période), il devient de plus en plus évident que non seulement l'intégration ou l'utilisation d'OpenMOLE de façon externe dans une plateforme n'est pas possible, mais qu'en plus cette solution n'est pas viable, pour plusieurs raisons
 
@@ -1120,35 +1121,73 @@ Au début de l'année 2011, juste après la première campagne de calibrage du m
 
 Une autre évidence remet très rapidement en cause notre démarche de construction de modèle. Les premières expériences pour l'exploration du modèle SimpopLocal produisent un volume de données déjà très important, ne serait-ce qu'à cause de la stochasticité, qui nécessite de nombreuses réplications du modèle (même jeu de valeur de paramètre, graine aléatoire différente). En soit ce n'est pas vraiment un problème technique car les bases de données mises en place à cette occasion peuvent largement supporter un tel poids (quelques Gigas de données). Le problème est plutôt d'ordre méthodologique car a quoi cela sert-il de stocker un tel volume de données sur des simulations qui pour le moment ne sont pas calibrés, et sont donc destinés à être très rapidement supprimés des bases ? La fouille de données a posteriori est-elle une si bonne idée dans ce cas précis ?
 
-Prenons un exemple plus concret. Dans le cadre de SimpopLocal \autocites{Schmitt2015,Schmitt2014} un des fait stylisé recherché par les géographes correspond à une description de la hierarchisation du système de peuplement à un temps $t_{final}$ égal à $4000$ pas de temps (1 pas de temps = 1 année), une durée historique retenue par les experts. Dans une exploration a posteriori, la seule façon de qualifier si la reproduction de ce fait stylisé est correcte ou pas est de soumettre les graphiques rang-taille pour évaluation. Si on réalise un plan complet sur les $5$ paramètres retenus pour varier dans le modèle, avec une discrétisation en $10$ valeurs sur chacun d'entre eux, et $30$ réplications, cela représente vite quelques centaines de milliers d'execution du modèle pour cette seule expérimentation : $10^{5} * 30 = \num{300000}$. Admettons que l'on puisse résumer chaque ensemble de réplications dans un même graphique comportant la moyenne, la médiane, l'écart-type, etc. cela nous laisse quand même $\num{100000}$ évaluation visuelles à réaliser manuellement. Et cela, en n'ayant aucune certitude sur la capacité de cette maille ($10$ valeurs pour chacun des paramètres, c'est très peu pour couvrir un tel espace, on en reparle dans la section \ref{sssec:Optimisation}) à detecter la ou les zones de valeurs de paramètres capables de reproduire ce fait stylisé.
+Prenons un exemple plus concret. Dans le cadre de SimpopLocal \autocites{Schmitt2015,Schmitt2014} un des fait stylisé recherché par les géographes correspond à une description de la hierarchisation du système de peuplement à un temps $t_{final}$ égal à $4000$ pas de temps (1 pas de temps = 1 année), une durée historique retenue par les experts (voir figure \ref{fig:rtstylisee}).
 
-On s'apercoit très vite que ce schéma d'expérimentation n'est pas viable pour calibrer un modèle, même d'apparence assez simple, comme SimpopLocal. C'est un problème que nous avions déjà envisagé de façon théorique avec Thomas Louail, avec la nécessité d'avoir des outils à notre disposition pour calibrer de façon automatique les modèles. Seulement en 2009, nous n'avions aucun outil fonctionnel à disposition car le stage de trois mois de A. Monzi pour développer une interface aux algorithmes évolutionnaires de B.Calvez n'ayant malheureusement pas débouché sur un prototype utilisable \autocite[140-141]{Louail2010}
+\begin{figure}[h]
+	\begin{sidecaption}[fortoc]{Emergence d'une loi rang-taille dans un système de peuplement stylisé}[fig:rtstylisee]
+		\centering
+		\includegraphics[width=0.7\linewidth]{rangtaille_generique.pdf}{
+		}
+  \end{sidecaption}
+\end{figure}
 
-Il se trouve que l'équipe d'ingénieur d'OpenMOLE a déjà utilisé des algorithmes évolutionnaires pour un travail postérieur en agroalimentaire \autocite{Mesmoudi2010}. Très vite il devient intéressant de développer plus loin cette convergence, en développant une véritable librairies logicielle dédié aux algorithmes évolutionnaires, intégrable et utilisable très facilement dans OpenMOLE pour calibrer des simulations. Cette activité va être associé à l'exploration du modèle SimpopLocal jusqu'à la fin de l'année 2013.
+Dans une exploration \textit{a posteriori} (fouille de données), la seule façon de qualifier si la reproduction de ce fait stylisé est correcte ou pas est de soumettre aux experts les graphiques rang-taille générés. Si on réalise un plan complet sur les $5$ paramètres retenus pour varier dans le modèle, avec une discrétisation en $10$ valeurs sur chacun d'entre eux, et $30$ réplications, cela représente vite quelques centaines de milliers d'execution du modèle pour cette seule expérimentation : $10^{5} * 30 = \num{3000000}$. 
 
-En définitive, au cours de l'année 2010, la coopération avec l'équipe d'OpenMOLE ne va aller qu'en se renforçant, et le maintient de deux projets indépendants partageant un certain nombre d'idées communes perd peu à peu tout son sens. Continuer sur un projet autonome ne ferait que freiner le développement d'une coopération qui pourrait s'avérer plus fructueuse encore, basé sur l'expertise et le travail déjà réalisé par chacun. Sans compter qu'à ce moment là le développement d'OpenMOLE laisse entrevoir des possibilités qui se situe bien au delà de ce que l'on avait imaginé dans notre cahier des charges initial.
+Admettons que l'on puisse résumer chaque groupe de $30$ réplications dans un seul graphique comportant la moyenne, la médiane, l'écart-type, etc. cela nous laisse quand même $\num{100000}$ évaluation visuelles à expertiser. Tout cela en n'ayant aucune certitude sur la capacité de cette maille ($10$ valeurs pour chacun des paramètres, c'est très peu pour couvrir un tel espace, on en reparlera dans la section \ref{sssec:Optimisation}) à detecter la ou les zones de valeurs de paramètres qui génère correctement ce fait stylisé.
+
+Si chaque fichier de données récupéré fait $1$ Mo, une fois multiplié par $\num{100000}$ chaque expérimentation génère environ $100$ Go de données qu'il faut récupérer, stocker, puis interroger avec les outils adéquats. Sans aucune garantie de résultat. En prenant moins de points de mesures pendant la simulation on peut revenir à des chiffres plus raisonable, mais il faut quand même prendre en compte l'importance de cet argument. 
+
+On s'apercoit très vite que ce schéma d'expérimentation n'est pas le plus adéquat pour calibrer un modèle, même d'apparence assez simple, comme SimpopLocal. C'est un problème que nous avions déjà envisagé de façon théorique avec Thomas Louail, en reconnaissant la nécessité d'avoir des outils à notre disposition pour calibrer de façon plus automatique les modèles. Seulement en 2009, nous n'avions aucun outil fonctionnel à disposition, le stage de trois mois de A. Monzi pour développer une interface aux Algorithmes Evolutionnaires de B.Calvez n'ayant malheureusement pas aboutit sur un prototype utilisable \autocite[140-141]{Louail2010}
+
+Il se trouve que l'équipe d'ingénieurs responsable d'OpenMOLE a déjà utilisée des Algorithmes Evolutionnaires sur grille de calcul pour une problématique en agroalimentaire \autocite{Mesmoudi2010}. Or les Algorithmes Evolutionnaires sont - comme on en parlera plus en détails dans la section \ref{sec:MGO} - une des familles de techniques métaheuristiques les plus efficaces pour encadrer des problèmes d'optimisation multi-critères. Le calibrage se définit assez naturellement comme un problème d'optimisation dont l'objectif est la découverte du meilleur ajustement possible entre un jeu hypothèses et un jeu de critères fournies par le modélisateur. Ce type d'optimisation étant très consommatrice de puissance de calcul, le couplage déjà réussi entre MGO et OpenMOLE présage d'un infrastructure technique adéquate pour la mise en oeuvre d'un projet d'évaluation systématique resté jusqu'alors très théorique (voir section \ref{ssec:evaluation_construction}). 
+
+Comme l'avait indiqué en leur temps Diplock et Openshaw \autocite{Diplock1996}, cette possibilité de calibrer - et plus généralement d'explorer avec toute les nouvelles méthodes HPC à notre disposition - de façon systématique et avec très peu d'efforts les modèles de simulation permet de mieux se concentrer sur la construction des modèles et des critères. Après la réalisation du premier prototype utilisant OpenMOLE, SimpopLocal et MGO, nous évoquerons comment cette approche d'évaluation systématique a continuer d'inspirer des changements dans notre façon de concevoir les modèles et la modélisation. % dans le courant de l'année 2013, avec le démarrage d'une nouvelle dynamique et d'un nouveau projet de modèle de simulation.
+
+Poursuivre le développement de cette librairie logicielle, encore instable, est très vite reconnu par les deux équipes comme un objectif d'intérèt commun. Car d'un coté il y a cette possibilité de développer un prototype de méthodologie permettant de construire et d'explorer (calibrer dans un premier temps) SimpopLocal avec des outils adaptés, réactifs, et jamais utilisé jusque là au laboratoire Géographie-cités. Et d'un autre coté, il y a la possibilité quasi-simultanée de mutualiser et donc de généraliser ces outils et cette méthodologie à n'importe quel autre modèles de simulation utilisant Netlogo et OpenMOLE.
+
+%est  pour en faire un catalogue évolutif d'algorithmes évolutionnaires utilisables très facilement dans OpenMOLE. SimpopLocal sert de cas d'utilisation concret, mais l'horizon final est bien de permettre l'utilisation de ces outils pour n'importe quel autre modèle de simulation intégré dans un \textit{workflow}. 
+
+%Un des premier avantage à voir dans l'application de cette méthodologie réside dans l'incitation à formuler des critères qu'elle engendre chez les modélisateurs. Pour pouvoir apprendre de la dynamique des modèles mis en oeuvre, il n'y a pas d'autre choix que de formaliser les questions, les critères, que l'on veut s'attend à voir ou ne pas satisfait lors du calibrage. Cette approche à été longuemment décrit dans la section \ref{ssec:evaluation_construction}, mais aucune technique n'avait alors été évoqué pour son support.
+
+Comme on vient de le décrire, la coopération avec l'équipe d'OpenMOLE ne va aller qu'en se renforçant au cours de l'année 2010. Le maintient de deux projets indépendants alors même que ceux-ci ont en commun un grand nombre d'idées et d'objectifs n'a plus vraiment de sens. Il aura donc fallu se déposséder d'abord de l'idée de plateforme pour l'évaluation des modèles tel que nous l'avions imaginé, pour la reconstruire à nouveau au travers d'un co-développement étroit avec des ingénieurs spécialisés dans le HPC. Une ressource informatique qui reste à ce jour le seul moyen d'explorer efficacement les modèles de simulation, et cela depuis les années 1980, date ou les géographes avaient déjà préssenti la nécessité d'un tel projet (\ref{p:experience_minuit}). Une ressource indispensable mais aussi inateignable pour un développeur seul et non spécialisé dans cette discipline. En ce sens, continuer sur ce projet de façon autonome ne fait que freiner le développement d'une coopération qui pourrait s'avérer plus fructueuse encore, car basé sur l'expertise et le travail déjà réalisé par chacun. Sans compter qu'à ce moment là le développement d'OpenMOLE laisse entrevoir des possibilités qui se situent bien au delà de ce que l'on avait imaginé dans notre cahier des charges initial.
 
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-\item Les \textit{workflows} ne peuvent pas être sauvegardé dans les premières version de la plateforme, mais ce problème est rapidement réglé dans les versions suivantes.
-\item A terme, la possibilité de \enquote{versionner} \Anote{versionnerwf} des \textit{workflows}, voire des données et résultats \textit{associés} à ces workflows est prévu par les concepteurs.
-\item Il existe la possibilité de proposer des \textit{workflows} de type \textit{Puzzle}, prêt à être utiliser ceux-ci doivent juste être compléter ou paramétrer par l'utilisateur, comme un Puzzle dont il manquerait quelques pièces. Il est tout à fait possible de proposer une collection de \textit{workflows} déjà pret à l'emploi, ou l'utilisateur n'aurait plus qu'à ajouter son modèle.
-\item Il est tout à fait possible d'intégrer des outils plus géomatiques dans OpenMOLE, par exemple en intégrant la librairie Java Geotools ou Jts à celui-ci.
+\item Les \textit{workflows} peuvent être sauvegardés et partagés.
+\item A terme, il sera possible de \enquote{versionner} \Anote{versionnerwf} des \textit{workflows}, voire des données et des résultats \textit{associés} à ces \textit{workflows}.
+\item Il existe la possibilité de proposer des \textit{workflows} de type \textit{PuzzleWorkflow}, prêt à être utilisé ceux-ci doivent d'abord être complétés ou paramétrés par l'utilisateur, comme un \textit{puzzle} dont il manquerait seulement quelques pièces pour être terminé. 
+\item Les concepteurs envisagent de proposer une collection de \textit{workflows} déjà prêts à l'emploi, ou l'utilisateur n'aurait plus qu'à ajouter son modèle. 
+\item Il est possible d'utiliser et d'ajouter des tâches pour le langage R dans les \textit{workflows}, ce qui comble une partie des besoins des géographes sur le plan de l'analyse statistique.
 \end{enumerate}
 
-Tout comme il avait déjà du apparaitre aux yeux d'\textcite[19-26]{Banos2013} (\enquote{et si le vrai luxe c'était le calcul ?} ), le potentiel d'un tel logiciel pour la communauté des modélisateurs semble évident. Sachant que la plupart des modélisateurs actuels en sciences humaines et sociales se situent plutôt dans un entre-deux sur le plan technique (ni experts informaticiens, ni débutants), la proposition faite par les ingénieurs de l'ISC-PIF pourrait bien s'avérer être ce \enquote{chaînon manquant} qui permettrait d'enclencher une véritable démocratisation des usages du HPC pour la modélisation en géographie, et plus généralement pour la modélisation en SHS.
+Tout comme son potentiel avait déjà du apparaitre aux yeux d'\textcite[19-26]{Banos2013} (\enquote{et si le vrai luxe c'était le calcul ?} ), il nous est  aussi paru évident qu'un tel logiciel pouvait transformer les usages d'une communauté de modélisateurs dont on a vu qu'elle était en attente de ce type d'outils depuis plus d'une decennie. Sachant que la plupart des modélisateurs actuels en sciences humaines et sociales se situent plutôt dans un entre-deux sur le plan technique (ni experts informaticiens, ni débutants), la proposition faite par les ingénieurs de l'ISC-PIF pourrait bien s'avérer être ce \enquote{chaînon manquant} qui permettrait d'enclencher une véritable démocratisation des usages du HPC pour la modélisation en géographie, et plus généralement pour la modélisation en SHS.
 
-\paragraph {Vers une plateforme intégrée}
+A partir de là, les aspects plus géomatique prévu dans la plateforme initiale vont être mis entre parenthèse pour se concentrer principalement sur la construction d'un prototype de méthodologie d'exploration pour SimpopLocal appuyé par MGO et OpenMOLE. %De part la nature de la plateforme, dédié avant tout à la l'exploration des modèles de simulation, l'essentiel des activités de développements par se focaliser sur l'amélioration de ce processus, et va déboucher sur plusieurs innovations au croisement des différents domaines.
 
-Plutôt que de réinventer une nouvelle fois la roue, pourquoi alors ne pas intégrer les outils qui manque aux géographes et aux modélisateurs en sciences humaines et sociales directement dans OpenMole, participant ainsi d'une démarche cumulative bénéfique à tous.
+\paragraph {Vers la construction d'une plateforme intégrée}
+
+Plutôt que de réinventer une nouvelle fois la roue, pourquoi alors ne pas \textbf{intégrer} les outils qui manque aux géographes et aux modélisateurs en sciences humaines et sociales directement dans OpenMOLE, participant ainsi d'une démarche cumulative bénéfique à tous.
+
+Si la suite de cette thèse se focalise pleinement sur la mise en oeuvre des outils et des méthodes susceptible de fournir une évaluation plus systématiques des modèles de simulations dans les workflows, ce projet d'une plateforme intégrée d'orientation plus géomatique ne reste pas lettre morte.
+
+L'intérêt d'une plateforme comme OpenMOLE c'est qu'elle propose une structure ouverte à l'intégration : 
 
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-\item Ajouter des connecteurs en entrées / sorties vers les bases de données dans les \textit{workflows}
-\item  Ajouter une possibilité de visualiser des données géographiques dans la plateforme
-\item  Ajouter des tâches pour décrire ses propres scripts d'analyses statistiques dans la plateforme
-\item  Réaliser un workflow utilisant des algorithmes génétiques Dans openMOLE.
+\item Ajouter des connecteurs en entrées / sorties vers les bases de données. dans les \textit{workflows}
+\item Ajouter une possibilité de traiter et de visualiser des données géographiques dans la plateforme (avec GeoTools, ou JTS par exemple).
+\item Ajouter des tâches pour le traitement de données massives.
+\item etc.
 \end{enumerate}
 
-A partir de là, les aspects plus géomatique prévu dans la plateforme initiale vont être mis entre parenthèse pour se concentrer principalement sur la construction d'un prototype de méthodologie d'exploration pour SimpopLocal appuyé par OpenMOLE. De part la nature de la plateforme, dédié avant tout à la l'exploration des modèles de simulation, l'essentiel des activités de développements par se focaliser sur l'amélioration de ce processus, et va déboucher sur plusieurs innovations au croisement des différents domaines.
+Un autre projet d'intégration a été mené durant l'année 2013, et celui a mobilisé deux stagiaires sur 2 et 6 mois (Benjamin Bernard et Cyril Jayet). L'objectif était d'intégrer dans OpenMOLE un outil de \enquote{visualisation scientifique} pouvant être couplé de façon flexible avec les données circulant en sorties des tâches de \textit{workflows}, comme le propose la figure \ref{fig:visu_projet}. Devant les possibilités offertes par les librairies de visualisation javascript, le choix du support pour construire les visualisations (un simple graphique XY dans un premier temps) s'est porté sur un navigateur Internet. Ce projet était relativement complexe sur plusieurs aspects. Il fallait gérer l'intégration d'un navigateur Internet dans OpenMOLE, coupler un tracé des visualisations en Javascript dans un navigateur avec un flux de données en Scala, et enfin gérer l'affichage de données de façon synchrone ou asynchrone. En effet, les modèles de simulations s'exécutant sur un environnement distribué, les données sont effectivement récupérés de façon asynchrone par OpenMOLE.
+
+\begin{figure}[htbp]
+	\begin{sidecaption}[fortoc]{Le plan d'expérience propose de faire varier la densité du modèle de $0$ à $100$ par pas de $10$, avec $5$ réplications pour chacune de ces variations de densité. Le résultat est directement visible pendant l'exécution des simulations sur grille de calcul grâce au plugin implémenté dans OpenMOLE. Le bouton \foreignquote{english}{refresh} permet d'afficher les dernières données récupérées par OpenMOLE. Le \textit{mapping} permet de changer les variables en $x$ et $y$ en fonction des entrées et des sorties de tâches disponible dans le \textit{workflow} : $seed$, $density$, $t_{end-of-fire}$ }[fig:visu_projet]
+		\centering
+		\includegraphics[width=0.9\linewidth]{leftdoenetlogo_visu.pdf}
+  \end{sidecaption}
+\end{figure}
+
+Le prototype a bien été implémenté et testé avec l'aide de Robin Cura, l'auteur, et les deux stagiaires. Toutefois ce développement n'a pas pu être maintenu dans le temps. OpenMOLE disposant de sa propre autonomie et de sa propre feuille de route, les objectifs définis initialement peuvent changer très rapidement. L'interface graphique sur lequel notre prototype s'appuyait en 2013 a été abandonné pendant plus d'un an et demi le temps de son redéveloppement et de son transfert dans un navigateur Internet. OpenMOLE devenant client/serveur, ce qui implique des changements importants d'architecture. De ce fait, les développements réalisés sur le prototype de visualisateur réalisé en 2013 doivent être revu intégralement au regard de ces changements. Ce point illustre aussi la difficulté du travail disciplinaire lorsque il y a un différentiel entre les équipes en terme de force de développement. Le logiciel OpenMOLE est en effet amendé tout les jours, voire plusieurs fois par jours, par deux développeurs qui opère sa construction à plein temps. Construire un plugin qui s'appuie sur les concepts de fond du logiciel comme on a tenté de le faire (interface graphique, implémentation interne des workflow, communication entre le coeur métier du logiciel et l'interface graphique, etc.) alors même que ceux-ci continuent d'évoluer est un travail qui peut se faire uniquement en se calant sur le rythme de développement des autres développeurs. La nouvelle interface est encore en cours de développement par Mathieu Leclaire, il faudra donc encore attendre l'officialisation et la stabilisation de celle-ci pour envisager plus sereinement la reconstruction de ce plugin de visualisation, dont l'intérét reste entier. Plus de détails, en particulier technique, peuvent être trouvés dans les rapports de stage de \textcite{Bernard2013} et \textcite{Jayet2013}.
 
 \paragraph {Retour sur les étapes importantes d'un démarche prototype}
 
@@ -1156,20 +1195,28 @@ A partir de là, les aspects plus géomatique prévu dans la plateforme initiale
 
 Cette liste se présente comme un résumé des développements intégrant trois objets de recherche, le modèle SimpopLocal, la librairie d'algorithme évolutionnaires MGO, et OpenMOLE.
 
-De façon générale, le détail des objectifs et les enjeux thématique justifiant la création du modèle SimpopLocal sont décrits très en détail dans la thèse de Clara Schmitt \autocite{Schmitt2014} et dans un article écrit avec Romain Reuillon et Denise Pumain \autocite{Schmitt2015}. Cette dernière publication est reproduite et complété par quelques visuels en annexe \ref{sec:simpoplocal}. 
+De façon générale, le détail des objectifs et les enjeux thématique justifiant la création du modèle SimpopLocal sont décrits très en détail dans la thèse de Clara Schmitt \autocite{Schmitt2014} et dans un article écrit avec Romain Reuillon, Denise Pumain et Clara Schmitt \autocite{Schmitt2015}. Cette dernière publication est reproduite et complété par quelques visuels en annexe \ref{sec:simpoplocal}. 
 
 \begin{itemize}[label=\textbullet]
 %\item \textbf{1981 (CC P1)}
+
 \item {\textbf{Janvier 2010}} Le projet de modéle multi-agents SimpopLocal commence, des réunions ont lieu tous les 15 jours environ. L'implémentation en Netlogo se fait de façon presque immédiate après quelques premières réunions.
+
 \item {\textbf{Janvier 2010}} Rencontre avec Romain Reuillon, Mathieu Leclaire et Jérémy Fiegel à l'ISC-PIF.
+
 \item {\textbf{Mars 2010}} Signature d'une convention devant l'intéret commun des deux partis.
+
 \item {\textbf{Mars 2010}} Suite aux expériences déjà réalisées de son côté avec les algorithmes génétiques, Romain Reuillon nous demande de réflechir à la formalisation des sorties de notre modèle. Autrement dit, la question \enquote{Qu'est-ce que vous voulez démontrer avec votre modèle ? } s'impose comme une question préalable à la compréhension entre les deux équipes.
+
 \item {\textbf{Mars 2010}} Arnaud Banos demande l'inscription de Géographie-cités auprès de l'organisme de certification.
+
 \item {\textbf{Juin 2010}} De premiers \textit{workflows} utilisant SimpopLocal sont executés sur la VO des systèmes complexes. Les recherches pour essayer de caractériser de façon plus automatique les sorties du modèle démarrent ce même mois.
 
 \item {\textbf{Octobre 2010}} Première présentation du projet d'utilisation d'une grille de calcul pour le calibrage du modèle lors des journées Grid Day.
 
 \item {\textbf{Novembre 2010}} Les premiers plans d'expériences pour explorer le modèle génèrent un grand volume de données. Même aidé par des résumés visuels, il est très difficile de faire un tri manuel à la recherche des solutions intéressantes. Il est proposé de basculer sur une évaluation des modèles de simulations a priori, en utilisant des critères quantitatifs (durée des simulations, seuil de population à atteindre) et qualitatifs (recherche d'une lognormalité dans la hierarchisation des peuplements).
+
+\item {\textbf{Novembre 2010} - \textbf{Janvier 2011} } Les différents objectifs pour évaluer SimpopLocal sont implémentés par Sébastien Rey dans une tâche indépendante qui peut être executée une fois la série de réplications executés. 
 
 \item {\textbf{Janvier 2011}} Le projet intègre l'ERC GeoDivercity obtenue par Denise Pumain. OpenMOLE devient la plateforme référente, et l'ancien projet est mis en suspens pour se concentrer uniquement sur la réalisation d'un prototype de démarche visant l'automatisation du calibrage sur le modèle SimpopLocal.
 
@@ -1203,7 +1250,7 @@ De façon générale, le détail des objectifs et les enjeux thématique justifi
 
 \item {\textbf{Octobre 2012 - Mars 2013}} Une nouvelle problématique se pose à l'équipe. Les résultats rapportés par les algorithmes évolutionnaires propose des jeu de valeurs de paramètres de qualités très en dessous de ce qui est attendu d'une telle selection. Après une campagne d'exploration (Sébastien Rey) dédié à l'étude de la variabilité lié à l'aléa dans SimpopLocal, on s'apercoit que le nombre de réplications ($30$) est largement insuffisant pour que l'optimiseur puisse opérer une selection fiable sur la base d'une médiane pour chaque objectif (voir section \ref{sec:MGO} pour un exemple). Certains solutions ont pu être selectionnés par chance sur la base d'une bonne série, et comme l'optimiseur ne réévalue jamais les meilleurs solutions selectionnés, ces solutions demeure jusqu'à la fin de l'optimisation. $100$ réplications apparait comme un minimum, or ce n'est pas faisable, car cela multiplie la durée d'expérimentation par un facteur supérieur à deux. Une des solutions implémenté par Romain Reuillon en Mars 2013 est de rester à $30$ réplications, mais d'intégrer dans MGO une méthode de compensation de la stochasticité par une réévaluation aléatoire des meilleures solutions retenus par l'optimiseur \autocite{Pietro2004}. 
 
-\item {\textbf{Février 2013}} L'équipe présente les résultats obtenus sur SimpopLocal avec l'aide des deux méthodes d'explorations : calibrage par algorithme évolutionnaires, et analyse de sensibilité en utilisant la méthode des profils. 
+\item {\textbf{Février 2013}} L'équipe présente les résultats obtenus sur SimpopLocal avec l'aide des deux méthodes d'explorations : calibrage par Algorithmes Evolutionnaires, et analyse de sensibilité en utilisant la méthode des profils. 
 
 \item {\textbf{Avril 2013}} Le modèle SimpopLocal est décomposé en brique réutilisable selon la même méthode qu'utilisé pour MGO et intégre ensuite la nouvelle plateforme de construction de modèle générique SimPuzzle. Celle-ci a pour vocation d'aide à la mutualisation des hypothèses implémentés pour les différents modèles, qui peuvent ensuite être réutilisé plus facilement dans de nouvelles compositions. L'idée d'un versionnement des hypothèses se concrétise un peu plus. 
 
@@ -1211,156 +1258,82 @@ De façon générale, le détail des objectifs et les enjeux thématique justifi
 
 \end{itemize}
 
-
-%A PLACER : L'exploration des modèles devient dès lors qu'on lui en donne l'occasion, le pilier central d'une réflexion qui semble rejaillir sur l'ensemble des développements, qu'il soit thématique, méthodologique, ou technique.  Il a donc fallu d'abord se déposséder de l'idée de plateforme pour l'évaluation des modèles tel que nous l'avions imaginé, pour la reconstruire à nouveau au travers d'un co-développement étroit avec des ingénieurs spécialisés dans le HPC. Une ressource informatique qui reste à ce jour le seul moyen d'explorer les modèles de simulation, et cela depuis les années 1980, date ou les géographes avaient déjà préssenti la nécessité d'un tel projet \ref{p:experience_minuit}. + Schéma
-
-\hl{T} : L'exploration va continuer à etre le pilier 
-
-Je participe également au développement d'un autre projet sur toute l'année 2013, malheureusement celui-ci ne pourra pas être présenté car il a été mis en suspens par l'évolution récente d'OpenMOLE.
-
+Avec l'avancement des différents projets de l'ERC GeodiverCity, l'exploration des modèles devient le pilier central d'une réflexion commune qui semble rejaillir sur l'ensemble des développements, qu'ils soit thématiques, méthodologiques, ou techniques.
 
 \subsubsection{Quatrième moment, au delà du prototype}
 \label{sssec:quatrieme_moment}
 
-\begin{figure}[htbp]
+\begin{figure}[t]
 \begin{sidecaption}[fortoc]{ Ensemble des activités organisées autour de l'exploration des modèles de simulation. Les cercles de couleurs représentent des activitées, et les fleches des relations entres les différentes activités.}[fig:S_explo_calendrier]
   \centering
  \includegraphics[width=.9\linewidth]{explorations_calendrier.pdf}
   \end{sidecaption}
 \end{figure}
 
-L'activité d'exploration semble être le pivot central par lequel évolue notre base d'outils, et notre activité de modélisation, comme le présente la figure \ref{fig:S_explo_calendrier}. 
 
-\begin{enumerate}[label={},noitemsep,  parsep=0pt, partopsep=0pt, labelindent=0pt, leftmargin=*]
+Le quatrième moment démarre avec la mise en route de nouveaux projets, de nouvelles dynamiques, et l'arrivée de nouvelles personnes dans l'équipe modélisation (Paul Chapron, Clémentine Cottineau, Elfie Swaerts, Guillaume Chérel). Il n'est pas possible de lister en détail l'ensemble des développements menés par cette équipe en 2014 tellement ceux-ci sont nombreux. On se contentera de nommer les projets en indiquant pour certains les avancées qu'ils représentent. Les enjeux et les challenges qui accompagne cette interdisciplinarité vécue sont relatés plus en détail dans \textcite{Chapron2014}.
+
+L'activité d'exploration continue d'être un catalyseur pour différents projets, c'est donc le centre de cette figure \ref{fig:S_explo_calendrier} choisie pour mettre en perspective les différentes activités passés et en cours. 
+
+\begin{myitemize2}
 		
-\item {\circled{1}} Des centaines d'heures ont été accumulés pendant toute la durée du projet dans les échanges avec Romain Reuillon et Mathieu Leclaire autour de la construction de \textit{workflows}. Cette interaction a permis de tester, debugger, améliorer la syntaxe DSL utilisé pour décrire les workflow, mais aussi de tester la robustesse du logiciel sur un cas d'utilisation concret, sur plusieurs expérimentations de durées importantes.
+\item [1] \textbf{\#Exploration \#OpenMOLE} \\ Les échanges avec Romain Reuillon et Mathieu Leclaire autour de la construction de \textit{workflows} représentent plusieurs centaines d'heures de travails cumulées. Cette interaction a permis de tester, corriger, améliorer la syntaxe DSL utilisé pour décrire les \textit{workflow}, mais aussi de tester la robustesse du logiciel sur un cas d'utilisation concret, nécessitant des expérimentations de durées importantes.
 
-\item {\circled{2}} Les différentes campagnes d'explorations menées vont avoir des retombées sur la construction MGO, et le couplage entre entre openMOLE et MGO, ce qui en retour améliore les explorations.
-
-Intégration et Amélioration des algorithmes génétiques pour openMOLE
-EA Steady State, Ilots permettent de mieux utiliser le parallélisme des méta-heuristique et donc de rendre plus efficiente les explorations appuyés sur cette utilisation (Aout 2012) 
-
-Simplification des Workflows pour l'exploration utilisant des meta-heuristique (à partir de Mars 2012)
-
-\item \circled{3}  Boucle reliant l'activité d'exploration et l'activité de construction des modèles. 
-
-L'exploration des résultats a posteriori s'avère incertaine et trop couteuse (durée d'execution, volume données), ce qui nous renvoie à un questionnement a priori des modèles en utilisant des méta-heuristiques ( Exploration <-> Modèlisation )
-- prototype de calibration par inversion 
-
-L'exploration permet d'avoir un retour sur les hypothèses et la façon dont elles sont implémentées ( Exploration > Modèlisation ), mais la construction modifie aussi la façon dont on va penser l'exploration
- construction par incrément EBIMM
-		
-\item \circled{4} Boucle liant l'activité de construction MGO, Activité de construction du modèle, Exploration des modèles
+\item[2] \textbf{\#OpenMOLE \#MGO \#Exploration} \\ Les différentes campagnes d'explorations menées vont avoir des retombées sur la construction de la librairie logicielle MGO, le couplage entre OpenMOLE et MGO, ce qui en retour améliore les explorations.
 
 \begin{enumerate}
-\item  Amène le développement ou l'amélioration de méta-heuristique pour l'exploration, dont l'application impacte en retour le développement des modèle
- Hypervolume / SMS-MOEA (Juillet 2012)
-Cp-Profile (fevrier 2013)
-PSE (2014)
-Epsilon Dominance (Decembre 2012)
-Re-Evaluation de l'archive (Mars 2013)
-
-\item Amène l'amélioration MGO et l'utilisation de SimPuzzle pour construire et d'explorer des familles de modèles
-- Création de SimFamilly (mai 2014)
-
-\item Les modèles peuvent être amené à être réécrit pour satisfaire des raisons de performance, ou de modularité
-- Réécriture SimpopLocal (mars-avril 2012)
-- Intégration SimpopLocal dans SimPuzzle (Avril 2013)
-- Intégration Marius dans Simpuzzle (Mai 2013)
-
-\item Les modèles sont modifiés pour être utilisé par les métaheuristiques, et celle-ci mettent à l'epreuve en retour l'implémentation du modèle vis à vis des objectifs fixés. Ce processus intervient dans la validation interne des modèles en soulevant les erreurs, les comportement contre-intuitif, les zones de valeurs de paramètres bloquant, ou les conditions d'arrêt trop ou pas assez stricte pour l'exploration. L'introduction d'objectifs sous forme de critère multiples pour évaluer les sorties de la simulation de façon automatique participe également de la formalisation et de la construction des connaissances, entrainant souvent pour les modélisateurs un retour sur l'empirie.
- SimpopLocal (janvier 2010)
- Marius (janvier 2013)
+\item Intégration des algorithmes génétiques dans les \textit{workflows} OpenMOLE : \textit{EA Generational} $<$ \textit{EA Steady State} $<$  \textit{EA Island} (Aout 2012)  sont classés ici par degré d'utilisation du parallélisme. L'objectif est de rendre toujours plus efficientes les explorations 
+\item Grâce au concept de \textit{workflow puzzle}, l'écriture avec le DSL de \textit{workflows} utilisant les Algorithmes Evolutionnaires est grandement simplifié (Mars 2012)
 \end{enumerate}
 
-\item \circled{5} Boucle liant OpenMole et Mgo, le framework est repensé pour être plus beaucoup modulaire, et donc plus facilement utilisable sous forme de tâche dans openMOLE.
-Redeveloppement MGO (Mai 2011)
-
-\item \circled{6}  Construction d'outils d'AD intégré à openMOLE pour la visualisation de sorties d'exploration (Janvier - Mai 2013)
-
-\item \circled{7}  Construction d'outils plus d'AD pour l'exploration de sortie de simulation de la famille SIMPOP 
-Varius (début 2015)
- TrajPOP (septembre 2011)
-
-
-
+\item[3] \textbf{\#Exploration \#Modeles} \\ L'exploration des résultats \textit{a posteriori} s'avère incertaine et trop couteuse (durée d'exécution, volume de données importants), ce qui nous renvoie à un questionnement \textit{a priori} des modèles en utilisant des méta-heuristiques.
+\begin{enumerate}
+	\item Réalisation du prototype de calibrage inversé utilisé sur SimpopLocal (Janvier 2010 - Juillet 2013 )
+	\item Utilisation d'un nouveau type d'analyse de sensibilité avec la méthode CP-Profile (idée en Juillet 2012, réalisation Décembre 2012 , premiers résultats Février 2013 )
+	\item L'exploration permet d'avoir un retour sur les hypothèses et la façon dont elles sont implémentées ( Exploration > Modèlisation ), mais la construction modifie aussi la façon dont on va penser l'exploration : construction par incrément EBIMM
 \end{enumerate}
 
+\item [4] \textbf{ \#MGO \#Modeles \#Exploration} \\ Boucle liant l'activité de construction MGO, l'activité de construction du modèle, et l'activité d'exploration des modèles.
 
+\begin{enumerate}
+\item  Le développement de nouvelles méta-heuristiques pour l'exploration impacte notre connaissance des dynamiques du modèle, et donc modifie l'activité de construction des modèles.
+ \begin{enumerate}
+	\item Hypervolume et SMS-MOEA (Juillet 2012)
+	\item CP-Profile (Décembre 2012)
+	\item PSE (janvier 2014)
+	\item Epsilon Dominance (Decembre 2012)
+	\item Re-Evaluation de l'archive (Mars 2013)
+\end{enumerate}
 
-Le quatrième moment démarre avec la mise en route de nouveaux projets, de nouvelles dynamiques, et l'arrivée de nouvelles personnes dans l'équipe.
+\item Les modèles peuvent être amené à être réécrit pour satisfaire des raisons de performance, ou de modularité :
+\begin{enumerate}
+	\item Réécriture de SimpopLocal (mars-avril 2012)
+	\item Intégration de SimpopLocal dans SimPuzzle (Avril 2013)
+	\item Réécriture de Marius pour Simpuzzle (Mai 2013)
+\end{enumerate}
 
+\item La création de SimFamilly (mai 2014) s'appuie sur MGO, OpenMOLE et SimPuzzle, et modifie profondément la façon de construire les modèles. Les modèles sont générés de façon automatique à partir des hypothèses entrées pour une famille de modèle dans SimPuzzle, l'optimiseur recherche les meilleurs combinaisons d'hypothèses, et de paramètres accompagnant les hypothèses, pour ajuster les critères qu'on lui a transmis. 
 
+\item Les modèles sont également modifiés pour être utilisé par les métaheuristiques, et celle-ci mettent à l'épreuve en retour l'implémentation du modèle vis à vis des objectifs fixés. Ce processus intervient dans la validation interne des modèles en soulevant les erreurs, les comportement contre-intuitif, les zones de valeurs de paramètres bloquant, ou les conditions d'arrêt trop ou pas assez stricte pour l'exploration. L'introduction d'objectifs sous forme de critère multiples pour évaluer les sorties de la simulation de façon automatique participe également de la formalisation et de la construction des connaissances, entrainant souvent pour les modélisateurs un retour sur l'empirie.
+\begin{enumerate}
+ \item SimpopLocal (janvier 2010)
+ \item Marius (janvier 2013)
+ \item Indus (2014)
+ \end{enumerate}
+\end{enumerate}
 
+\item[5] Boucle liant OpenMole et Mgo, le framework est repensé pour être plus beaucoup modulaire, et donc plus facilement utilisable sous forme de tâche dans openMOLE : Redeveloppement MGO (depuis Mai 2011)
 
+\item[6] Intégration dans openMOLE d'un prototype d'outil permettant de construire des visualisations en temps réels sur les sorties de tâches OpenMOLE (Janvier - Septembre 2013)
 
+\item[7]  Construction d'outils pour l'exploration des sorties de simulation des modèles réalisés
+ \begin{enumerate}
+ \item TrajPOP (septembre 2011)
+ \item Varius (début 2015) 
+ \end{enumerate}
 
+\end{myitemize2}
 
-La première vient du fait que la thèse ici présenté co-évolue dans le temps et dans les thématiques abordés avec les réalisations d'une autre doctorante au laboratoire Géographie-cités. Ainsi, c'est avec l'aide de Clara Schmitt, ingénieur agronome également titulaire d'un master 2 de Géographie, que nous allons travailler pendant plus d'une année et demi à la réalisation d'un modèle porteur des problématiques chères à la thèse de Clara Schmitt, sur lequel nous reviendrons également dans ce manuscrit.
-
-C'est à peu près a ce moment là, et sous l'impulsion d'Arnaud Banos, alors président de l'Institut des Systèmes Complexes de Paris Ile-De-France, que va naître dans une nouvelle impulsion, une deuxième collaboration avec Romain Reuillon et Mathieu Leclaire, tout deux ingénieurs créateurs d'un logiciel développé dans l'objectif de répondre à des problématiques qui nous le verrons, viendront recouper directement des besoins précédemment évoqués pour l'exploration et l'analyse du modèle.
-
-
-à fait favorable au changement des pratiques dans la construction et l'évaluation des modèles de simulation
-
-% Résurgence de la problématique HPC.
-
---
-
-Au détriment peut-être de constructions techniques, qui il faut bien le dire, dans un tel contexte d'inter-disciplinarité, sont éphémères.
-
-Il faut s'imaginer sur quelles bases les outils ont été développés. Romain et Mathieu sont deux développeurs à plein temps sur un logiciel qui était jusqu'il y a peu encore en complète construction.
-
-Dans ces conditions, vivre l'inter-disciplinarité c'est accepter d'un point de vue logiciel la construction d'une maison sur des sables mouvants. Vous vous arretez de soutenir la maison une semaine, un jour parfois, et la voilà à terre.
-
-Les travaux qui paraissent en 2014, puis 2015 sont le fruit d'une inter-disciplinarité \textbf{vécue}, j'insiste sur ce dernier mot car on parle souvent plus d'inter-disciplinarité qu'on ne la pratique réellement, avec ses défis \autocite{Chapron2014} qui s'inscrit délibérement dans le mouvement \enquote{slow science}.
-
-
- 2009 et 2010, l'objectif partait d'un certains nombre de frustration prenant racine  dans l'observation des limites des pratiques existantes dans le laboratoire et dans la littérature, pour évaluer les modèles existants, mais également les modèles en cours de construction.
-
-  - celle de ne pas comprendre la dynamique de nos modèles, pourtant encore très simple
-  - la constatation dans la littérature d'une certaine d'outils support des méthodes
-
-
-
-
-Entre 2009 et 2010, deux rencontres
-
-- Première rencontre avec Thomas Louail, Denise Pumain, Hélène Mathian, Léna Sanders autour de Simpop2
-
-- Deuxième rencontre avec Arnaud Banos, Clara Schmitt
-
-- Troisième rencontre avec Romain Reuillon, Mathieu Leclaire, Jeremy Figel
-
-
- ,  et illustre depuis bientot 4 ans un travail d'équipe tel qu'il peut s'établir au jour le jour, amenant avec lui ses forces et ces faiblesses. De par son articulation, tout l'enjeu de cette thèse sera je l'espère, de prouver, que oui, le total fait bien plus que la somme des parties.
-
-Deux grandes collaboration viendront successivement marquer profondément la nature, l'avancement et le contenu de mes travaux.
-
-
-Loin d'être nouvelle et teinté de maladresse, ces collaborations participent d'un processus qui s'inscrit et prolonge un mouvement historique, qui de ce fait évolue, et se renouvelle sans cesse depuis ces 30 40? dernières années au laboratoire Géographie-cités (+ref ancien ?, ArcheoMedes, Transmondyn). Car c'est ainsi  au gré de rencontres interdisciplinaires parfois hasardés, mais le plus souvent recherchés, que se mêlent, se confrontent, s'exposent à la fois les expériences humaines et techniques.
-
-Cet héritage disciplinaire solide fournit à notre étude un réseau, des pratiques, des théories, des outils  qui dans leur développement expriment à la fois partie de réponses tout autant que l'expression de leur propres limites. L'arrivée de nouvelles problématiques, quelles soient issues d'une reformulation ou d'un nouvel apport à la discipline, nous fournit une occasion supplémentaire de venir enrichir par l'apport de nouvelles méthodologies, de nouveaux outils, cet horizon toujours grandissant de pensées et de pratiques qui forment la communauté des systèmes complexes auquel nous appartenons.
-
-
-
-
---
-
-Voici ce pour quoi openMOLE est un outils indispensable pour faire le liens entre les usages en SHS, et ces ressources distribués.
-
-Les géographes francais utilisant actuellement la grille de calcul pour l'execution de simulation sont rattachés à la VO des système complexe européenne (\textit{vo.complex-systems.eu}), et sont principalement issue du laboratoire Géographie-cités à Paris, et du laboratoire GEOLAB de Limoges.
-
-Sans cette collaboration à la fois humaine et technique avec l'Institut des systèmes complexes de Paris (ISC-PIF), ce premier contact avec le \textit{Grid Computing} n'aurait probablement pas pu se faire.
-
-% Cette plateforme peut elle faire autre chose ? Vais je pouvoir partager mon modele ou mon experience avec d'autres scientifiques ?
-
-Dans un article daté de 2015, johnatan dursi
-\href{http://www.dursi.ca/hpc-is-dying-and-mpi-is-killing-it/}{hpc is dying}
-
-\subsection{Historique}
-
-Evidemment il faut citer le travail important réalisé sur le prototype par Amblard, à la fois dans le démocratisation de la validation, mais également dans les outils.
 
 \subsection{Principes et mise en oeuvre}
 
@@ -1415,6 +1388,16 @@ Evidemment il faut citer le travail important réalisé sur le prototype par Amb
 
 Le choix est fait dans cette section de faire appel à la fois un modèle jouet (pour la compréhension générale), mais également un modèle réel (pour montrer que cela marche).
 
+\subsubsection{un modèle de simulation appliqué SimpopLocal}
+
+Seul un résumé du projet SimpopLocal sera présenté ici, car la présentation détaillé du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015} (joint en annexe) , un article paru dans JASSS en 2015 \autocite{Reuillon2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}.
+
+Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaire pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette inter-disciplinarité \autocite{Chapron2014}.
+
+Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
+
+
+
 \subsubsection{un modèle jouet sur les fourmis}
 
 Le modèle de simulation \textbf{Ants} est une reproduction par \textcite{Wilensky1997} d'un modèle originellement en StarLogo en Netlogo. Celui-ci est disponible sur le \href{http://ccl.northwestern.edu/netlogo/models/Ants}{@site} de Netlogo, et par défaut dans la bibliothèque de modèle du logiciel.
@@ -1432,15 +1415,6 @@ Ce modèle est constitué de trois paramètres :
 \item Un taux $Evaporation-rate$ qui controle l'évaporation de la trace chimique
 \item un taux $Diffusion-rate$ qui controle la diffusion de la trace chimique
 \end{itemize}
-
-\subsubsection{un modèle de simulation appliqué SimpopLocal}
-
-Seul un résumé du projet SimpopLocal sera présenté ici, car la présentation détaillé du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015} (joint en annexe) , un article paru dans JASSS en 2015 \autocite{Reuillon2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}.
-
-Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaire pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette inter-disciplinarité \autocite{Chapron2014}.
-
-Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
-
 
 
 %Le \textit{framework} MGO (Multi Goal Optimization)
@@ -2612,7 +2586,6 @@ Question de la distribution des algorithmes évolutionnaires. Quel cas d'utilisa
 
 % fait apparaitre l'optimisation comme une étape supplémentaire dans l'expérimentation,
 
-% %BehaviorSearch follows in the tradition of NetLogo [Wilensky, 1999, 2001; Tisue & Wilensky, 2004], and Logo [Papert, 1980] before it, in embracing the twin design goals of “low threshold” and “high ceiling”. By this we mean that the BehaviorSearch tool should be both easy for beginners to learn and use (“low threshold”), while also providing advanced features that will allow expert modelers to engage in cutting-edge research and analysis (“high ceiling”). To be clear, the “low threshold” goal for NetLogo, which aims to support use by elementary school students, is lower than that of BehaviorSearch, which primarily targets NetLogo’s research audience. However, increasingly NetLogo is being used by undergraduates or even high school or middle school students who are developing agent-based models for research projects, and we would like BehaviorSearch to be accessible to these audiences, as well as researchers from various disciplines who are non-expert programmers but have adopted ABM methodologies for their research. Just as NetLogo strives to make the creation of agent-based models accessible to children and novices, BehaviorSearch aims to facilitate model analysis by making search and optimization techniques accessible to all modelers.
 
 % State of the Art
 % Flexibilité
@@ -2631,44 +2604,14 @@ Un deuxième filtre permet d'éliminer également toutes les librairies qui sont
 
 Afin de satisfaire les objectifs que nous avons fixés, la librairie doit pouvoir fonctionner avec OpenMOLE, car une des tâches de ce dernier va être d'orchestrer de façon transparente la parallélisation de ces algorithmes évolutionnaires, ce qui suppose une interaction assez fine entre les deux outils, et un langage informatique compatible avec Java ou Scala, les deux langages sur lesquels est construit OpenMOLE.
 
-\subsubsection{Les approches intégrées}
-\label{sssec:approche_integree}
 
-\paragraph{Le {BehaviorSearch} de Stonedahl}
+\subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
+\label{sssec:choix_lib_EA}
 
-La librairie \textit{BehaviorSearch} développée par Railsback pour Netlogo intègre une librairie d'algorithme génétique.
+%La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie.
 
-Les solutions existantes de couplage, comme le \textit{behavior search} déjà évoqué dans \hl{la section XX} ne sont pas entièrement satisfaisantes, cela sur plusieurs points déjà évoqués et résumés ci-dessous, auxquels on rajoute de nouveaux inconvénients propres à la manipulation avancé des métaheuristiques :
+%Dans notre étude, les \textit{individus} représentent une instance de simulation,
 
-a) Le cycle de vie d'un modèle ne se limite pas forcément à l'établissement d'un seul modèle Netlogo, mais plusieurs, et de complexité différente. Si Netlogo est un outil indispensable de par la force et la rapidité de concrétisation d'une idée scientifique qu'il permet, les scientifiques auto-didacte peuvent rapidement être piégés par des problématiques tenant plus de la \enquote{science informatique} que de leur domaine initial.
-
-b) Le niveau de prise en charge de l'expérimentation est insuffisant pour assurer une recherche reproductible au-delà du seul modèle. Par là il faut comprendre que le protocole scientifique supportant l'évaluation du modèle de simulation n'est pas accessible, or tout comme le modèle, celui-ci possède sa propre voie de construction, et porte au contact du premier une responsabilité dans l'évolution des choix de sa structure interne. Autrement dit, sans la présence de ces deux supports de connaissances, c'est toute une discussion collective qui est rendue plus complexe, alors même que celle-ci se révèle comme un support important, voire même constitutive de ce processus de validation.
-
-c) Le support du parallélisme implicite à ce type de métaheuristique EC en local, c'est-à-dire sur un ordinateur personnel, même lorsqu'il est associé à des techniques pour réduire le nombre d'exécutions des modèles de simulation (en utilisant par exemple du \textit{fitness caching} \autocite[245]{Stonedahl2011a}), ne semble pas suffisants pour une utilisation confortable et répétée d'algorithmes métaheuristiques multi-objectifs. Ces derniers pouvant demander pour des modèles relativement simples et optimisés jusqu'à plusieurs millions d'executions, résultat d'une accumulation d'expérimentation nécessaire pour la construction et l'évaluation du modèle de simulation \autocites{Schmitt2014, Cottineau2014b}. Le framework théorique QBME (\textit{Query-Based Model Exploration}) de Stonedhal est intéressant, et ressemble par certains aspects à la méthodologie POM de Grimm, et permet comme dans cette dernière de questionner la progression du modèle sous la forme d'une question inversée par rapport au questionnement plus traditionnel. On ne se demande plus \enquote{Quels comportements vais je obtenir avec ce jeu de paramètres} mais plutôt \enquote{Quels types de paramètres m'a permis d'obtenir (ou de ne pas obtenir) un certain comportement ?}. Ce type d'analyse se base sur la construction de multiples critères d'évaluation, potentiellement contradictoire, questionnant la dynamique du modèle, et qui il me semble, se rattache plus à l'expression d'une analyse multi-objectifs. Or, les algorithmes proposés par le \textit{BehaviorSearch} se limitent pour le moment à des algorithmes mono-objectif que les cas d'utilisation réels risquent de très rapidement mettre en défaut.
-
-d) Le support ne permet pas à l'heure actuelle de jouer \enquote{facilement} avec les briques mises à disposition par les métaheuristiques, ce qui on l'a vu précédemment va à l'encontre de l'esprit de tels algorithmes. Même si une certaine extensibilité du logiciel a été prévu par le concepteur, sa mise en oeuvre demande des connaissances supplémentaires dans un autre langage de programmation que Netlogo (Scala ou Java), ce qui vient encore surcharger un peu plus les prérequis d'un utilisateur débutant qui doit déjà explorer le domaine des algorithmes évolutionnaires.
-
-Même si l'auteur est effectivement d'accord avec le concepteur du \textit{BehaviorSearch} pour dire que cet outil constitue en lui même déjà un grand pas vers la démocratisation de techniques d'expérimentation plus évoluées jugées nécessaire pour améliorer les pratiques des débutants, nous pensons qu'il est possible d'aller encore beaucoup plus loin. A ce titre, le couplage que nous visons dans ce projet se rapproche des visions d'avenir évoqués par le concepteur, dont la dernière version du logiciel est daté de 2013 \textcite[295]{Stonedahl2011a} \foreignquote{english}{In the not-so-distant future I envision in a “begin parallel search” button appearing in toolkits like NetLogo that would seamlessly launch dozens or hundreds of simultaneous genetic algorithms searches on a remote grid/cluster, reporting back the most promising results to the user as they are discovered in real-time.} La différence c'est que ce bouton n'est pas envisagé dans Netlogo, car ce n'est pas le propre de cet outil, mais dans un logiciel tel qu'openMOLE, dont la fonction est entièrement dédié à l'exécution de tâche en parallèle sur des environnements locaux (un ou plusieurs processus d'une machine), ou distribués (sur une grille de calcul, ou un cluster d'université)
-
-Si on envisage en effet la construction de modèles sur la base d'une alternance régulière entre construction de modèle et évaluation, il est tout à fait possible et même certain que l'expérimentateur soit un jour ou l'autre confronté à une ou plusieurs limitations provenant de la chaine de progression naturelle prévue par les concepteurs de cet outil \foreignquote{english}{Netlogo(for building the model) => Behavior Space (for simple model analysis) => BehaviorSearch (for more advanced analysis and exploration)} \autocite[340]{Stonedahl2011a} ? Quels sont les choix à disposition des modélisateurs débutants ayant expérimenté l'une ou l'autre de ces difficultés ? (\hl{A voir si cela ne remonte pas dans le chapitre 3 pour clôturer la partie netlogo})
-
-En résumé, les librairies déjà intégrées au logiciel de modélisation, comme le \textit{BehaviorSearch} de Netlogo, sont limitées en termes d'algorithmes, d'accès la puissance informatique nécessaire, et reste liées à un seul et unique support alors même que le modèle peut être amené à migrer de plateforme. On en déduit que cette solution, bien qu'utile pour du prototypage et de l'apprentissage, ne permet pas d'envisager sereinement la construction d'un modèle ou d'une expérimentation sur une durée plus longue.
-
-\paragraph{Les algorithmes EC dans Mason}
-
-Le framework de développement de simulation multi-agent MASON (\textit{Multi-Agent Simulation Of ...}) présenté pour la première fois en 2003 tient d'un effort conjoint entre la section d'\textit{Evolutionary Computation} du laboratoire de science informatique et le \textit{Center for Social Complexity} tout deux de la George Mason University. Ecrit en Java, solidement documenté, de développement ancien, associé depuis les débuts à un laboratoire spécialisé auteur d'une librairie datant de 1998 dédié aux EC nommée ECJ (1998), les deux logiciels étant développés par les mêmes personnes et régulièrement mis à jour ... ce framework apparait au premier abord comme un challenger sérieux pouvant se substituer à Netlogo sur des projets plus complexes.
-
-MASON se situe sur la même ligne de développement que les librairies de développement multi-agents plus anciennes comme Swarm, Ascape, ou Repast. Tout comme ces dernières, la généricité, la performance et la modularité sont des composantes de l'application au coeur des préoccupations de Sean Luke, un des développeurs à l'origine du projet.
-
-Une des spécificités très fortes de MASON, et qui rend cette librairie vraiment différente des trois autres, tient dans son histoire particulière. Si on en croit le développeur Sean Luke \Anote{sean_luke_mason}, c'est à la suite de sa thèse en 1998 et du développement de la librairie ECJ \Anote{sean_luke_ecj} dédié aux algorithmes d'EC, que celui-ci a ressenti le besoin d'une nouvelle librairie en accord avec ses problématiques de recherches en robotiques. A cette époque déjà, il utilise ECJ pour optimiser le comportement de robots opérant dans un environnement partagé, un domaine de recherche dont on a vu dans la section \hl{ref} que la simulation multi-agents était très liée historiquement. Cette pratique nécessite l'exécution de centaines de milliers de simulations, à la recherche de combinaisons de paramètres satisfaisants les critères dirigeant l'optimisation. La rapidité d'exécution d'une simulation devient un élément clef dès lors que ce sont des milliers, voire des millions de simulations qui doivent être executées en parallèle. C'est donc tout naturellement que celui-ci a initié sa propre librairie de simulation multi-agent, orienté vers l'utilisation efficiente des architectures multi-coeurs et depuis peu multi-ordinateurs (extension D-Mason). MASON étant conçu en parallèle de la librairie \href{http://cs.gmu.edu/~eclab/projects/ecj/}{@ECJ}, les deux outils fonctionnent très bien ensemble, et permettent l'exploitation de ressources informatiques dans des environnements distribués, initialement des clusters \autocite[211]{Luke2014}, bien qu'une \href{http://www.parabon.com/dev-center/origin}{@extension} apparemment payante permette de faire du \textit{Grid Computing}.
-
-ECJ ou Mason sont des outils à destination de développeurs spécialistes lorsqu'il s'agit de coupler les deux outils. Ce point de vue est délibérement assumé par l'auteur dans le manuel de MASON \Anote{sean_luke_masondifficile}, et ECJ \Anote{sean_luke_ecjdifficile}.
-
-Il est toutefois intéressant de voir que malgré des optiques de développements différentes et une réalisation inverse à la nôtre, l'objectif motivant la construction est le même, mettre à disposition des ressources informatiques nécessaires à l'utilisation de méta-heuristiques pour l'évaluation de modèles de simulation. En effet, là ou Luke justifie d'un nouveau framework agent pour rendre efficiente l'utilisation de sa librairie d'EC, c'est pour nous la démarche inverse qui prime, et c'est la nécessité d'intégrer l'optimisation comme pratique standard dans la construction d'un modèle qui justifie d'un framework EC adapté. Les deux approches sont complémentaires, et cette question de l'efficience légitime tout à fait un changement de support de modélisation dès lors qu'on essaye de complexifier les modèles. Car comment évaluer un modèle de simulation dont une seule des exécutions dure plusieurs heures ? Notre approche se veut toutefois plus respectueuse des pratiques existantes, et la réalisation support de l'exploration du modèle, une fois mise en oeuvre, doit concéder aux utilisateurs la même facilité d'accès aux EC, qu'ils utilisent Netlogo, Mason, ou une plateforme de leur initiative.
-
-Notre approche semble se situer d'un point de vue de l'expérience utilisateur entre ces deux voies présentées précédemment.
-
-\subsubsection{Les librairies standards}
 
 Apache Commons
 
@@ -2692,14 +2635,6 @@ Logiciels de l'INRA
 \href{http://esa.github.io/pygmo/}{Pygmo (Python) PaGMO (C++) (ESA)}
 
 \href{http://jgap.sourceforge.net/}{JGAP}
-
-
-\subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
-\label{sssec:choix_lib_EA}
-
-%La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie.
-
-%Dans notre étude, les \textit{individus} représentent une instance de simulation,
 
 \subsection{Bref historique du \textit{framework} MGO}
 \label{ssec:historique_mgo}
