@@ -175,6 +175,32 @@
 }
 \makeatother
 
+\makeatletter
+
+\newcommand{\mymakealabel}[1]{%
+    \begingroup
+    \def\@tempa{#1}%
+    \def\@tempb{\@itemlabel}%
+    \ifx\@tempa\@tempb
+    \endgroup
+        \hss \llap{\textcolor{blue}{\rule{1em}{1em}}}%
+    \else
+    \endgroup
+        \hss \llap{%
+    \circled{#1}%
+        }%
+    \fi
+}
+
+\newenvironment{myitemize2}{%
+    \itemize
+    \let\makelabel\mymakealabel
+    \let\@itemlabel\mydefaultlabel
+}{%
+    \enditemize
+}
+\makeatother
+
 
 %%%%%%%%%%%%%%%%%%
 % INLINE BOX A LA STACK OVERFLOW
