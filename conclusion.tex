@@ -5,25 +5,39 @@
 
 \startcontents[chapters]
 \Mprintcontents
+%%%%%%%%%%%%%%%%%%
+A RECASER : 
+
+Il ressortira de cette analyse toute la spécificité des sciences sociales et de la géographie, qui ne peuvent se satisfaire pour la construction de leurs modèles de simulation d'une vision de la « Validation » déracinée d'un contexte et d'une histoire des pratiques dans la discipline, car le modèle de simulation n'est qu'un type de modèles parmi les autres, souvent mobilisé dans un système de démarches plus complexes (Mathian and Sanders, 2014; Sanders, 2000; Cottineau, 2014)⁠. Ce n'est pas non plus dans l'usage de la modélisation multi-agents, ou d'une modélisation individu-centré plus « complexe à Valider » que niche cette problématique en géographie, mais bien dans l'adoption progressive d'un « projet systémique » (Pouvreau, 2013, page 9)⁠ accumulant et mobilisant les concepts, les méthodes et les outils mathématiques, statistiques et informatiques (Pumain, 2003)⁠ pour repenser la construction des modèles en tenant compte d'une « réalité » désormais comprise dans sa complexité. 
+
+Cette question de la « Validation » déjà en partie abordée dans ce débat clarifiant les acceptations du terme en fonction des disciplines, sera cette fois-ci déconstruit et mis de côté au profit d'une « évaluation »  (Amblard and Phan, 2006)⁠   dont on donnera les implications dans le cadre d'un objectif explicatif, en les plaçant au niveau d'une modélisation dont on a parfois tendance à oublier qu'il s'agit d'une activité de raisonnement scientifique avant d'être un modèle aplani et lissé de toutes ses aspérités (Langlois and Reguer, 2005, page 36)⁠.  
 
 
+Le fait que nous nous trouvions dans une situation quasi-similaire presque trente ans plus tard, dans un projet interdisciplinaire mobilisant la construction et l'exploration de nouveaux modèles de simulation au travers d'une plateforme développée par des ingénieurs de l'ISC-PIF spécialistes dans le calcul intensif, ne pouvait donc pas résulter du seul hasard. De même que des logiciels de modélisation ont permis l'émergence de mouvement pour l'autonomie de géographes modélisateurs (Banos, 2013)⁠, il aura probablement fallu attendre l'émergence de logiciels tel que celui développé par les ingénieurs de l'ISC-PIF (OpenMOLE) pour que puisse se démocratiser dans notre discipline encore faiblement formée à l'informatique l'accès et l'usage à des ressources de calcul HPC dont on a pourtant identifié depuis bien longtemps la nécessité. 
+
+%%%%%%%%%%%%%%%%%%
+
+% Présentation limites des méthodologies existantes
+% Proposition d'une grille générique de lecture
+
+Dans le dernier chapitre de cette thèse, consacré à la description du framework MGO, nous avons montrés qu'il était possible d'offrir une première intégration à cette plateforme OpenMOLE qui soit à la fois bénéfique aux modélisateurs géographes, mais aussi de façon plus générale à l'ensemble des modélisateurs de la communauté des systèmes complexes. 
+
+Dans cette conclusion, il est proposé de pointer quelques insuffisances liées aux méthodes de modélisations existantes, avant de proposer une grille de principes à mettre en oeuvre pour la construction d'une double plateforme en accord avec les remarques théoriques faites sur l'évaluation dans la partie 1 : une plateforme pour la construction de modèle et une plateforme pour l'exploration des modèles. Cette grille nous permettra également de fixer un horizon d'amélioration pour les projets déjà en cours dans cette équipe. 
 
 \section{L'insuffisance des méthodes existantes}
 \label{sec:insuffisance_plateformes}
 
-\paragraph{Le \textit{BehaviorSearch} et le \textit{BehaviorSpace} de Netlogo}
+\subsection{Le \textit{BehaviorSearch} et le \textit{BehaviorSpace} de Netlogo}
 
-Autre initiative remarquée, celle menée par l'équipe dirigée par Wilensky connut principalement pour avoir développé le simulateur Netlogo. Parmi les papiers écrit par Wilensky ces dernières années \autocite{Wilensky2007a} plusieurs se rapport à mettre en avant - comme d'autre l'ont fait dans la communauté \hl{ref Epstein, etc}- l'importance de \enquote{pratiquer la reproductibilité} pour nous et pour les autres. Un des objectifs visés étant la constitution d'une communauté scientifique capable de dégager de nouveaux savoirs par le partage et la discussion collective des modèles. Une recette que Wilensky a appliqué avec succès dans la reproduction de nombreux modèles afin de les faire figurer dans sa plate-forme, et qu'il faut évidemment mettre en perspective des principaux traits faisant toute la valeur du simulateur Netlogo. 
+Une initiative remarquée est celle menée depuis plusieurs années par l'équipe de Wilensky, connut principalement pour avoir développé le simulateur Netlogo. Parmi les publications écrites par Wilensky plusieurs mettent en avant \autocite{Wilensky2007a} - comme d'autres l'ont également fait dans la communauté Agents \autocites{Rouchier2013, Axtell1996} - l'importance de \enquote{pratiquer la reproductibilité} pour nous et pour les autres. Un des objectifs visés étant la constitution d'une communauté scientifique capable de dégager de nouveaux savoirs par le partage et la discussion collective des modèles. Une recette que Wilensky a appliqué avec succès dans la reproduction de nombreux modèles afin de les faire figurer dans sa plateforme, et qu'il faut évidemment mettre en perspective des principaux traits faisant toute la valeur du simulateur Netlogo. 
 
-Avec Stonedahl \autocites{Stonedahl2011, Stonedahl2011b, Stonedahl2010}, il explore cette fois-ci une autre dimension de la validation en s'attaquant à l'exploration automatique des modèles de simulation écrits en Netlogo. L'outil \textit{Behavior Search} ainsi développé par \textcite{Stonedahl2011a} s'appuie sur des méta-heuristique, principalement de la famille des algorithmes évolutionnaires. Cet outil se place volontairement dans la continuité de l'\enquote{esprit Netlogo}\Anote{stonedahl_netlogo}, à savoir offrir des outils à la fois suffisamment simples d'accès pour s'adapter à un public \enquote{débutant en modélisation}, tout en étant suffisamment complet, évolutif, pour intéresser et accompagner les recherches d'un public essentiellement scientifique. Les outils acquièrent avec leur diffusion à une standardisation qui leur permet de toucher à cette dimension sociale constitutive d'une part de la validation.
+Avec Stonedahl \autocites{Stonedahl2011, Stonedahl2011b, Stonedahl2010} il explore cette fois-ci une autre dimension de la validation en s'attaquant à l'exploration automatique des modèles de simulation écrits en Netlogo. L'outil \textit{Behavior Search} ainsi développé par \textcite{Stonedahl2011a} s'appuie sur des méta-heuristique, principalement de la famille des Algorithmes Evolutionnaires. Cet outil se place volontairement dans la continuité de l'\enquote{esprit Netlogo}\Anote{stonedahl_netlogo}, à savoir offrir des outils à la fois suffisamment simples d'accès pour s'adapter à un public \enquote{débutant en modélisation}, tout en étant suffisamment complet, évolutif, pour intéresser et accompagner les recherches d'un public essentiellement scientifique. Les outils acquièrent avec leurs diffusions à une standardisation qui leur permet de toucher à cette dimension sociale constitutive d'une part de la validation.
 
-L'accroche d'un public aux compétences variables, qu'ils soient experts ou débutants fait souvent parti des enjeux dans la création d'une nouvelle plateforme pour la modélisation. La plus ancienne des librairies multi-agents \textit{Swarm} était déjà pensée par Langton comme une étape supplémentaire vers la démocratisation des outils. Un saut qui a permis de fédérer une première communauté, mais qui n'était pas suffisant pour toucher un public de non-programmeurs. Netlogo, le jumeau scientifique de la plateforme StarLogo dédié aux enfants, a permis ces dernières années de redonner une part d'autonomie aux chercheurs des sciences sociales dans la manipulation de leur objet de recherche. Pour \textcite{Banos2013}, cet outil permet de concrétiser à moindre coût et de façon quasi instinctive le contenu des discussions scientifiques dans un modèle exécutable tangible. Il en ressort un véritable outil d'accompagnement de la pensée scientifique, qui permet de concrétiser et de communiquer une idée au travers d'un modèle dans un temps record. On se rapproche ici d'un système ou le cout d'entrée est très faible par rapport aux gains supposés, le langage étant volontairement limité dans le nombre de primitives disponibles, celui-ci est rapidement assimilable, même pour des non programmeurs. 
+L'accroche d'un public aux compétences variables, qu'ils soient experts ou débutants fait souvent parti des enjeux dans la création d'une nouvelle plateforme pour la modélisation. La plus ancienne des librairies multi-agents \textit{Swarm} était déjà pensée par Langton comme une étape supplémentaire vers la démocratisation des outils. Un saut qui a permis de fédérer une première communauté, mais qui n'était pas suffisant pour toucher un public de non-programmeurs. Netlogo, le jumeau scientifique de la plateforme StarLogo dédié aux enfants, a permis ces dernières années de redonner une part d'autonomie aux chercheurs des sciences sociales dans la manipulation de leur objet de recherche. Pour \textcite{Banos2013}, cet outil permet de concrétiser à moindre coût et de façon quasi instinctive le contenu des discussions scientifiques dans un modèle exécutable tangible. Il en ressort un véritable outil d'accompagnement de la pensée scientifique, qui permet de concrétiser et de communiquer une idée au travers d'un modèle dans un temps record. On se rapproche ici d'un système où le coût d'entrée est très faible par rapport aux gains supposés, le langage étant volontairement limité dans le nombre de primitives disponibles, celui-ci est rapidement assimilable, même pour des non programmeurs. 
 
 Mais, si Netlogo répond de façon parfaite à cette nécessité de prototypage rapide et peu couteux, un scénario tout à fait adapté pour découvrir la modélisation; il ne permet pas par contre de répondre à un scénario pourtant classique rencontré par les modélisateurs souhaitant faire évoluer leur modèle sur le temps long au-delà d'une certaine complexité. Ainsi, tant d'un point de vue algorithmique, que du point de vue des ressources informatiques nécessaires à l'exécution et à l'évaluation de modèles, Netlogo ne permet pas de supporter une montée en complexité pourtant naturelle dans le cadre de tels projets. 
 
 On sait également que la diversité et la complémentarité des approches sont un point central dans l'étude des systèmes complexes; or si Netlogo donne effectivement à voir cette diversité par la présence d'une large bibliothèque de modèles, celle-ci n'est abordé que dans une seule dimension, celle du modèle, et sous un seul format, celui de Netlogo. Or chacune des disciplines dispose de ses propres outils, de ses propres formalismes, de ses propres formats que Netlogo serait bien en peine de vouloir reproduire à l'identique. Cette diversité d'approche caractéristique des systèmes complexes dépasse qui plus est largement largement le cadre de la seule description du modèle et touche également l'environnement qui peuvent graviter autour de lui. Choisir Netlogo c'est prendre le parti d'un formalisme qui donne accès à une communauté, à un ensemble d'outils, mais qui ne permet pas d'exploiter au mieux les apports de diversités propre aux pratiques de modélisation de chacune des disciplines. 
-
-\paragraph{Le \textit{BehaviorSearch} de Netlogo}
 
 La librairie \textit{BehaviorSearch} développée par Stonedahl pour Netlogo intègre une librairie d'algorithme génétique. Cette solution n'est pas entièrement satisfaisante du seul point de vue avancé des métaheuristiques :
 
@@ -37,13 +51,15 @@ d) Le support ne permet pas à l'heure actuelle de jouer \enquote{facilement} av
 
 Même si l'auteur est effectivement d'accord avec le concepteur du \textit{BehaviorSearch} pour dire que cet outil constitue en lui même déjà un grand pas vers la démocratisation de techniques d'expérimentation plus évoluées jugées nécessaire pour améliorer les pratiques des débutants, nous pensons qu'il est possible d'aller encore beaucoup plus loin. A ce titre, le couplage que nous visons dans ce projet se rapproche des visions d'avenir évoqués par le concepteur, dont la dernière version du logiciel est daté de 2013 \textcite[295]{Stonedahl2011a} \foreignquote{english}{In the not-so-distant future I envision in a “begin parallel search” button appearing in toolkits like NetLogo that would seamlessly launch dozens or hundreds of simultaneous genetic algorithms searches on a remote grid/cluster, reporting back the most promising results to the user as they are discovered in real-time.} La différence c'est que ce bouton n'est pas envisagé dans Netlogo, car ce n'est pas le propre de cet outil, mais dans un logiciel tel qu'openMOLE, dont la fonction est entièrement dédié à l'exécution de tâche en parallèle sur des environnements locaux (un ou plusieurs processus d'une machine), ou distribués (sur une grille de calcul, ou un cluster d'université)
 
-Si on envisage en effet la construction de modèles sur la base d'une alternance régulière entre construction de modèle et évaluation, il est tout à fait possible et même certain que l'expérimentateur soit un jour ou l'autre confronté à une ou plusieurs limitations provenant de la chaine de progression naturelle prévue par les concepteurs de cet outil \foreignquote{english}{Netlogo(for building the model) => Behavior Space (for simple model analysis) => BehaviorSearch (for more advanced analysis and exploration)} \autocite[340]{Stonedahl2011a} ? Quels sont les choix à disposition des modélisateurs débutants ayant expérimenté l'une ou l'autre de ces difficultés ? 
+Si on envisage en effet la construction de modèles sur la base d'une alternance régulière entre construction de modèles et évaluations, il est tout à fait possible et même certain que l'expérimentateur soit un jour ou l'autre confronté à une ou plusieurs limitations provenant de la chaîne de progression naturelle prévue par les concepteurs de cet outil \foreignquote{english}{Netlogo(for building the model) => Behavior Space (for simple model analysis) => BehaviorSearch (for more advanced analysis and exploration)} \autocite[340]{Stonedahl2011a} 
+
+Seulement voilà, quels sont les autres choix à disposition des modélisateurs débutants ayant expérimenté l'une ou l'autre de ces difficultés ? 
 
 En résumé, les librairies déjà intégrées au logiciel de modélisation, comme le \textit{BehaviorSearch} de Netlogo, sont limitées en termes d'algorithmes, d'accès la puissance informatique nécessaire, et reste liées à un seul et unique support alors même que le modèle peut être amené à migrer de plateforme. On en déduit que cette solution, bien qu'utile pour du prototypage et de l'apprentissage, ne permet pas d'envisager sereinement la construction d'un modèle ou d'une expérimentation sur une durée plus longue.
 
-\paragraph{Les algorithmes EC dans Mason}
+\subsection{Mason et ses algorithmes EC}
 
-Le framework de développement de simulation multi-agent MASON (\textit{Multi-Agent Simulation Of ...}) présenté pour la première fois en 2003 tient d'un effort conjoint entre la section d'\textit{Evolutionary Computation} du laboratoire de science informatique et le \textit{Center for Social Complexity} tout deux de la George Mason University. Ecrit en Java, solidement documenté, de développement ancien, associé depuis les débuts à un laboratoire spécialisé auteur d'une librairie datant de 1998 dédié aux EC nommée ECJ (1998), les deux logiciels étant développés par les mêmes personnes et régulièrement mis à jour ... ce framework apparait au premier abord comme un challenger sérieux pouvant se substituer à Netlogo sur des projets plus complexes.
+Le framework de développement de simulation multi-agents MASON (\textit{Multi-Agent Simulation Of ...}) présenté pour la première fois en 2003 tient d'un effort conjoint entre la section d'\textit{Evolutionary Computation} du laboratoire de science informatique et le \textit{Center for Social Complexity} tout deux de la George Mason University. Ecrit en Java, solidement documenté, de développement ancien, associé depuis les débuts à un laboratoire spécialisé auteur d'une librairie datant de 1998 dédié aux EC nommée ECJ (1998), les deux logiciels étant développés par les mêmes personnes et régulièrement mis à jour ... ce framework apparait au premier abord comme un challenger sérieux pouvant se substituer à Netlogo sur des projets plus complexes.
 
 MASON se situe sur la même ligne de développement que les librairies de développement multi-agents plus anciennes comme Swarm, Ascape, ou Repast. Tout comme ces dernières, la généricité, la performance et la modularité sont des composantes de l'application au coeur des préoccupations de Sean Luke, un des développeurs à l'origine du projet.
 
@@ -131,69 +147,48 @@ Il existe également une dissonance entre la méthodologie proposée et le suppo
 
 Au travers de ces différents exemples, on a mis en valeur quelques points d'accroches montrant la difficulté qu'il y a à établir un cadre plus ou moins formel et englobant capable d'articuler l'ensemble des problématiques se rapportant à l'évaluation et à la construction de modèle de simulation. L'approche proposée avec l'\enquote{intégration}  d'OpenMOLE permet déjà de répondre à certains des points de critiques évoqués ci dessus. L'appel d'une grille de lecture pourrait aider à voir quels sont les objectifs déjà rempli de ceux qui reste à remplir.
 
-\section{Proposition d'une grille d'intégration}
+\section{Proposition de principe communs pour la réalisation de plateformes}
 
-\subsection{Deux modes d'exploration}
+Par plateformes on entend deux choses dans cette conclusion, soit une plateforme support de la construction de modèles, soit une plateforme support de l'exploration de modèles. Netlogo ou Gama par exemple sont des plateformes de construction de modèle de simulation multi-agents. OpenMOLE par contre est une plateforme permettant de supporter l'exploration de modèles de simulation appuyé par du calcul intensif.
 
-D'un point de vue utilisateur, on peut considérer l'existence d'au moins deux modes d'explorations aux objectifs différents mais complémentaires dans leur utilisation \autocite[36]{Amblard2003}.
+Avant de proposer les principes, il nous faire un point sur les modes d'explorations supportés par cette proposition. Ensuite nous évoquerons quelle sont les modalités de couplage que nous jugeons pertinente pour ces deux activités, de construction de modèle, et d'exploration de modèle.
+
+\subsection{Deux modes d'explorations}
+
+Si on se place du point de vue d'un utilisateur, on peut considérer l'existence d'au moins deux modes d'explorations aux objectifs différents mais complémentaires dans leur utilisation \autocite[36]{Amblard2003}.
 
 \begin{itemize}
- \item L'exploration dite \enquote{immédiate} permet de controler et de visualiser le comportement du modèle de simulation en temps réel via l'utilisation des outils mis à disposition par le simulateur. On pense par exemple aux \enquote{moniteurs} et aux \textit{plots}  mis à disposition de l'utilisateur dans le simulateur Netlogo. Cette phase est importante à plusieurs niveaux, pour la validation interne \autocite{Amblard2006} , pour le récit \autocites{Millington2012,OSullivan2004}, pour stimuler la créativité (\textit{tinkering} de \autocite{Resnick2013}), etc.  
+ \item L'exploration dite \enquote{immédiate} permet de controler et de visualiser le comportement du modèle de simulation en temps réel via l'utilisation des outils mis à disposition par le simulateur. On pense par exemple aux \enquote{moniteurs} et aux \textit{plots}  mis à disposition de l'utilisateur dans le simulateur Netlogo. Cette phase est importante à plusieurs niveaux, pour la validation interne \autocite{Amblard2006} , pour le récit \autocites{Millington2012,OSullivan2004}, pour stimuler la créativité (\textit{tinkering} de \textcite{Resnick2013}), etc.  
  \item Un autre niveau d'exploration, plus systématique, consiste à mieux connaitre le comportement du modèle \textbf{en s'appuyant sur tous les outils et démarches qui sont à notre disposition} et en utilisant les critères qualitatifs et quantitatifs mis en place. La visualisation et l'interactivité sont moins importantes. 
 \end{itemize}
 
-La construction des modèles s'appuie sur un dialogue étroit entre ces deux modes d'explorations. Toutefois, si le premier mode d'exploration utilisé seul peut apparaitre comme un moyen de progression et de vérification adapté dans un premier temps, la complexification progressive du modèle va mettre très rapidement l'opérateur humain en difficulté. Le comportement non-linéaire typique des modèles de simulation de système complexe ne permet pas d'envisager une exploration manuelle des comportements, et on a déjà parlé plusieurs fois de l'impossibilité d'un calibrage par ces moyens. A ne pas pouvoir tester de façon plus exhaustive les comportements des modèles, on prend aussi le risque de voir les défauts d'implémentations disparaitre, mais pour un temps seulement. Car lorsque ceux-ci se manifeste à nouveau au hasard d'une dynamique dont les effet de bords qu'elle est susceptible de provoquer sur les implémentations nous échappe, et rend alors très difficile la localisation de ces erreurs. 
+La construction des modèles s'appuient sur un dialogue étroit entre ces deux modes d'explorations. Toutefois, si le premier mode d'exploration utilisé seul peut apparaitre comme un moyen de progression et de vérification adapté dans un premier temps, la complexification progressive du modèle va mettre très rapidement l'opérateur humain en difficulté. Le comportement non-linéaire typique des modèles de simulation de système complexe ne permet pas d'envisager une exploration manuelle des comportements, et on a déjà parlé plusieurs fois de l'impossibilité d'un calibrage par ces moyens. A ne pas pouvoir tester de façon plus exhaustive les comportements des modèles, on prend aussi le risque de voir les défauts d'implémentations disparaitre, mais pour un temps seulement. Car lorsque ceux-ci se manifestent à nouveau au hasard d'une dynamique dont les effet de bords nous échappe, il devient très difficile de localiser la source de ces erreurs. 
 
-Seul le deuxième mode semble pouvoir supporter l'acquisition des connaissances suffisante pour justifier - en tout point de l'avancement du modèle - d'une progression cohérente dans le raisonnement accompagnant la construction d'un modèle. Le jeu abductif qui consiste à mettre en tension des hypothèses et des critères (qualitatifs/quantitatifs)  est une expérimentation qui nécessite l'obtention d'une réponse pour assurer la progression d'un raisonnement. Car l'objectif est bien de progresser dans l'élucidation d'un problème justifiant la modélisation, si possible en prenant des décisions se basant sur les informations les plus diverses et les plus fiables possible sur la dynamique à l'oeuvre dans les modèles, et non plus en s'appuyant sur une \foreignquote{english}{face validity} certes confortable mais trompeuse. Plus vite donc ce mode d'exploration est mis en place, et plus vite on est en mesure de prendre des décisions éclairés. Chaque modification dans les critères d'évaluation mobilisé, la structure ou le paramétrage du modèle doit pouvoir faire l'objet d'une investigation systématique en utilisant des méthodes et des outils adaptés. 
+Seul le deuxième mode semble pouvoir supporter l'acquisition des connaissances suffisante pour justifier - en tout point de l'avancement du modèle - d'une progression cohérente dans le raisonnement accompagnant la construction d'un modèle. Le jeu abductif qui consiste à mettre en tension des hypothèses et des critères (qualitatifs/quantitatifs)  est une expérimentation qui nécessite l'obtention d'une réponse pour assurer la progression d'un raisonnement. Car l'objectif est bien de progresser dans l'élucidation d'un problème justifiant la modélisation, si possible en prenant des décisions se basant sur les informations les plus diverses et les plus fiables possible sur la dynamique à l'oeuvre dans les modèles, et non plus en s'appuyant sur une \foreignquote{english}{face validity} \autocite{Hermann1967} certes confortable mais trompeuse. Plus vite donc ce mode d'exploration est mis en place, et plus vite on est en mesure de prendre des décisions éclairés. Chaque modification dans les critères d'évaluation mobilisé, la structure ou le paramétrage du modèle doit pouvoir faire l'objet d'une investigation systématique en utilisant des méthodes et des outils adaptés. C'est ce mode d'exploration que nous privilégions par la suite pour ennoncer nos principes.
 
-L'utilisation de méthode d'optimisation de type Algorithmes Evolutionnaires pour le calibrage permet d'éclairer sous un certain angle les dynamiques à l'oeuvre dans nos modèles, mais la mise à disposition d'autre méthode n'empeche en rien d'accumuler les éclairages. Des optimisation tournés vers l'optimisation pour l'exploration ont ainsi été développé par notre équipe, comme les algorithmes CP-Profile \autocite{Reuillon2015} ou PSE \autocite{Cherel2015}, qui donne chacune des informations complémentaire par rapport à un calibrage classique. De part la place centrale qu'OpenMOLE occupe à l'ISC-PIF et dans la chaine de traitements des modélisateurs des systèmes complexes, de nouvelles méthodes d'explorations seront amenés à intégrer ce logiciel dans le futur. Celle-ci pourront être immédiatement utilisé sur d'ancien ou de nouveaux modèles, la cumulativité jouant aussi à ce niveau là.
+\subsection{Deux activités indépendantes}
 
-\subsection{Deux niveaux de dialogues}
+%Dans un premier scénario, la plateforme d'exploration est utilisée dès le départ comme support à la création du modèle de simulation. Le dialogue et les allers-retours entre les deux activités sont permanentes.
 
-Dans un premier scénario, la plateforme est utilisé dès le départ comme support à la création du modèle de simulation. Le dialogue et les allers-retours entre les deux activités sont permanents.
+%Dans un deuxième scénario, la \enquote{construction du modèle} et \enquote{l'exploration du modèle} sont deux activités plus indépendantes. 
 
-Dans un deuxièle scénario, la \enquote{construction du modèle} et \enquote{l'exploration du modèle} sont considérés comme deux activités en partie indépendantes.
+Le choix fait ici d'un couplage faible entre ces deux activités de construction permet de garantir l'indépendance du modèle de simulation vis à vis de l'exploration, et inversement. Il en résulte une forme de généricité qui permet d'envisager l'application de tout type d'exploration envers tout type de modèle de simulation. Quelque soit l'état d'avancement de son modèle de simulation, ou la nature du simulateur qui exécute le modèle, le modélisateur peut l'intégrer à la plateforme pour une exploration, au prix seulement de quelques modifications mineures.
 
-Le choix fait ici d'un couplage faible entre les deux objets d'études permet de garantir l'indépendance du modèle de simulation vis à vis de l'exploration, et inversement. Il en résulte une forme de généricité qui permet d'envisager l'application de tout type d'exploration envers tout type de modèle de simulation. Quelque soit l'état d'avancement de son modèle de simulation, ou la nature du simulateur qui exécute le modèle, le modélisateur peut l'intégrer à la plateforme pour une exploration, et cela au prix seulement de quelques modifications mineures dans le modèle.
+La prise en compte de cette indépendance permet de ne pas frustrer des pratiques existantes, tout en n'excluant pas le recours à l'exploration via la plateforme une fois le projet plus avancé. Elle permet également de proposer une solution stable qui garantie la continuité des explorations malgré la complexification des modèles, car il n'est pas rare qu'un modèle ait besoin d'être redéveloppé dans un autre langage, ou un autre support de simulation. Dans le cadre d'un couplage faible, l'exploration n'a pas besoin d'être redéveloppé si les entrées sorties du modèles restent identiques.
 
-La prise en compte de cette indépendance permet de ne pas frustrer des pratiques existantes, tout en n'excluant pas le recours à l'exploration via la plateforme une fois le projet plus avancé. Dans le cas d'OpenMOLE, n'importe qui peut arriver avec un modèle Netlogo déjà réalisé, l'intégrer dans un \textit{workflow} et lancer des expérimentations en utilisant les méthodes déjà mises à disposition (plan d'expérience, algorithmes évolutionnaires, analyses de sensibilités, etc.).
-
-
----
-
-
-Autrement dit, ce projet s'inscrit dans un objectif double, il s'agit à la fois de garantir l'indépendance et la réutilisation des outils dans de multiples configurations, tout en problématisant leur utilisation dans des constructions méthodologique (ou cas d'utilisation) que nous jugeont pertinent pour l'exploration et la construction de modèles en géographie. De ce fait ils participent à l'évolution d'une plateforme appropriable par tout les points de vues, non réducteur car flexible dans le cadre de nos pratiques, et appuyant en plusieurs points cette dimension collective pour la construction et l'évaluation de modèle.
-% Construction = Evaluation 
-
-Moto : \enquote{Si je ne peux pas évaluer le modèle à ta place, je peux par contre te donner les meilleurs outils pour que tu puisse le faire} 
-= en te donnant les moyen d'etre autonome cad
-= en te donnant les moyens de mutualiser
-= en te donnant les moyens de t'informer 
-Deux axes qui recoupent : reproductibilité (pour moi, pour les autres) , flexibilité (pour moi, pour les autres), puissant ( pour moi, dans l'échange), dynamique (pour moi, pour l'échange)
-
-But a atteindre, 
-> utilisation inter-disciplinaire, 
-> ouverte aux débutant, ouvertes aux experts
-> standardisation interne à minima, externe si l'outil est amené à se développer.
-=> Plateforme intégrative 
-
+Envisager les deux activités comme indépendantes ne doit pas impliquer l'absence de solutions plus spécifique ou celles-ci sont considérés de façon de façon plus dépendantes. Il pourrait être intéressant par exemple de voir comment la plateforme d'exploration peut guider, voire controler la plateforme de construction dans la composition de modèles plus performants.
 
 \subsection{Un ensemble de principes partagés par les deux activités}
-
-Cette grille peut être appliqué aux deux activités déjà identifiés, celle de construction de modèles, et celle visant l'exploration des modèles.
-
-Plateforme = support du modèle , ou support de l'expérimentation du modèle selon la catégorie dans laquelle on se trouve
-
-On part du principe qu'il y a indépendance entre la plateforme support du modèle, et la plateforme support de l'exploration qui intègre le modèle.
 
 \paragraph{1 - Collectif}
 
 Par collectif, on entend cette discussion à la fois interne lorsqu'il s'agit de construire l'expérience dans le cadre des pratiques du laboratoire, mais aussi discussion externe, celle qui échappe en partie aux créateurs du modèle, dès lors qu'il s'agit d'afficher et de confronter l'expérience aux yeux des pratiques extérieures. Par expérience on entend tout à la fois la construction du modèle et la construction de l'expérimentation autour du modèle, car les deux peuvent être discutés.
-Par discussion on sous entend le groupe d'activités de visualisation, de création, de modification, de suppression, de reproduction, d'execution, de partage qui peuvent être mobilisé pour supporter un discour argumentaire constructif autour du modèle dans une communauté de modélisateur. La reproductibilité apparait comme à la fois comme un garde-fou et un horizon pour guider la mise en oeuvre d'un tel objectif. 
 
-Pour les modèles, les hypothèses, les critères, les paramètres interviennent comme des composant dont la mise en relation dans un modèle doit pouvoir être discuté, car ils interviennent dans la construction du raisonnement
+\textbf{Par discussion} on sous entend le groupe d'activités de \textbf{visualisation, de création, de modification, de suppression, de reproduction, d'exécution, de partage} qui peuvent être mobilisées pour supporter un discours argumentaire constructif autour du modèle et des explorations de modèles dans une communauté de modélisateur. La reproductibilité apparait ici à la fois comme un garde-fou et un horizon pour améliorer toujours un peu plus la qualité de ces discussions. 
 
-Pour les explorations, le choix des méthodes, des outils, ainsi que les paramètres et les entrées sorties associés doivent là aussi pouvoir être discuté, car ils interviennent dans la construction du raisonnement.
+Pour les modèles, les hypothèses, les critères, les paramètres interviennent comme des composant dont la mise en relation dans un modèle doit pouvoir être discutés, car ils interviennent dans la construction du raisonnement.
+
+Pour les explorations, le choix des méthodes, des outils, ainsi que les paramètres et les entrées sorties associés doivent là aussi pouvoir être discutés, car ils interviennent dans la construction du raisonnement.
 
 %Même si elle est loin de donner tout les outils nécessaire à l'établissement d'une discussion collective, Netlogo reste un exemple réussi de plateforme de construction de modèle favorisant l'échange autour des modèles. Toute nouvelle construction de plateforme peut donc s'en inspirer.
 
@@ -201,111 +196,130 @@ Pour les explorations, le choix des méthodes, des outils, ainsi que les paramè
 
 \paragraph{2 - Dynamique}
 
-Par \enquote{dynamique}, on entend rendre compte de l'inscription temporelle d'un raisonnement dont la construction se juge dans la mise en relation étroite et successive d'un modèle et d'une exploration. 
+Par \enquote{dynamique}, on entend rendre compte de l'inscription temporelle d'un raisonnement dont la construction se juge dans la mise en relation étroite et successive d'un modèle et d'une ou de plusieurs explorations. 
 
 Cette mise en relation constitutive des jalons d'un raisonnement intervenant dans la construction du modèle et des explorations doit pouvoir être discuté.
 
-Les implications sur le point 1 sont importantes, cela signifie que les modèles et les explorations de modèles doivent pouvoir être accéder dans leur différents états successifs. La plateforme, qu'elle soit pour le modèle ou pour les explorations de modèles doit donc pouvoir cumuler ou historiser l'ensemble des modifications successives qui ont été réalisés afin que cette mise en relation, et donc ce raisonnement, puisse être remobilisé pour discussion.
+Les implications lié au point (1) sont importantes, cela signifie que la plateforme, qu'elle soit pour la construction de modèle ou pour les explorations de modèles doit pouvoir cumuler ou historiser l'ensemble des modifications successives qui ont été réalisés afin que cette mise en relation, et donc ce raisonnement, puisse être remobilisé pour discussion.
+
+%la plateforme support du modèle ou des explorations de modèles doit être capable de stocker, de mobiliser, de réexecuter un état parmis les différents états successifs. La
 
 \paragraph{3 - Flexible}
 
-indépendance du modèle ? 
+Par \enquote{flexible}, on entend rendre compte de la réutilisation des composants mobilisés dans les plateformes. 
 
-Par \enquote{flexible}, on entend rendre compte de l'accumulation, et de la réutilisation des composants mobilisés dans les plateformes, qu'elles soient pour la construction ou pour l'exploration des modèles.
+Le point (2) sur la dynamique nécessite un système d'accumulation, mais aussi de remobilisation de cette diversité. Il est nécessaire de pouvoir discuter les modèles et les explorations de modèles à partir des composants déjà existants.
 
-La dynamique (2) nécessite un système d'accumulation, mais aussi de remobilisation de cette diversité. Il est nécessaire de pouvoir discuter les modèles et les explorations de modèles à partir des composants déjà existants.
+Les hypothèses et les critères doivent pouvoir être accumulé au sein d'une structure qui permet de les associer librement en fonction de leur compatibilité structurelle. 
 
-Les hypothèses et les critères doivent pouvoir être accumulé au sein d'une structure qui permet de les associer librement. 
+En plus donc d'être remobilisable à tout moment, la mise en relation des méthodes et des outils utilisés pour une exploration doivent rester libre d'intégrer ou de ne pas intégrer tout autre nouvelle construction.
 
-En plus donc d'être remobilisable à tout moment, la mise en relation des méthodes et des outils utilisés pour une exploration doivent rester libre d'intégrer tout autre nouvelle construction.
+Dans les deux cas il s'agit d'instancier une trajectoire parmis des multiples dans un ensemble de composants mis à disposition par les plateformes.
 
 \paragraph{4 - Puissance}
 
-Pouvoir garantir une ressource informatique compatible avec une évaluation systématique (2) des construits (3) supportés par les deux plateformes (modèles seul, et mise en relation des modèles avec les explorations) 
+Une ressource informatique adapté doit être mobilisée pour que l'évaluation systématique (point 2) des construits (point 3) supportés par les deux plateformes  soit possible.
 
-\paragraph{5 - Extensibilité}
+\paragraph{5 - Extensible}
 
 En respectant les différents points déjà évoquer, il doit être possible d'ajouter de nouveaux composants dans l'une ou dans l'autre des plateformes.
 
-Pour les modèles ce sont des nouvelles hypothèses, des nouveaux critères.
+Pour les modèles ce sont de nouvelles hypothèses, de nouveaux critères. Pour les explorations de modèles ce sont de nouvelles méthodes, de nouveaux outils.
 
-Pour les explorations ce sont des nouvelles méthodes, des nouveaux outils.
+Dans les deux cas, la mise en place d'une plateforme extensible permet d'enclencher une boucle vertueuse ou la plateforme lorsqu'elle s'enrichit de composant créé par les utilisateurs, attire en retour de nouveaux utilisateur susceptible un jour d'améliorer eux aussi la plateforme.
 
---
+\subsection{Un horizon pour les futures réalisations}
 
+\subsubsection{Les plateformes pour la construction de modèle}
 
-\subsubsection{L'exploration de modèle}
+Il n'existe pas de plateforme de construction de modèle qui soit actuellement capable de répondre à l'ensemble de ces points de la grille. 
 
-Tout comme les modèles doivent pouvoir être rejoué, les explorations de modèles qui ont accompagnés la constitution de ce raisonnement doivent être disponible
+Une solution spécifique aux modèles développés dans le cadre de l'ERC GeodiverCity à voir le jour en 2013, avec la création de \textbf{SimPuzzle}(2013) et \textbf{ModelFamilly}(2014) par Romain Reuillon. Ces deux plateformes s'appuient sur le système de composant logiciel (\textit{cake-pattern}) que l'on a déjà éprouvé sur MGO, et qui a déjà été explicité dans la section \ref{sec:MGO}. 
 
+Avec \textbf{SimPuzzle}, il est possible au sein d'une même plateforme de formuler, d'accumuler, de remobiliser les hypothèses et les critères introduit tout au long d'une modélisation. Avec un tel système, l'évolution du raisonnement peut donc être en partie reproduit. Une utilisation plus concrete de cette plateforme de construction de modèle est relaté en détail dans la thèse de Clémentine Cottineau \autocite{Cottineau2014b} et dans une publication à paraitre cette année \autocite{Cottineau2015}.
 
+\textbf{ModelFamilly} s'appuie sur \textbf{SimPuzzle} pour répondre à une autre problématique, et flouter l'indépendance qui peut exister entre la construction et l'exploration des modèles. Les deux plateformes ne sont plus vraiment indépendantes, car c'est \textbf{ModelFamilly}, appuyé sur OpenMOLE et l'usage d'algorithmes évolutionnaires, qui vient piloter la construction de modèles de simulation en recombinant les hypothèses disponible dans \textbf{SimPuzzle}. L'objectif reste de trouver parmis cet ensemble d'hypothèses disponibles (et de paramètres associés), les meilleurs combinaisons pour répondre à un jeu de critères donnés. Ce système répond de façon élégante à une problématique que nous avions annoncé à la fin de la partie 1 sur la validation (section \ref{sssec:equifinalite}), qui consiste à remobiliser de façon systématique et à chaque évaluation l'ensemble des hypothèses alternatives. Ce système nous empeche d'écarter de façon définitive des hypothèses alors même que celles-ci auraient pu être pertinente dans une autre configuration ou une autre étape dans la vie du modèle.     
 
+\subsubsection{Une plateforme intégrée pour l'exploration de modèle : OpenMOLE}
 
-L'ouverture de la plateforme au collectif permet d'envisager une acculturation et une diffusion des méthodes et des outils utilisés pour l'exploration des modèles chez les géographes modélisateurs. 
+%Autrement dit, ce projet s'inscrit dans un objectif double, il s'agit à la fois de garantir l'indépendance et la réutilisation des outils dans de multiples configurations, tout en problématisant leur utilisation dans des constructions méthodologique (ou cas d'utilisation) que nous jugeont pertinent pour l'exploration et la construction de modèles en géographie. De ce fait ils participent à l'évolution d'une plateforme appropriable par tout les points de vues, non réducteur car flexible dans le cadre de nos pratiques, et appuyant en plusieurs points cette dimension collective pour la construction et l'évaluation de modèle.
 
+Dans le cas d'OpenMOLE, l'indépendance entre construction des modèles et explorations des modèles est une propriété générale lié au système de \textit{workflow}. N'importe quel modélisateur peut arriver avec un modèle Netlogo fonctionnel, l'intégrer dans un \textit{workflow} et lancer des expérimentations en utilisant les méthodes déjà mises à disposition (plan d'expérience, algorithmes évolutionnaires, analyses de sensibilités, etc.).
 
-L'objectif d'une telle plateforme serait de soutenir via tout les moyens à notre disposition les modalités pratiques qui sous tendent une activité de discussion et d'échange autour de l'exploration des modèles.
+L'intégration de la librairie MGO dans OpenMOLE permet d'avoir à disposition pour les exploration des méthodes à base d'Algorithmes Evolutionnaires. Si jusqu'à présent ce sont surtout des \textit{workflow} faisant appel à ce \textit{framework} qui ont été évoqués, rien n'empeche aujourd'hui d'accumuler des éclairages différents sur les dynamiques à l'oeuvre dans les modèles en utilisant d'autres de ces algorithmes EA. Des optimisation tournés vers l'optimisation pour l'exploration ont ainsi été développé par notre équipe, comme les algorithmes CP-Profile \autocite{Reuillon2015} ou PSE \autocite{Cherel2015}, qui donne chacune des informations complémentaire par rapport à un calibrage classique. De part la place centrale qu'OpenMOLE occupe à l'ISC-PIF et dans la chaine de traitements des modélisateurs des systèmes complexes, de nouvelles méthodes d'explorations seront amenés à intégrer ce logiciel dans le futur. Celle-ci pourront être immédiatement utilisé sur d'ancien ou de nouveaux modèles, la cumulativité jouant aussi à ce niveau là.
 
-Ces modalités pratique sont multiples, et s'adresse autant au chercheur isolé voulant partager sa recherche, qu'au chercheur travaillant déjà en équipe, ces deux cas d'utilisations supportant des exigences très variables : le chercheur isolé veut être sur que sa recherche sera reproductible, les chercheur en équipe veulent pouvoir travailler à plusieurs sur le même modèle ou la même expérimentation. 
-
-OpenMOLE propose déjà : 
+En résumé, OpenMOLE propose déjà aux modélisateurs :  
 \begin{enumerate}[noitemsep,nolistsep]
-\item intégration dans les expérimentations de modèles Netlogo
-\item de charger et sauvegarder des \textit{workflows} 
-\item une architecture client/serveur adapté à l'environnement des laboratoires : le logiciel peut être installé sur un serveur dans un laboratoire de recherche, et devenir accessible depuis n'importe quel navigateur Internet.   
+\item intégration dans les expérimentations de modèles Netlogo \textbf{(\#Flexible)}
+\item de charger et sauvegarder des \textit{workflows} \textbf{(\#Collectif)}
+\item de composer des \textit{workflow} à partir des tâches et des plugin existant, comme par exemple les tâche spécifique pour l'exploration avec des EA. \textbf{(\#Flexible)}
+\item une architecture client/serveur adapté à l'environnement des laboratoires : le logiciel peut être installé sur un serveur dans un laboratoire de recherche, et devenir accessible depuis n'importe quel navigateur Internet.\textbf{(\#Collectif)}   
 \item un catalogue de \textit{workflows} exemple disponible sur le site internet du logiciel.
-\item un dépot de code source ou les utilisateurs peuvent proposer des \textit{workflow} pour le site internet du logiciel.
+\item un dépot de code source ou les utilisateurs peuvent proposer des \textit{workflow} pour le site internet du logiciel. \textbf{(\#Collectif)}
+\item la possibilité de déléguer l'execution de n'importe quel tâche sur un environnement HPC. \textbf{(\#Puissance)}
+\item la possibilité de créer ses propres outils intégrable à la plateforme via un système de plugin \textbf{(\#Extensible)}
 \end{enumerate}
 
 OpenMOLE proposera dans le futur : 
 \begin{enumerate}[noitemsep,nolistsep]
-\item intégrer des modèles Gama dans les expérimentations
-\item de charger/sauvegarder des workflows en y associant certains des ressources mobilisés (modèles de simulation, base de données portable, fichiers)
-\item une gestion multi-utilisateur
-\item un catalogue de \textit{workflows} exemples disponible dans le logiciel
-\item un catalogue de \textit{workflows puzzle} paramétrables dans le logiciel
-\item partager des \textit{workflow} avec d'autre utilisateurs via un lien depuis le logiciel, comme on partage aujourd'hui les documents disponible dans le cloud (googledoc, dropbox, etc.)
-\item un site internet ou les gens peuvent partager et télécharger des \textit{workflows}
+\item intégrer des modèles Gama dans les expérimentations \textbf{(\#Extensible)}
+\item de charger/sauvegarder des workflows en y associant certains des ressources mobilisés (modèles de simulation, base de données portable, fichiers) \textbf{(\#Dynamique)}
+\item une gestion multi-utilisateur \textbf{(\#Collectif)}
+\item un catalogue de \textit{workflows} exemples disponible dans le logiciel \textbf{(\#Flexible)}
+\item un catalogue de \textit{workflows puzzle} paramétrables dans le logiciel \textbf{(\#Flexible)}
+\item partager des \textit{workflow} avec d'autre utilisateurs via un lien depuis le logiciel, comme on partage aujourd'hui les documents disponible dans le \textit{cloud} (googledoc, dropbox, etc.)  \textbf{(\#Collectif)}
+\item un site internet ou les gens peuvent partager et télécharger des \textit{workflows}  \textbf{(\#Collectif)}
 \end{enumerate}
+
+\hl{... presque fini ...}
+
 
 % collectif workflow
 
 
+%Ce qui peut aussi nourrir en retour la plateforme avec la création par la communauté de nouvelle intégrations. Une synergie qui a déjà pu être observé pour certaines plateforme comme GEODA \autocite{Anselin} par exemple.
 
 On entend également la capacité à acceuillir des niveaux de discours différents, qui vont de l'utilisateur débutants à l'utilisateur expérimentés.
 
 Objectif : Définir une plateforme permettant de supporter dans un premier temps, et de catalyser dans un deuxième temps cette discussion collective.
 
-OpenMole 
 
 % Voir le contenu du modèle (janet)
 % Voir le contenu de l'expérimentation (open mole)
 
 
-\subsection{2 - Dynamique}
+Tout comme les modèles doivent pouvoir être rejoué, les explorations de modèles qui ont accompagnés la constitution de ce raisonnement doivent être disponible.
 
-La construction et l'experimentation des modèles sont des activités toutes deux itératives, et l'une autant que l'autre sont susceptible d'être mené de façon collective.
+L'ouverture de la plateforme au collectif permet d'envisager une acculturation et une diffusion des méthodes et des outils utilisés pour l'exploration des modèles chez les géographes modélisateurs. 
+
+L'objectif d'une telle plateforme serait de soutenir via tout les moyens à notre disposition les modalités pratiques qui sous tendent une activité de discussion et d'échange autour de l'exploration des modèles.
+
+Ces modalités pratique sont multiples, et s'adresse autant au chercheur isolé voulant partager sa recherche, qu'au chercheur travaillant déjà en équipe, ces deux cas d'utilisations supportant des exigences très variables : le chercheur isolé veut être sur que sa recherche sera reproductible, les chercheur en équipe veulent pouvoir travailler à plusieurs sur le même modèle ou la même expérimentation. 
+
 
 Nous avons vu dans cette thèse que le modèle de simulation et le groupe d'expérimentations caractérisant ce modèle sont tout deux des objets résultat d'une activité de recherche opérant dans un dialogue mutuel. Ces choix qui touchent l'ensemble de ces catégories sont étalés dans un temps qui est celui de la construction du modèle, qui ne peut en aucun cas se résumer à un produit final. 
 
 % nottament dans le cadre des systèmes complexes, ou il n'y a pas d'ensemble finis d'indicateurs mobilisable pour borner notre recherche.
 
 
-Objectif : Définir une plateforme permettant de supporter par des outils adaptés une discussion collective focalisé en tout temps et pour tout objet intervenant dans la constitution de cette expérience. Le terme supporter renvoie ici tout autant à la présentation, à l'execution, et à l'échange de l'expérience.
+
+% Construction = Evaluation 
+
+% Moto : \enquote{Si je ne peux pas évaluer le modèle à ta place, je peux par contre te donner les meilleurs outils pour que tu puisse le faire} 
+% = en te donnant les moyen d'etre autonome cad
+% = en te donnant les moyens de mutualiser
+% = en te donnant les moyens de t'informer 
+% Deux axes qui recoupent : reproductibilité (pour moi, pour les autres) , flexibilité (pour moi, pour les autres), puissant ( pour moi, dans l'échange), dynamique (pour moi, pour l'échange)
+
+% But a atteindre, 
+% > utilisation inter-disciplinaire, 
+% > ouverte aux débutant, ouvertes aux experts
+% > standardisation interne à minima, externe si l'outil est amené à se développer.
+% => Plateforme intégrative 
 
 
-\subsection{3 - Flexible}
-
-Pouvoir réécrire les modèle tout en conservant les expérimentations
-
-\subsection{4 - Puissance}
-
-\subsection{5 - Extensibilité}
 
 
-\paragraph{L'exploration de modèle}
-
-Ce qui peut aussi nourrir en retour la plateforme avec la création par la communauté de nouvelle intégrations. Une synergie qui a déjà pu être observé pour certaines plateforme comme GEODA \autocite{Anselin} par exemple.
 
 \printbibliography[heading=subbibliography]
 

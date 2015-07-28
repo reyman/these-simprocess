@@ -1494,7 +1494,7 @@ Enfin, toujours dans une tentative de positionner ce terme dans une typologie, i
 
 Enfin bien d'autres sous classifications sont possibles prenant plus ou moins en compte les spécificités propres aux différents algorithmes, comme celle opposant par exemple les stratégies utilisées en interne pour parcourir l'espace de recherche (generationel contre \textit{steady-state}, ou individuel contre populationel), la dimensionnalité possible pour la résolution des problèmes (mono-objectif contre multi-objectif), l'inspiration d'origine (naturelle biologique contre inspirations autres), etc.
 
-Toute classification monocritère est donc rendue très difficile, une voie s'étant même ouverte pour tenter de classer ces algorithmes suivant la nature et le niveau d'opération de ces hybridations. L'origine de cette difficulté tient dans une pratique courante et assumée d'hybridation entre les différentes techniques afin de réunir le meilleur de chacune d'elles au sein de nouvelle proposition de recherche. De fait, il est important pour la suite de cerner au mieux la classe d'algorithme d'optimisation que nous allons aborder, et de définir pourquoi nous l'avons abordé. Nous nous intéresserons principalement dans la suite de cette présentation aux approches stochastiques métaheuristiques inspirées par la métaphore biologique, nommée \textit{Evolutionary Computation} (EC) ( voir figure \ref{fig:S_OverviewOptimisation}). La section \ref{xx} permettra de dégager les spécificités de cette subdivision, mais en attendant il nous faut d'abord présenter les principaux termes et concepts communs à cette classe d'algorithmes d'optimisation.
+Toute classification monocritère est donc rendue très difficile, une voie s'étant même ouverte pour tenter de classer ces algorithmes suivant la nature et le niveau d'opération de ces hybridations. L'origine de cette difficulté tient dans une pratique courante et assumée d'hybridation entre les différentes techniques afin de réunir le meilleur de chacune d'elles au sein de nouvelle proposition de recherche. De fait, il est important pour la suite de cerner au mieux la classe d'algorithme d'optimisation que nous allons aborder, et de définir pourquoi nous l'avons abordée. Nous nous intéresserons principalement dans la suite de cette présentation aux approches stochastiques métaheuristiques inspirées par la métaphore biologique, nommée \textit{Evolutionary Computation} (EC) ( voir figure \ref{fig:S_OverviewOptimisation}). La section \ref{xx} permettra de dégager les spécificités de cette subdivision, mais en attendant il nous faut d'abord présenter les principaux termes et concepts communs à cette classe d'algorithmes d'optimisation.
 
 Devant la difficulté d'établissement d'une définition englobante, plusieurs auteurs semblent s'accorder pour faire du rattachement d'un algorithme à cette catégorie, une correspondance plus ou moins lâche avec un ensemble de propriétés généralement observées. En évitant une définition trop vague ou trop restrictive, on espère ainsi récupérer dans cette classe certains hybrides intéressants.
 
@@ -1571,23 +1571,25 @@ C'est pour cela que \textcite[7]{Luke2013} nous propose de voir ce type de probl
 
 \hl{schéma}
 
-Suivant ce raisonnement, la connaissance d'un problème se construit au travers d'une confrontation répétée de nos représentations, de nos interrogations avec la forme réelle et encore inconnue prise par celui-ci. La carte de ce nouveau territoire se révélant peu à peu dans la projection sur l'espace des solutions des choix effectués lors de la sélection des nouveaux candidats à évaluer (solutions candidates).
+Suivant ce raisonnement, la connaissance d'un problème se construit au travers d'une confrontation répétée de nos représentations, de nos interrogations avec la forme réelle et encore inconnue prise par celui-ci \Anote{paul_rationalite}. La carte de ce nouveau territoire se révélant peu à peu dans la projection sur l'espace des solutions des choix effectués lors de la sélection des nouveaux candidats à évaluer (solutions candidates). 
 
 Les métaheuristiques sont donc là pour faciliter l'exécution de cette tâche complexe et répétitive qui consisterait à améliorer notre connaissance du problème en proposant de façon pertinente de nouvelles solutions candidates à évaluer, ces dernières étant choisies si possible en fonction des résultats obtenus par les précédentes (voir point \ref{enum_meta_i}). La perspective d'une telle automatisation pose évidemment un certain nombre de questions.
 
 Quels sont les choix mis à disposition de l'optimiseur pour améliorer la réponse attendue des solutions candidates entre chaque incrément ? \autocite[19]{Weise2011}
 
-Une comparaison automatisée nécessite pour être mise en oeuvre de définir \begin{enumerate*}[label=(\alph*)]
+Une comparaison automatisée nécessite pour être mise en oeuvre de définir \begin{enumerate}[label=(\alph*)]
 \item sur quelle base se fonde l'évaluation d'une solution,
 \item la comparaison entre les solutions évaluées,
-\item et la sélection de nouvelles solutions candidates.\end{enumerate*} Car l'optimiseur, tout comme nous, ne connait pas directement la forme prise par l'espace des solutions, et doit bien concevoir en interne les choix permettant, par la selection de nouvelles solutions candidates à évaluer, de progresser si possible vers une solution optimum.
+\item et la sélection de nouvelles solutions candidates.\end{enumerate} 
+
+Car l'optimiseur, tout comme nous, ne connait pas directement la forme prise par l'espace des solutions, et doit bien concevoir en interne les choix permettant, par la selection de nouvelles solutions candidates à évaluer, de progresser si possible vers une solution optimum.
 
 De fait dans un tel scénario, et pour éviter une recherche aléatoire, l'évaluation de solution candidate renvoie à l'existence d'une expertise externe à l'optimiseur, le seul capable de formaliser ce qui différencie une bonne solution d'une mauvaise solution. On revient à parler ici d'heuristique, et de leurs diversités, car si celles-ci interviennent dans l'évaluation des solutions candidates (a), elles interviennent aussi dans les autres cas (b) et (c). Elles se présentent sous la forme de différents types de connaissances, interrogent différents espaces, et s'intègrent souvent sous la forme de composants dans la structure plastique des métaheuristiques.
 
 L'injection de connaissance (voir point \ref{enum_meta_h} )dans ce type d'algorithme métaheuristique est donc double, et opère à la fois de façon précise dans la formalisation d'un ou de plusieurs critères qui vont servir pour l'algorithme optimiseur à déterminer la qualité, bonne ou mauvaise, d'une solution candidate; et de l'autre elle intervient cette fois ci de façon moins contrôlable dans la façon dont l'expérimentateur va construire et paramétrer une métaheuristique pour l'adapter au mieux à son problème. La qualité interne (paramètre, structure) de la métaheuristique définit aussi en quelque sorte le processus d'exploration, ce qui explique aussi la dépendance de ce type d'algorithmes à l'environnement qu'ils doivent explorer.
 
-\begin{figure}[ht]
-	\begin{sidecaption}[fortoc]{Projection du vecteur de points $\{a \dotsc n\}$ dans l'espace des objectifs. Les couleurs représentent les différents axes de projection ordonnés de 1 à 3 sur $(x,v)$ et de 1 à 4 sur $(y,v)$}[fig:spacePspaceOmultimodal]
+\begin{figure}[htb]
+	\begin{sidecaption}[fortoc]{Projection du vecteur de solution candidates $\{a \dotsc n\}$ dans l'espace des objectifs. Les flèches indiquent dans quel sens et sur quel plan se fait la projection des points. Les couleurs permettent de repérer quelle est la ligne de points que l'on a projetée, de la ligne 1 à 3 sur $(x,v)$ et de la ligne 1 à 4 sur $(y,v)$}[fig:spacePspaceOmultimodal]
 	 \centering
 	 	\includegraphics[width=.9\linewidth]{espaceP_espaceO_multimodal.pdf}
 	\end{sidecaption}
@@ -1595,8 +1597,10 @@ L'injection de connaissance (voir point \ref{enum_meta_h} )dans ce type d'algori
 
 L'objectif est rendu complexe car la relation entretenue entre ces deux espaces, celui des solutions candidates disponibles, et celui des évaluations est bien souvent dissymétrique. Pour mieux comprendre cette relation, la figure \ref{fig:spacePspaceOmultimodal} illustre cette correspondance des solutions candidates $\{a \dotsc n\}$ décrites par leurs coordonnées $(x,y)$ lorsqu'elles sont projetées dans l'espace des objectifs $\mathbb{Y}$ en suivant la transformation attendue par la fonction boite noire de dynamique non linéaire $f(x,y)$. Les valeurs $v = f(x,y)$ des différentes solutions candidates sont également projetées sur le plan 2D $(x,v)$ et $(y,v)$ pour mieux visualiser la forme prise par cette surface en 2D.
 
+Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on projette celle-ci dans l'espace $(x,y)$, ce qui nous permet de mieux constater l'éclatement des valeurs de $v$ sur la figure \ref{fig:xyspacePspaceOmultimodal}.
+
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Les couleurs indiquent la  des valeurs $v = f(x,y)$ mesurée dans la figure \ref{fig:spacePspaceOmultimodal}, sachant qu'on cherche à minimiser la valeur de v :
+	\begin{sidecaption}[fortoc]{Les couleurs indiquent la valeur $v = f(x,y)$ de chaque solution candidate $\{a \dotsc n\}$. $(v,x)$ et $(v,y)$ sont les plan extrait de la figure \ref{fig:spacePspaceOmultimodal}. On cherche ici à minimiser la valeur de $v$ :
 \parbox{\marginparwidth}{
 \begin{enumerate}[label={},labelindent=0pt,leftmargin=*]
         \item \sqbox{tangoBlue1} indique une fitness minimale, cf. qui maximise $v$
@@ -1615,8 +1619,6 @@ L'objectif est rendu complexe car la relation entretenue entre ces deux espaces,
 		\label{subfig_xyespaceSolutionCandidate_c}}
 	\end{sidecaption}
 \end{figure}
-
-Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on projette celle-ci dans l'espace $(x,y)$, ce qui nous permet de mieux constater l'éclatement des valeurs de $v$ sur la figure \ref{fig:xyspacePspaceOmultimodal}.
 
 Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidates très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
 
@@ -1727,7 +1729,7 @@ Il nous restera également à aborder dans la section suivante, la question des 
 
 L'introduction d'un nouvel \enquote{espace de recherche} est nécessaire, et  correspond à la somme des entrées, des paramètres, sur lequel l'optimiseur va pouvoir jouer directement, afin de modifier cette fois-ci indirectement l'expression de la solution candidate ensuite évaluée.
 
-Autrement dit, il faut retenir qu'une solution candidate fait partie d'un espace de solutions candidates possibles, et que l'exploration de ce dernier est dépendant des bornes fixées par l'expert pour délimiter l'espace de recherche de chacun des entrant, notamment pour limiter le champ de recherche de l'optimiseur à celui des valeurs empiriquement et théoriquement possibles. Ce qui introduit aussi la possibilité d'une nouveau \textit{mapping} entre les valeurs de ces deux espaces, de recherche, et du phénomène à évaluer, qui ne sont pas nécessairement de même nature.
+Autrement dit, il faut retenir qu'une solution candidate fait partie d'un espace de solutions candidates possibles, et que l'exploration de ce dernier est dépendant des bornes fixées par l'expert pour délimiter l'espace de recherche de chacun des entrants, notamment pour limiter le champ de recherche de l'optimiseur à celui des valeurs empiriquement et théoriquement possibles. Ce qui introduit aussi la possibilité d'une nouveau \textit{mapping} entre les valeurs de ces deux espaces, de recherche, et du phénomène à évaluer, qui ne sont pas nécessairement de même nature.
 
 On peut s'appuyer sur l'exemple de bras robotisé donné par \autocite{Weise2011} pour illustrer ce cas. On a d'un côté les paramètres de positionnement des éléments de bras d'un robot, contraint par la structure théorique de celui-ci, et de l'autre l'expression spatiale finale du bras représentatif de cette combinaison de paramètres dans l'espace des solutions possibles, potentiellement infini, et dont on n'a pas la maitrise directe. L'optimiseur s'appuie ensuite sur l'évaluation de cette configuration spatiale à l'aide des critères qu'on lui a donné pour induire des opérations non pas dans l'espace d'expression spatialisé du bras, mais dans l'espace de recherche des vecteurs de paramètres permettant l'amélioration de ce résultat.
 
@@ -2599,47 +2601,46 @@ Question de la distribution des algorithmes évolutionnaires. Quel cas d'utilisa
 Les librairies logicielles permettant la mise en oeuvre d'algorithmes évolutionnaires existent dans de très nombreux langages informatiques. Les \textit{Survey} ou \textit{state of the art} sont régulièrement mis à jour dans cette discipline, et il est inutile de se substituer ici à ce type de travaux en évoquant les avantages et les inconvénients comparés de toutes ces librairies. Le lecteur pourra se référer à l'étude très complète de \textcite{Parejo2012} comparant selon 271 critères 11 des plus importantes plateformes sur les 33 qu'ils ont identifiés. On se contentera ici d'illustrer ce que l'on considère comme les principaux défauts du point de vue de notre grille de lecture en sélectionnant pour cette critique une ou plusieurs librairies parmis les plus usitées.
 
 Un premier filtre permet d'éliminer toute celle qui ne s'adresse qu'à une seule branche des EA, ou qui n'implémente aucun des algorithmes multi-objectifs.
-
+\\
 Un deuxième filtre permet d'éliminer également toutes les librairies qui sont intégrées à un logiciel, donc impossibles à utiliser en dehors de celui-ci. Le cas particulier des logiciels de modélisations (simulateurs) intégrant des algorithmes EC sera tout de même abordé dans la section suivante afin de situer les limites de ces approches. Comme la librairie logicielle réalisée doit être compatible a minima avec plusieurs logiciels de modélisations existants, il ne parait pas intéressant de partir vers une solution se basant sur l'extension de ces derniers.
-
+\\
 Afin de satisfaire les objectifs que nous avons fixés, la librairie doit pouvoir fonctionner avec OpenMOLE, car une des tâches de ce dernier va être d'orchestrer de façon transparente la parallélisation de ces algorithmes évolutionnaires, ce qui suppose une interaction assez fine entre les deux outils, et un langage informatique compatible avec Java ou Scala, les deux langages sur lesquels est construit OpenMOLE.
 
+Il ne reste plus que quelques librairies en Java, comme \href{http://jmetal.sourceforge.net/}{@JMetal} (2010), ou \href{http://opt4j.sourceforge.net/}{@Opt4J (Java) 2011}. Si nous n'avons rien à redire sur les fonctionnalités offertent par ces librairies, aucune d'entres elle par contre n'est capable d'offrir la modularité dont nous avons besoin. Comme il n'existe pas vraiment d'équivalent en Scala, nous décidons donc de partir sur une solution originale en s'appuyant sur l'amélioration d'une base de code source existante développé en interne à l'ISC-PIF.
 
-\subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
-\label{sssec:choix_lib_EA}
+% \subsubsection{Le choix d'un nouvelle librairie compatible avec openMOLE}
+% \label{sssec:choix_lib_EA}
 
-%La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie.
+% %La généricité d'application de cette librairie à différentes classes de problèmes tient dans la sémantique associé à chacun des éléments de la terminologie.
 
-%Dans notre étude, les \textit{individus} représentent une instance de simulation,
+% %Dans notre étude, les \textit{individus} représentent une instance de simulation,
 
 
-Apache Commons
+% Apache Commons
 
-\href{http://www.moeaframework.org/}{@MOEAFramework}
+% \href{http://www.moeaframework.org/}{@MOEAFramework}
 
-\href{http://dev.heuristiclab.com/}{@HeuristicLab 2002 .Net CSharp Microsoft dependent}
+% \href{http://dev.heuristiclab.com/}{@HeuristicLab 2002 .Net CSharp Microsoft dependent}
 
-\href{http://jmetal.sourceforge.net/}{JMetal (2010)}
+% \href{http://jmetal.sourceforge.net/}{JMetal (2010)}
 
-\href{http://image.diku.dk/shark/sphinx_pages/build/html/index.html}{Shark machine learning library (c++)}
+% \href{http://image.diku.dk/shark/sphinx_pages/build/html/index.html}{Shark machine learning library (c++)}
 
-\href{http://www.tik.ee.ethz.ch/sop/pisa/?page=documentation.php}{PISA (C / C++) 2003}
+% \href{http://www.tik.ee.ethz.ch/sop/pisa/?page=documentation.php}{PISA (C / C++) 2003}
 
-Paradiseo-MOEO et Paradiseo-PEO (C ++)
-Logiciels de l'INRA
+% Paradiseo-MOEO et Paradiseo-PEO (C ++)
+% Logiciels de l'INRA
 
-\href{http://cs.gmu.edu/~eclab/projects/ecj/}{ECJ (1998) (orienté GP)}
+% \href{http://cs.gmu.edu/~eclab/projects/ecj/}{ECJ (1998) (orienté GP)}
 
-\href{http://opt4j.sourceforge.net/}{Opt4J (Java) 2011}
+% \href{http://opt4j.sourceforge.net/}{Opt4J (Java) 2011}
 
-\href{http://esa.github.io/pygmo/}{Pygmo (Python) PaGMO (C++) (ESA)}
+% \href{http://esa.github.io/pygmo/}{Pygmo (Python) PaGMO (C++) (ESA)}
 
-\href{http://jgap.sourceforge.net/}{JGAP}
+% \href{http://jgap.sourceforge.net/}{JGAP}
 
 \subsection{Bref historique du \textit{framework} MGO}
 \label{ssec:historique_mgo}
-
-\hl{a verifier avec Romain pour la date de début}
 
 Le projet démarre un peu avant 2010, à l'Institut des Systèmes Complexes, principalement sous l'impulsion de Romain Reuillon, Salma Mesmoudi et Evelyne Luthon. Un premier prototype est utilisé pour isoler un ensemble viable de trajectoire dans un processus maitrisé d'affinage de camembert. La définition de ce problème constitue un problème multi-objectifs nécessitant l'usage de ressources informatiques importantes, si possible parallélisé, pour être résolu de façon exhaustive. C'est à la convergence d'une triple expertise, entre génie des procédé agro-alimentaire, expertise dans le domaine des EC et du calcul distribué que nait le premier prototype de ce programme \autocite{Mesmoudi2010}.
 
