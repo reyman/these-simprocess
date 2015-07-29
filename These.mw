@@ -179,7 +179,7 @@
     </bcf:sort>
   </bcf:sorting>
   </bcf:sortlist>
-  <bcf:sortlist section="6" name="nyt" type="entry" sortscheme="nyt">
+  <bcf:sortlist section="7" name="nyt" type="entry" sortscheme="nyt">
   <bcf:sorting>
     <bcf:sort order="1">
       <bcf:sortitem order="1">presort</bcf:sortitem>

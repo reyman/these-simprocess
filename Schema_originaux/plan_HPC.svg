@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="83.844444mm"
-   height="58.505249mm"
-   viewBox="0 0 297.08661 207.30206"
+   width="117.6331mm"
+   height="61.788677mm"
+   viewBox="0 0 416.8102 218.93625"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -639,6 +639,36 @@
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(-0.6,-0.6)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mstart-4-6-3-9-80"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4678-0-4-8-6-2"
+         style="fill:#ef2929;fill-opacity:1;fill-rule:evenodd;stroke:#ef2929;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-0-0-7-7-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4681-8-7-0-7-5"
+         style="fill:#ef2929;fill-opacity:1;fill-rule:evenodd;stroke:#ef2929;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -648,8 +678,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.4574542"
-     inkscape:cx="136.00677"
-     inkscape:cy="75.297756"
+     inkscape:cx="164.71487"
+     inkscape:cy="119.54076"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -671,7 +701,7 @@
      inkscape:window-width="1883"
      inkscape:window-height="1176"
      inkscape:window-x="37"
-     inkscape:window-y="24"
+     inkscape:window-y="1224"
      inkscape:window-maximized="1"
      fit-margin-left="1"
      fit-margin-right="1"
@@ -680,8 +710,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid3340"
-       originx="-21.456693"
-       originy="-316.45668" />
+       originx="98.266888"
+       originy="-316.45667" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -691,7 +721,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -699,7 +729,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="fond"
-     transform="translate(-21.456693,-0.6506941)">
+     transform="translate(98.26689,10.9835)">
     <rect
        style="opacity:0.14900004;fill:url(#pattern10646);stroke:none"
        width="122"
@@ -714,7 +744,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-21.456693,-528.60346)">
+     transform="translate(98.26689,-516.96927)">
     <rect
        style="opacity:0.13300003;fill:url(#pattern9175);stroke:none"
        width="117"
@@ -918,12 +948,6 @@
          y="623.06042"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">centre de calculs / SHS</tspan></text>
     <rect
-       id="rect3397-8-46"
-       width="2"
-       height="4.9999986"
-       x="152"
-       y="627.36218" />
-    <rect
        id="rect3397-8-2-8"
        width="2"
        height="4.9999986"
@@ -1000,7 +1024,7 @@
          id="tspan3473-9-5-91"
          x="95.088867"
          y="670.80212"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">simulation fr géographes</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">simulation chez les géographes français</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1012,7 +1036,12 @@
          id="tspan3473-9-5-91-1"
          x="41.739258"
          y="690.80212"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">computation fr géographes</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">computation chez les géographes français</tspan><tspan
+         sodipodi:role="line"
+         x="41.739258"
+         y="700.17712"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+         id="tspan9932" /></text>
     <path
        style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 285,652.36221 0,15 10,-7 z"
@@ -1120,5 +1149,140 @@
        id="path4729-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
+    <g
+       id="g10162"
+       transform="translate(6.437378,35.000025)">
+      <g
+         id="g10137">
+        <path
+           style="fill:#ef2929;fill-rule:evenodd;stroke:#ef2929;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart-4-6-3-9-80);marker-end:url(#Arrow2Mend-0-0-7-7-5)"
+           d="m -69.494081,551.16606 -27.5,0"
+           id="path3848-0-7-8-8"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-51.843262"
+           y="548.54767"
+           id="text3471-3-7-6"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3473-9-5-8"
+             x="-51.843262"
+             y="548.54767"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">relations entre</tspan><tspan
+             sodipodi:role="line"
+             x="-51.843262"
+             y="557.92267"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+             id="tspan10135">usages</tspan></text>
+      </g>
+      <g
+         transform="translate(-61.160961,4.5533583)"
+         id="g9991">
+        <g
+           id="g9970">
+          <rect
+             y="577.36218"
+             x="-40"
+             height="5.0000253"
+             width="25"
+             id="rect3397-1-9" />
+        </g>
+        <path
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m -15,572.36221 0,15 10.0000001,-7 z"
+           id="path4729-4-3"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccc" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3471-3-7-6-8"
+         y="581.90729"
+         x="-51.923828"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+           y="581.90729"
+           x="-51.923828"
+           id="tspan3473-9-5-8-8"
+           sodipodi:role="line">continuité </tspan><tspan
+           id="tspan10133"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+           y="591.28229"
+           x="-51.923828"
+           sodipodi:role="line">d'usages</tspan></text>
+      <g
+         id="g10152">
+        <g
+           transform="translate(-38.244081,40.000025)"
+           id="g9970-7">
+          <rect
+             id="rect3397-8-46-1-0-7-8"
+             width="2"
+             height="4.9999986"
+             x="-43"
+             y="577.36218" />
+          <rect
+             id="rect3397-8-2-8-2-6-6-5"
+             width="2"
+             height="4.9999986"
+             x="-46"
+             y="577.36218" />
+          <rect
+             id="rect3397-8-2-3-7-3-1-0-7"
+             width="2"
+             height="4.9999986"
+             x="-49"
+             y="577.36218" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="-52.504272"
+           y="613.50598"
+           id="text3471-3-7-6-8-9"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="-52.504272"
+             y="613.50598"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+             id="tspan10086">date de départ </tspan><tspan
+             sodipodi:role="line"
+             x="-52.504272"
+             y="622.88098"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+             id="tspan10131">ou de fin</tspan><tspan
+             sodipodi:role="line"
+             x="-52.504272"
+             y="632.25598"
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+             id="tspan10129">inconnue</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(81,100.00003)"
+       id="g9970-7-7">
+      <rect
+         id="rect3397-8-46-1-0-7-8-7"
+         width="2"
+         height="4.9999986"
+         x="-43"
+         y="577.36218" />
+      <rect
+         id="rect3397-8-2-8-2-6-6-5-9"
+         width="2"
+         height="4.9999986"
+         x="-46"
+         y="577.36218" />
+      <rect
+         id="rect3397-8-2-3-7-3-1-0-7-5"
+         width="2"
+         height="4.9999986"
+         x="-49"
+         y="577.36218" />
+    </g>
   </g>
 </svg>
