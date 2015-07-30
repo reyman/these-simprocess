@@ -474,6 +474,7 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 		\begin{minipage}{1\textwidth}
 			\centering
 			\subbottom[]{
+				\resizebox{0.6\textwidth}{!}{%
 				\begin{tabular}{@{}cll@{}}
 				\toprule
 				\multicolumn{3}{l}{A l’Institut Blaise Pascal IBP ( 1946 - 1969)} \\ \midrule
@@ -485,12 +486,14 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 				1962        & Elliott 803, IBM 704     & ( ? , 1964/1966)     \\
 				1963        & CAB 500, IBM 1401        & (? , ?)              \\
 				1966        & CDC 3600                 & ( 1972 )             \\ \bottomrule
-				\end{tabular}
+				\end{tabular}%
+				}
 		 	\label{machines_a}}
 		 \end{minipage}\qquad
 		 \begin{minipage}{1\textwidth}
 		 	\centering
 			\subbottom[]{
+				\resizebox{0.6\textwidth}{!}{%
 				\begin{tabular}{@{}cll@{}}
 				\toprule
 				\multicolumn{3}{c}{Au CIRCE ( 1969 - 1993 ) à Orsay} \\ \midrule
@@ -504,7 +507,8 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 				1972     & IBM 360/20, 370/165      & ( ?, ?)        \\
 				1985     & AMDAHL 470/V7, NAS9080   & (?, ?)         \\
 				?        & IBM 3090/200             & ?              \\ \bottomrule
-				\end{tabular}
+				\end{tabular}%
+				}
 			\label{machines_b}}
 		\end{minipage}
   \end{sidecaption}
@@ -832,7 +836,7 @@ Les résultats des premières analyses sont disponibles dans une publication \au
 
 Dans ce premier compte-rendu d'expériences auquel participe Roehner, il est explicitement pointé l’avantage d’une telle méthode automatique ( \textbf{la fonction objectif alors utilisée est une méthode de minimisation de moindres carrés non linéaires }) par rapport aux calibrages manuels, avec même la découverte de quelques avancées encourageantes : \foreignquote{english}{That is why, after more than a hundred of these tentative simulations, we decided to use an automatic technique for calibration [...] The adjustements that we obtained until now are not good enough to be considered \enquote{best fit} and to allow calculation of residuals. But we have a serie of interesting results with various configurations according to different values of parameters [...]} Dans les deux ouvrages suivants par contre, cette méthode automatique est finalement indiquée comme impossible, et tous les calibrages sur ce modèle seront faits en définitive par essai/erreur et sur un ensemble assez restreint de simulations.
 
-Le calibrage du modèle sur Rouen indiqué dans la thèse de \autocites[348,354]{Sanders1984}{Sanders1985} fait état de $200$ simulations, pour $32$ paramètres à estimer, sur $17$ communes. D'autres articles seront publiés en 1986-1987 \autocites{Pumain1986,Pumain1987}, puis enfin dans un ouvrage collectif en 1989. Toutefois, la conclusion de \textcite[112]{Pumain1989} est similaire à celle de 1984, pour $300$ simulations et $32$ paramètres à estimer pour $102$ équations : \enquote{L’utilisation de méthodes de calibrages automatiques est rendue impossible par le nombre de paramètres et le peu d’informations sur l’ensemble des valeurs théoriquement possibles. Nous avons donc dû procéder tout simplement par tâtonnement, en opérant par plusieurs phases.}
+Le calibrage du modèle sur Rouen indiqué dans la thèse de \autocites[348,354]{Sanders1984}{Sanders1985} fait état de $200$ simulations, pour $32$ paramètres à estimer, sur $17$ communes. D'autres articles seront publiés en 1986-1987 \autocites{Pumain1986, Pumain1987}, puis enfin dans un ouvrage collectif en 1989. Toutefois, la conclusion de \textcite[112]{Pumain1989} est similaire à celle de 1984, pour $300$ simulations et $32$ paramètres à estimer pour $102$ équations : \enquote{L’utilisation de méthodes de calibrages automatiques est rendue impossible par le nombre de paramètres et le peu d’informations sur l’ensemble des valeurs théoriquement possibles. Nous avons donc dû procéder tout simplement par tâtonnement, en opérant par plusieurs phases.}
 
 Une autre tentative d'exploration du modèle est réalisée un peu plus tard dans les années 1992 \autocite{Milan1992}, probablement sans utiliser les moyens d'un centre de calcul. Pour l'application à la ville de Bordeaux, le polytechnicien Olivier Milan reproduit \autocite{Wilensky2007a} pour son stage le modèle de Peter Allen en utilisant le langage PASCAL (le listing du code source est cette fois-ci inclus dans le rapport), et propose de le calibrer avec un algorithme de descente de gradient minimisant une fonction \textbf{mono-objectif calculée en utilisant l'erreur quadratique entre valeurs réelles et simulées}. Une fois les paramètres estimables a priori enlevés, il reste selon lui 68 valeurs de paramètres à estimer, intervenant dans 138 équations consécutives.
 
@@ -875,6 +879,7 @@ La présence de cette puissance informatique à disposition de tous les scientif
 \begin{sidecaption}[Classement des ordinateurs de l'IDRIS depuis 1993]{Classement basé sur la brochure pour les 20 ans du centre IDRIS}
 	[tab:prankingIDRIS]
 	\centering
+	\resizebox{1\textwidth}{!}{%
 	\begin{tabular}{@{}llllll@{}}
 \toprule
 \multicolumn{6}{c}{A l'IDRIS (1993 - maintenant)} \\ \midrule
@@ -888,12 +893,13 @@ Durée & Identifiant machine & Nom & Type & Processeurs & Puissance \\ \midrule
 2008-2012 & IBM Blue Gene & Babel & processeurs & 40960 & 139 TFlops \\
 2013 & IBM x3750 & Ada & coeurs & 10624 & 230 TFlops \\
 2013 & IBM Blue Gene & Turing & coeurs & 98304 & 1258 TFlops \\ \bottomrule
-\end{tabular}
+\end{tabular}%
+		 }
 \end{sidecaption}
 \end{table}
 
 % DEFI pas lié aux agents
-Ce discours sur le HPC, on a vu qu'Openshaw et ses collègues de l'école de Leeds, ont fait plus que l'appliquer, ils en ont fait un manifeste pour la \textit{GeoComputation} \autocite{Openshaw2000b} dès la fin des années 1990. Pourtant là encore on a vu que ce message et cette tentative pour démocratiser le HPC n'a pas dépassé, au moins pour la simulation, le cercle assez restreint de géographes ou d'équipes de géographes disposant des doubles compétences informatiques adaptés pour saisir et acter ce message dans des projets. On pourra citer à titre d'exemple la lente progression du nombre de références \Anote{ca_calibrage} qui semble en géographie se référer à des méthodes susceptible d'utiliser le HPC pour calibrer automatiquement des modèles de simulation \autocites{Diplock1996, Ngo2012, Straatman2004, Heppenstall2007, Schmitt2015, Wu1998, Wu2002, Li2001, Ahmadi2007}. Le nombre de modèles de simulation publié a par contre sensiblement augmenté et suit la courbe de démocratisation de l'outil. Il n'y a rien d'étonnant donc à voir buter les évaluations de modèles de simulation sur les mêmes problématiques techniques qu'il y a 15 ans, car l'évolution de la micro-informatique, même fulgurante, ne permet toujours pas d'aborder l'exploration des modèles efficacement.
+Ce discours sur le HPC, on a vu qu'Openshaw et ses collègues de l'école de Leeds, ont fait plus que l'appliquer, ils en ont fait un manifeste pour la \textit{GeoComputation} \autocite{Openshaw2000b} dès la fin des années 1990. Pourtant là encore on a vu que ce message et cette tentative pour démocratiser le HPC n'a pas dépassé, au moins pour la simulation, le cercle assez restreint de géographes ou d'équipes de géographes disposant des doubles compétences informatiques adaptés pour saisir et acter ce message dans des projets. On pourra citer à titre d'exemple la lente progression du nombre de références \Anote{ca_calibrage} qui semble en géographie se référer à des méthodes susceptible d'utiliser le HPC pour calibrer automatiquement des modèles de simulation \autocites{Diplock1996, Ngo2012, Straatman2004, Heppenstall2007, Schmitt2015, Wu1998, Wu2002, Li2001, Ahmadi2009}. Le nombre de modèles de simulation publié a par contre sensiblement augmenté et suit la courbe de démocratisation de l'outil. Il n'y a rien d'étonnant donc à voir buter les évaluations de modèles de simulation sur les mêmes problématiques techniques qu'il y a 15 ans, car l'évolution de la micro-informatique, même fulgurante, ne permet toujours pas d'aborder l'exploration des modèles efficacement.
 
 %Toutefois, même s'il y a bien eu des efforts conséquents dans l'autonomisation de certains géographes par rapport aux outils de modélisation disponibles dans les années 1990, force est de constater que la thématique HPC (algorithmes, logiciels, méthodologie, cas d'utilisation) se fait assez rare dans les publications de la communauté agent et en géographie. La mise à disposition du HPC pour l'exploration des modèles de simulation, même si elle a été tentée à plusieurs reprises par certains modélisateurs géographes français ou anglo-saxons \autocite{Heppenstall2007} \hl{ajout ref}, n'a jusqu'à présent pas débouché sur une systématisation des pratiques, et semble encore être une pratique qui tient du domaine du cas particulier.
 
