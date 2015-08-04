@@ -123,14 +123,20 @@
 \brokenpenalty=8000\relax
 
 %http://tex.stackexchange.com/questions/103139/modify-bigfoot-rules-for-footnote-page-breaks
-\footnotewidowpenalty=5000
-\footnoteclubpenalty=5000
-\finalfootnotewidowpenalty=5000
-\interfootnotelinepenalty=1000
+\footnotewidowpenalty=6000
+\footnoteclubpenalty=6000
+\finalfootnotewidowpenalty=6000
+\interfootnotelinepenalty=3000
+
+%http://tex.stackexchange.com/questions/20585/fixing-an-overfull-box/20610#20610
+\emergencystretch=1.5em
+% MONTRE LES PROBLEMES
+%\overfullrule=1mm
 
 \sloppybottom
 \looseness=-1
 
+% http://tex.stackexchange.com/questions/191273/how-to-prevent-a-page-break-before-an-itemize-or-enumerate-list-continued?rq=1
 \makeatletter
 \@beginparpenalty=10000
 \@itempenalty=5000
@@ -241,18 +247,6 @@
  titlerule=0pt,
  fonttitle=\normalcolor\itshape}{thb}
 %%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%
-% PENALTIES
-% MARCHE PAS
-% http://tex.stackexchange.com/questions/191273/how-to-prevent-a-page-break-before-an-itemize-or-enumerate-list-continued?rq=1
-\makeatletter
-  \@beginparpenalty=10000
-
-%http://tex.stackexchange.com/questions/20585/fixing-an-overfull-box/20610#20610
-\emergencystretch=1.5em
-% MONTRE LES PROBLEMES
-%\overfullrule=1mm
 
 %%%%%%%%%%%%%%%%%%
 % SVG 
@@ -729,6 +723,7 @@ Ligatures=Common,
 
 
 \cleardoublepage
+
 \phantomsection
 \addcontentsline{toc}{chapter}{Notes de lecture}
 \chapter*{Notes de lecture}
