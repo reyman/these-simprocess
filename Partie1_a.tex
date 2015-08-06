@@ -1390,15 +1390,13 @@ L'activité d'exploration continue d'être un catalyseur pour différents projet
 
 Le choix est fait dans cette section de faire appel à la fois un modèle jouet (pour la compréhension générale), mais également un modèle réel (pour montrer que cela marche).
 
-\subsubsection{un modèle de simulation appliqué SimpopLocal}
+\subsubsection{un modèle de simulation appliqué : SimpopLocal}
 
-Seul un résumé du projet SimpopLocal sera présenté ici, car la présentation détaillé du modèle, les problématiques qui ont motivés sa construction et son exploration, ainsi que les résultats, ont déjà fait l'objet d'une présentation détaillé à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015} (joint en annexe) , un article paru dans JASSS en 2015 \autocite{Reuillon2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}.
+La présentation détaillée de ce modèle de simulation multi-agents, les problématiques qui ont motivées sa construction et son exploration, ainsi que l'analyse des résultats ont déjà fait l'objet d'une présentation détaillée à la fois dans un article EPB paru en 2015 \autocite{Schmitt2015} (joint en annexe), un article paru dans JASSS en 2015 \autocite{Reuillon2015}, mais également dans plusieurs chapitres de thèse \autocite{Schmitt2014}.
 
-Bien que les travaux autour de ce modèle de simulation puissent apparaitre comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaire pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette inter-disciplinarité \autocite{Chapron2014}.
+Bien que les travaux autour de ce modèle de simulation puissent apparaître comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaires pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette interdisciplinarité \autocite{Chapron2014}.
 
-Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisé.
-
-
+Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisée.
 
 \subsubsection{un modèle jouet sur les fourmis}
 
@@ -1409,15 +1407,18 @@ Le modèle de simulation \textbf{Ants} est une reproduction par \textcite{Wilens
 	 	\includegraphics[width=.6\linewidth]{ants.png}
 \end{figure}
 
-Dans ce modèle Netlogo, une colonie de fourmis fourrage à la recherche de nourriture. Chaque fourmi suit un ensemble de règles simple, mais la colonie prise dans son ensemble réagit de façon complexe. Quand une fourmis trouve un morceau de nourriture, elle ramène celle-ci dans son nid, en laissant une empreinte chimique derrière elle. Lorsque les autres fourmis renifle cette trace, elle suive la piste jusqu'à la nourriture. Plus le nombre de fourmis rapportant de la nourriture vient à augmenter, plus la piste chimique est renforcé par leur passage.
+Dans ce modèle Netlogo, une colonie de fourmis fourrage à la recherche de nourriture. Chaque fourmi suit un ensemble de règles simples, mais la colonie prise dans son ensemble réagit de façon complexe. Quand une fourmi trouve un morceau de nourriture, elle ramène celui-ci dans son nid, en laissant une empreinte chimique derrière elle. Lorsque les autres fourmis \enquote{reniflent} cette trace, elles suivent la piste jusqu'à la nourriture. Plus le nombre de fourmis rapportant de la nourriture vient à augmenter, plus la piste chimique est renforcée par leur passage.
 
 Ce modèle est constitué de trois paramètres :
 \begin{itemize}[label=\textbullet,noitemsep,nolistsep]
-\item Une $Population$ de fourmis initiale
-\item Un taux $Evaporation-rate$ qui controle l'évaporation de la trace chimique
-\item un taux $Diffusion-rate$ qui controle la diffusion de la trace chimique
+\item Une $Population$ de fourmis initiale.
+\item Un taux $Evaporation-rate$ qui contrôle l'évaporation de la trace chimique.
+\item un taux $Diffusion-rate$ qui contrôle la diffusion de la trace chimique.
 \end{itemize}
 
+\medskip
+
+Les \textit{workflows} OpenMOLE des expérimentations présentées par la suite pour sont disponibles sur le site compagnon (voir notes de lecture).
 
 %Le \textit{\textit{framework}} MGO (Multi Goal Optimization)
 
@@ -1430,7 +1431,7 @@ Ce modèle est constitué de trois paramètres :
   \end{sidecaption}
 \end{figure}
 
-Pour mieux comprendre par la suite quelle est la spécificitée des algorithmes evolutionnaires (\textit{Evolutionary Algorithms} ou EA), il est nécessaire de donner quelques éléments de contexte et de définitions plus généraux concernant la branche d'étude dans lequel ceux-ci se situent. Il faut par ailleurs mettre en garde le lecteur que la plupart des définitions et des analyses présentés ici sont inspirés ou extraits d'ouvrages de synthèses à destination d'un public très large \autocites{Weise2011, Luke2013, Brownlee2012}. Par conséquent il faut garder à l'esprit que plusieurs de ces termes peuvent être discutés, enrichis, critiqués ou prendre des sens différents dans chacune des sous branche (voir figure \ref{fig:S_OverviewOptimisation}) que compte ce domaine très général qu'est l'optimisation.
+Pour mieux comprendre par la suite quelle est la spécificité des Algorithmes Evolutionnaires (\textit{Evolutionary Algorithms} ou EA), il est nécessaire de donner quelques éléments de contextes et de définitions plus généraux concernant la branche d'étude dans lesquels ceux-ci se situent. Il faut par ailleurs mettre en garde le lecteur que la plupart des définitions et des analyses présentées ici sont inspirées ou extraits d'ouvrages de synthèses à destination d'un public très large \autocites{Weise2011, Luke2013, Brownlee2012}. Par conséquent il faut garder à l'esprit que plusieurs de ces termes peuvent être discutés, enrichis, critiqués ou prendre des sens différents dans chacune des sous branches (voir figure \ref{fig:S_OverviewOptimisation}) que compte ce domaine très général qu'est l'optimisation.
 
 \subsubsection{Q'est ce que l'optimisation ?}
 \label{sssec:Optimisation}
@@ -1441,16 +1442,16 @@ Sortie de cette définition mathématique, l'optimisation peut également se dé
 
 Dans ce cadre, le terme d'optimisation globale \foreignquote{english}{ [...] is optimization with the goal of finding solutions $x^*$ for a given optimization problem which have the property that no other, better solutions exist.} Le terme \enquote{global} nécessite à la différence d'une recherche qui serait \enquote{locale}, de se concentrer sur l'obtention souvent plus couteuse et plus complexe d'un optimum global, minimum ou maximum, dominant par sa qualité l'ensemble des valeurs recherchées en entrée de la fonction à optimiser.
 
-Bien que souvent beaucoup plus lent, moins précis, et plus consommateurs de ressources que les algorithmes dédiés, ces algorithmes d'optimisations nécessitent aussi beaucoup moins d'informations pour pouvoir être executés : \foreignquote{english}{Most often, these algorithms only need a definition of the structure of possible solutions and a function $f$ which tells measures the quality of a candidate solution. Based on this information, they try to find solutions for which $f$ takes on the best values.} \autocite[24]{Weise2011}
+Bien que souvent beaucoup plus lent, moins précis, et plus consommateurs de ressources que les algorithmes dédiés, ces algorithmes d'optimisation nécessitent aussi beaucoup moins d'informations pour pouvoir être exécutés : \foreignquote{english}{Most often, these algorithms only need a definition of the structure of possible solutions and a function $f$ which tells measures the quality of a candidate solution. Based on this information, they try to find solutions for which $f$ takes on the best values.} \autocite[24]{Weise2011}
 
-Ces algorithmes s'appuient donc sur différents types de stratégies pour tirer parti du peu d'information obtenue via cette fonction $f$. De nature très diverse, on retient pour séparer une première fois ces stratégies une typologie en deux classes.
+Ces algorithmes s'appuient donc sur différents types de stratégies pour tirer parti du peu d'information obtenue via cette fonction $f$. De nature très diverses, on retient pour séparer une première fois ces stratégies, une typologie en deux classes.
 
 \begin{itemize}[label=\textbullet]
 \litem{\textit{Probabilistic Approaches}} Les approches stochastiques désignées dans la fig. \ref{fig:S_OverviewOptimisation} sont capables de trouver un optimum assez rapidement, mais ne peuvent pas en garantir la propriété \enquote{globale}
-\litem{\textit{Deterministic Approaches}} Les approches déterministes également désignées dans la fig. \ref{fig:S_OverviewOptimisation} peuvent certes garantir au moins théoriquement l'obtention d'un optimum global, mais s'éxecutent souvent au détriment d'un coût computationnel elevé.
+\litem{\textit{Deterministic Approaches}} Les approches déterministes également désignées dans la fig. \ref{fig:S_OverviewOptimisation} peuvent certes garantir au moins théoriquement l'obtention d'un optimum global, mais s'exécutent souvent au détriment d'un coût computationnel elevé.
 \end{itemize}
 
-Ces deux approches partagent également des difficultés communes, et découvrent leurs limites à des degrés divers en fonction des stratégies mise en oeuvre, dès lors que l'espace de recherche à parcourir devient trop important.
+Ces deux approches partagent également des difficultés communes, et découvrent leurs limites à des degrés divers en fonction des stratégies mises en oeuvre, dès lors que l'espace de recherche à parcourir devient trop important.
 
 C'est le cas par exemple de l'espace de recherche de toute une sous-catégorie de problèmes \textit{NP-Complet} \Anote{np_complet_def} d'optimisation combinatoire \textit{Combinatorial Optimization Problems} (COP). Ce domaine contient par exemple les problèmes bien connus du voyageur de commerce \textit{Travelling salesman problem} (TSP), ou encore le problème du sac à dos \textit{Knapsack Problem} (KP) \Anote{note_knapsack}. Avec l'augmentation du nombre d'éléments entrant dans la définition de ces problèmes, il devient impossible de passer en revue l'ensemble des combinaisons (solutions possibles). Ce qui a pour conséquence de rendre difficile tout autant la découverte d'un optimum global, que la mesure de qualité de celui-ci, car pour établir cette dernière il nous faudrait logiquement connaitre la solution optimale, or c'est cela même que nous cherchons.
 
@@ -1469,34 +1470,34 @@ Le terme heuristique \textit{heuristic} vient du Grec \textit{heuriskein} que l'
 %http://stackoverflow.com/questions/9140860/heuristic-function-for-finding-the-path-using-a-star
 %http://stackoverflow.com/questions/9140860/heuristic-function-for-finding-the-path-using-a-star
 %http://stackoverflow.com/questions/11779589/connection-between-a-star-search-and-integer-programming-extending-a-star
-Si on se penche sur la classe d'algorithmes dédiés au problème de recherche du plus court chemin, les heuristiques sont souvent utilisées en appui des algorithmes de parcours de graphe, soit pour converger plus rapidement vers une solution optimale, soit pour justement se libérer de cette contrainte d'optimalité en visant un gain de temps au détriment de la précision. Si on prend par exemple l'algorithme de Djikstra, celui-ci n'utilise pas d'heuristique et garantit que le plus court chemin résultant sera optimal, car tous les chemins possibles entre le point de départ $A$ et le point final $B$ auront été analysés par celui-ci. Il est néanmoins connu comme étant très coûteux d'utilisation dès que le graphe dépasse un certain nombre de noeuds. L'algorithme déterministe $A^*$ s'appuie par contre sur une fonction heuristique $h(n)$ (une estimation du coût minimal reliant le noeud $n$ au noeud final) pour guider l'algorithme dans le processus incrémental de sélection d'un prochain noeud constitutif d'un chemin. En jouant sur cette heuristique, on est ainsi capable de déterminer si l'algorithme doit mettre la priorité sur la vitesse ou la précision, $h(0)$ étant équivalent ici à l'algorithme de Djikstra. Si l'heuristique est bien choisie (on dit ici que l'heuristique est admissible), alors $A^*$ garanti aussi l'optimalité du chemin trouvé, avec à la clef un coût computationnel moindre, car seule une partie des noeuds de l'ensemble du graphe auront été explorés par l'algorithme. Une autre heuristique misant plus sur la vitesse d'exécution pourra définir un chemin cette fois-ci sub-optimal avec un coût computationnel encore plus réduit. Il est à noter ici que l'utilisation d'une heuristique dans un programme n'est pas forcément motivée par la recherche d'un optimum global, mais par le gain de temps. Ainsi, un utilisateur peut très bien avoir les moyens d'obtenir un chemin optimal (Djikstra) sur une petite combinatoire de noeuds, mais peut vouloir prendre un raccourci en utilisant une méthode moins couteuse ($A^*$). Un scénario très souvent mis en avant dans la programmation de jeux sur ordinateur, où l'on cherche régulièrement à gagner du temps, tout en se rapprochant d'un comportement faillible imitant plus un adversaire de type humain.
+Si on se penche sur la classe d'algorithmes dédiés au problème de recherche du plus court chemin, les heuristiques sont souvent utilisées en appui des algorithmes de parcours de graphe, soit pour converger plus rapidement vers une solution optimale, soit pour justement se libérer de cette contrainte d'optimalité en visant un gain de temps au détriment de la précision. Si on prend par exemple l'algorithme de Djikstra, celui-ci n'utilise pas d'heuristique et garantit que le plus court chemin résultant sera optimal, car tous les chemins possibles entre le point de départ $A$ et le point final $B$ auront été analysés par celui-ci. Il est néanmoins connu comme étant très coûteux d'utilisation dès que le graphe dépasse un certain nombre de noeuds. L'algorithme déterministe $A^*$ s'appuie par contre sur une fonction heuristique $h(n)$ (une estimation du coût minimal reliant le noeud $n$ au noeud final) pour guider l'algorithme dans le processus incrémental de sélection d'un prochain noeud constitutif d'un chemin. En jouant sur cette heuristique, on est ainsi capable de déterminer si l'algorithme doit mettre la priorité sur la vitesse ou la précision, $h(0)$ étant équivalent ici à l'algorithme de Djikstra. Si l'heuristique est bien choisie (on dit ici que l'heuristique est admissible), alors $A^*$ garanti aussi l'optimalité du chemin trouvé, avec à la clef un coût computationnel moindre, car seule une partie des noeuds de l'ensemble du graphe auront été explorés par l'algorithme. Une autre heuristique misant plus sur la vitesse d'exécution pourra définir un chemin cette fois-ci sub-optimal avec un coût computationnel encore plus réduit. Il est à noter ici que l'utilisation d'une heuristique dans un programme n'est pas forcément motivée par la recherche d'un optimum global, mais par le gain de temps. Ainsi, un utilisateur peut très bien avoir les moyens d'obtenir un chemin optimal (Djikstra) sur une petite combinatoire de noeuds, mais peut vouloir prendre un raccourci en utilisant une méthode moins coûteuse ($A^*$). Un scénario très souvent mis en avant dans la programmation de jeux sur ordinateur, où l'on cherche régulièrement à gagner du temps, tout en se rapprochant d'un comportement faillible imitant plus un adversaire de type humain.
 
 La forme prise par une heuristique est variable, et peut aller comme vu ci-dessus avec l'exemple $A^*$ d'une simple fonction mathématique de coût intégrée à un algorithme classique de parcours de graphes, à un algorithme beaucoup plus complexe intégrant de multiples prises de décisions pour estimer ce même coût. Dans le livre \textit{Code Complete} de \textcite[12]{McConnell2004}, celui-ci donne un exemple assez parlant pour illustrer la subtile différence qui sépare la description d'un algorithme employé au sens courant pour désigner un algorithme déterministe exact fournissant à coup sûr une solution, et la description d'un algorithme déterministe ou stochastique heuristique (ou appuyé par une heuristique) fournissant seulement un guide pour trouver, éventuellement, une solution.
 
-\foreignquote{english}{Here's an algorithm for driving to someone's house: Take Highway's 167 south to Puyallup. Take the South Hill Mall exit and drive 4.5 miles up the hill. Turn right at the light by the grocery store, and then take the first left. Turn into the driveaway of the large tan house on the left, at 714 North Cedar}
+\foreignblockquote{english}{Here's an algorithm for driving to someone's house: Take Highway's 167 south to Puyallup. Take the South Hill Mall exit and drive 4.5 miles up the hill. Turn right at the light by the grocery store, and then take the first left. Turn into the driveaway of the large tan house on the left, at 714 North Cedar}
 
-\foreignquote{english}{Here's an heuristic for getting to someone's house: Find the last letter we mailed you. Drive to the town in the return adress. When you get to town, ask someone where our house is. Everyone knows us - someone will be glad to help you. If you can't find anyone, call us from a public phone, and we'll come get you.}
+\foreignblockquote{english}{Here's an heuristic for getting to someone's house: Find the last letter we mailed you. Drive to the town in the return adress. When you get to town, ask someone where our house is. Everyone knows us - someone will be glad to help you. If you can't find anyone, call us from a public phone, and we'll come get you.}
 
-Il faut toutefois éviter de considérer les heuristiques comme appartenant à la seule classe des \textit{approximate algorithms}, car le terme ne se laisse pas facilement enfermer dans une typologie trop simple. En effet de multiples problèmes trouvent une solution exacte jusqu'à un certain niveau de complexification, à partir duquel on fait généralement appel aux heuristiques, soit par un appel à d'autres méthodes intégrant des heuristiques, soit par une intégration d'heuristiques aux méthodes existantes. Ainsi de nombreuses classes d'heuristiques sont utilisées de façon transversale, et apparaissent donc aussi comme composantes manipulées dans la classes des \textit{approximation algorithms}. L'heuristique gloutonne \textit{greedy algorithm} \Anote{greedy_description} apparaît de façon transversale à la fois comme une solution d'approximation pour le \textit{Knapsack Problem} (KP) mais également comme moteur dans le cadre d'algorithmes déterministes exacts comme la recherche du plus court chemin de Djikstra. Un autre algorithme nommé \textit{A*} (\textit{A-Star}) qui englobe Djikstra comme cas particulier, est quant à lui capable de fournir tout à la fois une mesure exacte ou approximée en fonction de l'heuristique injectée et du niveau de complexité du problème abordé.
+Il faut toutefois éviter de considérer les heuristiques comme appartenant à la seule classe des \textit{approximate algorithms}, car le terme ne se laisse pas facilement enfermer dans une typologie trop simple. En effet, de multiples problèmes trouvent une solution exacte jusqu'à un certain niveau de complexification, à partir duquel on fait généralement appel aux heuristiques, soit par un appel à d'autres méthodes intégrant des heuristiques, soit par une intégration d'heuristiques aux méthodes existantes. Ainsi de nombreuses classes d'heuristiques sont utilisées de façon transversale, et apparaissent donc aussi comme composantes manipulées dans la classe des \textit{approximation algorithms}. L'heuristique gloutonne \textit{greedy algorithm} \Anote{greedy_description} apparaît de façon transversale à la fois comme une solution d'approximation pour le \textit{Knapsack Problem} (KP) mais également comme moteur dans le cadre d'algorithmes déterministes exacts comme la recherche du plus court chemin de Djikstra. Un autre algorithme nommé \textit{A*} (\textit{A-Star}) qui englobe Djikstra comme cas particulier, est quant à lui capable de fournir tout à la fois une mesure exacte ou approximée en fonction de l'heuristique injectée et du niveau de complexité du problème abordé.
 
 \subsubsection{Quelle définition peut on donner pour une métaheuristique (\textit{metaheuristic}) ?}
 \label{sssec:metaheuristique}
 
-Le terme métaheuristique est d'origine plus moderne \autocite{Glover1986}, et a permis d'englober a posteriori des algorithmes jusque là qualifiés d'heuristiques. C'est le cas par exemple d'une bonne partie des algorithmes évolutionnaires, qui émergent principalement au cours des années 1960-1970. Cette remarque d'ordre historique est à l'origine d'une première ambiguité entre les termes auquelle il faut encore ajouter les inquiétudes exprimées par \textcite{Luke2013}. Pour ce dernier, le terme métaheuristique est en réalité plutôt malheureux pour définir cette catégorie d'algorithmes, car contrairement à ce que laisse entendre ce terme, \textit{une heuristique pour ou à propos d'une heuristique}, ce n'est pas de cela dont il s'agit ici.
+Le terme métaheuristique est d'origine plus moderne \autocite{Glover1986}, et a permis d'englober a posteriori des algorithmes jusque là qualifiés d'heuristiques. C'est le cas par exemple d'une bonne partie des algorithmes évolutionnaires, qui émergent principalement au cours des années 1960-1970. Cette remarque d'ordre historique est à l'origine d'une première ambiguité entre les termes à laquelle il faut encore ajouter les inquiétudes exprimées par \textcite{Luke2013}. Pour ce dernier, le terme métaheuristique est en réalité plutôt malheureux pour définir cette catégorie d'algorithmes, car contrairement à ce que laisse entendre ce terme, \textit{une heuristique pour ou à propos d'une heuristique}, ce n'est pas de cela dont il s'agit ici.
 
-Voici comment \textcite[8]{Brownlee2012} perçoit la différence entre les deux termes : \foreignquote{english}{Like heuristics, metaheuristics may be considered a general algorithmic \textit{framework} that can be applied to different optimization problems with relative few modifications to adapt them to a specific problem. The difference is that metaheuristics are intended to extend the capabilities of heuristics by combining one or more heuristic methods (referred to as procedures) using a higher-level strategy (hence ‘meta’). A procedure in a metaheuristic is considered black-box in that little (if any) prior knowledge is known about it by the metaheuristic, and as such it may be replaced with a different procedure. Procedures may be as simple as the manipulation of a representation, or as complex as another complete metaheuristic. Some examples of metaheuristics include iterated local search, tabu search, the genetic algorithm, ant colony optimization, and simulated annealing.}
+Voici comment \textcite[8]{Brownlee2012} perçoit la différence entre les deux termes : \foreignblockquote{english}[{\cite[8]{Brownlee2012}}]{Like heuristics, metaheuristics may be considered a general algorithmic \textit{framework} that can be applied to different optimization problems with relative few modifications to adapt them to a specific problem. The difference is that metaheuristics are intended to extend the capabilities of heuristics by combining one or more heuristic methods (referred to as procedures) using a higher-level strategy (hence ‘meta’). A procedure in a metaheuristic is considered black-box in that little (if any) prior knowledge is known about it by the metaheuristic, and as such it may be replaced with a different procedure. Procedures may be as simple as the manipulation of a representation, or as complex as another complete metaheuristic. Some examples of metaheuristics include iterated local search, tabu search, the genetic algorithm, ant colony optimization, and simulated annealing.}
 
 Le terme \enquote{méta-} renvoie plus en définitive au concept générique de \enquote{stratégie de recherche} prenant la forme d'un algorithme d'optimisation capable de mélanger, manipuler des heuristiques ou d'autres métaheuristiques (cf. points \ref{enum_meta_a} et \ref{enum_meta_h}) \Anote{def_meta_weise}. Contrairement aux heuristiques, les métaheuristiques se définissent plus comme un système fait de composants, dont la plasticité permet le support et l'interaction nécessaire au développement d'heuristiques plus ciblées (\textit{problem dependent}) \Anote{def_meta_sorensen}. La structure offre un patron d'usage initial (\textit{pattern}) qui reste indépendant du problème abordé (\textit{problem independent}) (cf. \ref{enum_meta_g}), tout en restant évolutif, comme le montre le fort développement de cette discipline depuis les années 1980. Ce principe de flexibilité, on le retrouve par exemple dans la classe des EC, comme le mettent bien en valeur Bach, Hammel et Schwefel en 1997, dans une publication introduisant l'EC dans la série renommée des \textit{IEEE Transactions} :
 
-\foreignquote{english}{We argue that the most significant advantage of using evolutionary search lies in the gain of exibility and adaptability to the task at hand, in combination with robust performance (although this depends on the problem class) and global search characteristics. In fact, evolutionary computation should be understood as a general adaptable concept for problem solving, especially well suited for solving difficult optimization problems, rather than a collection of related and ready-to-use algorithms. The majority of current implementations of evolutionary algorithms descend from three strongly related but independently developed approaches: genetic algorithms,evolutionary programming , and evolution strategies. [...] The fundamental difference in the evolutionary computation approach is to adapt the method to the problem at hand. In our opinion, evolutionary algorithms should not be considered as off-the-peg, ready-to-use algorithms but rather as a general concept which can be tailored to most of the real-world applications that often are beyond solution by means of traditional methods. Once a successful EC-\textit{framework} has been developed it can be incrementally adapted to the problem under consideration, to changes of the requirements of the project, to modifications of the model and to the change of hardware resources.} \autocite{Back1997a}
+\foreignblockquote{english}[\cite{Back1997a}]{We argue that the most significant advantage of using evolutionary search lies in the gain of exibility and adaptability to the task at hand, in combination with robust performance (although this depends on the problem class) and global search characteristics. In fact, evolutionary computation should be understood as a general adaptable concept for problem solving, especially well suited for solving difficult optimization problems, rather than a collection of related and ready-to-use algorithms. The majority of current implementations of evolutionary algorithms descend from three strongly related but independently developed approaches: genetic algorithms,evolutionary programming , and evolution strategies. [...] The fundamental difference in the evolutionary computation approach is to adapt the method to the problem at hand. In our opinion, evolutionary algorithms should not be considered as off-the-peg, ready-to-use algorithms but rather as a general concept which can be tailored to most of the real-world applications that often are beyond solution by means of traditional methods. Once a successful EC-\textit{framework} has been developed it can be incrementally adapted to the problem under consideration, to changes of the requirements of the project, to modifications of the model and to the change of hardware resources.} 
 
-Enfin, toujours dans une tentative de positionner ce terme dans une typologie, il faut savoir qu'une classification trop rapide de ces méthodes dans les seuls \textit{approximate algorithms} peut également être critiqué. Si les méthodes métaheuristiques sont effectivement souvent connues pour ne pas avancer de preuve, des travaux récents montrent toutefois qu'il existe de nouveaux algorithmes permettant de garantir dans certaines conditions un optimum global (CP-Algorithm de \autocite{Reuillon2015}). Tout dépend donc du degré et de la nature que l'on veut bien associer à la notion d'\textit{approximation} lorsqu'il s'agit de fournir une mesure d'éloignement de l'optimum. Les \textit{approximation algorithms} semblent toutefois plus intéressés par l'établissement d'une preuve au sens mathématique, et se concentrent avant tout sur un ensemble relativement limité de problèmes d'optimisation discret, ce qui ne semble pas être le but des métaheuristiques dans les deux cas. \autocites[1-6]{Kann1992}[13-15]{Williamson2011} %Metaheuristics: From Design to Implementation Par El-Ghazali Talbi
+Enfin, toujours dans une tentative de positionner ce terme dans une typologie, il faut savoir qu'une classification trop rapide de ces méthodes dans les seuls \textit{approximate algorithms} peut également être critiquée. Si les méthodes métaheuristiques sont effectivement souvent connues pour ne pas avancer de preuve, des travaux récents montrent toutefois qu'il existe de nouveaux algorithmes permettant de garantir dans certaines conditions un optimum global (CP-Algorithm de \autocite{Reuillon2015}). Tout dépend donc du degré et de la nature que l'on veut bien associer à la notion d'\textit{approximation} lorsqu'il s'agit de fournir une mesure d'éloignement de l'optimum. Les \textit{approximation algorithms} semblent toutefois plus intéressés par l'établissement d'une preuve au sens mathématique, et se concentrent avant tout sur un ensemble relativement limité de problèmes d'optimisation discret, ce qui ne semble pas être le but des métaheuristiques dans les deux cas. \autocites[1-6]{Kann1992}[13-15]{Williamson2011} %Metaheuristics: From Design to Implementation Par El-Ghazali Talbi
 
 %You could think of a heuristic like an approximate (not approximation) solution to a problem. The difference between approximate and approximation is that the first is about getting a good guess of the solution of a problem, but that you don't really know how good it is. The second is about getting a solution for which you can prove how close it is to the optimal solution.
 
 Enfin bien d'autres sous classifications sont possibles prenant plus ou moins en compte les spécificités propres aux différents algorithmes, comme celle opposant par exemple les stratégies utilisées en interne pour parcourir l'espace de recherche (generationel contre \textit{steady-state}, ou individuel contre populationel), la dimensionnalité possible pour la résolution des problèmes (mono-objectif contre multi-objectif), l'inspiration d'origine (naturelle biologique contre inspirations autres), etc.
 
-Toute classification monocritère est donc rendue très difficile, une voie s'étant même ouverte pour tenter de classer ces algorithmes suivant la nature et le niveau d'opération de ces hybridations. L'origine de cette difficulté tient dans une pratique courante et assumée d'hybridation entre les différentes techniques afin de réunir le meilleur de chacune d'elles au sein de nouvelle proposition de recherche. De fait, il est important pour la suite de cerner au mieux la classe d'algorithme d'optimisation que nous allons aborder, et de définir pourquoi nous l'avons abordée. Nous nous intéresserons principalement dans la suite de cette présentation aux approches stochastiques métaheuristiques inspirées par la métaphore biologique, nommée \textit{Evolutionary Computation} (EC) ( voir figure \ref{fig:S_OverviewOptimisation}). La section \ref{xx} permettra de dégager les spécificités de cette subdivision, mais en attendant il nous faut d'abord présenter les principaux termes et concepts communs à cette classe d'algorithmes d'optimisation.
+Toute classification monocritère est donc rendue très difficile, une voie s'étant même ouverte pour tenter de classer ces algorithmes suivant la nature et le niveau d'opération de ces hybridations. L'origine de cette difficulté tient dans une pratique courante et assumée d'hybridation entre les différentes techniques afin de réunir le meilleur de chacune d'elles au sein de nouvelle proposition de recherche. De fait, il est important pour la suite de cerner au mieux la classe d'algorithme d'optimisation que nous allons aborder, et de définir pourquoi nous l'avons abordée. Nous nous intéresserons principalement dans la suite de cette présentation aux approches stochastiques métaheuristiques inspirées par la métaphore biologique, nommée \textit{Evolutionary Computation} (EC) ( voir figure \ref{fig:S_OverviewOptimisation}). La section \ref{ssec:EA} permettra de dégager les spécificités de cette subdivision, mais en attendant il nous faut d'abord présenter les principaux termes et concepts communs à cette classe d'algorithmes d'optimisation.
 
 Devant la difficulté d'établissement d'une définition englobante, plusieurs auteurs semblent s'accorder pour faire du rattachement d'un algorithme à cette catégorie, une correspondance plus ou moins lâche avec un ensemble de propriétés généralement observées. En évitant une définition trop vague ou trop restrictive, on espère ainsi récupérer dans cette classe certains hybrides intéressants.
 
@@ -1515,25 +1516,22 @@ Voici un exemple de propriétés issues de \textcite{Blum2003} et traduites ci d
 	\item La plupart des métaheuristiques actuelles font appel à une mémoire pour améliorer le processus qui guide la recherche. \label{enum_meta_i}
 \end{enumerate}
 
-Afin de mieux comprendre cette table de propriétés un peu abstraite, il est proposé de reprendre ces différents points au travers d'une lecture commentée, en commencant par une question ciblé sur la mécanique interne régissant ce type de technique.
+Afin de mieux comprendre cette table de propriétés un peu abstraite, il est proposé de reprendre ces différents points au travers d'une lecture commentée, en commencant par une question ciblée sur la mécanique interne régissant ce type de technique.
 
 \textit{Comment se matérialise la recherche de solutions optimisées dans une métaheuristique ?}
 
-Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou \textit{Knapsack}, on a déjà vu que le nombre de combinaisons à évaluer lors d'une augmentation du nombre d'éléments participant à la définition du problème devient très vite problématique si on cherche à trouver une solution optimale exacte. Si on prend le cas d'un exemple plus ludique d'optimisations discrètes dans la branche des jeux (\textit{Combinatorial game theory}), le nombre de combinaisons légales possibles pour un plateau de 19 par 19 dans le jeu de GO chinois est estimé par \textcite{Tromp2007} à $2.08168199382×10^{170}$ . Même si certains auteurs comme Tromp estime qu'un tel calcul sera possible d'ici quelques mois \Anote{tromp_appel_calcul}, les problématiques posés par ce jeu mettent au défi les meilleurs programmes en intelligence artificielle \autocite{Bouzi2001}, et cela malgré des progrès spectaculaires ces dernières années, via notamment l'utilisation d'heuristique plus efficace que les approches classiques \Anote{mcts_go}.  Dans le cas d'un problème continu discrétisé, comme la recherche des meilleures valeurs de paramètres pour une simulation, la mise en oeuvre d'un plan factoriel complet (d'autres types de stratégies beaucoup plus fines existent) pose un problème double.
+Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou \textit{Knapsack}, on a déjà vu que le nombre de combinaisons à évaluer lors d'une augmentation du nombre d'éléments participant à la définition du problème devient très vite problématique si on cherche à trouver une solution optimale exacte. Si on prend le cas d'un exemple plus ludique d'optimisations discrètes dans la branche des jeux (\textit{Combinatorial game theory}), le nombre de combinaisons légales possibles pour un plateau de 19 par 19 dans le jeu de GO chinois est estimé par \textcite{Tromp2007} à $2.08168199382×10^{170}$ . Même si certains auteurs comme Tromp estime qu'un tel calcul sera possible d'ici quelques mois \Anote{tromp_appel_calcul}, les problématiques posées par ce jeu mettent au défi les meilleurs programmes en intelligence artificielle \autocite{Bouzi2001}, et cela malgré des progrès spectaculaires ces dernières années, via notamment l'utilisation d'heuristique plus efficace que les approches classiques \Anote{mcts_go}.  Dans le cas d'un problème continu discrétisé, comme la recherche des meilleures valeurs de paramètres pour une simulation, la mise en oeuvre d'un plan factoriel complet (d'autres types de stratégies beaucoup plus fines existent) pose un problème double.
 
-\hl{Correction orthographe à faire}
-D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède 5 paramètres, chacun de ces paramètres étant discrétisé en 10 pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique (10 réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à 2 années de calcul... La parallélisation d'un tel calcul, c'est-à-dire son execution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
+D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède $5$ paramètres, chacun de ces paramètres étant discrétisé en $10$ pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique ($10$ réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à deux années de calcul... La parallélisation d'un tel calcul, c'est-à-dire son exécution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
 
 \begin{figure}[htbp]
-	\begin{sidecaption}[fortoc]{Illustration des effets de la \textit{Curse Dimensionality} sur un plan d'expérience de 9 points entre 0 et 1 exclus. }[fig:curse]
+	\begin{sidecaption}[Le problème de la Curse Dimensionnality]{Illustration des effets de la \textit{Curse Dimensionality} sur un plan d'expérience de 9 points entre 0 et 1 exclus. }[fig:curse]
 	 \centering
 	 	\includegraphics[width=.9\linewidth]{plot3d.pdf}
 	\end{sidecaption}
 \end{figure}
 
-Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou 100 points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), 100 points dans un même espace $(0..1)$ de dimension $10$ ne couvre plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicates toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque points, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}. On peut voir un peu mieux sur l'illustration \ref{fig:curse} les effets d'un tel phénomène.
-
-% ENCADRE ?
+Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou $100$ points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), $100$ points dans un même espace $(0..1)$ de dimension $10$ ne couvrent plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicate toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque point, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}. On peut voir un peu mieux sur l'illustration \ref{fig:curse} les effets d'un tel phénomène.
 
 \begin{testiv}{Curse Dimensionality}{Exemple de Curse Dimensionality avec Simpop Local}
 
@@ -1554,7 +1552,7 @@ Volume             & 320000          & ~ \SI{4.7e-16}{}               \\ \bottom
 %\caption{Valeur }
 %\label{my-label}
 \end{table}
-Quelque soit finalement la résolution du plan d'expérience envisagé par l'utilisateur, celui-ci n'avait dans ce cas là que peu de chance de soulever l'existence d'une zone de solutions potentielle dans un espace de résolution aussi fin; seule l'usage d'une méta-heuristique pouvait detecter cette zone de validité du modèle, dans un volume qui représente au final $\SI{4.7e-16}{} / \num{320000} = \SI{1.5e-21}{} $ du volume total.
+Quelque soit finalement la résolution du plan d'expérience envisagé par l'utilisateur, celui-ci n'avait dans ce cas là que peu de chances de soulever l'existence d'une zone de solutions potentielles dans un espace de résolution aussi fin; seule l'usage d'une méta-heuristique pouvait détecter cette zone de validité du modèle, dans un volume qui représente au final $\SI{4.7e-16}{} / \num{320000} = \SI{1.5e-21}{} $ du volume total.
 
 \end{testiv}
 
@@ -1565,13 +1563,11 @@ Quelque soit finalement la résolution du plan d'expérience envisagé par l'uti
 
 % Plutot une argumentation pour justifier de la nécessité d'explorer rapidement les modèles. Mais dans un deuxième temps, sur les analyses de sensibilités, car analyse de sensibilité c'est pas tip top
 
-Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, cas nous verrons que les méta-heuristique opérant dans des espace de paramètres discret mais aussi continu, sans qu'une discrétisation préalable soit nécessaire en amont.
+Contrairement à d'autres méthodes d'optimisations, les métaheuristiques font généralement appel à un processus d'échantillonnage (voir point \ref{enum_meta_b}) pour explorer de façon stochastique un espace de recherche de toute façon beaucoup trop vaste pour être parcouru de façon exhaustive. Cela permet de repousser en partie ce problème de couverture de l'espace de paramètres lié à l'augmentation de la dimensionnalité du problème, car nous verrons que les méta-heuristique opérant dans des espace de paramètres discrets mais aussi continus, sans qu'une discrétisation préalable soit nécessaire en amont.
 
 C'est pour cela que \textcite[7]{Luke2013} nous propose de voir ce type de problème autrement, partant du postulat assez logique qu'une solution \enquote{même non optimale} est un point de départ pour l'amélioration de toute façon bien meilleure que \enquote{pas de solution du tout}.
 
-\foreignquote{english}{ Metaheuristics are applied to \enquote{I know it when I see it} problems. They're algorithms used to find answers to problems when you have very little to help you: you don't know what the optimal solution looks like, you don't know how to go about finding it in a principled way, you have very little heuristic information to go on, and brute-force search is out of the question because the space is too large. But if you're given a candidate solution to your problem, you can test it and assess how good it is. That is, you know a good one when you see it.}
-
-\hl{schéma}
+\foreignblockquote{english}[{\cite[7]{Luke2013}}]{ Metaheuristics are applied to \enquote{I know it when I see it} problems. They're algorithms used to find answers to problems when you have very little to help you: you don't know what the optimal solution looks like, you don't know how to go about finding it in a principled way, you have very little heuristic information to go on, and brute-force search is out of the question because the space is too large. But if you're given a candidate solution to your problem, you can test it and assess how good it is. That is, you know a good one when you see it.}
 
 Suivant ce raisonnement, la connaissance d'un problème se construit au travers d'une confrontation répétée de nos représentations, de nos interrogations avec la forme réelle et encore inconnue prise par celui-ci \Anote{paul_rationalite}. La carte de ce nouveau territoire se révélant peu à peu dans la projection sur l'espace des solutions des choix effectués lors de la sélection des nouveaux candidats à évaluer (solutions candidates).
 
@@ -1584,11 +1580,11 @@ Une comparaison automatisée nécessite pour être mise en oeuvre de définir \b
 \item la comparaison entre les solutions évaluées,
 \item et la sélection de nouvelles solutions candidates.\end{enumerate}
 
-Car l'optimiseur, tout comme nous, ne connait pas directement la forme prise par l'espace des solutions, et doit bien concevoir en interne les choix permettant, par la selection de nouvelles solutions candidates à évaluer, de progresser si possible vers une solution optimum.
+Car l'optimiseur, tout comme nous, ne connaît pas directement la forme prise par l'espace des solutions, et doit bien concevoir en interne les choix permettant, par la sélection de nouvelles solutions candidates à évaluer, de progresser si possible vers une solution optimum.
 
 De fait dans un tel scénario, et pour éviter une recherche aléatoire, l'évaluation de solution candidate renvoie à l'existence d'une expertise externe à l'optimiseur, le seul capable de formaliser ce qui différencie une bonne solution d'une mauvaise solution. On revient à parler ici d'heuristique, et de leurs diversités, car si celles-ci interviennent dans l'évaluation des solutions candidates (a), elles interviennent aussi dans les autres cas (b) et (c). Elles se présentent sous la forme de différents types de connaissances, interrogent différents espaces, et s'intègrent souvent sous la forme de composants dans la structure plastique des métaheuristiques.
 
-L'injection de connaissance (voir point \ref{enum_meta_h} )dans ce type d'algorithme métaheuristique est donc double, et opère à la fois de façon précise dans la formalisation d'un ou de plusieurs critères qui vont servir pour l'algorithme optimiseur à déterminer la qualité, bonne ou mauvaise, d'une solution candidate; et de l'autre elle intervient cette fois ci de façon moins contrôlable dans la façon dont l'expérimentateur va construire et paramétrer une métaheuristique pour l'adapter au mieux à son problème. La qualité interne (paramètre, structure) de la métaheuristique définit aussi en quelque sorte le processus d'exploration, ce qui explique aussi la dépendance de ce type d'algorithmes à l'environnement qu'ils doivent explorer.
+L'injection de connaissances (voir point \ref{enum_meta_h} ) dans ce type d'algorithme métaheuristique est donc double, et opère à la fois de façon précise dans la formalisation d'un ou de plusieurs critères qui vont servir pour l'algorithme optimiseur à déterminer la qualité, bonne ou mauvaise, d'une solution candidate; et de l'autre elle intervient cette fois ci de façon moins contrôlable dans la façon dont l'expérimentateur va construire et paramétrer une métaheuristique pour l'adapter au mieux à son problème. La qualité interne (paramètre, structure) de la métaheuristique définit aussi en quelque sorte le processus d'exploration, ce qui explique aussi la dépendance de ce type d'algorithmes à l'environnement qu'ils doivent explorer.
 
 \begin{figure}[htb]
 	\begin{sidecaption}[fortoc]{Projection du vecteur de solution candidates $\{a \dotsc n\}$ dans l'espace des objectifs. Les flèches indiquent dans quel sens et sur quel plan se fait la projection des points. Les couleurs permettent de repérer quelle est la ligne de points que l'on a projetée, de la ligne 1 à 3 sur $(x,v)$ et de la ligne 1 à 4 sur $(y,v)$}[fig:spacePspaceOmultimodal]
@@ -1597,11 +1593,11 @@ L'injection de connaissance (voir point \ref{enum_meta_h} )dans ce type d'algori
 	\end{sidecaption}
 \end{figure}
 
-L'objectif est rendu complexe car la relation entretenue entre ces deux espaces, celui des solutions candidates disponibles, et celui des évaluations est bien souvent dissymétrique. Pour mieux comprendre cette relation, la figure \ref{fig:spacePspaceOmultimodal} illustre cette correspondance des solutions candidates $\{a \dotsc n\}$ décrites par leurs coordonnées $(x,y)$ lorsqu'elles sont projetées dans l'espace des objectifs $\mathbb{Y}$ en suivant la transformation attendue par la fonction boite noire de dynamique non linéaire $f(x,y)$. Les valeurs $v = f(x,y)$ des différentes solutions candidates sont également projetées sur le plan 2D $(x,v)$ et $(y,v)$ pour mieux visualiser la forme prise par cette surface en 2D.
+L'objectif est rendu complexe car la relation entretenue entre ces deux espaces, celui des solutions candidates disponibles, et celui des évaluations est bien souvent dissymétrique. Pour mieux comprendre cette relation, la figure \ref{fig:spacePspaceOmultimodal} illustre cette correspondance des solutions candidates $\{a \dotsc n\}$ décrites par leurs coordonnées $(x,y)$ lorsqu'elles sont projetées dans l'espace des objectifs $\mathbb{Y}$ en suivant la transformation attendue par la fonction boîte noire de dynamique non linéaire $f(x,y)$. Les valeurs $v = f(x,y)$ des différentes solutions candidates sont également projetées sur le plan 2D $(x,v)$ et $(y,v)$ pour mieux visualiser la forme prise par cette surface en 2D.
 
 Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on projette celle-ci dans l'espace $(x,y)$, ce qui nous permet de mieux constater l'éclatement des valeurs de $v$ sur la figure \ref{fig:xyspacePspaceOmultimodal}.
 
-\begin{figure}[!htbp]
+\begin{figure}[htbp]
 	\begin{sidecaption}[fortoc]{Les couleurs indiquent la valeur $v = f(x,y)$ de chaque solution candidate $\{a \dotsc n\}$. $(v,x)$ et $(v,y)$ sont les plan extrait de la figure \ref{fig:spacePspaceOmultimodal}. On cherche ici à minimiser la valeur de $v$ :
 \parbox{\marginparwidth}{
 \begin{enumerate}[label={},labelindent=0pt,leftmargin=*]
@@ -1622,12 +1618,12 @@ Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on pro
 	\end{sidecaption}
 \end{figure}
 
-Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidates très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
+Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidatesf très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
 
-Il est clair que l'information récoltée par un tel déplacement basé sur une distance euclidienne dans le plan $(x,y)$ n'est pas vraiment pourvoyeur d'intuitions sur l'emplacement possible des meilleures solutions (voir figure \ref{fig:xytrajectoire}). Il semble par exemple plus intéressant pour l'optimiseur d'accéder aux solutions par le prisme d'ensembles construits sur la base d'une valeur $v$ commune (voir figure \ref{fig:xyspacePspaceOmultimodal}). Une information qui peut être exploitée de multiples façons, toujours en permettant à l'optimiseur de déterminer un nouvel ensemble de solutions candidates à évaluer.
+Il est clair que l'information récoltée par un tel déplacement basé sur une distance euclidienne dans le plan $(x,y)$ n'est pas pertinent dans la recherche des emplacements possibles des meilleures solutions (voir figure \ref{fig:xytrajectoire}). Il semble par exemple plus intéressant pour l'optimiseur d'accéder aux solutions par le prisme d'ensembles construits sur la base d'une valeur $v$ commune (voir figure \ref{fig:xyspacePspaceOmultimodal}). Une information qui peut être exploitée de multiples façons, toujours en permettant à l'optimiseur de déterminer un nouvel ensemble de solutions candidates à évaluer.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Représentation de deux déplacements dans l'espace des solutions candidates et son équivalent dans l'espace des objectifs
+	\begin{sidecaption}[Déplacements simultanés dans l'espace des solutions candidates et dans l'espace des objectifs]{Représentation de deux déplacements dans l'espace des solutions candidates et son équivalent dans l'espace des objectifs
 	\parbox{\marginparwidth}{
 	\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
 	        \item Partant de $b$, on se déplace d'une unité vers $c$ ou $a$, ce qui dans l'espace des objectifs équivaut également à un déplacement vers $h$; $v=2$ pour $v_h, v_a, v_c$
@@ -1635,10 +1631,10 @@ Il est clair que l'information récoltée par un tel déplacement basé sur une 
 	\end{enumerate}}}[fig:xytrajectoire]
 	 \centering
 	  \subbottom[]{
-	 	\includegraphics[width=0.6\linewidth]{xytrajectoire_a.pdf}
+	 	\includegraphics[width=0.8\linewidth]{xytrajectoire_a.pdf}
 	 	\label{subfig_xytrajectoire_a}}\qquad
 	 \subbottom[]{
-	 	\includegraphics[width=.6\linewidth]{xytrajectoire_b.pdf}
+	 	\includegraphics[width=.8\linewidth]{xytrajectoire_b.pdf}
 	 	\label{subfig_xytrajectoire_b}}
 	\end{sidecaption}
 \end{figure}
@@ -1686,8 +1682,8 @@ La figure \ref{subfig_hmap2cd_d} montre également que face à une topologie de 
 Ce qui nous permet d'évoquer une faiblesse connue des métaheuristiques, héritée des remarques déjà faites sur les algorithmes d'optimisations stochastique \Anote{stochastic_note} dans laquelle on les place habituellement. La découverte garantie d'une solution globale optimale est en général difficile avec ce type d'algorithmes (voir point \ref{enum_meta_d}) \Anote{equipe_mixite}, au moins pour deux raisons :
 
 \begin{enumerate}
-\item la variabilité qui opère lors de la selection des solutions candidates à un instant $t$ ne permet pas de garantir qu'il n'existe pas quelque part une solution candidate sélectionnée à $t+1$ dont l'évaluation révélera un meilleur optimum. La définition d'un critère d'arrêt est donc rendue délicate.
-\item La variabilité dans l'établissement d'une trajectoire de recherche implique qu'un algorithme de même qualité puisse passer une première fois à coté d'un optimum, et une deuxième fois trouver celui-ci.
+\item la variabilité qui opère lors de la sélection des solutions candidates à un instant $t$ ne permet pas de garantir qu'il n'existe pas quelque part une solution candidate sélectionée à $t+1$ dont l'évaluation révélera un meilleur optimum. La définition d'un critère d'arrêt est donc rendue délicate.
+\item La variabilité dans l'établissement d'une trajectoire de recherche implique qu'un algorithme de même qualité puisse passer une première fois à côté d'un optimum, et une deuxième fois trouver celui-ci.
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -1710,7 +1706,7 @@ A partir des résultats de la première solution candidate évaluée figurée ic
 
 Autrement dit, en plus de la stochasticité inhérente de ces algorithmes, non seulement un algorithme de type $A$ n'aura pas les mêmes résultats qu'un algorithme de type $B$, mais celui-ci sera également différent d'un algorithme $A'$ du fait d'un paramétrage différent.
 
-Comme déjà évoqué dans les différentes définitions, on retrouve ici la qualité de flexibilité des métaheuristiques, permettant de transformer ce qui pourrait de prime abord paraitre pour un défaut, en qualité. L'utilisation de celle-ci permettant d'étendre toujours un peu plus leurs champs d'utilisation, en facilitant la réponse aux questions suivantes \Anote{q_ppr} :
+Comme déjà évoqué dans les différentes définitions, on retrouve ici la qualité de flexibilité des métaheuristiques, permettant de transformer ce qui pourrait de prime abord paraître pour un défaut, en qualité. L'utilisation de celle-ci permettant d'étendre toujours un peu plus leurs champs d'utilisation, en facilitant la réponse aux questions suivantes \Anote{q_ppr} :
 \begin{enumerate}
 \item  \foreignquote{english}{What parameter settings do I use to get good results when applying heuristic method X to problem Y?}
 \item  \foreignquote{english}{How do I adjust the parameters of heuristic X so I get better results on problem Y?}
@@ -1719,21 +1715,19 @@ Comme déjà évoqué dans les différentes définitions, on retrouve ici la qua
 
 On pourrait ainsi ne retenir que cette citation de source inconnue, lorsqu'elle définit une métaheuristique comme \foreignquote{english}{ a pretty good rule for finding pretty good rules.}
 
-Cette flexibilité vient compléter et compenser efficacement cet horizon de connaissance assez limité, nécessaire à une généricité d'emploi. Les métaheuristiques fournissent ainsi le support générique initial pour en faire un outil d'usage indépendant du problème, tout en fournissant les outils pour favoriser également leur propre modification en vue d'une amélioration de résultat pour un problème donné. Elle cumule donc en quelques sortes les deux propriétés de dépendance et d'indépendance face à un problème donné.
+Cette flexibilité vient compléter et compenser efficacement cet horizon de connaissance assez limité, nécessaire à une généricité d'emploi. Les métaheuristiques fournissent ainsi le support générique initial pour en faire un outil d'usage indépendant du problème, tout en fournissant les outils pour favoriser également leur propre modification en vue d'une amélioration de résultat pour un problème donné. Elles cumulent donc ces deux propriétés de dépendance et d'indépendance face à un problème donné.
 
-De plus, la recherche dans cette discipline ne se contente pas d'organiser une forme de compétition qui mènerait à elle seule, par l'apprentissage répété de fonctions aussi standardisées que celles utilisées dans les figures précédentes, à une surestimation de certains algorithmes \Anote{test_fonction_surutilisation}, et se nourrit également d'une recherche plus appliquée à des problématiques réelles. Ce qui permet par effet retour, d'espérer voir appliquer à des formes de problèmes génériques, des opérateurs dédiés à l'origine à des problématiques spécifiques. La construction et l'évaluation d'heuristique plus performante servant toujours indirectement une cause plus générale.
+De plus, la recherche dans cette discipline ne se contente pas d'organiser une forme de compétition qui mènerait à elle seule, par l'apprentissage répété de fonctions aussi standardisées que celles utilisées dans les figures précédentes, à une surestimation de certains algorithmes \Anote{test_fonction_surutilisation}, et se nourrit également d'une recherche plus appliquée à des problématiques réelles. Ce qui permet par effet retour, d'espérer voir appliquer à des formes de problèmes génériques, des opérateurs dédiés à l'origine à des problématiques spécifiques. La construction et l'évaluation d'heuristiques plus performantes servant indirectement une cause plus générale.
 
 Enfin, une des propriétés qui n'a pas encore été introduite dans ce résumé est la capacité de notation et de description abstraite des métaheuristiques (voir point \ref{enum_meta_f} ). Des concepts de plus haut niveau sont introduits pour désigner l'expression et la manipulation d'heuristiques et de classes d'heuristiques dans un système composant la métaheuristique. Mais avant de pouvoir introduire ces subtilités de typologie propre à chaque classe de métaheuristique, il faut également rappeler l'existence d'une base commune de formalisation mathématique permettant la description des problèmes. Autrement dit, cela revient à introduire ou à poser sur une partie des mots déjà utilisés dans cette section, un certain nombre de notations mathématiques d'utilisation relativement standard dans cette communauté informatique utilisant les métaheuristiques.
 
-Il nous restera également à aborder dans la section suivante, la question des \textbf{moyens} mis à disposition de l'optimiseur pour opérer la selection de nouveaux candidats à évaluer. Jusqu'ici seule une représentation de ces solutions candidates dans l'espace des solutions candidates possibles a été abordée, ainsi que l'espace contenant les résultats des solutions candidates évaluées. Mais ces deux espaces ne constituent pas les véritables espaces sur lesquels l'optimiseur est amené à travailler, et cela bien qu'il puisse les intégrer à son expertise pour la selection de nouveaux candidats à l'évaluation \Anote{remarque_section_metaheuristique}.
-
-\hl{les 4 paragraphe ci dessous sont à faire descendre avec notation mathématique, pour compléter la section suivante, et sans briser le suspens ?}
+Il nous restera également à aborder dans la section suivante, la question des \textbf{moyens} mis à disposition de l'optimiseur pour opérer la sélection de nouveaux candidats à évaluer. Jusqu'ici seule une représentation de ces solutions candidates dans l'espace des solutions candidates possibles a été abordée, ainsi que l'espace contenant les résultats des solutions candidates évaluées. Mais ces deux espaces ne constituent pas les véritables espaces sur lesquels l'optimiseur est amené à travailler, et cela bien qu'il puisse les intégrer à son expertise pour séléctionner de nouveaux candidats à l'évaluation \Anote{remarque_section_metaheuristique}.
 
 L'introduction d'un nouvel \enquote{espace de recherche} est nécessaire, et  correspond à la somme des entrées, des paramètres, sur lequel l'optimiseur va pouvoir jouer directement, afin de modifier cette fois-ci indirectement l'expression de la solution candidate ensuite évaluée.
 
-Autrement dit, il faut retenir qu'une solution candidate fait partie d'un espace de solutions candidates possibles, et que l'exploration de ce dernier est dépendant des bornes fixées par l'expert pour délimiter l'espace de recherche de chacun des entrants, notamment pour limiter le champ de recherche de l'optimiseur à celui des valeurs empiriquement et théoriquement possibles. Ce qui introduit aussi la possibilité d'une nouveau \textit{mapping} entre les valeurs de ces deux espaces, de recherche, et du phénomène à évaluer, qui ne sont pas nécessairement de même nature.
+Autrement dit, il faut retenir qu'une solution candidate fait partie d'un espace de solutions candidates possibles, et que l'exploration de ce dernier est dépendante des bornes fixées par l'expert pour délimiter l'espace de recherche de chacun des entrants. L'objectif étant notamment de limiter le champ de recherche de l'optimiseur à des valeurs empiriquement et théoriquement possibles. Ce qui introduit aussi la possibilité d'un nouveau \textit{mapping} entre les valeurs de ces deux espaces, de recherche et du phénomène à évaluer, qui ne sont pas nécessairement de même nature.
 
-On peut s'appuyer sur l'exemple de bras robotisé donné par \autocite{Weise2011} pour illustrer ce cas. On a d'un côté les paramètres de positionnement des éléments de bras d'un robot, contraint par la structure théorique de celui-ci, et de l'autre l'expression spatiale finale du bras représentatif de cette combinaison de paramètres dans l'espace des solutions possibles, potentiellement infini, et dont on n'a pas la maitrise directe. L'optimiseur s'appuie ensuite sur l'évaluation de cette configuration spatiale à l'aide des critères qu'on lui a donné pour induire des opérations non pas dans l'espace d'expression spatialisé du bras, mais dans l'espace de recherche des vecteurs de paramètres permettant l'amélioration de ce résultat.
+On peut s'appuyer sur l'exemple de bras robotisé donné par \autocite{Weise2011} pour illustrer ce cas. On a d'un côté des bornes de paramètres délimitant le positionnement des différents éléments de bras d'un robot, limité par sa structure, et de l'autre l'expression spatiale qu'il est possible d'exprimer par une combinaison unique de valeurs de paramètres. L'optimiseur s'appuie sur l'évaluation de cette configuration spatiale à l'aide des critères qu'on lui a donnés pour induire des opérations non pas dans l'espace d'expression spatialisée du bras, dont on n'a pas la maitrise directe, mais dans la modification des valeurs de paramètres susceptible d'améliorer ce résultat.
 
 \subsubsection{Une formulation mathématique standardisée pour encadrer les problèmes d'optimisations et les métaheuristiques}
 \label{sssec:math_opti}
@@ -1758,13 +1752,13 @@ L'objectif de l'optimisation est donc de trouver par le biais d'un algorithme ad
 
 Comme défini précédemment, ce qui va guider l'algorithme optimiseur dans sa prise de décision, c'est l'évaluation d'une fonction heuristique, ou d'une fonction objectif (\textit{objective function}) \Anote{difference_objective_heuristique}
 
-\foreignquote{english}{An objective function $f: \mathbb{X} \mapsto \mathbb{R}$ is a mathematical function which is subject to optimization.}
+\foreignquote{english}{An objective function $f: \mathbb{X} \to \mathbb{R}$ is a mathematical function which is subject to optimization.}
 
 Cette fonction objectif lorsqu'elle prend pour paramètre un élément candidat $x$ pris dans l'espace du problème $ \mathbb{X}$ renvoie une valeur définissant sa qualité par rapport au problème posé. \autocite[44]{Weise2011}
 
 \sloppy La plupart des problèmes nécessitent toutefois d'optimiser plusieurs critères simultanément. La relation entre ces critères peut d'ailleurs être elle aussi multiple : dépendante (conflictuelle, en harmonie), indépendante. Nous allons donc nous intéresser directement à la définition de ce type de problème, résumable ainsi :  $min(f_1(x), \dotsc, f_k(x)$ avec $k > 2$
 
-La littérature fait également plus souvent référence à ce type de problème en faisant appel à une notation sous forme de fonction vecteurs. Un ensemble $\vec{f} : \mathbb{X} \mapsto \mathbb{R}^n$ fait de $n$ fonction objectif $f_i : \mathbb{X} \mapsto \mathbb{R}$ avec $\forall i \in 1 \dotsc n$. Appliqué à une solution candidate $x \in \mathbb{X}$ cette fonction renvoie un vecteur de réel de dimension $n$ qui peuvent être projeté dans un espace $\mathbb{R}^n$, aussi appelé espace des objectifs (\textit{objective space}) $\mathbb{Y}$.
+La littérature fait également plus souvent référence à ce type de problème en faisant appel à une notation sous forme de fonction vecteurs. Un ensemble $\vec{f} : \mathbb{X} \to \mathbb{R}^n$ fait de $n$ fonction objectif $f_i : \mathbb{X} \to \mathbb{R}$ avec $\forall i \in 1 \dotsc n$. Appliquée à une solution candidate $x \in \mathbb{X}$ cette fonction renvoie un vecteur de réel de dimension $n$ qui peuvent être projeté dans un espace $\mathbb{R}^n$, aussi appelé espace des objectifs (\textit{objective space}) $\mathbb{Y}$.
 
 En résumé, à chaque association d'un vecteur de fonction objectif $\vec{f}$ et d'une solution candidate $x$ correspond après évaluation un vecteur de réel de dimension $n$ permettant le positionnement de la solution candidate dans l'espace $\mathbb{R}^n$ des objectifs aussi nommé $\mathbb{Y}$.
 
@@ -1796,7 +1790,7 @@ C'est à partir du positionnement des solutions candidates dans cet espace $\mat
 \end{figure}
 
 %\sloppy
-Si on prend pour exemple la fonction multi-objectifs de Schaeffer décrite dans l'équation \ref{eq:schaffer}, $f1(x)$ and $f2(x)$ deux fonctions objectifs à minimiser $\vec{f} = (f1(x),f2(x))^T$  avec $\vec{f}: \mathbb{X} \mapsto \mathbb{R}^2$
+Si on prend pour exemple la fonction multi-objectifs de Schaeffer décrite dans l'équation \ref{eq:schaffer}, $f1(x)$ and $f2(x)$ deux fonctions objectifs à minimiser $\vec{f} = (f1(x),f2(x))^T$  avec $\vec{f}: \mathbb{X} \to \mathbb{R}^2$
 
 \begin{equation} \label{eq:schaffer}
 Minimize =
@@ -1810,13 +1804,13 @@ Si on superpose les deux fonctions comme dans la figure \ref{fig:S_Schaffer}, on
 
 Cette opération que nous pratiquons tous les jours sans forcément le savoir peut être plus facilement expliquée en faisant appel à cet exemple concret. Dans le cas d'un acheteur à la recherche d'une voiture à la fois économe de par sa faible consommation et si possible disponible à un moindre coût, celui-ci devra bien se plier à l'exercice de positionnement des voitures résumé dans le graphique \ref{fig:voiture}.
 
-Dans le graphique \ref{subfig_voiture:b} on constate rapidement que le modèle de voiture que l'acheteur va acheter à de fortes chances de se trouver dans la liste de voitures $\{ A,B,C,D,E \}$ colorées en rouge, aussi appelée front de Pareto, ou optimum de Pareto. Ce terme apparait en économie en 1950, en référence directe des travaux de l'économiste italien Vilfredo Pareto. Le lecteur plus curieux de ces questions pourra trouver de multiples points d'entrées sur ces questions dans les publications suivantes \autocites{Ehrgott2012,Koksalan2011,Koksalan2013}.
+Dans le graphique \ref{subfig_voiture:b} on constate rapidement que le modèle de voiture que le client est susceptible d'acheter a de fortes chances de se trouver dans la liste de voitures $\{ A,B,C,D,E \}$ colorées en rouge, aussi appelée \enquote{front de Pareto}, ou \enquote{optimum de Pareto}. Ce terme apparaît en économie en 1950, en référence directe des travaux de l'économiste italien Vilfredo Pareto. Le lecteur plus curieux de ces questions pourra trouver de multiples points d'entrées sur ces questions dans les publications suivantes \autocites{Ehrgott2012,Koksalan2011,Koksalan2013}.
 
-\pagebreak
+%\pagebreak
 
-\begin{testiv}{Définir des objectifs pour le modèle Ants}{}
+\begin{testiv}{Définir des objectifs pour le modèle Ants}{Définir des objectifs pour le modèle Ants}
 
-Pour le modèle \textbf{Ants}, on a vu qu'il existait trois paramètres pouvant être amené à varier en entrée du modèle.
+Pour le modèle \textbf{Ants}, on a vu qu'il existait trois paramètres pouvant être amenés à varier en entrée du modèle.
 
 Les paramètres d'évaporation $Evaporation-rate$ et $Diffusion-rate$ varie chacun dans le domaine $\mathbb{R}$, entre les valeurs $0.0$ et $99.0$ auquel on associe maintenant trois fonctions objectifs.
 
@@ -1830,14 +1824,14 @@ Le paramètre de population est réglé par défaut à $125$ fourmis dans la col
 Les fonctions objectifs $\{f_1,f_2,f_3\}$  se base chacune sur le temps écoulé entre le début de la simulation $t_0$ et le temps indiqué pour la disparition complète d'un tas de nourriture.
 
 \begin{enumerate}[noitemsep,nolistsep]
-\item $f_1$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 1 disparait.
-\item $f_2$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 2 disparait.
-\item $f_3$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas 3 disparait.
+\item $f_1$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas de nourriture 1 disparaît.
+\item $f_2$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas de nourriture 2 disparaît.
+\item $f_3$ stocke le pas de temps de simulation (\textit{ticks}) à laquel le tas de nourriture 3 disparaît.
 \end{enumerate}
 
 Pour pouvoir rapporter ces valeurs à l'optimiseur, encore faut-il que cette simulation se finisse d'une façon ou d'une autre. Il faut donc fixer \textbf{une condition d'arrêt} pour remplacer le clic sur le bouton stop effectué par l'utilisateur dans Netlogo. La condition d'arrêt la plus simple ici est de stopper la simulation lorsque il n'y a plus aucune nourriture disponible.
 
-Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentatives pour trouver le meilleur jeu de valeur de paramètres qui mimise les trois fonctions objectifs risque de produire des combinaisons qui peuvent mettre le modèle ou les hypothèses du modèle en difficulté. \textit{Effectivement que se passe-t-il dans notre modèle de simulation si les valeurs de paramètres sont les suivants ? }
+Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentatives pour trouver le meilleur jeu de valeurs de paramètres qui mimise les trois fonctions objectifs, risque de produire des combinaisons qui peuvent mettre le modèle ou les hypothèses du modèle en difficulté. \textit{Effectivement que se passe-t-il dans notre modèle de simulation si les valeurs de paramètres sont les suivants ? }
 
 \begin{table}[H]
 \centering
@@ -1856,47 +1850,47 @@ Attention toutefois, il faut savoir que l'optimiseur, dans ses multiples tentati
 \end{tabular}
 \end{table}
 
-Dans Le cas (2) la simulation ne s'arrête jamais, car la condition d'arrêt n'est jamais rempli. Ce comportement n'est clairement pas intéressant et risque tout simplement de bloquer l'exploration réalisé par la métaheuristique, il faut donc fixer un seuil > 0 à cette population initiale de fourmis.
+Dans le cas (2) la simulation ne s'arrête jamais, car la condition d'arrêt n'est jamais remplie. Ce comportement n'est clairement pas intéressant et risque tout simplement de bloquer l'exploration réalisée par la métaheuristique, il faut donc fixer une valeur $> 0$ pour la population de fourmis.
 
-Le cas (3) montre qu'avec moins de fourmis, il faut beaucoup plus de temps à la simulation pour que la condition d'arrêt soit rempli. Il peut donc y'avoir une très forte variabilité dans les durées d'execution du modèle en fonction des valeurs de paramètres selectionné pour évaluation.
+Le cas (3) montre qu'avec moins de fourmis, il faut beaucoup plus de temps à la simulation pour que la condition d'arrêt soit remplie. Il peut donc y'avoir une très forte variabilité dans les durées d'exécution du modèle en fonction des valeurs de paramètres sélectionnés pour évaluation.
 
-Le cas (4,5,6) sont intéressant, car ils sont susceptible de produire des résultats contre-intuitifs. En effet, en terme de durée d'execution totale, on obtient pour cette graine aléatoire de meilleurs résultats qu'avec des valeur de paramètres pris au hasard (1). Un mauvais paramétrage produit un effet d'aspiration qui fait que des fourmis se dirigeant potentiellement vers le tas de nourriture sont détournés de leurs traces par cette piste olfactive.
+Les cas (4,5,6) sont intéressants, car ils sont susceptibles de produire des résultats contre-intuitifs. En effet, en terme de durée d'exécution totale, on obtient pour cette graine aléatoire de meilleurs résultats qu'avec des valeurs de paramètres pris au hasard (1). Un mauvais paramétrage produit un effet d'aspiration qui fait que des fourmis se dirigeant potentiellement vers le tas de nourriture sont détournées de leurs traces par cette piste olfactive.
 
 \begin{figure}[H]
 	 \centering
-	 	\includegraphics[width=.8\linewidth]{ant.pdf}
+	 	\includegraphics[width=.7\linewidth]{ant.pdf}
 \end{figure}
 
-Cela peut également s'expliquer par le débordement et la mise en défaut des mécanismes prévu initialement par le modélisateur, car les fourmis ne captent les traces chimique qu'entre $0.05$ et $2$. Or la diffusion ou l'évaporation se cumule en partant d'une valeur unitaire à $60$, qui est l'équivalent de la trace chimique déposé sur chaque patch pour une fourmi ayant trouvé de la nourriture. Donc dans tout ces ce cas là, les mécanismes du modèle sont quasi-inneficace, et se rapport au cas (3) qui met en jeu une simple marche aléatoire des fourmis.
+Cela peut également s'expliquer par le débordement et la mise en défaut des mécanismes prévus initialement par le modélisateur, car les fourmis ne captent les traces chimiques qu'entre $0.05$ et $2$. Or la diffusion ou l'évaporation se cumule en partant d'une valeur unitaire à $60$, qui est l'équivalent de la trace chimique déposée sur chaque \textit{patch} pour une fourmi ayant trouvé de la nourriture. Donc dans tous ces cas là, les mécanismes du modèle sont quasi-innefficaces, et se rapportent au cas (3) qui met en jeu une simple marche aléatoire des fourmis.
 
-\textit{L'optimiseur sera-t-il capable de trouver de meilleures valeurs dans cette zone d'activation ?} Si non, il faudra revoir les paramètres ou le fonctionnement de notre mécanisme guidant le comportement de dépot et de détection de trace de chaque fourmi.
+\textit{L'optimiseur sera-t-il capable de trouver de meilleures valeurs dans cette zone d'activation ?} Si ce n'est pas le cas, il faudra revoir les paramètres ou le fonctionnement de notre mécanisme guidant le comportement de dépôt et de détection de traces associé à chaque fourmi.
 
-Plusieurs pistes peuvent être indiqués au modélisateur pour éviter ou limiter l'apparition de comportement pouvant bloquer l'exploration :
+Plusieurs pistes peuvent être indiquées au modélisateur pour éviter ou limiter l'apparition de comportement pouvant bloquer l'exploration :
 
 \begin{itemize}[noitemsep,nolistsep]
-	\item Fixer les valeurs de paramètres pouvant poser problème, quitte à les faire varier par la suite
-	\item Identifiez en amont les combinaisons de jeu de valeurs de paramètres susceptible de poser problème, pour ensuite les interdire à l'optimiseur
-	\item Introduire un paramètre ou un mécanisme artefact (c'est-à-dire qui est extérieur aux hypothèses originales) dans le modèle, par exemple en limitant le nombre de tortue évoluant pour une espèce donnée
-	\item Introduire des critères d'arrêts plus restrictifs
-	\item Pénaliser les comportements posant problèmes dans les fonction objectifs
+	\item fixer les valeurs de paramètres pouvant poser problème, quitte à les faire varier par la suite.
+	\item identifier en amont les combinaisons de jeu de valeurs de paramètres susceptibles de poser problème, pour ensuite les interdire à l'optimiseur.
+	\item introduire un paramètre ou un mécanisme artefact (c'est-à-dire qui est extérieur aux hypothèses originales) dans le modèle, par exemple en fixant un seuil maximum d'objets (tortues dans Netlogo).
+	\item introduire des critères d'arrêts plus restrictifs.
+	\item pénaliser les comportements posant problème directement dans les fonctions objectifs.
 \end{itemize}
 
-Un autre type d'erreur peut encore intervenir lors de telle exploration, la combinatoire de paramètre pouvant faire apparaitre des erreurs dans le déroulement de votre programme (division par zéro, comportement innatendus, dépassement mémoire, etc.) En ce sens, ce type d'exploration participe de la validation interne du modèle.
+Un autre type d'erreur peut encore intervenir lors de telles explorations, l'exploration intensive de l'espace de recherche combiné des différents paramètres et le grand nombre d'exécutions des simulations mettent à rude épreuve le déroulement des programmes, ce qui permet de faire remonter un certain nombre d'erreurs (division par zéro, comportements inattendus, dépassement mémoire, etc.) En ce sens, ce type d'exploration participe de la validation interne du modèle.
 
 \end{testiv}
 
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Exemple simplifié d'une catégorisation de voitures selon deux axes comprenant d'une part le coût d'achat et d'autre part la consommation de chaque voiture.}[fig:voiture]
+	\begin{sidecaption}[Exemple de front de Pareto sur des voitures]{Exemple simplifié d'une catégorisation de voitures selon deux axes comprenant d'une part le coût d'achat et d'autre part la consommation de chaque voiture.}[fig:voiture]
 	\centering
 	  \subtop[]{
-  	\includegraphics[width=.3\linewidth]{opti1.png}
+  	\includegraphics[width=.4\linewidth]{opti1.png}
   	\label{subfig_voiture:a}}\qquad
     \subtop[]{
-	\includegraphics[width=.3\linewidth]{opti2.png}
+	\includegraphics[width=.4\linewidth]{opti2.png}
   	\label{subfig_voiture:b}}
     \subtop[]{
-  	\includegraphics[width=.3\linewidth]{opti3.png}
+  	\includegraphics[width=.4\linewidth]{opti3.png}
   	\label{subfig_voiture:c}}
  \end{sidecaption}
 \end{figure}
@@ -1905,9 +1899,9 @@ Un autre type d'erreur peut encore intervenir lors de telle exploration, la comb
 
 Le front de Pareto renvoie un ensemble de solutions compromis optimal, l'expertise finale sur la ou les solutions à adopter est donc le résultat d'un choix expert externe introduit comme support à l'algorithme optimiseur. Dans notre exemple, l'acheteur devra pour finaliser son achat mettre en avant au moins un des deux critères afin de départager les voitures.
 
-Si certains algorithmes ont introduit cette expertise par le biais d'une sélection interactive guidant l'optimiseur à chaque étape de sa recherche, ce n'est pas cette usage qui nous intéresse ici. L'expertise n'intervient qu'une fois les solutions convergées, dans l'observation des résultats finaux.
+Si certains algorithmes ont introduit cette expertise par le biais d'une sélection interactive guidant l'optimiseur à chaque étape de sa recherche, ce n'est pas cet usage qui nous intéresse ici. L'expertise n'intervient qu'une fois l'ensemble des solutions sélectionnées par l'optimiseur stabilisés, dans l'observation experte des résultats finaux.
 
-Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyens qu'on lui a fournis les solutions candidates sur lesquels il doit miser pour converger. Il doit donc être capable de séparer les solutions en appliquant un ou plusieurs critères de séparation. Il existe plusieurs types de stratégies (\textit{Agreggation based, Criterion based, Dominance based, Indicator based}), et chacune d'elles peut être croisée ou dérivée en de multiples variantes \autocites[28]{Zitzler1999a, Deb2001}[7]{Liefooghe2009}. Nous limiterons ici notre analyse à un seul de ces cas, en nous focalisant d'ores et déjà sur les méthodes les plus utilisées en EC, basées sur la dominance celles-ci sont directement inspirées des travaux de Pareto.
+Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyens qu'on lui a fournis les solutions candidates sur lesquels il doit miser pour converger. Il doit donc être capable de séparer les solutions en appliquant un ou plusieurs critères de séparation. Il existe plusieurs types de stratégies (\textit{Agreggation based, Criterion based, Dominance based, Indicator based}), et chacune d'elle peut être croisée ou dérivée en de multiples variantes \autocites[28]{Zitzler1999a, Deb2001}[7]{Liefooghe2009}. Nous limiterons ici notre analyse à un seul de ces cas, en nous focalisant d'ores et déjà sur les méthodes les plus utilisées en EC, basées sur la dominance celles-ci sont directement inspirées des travaux de Pareto.
 
 % TODO : Finir ce paragraphe historique rapide, qui permettra de faire la différence ensuite avec les algorithmes inspirés par Pareto.
 % TODO : Ajouter ref de Goldberg sur les sciences humaines + GA dans le chapitre 1
@@ -1928,7 +1922,7 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 
 \begin{table}[!p]
 
-\begin{sidecaption}[fortoc]{Tableau de résultats des fonction objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}, intervenant ensuite dans le calcul de \textit{fitness} de différentes façons selon les algorithmes utilisés.}
+\begin{sidecaption}[fortoc]{Tableau de résultats des fonctions objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}, intervenant ensuite dans le calcul de \textit{fitness} de différentes façons selon les algorithmes utilisés.}
 	[tab:pranking]
 	\centering
 	 \subbottom[Graphique en deux dimensions des fonctions objectifs $f_1$ et $f_2$ du tableau ci-dessous.]{
@@ -1974,25 +1968,26 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 
 \begin{testiv}{Fitness et stochasticité dans les simulations}{}
 
-La stochasticité est un problème difficile à cerner pour un modélisateur, or celui-ci a un impact très fort sur les résultats d'une exploration lorsqu'on utilise des métaheuristiques. On va voir pourquoi dans cet encadré.
+L'effet de la stochasticité sur les dynamiques à l'oeuvre dans les modèles est un problème difficile à cerner, or celui-ci a un impact très fort sur les résultats d'une exploration lorsqu'on utilise des métaheuristiques. On va voir pourquoi dans cet encadré.
 
-Pour limiter cet effet on réalise un certain nombre de \textbf{réplications} pour lisser ces effets. Cela consiste à exécuter plusieurs fois une simulation en ne faisant varier que la graine aléatoire, afin de mesurer le poids de l'aléa dans la variation des objectifs mesurés. Contrairement à ce que l'on pourrait penser, il n'y a pas de chiffre magique pour déterminer le nombre correct de réplications. Celui-ci peut varier en fonction de l'objectif mesuré, mais également en fonction des valeurs de paramètres utilisés. Seule une exploration plus systématique peut amener un début de réponse. La forme de la distribution obtenue a également peu de chance d'être une gaussienne, ce qui rend l'utilisation d'une moyenne pour résumer les résultats assez peu recommandé.
+Une des solutions pour lisser les effets de la stochasticité est de réaliser un certain nombre de \textbf{réplications} dans l'exécution des simulations. Cette opération consiste à exécuter plusieurs fois une simulation à jeu de valeurs de paramètres identiques en ne faisant varier que la graine aléatoire, afin de mesurer le poids de l'aléa dans la variation des objectifs mesurés. Contrairement à ce que l'on pourrait penser, il n'y a pas de chiffre \enquote{magique} pour déterminer le nombre correct de réplications. Celui-ci peut varier en fonction de l'objectif mesuré, mais également en fonction des valeurs de paramètres utilisés. Seule une exploration plus systématique peut amener un début de réponse. La forme de la distribution obtenue a également peu de chance d'être une gaussienne, ce qui rend l'utilisation d'une moyenne pour résumer les résultats assez peu recommandé.
 
 \begin{figure}[H]
 		\centering
 	 	\includegraphics[width=1.0\linewidth]{ant_serie_stoch.pdf}
 \end{figure}
 
-Dans le cas de \textit{Ants}, on voit bien que selon le nombre de réplications, la valeur trouvé sur les objectifs ${medianFood1, medianFood2, medianFood3}$ est très variable. Si le nombre de réplication est trop peu elevé, il est tout à fait possible que l'optimiseur selectionne comme satisfaisantes des solutions candidates qui amènent le calcul d'une \textit{fitness} satisfaisante une fois de temps en temps ...
+Pour réaliser ce type de graphique, on réalise 10 séries de 10, de 30, de 50, de 100 puis de 1000 réplication pour un jeu de valeur de paramètre test fixé à ${population = 125.0, diffusion-rate = 25.0, evaporation-rate = 25.0}$. D'autres jeu de valeurs de paramètre donnerait probablement des résultats différents.
 
-Si on ne peux pas réaliser un nombre de réplications suffisantes, ce qui est souvent le cas, alors il est conseillé de réévaluer régulièrement les solutions candidates retenues par l'optimiseur. C'est particulièrement important dans le cas des algorithmes évolutionnaire à base de population, qui conserve souvent les meilleur individus dans une archive. Une fois entré dans celle-ci \enquote{par chance}, l'individu va continuer à fournir par recombinaison une descendance dont les capacités estimés sont biaisés.
+Dans le cas de l'exemple \textit{Ants}, on voit bien qu'en fonction du nombre de réplications, la valeur trouvée sur les objectifs ${medianFood1, medianFood2, medianFood3}$ est très variable. Si le nombre de réplications est trop faible, il est tout à fait possible que l'optimiseur sélectionne comme satisfaisantes des solutions candidates qui amènent le calcul d'une \textit{fitness} satisfaisante \enquote{une fois de temps en temps} ...
 
-Le cas a été rencontré pour SimpopLocal, qui nécessite l'exécution d'au moins $100$ réplications si on veut lisser correctement les erreurs. Devant le nombre d'évaluation du modèle réalisés (plusieurs millions), seul $30$ réplications ont été faites par jeu de valeurs de paramètres. Par contre un mécanisme spécifique à été intégré à MGO pour permettre la réévaluation aléatoire des meilleures solutions conservées par l'optimiseur (Algorithme Evolutionnaire ici).
+Si il n'est pas possible de réaliser le nombre de réplications idéales/suffisantes, ce qui est souvent le cas, alors il est conseillé de réévaluer régulièrement les solutions candidates retenues par l'optimiseur. C'est particulièrement important dans le cas des Algorithmes Evolutionnaires mobilisant une population de solutions candidates, car ceux-ci conservent et remobilisent les meilleurs individus entre les différentes itérations. Une fois entré dans cette population \enquote{par chance}, l'individu va continuer à fournir une descendance dont les capacités estimées sont biaisées.
+
+Ce cas a été rencontré lors des expérimentations pour SimpopLocal. Ce modèle de simulation nécessite en effet l'exécution d'au moins $100$ réplications si on veut lisser correctement les erreurs sur les différents objectifs. Devant le nombre d'évaluations du modèle réalisé (plusieurs millions), seul $30$ réplications ont pu être faites pour chaque jeu de valeurs de paramètres. Un mécanisme spécifique à été intégré à MGO pour permettre la réévaluation aléatoire des meilleures solutions conservées par l'optimiseur (Algorithme Evolutionnaire) \autocite[193]{Schmitt2014}.
 
 \end{testiv}
 
-
-Pour comprendre comment cette stratégie et définir mathématiquement la notion d'optimum de Pareto, il faut introduire la notion de \textit{dominance} sur lequel elle s'appuie. Pour cette tâche on s'appuie sur les définitions données par \textcite[65]{Weise2011} :
+Pour comprendre comment cette stratégie opère et définir mathématiquement la notion d'optimum de Pareto, il faut introduire la notion de \textit{dominance} sur lequel elle s'appuie. Pour cette tâche on s'appuie sur les définitions données par \textcite[65]{Weise2011} :
 
 \foreignblockquote{english}[{\cite[65]{Weise2011}}]{An element $x_1$ dominates (is preferred to) an element $x_2 (x_1 \dashv x_2)$ if $x_1$ is better than $x_2$ in at least one objective function and not worse with respect to all other objectives.}
 
@@ -2015,7 +2010,7 @@ Cette notion de \textit{domination} ($\succ$) \Anote{notation_dominance} permet 
 Celle-ci possède les propriétés suivantes, qui définissent dans l'espace des objectifs $\mathbb{Y}$ un \textit{strict partial order} :
 
 \begin{enumerate}
-\item{\textbf{non reflexive}}  $x_1$ ne peux pas se dominer lui même
+\item{\textbf{non reflexive}}  $x_1$ ne peut pas se dominer lui même
 \item{\textbf{non symétrique}} $ x_1 \succ x_2$ n'implique pas $x_2 \succ x_1$, alors que l'opposé est vrai, $x_1 \succ x_2$ implique $x_2$ ne domine pas $x_1$
 \item{\textbf{transitive} }
 \end{enumerate}
@@ -2026,7 +2021,7 @@ Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non domi
 
 \begin{table}[!h]
 	\centering
-	\begin{sidecaption}[fortoc]{Application des règles de dominance aux points $e$ et $f$. \\ \\
+	\begin{sidecaption}[Règle de dominance pour les points e et f]{Application des règles de dominance aux points $e$ et $f$. \\ \\
 		   \begin{tabular}{>{$}l<{$}>{$}l<{$} >{$}l<{$}}
 					\toprule
 					 & f1 & f2 \\
@@ -2221,7 +2216,7 @@ Déjà beaucoup plus difficile à imaginer que dans l'exemple précédent de l'�
 
 Dans notre cas $x \in \mathbb{R}$, on a donc un paramètre qui est manipulable et peut prendre une infinité de valeurs dans le cadre des contraintes définies pour $x$ (par exemple une valeur de 0 à 10 pour $x$) \Anote{remarque_resolution}. L'espace $\mathbb{G}$ contient la codification du problème, ce qui par exemple dans le cadre de simulation, se traduit pour chaque élément $g$ par l'attribution d'un vecteur de paramètres définissant les entrées de la simulation sur lequel l'optimiseur va pouvoir \enquote{jouer} pour optimiser les différentes fonctions objectifs.
 
-La fonction $gpm : \mathbb{G} \mapsto \mathbb{X}$ est une translation opérée lorsque les deux espaces sont de nature différente, par exemple pour passer d'un espace Binaire à un espace de Réels $\mathbb{B} \mapsto \mathbb{R}$. Dans le cadre de simulations, les deux espaces sont souvent de nature similaire $\mathbb{G} = \mathbb{R}$. On pourra se référer à \textcite[86-88]{Weise2011} pour plus de détails.
+La fonction $gpm : \mathbb{G} \to \mathbb{X}$ est une translation opérée lorsque les deux espaces sont de nature différente, par exemple pour passer d'un espace Binaire à un espace de Réels $\mathbb{B} \to \mathbb{R}$. Dans le cadre de simulations, les deux espaces sont souvent de nature similaire $\mathbb{G} = \mathbb{R}$. On pourra se référer à \textcite[86-88]{Weise2011} pour plus de détails.
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[fortoc]{Résumé des relations entre les différents espaces dans une optimisation}[fig:relation_espaces]
