@@ -1,9 +1,15 @@
 
 \graphicspath{{FigureAnnexe/}}
 
-\part{Annexes}
-
 \appendix
+\pagenumbering{arabic}
+\appendixpage
+
+\renewcommand{\appendixpagename}{Annexes}
+
+\renewcommand{\appendixtocname}{Annexes}
+
+\addtocontents{toc}{\cftpagenumbersoff{chapter}}
 
 \chapter{Historique du paradigme systémique}
 
@@ -811,6 +817,13 @@ An automatic calibration procedure was applied for the first time on a multiagen
 \begin{sidecaption}[fortoc]{Diagramme d'activité pour la gestion des innovations}[fig:S_activite]
   \centering
  \includegraphics[width=1.0\linewidth]{slocal_groupeinov.pdf}
+  \end{sidecaption}
+\end{figure}
+
+\begin{figure}[!htbp]
+\begin{sidecaption}[fortoc]{Diagramme d'activité pour la gestion des innovations}[fig:S_activite]
+  \centering
+ \includegraphics[width=1.0\linewidth]{slocal_diffuse.pdf}
   \end{sidecaption}
 \end{figure}
 
