@@ -41,42 +41,53 @@ On propose la construction d'un modèle de simulation KISS suivant une trajectoi
 
 Une première opérationnalisation, même minimale, permet de mettre en évidence la dépendance du modèle conceptuel vis-à-vis du modèle implémenté. Il n'est pas problématique d'avoir un modèle conceptuel détaillé dès le départ, au contraire, mais si on décide de réaliser un modèle de simulation, il faut toujours avoir à l'esprit que c'est de l'expérimentation que dépend la progression du raisonnement. Plus vite celle-ci est mise en marche, plus vite on peut entamer cette progression. Cela permet aussi de ne pas minorer l'étape d'implémentation des hypothèses, qui soulève à elle seule des premières divergences avec le modèle conceptuel. La construction d'un premier modèle aux hypothèses minimales permet aussi de connaître le poids interprétatif attribuable à la structure du modèle ainsi mis à nu. Ce qui permet d’observer dans l’évolution du modèle, quel est l’apport exact de chaque nouvelle hypothèse, ou de chaque nouveau critère dans la dynamique exprimée du modèle.
 
-Les hypothèses et les critères mobilisable durant l'activité de modélisation sont tout à la fois des construits qui émerge de cette chaine de traitement plus globale qui supporte la progression du raisonnement, que des éléments empruntés d'un catalogue plus général, hérité de plusieurs décennies de modélisations en géographie et vérifié de multiples fois par l'empirie (le modèle gravitaire, la loi rang-taill, etc.). 
+Les hypothèses et les critères mobilisables durant l'activité de modélisation sont tout à la fois des construits qui émergent de cette chaîne de traitements plus globale qui supporte la progression du raisonnement, que des éléments empruntés d'un catalogue plus général, hérité de plusieurs décennies de modélisations en géographie et vérifié de multiples fois par l'empirie (le modèle gravitaire, la loi rang-taille, etc.). 
 
-Les hypothèses et les critères mobilisés supporte de façon implicite des valeurs différentes, qui n'apparaisse pas forcément comme évidente d'un point de vue extérieur. Il est difficile par exemple d'éliminer une hypothèse en fonction de sa seule mise en défaut observés à un instant $t$ dans la construction d'un modèle, d'autant plus lorsque la présence de celle-ci dans le modèle a du sens dans la résolution d'une problématique. 
+Les hypothèses et les critères mobilisés supportent de façon implicite des valeurs différentes, qui n'apparaissent pas forcément comme évidentes d'un point de vue extérieur. Il est difficile par exemple d'éliminer une hypothèse en fonction de sa seule mise en défaut observés à un instant $t$ dans la construction d'un modèle, d'autant plus lorsque la présence de celle-ci dans le modèle a du sens dans la résolution d'une problématique.
 
-Peut être n'était-ce simplement pas le moment pour intégrer cette hypothèse au modèle, celui-ci étant encore trop simple ? Peut être que le critère devant rendre compte de cette dynamique n'est pas adapté ? Peut être que l'implémentation proposée n'était tout simplement pas la plus pertinente compte tenu de cette dynamique existante ? Peut être que l'entité choisi pour porter l'hypothèse ne se situe pas à la bonne échelle ? etc. 
+Peut-être n'était-ce simplement pas le moment pour intégrer cette hypothèse au modèle, celui-ci étant encore trop simple ? Peut-être faut-il activer ou implémenter d'autres hypothèses pour que celle-ci puisse se révéler ? Peut-être que le critère devant rendre compte de cette dynamique n'est pas suffisamment adapté ? Peut-être que l'implémentation proposée n'était tout simplement pas la plus pertinente compte tenu de la dynamique déjà existante ? Peut-être que l'entité choisie pour porter l'hypothèse ne se situe pas à la bonne échelle ?  etc. 
 
-Inversement une hypothèse ou un critère valable à un instant $t$ ne le sera peut-être plus à un instant $t + 1$.
+Inversement une hypothèse ou un critère valable à un instant $t$ ne le sera peut-être plus à un instant $t + 1$. L'explication et la mise en place cohérentes des hypothèses et des critères se fait donc dans ces allers-retours, dans ces multiples essais. La construction d'un modèle de simulation ne semble pas tenir d'un raisonnement linéaire, car les interactions entre le modélisateur et le modèle sont complexes, et opèrent, comme on le perçoit dans toutes ces questions, à de multiples niveaux, parfois de façon simultanée.
 
 \begin{figure}[htbp]
-\begin{sidecaption}[fortoc]{ \hl{Schema ecqtg à commenter}}[fig:S_buildingstep]
+	\begin{sidecaption}[fortoc]{Exemple d'une démarche de construction cumulative}[fig:S_buildmeca]
+	 \centering
+	 \subbottom[Pendant la construction d'un modèle (\textit{building step}) ce sont différentes hypothèses (ici $A$ et $B$) et différentes versions d'hypothèses (ici versions $\{A_1 \dotsc A_n\}$ et versions $\{B_1 \dotsc B_n\}$) qui vont être développées. Si on veut mettre en oeuvre une approche cumulative et mobiliser toute la combinatoire possible entre les différentes versions des hypothèses implémentées durant la construction du modèle, alors il faut considérer la création d'un graphe de dépendances (\textit{graph dependency}). On s'aperçoit alors que certaines version des hypothèses ne sont pas compatibles les unes avec les autres (ex $A_1$ avec $B_2$). Les figures \ref{fig:S_twomeca} et \ref{fig:S_buildmeca} proposent d'instancier cet exemple dans deux familles d'hypothèses régissant les échanges d'innovations entre des villes dans un système de villes.]{
+	 	\includegraphics[width=1.0\linewidth]{schema_dependency.pdf}
+	 	\label{mechanisme1}}\qquad
+	 \subbottom[On propose d'étudier plusieurs hypothèses décrivant la façon dont une ville (la ville $i$) peut récupérer et intégrer dans son propre \textit{pool} d'innovations les innovations échangées avec les villes voisines pendant la simulation. Deux niveaux d'hypothèses sont imaginables. Le premier niveau d'hypothèse, le plus simple, propose d'intégrer les innovations à la ville $i$ à chaque fois qu'un échange a lieu avec une autre ville $j$. C'est la famille $A$ dont on trouve deux versions implémentées dans la figure \ref{mechanisme1}. Un deuxième niveau d'hypothèse est envisageable, plus complexe et dépendant du premier niveau il mobilise deux étapes représentées dans la figure \ref{mechanisme2} : 1) on considère l'ensemble des échanges possibles entre la ville $i$ et ses voisines, 2) l'ensemble d'innovations résultant de ces échanges est ensuite filtré puis intégré à la ville $i$ en fonction des règles définies par la famille d'hypothèse $B$]{
+		\includegraphics[width=0.8\linewidth]{mechanismslocal.pdf}
+		\label{fig:S_twomeca}}
+	\end{sidecaption}
+\end{figure}
+
+\begin{figure}[p]
+	\begin{sidecaption}[fortoc]{Présentations des implémentations et des inter-dépendance entre ces implémentations dans le cas des deux familles d'hypothèses $A = \{A_1,A_2\}$ et $B = \{B_1, B_2\}$}[fig:S_buildmeca]
+	 \centering
+	 \subbottom[Les versions $A_1$ et $A_2$ mobilisent chacune des règles très différentes pour définir là règle de sélection et d'intégration de l'objet innovation échangé entre deux villes $i$ et $j$. La couleur est en effet introduite comme une nouvelle propriété des innovations dans la deuxième version $A_2$ de cette hypothèses $A$.]{
+	 	\includegraphics[width=0.9\linewidth]{a1a2mechanism.pdf}
+	 	\label{mechanisme1}}\qquad
+	 \subbottom[Les deux familles de mécanismes sont assemblés en fonction du graphe de dépendance déjà présenté dans la figure \ref{mechanisme1} : $A_1$ est compatible avec $B_1$, mais pas avec $B_2$ car la propriété couleur des innovations est nécessaire à son bon fonctionnement. Les mécanismes $B_1$ et $B_2$ sont par contre tout à fait compatibles avec la version $A_2$.]{
+		\includegraphics[width=1.0\linewidth]{a1a2b1b2mechanism.pdf}
+		\label{mechanisme2}}
+	\end{sidecaption}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{sidecaption}[Evaluation automatique des hypothèses face à des critères multiples]{Les différentes versions des mécanismes sont assemblées dès lors qu'elles sont compatibles (voir le schéma \ref{fig:S_buildmeca}). Les résultats des modèles de simulation ainsi assemblés sont évalués face aux multiples critères experts (qualitatifs, quantitatifs) mobilisés durant la construction. L'hypothèse $A_1$ utilisée à $t_0$ toute seule donne de meilleur résultats que l'hypothèse $A_2$, plus complexe et construite a $t_1$. Il pourrait être tentant d'écarter de suite cette hypothèse, qui reste inférieure à l'hypothèse $A_1$, même une fois couplé à $B_1$ ($\{A_2,B_1\} < \{A_1,B_1\}$). Une fois associée après la phase de construction $t_3$ à la version $B_2$ de l'hypothèse $B$, c'est pourtant la seule combinaison $\{A_2,B_2\}$ qui permettra de satisfaire à la fois le critère 1 et 2.}[fig:S_critererempli]
   \centering
- \includegraphics[width=1.0\linewidth]{schema_dependency.pdf}
+ \includegraphics[width=.8\linewidth]{capacity.pdf}
   \end{sidecaption}
 \end{figure}
 
-Comme nous nous situons depuis le début dans une problématique de calibrage par optimisation, dont les résultats n'ont pas vocation d'être transféré de façon directe à une situation réelle, l'apparition d'un nouveau critère venant contraindre la dynamique peut complétement changer la donne dans cette combinatoire des hypothèses plausible. Interpreter de telles situations peut rapidement devenir très complexe : 3 hypothèses peuvent produire une dynamique plus proche des critères que 2 hypothèses, mais 1 hypothèse seule peut apparaitre meilleure que trois hypothèses sur ce même objectif.
+Comme nous nous situons depuis le début dans une problématique de calibrage par optimisation, dont les résultats n'ont pas vocation à être transféré de façon directe à une situation réelle, l'apparition d'un nouveau critère venant contraindre la dynamique peut complétement \enquote{changer la donne} dans cette combinatoire des hypothèses plausibles. Interpréter de telles situations peut rapidement devenir très complexe : 3 hypothèses peuvent produire une dynamique plus proche des critères que 2 hypothèses, mais 1 hypothèse seule peut apparaître meilleure que trois hypothèses sur ce même objectif.
 
-Peut-être que la combinaison de ces deux hypothèses est ici la plus intéressante d'un point de vue des questions thématique qu'elle pose, et cela même si la combinaisons des trois hypothèses produit de meilleurs résultat. Peut être qu'à l'introduction d'un nouveau critère, la solution à deux hypothèses produira des meilleurs résultats, et que l'hypothèse 1 verra ses résultats se dégrader ? 
+Peut-être que la combinaison de ces deux hypothèses est ici la plus intéressante d'un point de vue des questions thématique qu'elle pose, et cela même si la combinaisons des trois hypothèses produit de meilleurs résultats. Peut être qu'à l'introduction d'un nouveau critère, la solution à deux hypothèses produira des meilleurs résultats, et que l'hypothèse 1 verra ses résultats se dégrader ? 
 
-\begin{figure}[htbp]
-\begin{sidecaption}[fortoc]{ \hl{Schema ecqtg à commenter}}[fig:S_buildmeca1]
-  \centering
- \includegraphics[width=1.0\linewidth]{a1a2mechanism.pdf}
-  \end{sidecaption}
-\end{figure}
+Cette interpretation dépend donc du degré de complexification du modèle au moment où on l'évalue, du nombre de critère retenus pour juger la dynamique de celui-ci, et de la valeur relative que l'on attribue à chacune de ces hypothèses. La figure \ref{fig:S_critererempli} essaye d'exemplifier un tel scénario en s'appuyant sur l'exemple de modèle simplifié présenté dans la figure \ref{fig:S_buildmeca}.
 
-\begin{figure}[htbp]
-\begin{sidecaption}[fortoc]{ \hl{Schema ecqtg à commenter}}[fig:S_buildmeca2]
-  \centering
- \includegraphics[width=1.0\linewidth]{a1a2b1b2mechanism.pdf}
-  \end{sidecaption}
-\end{figure}
+Par conséquent aussi cette possibilité de falsification ou \foreignquote{english}{proof of impossibility}, ne marche que si on est en mesure de prouver l'\textbf{inaptitude constante} d'une d'hypothèse ou d'un jeu d'hypothèses dans la confrontation avec les critères d’évaluation.
 
-Cette interpretation dépend donc du degré de complexification du modèle au moment ou on l'évalue, du nombre de critère retenu pour juger la dynamique, et de la valeur relative que l'on attribue à chacune de ces hypothèses.
-
-Par conséquent aussi cette possibilité de falsification ou \foreignquote{english}{proof of impossibility}, ne marche que si on est en mesure de prouver l'\textbf{inaptitude constante} d'une d'hypothèse ou d'un jeu d'hypothèse dans le rapprochements aux critères. 
-
-Il reste donc à gérer cette possibilité de réengager les hypothèses et les critères à différents moments dans la construction des modèles, et soutenir une activité de construction cumulative qui ne soit pas \enquote{oublieuse} de cette autre espace-temps dans lequel se construise les hypothèses et les différents critères mobilisés. 
+Il reste donc à gérer cette possibilité de réengager les hypothèses et les critères à différents moments dans la construction des modèles, et soutenir une activité de construction cumulative qui ne soit pas \enquote{oublieuse} de cette autre espace-temps dans lequel se construisent les hypothèses et les différents critères mobilisés. 
 

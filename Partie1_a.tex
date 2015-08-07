@@ -54,7 +54,7 @@ Comme le fait remarquer Arnaud Banos dans son HDR \autocite[63]{Banos2013}, puis
 Si ce constat ne saurait suffire à prouver l'absence de géographes sur ces plateformes de calculs HPC, on extrait dans un premier temps quelques questions nous permettant à défaut de pouvoir répondre entièrement à cette affirmation, d'y voir au moins un peu plus clair :
 
 \begin{figure}[!h]
-\begin{sidecaption}[fortoc]{Placement historique des trois questions}[fig:S_historiquePlacement]
+\begin{sidecaption}[Un placement historique des trois questions]{Placement historique des trois questions}[fig:S_historiquePlacement]
   \centering
  \includegraphics[width=.9\linewidth]{plan_HPC.pdf}
   \end{sidecaption}
@@ -468,9 +468,9 @@ A Grenoble (H. Chamussy , P. Dumolard, M. Durand, et Joël Charre avant de parti
 
 Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié à l'émergence de la discipline informatique comme science du même nom en France. Une des impulsions importantes est donnée par l'universitaire Grenoblois Jean Kuntzmann dans les années 1950. Ce mathématicien et supporteur précoce de l'analyse numérique va militer pour la création, la formation, et la diffusion de ce qui va devenir par la suite l'informatique. Il est le fondateur et dirigeant de l'IMAG jusqu'en 1977, un des premiers laboratoires associés au CNRS, disposant d'un rayonnement international y compris sur le plan non-académique. Au milieu des années 1960, le laboratoire emploie 140 personnes, dont 60 doctorants. Si le Centre Inter-Universitaire de Calcul de Grenoble (1972) n'est vraiment officialisé qu'en 1972, de nombreux ordinateurs analogiques (1951), puis digitaux (Gamma ET, Marchant 10FA en 1957, IBM 7044 et 1401 en 1963, IBM 360-67 en 1968) seront amenés à passer bien avant dans ce premier Centre de Calcul. En 1977, cet effectif se porte à 300 personnes. Celui-ci est également le créateur de l'Association Française de Calcul (AFCAL) en 1957 qui deviendra par la suite AFCALTI, AFIRO, puis l'AFCET (Association Française pour la Cybernétique), dont les colloques et conférences ont constitué un des canaux importants de diffusion de la systémique dans le milieu scientifique et technique, y compris en géographie quantitative \autocite{Pumain2003}. Il n'est donc pas étonnant de voir l'utilisation appliquée de systèmes dynamiques émerger de ce centre en particulier, car Kuntzmann lorsqu'il crée l'Ecole Nationale Supérieure d'Informatique et de Mathématiques Appliquées de Grenoble (ENSIMAG) lui insuffle cette volonté d'une mathématique, et d'une informatique résolument tournée vers un usage applicatif, car \enquote{Il ne faut pas séparer une science de ses applications; à longue échéance, les mathématiques coupées des applications deviendraient stériles.} \autocites[422]{Mounier2012}{Chiffres1977}
 
-\begin{table}[!h]
+\begin{table}[!htb]
 	\centering
-	\begin{sidecaption}[fortoc]{Une idée des ressources informatiques disponibles au CNRS, de l'IBP à l'IDRIS. Les sources pour construire ces deux tableaux proviennent de \autocites{CNRS1972, Boucher2000, Mounier2010}}[tab:machines_circe]
+	\begin{sidecaption}[Les ressources informatiques au CNRS]{Une idée des ressources informatiques disponibles au CNRS, de l'IBP à l'IDRIS. Les sources pour construire ces deux tableaux proviennent de \autocites{CNRS1972, Boucher2000, Mounier2010}}[tab:machines_circe]
 		\begin{minipage}{1\textwidth}
 			\centering
 			\subbottom[]{
@@ -1052,7 +1052,7 @@ Lors du passage de direction à Réné Doursat, Mathieu Leclaire est embauché e
 OpenMOLE permet de construire, de modifier, et d'exécuter des workflows sur des environnements de calculs distribués. Un \textbf{\textit{workflow}} peut être vu comme une chaîne de traitement classique, composée de différentes tâches/traitements liées les unes avec les autres par des \textbf{transitions}. A la différence d'autres moteurs de \textit{workflow} existants (Taverna, Kepler, etc.) OpenMOLE peut intégrer n'importe quels types de \textbf{tâches} à ses workflows du moment que celles-ci existent soit sous forme native, soit sous forme de plugin au logiciel (figure \ref{fig:openmole_tasks}). C'est le cas du plugin Netlogo, développé à l'origine pour le modèle de Jéremy Fiegel, dont la réutilisation nous a permis d'intégrer le modèle SimpopLocal à des workflows sans aucun problème. OpenMOLE est capable de gérer des workflows ayant des \textbf{topologies complexes}, avec des boucles, des conditions de déclenchement sur les transitions, des agrégations, etc. Une des particularités d'OpenMOLE est également l'atomicité des tâches qui permet d'envisager la parallélisation des \textit{workflows} sans que l'utilisateur n'ai à gérer aucun des inconvénients habituellement liés à la gestion de la concurrence :
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Les tâches peuvent être de nature multiples.}[fig:openmole_tasks]
+	\begin{sidecaption}[Des tâches multiples dans OpenMOLE]{Les tâches peuvent être de nature multiples.}[fig:openmole_tasks]
 		\centering
 		\includegraphics[width=0.4\linewidth]{task_diversity.pdf}{
 		}
@@ -1069,7 +1069,7 @@ Chaque tâche comporte des \textbf{entrées} et des \textbf{sorties} en fonction
 Enfin, les \textit{workflows} peuvent être construits en utilisant un langage informatique dédié \Anote{dsl} (\textit{Domain Specific Language} DSL) ou composé de façon interactive et graphique en utilisant une interface utilisateur. On trouvera beaucoup plus de détails sur l'ensemble de ces concepts dans les publications associées au logiciel \autocites{Reuillon2008a, Reuillon2013}, mais également sur le \href{http://www.openmole.org}{@site} internet de celui-ci. Le mieux est encore de donner un exemple très simple et visuel de \textit{workflow} permettant d'exécuter quelques réplications d'un modèle de simulation Netlogo, comme le présente la figure \ref{fig:openmole_wfire}.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Exemple de plan d'expérience faisant seulement varier la graine aléatoire du modèle Netlogo \foreignquote{english}{Fire}. Ce modèle de simulation très simple permet de simuler le déplacement d'un feu dans une surface boisée dont on peut faire varier la densité. C'est un exemple que l'on trouve également dans le papier \textcite{Reuillon2013}.}[fig:openmole_wfire]
+	\begin{sidecaption}[Exemple de plan d'expérience pour la réplication de modèle avec Netlogo]{Exemple de plan d'expérience faisant seulement varier la graine aléatoire du modèle Netlogo \foreignquote{english}{Fire}. Ce modèle de simulation très simple permet de simuler le déplacement d'un feu dans une surface boisée dont on peut faire varier la densité. C'est un exemple que l'on trouve également dans le papier \textcite{Reuillon2013}.}[fig:openmole_wfire]
 	 \centering
 	 \subbottom[Cette première phase de création du \textit{workflow} nécessite de paramétrer les deux premières tâches \textbf{Et (Exploration task)} et \textbf{Nt (Netlogo task)}. La tâche d'exploration \textbf{Et} nécessite le choix d'un \textit{sampling} pour ensuite être capable de générer le plan d'expérience. Le modèle Netlogo doit définir ses entrées et ses sorties : le paramètre de $densite$ du modèle est fixé à une valeur de $60$, mais la \textbf{{\$seed}} doit être passée en entrée de la tâche au moment de son exécution pour que le modèle fonctionne. La sortie attendue du modèle correspond au pas de temps $t$ marquant l'extinction définitive du feu et l'arrêt du modèle : $t_{end-of-fire}$ ]{
 	 	\includegraphics[width=.8\linewidth]{leftdoenetlogo.pdf}
@@ -1104,7 +1104,7 @@ Dès juin 2010 et grâce à l'obtention d'un certificat autorisant l'accès à l
 Dans un premier temps, il est seulement prévu de s'appuyer sur OpenMOLE pour construire et exécuter des plans d'expériences de nos modèles sur environnement distribué. Le schéma alors établi est le suivant \ref{figure_schema_initial}. Nous ne passerons pas trop de temps à le décrire ici car celui-ci est devenu rapidement obsolète. Le détail du projet reste disponible dans un compte rendu annuel et dans le projet de thèse initial \autocites{Rey2010, Rey2009}.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Ebauche de la plateforme tel qu'elle est réalisée et utilisée en 2010, intégrant OpenMOLE pour les aspects distribution sur grille de calcul.}[figure_schema_initial]
+	\begin{sidecaption}[Ancienne ébauche de plateforme datée de 2010]{Ebauche de la plateforme tel qu'elle est réalisée et utilisée en 2010, intégrant OpenMOLE pour les aspects distribution sur grille de calcul.}[figure_schema_initial]
 	 \centering
 	 	\includegraphics[width=1.0\linewidth]{oldplatform2.png}
  \end{sidecaption}
@@ -1126,7 +1126,7 @@ Une autre évidence remet très rapidement en cause notre démarche de construct
 Prenons un exemple plus concret. Dans le cadre de SimpopLocal \autocites{Schmitt2015,Schmitt2014} un des fait stylisés recherché par les géographes correspond à une description de la hierarchisation du système de peuplement à un temps $t_{final}$ égal à $4000$ pas de temps (1 pas de temps = 1 année), une durée historique retenue par les experts (voir figure \ref{fig:rtstylisee}).
 
 \begin{figure}[h]
-	\begin{sidecaption}[fortoc]{Emergence d'une loi rang-taille dans un système de peuplement stylisé}[fig:rtstylisee]
+	\begin{sidecaption}[Emergence d'une loi rang-taille dans un système de peuplements stylisé]{Emergence d'une loi rang-taille dans un système de peuplements stylisé}[fig:rtstylisee]
 		\centering
 		\includegraphics[width=0.7\linewidth]{rangtaille_generique.pdf}{
 		}
@@ -1183,7 +1183,7 @@ L'intérêt d'une plateforme comme OpenMOLE c'est qu'elle propose une structure 
 Un autre projet d'intégration a été mené durant l'année 2013, et celui a mobilisé deux stagiaires que j'ai encadrés sur 2 et 6 mois (Benjamin Bernard et Cyril Jayet). L'objectif était d'intégrer dans OpenMOLE un outil de \enquote{visualisation scientifique} pouvant être couplé de façon flexible avec les données circulant en sorties des tâches de \textit{workflows}, comme le propose la figure \ref{fig:visu_projet}. Devant les possibilités offertes par les librairies de visualisation javascript, le choix du support pour construire les visualisations (un simple graphique XY dans un premier temps) s'est porté sur un navigateur Internet. Ce projet était relativement complexe sur plusieurs aspects. Il fallait gérer l'intégration d'un navigateur Internet dans OpenMOLE, coupler un tracé des visualisations en Javascript dans un navigateur avec un flux de données en Scala, et enfin gérer l'affichage de données de façon synchrone ou asynchrone. En effet, les modèles de simulations s'exécutant sur un environnement distribué, les données sont effectivement récupérées de façon asynchrone par OpenMOLE.
 
 \begin{figure}[htbp]
-	\begin{sidecaption}[fortoc]{Le plan d'expérience propose de faire varier la densité du modèle de $0$ à $100$ par pas de $10$, avec $5$ réplications pour chacune de ces variations de densité. Le résultat est directement visible pendant l'exécution des simulations sur grille de calcul grâce au plugin implémenté dans OpenMOLE. Le bouton \foreignquote{english}{refresh} permet d'afficher les dernières données récupérées par OpenMOLE. Le \textit{mapping} permet de changer les variables en $x$ et $y$ en fonction des entrées et des sorties de tâches disponible dans le \textit{workflow} : $seed$, $density$, $t_{end-of-fire}$ }[fig:visu_projet]
+	\begin{sidecaption}[Plan d'expérience sur le modèle Netlogo Fire]{Le plan d'expérience propose de faire varier la densité du modèle de $0$ à $100$ par pas de $10$, avec $5$ réplications pour chacune de ces variations de densité. Le résultat est directement visible pendant l'exécution des simulations sur grille de calcul grâce au plugin implémenté dans OpenMOLE. Le bouton \foreignquote{english}{refresh} permet d'afficher les dernières données récupérées par OpenMOLE. Le \textit{mapping} permet de changer les variables en $x$ et $y$ en fonction des entrées et des sorties de tâches disponible dans le \textit{workflow} : $seed$, $density$, $t_{end-of-fire}$ }[fig:visu_projet]
 		\centering
 		\includegraphics[width=0.9\linewidth]{leftdoenetlogo_visu.pdf}
   \end{sidecaption}
@@ -1266,7 +1266,7 @@ Avec l'avancement des différents projets de l'ERC GeodiverCity, l'exploration d
 \label{sssec:quatrieme_moment}
 
 \begin{figure}[t]
-\begin{sidecaption}[fortoc]{ Ensemble des activités organisées autour de l'exploration des modèles de simulation. Les cercles de couleurs représentent des activitées, et les fleches des relations entres les différentes activités.}[fig:S_explo_calendrier]
+\begin{sidecaption}[Un schéma de synthèse pour les activités d'explorations des différents modèles de simulation dans l'ERC GeoDiverCity]{Ensemble des activités organisées autour de l'exploration des modèles de simulation. Les cercles de couleurs représentent des activitées, et les fleches des relations entres les différentes activités.}[fig:S_explo_calendrier]
   \centering
  \includegraphics[width=.9\linewidth]{explorations_calendrier.pdf}
   \end{sidecaption}
@@ -1396,7 +1396,9 @@ La présentation détaillée de ce modèle de simulation multi-agents, les probl
 
 Bien que les travaux autour de ce modèle de simulation puissent apparaître comme nominatif - du fait entre autre qu'il faille bien inscrire à un moment donné ou un autre ces travaux dans une thèse - je tiens toutefois à repréciser qu'il s'agit à mon sens d'un travail partagé, ou rien n'aurait été possible sans la participation de l'un ou l'autre des collaborateurs, que cela soit dans la construction des modèles ou de certains graphiques, dans l'exploration des modèles, dans l'analyse des résultats, etc. Comme on pouvait s'y attendre compte tenu de la multiplicité de compétences nécessaires pour une telle construction, les réalisations des acteurs sont améliorés et/ou contraintes par une forme plus ou moins forte d'inter-dépendance propre à cette interdisciplinarité \autocite{Chapron2014}.
 
-Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit  une preuve de robustesse de la plateforme utilisée.
+Le modèle SimpopLocal a également subi de nombreux redéveloppements, que cela soit dans sa version Netlogo (janvier 2010), Scala (avril 2012), et enfin dans son intégration dans SimPuzzle (avril 2013). En dehors des quelques évolutions de syntaxe, les \textit{workflow} utilisés pour explorer ce modèle sont quasi-similaires et cela quelque soit la version utilisée, ce qui constitue déjà en soit une preuve de robustesse de la plateforme.
+
+Les \textit{workflows} sont disponibles sur le \href{https://github.com/ISCPIF/simpoplocal-epb}{@site} compagnon de l'article EPB, ainsi que sur le \href{https://github.com/openmole/openmole-market}{@marché} de \textit{workflows} OpenMOLE.
 
 \subsubsection{un modèle jouet sur les fourmis}
 
@@ -1404,28 +1406,28 @@ Le modèle de simulation \textbf{Ants} est une reproduction par \textcite{Wilens
 
 \begin{figure}[H]
 		\centering
-	 	\includegraphics[width=.6\linewidth]{ants.png}
+	 	\includegraphics[width=.4\linewidth]{ants.png}
 \end{figure}
 
 Dans ce modèle Netlogo, une colonie de fourmis fourrage à la recherche de nourriture. Chaque fourmi suit un ensemble de règles simples, mais la colonie prise dans son ensemble réagit de façon complexe. Quand une fourmi trouve un morceau de nourriture, elle ramène celui-ci dans son nid, en laissant une empreinte chimique derrière elle. Lorsque les autres fourmis \enquote{reniflent} cette trace, elles suivent la piste jusqu'à la nourriture. Plus le nombre de fourmis rapportant de la nourriture vient à augmenter, plus la piste chimique est renforcée par leur passage.
 
 Ce modèle est constitué de trois paramètres :
 \begin{itemize}[label=\textbullet,noitemsep,nolistsep]
-\item Une $Population$ de fourmis initiale.
-\item Un taux $Evaporation-rate$ qui contrôle l'évaporation de la trace chimique.
+\item une $Population$ de fourmis initiale.
+\item un taux $Evaporation-rate$ qui contrôle l'évaporation de la trace chimique.
 \item un taux $Diffusion-rate$ qui contrôle la diffusion de la trace chimique.
 \end{itemize}
 
 \medskip
 
-Les \textit{workflows} OpenMOLE des expérimentations présentées par la suite pour sont disponibles sur le site compagnon (voir notes de lecture).
+Les \textit{workflows} OpenMOLE des expérimentations présentées par la suite sont disponibles sur le site compagnon (voir notes de lecture) et sur le \href{https://github.com/openmole/openmole-market}{@marché} de \textit{workflows} OpenMOLE.
 
 %Le \textit{\textit{framework}} MGO (Multi Goal Optimization)
 
 \subsection{Le domaine des algorithmes métaheuristiques, une sous-discipline de l'Optimisation}
 
 \begin{figure}[h]
-\begin{sidecaption}[fortoc]{ Vue d'ensemble des algorithmes d'optimisation repris de l'état de l'art très complet de \textcite[32]{Weise2011}}[fig:S_OverviewOptimisation]
+\begin{sidecaption}[Vue synthétique sur les algorithmes d'optimisation]{ Vue d'ensemble des algorithmes d'optimisation repris de l'état de l'art très complet de \textcite[32]{Weise2011}}[fig:S_OverviewOptimisation]
   \centering
  \includegraphics[width=.9\linewidth]{overview_optimisation_algorithm.png}
   \end{sidecaption}
@@ -1524,6 +1526,8 @@ Si on considère les problèmes de combinatoires discrets comme \textit{TSP} ou 
 
 D'une part ce choix ne résout en rien la problématique combinatoire. Donnons un exemple plus concret, si une simulation possède $5$ paramètres, chacun de ces paramètres étant discrétisé en $10$ pas, cela nous donne déjà $10^5$ combinaisons possibles à évaluer. Si on considère que le modèle de simulation ainsi exécuté est stochastique ($10$ réplications), dans un délai relativement rapide (1 minute), la durée totale d'exécution de ce plan, pourtant relativement \enquote{grossier} d'un point de vue de la couverture de l'espace des paramètres, est environ égale à deux années de calcul... La parallélisation d'un tel calcul, c'est-à-dire son exécution sur plusieurs processeurs ou ordinateurs en parallèle, pourrait évidemment réduire ce temps de calcul à des dimensions plus raisonnables, mais c'est sans compter sur un deuxième problème, plus contraignant.
 
+Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou $100$ points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), $100$ points dans un même espace $(0..1)$ de dimension $10$ ne couvrent plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicate toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque point, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}. On peut voir un peu mieux sur l'illustration \ref{fig:curse} les effets d'un tel phénomène.
+
 \begin{figure}[htbp]
 	\begin{sidecaption}[Le problème de la Curse Dimensionnality]{Illustration des effets de la \textit{Curse Dimensionality} sur un plan d'expérience de 9 points entre 0 et 1 exclus. }[fig:curse]
 	 \centering
@@ -1531,7 +1535,7 @@ D'une part ce choix ne résout en rien la problématique combinatoire. Donnons u
 	\end{sidecaption}
 \end{figure}
 
-Avec le choix d'une telle maille pour la discrétisation des paramètres, c'est prendre le risque de passer à côté de solutions potentielles, une problématique contraignante d'autant plus qu'elle se complexifie avec l'augmentation du nombre de paramètres, comme le dicte le phénomène de \textit{Curse Dimensionality} établit par Richard Bellman. Ce problème est principalement d'ordre statistique, là ou $100$ points peuvent suffire dans un espace entre $(0..1)$ de dimension $1$ pour commencer à inférer ($0.01$ de distance entre chaque point), $100$ points dans un même espace $(0..1)$ de dimension $10$ ne couvrent plus qu'une toute petite partie du volume disponible. Chaque point est alors entouré d'une large portion de vide qui rend délicate toutes inférences à partir d'une si faible couverture d'un tel espace. Pour obtenir une couverture équivalente avec une distance de $0.01$ entre chaque point, il faudrait disposer de $10^{20}$ points, ce qui semble considérable \autocite{Bellman1961}. On peut voir un peu mieux sur l'illustration \ref{fig:curse} les effets d'un tel phénomène.
+\pagebreak
 
 \begin{testiv}{Curse Dimensionality}{Exemple de Curse Dimensionality avec Simpop Local}
 
@@ -1586,8 +1590,8 @@ De fait dans un tel scénario, et pour éviter une recherche aléatoire, l'éval
 
 L'injection de connaissances (voir point \ref{enum_meta_h} ) dans ce type d'algorithme métaheuristique est donc double, et opère à la fois de façon précise dans la formalisation d'un ou de plusieurs critères qui vont servir pour l'algorithme optimiseur à déterminer la qualité, bonne ou mauvaise, d'une solution candidate; et de l'autre elle intervient cette fois ci de façon moins contrôlable dans la façon dont l'expérimentateur va construire et paramétrer une métaheuristique pour l'adapter au mieux à son problème. La qualité interne (paramètre, structure) de la métaheuristique définit aussi en quelque sorte le processus d'exploration, ce qui explique aussi la dépendance de ce type d'algorithmes à l'environnement qu'ils doivent explorer.
 
-\begin{figure}[htb]
-	\begin{sidecaption}[fortoc]{Projection du vecteur de solution candidates $\{a \dotsc n\}$ dans l'espace des objectifs. Les flèches indiquent dans quel sens et sur quel plan se fait la projection des points. Les couleurs permettent de repérer quelle est la ligne de points que l'on a projetée, de la ligne 1 à 3 sur $(x,v)$ et de la ligne 1 à 4 sur $(y,v)$}[fig:spacePspaceOmultimodal]
+\begin{figure}[!htb]
+	\begin{sidecaption}[Projection de solutions candidates dans l'espace des objectifs]{Projection du vecteur de solution candidates $\{a \dotsc n\}$ dans l'espace des objectifs. Les flèches indiquent dans quel sens et sur quel plan se fait la projection des points. Les couleurs permettent de repérer quelle est la ligne de points que l'on a projetée, de la ligne 1 à 3 sur $(x,v)$ et de la ligne 1 à 4 sur $(y,v)$}[fig:spacePspaceOmultimodal]
 	 \centering
 	 	\includegraphics[width=.9\linewidth]{espaceP_espaceO_multimodal.pdf}
 	\end{sidecaption}
@@ -1618,7 +1622,7 @@ Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on pro
 	\end{sidecaption}
 \end{figure}
 
-Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidatesf très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
+Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidates très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
 
 Il est clair que l'information récoltée par un tel déplacement basé sur une distance euclidienne dans le plan $(x,y)$ n'est pas pertinent dans la recherche des emplacements possibles des meilleures solutions (voir figure \ref{fig:xytrajectoire}). Il semble par exemple plus intéressant pour l'optimiseur d'accéder aux solutions par le prisme d'ensembles construits sur la base d'une valeur $v$ commune (voir figure \ref{fig:xyspacePspaceOmultimodal}). Une information qui peut être exploitée de multiples façons, toujours en permettant à l'optimiseur de déterminer un nouvel ensemble de solutions candidates à évaluer.
 
@@ -1646,7 +1650,7 @@ En réalité, ces deux objectifs sont souvent liés, et c'est souvent l'expertis
 Cette mécanique on la retrouve également à un autre niveau, dans le fonctionnement interne des métaheuristiques. En effet, celles-ci s'appuient le plus souvent sur la métaphore biologique évolutive pour mettre en tension une recherche de solutions guidée toute à la fois par l'\textit{exploration} (trouver des solutions originales), et l'\textit{exploitation} (améliorer les solutions existantes).
 
 \begin{figure}[!htbp]
-\begin{sidecaption}[fortoc]{Recherche d'un minimum global.}[fig:hmap2ab]
+\begin{sidecaption}[Recherche d'un minimum global]{Recherche d'un minimum global.}[fig:hmap2ab]
  \centering
  \subbottom[Une fonction $f(x)$ présentant un unique minimum global]{
  	\includegraphics[width=.4\linewidth]{heightmap2a.pdf}
@@ -1664,7 +1668,7 @@ En se limitant aux pièges dépendant de la topologie de l'espace des solutions 
 La figure \ref{fig:hmap2ab} démontre un fonctionnement normal de l'optimiseur, capable quelque soit son placement initial (rouge ou bleu), de trouver le minimum global d'une fonction relativement simple \ref{subfig_hmap2ab_a}. Un comportement équivalent est observable dans la figure \ref{subfig_hmap2ab_b}, le compromis \enquote{exploitation - exploration} étant suffisant pour que l'optimiseur bleu surmonte l'obstacle posé par la présence d'un minimum local dans cette fonction.
 
 \begin{figure}[!htbp]
-  \begin{sidecaption}[fortoc]{Deux types de fonctions sont rendues difficiles à optimiser du fait d'une topologie marquée.}[fig:hmap2cd]
+  \begin{sidecaption}[Des fonctions difficiles à optimiser du fait de paysages complexes]{Deux types de fonctions sont rendues difficiles à optimiser du fait d'une topologie marquée.}[fig:hmap2cd]
   \centering
   \subbottom[Une fonction $f(x)$ multimodale acceptant plusieurs minimum locaux, et un seul minimum global]{
   	\includegraphics[width=.4\linewidth]{heightmap2e.pdf}
@@ -1687,7 +1691,7 @@ Ce qui nous permet d'évoquer une faiblesse connue des métaheuristiques, hérit
 \end{enumerate}
 
 \begin{figure}[!htbp]
-\begin{sidecaption}[fortoc]{Représentation d'une navigation indirecte de l'optimiseur dans un espace de solution $z = f(x,y)$.}[fig:hmap1]
+\begin{sidecaption}[Représentation de la navigation indirecte d'une métaheuristique dans un espace de solution]{Représentation d'une navigation indirecte de l'optimiseur dans un espace de solution $z = f(x,y)$.}[fig:hmap1]
   \centering
   \subbottom[]{
   	\includegraphics[width=.4\linewidth]{heightmap1a.png}
@@ -1741,18 +1745,31 @@ Pour comprendre comment se déroule de façon générale la résolution d'un pro
 La première étape selon Weise dans la construction d'un problème d'optimisation est de définir le type de structure qui peut être associée à l'expression des solutions possibles et spécifiques à notre problème.
 
 Autrement dit, il s'agit de déterminer quel est l'espace dans lequel évolue la donnée figurant la solution attendue pour cette optimisation. L'expression de cette solution peut appartenir à l'espace des réels $\mathbb{R}$, comme par exemple une valeur numérique se rapportant à l'optimisation d'une fonction mathématique. Mais celle-ci peut également s'exprimer dans un repère beaucoup plus complexe, en faisant référence par exemple à un repère géométrique définissant le cadre  d'une forme à optimiser comme une pièce de moteur, une pièce d'avion, etc. \autocite[43]{Weise2011}
+\medskip
 
 Cet espace du problème (\textit{problem space}) $\mathbb{X}$ est défini comme \foreignquote{english}{ [...] the set containing all elements $x$ which could be its solution.}
 
+\medskip
+
 Une solution candidate $x$ est quant à elle définie comme \foreignquote{english}{ [...] an element of the problem space $ \mathbb{X}$ of a certain optimization problem.}
+
+\medskip
 
 L'objectif de l'optimisation est donc de trouver par le biais d'un algorithme adapté l'ensemble des solutions candidates $x^*$ appartenant à l'espace du problème répondant le mieux aux critères définis par l'utilisateur. Ce qui suppose de pouvoir qualifier une solution candidate $x_1$ tiré de $\mathbb{X}$ par rapport à une autre solution candidate $x_2$ elle aussi tiré de $\mathbb{X}$.
 
+\medskip
+
 \textit{Une deuxième étape logique serait donc d'établir comment se fait la mesure établissant la qualité d'une solution ?}
+
+\medskip
 
 Comme défini précédemment, ce qui va guider l'algorithme optimiseur dans sa prise de décision, c'est l'évaluation d'une fonction heuristique, ou d'une fonction objectif (\textit{objective function}) \Anote{difference_objective_heuristique}
 
-\foreignquote{english}{An objective function $f: \mathbb{X} \to \mathbb{R}$ is a mathematical function which is subject to optimization.}
+\medskip
+
+\foreignblockquote{english}{An objective function $f: \mathbb{X} \to \mathbb{R}$ is a mathematical function which is subject to optimization.}
+
+\medskip
 
 Cette fonction objectif lorsqu'elle prend pour paramètre un élément candidat $x$ pris dans l'espace du problème $ \mathbb{X}$ renvoie une valeur définissant sa qualité par rapport au problème posé. \autocite[44]{Weise2011}
 
@@ -1763,11 +1780,12 @@ La littérature fait également plus souvent référence à ce type de problème
 En résumé, à chaque association d'un vecteur de fonction objectif $\vec{f}$ et d'une solution candidate $x$ correspond après évaluation un vecteur de réel de dimension $n$ permettant le positionnement de la solution candidate dans l'espace $\mathbb{R}^n$ des objectifs aussi nommé $\mathbb{Y}$.
 
 C'est à partir du positionnement des solutions candidates dans cet espace $\mathbb{Y}$ que l'optimiseur va décider de la prochaine solution candidate à évaluer.
-\newline
+\medskip
+
 \textit{Dès lors, comment ce choix se fait-il dans une perspective multi-objectifs a priori contradictoires ?}
 
 \begin{figure}[!hbtp]
-	\begin{sidecaption}[fortoc]{ Pour la valeur $x = 0$, $f1(x) = 0 $ et $f2(x) = 4 $, pour $x = 2$,  $f1(x) = 4 $ et $f2(x) = 0 $ , donc la configuration inverse. La solution pour minimiser les deux fonctions $f1$ et $f2$ tient donc forcément dans un compromis dans la valeur prise par $x$.}[fig:S_Schaffer]
+	\begin{sidecaption}[Représentation de la fonction mathématique de Schaffer]{ Pour la valeur $x = 0$, $f1(x) = 0 $ et $f2(x) = 4 $, pour $x = 2$,  $f1(x) = 4 $ et $f2(x) = 0 $ , donc la configuration inverse. La solution pour minimiser les deux fonctions $f1$ et $f2$ tient donc forcément dans un compromis dans la valeur prise par $x$.}[fig:S_Schaffer]
 	\centering
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 	\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5,-1) grid (5,5);
@@ -1804,7 +1822,7 @@ Si on superpose les deux fonctions comme dans la figure \ref{fig:S_Schaffer}, on
 
 Cette opération que nous pratiquons tous les jours sans forcément le savoir peut être plus facilement expliquée en faisant appel à cet exemple concret. Dans le cas d'un acheteur à la recherche d'une voiture à la fois économe de par sa faible consommation et si possible disponible à un moindre coût, celui-ci devra bien se plier à l'exercice de positionnement des voitures résumé dans le graphique \ref{fig:voiture}.
 
-Dans le graphique \ref{subfig_voiture:b} on constate rapidement que le modèle de voiture que le client est susceptible d'acheter a de fortes chances de se trouver dans la liste de voitures $\{ A,B,C,D,E \}$ colorées en rouge, aussi appelée \enquote{front de Pareto}, ou \enquote{optimum de Pareto}. Ce terme apparaît en économie en 1950, en référence directe des travaux de l'économiste italien Vilfredo Pareto. Le lecteur plus curieux de ces questions pourra trouver de multiples points d'entrées sur ces questions dans les publications suivantes \autocites{Ehrgott2012,Koksalan2011,Koksalan2013}.
+Dans le graphique \ref{subfig_voiture:b} on constate rapidement que le modèle de voiture que le client est susceptible d'acheter a de fortes chances de se trouver dans la liste de voitures $\{ A,B,C,D,E \}$ colorées en rouge, aussi appelée \enquote{front de Pareto}, ou \enquote{optimum de Pareto}. Ce terme apparaît en économie en 1950, en référence directe des travaux de l'économiste italien Vilfredo Pareto. Le lecteur plus curieux de ces questions pourra trouver de multiples points d'entrées sur ces questions dans les publications suivantes \autocites{Ehrgott2012, Koksalan2011, Koksalan2013}.
 
 %\pagebreak
 
@@ -1880,7 +1898,7 @@ Un autre type d'erreur peut encore intervenir lors de telles explorations, l'exp
 \end{testiv}
 
 
-\begin{figure}[!htbp]
+\begin{figure}[htbp]
 	\begin{sidecaption}[Exemple de front de Pareto sur des voitures]{Exemple simplifié d'une catégorisation de voitures selon deux axes comprenant d'une part le coût d'achat et d'autre part la consommation de chaque voiture.}[fig:voiture]
 	\centering
 	  \subtop[]{
@@ -1922,7 +1940,7 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 
 \begin{table}[!p]
 
-\begin{sidecaption}[fortoc]{Tableau de résultats des fonctions objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}, intervenant ensuite dans le calcul de \textit{fitness} de différentes façons selon les algorithmes utilisés.}
+\begin{sidecaption}[Tableau résumé des fonctions objectifs, et de différentes valeurs de fitness associées]{Tableau de résultats des fonctions objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}, intervenant ensuite dans le calcul de \textit{fitness} de différentes façons selon les algorithmes utilisés.}
 	[tab:pranking]
 	\centering
 	 \subbottom[Graphique en deux dimensions des fonctions objectifs $f_1$ et $f_2$ du tableau ci-dessous.]{
@@ -1955,9 +1973,8 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 	\begin{tablenotes}
       \small
       \item[1] $v_1$ est une \textit{fitness} calculée sur la base du nombre de dominé $+ 1$, cf. une partie de calcul de fitness de l'algorithme MOGA de \textcite{Fonseca1993}.
-      \item[2] $v_2$ est une \textit{fitness} calculée sur la base du calcul de fronts de l'algorithme NDS de \textcite{Goldberg1989}. L'algorithme est assez simple, on fait comme si il s'agissait de peler un oignon. Au départ $r = 0$. On effectue un calcul de dominance sur une population complète $P$ (étape 1), puis on retire seulement les points non-dominés $P_{t+1} = P_{t} - P_{\varnothing}$ (étape 2) auxquels on attribue également un rang $r = r + 1$.  On recommence à l'étape 1 jusqu'à ce que tous les points possèdent un rang. Il existe également des variantes plus rapide de cet algorithme \autocite{Deb2001}.
+      \item[2] $v_2$ est une \textit{fitness} calculée sur la base du calcul de fronts de l'algorithme NDS de \textcite{Goldberg1989}. L'algorithme est assez simple, on fait comme s'il s'agissait de peler un oignon. Au départ $r = 0$. On effectue un calcul de dominance sur une population complète $P$ (étape 1), puis on retire seulement les points non-dominés $P_{t+1} = P_{t} - P_{\{\varnothing\}}$ (étape 2) auxquels on attribue également un rang $r = r + 1$.  On recommence à l'étape 1 jusqu'à ce que tous les points possèdent un rang. Il existe également des variantes plus rapide de cet algorithme \autocite{Deb2001}.
     \end{tablenotes}
-
 
 	\label{pranking:b}
 	\end{threeparttable}}
@@ -2017,8 +2034,6 @@ Celle-ci possède les propriétés suivantes, qui définissent dans l'espace des
 
 Différents degrés de dominance ont été développés, comme par exemple la notion de \textit{strong dominance} : $x_1$ domine fortement $x_2$ ($x_1 \succ \succ x_2$) si $x_1$ est strictement meilleur que $x_2$ sur tout ses objectifs.
 
-Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non dominées $x^* \in \mathbb{X}$ ,on peut étudier en détail comment la dominance se calcule entre les points $e$ et $f$ présentés sur la figure \ref{fig:pranking_a}.
-
 \begin{table}[!h]
 	\centering
 	\begin{sidecaption}[Règle de dominance pour les points e et f]{Application des règles de dominance aux points $e$ et $f$. \\ \\
@@ -2031,7 +2046,7 @@ Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non domi
 					\bottomrule
 			\end{tabular}\\ \\
 			(a) $e \succ f$ car e est bien le meilleur sur au moins un des deux objectifs, et n'est pas pire sur aucuns des autres objectifs ($e \succeq f$ ) \\
-			(b) f ne domine pas e car f n'est pas meilleur sur aucun des deux objectifs et il est pire sur au moins un des deux objectif}[tab:pranking]
+			(b) f ne domine pas e car f n'est pas meilleur sur aucun des deux objectifs et il est pire sur au moins un des deux objectif}[tab:minipranking]
 
 		\begin{minipage}{0.5\textwidth}
 			\centering
@@ -2062,6 +2077,8 @@ Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non domi
   \end{sidecaption}
 \end{table}
 
+Pour bien comprendre comment se construit l'ensemble $X^*$ de solutions non dominées $x^* \in \mathbb{X}$ ,on peut étudier en détail dans le tableau \ref{tab:minipranking} comment la dominance se calcule entre les points $e$ et $f$, toujours tirés du tableau \ref{tab:pranking}.
+
 Les solutions admises parmi le front de Pareto (voir figure \ref{fig:frontoptimal}) sont donc ici toutes celles qui ne sont pas dominées faiblement ($\succeq$), ce qui revient à exclure les points $f$ et $l$ du front optimum $\{a,b,c,d,e\}$ car ils sont dominés faiblement ($e \succeq f$); alors que dans le cadre d'une dominance forte ($\succ \succ$), ceux-ci auraient fait partie du front $\{a,b,c,d,e,f,l\}$. En effet si on prend toujours le cas de $e$ et $f$, la condition testant que $e$ est strictement meilleur que $f$ sur tous les objectifs n'est pas remplie.
 
 %Cet ensemble de cardinalité forcément inférieure ou égale est qualifié \enquote{d'ensemble fort non dominé} (\textit{Strongly non dominated set}).
@@ -2086,12 +2103,12 @@ On reprend la définition qui nous est donné, $ e \succeq f$ si
 \item $ \exists_j \ e_j < f_j$
 \end{enumerate}
 
-Or (1) est bien $True$ d'après le tableau \ref{tab:pranking}, il est donc possible d'écrire $e_1 \leq f_1$ et $e_2 \leq f_2$ Le cas (2) est également $True$ car $e_2 < f_2$
+Or (1) est bien $True$ d'après le tableau \ref{pranking_a}, il est donc possible d'écrire $e_1 \leq f_1$ et $e_2 \leq f_2$ Le cas (2) est également $True$ car $e_2 < f_2$
 
 \textbf{Par conséquent}, le fait que (1) et (2) soit égal à $True$ permet, à la différence de la dominance forte, de discriminer $e$ par rapport à $f$, ce qui fait  que $e_2 \succeq f_2$. Donc $f \notin FP_{\succeq}$
 
 \begin{figure}[!htb]
-	\begin{sidecaption}[fortoc]{Tracé du front optimum à partir du calcul des individus non dominés, cf. l'ensemble vide $\varnothing$ dans le tableau \ref{tab:pranking}}[fig:frontoptimal]
+	\begin{sidecaption}[Tracé d'un front de Pareto]{Tracé du front optimum à partir du calcul des individus non dominés, cf. l'ensemble vide $\varnothing$ dans le tableau \ref{tab:pranking}}[fig:frontoptimal]
 		\centering
 		\includegraphics[width=.4\linewidth]{pareto_front.pdf}{
 		}
@@ -2122,7 +2139,7 @@ On retrouve dans ces objectifs la tension entre exploration et exploitation, le 
 Heureusement, un certain nombre de combinaisons, souvent éprouvées par de multiple tests sur des fonctions aux caractéristiques et difficultés soigneusement étudiées (ZDT, etc.), se démarquent par des capacités de résolution acceptable. C'est d'ailleurs souvent sur cette première base que se construisent ensuite les améliorations nécessaires à une réponse optimale, cela en partie grâce à la flexibilité des composantes caractéristique des métaheuristiques.
 
 \begin{figure}[!htbp]
-  \begin{sidecaption}[fortoc]{Convergence et maintien de la diversité au sein du front de Pareto}[fig:convergence_diversite]
+  \begin{sidecaption}[Comparaison entre deux fronts de Pareto, avec et sans maintien de la diversité]{Convergence et maintien de la diversité au sein du front de Pareto}[fig:convergence_diversite]
   \centering
   \subbottom[Un front de pareto sans maintien suffisant de la diversité]{
   	\includegraphics[width=.4\linewidth]{pareto_convergence_a.pdf}
@@ -2139,13 +2156,13 @@ Comme le dit de façon très claire,\textcite[94]{Weise2011} \foreignquote{engli
 
 L'optimiseur n'ayant pas les capacités pour comparer des fonctions entre elles, c'est par l'attribution d'un scalaire caractérisant chaque vecteur $z^* \in \mathbb{Y}$ résultat de l'évaluation d'une solution candidate, que celles-ci vont pouvoir être départagées. On parle de \enquote{fonction d'utilité}, ou de \enquote{fonction \textit{fitness}} pour désigner cette opération de transformation dont le résultat $z$ est utile uniquement en se plaçant dans le référentiel de l'optimiseur. Il s'agit d'un classement relatif des solutions les unes par rapport aux autres, calculés indépendamment des valeurs prises par les fonctions objectives, et intégrant un certain nombre d'autres critères, définis en réponse aux exigences des trois objectifs déjà évoqués (respect de la diversité, qualité de convergence, pertinence vis-à-vis du problème).
 
-Ainsi, un des tout premiers paramètres à intégrer dans le calcul de cette fonction \textit{fitness} tient évidemment dans le choix d'une stratégie pour tirer un meilleur parti des informations récoltées dans l'application de cet ordre partiel sur l'espace $\mathbb{Y}$. Là ou des algorithmes vont appuyer la sélection des solutions à partir d'un calcul de rang (je ne garde que les $n$ premiers rangs), d'autres vont le faire à partir d'un décompte des non dominés (je ne garde que les individus non dominés $< n$), à partir d'une profondeur (je ne garde que les $n$ premiers fronts), ou encore en mélangeant ces trois informations (voir ces résultats dans le tableau \ref{tab:pranking}) A cela il faut également ajouter la diversité de choix à disposition dans la selection d'une dominance, par le changement de l'opérateur utilisé dans le calcul (\textit{weak dominance}, \textit{strong dominance}, etc.), ou même la relaxe de celui-ci (\textit{epsilon-dominance}). Des choix de première importance, car ils interviennent directement dans la construction de l'ensemble de solution retenue.
+Ainsi, un des tout premiers paramètres à intégrer dans le calcul de cette fonction \textit{fitness} tient évidemment dans le choix d'une stratégie pour tirer un meilleur parti des informations récoltées dans l'application de cet ordre partiel sur l'espace $\mathbb{Y}$. Là ou des algorithmes vont appuyer la sélection des solutions à partir d'un calcul de rang (je ne garde que les $n$ premiers rangs), d'autres vont le faire à partir d'un décompte des non dominés (je ne garde que les individus non dominés $< n$), à partir d'une profondeur (je ne garde que les $n$ premiers fronts), ou encore en mélangeant ces différentes informations (voir les calculs effectués dans le tableau \ref{tab:pranking}) A cela il faut également ajouter la diversité de choix à disposition dans la selection d'une dominance, par le changement de l'opérateur utilisé dans le calcul (\textit{weak dominance}, \textit{strong dominance}, etc.), ou même la relaxe de celui-ci (\textit{epsilon-dominance}). Des choix de première importance, car ils interviennent directement dans la construction de l'ensemble de solution retenue.
 
-\pagebreak
+%\pagebreak
 
 \begin{testiv}{L'epsilon dominance par l'exemple}{}
 
-Soit deux fonctions objectifs $f_1$ et $f_2$, et une population de $10$ solutions candidates parmis lesquels l'optimiseur ne peux choisir que les $5$ meilleurs valeurs pour formuler les prochaines solutions candidates à évaluer. Une fois triés par ordre descendant sur les deux objectifs (tableau \ref{epsilon_a}), on vient bien que l'optimiseur s'est focalisé autour de $[25.00,25.05]$.
+Soit deux fonctions objectifs $f_1$ et $f_2$, et une population de $10$ solutions candidates parmis lesquels l'optimiseur ne peux choisir que les $5$ meilleurs valeurs pour formuler les prochaines solutions candidates à évaluer. Une fois triés par ordre descendant sur les deux objectifs, on vient bien que l'optimiseur s'est focalisé autour de $[25.00,25.05]$.
 
 \begin{figure}[H]
 	 \centering
@@ -2186,7 +2203,7 @@ La diversité à ce niveau de résolution doit paraître suffisante à l'optimis
 		\end{minipage}
 \end{table}
 
-Une des possibilité est donc d'utiliser un epsilon de $0.05$ indiquant à l'optimiseur de considérer comme équivalentes les solutions dans ce radius autour des solutions (figure \ref{epsilon_b}). Cela revient à relâcher la pression sur un des objectifs pour permettre à l'autre de s'exprimer. Dans notre exemple les $5$ premières solutions seront alors considérées comme équivalentes par l'optimiseur, celui-ci se focalisera donc moins sur les micro gains possibles sur $f_{2}$ au profit d'une plus grande diversité sur $f_{1}$.
+Une des possibilité est donc d'utiliser un epsilon de $0.05$ indiquant à l'optimiseur de considérer comme équivalentes les solutions dans ce radius autour des solutions. Cela revient à relâcher la pression sur un des objectifs pour permettre à l'autre de s'exprimer. Dans notre exemple les $5$ premières solutions seront alors considérées comme équivalentes par l'optimiseur, celui-ci se focalisera donc moins sur les micro gains possibles sur $f_{2}$ au profit d'une plus grande diversité sur $f_{1}$.
 
 \end{testiv}
 
@@ -2197,7 +2214,7 @@ Mais lorsque l'on reprojette les résultats du front de Pareto dans l'espace fig
 La forme des fonctions dans cette figure est représentée en pointillé car elle n'est qu'une description temporaire d'un paysage en partie inconnu, en attente d'être révisée par l'évaluation de nouveaux points. Le tracé d'un paysage ne se confond plus comme cela pouvait être le cas dans une optimisation mono-objectif avec la valeur prise par la fonction objectif, et doit maintenant intégrer un intermédiaire supplémentaire plus complexe qui est le calcul d'une fonction \textit{fitness}, et dont la formulation, dépendante de nombreuses stratégies, va modifier les solutions choisies dans le futur, et donc modifier la façon dont on va découvrir l'approximation de ce paysage, cela de façon indépendante aux objectifs choisis. \autocite{Weise2011}
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Projection du front de Pareto optimal (point \sqbox{tangoBlack1}), et des autres solutions candidates dominées (point \sqbox{tangoGrey1}) sur l'espace de variation du paramètre $x \in \mathbb{R}$, un schéma inspiré par \textcite[67]{Weise2011}
+	\begin{sidecaption}[Projection des individus extraits du front de Pareto dans l'espace des paramètres]{Projection du front de Pareto optimal (point \sqbox{tangoBlack1}), et des autres solutions candidates dominées (point \sqbox{tangoGrey1}) sur l'espace de variation du paramètre $x \in \mathbb{R}$, un schéma inspiré par \textcite[67]{Weise2011}
 	\parbox{\marginparwidth}{
 	\begin{enumerate}[label={},labelindent=0pt,leftmargin=*]
 	      \item \sqbox{tangoBlue1} $f_{1}(x)$
@@ -2212,14 +2229,14 @@ La forme des fonctions dans cette figure est représentée en pointillé car ell
 %on se rend également compte qu'un surplus d'information tiré de l'exploitation d'autres espaces pourrait être utile au choix de l'optimiseur
 
 %\Anote{weise_multi2D}
-Déjà beaucoup plus difficile à imaginer que dans l'exemple précédent de l'équation de Schaeffer, la re-projection des solutions candidates évaluées se fait sur un nouvel espace $\mathbb{G}$ (voir figure \ref{fig:relation_espaces}), qui inclu l'ensemble de tout les éléments $g \in \mathbb{G}$ qui peuvent être manipulés par les opérateurs de recherche à disposition de l'optimiseur \autocite[82]{Weise2011}. Un processus détaillé un peu plus tard dans cette section.
+Déjà beaucoup plus difficile à imaginer que dans l'exemple précédent de l'équation de Schaeffer, la re-projection des solutions candidates évaluées se fait sur un nouvel espace $\mathbb{G}$ (voir figure \ref{fig:relation_espaces}), qui inclut l'ensemble de tout les éléments $g \in \mathbb{G}$ pouvant être manipulés par les opérateurs de recherche à disposition de l'optimiseur \autocite[82]{Weise2011}. Un processus détaillé un peu plus tard dans cette section.
 
 Dans notre cas $x \in \mathbb{R}$, on a donc un paramètre qui est manipulable et peut prendre une infinité de valeurs dans le cadre des contraintes définies pour $x$ (par exemple une valeur de 0 à 10 pour $x$) \Anote{remarque_resolution}. L'espace $\mathbb{G}$ contient la codification du problème, ce qui par exemple dans le cadre de simulation, se traduit pour chaque élément $g$ par l'attribution d'un vecteur de paramètres définissant les entrées de la simulation sur lequel l'optimiseur va pouvoir \enquote{jouer} pour optimiser les différentes fonctions objectifs.
 
 La fonction $gpm : \mathbb{G} \to \mathbb{X}$ est une translation opérée lorsque les deux espaces sont de nature différente, par exemple pour passer d'un espace Binaire à un espace de Réels $\mathbb{B} \to \mathbb{R}$. Dans le cadre de simulations, les deux espaces sont souvent de nature similaire $\mathbb{G} = \mathbb{R}$. On pourra se référer à \textcite[86-88]{Weise2011} pour plus de détails.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Résumé des relations entre les différents espaces dans une optimisation}[fig:relation_espaces]
+	\begin{sidecaption}[Résumé des relations entres les différents espaces d'une optimisation]{Résumé des relations entre les différents espaces dans une optimisation}[fig:relation_espaces]
 		\centering
 		\includegraphics[width=.7\linewidth]{objectifsToSearchSpace.pdf}
   \end{sidecaption}
@@ -2227,19 +2244,19 @@ La fonction $gpm : \mathbb{G} \to \mathbb{X}$ est une translation opérée lorsq
 
 %D'une part, l'observation de dynamiques en partie contraires sur ces deux fonctions $f_1$ et $f_2$ nous permet de constater encore une fois pourquoi un déplacement de l'optimiseur sur l'une ou l'autre des fonctions dirigé par la recherche d'un optimum n'a aucun sens.
 
-L'opération de sélection des solutions candidates est souvent rattachée au processus de convergence. L'objectif de l'optimiseur est d'évaluer au mieux le potentiel de chacune des solutions durant cette phase de sélection pour intégrer et conserver les meilleurs éléments à son référentiel entre deux itérations. On imagine pourtant très bien bien l'effet que peut avoir une sélection trop restrictive sur le maintien de la diversité. C'est le cas par exemple si l'optimiseur ne décide de garder que le front de Pareto, on voit bien sur la figure \ref{fig:mo_landscape} à quel point la couverture de la dynamique des deux fonctions ressortirait considérablement appauvrie à la suite d'un tel choix. On en déduit que la frontière entre stratégies de convergence, et stratégie de maintien de la diversité doit être assez perméable pour garantir le choix de solutions candidates pertinentes en dehors du seul front de Pareto. Zitler \hl{ref autre que ppt à trouver} retient par exemple parmi ces classes de stratégies celle s'appuyant sur le couple associant espace des objectifs et au choix la dominance, la densité, le temps, ou encore la chance. Ce sont des heuristiques qui vont intervenir en amont sur la qualité et la diversité des solutions candidates (par exemple les stratégies de \textit{sharing}, \textit{crowding}, etc.) qui peuvent ensuite être manipulées par les opérateurs de recherches de l'optimiseur.
+L'opération de sélection des solutions candidates est souvent rattachée au processus de convergence. L'objectif de l'optimiseur est d'évaluer au mieux le potentiel de chacune des solutions durant cette phase de sélection pour intégrer et conserver les meilleurs éléments à son référentiel entre deux itérations. On imagine pourtant très bien l'effet que peut avoir une sélection trop restrictive sur le maintien de la diversité. C'est le cas par exemple si l'optimiseur ne décide de garder que le front de Pareto, on voit bien sur la figure \ref{fig:mo_landscape} à quel point la couverture de la dynamique des deux fonctions ressortirait considérablement appauvrie à la suite d'un tel choix. On en déduit que la frontière entre stratégies de convergence, et stratégies de maintien de la diversité doit être assez perméable pour garantir le choix de solutions candidates pertinentes en dehors du seul front de Pareto. \textcite{Zitzler1999a} retient par exemple parmi ces classes de stratégies celle s'appuyant sur le couple associant espace des objectifs et au choix la dominance, la densité, le temps, ou encore la chance. Ce sont des heuristiques qui vont intervenir en amont sur la qualité et la diversité des solutions candidates (par exemple les stratégies de \textit{sharing}, \textit{crowding}, etc.) qui peuvent ensuite être manipulées par les opérateurs de recherches de l'optimiseur.
 
-Viennent ensuite les stratégies de recombinaison des solutions selectionnées, créatrices de nouvelles solutions candidates à évaluer. Un processus qui peut être là aussi rattaché tout autant au maintien de la diversité qu'à une volonté de convergence accrue. Il n'y a là encore aucune règle d'applications spécifique, et tout dépend de l'objectif fixé de façon initiale ou au cours de l'expérimentation. Ainsi, certaines stratégies intégrés aux opérateurs peuvent être mis en place pour limiter une convergence trop rapide des solutions (\textit{premature convergence}) liée à une perte de diversité, alors que d'autres vont tenter d'accélérer cette convergence par la mise en oeuvre d'opérateur de recherche plus agressif, soit pour trouver le plus rapidement possible un minimum (ou maximum) local, soit car la topologie de l'espace des objectifs est de topologie difficile.
+Viennent ensuite les stratégies de recombinaison des solutions selectionnées, créatrices de nouvelles solutions candidates à évaluer. Un processus qui peut être là aussi rattaché tout autant au maintien de la diversité qu'à une volonté de convergence accrue. Il n'y a là encore aucune règle d'applications spécifiques, et tout dépend de l'objectif fixé de façon initiale ou au cours de l'expérimentation. Ainsi, certaines stratégies intégrées aux opérateurs peuvent être mis en place pour limiter une convergence trop rapide des solutions (\textit{premature convergence} généralement associé à une perte de diversité), alors que d'autres vont tenter d'accélérer cette convergence par la mise en oeuvre d'opérateur de recherche plus agressif, soit pour trouver le plus rapidement possible un minimum (ou maximum) local, soit car la topologie de l'espace des objectifs est difficile.
 
 La sélection de candidats à la manipulation dans l'espace des objectifs $\mathbb{X}$ se réfère, une fois projetée dans cet espace $\mathbb{G}$, aux éléments $g$ accessibles à la manipulation par les opérateurs de recherche de la fonction $searchOp$. Chacun de ces opérateurs, dont le nombre et la nature est un paramètre de l'optimiseur, s'appuie sur la transformation d'une ou plusieurs solutions candidates dirigée par la création d'un nouvel élément $g$, dont on attend si possible un meilleur résultat à l'itération suivante. Un postulat très fort est posé par ce type de méthodes d'optimisation, l'introduction de petites variations sur les valeurs de l'espace de recherche est également censée apporter de petites variations dans l'espace des objectifs, que cela résulte en une amélioration ou en une dégradation de la qualité. Appelée \textit{strong causality} \Anote{note_strong}, cette propriété est évidemment dépendante de la forme prise par le paysage du problème (\textit{problem landscape}), et plus celui-ci est accidenté, rugueux, plus sa résolution est considérée comme complexe \Anote{note_weak}.
 
-En relation avec cette observation, l'éclatement de cette population de solutions candidates évaluées sur le paysage nous permet de constater (voir la figure \ref{fig:mo_landscape}) à quel point la notion de distance entre les points parait différente entre ces deux espaces. $f$ et $c$ apparaissent ici beaucoup plus proches de trouver un optimum global que $a$ et $b$, pourtant plus proche de $c$ dans l'espace des objectifs. On voit bien ici que la sélection de solutions candidates intéressantes peut intégrer d'autres informations utiles, en supplément de celle fournit par l'analyse de $\mathbb{Y}$, au travers de l'analyse de cet espace $\mathbb{G}$; et cela toujours afin de guider au mieux l'optimiseur dans la selection des candidats à l'évolution. Un croisement du positionnement des individus $f$ et $c$ donnerait ainsi une bien meilleure valeur de $x$ à évaluer, probablement meilleure que celle d'un individu $a$ et $c$. Si la solution $f$ avait été éliminée sur le fait d'une sélection aux critères plus drastiques, c'est aussi la possibilité d'un croisement fructueux avec $c$ qui disparait.
+En relation avec cette observation, l'éclatement de cette population de solutions candidates évaluées sur le paysage nous permet de constater (voir la figure \ref{fig:mo_landscape}) à quel point la notion de distance entre les points paraît différente entre ces deux espaces. $f$ et $c$ apparaissent ici beaucoup plus proches d'un optimum global que $a$ et $b$, ces deux derniers étant pourtant plus proches de $c$ que $f$ dans l'espace des objectifs. On voit bien ici que la sélection de solutions candidates intéressantes peut intégrer d'autres informations utiles, en supplément de celles fournies par l'analyse de $\mathbb{Y}$, au travers de l'analyse de cet espace $\mathbb{G}$; et cela toujours afin de guider au mieux l'optimiseur dans la sélection des candidats à l'évolution. Un croisement du positionnement des individus $f$ et $c$ donnerait ainsi une bien meilleure valeur de $x$ à évaluer, probablement meilleure que celle d'un individu $a$ et $c$. Si la solution $f$ avait été éliminée sur le fait d'une sélection aux critères plus drastiques, c'est aussi la possibilité d'un croisement fructueux avec $c$ qui disparaît.
 
 %A ces stratégies principales s'ajoute un autre ensembles de stratégies, dont certaines sont plus spécifiques, ou constitutives des types d'algorithmes utilisés. %Le maintien d'une diversité de solutions entre les itérations fait partie de ces stratégies qui font partie d'un set plus large de stratégies permettant de contrer l'émergence des différentes difficultés (stochasticité, topologie, etc.) caractéristique d'un problème de résolution unique.
 
 %Généralement nommé \foreignquote{english}{Pareto Ranking} \Anote{utilisation_pareto_ranking} aussi nommé par Weise \foreignquote{english}{Prevalence Ranking}.
 
-\pagebreak
+%\pagebreak
 
 \begin{testiv}{De l'espace de paramètre à l'espace des objectifs sur l'exemple Ants }{}
 
@@ -2249,13 +2266,13 @@ En relation avec cette observation, l'éclatement de cette population de solutio
 	 	\label{fig:matrice}
 \end{figure}
 
-Un algorithme évolutionnaire a été utilisé pour trouver quels étaient les valeurs minimales de valeur objectifs atteignable avec le modèle \textbf{Ants}. Autrement dit, on demande à l'algorithme d'optimisation de nous dire, dans la mesure du possible, quels sont les valeur de paramètres (génome) nous permettant de minimiser au mieux la durée (trois fonctions objectifs ${f1,f2,f3}$) pour consommer le tas de nourriture 1, 2 et 3. Au bout d'un certain nombre d'itération, cet algorithme nous propose un ensemble de solution résultats incluant le front de Pareto, existant ici en 3 dimension.
+Un algorithme évolutionnaire a été utilisé pour trouver quels étaient les valeurs minimales de valeurs objectifs atteignables avec le modèle \textbf{Ants}. Autrement dit, on demande à l'algorithme d'optimisation de nous dire, dans la mesure du possible, quels sont les valeurs de paramètres (génome) nous permettant de minimiser au mieux la durée (trois fonctions objectifs ${f1,f2,f3}$) pour consommer le tas de nourriture 1, 2 et 3. Au bout d'un certain nombre d'itérations, cet algorithme nous propose un ensemble de solutions résultats incluant le front de Pareto, constitué ici de 3 dimension. Une vidéo de l'optimisation, les données au format csv, et le \textit{workflow} ayant permis d'arriver à ces résultats sont accessibles sur le site compagnon de la thèse (voir notes de lecture).
 
-Comme il n'existe pas d'outil facile d'emploi permettant de selectionner des points dans un espace en 3 dimensions tout en affichant simultanément la valeur de paramètres auquelle chacun de ces points est rattaché, nous allons nous contenter d'un autre outil en deux dimensions. Connu sous le nom de \textit{scatterplot matrix}, celui-ci permet de représenter un ensemble de points présent sous forme tabulaire classique vers la forme de matrice, comme représenté dans la figure \ref{fig:matrice}.
+Comme il n'existe pas d'outil facile d'emploi permettant de sélectionner des points dans un espace en 3 dimensions tout en affichant simultanément les valeurs de paramètres auxquelles chacun de ces points est rattaché, nous allons nous contenter d'un autre outil en deux dimensions. Connu sous le nom de \textit{scatterplot matrix}, celui-ci permet de représenter un ensemble de points présents sous forme tabulaire classique vers la forme de matrice, comme représenté dans la figure ci-dessus.
 
-Dans une forme interactive de cette représentation \Anote{scattrplot}, la selection à la souris d'un ensemble de point met automatiquement en lumière la position de ceux-ci dans l'ensemble de la matrice. Dans notre cas, à chaque point sont associé les valeurs de paramètres suivantes $(diffusion-rate,evaporation-rate, medianFood1, medianFood2, medianFood3)$ Cette représentation permet d'explorer la relation entre espace des objectifs et espaces des valeurs de paramètres en mettant tout sur le même plan. Cette exercice d'analyse, encore faisable en deux dimensions, devient un peu plus difficile à chaque fois que l'on ajoute des paramètres ou des objectifs. Afin de ne pas encombrer le chapitre par des dizaines de matrices, j'ai choisi de réunir dans un même schéma différentes selections réalisés du point de vue d'un seul axe (cf. similaire à la zone selectionné en rouge dans \ref{fig:matrice}) en prenant pour axe $x$ de référence l'objectif $f3$, le tas de nourriture à priori le plus éloigné du nid, et donc le plus difficile à minimiser.
+Dans une forme interactive de cette représentation \Anote{scattrplot}, la sélection à la souris d'un ensemble de points met automatiquement en lumière la position de ceux-ci dans l'ensemble de la matrice. Dans notre cas, à chaque point sont associées les valeurs de paramètres suivantes $(diffusion-rate,evaporation-rate, medianFood1, medianFood2, medianFood3)$ Cette représentation permet d'explorer la relation entre l'espace des objectifs et l'espace des valeurs de paramètres en mettant tout sur le même plan 2D. Cette exercice d'analyse, encore faisable en deux dimensions, devient un peu plus difficile à réaliser à chaque fois que l'on ajoute des paramètres ou des objectifs. Afin de ne pas encombrer ce chapitre par des dizaines de matrices, j'ai choisi de réunir dans un seul et même schéma les différentes sélections (similaire à la zone selectionné en rouge dans \ref{fig:matrice}) en prenant pour axe $x$ de référence l'objectif $f3$ minimisant la durée pour épuiser le tas de nourriture 3 le plus éloigné du nid.
 
-Il ne faut pas oublier que cette analyse se fait sur une population de solution evaluée, elle est donc très ressérée autour de certains comportement clef qui détermine les contradiction auquel fait face l'algorithme d'optimisation pour minimiser ces trois objectifs à la fois. On voit bien que les écarts sont très différents selon les objectifs, ce qui peut parfois poser problème à l'optimiseur. \hl{voir un autre exemple ?}
+Il ne faut pas oublier que cette analyse se fait sur une population de solutions évaluées stabilisée, elle est donc très resserrée autour de certains comportements clefs. Des frontières qui renseignent le modélisateur sur les contradictions auxquelles l'algorithme d'optimisation doit faire face pour minimiser ces trois objectifs à la fois. On voit bien que les écarts sont très différents selon les objectifs, ce qui peut parfois poser problème à l'optimiseur.
 
 \begin{figure}[H]
 	 \centering
@@ -2263,62 +2280,48 @@ Il ne faut pas oublier que cette analyse se fait sur une population de solution 
 \end{figure}
 
 \begin{itemize}[nolistsep]
-	\item Dans la colonne (a), on s'intéresse à un premier cluster de valeurs d'évaporation compris entre $[5.5, 10]$. On voit que pour cette selection le taux de diffusion est très étalé, entre $[20, 80]$, ce qui indique le peu d'impact de celui-ci dans cette dynamique. Quelque soit cette valeur dans cette intervale là, le modèle arrive toujours proche de valeurs égale à $800$ à +/- $100$ près pour median\textit{medianFood3}. Si il y a bien une forme de stabilité exprimé pour ce troisième objectif, le deuxième objectif est par contre beaucoup plus sensible car sa valeur peut varier de $[300, 550]$. De la même façon la valeur de l'objectif \textit{medianFood1} est très étalé entre 205 et 230. On pourrait qualifier de comportement moyen ce profil, car il ne donne pas les pires résultats sur l'objectif \textit{medianFood3}, il donne des résultats assez resséré entre $[200, 230]$ sur l'objectif \textit{medianFood1}, par contre pour l'objectif \textit{medianFood2}, c'est moins clair, il semble y'avoir un effet de seuil.
-	\item On selectionne un cluster qui partage certaines valeurs avec le précédent, sur les valeurs d'évaporation comprise entre $[5, 6]$. On voit qu'avec ces valeurs là, il est possible d'atteindre des valeurs minimales sur l'objectif \textit{medianFood3}, aux environs de $600$. Pour cela la lecture de diffusion-rate nous indique qu'il faut se concentrer sur la des valeurs comprises entre $[15, 40]$. Des valeurs qui se chevauche avec la tranche donné précédemment dans la colonne (a), entre $[20, 60]$. Il semblerait donc qu'il faille voir ces deux conditions réunies, taux d'évaporation $< 6$ et taux diffusion compris entre $[20, 40]$ pour que la valeur minimale puisse etre atteinte sur l'objectif \textit{medianFood3}. Autre remarque, dans cette configuration donné, les résultat sur l'objectif \textit{medianFood1} sont moins bon, il a donc probablement fallu faire un compromis. La valeur sur l'objectif \textit{medianFood2} est stable autour de $400$, alors dans la colonne (a) ce n'était pas le cas. Le point de tension semble donc plus être entre l'objectif \textit{medianFood1} et \textit{medianFood3}, ce qui semble assez logique vu la configuration des tas de nourriture. IL faut toutefois aussi relativiser la degradation des performances sur cet objectif \textit{medianFood1}, elles sont minimes entre (a) et (b) (entre $0$ et $50$ d'écart max avec (a)), surtout comparé au gain obtenu sur l'objectif \textit{medianFood2}, plus stable et \textit{medianFood3} moins long de $200$ vis à vis de (a). Cette configuration de paramètres parait etre la plus intéressante pour le moment, tout dépend l'importance que l'on accorde à la dégradation de performance sur l'ojectif \textit{medianFood1}.
-	\item La colonne (c) montre a toute évidence que les candidats les meilleurs sur l'objectif \textit{medianFood1} $< 200$, sont aussi potentiellement les plus mauvais sur l'objectif \textit{medianFood2} et \textit{medianFood3}. Plus on va vers l'intervale $[80, 100]$ sur la diffusion, et au delà de 10 sur evaporation-rate, et plus les résultats sur l'objectif \textit{medianFood2} et \textit{medianFood3} se dégrade. Toutefois par recoupement avec ce que l'on a vu dans la colonne (a), il semblerait qu'un point se détache du lot dans ce paquet, et permette d'avoir proche de $800$ à coup sur l'objectif \textit{medianFood3}, au environ de $350$ sur l'objectif \textit{medianFood2}, et $ < 200$ sur l'objectif \textit{medianFood1}. Toutefois, et c'était quelque chose que l'on avait déjà percu dans le (a), l'objectif \textit{medianFood2} a l'air assez sensible sur l'un ou l'autre de ces intervales (passe de $350$ à $500$). Cela constitue un autre jeu de valeur de paramètre intéressant, si on n'est pas pret à sacrifier sur la performance de l'objectif \textit{medianFood1}.
-	\item La colonne (d) s'intéresse au groupe de valeurs $[300, 400]$ sur l'objectif  \textit{medianFood2}, on voit que selection recoupe clairement ce que l'on a vu dans les colonne (a) et (b). Si on veut obtenir une valeur pour l'objectif \textit{medianFood3} entre $[600, 800]$, et une valeur aux alentour de $400$ pour l'objectif \textit{medianFood2}, il suffit de prendre une valeur aux hasard dans cet intervale compris entre $[15, 80]$  pour la diffusion, et $[5, 10]$ pour l'évaporation.
+	\item Dans la colonne (a), on s'intéresse à un premier cluster de valeurs d'évaporation compris entre $[5.5, 10]$. On voit que pour cette sélection le taux de diffusion est très étalé, entre $[20, 80]$, ce qui indique le peu d'impact de celui-ci dans cette dynamique. Quelque soit la valeur dans cet intervalle, le modèle est toujours proche de valeurs égale à $800$ à +/- $100$ près pour \textit{medianFood3}. S'il y a bien une forme de stabilité exprimée pour ce troisième objectif, le deuxième objectif est par contre beaucoup plus sensible car sa valeur peut varier entre $[300, 550]$. De la même façon, la valeur de l'objectif \textit{medianFood1} est très étalée entre $205$ et $230$. On pourrait qualifier de comportement moyen ce profil, car il ne donne pas les pires résultats sur l'objectif \textit{medianFood3}, il donne des résultats assez resserrés entre $[200, 230]$ sur l'objectif \textit{medianFood1}. Pour l'objectif \textit{medianFood2} par contre, c'est moins clair, il semble y'avoir un effet de seuil.
+	\item On sélectionne un cluster qui partage certaines valeurs avec le précédent, sur les valeurs d'évaporations comprises entre $[5, 6]$. On voit qu'avec ces valeurs-là, il est possible d'atteindre des valeurs minimales sur l'objectif \textit{medianFood3}, aux environs de $600$. La lecture de $diffusion-rate$ nous indique qu'il faut se concentrer sur des valeurs comprises entre $[15, 40]$ pour observer cet effet. Des valeurs qui se chevauchent avec la tranche donnée précédemment dans la colonne (a), entre $[20, 60]$. Il faut que ces deux conditions réunies (taux d'évaporation $< 6$ et taux de diffusion compris entre $[20, 40]$) pour qu'une valeur minimale puisse etre atteinte sur l'objectif \textit{medianFood3}. Dans cette configuration, les résultats sur l'objectif \textit{medianFood1} sont moins bons que précédemment, l'optimiseur a du faire un compromis. La valeur sur l'objectif \textit{medianFood2} est stable autour de $400$, alors dans la colonne (a) ce n'était pas le cas. Le point de tension semble donc plus être entre l'objectif \textit{medianFood1} et \textit{medianFood3}, ce qui semble assez logique vu la configuration des tas de nourriture 1 et 3. Il faut toutefois aussi relativiser la dégradation des performances sur cet objectif \textit{medianFood1}, elles sont minimes entre (a) et (b) (entre $0$ et $50$ d'écart max avec (a)), surtout en comparaison du gain obtenu sur l'objectif \textit{medianFood2}, devenu plus stable, et \textit{medianFood3} moins long de $200$ vis à vis de (a). Cette configuration de paramètres paraît etre la plus intéressante pour le moment, tout dépend de l'importance accordée par le modélisateur à la dégradation de performance sur l'ojectif \textit{medianFood1}.
+	\item La colonne (c) montre de toute évidence que les candidats les meilleurs sur l'objectif \textit{medianFood1} $< 200$, sont aussi potentiellement les plus mauvais sur l'objectif \textit{medianFood2} et \textit{medianFood3}. Plus on se rapproche de l'intervalle $[80, 100]$ sur la diffusion, en restant au delà de $10$ sur $evaporation-rate$, et plus les résultats sur l'objectif \textit{medianFood2} et \textit{medianFood3} se dégrade. Toutefois par recoupement avec ce que l'on a observé dans la colonne (a), il semblerait qu'un point se détache du lot dans ce paquet, et permette d'obtenir une valeur de $800$ sur l'objectif \textit{medianFood3}, environ $350$ sur l'objectif \textit{medianFood2}, et $ < 200$ sur l'objectif \textit{medianFood1}. Toutefois, et c'était quelque chose que l'on avait déjà ressenti dans l'analyse de la colonne (a), l'objectif \textit{medianFood2} a l'air assez sensible sur l'un ou l'autre de ces intervalles (passe de $350$ à $500$). Cela constitue un autre jeu de valeur de paramètre intéressant, si on n'est pas pret à sacrifier une partie de la performance obtenue sur l'objectif \textit{medianFood1}.
+	\item La colonne (d) s'intéresse au groupe de valeurs $[300, 400]$ sur l'objectif  \textit{medianFood2}. On voit que la sélection recoupe clairement ce que l'on a vu dans les colonne (a) et (b). Si on veut obtenir une valeur pour l'objectif \textit{medianFood3} entre $[600, 800]$, et une valeur aux alentours de $400$ pour l'objectif \textit{medianFood2}, il suffit de prendre une valeur au hasard dans cet intervalle de valeurs comprises entre $[15, 80]$ pour la diffusion, et $[5, 10]$ pour l'évaporation.
 \end{itemize}
 
 \end{testiv}
 
 % Ou introduire la notion d'individu ?
 
-\begin{figure}[!ht]
-	\begin{sidecaption}[fortoc]{Résumé simplifié du déroulement d'une optimisation selon \textcite[109]{Weise2011}}[fig:resume_opti]
+\begin{figure}[ht]
+	\begin{sidecaption}[Résumé d'une optimisation]{Résumé simplifié du déroulement d'une optimisation selon \textcite[109]{Weise2011}}[fig:resume_opti]
 		\centering
 		\includegraphics[width=\linewidth]{espace_resume.pdf}{
 		}
   \end{sidecaption}
 \end{figure}
 
-La description des étapes de la figure résumé \ref{fig:resume_opti} sont les suivantes :
+La description des étapes de la figure \ref{fig:resume_opti} sont les suivantes :
 
 \begin{itemize}[label=\textbullet]
-	\litem{1} Une première population $P \in {1 \dotsc n}$ de vecteurs paramètres ${p}$ est générée par l'optimiseur ou introduite par l'expérimentateur, puis soumis à évaluation.
+	\litem{1} Une première population $P \in \{1 \dotsc n\}$ de vecteurs paramètres ${p}$ est générée par l'optimiseur ou introduite par l'expérimentateur, puis soumis à évaluation.
 	\litem{2.a} La fonction à optimiser est évaluée autant de fois qu'il y a de vecteurs ${p}$
-	\litem{2.b} Les fonctions objectifs $\vec{f}$ sont calculés, ce qui permet de créer autant de vecteur ${v}$ correspond au résultats des fonctions qu'il y a de $P$ évalué. Ces vecteurs $P(v)$ peuvent être positionné dans un espace des objectif $\mathbb{Y}$
-	\litem{3.a} Le calcul de fitness $f$ est effectué pour chaque élément de $P$ en utilisant les informations rapportés par un ensemble d'heuristiques sur $\mathbb{Y}$ et, ou $\mathbb{G}$
-	\litem{3.b} A partir du calcul de cette fitness $f$ pour chacun des éléments de $P$, on selectionne les $P^*$ meilleurs éléments.
+	\litem{2.b} Les fonctions objectifs $\vec{f}$ sont calculés, ce qui permet de créer autant de vecteur ${v}$, contenant chacun le résultats des fonctions après évaluation, qu'il y a de $P$ évalué. Ces vecteurs $P(v)$ peuvent être positionnés dans un espace des objectifs $\mathbb{Y}$
+	\litem{3.a} Le calcul de \textit{fitness} $f$ est effectué pour chaque élément de $P$ en utilisant les informations rapportées par un ensemble d'heuristiques sur $\mathbb{Y}$ et/ou $\mathbb{G}$
+	\litem{3.b} A partir du calcul de cette \textit{fitness} $f$ pour chacun des éléments de $P$, on selectionne les $P^*$ meilleurs éléments.
 	\litem{4} A partir d'un ensemble d'opérateur ${op}$ on va générer de nouveaux vecteurs de paramètres $P(p)$, qui va constituer le nouveau jeu de solution candidates à évaluer à l'étape (1), et dont on espère qu'elles seront si possible meilleures que les précédentes.
 \end{itemize}
 
 
 
 
+%\hl{Manque la notion d'invididu = fitness + genotype + phenotype}
 
 
 
 
-
-
-
-
-\hl{Manque la notion d'invididu = fitness + genotype + phenotype}
-
-% Injection de connaissance se fait un peu partout pour la construction d'une fitness.
 
 % Penser à dire qu'il y a plusieurs stratégies de comparaison autre que Pareto ?
 
-%Première fois utilisé en 1989
 
 %Si on transfère ce langage neutre au vocabulaire que l'on peut trouver courrament dans l'EC, alors l'espace des solution devient le \textit{phenome}, et le point de cet espace qui correspond à la solution candidate devient un \textit{phenotype}.
-
-%\begin{figure}
-%\begin{sidecaption}[fortoc]{ POM cycle for developping theory for an agent behavior \autocite[245]{Railsback2012}}[fig:S_syntheseGrim]
-%  \centering
-% \includegraphics[width=.9\linewidth]{cyclePOMcomportement.png}
-%  \end{sidecaption}
-%\end{figure}
 
 
 %Dans notre étude, l'objet à optimiser ne se réfère pas à une expression mathématique, mais à un modèle de simulation, sur lequel on va déterminer un ensemble de critères qui vont faire figure d'équivalent de ces fonction objectives. Dans ce cas d'utilisation, l'optimisation est plus souvent employé comme une forme de calibration inversé \autocite{Grimm2011}, dans laquelle on cherche à déterminer si il existe un ou plusieurs jeu de valeur de paramètres du modèles de simulation respectant la plage de valeur viable empiriquement qui permettent de maximiser l'obtention d'un ou de plusieurs critères experts. Il est plus parlant dans notre cas de désigner l'espace de recherche comme l'espace des paramètres.
@@ -2331,7 +2334,7 @@ La branche des métaheuristiques EC que nous allons étudier plus spécifiquemen
 \subsubsection{Un rapide historique de la discipline}
 \label{sssec:historique_EA}
 
-On a déjà rapidement décrit dans la section à propos de l'Artificial Life \ref{p:heritage_complexe} les deux voies qu'il était possible d'emprunter dans l'intéret porté sur la définition du processus naturel d'évolution.
+On a rapidement décrit dans les annexes abordant plus en détail le thème l'\textit{Artificial Life} \ref{chap:double_foyer_sma} les deux voies qu'il était possible d'emprunter dans l'intérêt porté sur la définition du processus naturel d'évolution.
 
 Il existe en effet au moins deux façons aujourd'hui d'introduire des développements informatiques se rapportant à ce processus évolutif. D'un côté, les tentatives de reproduction plus ou moins fidèles des différents mécanismes à l'oeuvre dans le processus d'évolution mettent en avant un objectif de compréhension, alors que la focalisation sur ces mêmes mécanismes pour leur seule capacité d'apprentissage tend à s'éloigner de la réalité biologique pour s'orienter plus vers le développement d'algorithmes désignés comme métaheuristiques. Autrement dit, là ou des chercheurs vont tenter de reproduire au mieux le processus d'évolution dans ce qu'il a de créatif, de non optimisé, de coévolutif car construit par \Anote{note_pattee_semantic_closure} et avec l'environnement, d'autres vont reprendre ce même processus en vue d'une évolution si possible bornée et dirigée par la résolution efficace d'un ou de plusieurs objectifs définis de façon fixe et extrinsèque \autocites{Taylor2001, Taylor2012}.
 
@@ -2351,11 +2354,11 @@ De ces trois branches vont émerger au cours des années 1970 ce que \textcite{D
 
 Ils vont représenter chacun le foyer d'un développement qui va s'accélérer dans les années 1980, avec l'amorce d'une popularisation de ces techniques permises entre autres par l'avènement de capacités de calcul plus conséquentes et la reconnaissance de l'efficacité de ces algorithmes pour la résolution de problématiques industrielles plus concrètes. L'ouvrage de synthèse écrit par \textcite{Goldberg1989} contribue de façon très importante à cette diffusion, et constitue également un apport théorique important dans la naissance de la branche multi-objectif de cette discipline.
 
-Les années 1990 vont quant à elles consacrer la rencontre et l'unification de ces différentes approches restée jusqu'alors assez indépendantes si on en croit \textcite{DeJong2006a}. De cette confrontation nait la reconnaissance d'un seul terme fédérateur, l'\textit{Evolutionary Computation (EC)} motivant alors la création de nouvelles conférences et de nouveaux journaux structurant cette nouvelle discipline. C'est aussi à partir de cette période que l'on observe la mise en place d'une hybridation accélérée entre les différentes approches qui s'accompagne d'une forme de remise à plat théorique et l'émergence d'un cadre de réflexion unifié. \autocites[23-31]{DeJong2006a}{Back1997}
+Les années 1990 vont quant à elles consacrer la rencontre et l'unification de ces différentes approches restées jusqu'alors assez indépendantes si on en croit \textcite{DeJong2006a}. De cette confrontation naît la reconnaissance d'un seul terme fédérateur, l'\textit{Evolutionary Computation (EC)} motivant alors la création de nouvelles conférences et de nouveaux journaux structurant cette nouvelle discipline. C'est aussi à partir de cette période que l'on observe la mise en place d'une hybridation accélérée entre les différentes approches qui s'accompagne d'une forme de remise à plat théorique et l'émergence d'un cadre de réflexion unifié. \autocites[23-31]{DeJong2006a}{Back1997}
 
-Si on se concentre plus précisément sur la branche multi-objectif de la discipline, la première introduction théorique d'une stratégie s'appuyant sur le calcul de l'optimum de Pareto pour définir un classement original des solutions évalués est présenté à la page 197 de \textcite[197]{Goldberg1989}. Cette technique nommé \textit{Non Dominated Sorting} (NDS) \autocite[40-43]{Deb2001}, probablement la plus efficace et plus célèbre, sera reprise et implémenté presque dix ans plus tard en 1994, dans l'algorithme célèbre NSGA (Non dominated Sorting Algorithm) de Deb et Srinivas.
+Si on se concentre plus précisément sur la branche multi-objectif de la discipline, la première introduction théorique d'une stratégie s'appuyant sur le calcul de l'optimum de Pareto pour définir un classement original des solutions évaluées est présenté à la page 197 de \textcite[197]{Goldberg1989}. Cette technique nommé \textit{Non Dominated Sorting} (NDS) \autocite[40-43]{Deb2001}, probablement la plus efficace et plus célèbre, sera reprise et implémentée presque dix ans plus tard en 1994, dans l'algorithme célèbre NSGA (Non dominated Sorting Algorithm) de Deb et Srinivas.
 
-Les travaux de \textcite{Goldberg1989} ont influencé tout une génération de chercheurs à partir de cette simple ébauche théorique de tri basé sur la dominance de Pareto, et nombreux sont ceux qui se sont par la suite appuyés \autocite[175, 235]{Deb2001} sur les informations du calcul de dominance pour développer diverses stratégies d'attribution de \textit{fitness}, comme MOGA (Fonseca et Flemings 1993 \autocite{Fonseca1993}), NPGA (Horn et Nafpliotis 1994), NSGA (Deb et Srinivas 1994), et bien d'autres \autocite[14]{Zitzler1999a}. Ce que l'on peut considérer comme la génération suivante d'algorithmes, que \textcite{Coello2006} \Anote{coello_note} fait démarrer avec l'apparition de l'élitisme \Anote{note_elitisme}, est plus axée encore sur l'efficacité de ces derniers avec notamment l'ouverture d'une branche de recherche développant des métriques de performance, et de nouveaux standards de mesures \autocites{Coello2006, Zitzler2003,Huband2006}, dont on s'aperçoit qu'elles sont devenues nécessaires pour comparer correctement les algorithmes entre eux \autocite[14-15]{Zitzler1999a}. Parmi ces nouveaux algorithmes, devenus depuis canonique, on trouve PAES (Knwoles and Corne 2000), SPEA (\autocite{Zitzler1999}), ou encore NSGA 2 (Deb 2000) etc. On trouve à ce sujet un état de l'art et des exemples de calculs à la main pour ces différents algorithmes dans un des premiers et très bon ouvrage de synthèse de \textcite{Deb2001}, aux chapitres 5 et 6. Il est toutefois à noter, comme le fait déjà Golberg en 1989, que cette problématique de recherche d'une solution à un problème multi-critères, puis multi-objectifs est d'origine bien plus ancienne, et a pu servir de support à la mise en oeuvre de techniques plus ou moins similaire à celle de Pareto. Ainsi, les premières traces en EA d'un intérêt théorique et parfois pratique de ces problèmes semblent remonter à Box et Draper (1957), Fogel (1966), Rosenberg (1967) \autocite[174-175]{Deb2001}. Mais la première implémentation informatique est en général attribuée à David Schaffer, avec son travail de thèse (1984) et l'implémentation de l'algorithme d'optimisation VEGA (\textit{Vector Evaluated Genetic Algorithm}) \autocite{Schaffer1985}. Un autre état de l'art sur l'optimisation multi-objectifs s'appuyant sur Pareto en dehors des techniques purement évolutionnaire est également possible. C'est grâce à l'existence de ce cadre formel mathématique permettant la description d'un problème d'optimisation, tel que nous l'avons un peu abordé dans la section précédente en s'appuyant sur les écrits de \autocite{Weise2011}, que \textcite[50-79]{Deb2001} indique par exemple comment certaines de ces stratégies hors EC ont été pour certaine également transférées avec plus ou moins de succès aux EA \textcite[171-237]{Deb2001}.
+Les travaux de \textcite{Goldberg1989} ont influencé toute une génération de chercheurs à partir de cette simple ébauche théorique de tri basé sur la dominance de Pareto, et nombreux sont ceux qui se sont par la suite appuyés \autocite[175, 235]{Deb2001} sur les informations du calcul de dominance pour développer diverses stratégies d'attribution de \textit{fitness}, comme MOGA (Fonseca et Flemings 1993 \autocite{Fonseca1993}), NPGA (Horn et Nafpliotis 1994), NSGA (Deb et Srinivas 1994), et bien d'autres \autocite[14]{Zitzler1999a}. Ce que l'on peut considérer comme la génération suivante d'algorithmes, que \textcite{Coello2006} \Anote{coello_note} fait démarrer avec l'apparition de l'élitisme \Anote{note_elitisme}, est plus axée encore sur l'efficacité de ces derniers avec notamment l'ouverture d'une branche de recherche développant des métriques de performance, et de nouveaux standards de mesures \autocites{Coello2006, Zitzler2003,Huband2006}, dont on s'aperçoit qu'elles sont devenues nécessaires pour comparer correctement les algorithmes entre eux \autocite[14-15]{Zitzler1999a}. Parmi ces nouveaux algorithmes, devenus depuis canoniques, on trouve PAES (Knwoles and Corne 2000), SPEA \autocite{Zitzler1999b}, ou encore NSGA 2 \autocite{Deb2000a}, etc. On trouve à ce sujet un état de l'art et des exemples de calculs à la main pour ces différents algorithmes dans un des premiers et très bon ouvrage de synthèse de \textcite{Deb2001}, aux chapitres 5 et 6. Il est toutefois à noter, comme le fait déjà Golberg en 1989, que cette problématique de recherche d'une solution à un problème multi-critères, puis multi-objectifs est d'origine bien plus ancienne, et a pu servir de support à la mise en oeuvre de techniques plus ou moins similaires à celle de Pareto. Ainsi, les premières traces en EA d'un intérêt théorique et parfois pratique de ces problèmes semblent remonter à Box et Draper (1957), Fogel (1966), Rosenberg (1967) \autocite[174-175]{Deb2001}. Mais la première implémentation informatique est en général attribuée à David Schaffer, avec son travail de thèse (1984) et l'implémentation de l'algorithme d'optimisation VEGA (\textit{Vector Evaluated Genetic Algorithm}) \autocite{Schaffer1985}. Un autre état de l'art sur l'optimisation multi-objectifs s'appuyant sur Pareto en dehors des techniques purement évolutionnaire est également possible. C'est grâce à l'existence de ce cadre formel mathématique permettant la description d'un problème d'optimisation, tel que nous l'avons un peu abordé dans la section précédente en s'appuyant sur les écrits de \autocite{Weise2011}, que \textcite[50-79]{Deb2001} indique par exemple comment certaines de ces stratégies hors EC ont été pour certaines également transférées avec plus ou moins de succès aux EA \textcite[171-237]{Deb2001}.
 
 Enfin on notera qu'il existe également une autre classe proche d'algorithmes d'optimisation basée sur une observation des mécanismes naturels, celle-ci n'étant plus basée sur la métaphore évolutive par reproduction (même si l'hybridation est envisageable), mais sur les capacités d'organisation et d'auto-organisation observées chez certains animaux comme les fourmis, les abeilles. Ces comportements ont d'abord inspiré les développements de plateformes informatiques adaptées à l'émergence de ce type de comportements, avant d'être repris et utilisé de façon beaucoup plus abstraites par la suite pour résoudre des problèmes d'optimisation. Aujourd'hui regroupées sous le terme de \foreignquote{english}{Swarm Intelligence}, ce sont par exemple les algorithmes PSO (Particle Swarm Optimization), ACO (Ant Colony Algorithms), ABC (Artificial Bee Colony), etc.
 
@@ -2382,7 +2385,7 @@ En 2014 une publication sur le blog du spécialiste de la discipline Thomas Weis
 Si la perspective d'un changement d'annotation et de vocabulaire est probablement conçue comme une étape majeure dans la progression et l'unification d'une discipline depuis quelques années déjà sur la voie de la maturité, Weise tout en prônant au maximum la bonne parole continue comme beaucoup d'autres à utiliser cette terminologie \autocite{Weise2011}, très ancrée dans un folklore qui tient à l'historique de la discipline. La librairie logicielle MGO décrite par la suite s'appuie elle aussi sur cette terminologie, aussi nous n'utiliserons donc les terminologies alternatives proposées par Weise que sous forme de complément, afin de ne pas introduire trop de distance entre les termes décrivant les algorithmes dans ce manuscrit et la réalité du programme tel qu'il est conçu pour le moment.
 
 \begin{table}[!htbp]
-\begin{sidecaption}[fortoc]{Tableau de correspondance entre les notations à consonances biologiques et les notations plus génériques liées à l'optimisation, lorsque celles-ci existent. Une traduction appuyée sur la section précédente, et les travaux de \textcite{Weise2011}}
+\begin{sidecaption}[Tableau de correspondance entre les notations biologiques et génériques de l'optimisation]{Tableau de correspondance entre les notations à consonances biologiques et les notations plus génériques liées à l'optimisation, lorsque celles-ci existent. Une traduction appuyée sur la section précédente, et les travaux de \textcite{Weise2011}}
 	[tab:ptraduction]
 	\centering
 	\begin{tabular}{ll}
@@ -2406,7 +2409,7 @@ Si la perspective d'un changement d'annotation et de vocabulaire est probablemen
 
 \paragraph{Les avantages et les inconvénients des EA}
 
-Ces deux listes comparant les avantages et les inconvénients des algorithmes évolutionnaires sont tirés des ouvrages de Deb2001, Fogel2000, Back1997, \autocite[104,105]{DeJong2006a} mais également Openshaw qui a exploré ces techniques en géographie. \hl{ref a completer}
+Ces deux listes comparant les avantages et les inconvénients des algorithmes évolutionnaires sont tirés des ouvrages de \textcites{Deb2001, Fogel2000, Back1997}[104,105]{DeJong2006a} mais également \textcites{Diplock1996,Openshaw1988} qui ont exploré ces techniques en géographie. 
 
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
 
@@ -2424,13 +2427,13 @@ Ces deux listes comparant les avantages et les inconvénients des algorithmes é
 Les désavantages, limitations :
 
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-	\item le fonctionnement reste opaque, et le résultat n'est souvent pas tractable mathématiquement
+	\item le fonctionnement reste opaque, et le résultat n'est souvent pas tractable mathématiquement.
 	\item la stochasticité demande la mise en oeuvre de réplication
-	\item pas de garantie de trouver un optimum global
-	\item le nombre de degrés de liberté demande une certaine forme expertise pour en tirer le meilleur parti, la construction d'un EA optimal pour un problème donné étant progressif, incrémental
+	\item pas de garantie de trouver un optimum global.
+	\item le nombre de degrés de liberté demande une certaine forme expertise pour en tirer le meilleur parti, la construction d'un EA optimal pour un problème donné étant progressif, incrémental.
     \item trop facile à comprendre, il en résulte une certaine illusion quant aux capacités \enquote{magiques} de ce type d'algorithme.
-    \item necessite une source conséquente de puissance pour réaliser de grands nombres de calculs en parallèle
-    \item les performances se dégrade avec l'augmentation de l'espace de recherche (dimensionnalité) ou le nombre d'objectifs (on touche les limites de l'approche Pareto) \hl{ref Zitzler1999a page 24 cite Fonseca Flemming 1995}
+    \item necessite une source conséquente de puissance pour réaliser de grands nombres de calculs en parallèle.
+    \item les performances se dégrade avec l'augmentation de l'espace de recherche (dimensionnalité) ou le nombre d'objectifs (on touche les limites de l'approche Pareto) \autocite[24]{Zitzler1999a}.
 \end{enumerate}
 
 \hl{2 paragraphe qui suivent à replacer au bon endroit}
@@ -2672,7 +2675,7 @@ L'avantage de voir le déroulement d'un programme de cette façon, c'est que cha
 Le flot d'exécution du programme ne s'appuie plus sur une description statique des dépendances entre objets composants le système, qui rendent au départ sa modification plus difficile. Ainsi, dans notre cadre, l'inversion de contrôle renvoie à l'expression des dépendances entre composants d'un programme, celles-ci étant fournies au cas par cas pour chaque composant de façon automatique par le reste du programme, car nécessaire à son fonctionnement. On lui préfère une description sous forme de graphe de composants. Chaque composant du graphe fait état de ses besoins pour fonctioner, ce qui le rend en partie indépendant du reste du fonctionnement du programme. Lors de l'exécution, le programme se déroule en interprétant de façon dynamique le graphe de composants tel qu'il a été défini par l'utilisateur.
 
 \begin{figure}[!htbp]
-  \begin{sidecaption}[fortoc]{Illustrations simplifiées des stratégies possibles pour découpler des composants logiciels entres eux. \parbox{\marginparwidth}{
+  \begin{sidecaption}[Stratégies de découplage de composants logiciels]{Illustrations simplifiées des stratégies possibles pour découpler des composants logiciels entres eux. \parbox{\marginparwidth}{
 	\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
 	        \item Le composant \sqbox{tangoBlue1} défini ses dépendances à \sqbox{tangoOrange1} et \sqbox{tangoRed1} de façon interne, le couplage entre les composants est très fort. Si ces deux dépendances sont présentes dans de très nombreux autres composants, alors un changement même mineur dans la forme d'un de ces deux composants entraine de nombreuses modifications du programme.
 	        \item Une première solution pour rendre les composants plus indépendants est de déclarer les dépendances au niveau de \sqbox{tangoBlue1}, et de fournir ces composants de façon externe à celui-ci. Cette solution ne résout toutefois pas le problème d'un changement de forme.
@@ -2694,7 +2697,7 @@ Le flot d'exécution du programme ne s'appuie plus sur une description statique 
 Si on recontextualise ces principes dans le cadre de notre problématique, les classes de composants nécessaires à l'exécution minimale d'un algorithme évolutionnaire dans MGO sont décrites dans la figure \ref{fig:cake_classe}, et s'appuient sur le travail déjà décrit de la communauté des EA pour unifier la description de ces algorithmes.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Classe de composants nécessaires pour l'exécution d'un EA.}[fig:cake_classe]
+	\begin{sidecaption}[Classe de composants nécessaires à l'exécution d'un algorithme évolutionnaire]{Classe de composants nécessaires pour l'exécution d'un EA.}[fig:cake_classe]
 		\centering
 		\includegraphics[width=0.7\linewidth]{cake_example.pdf}{
 		}
@@ -2718,7 +2721,7 @@ En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_n
 Souvent apellé de façon jargonnesque \foreignquote{english}{Cake Pattern} pour la possibilité de composition qu'elles offrent (comme dans un cake, un gateau dont la recette peut accueillir une très grande variété d'étapes, de composantes), ces outils aussi connus sous le nom \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection} regroupent  l'ensemble des techniques permettant d'accéder à cette modularité qui est donc présente de façon native dans le langage, car pensée et implémentée par son créateur \autocite{Oderskyxx}. La figure \ref{fig:principe_mixin} expose plus en détail ce principe, et les conséquences que cela peut avoir dans la construction d'un programme.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Un exemple plus proche de l'implémentation, appuyé par une version UML orienté Scala, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveau objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
+	\begin{sidecaption}[Illustrations des erreurs amenées par la découverte d'éléments manquants]{Un exemple plus proche de l'implémentation, appuyé par une version UML orienté Scala, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveau objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
 \begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
        \item Un diagramme UML pour illustrer un scénario de dépendance entre trois composants exemples \keywordmin{A}, \keywordmin{B}, et \keywordmin{C}. Le composant A utilise une fonction run qui nécessite la définition d'une \keywordmin{methode\_b} et d'une \keywordmin{methode\_c} provenant d'un composant de type \keywordmin{B} et \keywordmin{C}.
        \item Un premier scenario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1.
@@ -2746,7 +2749,7 @@ Souvent apellé de façon jargonnesque \foreignquote{english}{Cake Pattern} pour
 Un des grands défauts de cette technique, c'est qu'elle rend souvent la lecture du code source plus difficile du point de vue d'un observateur extérieur. Le programme est en effet morcelé dans un ensemble de composants contenant chacun une petite partie de la logique du programme total, assemblé par le compilateur avant l'execution du programme. De plus lorsque l'utilisateur choisit un composant, celui-ci ne fait pas qu'offrir de nouvelles alternatives à l'utilisateur, il en retire également, comme on pourrait s'y attendre lorsqu'on manipule un arbre de dépendance complexe.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Illustration d'un premier scénario dans la selection de composant parmis les types $X$, et $Z$}[fig:composant_expli1]
+	\begin{sidecaption}[Scenario pour la sélection de composants]{Illustration d'un premier scénario dans la selection de composant parmis les types $X$, et $Z$}[fig:composant_expli1]
 		\centering
 		\includegraphics[width=0.7\linewidth]{dependanceExemple.pdf}{
 		}
@@ -2756,7 +2759,7 @@ Un des grands défauts de cette technique, c'est qu'elle rend souvent la lecture
 Si on considère un programme simplifié ayant besoin de deux types de composants pour fonctionner : $X$ et $Z$. Dans le premier scenario \ref{fig:composant_expli1}, l'utilisateur a choisi le composant $Z(a1)$ autonome, ainsi que le composant $X(a3)$. Ce dernier, contrairement au composant $X(a1)$ et $X(a2)$, dépend de nouveaux composant définis sur la ligne $b$ du schéma. On voit que dans les nombreux composants disponibles dans cette catégorie, seuls quelque uns s'avérent compatible avec le reste de la configuration de composant choisi par l'utilisateur. Que se passe-t-il lorsque l'utilisateur choisit pour $Z$ le deuxième composant $Z(2a)$ ?
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Illustration d'un deuxième scénario dans la selection de composant parmis les types $X$, et $Z$.}[fig:composant_expli2]
+	\begin{sidecaption}[Deuxième scénario pour la sélection de composant]{Illustration d'un deuxième scénario dans la selection de composant parmis les types $X$, et $Z$.}[fig:composant_expli2]
 		\centering
 		\includegraphics[width=0.7\linewidth]{dependanceExemple2.pdf}{
 		}
@@ -2797,7 +2800,7 @@ trait NSGAII <: Evolution
 La structure interne des composants constitutifs de l'algorithme NSGA2 est lisible dès lors qu'on a déjà étudié le fonctionnement de métaheuristique. Chacune des briques (ici une par ligne) peut être remplacée ou modifiée à partir du moment ou les conditions de dépendance entre composants sont respectés.
 
 \begin{figure}[!htbp]
-	\begin{sidecaption}[fortoc]{Schéma de dépendance existant entre les différents types de composants pour la définition de l'algorithme NSGA2 sous MGO}[fig:cake_classe]
+	\begin{sidecaption}[Représentation de NSGA2 dans MGO sous forme de composants]{Schéma de dépendance existant entre les différents types de composants pour la définition de l'algorithme NSGA2 sous MGO}[fig:cake_classe]
 		\centering
 		\includegraphics[width=0.9\linewidth]{diagrammeclassemgo.pdf}{
 		}
@@ -2867,7 +2870,7 @@ La ligne 5 contient la signature du composant, et indique à MGO qu'il s'agit d'
 Pour que le composant \keyword{GAProblem} soit opérationel, celui-ci a besoin que l'utilisateur lui fournisse un certain nombre d'élements en entrée : une taille de génome \keyword{genomeSize}, une type de Phenotype \keyword{P}, la définition des fonctions \keyword{express(...)} et \keyword{evaluate(...)}.
 
 \begin{figure}[ht]
-	\begin{sidecaption}[fortoc]{Hierarchie entre les composants pour la définition d'un problème, un exemple avec la fonction de test F2 de Schaffer}[fig:hierarchieComposants]
+	\begin{sidecaption}[Hierarchie entre les composants pour la fonction test F2 de Schaffer]{Hierarchie entre les composants pour la définition d'un problème, un exemple avec la fonction de test F2 de Schaffer}[fig:hierarchieComposants]
 	 \centering
 	 	\includegraphics[width=.7\linewidth]{HierarchieComposants.pdf}
 	\end{sidecaption}
@@ -2939,7 +2942,7 @@ Il n'est donc pas question d'associer, du moins dans un premier temps, une myria
 % Ajouter une couleur sur la partie +++ a mettre en valeur coté plugin MGO
 
 \begin{table}[!htbp]
-\begin{sidecaption}[fortoc]{Résumé des avantages et des inconvénients à atteindre selon le public cible. \parbox{\marginparwidth}{
+\begin{sidecaption}[Résumé des avantages et inconvénients à atteindre selon le public cible pour MGO]{Résumé des avantages et des inconvénients à atteindre selon le public cible. \parbox{\marginparwidth}{
 \begin{enumerate}[label={},noitemsep,  parsep=0pt, partopsep=0pt, labelindent=0pt,leftmargin=*]
 		\item $-$ assez difficile
 		\item $-{}-$ difficile
@@ -2992,7 +2995,7 @@ Un tel \textit{workflow} doit également s'aclimater de toute la logique d'exper
 La nature intrinsèquement parallèle des algorithmes evolutionnaires tient dans la possibilité d'évaluer non pas les solutions candidates une par une, mais bien d'un seul coup, par l'évaluation de l'ensemble des solutions candidates d'une population à un instant $t$. La première étape a donc été de distribuer l'évaluation des solutions candidates sur un environnement distribué, afin de bénéficier d'une execution quasi simultanée de l'ensemble de la population.
 
 \begin{figure}[H]
-	\begin{sidecaption}[fortoc]{La tâche d'exploration est en bleu \sqbox{tangoBlue1}, celle d'agrégation en rouge \sqbox{tangoRed1}}[fig:openmole_wf]
+	\begin{sidecaption}[Le premier workflow prototype pour utiliser des algorithmes évolutionnaire avec MGO dans OpenMOLE]{La tâche d'exploration est en bleu \sqbox{tangoBlue1}, celle d'agrégation en rouge \sqbox{tangoRed1}}[fig:openmole_wf]
 		\centering
 		\includegraphics[width=1.1\linewidth]{wf_openmole_mgo_1.pdf}{
 		}
