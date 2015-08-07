@@ -1,6 +1,6 @@
 % !TEX encoding =  UTF-8 Unicode
 % -*- program: xelatex -*-
-\documentclass[a4paper, 11pt,twoside, openright]{memoir}
+\documentclass[a4paper, 11pt,oneside, openright]{memoir}
 %http://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
 \usepackage{etex}
 \reserveinserts{28}
@@ -408,6 +408,8 @@
 \renewcommand{\foottextfont}{\scriptsize}
 
 
+%Only for doubleside
+%\sidecapmargin{outer}
 \sidecapmargin{outer}
 \setsidecappos{t}
 %\setsidecaps{\marginparsep}{\marginparwidth}
@@ -482,6 +484,8 @@
   \else
     \captionstyle{\justifying\scriptsize}%
   \fi}
+
+
 
 %%SIDE CAPTION LITTLE END
 

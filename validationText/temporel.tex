@@ -50,11 +50,11 @@ Peut-être n'était-ce simplement pas le moment pour intégrer cette hypothèse 
 Inversement une hypothèse ou un critère valable à un instant $t$ ne le sera peut-être plus à un instant $t + 1$. L'explication et la mise en place cohérentes des hypothèses et des critères se fait donc dans ces allers-retours, dans ces multiples essais. La construction d'un modèle de simulation ne semble pas tenir d'un raisonnement linéaire, car les interactions entre le modélisateur et le modèle sont complexes, et opèrent, comme on le perçoit dans toutes ces questions, à de multiples niveaux, parfois de façon simultanée.
 
 \begin{figure}[htbp]
-	\begin{sidecaption}[fortoc]{Exemple d'une démarche de construction cumulative}[fig:S_buildmeca]
+	\begin{sidecaption}[fortoc]{Exemple d'une démarche de construction cumulative}[fig:S_cumulative]
 	 \centering
 	 \subbottom[Pendant la construction d'un modèle (\textit{building step}) ce sont différentes hypothèses (ici $A$ et $B$) et différentes versions d'hypothèses (ici versions $\{A_1 \dotsc A_n\}$ et versions $\{B_1 \dotsc B_n\}$) qui vont être développées. Si on veut mettre en oeuvre une approche cumulative et mobiliser toute la combinatoire possible entre les différentes versions des hypothèses implémentées durant la construction du modèle, alors il faut considérer la création d'un graphe de dépendances (\textit{graph dependency}). On s'aperçoit alors que certaines version des hypothèses ne sont pas compatibles les unes avec les autres (ex $A_1$ avec $B_2$). Les figures \ref{fig:S_twomeca} et \ref{fig:S_buildmeca} proposent d'instancier cet exemple dans deux familles d'hypothèses régissant les échanges d'innovations entre des villes dans un système de villes.]{
 	 	\includegraphics[width=1.0\linewidth]{schema_dependency.pdf}
-	 	\label{mechanisme1}}\qquad
+	 	\label{fig:cumulative_a}}\qquad
 	 \subbottom[On propose d'étudier plusieurs hypothèses décrivant la façon dont une ville (la ville $i$) peut récupérer et intégrer dans son propre \textit{pool} d'innovations les innovations échangées avec les villes voisines pendant la simulation. Deux niveaux d'hypothèses sont imaginables. Le premier niveau d'hypothèse, le plus simple, propose d'intégrer les innovations à la ville $i$ à chaque fois qu'un échange a lieu avec une autre ville $j$. C'est la famille $A$ dont on trouve deux versions implémentées dans la figure \ref{mechanisme1}. Un deuxième niveau d'hypothèse est envisageable, plus complexe et dépendant du premier niveau il mobilise deux étapes représentées dans la figure \ref{mechanisme2} : 1) on considère l'ensemble des échanges possibles entre la ville $i$ et ses voisines, 2) l'ensemble d'innovations résultant de ces échanges est ensuite filtré puis intégré à la ville $i$ en fonction des règles définies par la famille d'hypothèse $B$]{
 		\includegraphics[width=0.8\linewidth]{mechanismslocal.pdf}
 		\label{fig:S_twomeca}}
@@ -89,5 +89,5 @@ Cette interpretation dépend donc du degré de complexification du modèle au mo
 
 Par conséquent aussi cette possibilité de falsification ou \foreignquote{english}{proof of impossibility}, ne marche que si on est en mesure de prouver l'\textbf{inaptitude constante} d'une d'hypothèse ou d'un jeu d'hypothèses dans la confrontation avec les critères d’évaluation.
 
-Il reste donc à gérer cette possibilité de réengager les hypothèses et les critères à différents moments dans la construction des modèles, et soutenir une activité de construction cumulative qui ne soit pas \enquote{oublieuse} de cette autre espace-temps dans lequel se construisent les hypothèses et les différents critères mobilisés. 
+Il reste donc à gérer cette possibilité de réengager les hypothèses et les critères à différents moments dans la construction des modèles, et soutenir une activité de construction cumulative (voir la figure \ref{fig:S_cumulative}) qui ne soit pas \enquote{oublieuse} de cette autre espace-temps dans lequel se construisent les hypothèses et les différents critères mobilisés. 
 
