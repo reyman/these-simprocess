@@ -473,7 +473,7 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 	\begin{sidecaption}[Les ressources informatiques au CNRS]{Une idée des ressources informatiques disponibles au CNRS, de l'IBP à l'IDRIS. Les sources pour construire ces deux tableaux proviennent de \autocites{CNRS1972, Boucher2000, Mounier2010}}[tab:machines_circe]
 		\begin{minipage}{1\textwidth}
 			\centering
-			\subbottom[]{
+			\subbottom[\label{machines_a}]{
 				\resizebox{0.6\textwidth}{!}{%
 				\begin{tabular}{@{}cll@{}}
 				\toprule
@@ -488,11 +488,11 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 				1966        & CDC 3600                 & ( 1972 )             \\ \bottomrule
 				\end{tabular}%
 				}
-		 	\label{machines_a}}
+		 	}
 		 \end{minipage}\qquad
 		 \begin{minipage}{1\textwidth}
 		 	\centering
-			\subbottom[]{
+			\subbottom[\label{machines_b}]{
 				\resizebox{0.6\textwidth}{!}{%
 				\begin{tabular}{@{}cll@{}}
 				\toprule
@@ -509,7 +509,7 @@ Le pôle d'informatique grenoblois, et notamment l'IMAG, est historiquement lié
 				?        & IBM 3090/200             & ?              \\ \bottomrule
 				\end{tabular}%
 				}
-			\label{machines_b}}
+			}
 		\end{minipage}
   \end{sidecaption}
 \end{table}
@@ -1071,12 +1071,12 @@ Enfin, les \textit{workflows} peuvent être construits en utilisant un langage i
 \begin{figure}[!htbp]
 	\begin{sidecaption}[Exemple de plan d'expérience pour la réplication de modèle avec Netlogo]{Exemple de plan d'expérience faisant seulement varier la graine aléatoire du modèle Netlogo \foreignquote{english}{Fire}. Ce modèle de simulation très simple permet de simuler le déplacement d'un feu dans une surface boisée dont on peut faire varier la densité. C'est un exemple que l'on trouve également dans le papier \textcite{Reuillon2013}.}[fig:openmole_wfire]
 	 \centering
-	 \subbottom[Cette première phase de création du \textit{workflow} nécessite de paramétrer les deux premières tâches \textbf{Et (Exploration task)} et \textbf{Nt (Netlogo task)}. La tâche d'exploration \textbf{Et} nécessite le choix d'un \textit{sampling} pour ensuite être capable de générer le plan d'expérience. Le modèle Netlogo doit définir ses entrées et ses sorties : le paramètre de $densite$ du modèle est fixé à une valeur de $60$, mais la \textbf{{\$seed}} doit être passée en entrée de la tâche au moment de son exécution pour que le modèle fonctionne. La sortie attendue du modèle correspond au pas de temps $t$ marquant l'extinction définitive du feu et l'arrêt du modèle : $t_{end-of-fire}$ ]{
+	 \subbottom[Cette première phase de création du \textit{workflow} nécessite de paramétrer les deux premières tâches \textbf{Et (Exploration task)} et \textbf{Nt (Netlogo task)}. La tâche d'exploration \textbf{Et} nécessite le choix d'un \textit{sampling} pour ensuite être capable de générer le plan d'expérience. Le modèle Netlogo doit définir ses entrées et ses sorties : le paramètre de $densite$ du modèle est fixé à une valeur de $60$, mais la \textbf{{\$seed}} doit être passée en entrée de la tâche au moment de son exécution pour que le modèle fonctionne. La sortie attendue du modèle correspond au pas de temps $t$ marquant l'extinction définitive du feu et l'arrêt du modèle : $t_{end-of-fire}$ \label{left_netlogo} ]{
 	 	\includegraphics[width=.8\linewidth]{leftdoenetlogo.pdf}
-	 	\label{left_netlogo}}\qquad
-	 \subbottom[Le \textit{workflow} est exécuté. La première étape est de générer le plan d'expérience, c'est à ce moment là que les \textbf{{\$seed}} sont générées puis appariées avec les futures exécutions du modèle (8 seed pour 8 réplications du modèle). OpenMOLE gère toute la partie distribution des calculs, et les modèles instanciés avec les bons paramètres sont donc exécutés dans différents endroits de la planète. Une fois l'exécution des tâches achevées, les $8$ valeurs de $t_{end-of-fire}$ sont récupérées et agrégées dans un tableau par la tâche \textbf{At (Aggregation task)}]{
+	 	}\qquad
+	 \subbottom[Le \textit{workflow} est exécuté. La première étape est de générer le plan d'expérience, c'est à ce moment là que les \textbf{{\$seed}} sont générées puis appariées avec les futures exécutions du modèle (8 seed pour 8 réplications du modèle). OpenMOLE gère toute la partie distribution des calculs, et les modèles instanciés avec les bons paramètres sont donc exécutés dans différents endroits de la planète. Une fois l'exécution des tâches achevées, les $8$ valeurs de $t_{end-of-fire}$ sont récupérées et agrégées dans un tableau par la tâche \textbf{At (Aggregation task)} \label{right_netlogo}]{
 		\includegraphics[width=.8\linewidth]{rightdoenetlogo.pdf}
-		\label{right_netlogo}}
+		}
 	\end{sidecaption}
 \end{figure}
 
@@ -1610,21 +1610,18 @@ Pour visualiser la valeur $v$ prise par chacune des solutions candidates, on pro
         \item \sqbox{tangoRed1} indique une fitness maximale, cf. qui minimise $v$
 \end{enumerate}}}[fig:xyspacePspaceOmultimodal]
 	 \centering
-	  \subbottom[]{
+	  \subbottom[\label{subfig_xyespaceSolutionCandidate_a}]{
 	 	\includegraphics[width=0.4\linewidth]{xyespaceSolutionCandidate_a.pdf}
-	 	\label{subfig_xyespaceSolutionCandidate_a}}
-	 \subbottom[]{
+	 	}
+	 \subbottom[\label{subfig_xyespaceSolutionCandidate_b}]{
 	 	\includegraphics[width=.4\linewidth]{xyespaceSolutionCandidate_b.pdf}
-	 	\label{subfig_xyespaceSolutionCandidate_b}}
-	 \subbottom[]{
+	 	}
+	 \subbottom[\label{subfig_xyespaceSolutionCandidate_c}]{
 		\includegraphics[width=.4\linewidth]{xyespaceSolutionCandidate_c.pdf}
-		\label{subfig_xyespaceSolutionCandidate_c}}
+		}
 	\end{sidecaption}
 \end{figure}
 
-Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidates très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
-
-Il est clair que l'information récoltée par un tel déplacement basé sur une distance euclidienne dans le plan $(x,y)$ n'est pas pertinent dans la recherche des emplacements possibles des meilleures solutions (voir figure \ref{fig:xytrajectoire}). Il semble par exemple plus intéressant pour l'optimiseur d'accéder aux solutions par le prisme d'ensembles construits sur la base d'une valeur $v$ commune (voir figure \ref{fig:xyspacePspaceOmultimodal}). Une information qui peut être exploitée de multiples façons, toujours en permettant à l'optimiseur de déterminer un nouvel ensemble de solutions candidates à évaluer.
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[Déplacements simultanés dans l'espace des solutions candidates et dans l'espace des objectifs]{Représentation de deux déplacements dans l'espace des solutions candidates et son équivalent dans l'espace des objectifs
@@ -1634,14 +1631,18 @@ Il est clair que l'information récoltée par un tel déplacement basé sur une 
 	        \item Partant de $b$, on se déplace toujours d'une unité vers $f$, ce qui dans l'espace des objectifs équivaut également à un déplacement vers $d$ et $i$; $v=1$ pour $v_d,v_i,v_f$
 	\end{enumerate}}}[fig:xytrajectoire]
 	 \centering
-	  \subbottom[]{
+	  \subbottom[\label{subfig_xytrajectoire_a}]{
 	 	\includegraphics[width=0.8\linewidth]{xytrajectoire_a.pdf}
-	 	\label{subfig_xytrajectoire_a}}\qquad
-	 \subbottom[]{
+	 	}\qquad
+	 \subbottom[\label{subfig_xytrajectoire_b}]{
 	 	\includegraphics[width=.8\linewidth]{xytrajectoire_b.pdf}
-	 	\label{subfig_xytrajectoire_b}}
+	 	}
 	\end{sidecaption}
 \end{figure}
+
+Deux solutions proches dans l'espace des solutions candidates peuvent amener à des résultats très différents, et inversement, pour deux évaluations proches peuvent correspondre des solutions candidates très éloignées, comme le détaille la figure \ref{fig:xytrajectoire}. Il s'agit d'une propriété bien connue des fonctions non linéaires, qu'elles soient décrites de façon explicite via le formalisme mathématique, ou de façon implicite dans l'expression des dynamiques complexes de modèles de simulation.
+
+Il est clair que l'information récoltée par un tel déplacement basé sur une distance euclidienne dans le plan $(x,y)$ n'est pas pertinent dans la recherche des emplacements possibles des meilleures solutions (voir figure \ref{fig:xytrajectoire}). Il semble par exemple plus intéressant pour l'optimiseur d'accéder aux solutions par le prisme d'ensembles construits sur la base d'une valeur $v$ commune (voir figure \ref{fig:xyspacePspaceOmultimodal}). Une information qui peut être exploitée de multiples façons, toujours en permettant à l'optimiseur de déterminer un nouvel ensemble de solutions candidates à évaluer.
 
 Si l'obtention d'une cartographie complète d'un tel espace de solutions peut être l'objectif de ce type de raisonnement, la recherche d'un optimum en est un autre. Dans un cas on aura tendance à maximiser la diversité dans le choix de solutions candidates à évaluer, afin d'essayer de couvrir au mieux le territoire à explorer. Cette idée on la retrouve dans l'établissement d'une \textit{fitness landscape}, ou dans sa version multi-objectif, d'un \textit{problem landscape} \autocite[93-94]{Weise2011}, un paysage cumulé de l'espace des objectifs indiquant toutes les valeurs prises par ceux-ci au cours de l'exploration \Anote{paysage_cumule}. Un espace mis à profit par l'optimiseur pour améliorer la proposition de solution candidate, par exemple en se basant sur la construction de cluster de valeurs intéressantes comme indiqué précédemment, ou encore en cherchant à favoriser les zones de cet espace encore peu explorées, etc. Alors que dans le cas d'une optimisation pour la calibration ou la prédiction, trouver le plus rapidement possible un minimum local ou global peut constituer un objectif suffisant.
 
@@ -1652,12 +1653,12 @@ Cette mécanique on la retrouve également à un autre niveau, dans le fonctionn
 \begin{figure}[!htbp]
 \begin{sidecaption}[Recherche d'un minimum global]{Recherche d'un minimum global.}[fig:hmap2ab]
  \centering
- \subbottom[Une fonction $f(x)$ présentant un unique minimum global]{
+ \subbottom[Une fonction $f(x)$ présentant un unique minimum global.\label{subfig_hmap2ab_a}]{
  	\includegraphics[width=.4\linewidth]{heightmap2a.pdf}
- 	\label{subfig_hmap2ab_a}}\qquad
- \subbottom[Une fonction $f(x)$ présentant un minimum local et global]{
+ 	}\qquad
+ \subbottom[Une fonction $f(x)$ présentant un minimum local et global.\label{subfig_hmap2ab_b}]{
 	\includegraphics[width=.4\linewidth]{heightmap2b.pdf}
-	\label{subfig_hmap2ab_b}}
+	}
 \end{sidecaption}
 \end{figure}
 
@@ -1670,12 +1671,12 @@ La figure \ref{fig:hmap2ab} démontre un fonctionnement normal de l'optimiseur, 
 \begin{figure}[!htbp]
   \begin{sidecaption}[Des fonctions difficiles à optimiser du fait de paysages complexes]{Deux types de fonctions sont rendues difficiles à optimiser du fait d'une topologie marquée.}[fig:hmap2cd]
   \centering
-  \subbottom[Une fonction $f(x)$ multimodale acceptant plusieurs minimum locaux, et un seul minimum global]{
+  \subbottom[Une fonction $f(x)$ multimodale acceptant plusieurs minimum locaux, et un seul minimum global.\label{subfig_hmap2cd_c}]{
   	\includegraphics[width=.4\linewidth]{heightmap2e.pdf}
-  	\label{subfig_hmap2cd_c}}\qquad
-  \subbottom[Une fonction $f(x)$ contenant très peu d'information de gradient pour guider l'optimiseur]{
+  	}\qquad
+  \subbottom[Une fonction $f(x)$ contenant très peu d'information de gradient pour guider l'optimiseur.\label{subfig_hmap2cd_d}]{
 	\includegraphics[width=.4\linewidth]{heightmap2c.pdf}
-  	\label{subfig_hmap2cd_d}}
+  	}
  \end{sidecaption}
 \end{figure}
 
@@ -1693,12 +1694,12 @@ Ce qui nous permet d'évoquer une faiblesse connue des métaheuristiques, hérit
 \begin{figure}[!htbp]
 \begin{sidecaption}[Représentation de la navigation indirecte d'une métaheuristique dans un espace de solution]{Représentation d'une navigation indirecte de l'optimiseur dans un espace de solution $z = f(x,y)$.}[fig:hmap1]
   \centering
-  \subbottom[]{
+  \subbottom[\label{subfig_hmap_a}]{
   	\includegraphics[width=.4\linewidth]{heightmap1a.png}
-  	\label{subfig_hmap_a}}\qquad
-  \subbottom[]{
+  	}\qquad
+  \subbottom[\label{subfig_hmap_b}]{
 	\includegraphics[width=.4\linewidth]{heightmap1b.png}
-  	\label{subfig_hmap_b}}
+  	}
 \end{sidecaption}
 \end{figure}
 
@@ -1901,15 +1902,15 @@ Un autre type d'erreur peut encore intervenir lors de telles explorations, l'exp
 \begin{figure}[htbp]
 	\begin{sidecaption}[Exemple de front de Pareto sur des voitures]{Exemple simplifié d'une catégorisation de voitures selon deux axes comprenant d'une part le coût d'achat et d'autre part la consommation de chaque voiture.}[fig:voiture]
 	\centering
-	  \subtop[]{
+	  \subtop[\label{subfig_voiture:a}]{
   	\includegraphics[width=.4\linewidth]{opti1.png}
-  	\label{subfig_voiture:a}}\qquad
-    \subtop[]{
+  	}\qquad
+    \subtop[\label{subfig_voiture:b}]{
 	\includegraphics[width=.4\linewidth]{opti2.png}
-  	\label{subfig_voiture:b}}
-    \subtop[]{
+  	}
+    \subtop[\label{subfig_voiture:c}]{
   	\includegraphics[width=.4\linewidth]{opti3.png}
-  	\label{subfig_voiture:c}}
+  	}
  \end{sidecaption}
 \end{figure}
 
@@ -1943,10 +1944,10 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
 \begin{sidecaption}[Tableau résumé des fonctions objectifs, et de différentes valeurs de fitness associées]{Tableau de résultats des fonctions objectifs $f_1$ et $f_2$ pour un vecteur de solutions candidates $\{a \dotsc p\}$ dans l'espace des objectifs $\mathbb{Y}$, et résultat du \textit{Pareto Ranking}, intervenant ensuite dans le calcul de \textit{fitness} de différentes façons selon les algorithmes utilisés.}
 	[tab:pranking]
 	\centering
-	 \subbottom[Graphique en deux dimensions des fonctions objectifs $f_1$ et $f_2$ du tableau ci-dessous.]{
+	 \subbottom[Graphique en deux dimensions des fonctions objectifs $f_1$ et $f_2$ du tableau ci-dessous.\label{pranking:a}]{
   		\includegraphics[width=.4\linewidth]{pareto_ranking_a.pdf}
-  	\label{pranking:a}}\qquad
-	\subbottom[Tableau de données pour les solutions candidates des différents exemples]{
+  	}\qquad
+	\subbottom[Tableau de données pour les solutions candidates des différents exemples.\label{pranking:b}]{
 	\begin{threeparttable}
 	\begin{tabular}{>{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$} >{$}l<{$}}
 			\toprule
@@ -1976,7 +1977,7 @@ Dans notre cas, on considère que l'optimiseur doit sélectionner avec les moyen
       \item[2] $v_2$ est une \textit{fitness} calculée sur la base du calcul de fronts de l'algorithme NDS de \textcite{Goldberg1989}. L'algorithme est assez simple, on fait comme s'il s'agissait de peler un oignon. Au départ $r = 0$. On effectue un calcul de dominance sur une population complète $P$ (étape 1), puis on retire seulement les points non-dominés $P_{t+1} = P_{t} - P_{\{\varnothing\}}$ (étape 2) auxquels on attribue également un rang $r = r + 1$.  On recommence à l'étape 1 jusqu'à ce que tous les points possèdent un rang. Il existe également des variantes plus rapide de cet algorithme \autocite{Deb2001}.
     \end{tablenotes}
 
-	\label{pranking:b}
+	
 	\end{threeparttable}}
   \end{sidecaption}
 \end{table}
@@ -2050,7 +2051,7 @@ Différents degrés de dominance ont été développés, comme par exemple la no
 
 		\begin{minipage}{0.5\textwidth}
 			\centering
-			\subbottom[e est dominé par f ?]{
+			\subbottom[e est dominé par f ?\label{pranking_a}]{
 				\begin{tabular}{>{$}l<{$}>{$}l<{$} >{$}l<{$}}
 					\toprule
 					    & f1 & f2 \\
@@ -2059,11 +2060,11 @@ Différents degrés de dominance ont été développés, comme par exemple la no
 					e < f   & \text{false}  & \text{true} \\
 					\bottomrule
 				\end{tabular}
-		 	\label{pranking_a}}
+		 	}
 		 \end{minipage}\hspace{1em}
 		 \begin{minipage}{0.5\textwidth}
 		 	\centering
-			\subbottom[f est dominé par e ?]{
+			\subbottom[f est dominé par e ?\label{pranking_b}]{
 				\begin{tabular}{>{$}l<{$}>{$}l<{$} >{$}l<{$}}
 					\toprule
 					  & f1 & f2 \\
@@ -2072,7 +2073,7 @@ Différents degrés de dominance ont été développés, comme par exemple la no
 					f < e  & \text{false}  & \text{false} \\
 					\bottomrule
 				\end{tabular}
-			\label{pranking_b}}
+			}
 		\end{minipage}
   \end{sidecaption}
 \end{table}
@@ -2132,21 +2133,19 @@ Selon \textcite[70]{Weise2011} et \autocite[19]{Zitzler1999a}, on peut s'aider d
 \item{\textbf{Pertinence}} Les solutions découvertes doivent correspondre aux intérêts définis par le problème, et n'ont aucun intérêt si l'opérateur humain ne peut, ou ne sait les utiliser.
 \end{enumerate}
 
-On retrouve dans ces objectifs la tension entre exploration et exploitation, le front de Pareto devant être exploité de façon homogène, tout en garantissant à terme (et si possible le plus vite possible) la convergence vers une zone d'intérêt pour l'expérimentateur (voir figure \ref{fig:convergence_diversite}). Les métaheuristiques n'ayant pas d'apriori sur la forme de problème abordée, c'est dans l'originalité, la diversité des constructions proposées qu'une solution optimale et dédiée peut être trouvée. Il est donc très difficile de faire un listing des meilleures stratégies, et des meilleures combinaisons de stratégies permettant une sélection garantie des meilleurs candidats en fonction de ces objectifs, l'établissement de cette liste ne pouvant être que contextuelle d'un problème d'optimisation donné.
-
-\hl{ref no free lunch theorem }? Wikipedia : Le théorème du « no free lunch » explique qu’aucune instance de métaheuristique ne peut prétendre être la meilleure sur tous les problèmes. Une métaheuristique (M) n’est performante que pour une classe de problème (P) donnée.
+On retrouve dans ces objectifs la tension entre exploration et exploitation, le front de Pareto devant être exploité de façon homogène, tout en garantissant à terme (et si possible le plus vite possible) la convergence vers une zone d'intérêt pour l'expérimentateur (voir figure \ref{fig:convergence_diversite}). Les métaheuristiques n'ayant pas d'apriori sur la forme de problème abordée, c'est dans l'originalité, la diversité des constructions proposées qu'une solution optimale et dédiée peut être trouvée. Il est donc très difficile de faire un listing des meilleures stratégies, et des meilleures combinaisons de stratégies permettant une sélection garantie des meilleurs candidats en fonction de ces objectifs, l'établissement de cette liste ne pouvant être que contextuelle d'un problème d'optimisation donné \Anote{no_free_lunch}.
 
 Heureusement, un certain nombre de combinaisons, souvent éprouvées par de multiple tests sur des fonctions aux caractéristiques et difficultés soigneusement étudiées (ZDT, etc.), se démarquent par des capacités de résolution acceptable. C'est d'ailleurs souvent sur cette première base que se construisent ensuite les améliorations nécessaires à une réponse optimale, cela en partie grâce à la flexibilité des composantes caractéristique des métaheuristiques.
 
 \begin{figure}[!htbp]
   \begin{sidecaption}[Comparaison entre deux fronts de Pareto, avec et sans maintien de la diversité]{Convergence et maintien de la diversité au sein du front de Pareto}[fig:convergence_diversite]
   \centering
-  \subbottom[Un front de pareto sans maintien suffisant de la diversité]{
+  \subbottom[Un front de pareto sans maintien suffisant de la diversité.\label{subfig_convergence_diversite:a}]{
   	\includegraphics[width=.4\linewidth]{pareto_convergence_a.pdf}
-  	\label{subfig_convergence_diversite:a}}\qquad
-  \subbottom[Un front de pareto avec maintien de la diversité]{
+  	}\qquad
+  \subbottom[Un front de pareto avec maintien de la diversité.\label{subfig_convergence_diversite:b}]{
 	\includegraphics[width=.4\linewidth]{pareto_convergence_b.pdf}
-  	\label{subfig_convergence_diversite:b}}
+  	}
  \end{sidecaption}
 \end{figure}
 
@@ -2162,7 +2161,7 @@ Ainsi, un des tout premiers paramètres à intégrer dans le calcul de cette fon
 
 \begin{testiv}{L'epsilon dominance par l'exemple}{}
 
-Soit deux fonctions objectifs $f_1$ et $f_2$, et une population de $10$ solutions candidates parmis lesquels l'optimiseur ne peux choisir que les $5$ meilleurs valeurs pour formuler les prochaines solutions candidates à évaluer. Une fois triés par ordre descendant sur les deux objectifs, on vient bien que l'optimiseur s'est focalisé autour de $[25.00,25.05]$.
+Soit deux fonctions objectifs $f_1$ et $f_2$, et une population de $10$ solutions candidates parmi lesquels l'optimiseur ne peux choisir que les $5$ meilleurs valeurs pour formuler les prochaines solutions candidates à évaluer. Une fois triés par ordre descendant sur les deux objectifs, on vient bien que l'optimiseur s'est focalisé autour de $[25.00, 25.05]$.
 
 \begin{figure}[H]
 	 \centering
@@ -2170,13 +2169,13 @@ Soit deux fonctions objectifs $f_1$ et $f_2$, et une population de $10$ solution
 	 	\label{fig:epsilon}
 \end{figure}
 
-La diversité à ce niveau de résolution doit paraître suffisante à l'optimiseur pour qu'il continue à selectionner des candidats proche de $25$. Mais le gain est vraiment trop minime et cette pression sur $f_{2}$ masque peut être l'existence de meilleur compromis ailleurs.
+La diversité à ce niveau de résolution doit paraître suffisante à l'optimiseur pour qu'il continue à sélectionner des candidats proches de $25$. Mais le gain est minime et cette pression sur $f_{2}$ masque peut être l'existence de meilleur compromis ailleurs.
 
 \begin{table}[H]
 	\centering
 		\begin{minipage}{0.4\textwidth}
 			\centering
-			\subbottom[Valeurs triés pour $f_{1}$ et $f_{2}$]{
+			\subbottom[Valeurs triés pour $f_{1}$ et $f_{2}$ \label{epsilon_a}]{
 			\resizebox{0.5\textwidth}{!}{%
 				\begin{tabular}{@{}lll@{}}
 				\toprule
@@ -2193,17 +2192,17 @@ La diversité à ce niveau de résolution doit paraître suffisante à l'optimis
 				10 & 30 & 45.3212 \\ \bottomrule
 				\end{tabular}%
 		 }
-		 \label{epsilon_a}}
+		 }
 		 \end{minipage}\hspace{0.2em}
 		 \begin{minipage}{0.4\textwidth}
 			\centering
-			\subbottom[Mise en place d'un epsilon de $0.5$]{
+			\subbottom[Mise en place d'un epsilon de $0.5$ \label{epsilon_b}]{
 			\includegraphics[width=0.8\linewidth]{epsilon_dominance_avec.pdf}
-			\label{epsilon_b}}
+			}
 		\end{minipage}
 \end{table}
 
-Une des possibilité est donc d'utiliser un epsilon de $0.05$ indiquant à l'optimiseur de considérer comme équivalentes les solutions dans ce radius autour des solutions. Cela revient à relâcher la pression sur un des objectifs pour permettre à l'autre de s'exprimer. Dans notre exemple les $5$ premières solutions seront alors considérées comme équivalentes par l'optimiseur, celui-ci se focalisera donc moins sur les micro gains possibles sur $f_{2}$ au profit d'une plus grande diversité sur $f_{1}$.
+Une des possibilités est donc d'utiliser un epsilon de $0.05$ indiquant à l'optimiseur, au moment du calcul de la dominance, de considérer comme équivalentes les solutions dans ce radius autour d'un individu. Cela revient à relâcher la pression sur un des objectifs pour permettre à l'autre de s'exprimer. Dans notre exemple les $5$ premières solutions seront alors considérées comme équivalentes par l'optimiseur, et celui-ci se focalisera donc moins sur les micro-gains possibles sur $f_{2}$ au profit d'une plus grande diversité sur $f_{1}$.
 
 \end{testiv}
 
@@ -2274,10 +2273,9 @@ Dans une forme interactive de cette représentation \Anote{scattrplot}, la séle
 
 Il ne faut pas oublier que cette analyse se fait sur une population de solutions évaluées stabilisée, elle est donc très resserrée autour de certains comportements clefs. Des frontières qui renseignent le modélisateur sur les contradictions auxquelles l'algorithme d'optimisation doit faire face pour minimiser ces trois objectifs à la fois. On voit bien que les écarts sont très différents selon les objectifs, ce qui peut parfois poser problème à l'optimiseur.
 
-\begin{figure}[H]
-	 \centering
-	 	\includegraphics[width=1\linewidth]{resume.jpg}
-\end{figure}
+\begin{center}
+	\includegraphics[width=1.0\linewidth]{resume.jpg}
+\end{center}
 
 \begin{itemize}[nolistsep]
 	\item Dans la colonne (a), on s'intéresse à un premier cluster de valeurs d'évaporation compris entre $[5.5, 10]$. On voit que pour cette sélection le taux de diffusion est très étalé, entre $[20, 80]$, ce qui indique le peu d'impact de celui-ci dans cette dynamique. Quelque soit la valeur dans cet intervalle, le modèle est toujours proche de valeurs égale à $800$ à +/- $100$ près pour \textit{medianFood3}. S'il y a bien une forme de stabilité exprimée pour ce troisième objectif, le deuxième objectif est par contre beaucoup plus sensible car sa valeur peut varier entre $[300, 550]$. De la même façon, la valeur de l'objectif \textit{medianFood1} est très étalée entre $205$ et $230$. On pourrait qualifier de comportement moyen ce profil, car il ne donne pas les pires résultats sur l'objectif \textit{medianFood3}, il donne des résultats assez resserrés entre $[200, 230]$ sur l'objectif \textit{medianFood1}. Pour l'objectif \textit{medianFood2} par contre, c'est moins clair, il semble y'avoir un effet de seuil.
@@ -2334,7 +2332,7 @@ La branche des métaheuristiques EC que nous allons étudier plus spécifiquemen
 \subsubsection{Un rapide historique de la discipline}
 \label{sssec:historique_EA}
 
-On a rapidement décrit dans les annexes abordant plus en détail le thème l'\textit{Artificial Life} \ref{chap:double_foyer_sma} les deux voies qu'il était possible d'emprunter dans l'intérêt porté sur la définition du processus naturel d'évolution.
+On a rapidement décrit dans les annexes \ref{chap:double_foyer_sma} abordant le thème de l'\textit{Artificial Life} les deux voies qu'il était possible d'emprunter dans l'intérêt porté sur la définition du processus naturel d'évolution.
 
 Il existe en effet au moins deux façons aujourd'hui d'introduire des développements informatiques se rapportant à ce processus évolutif. D'un côté, les tentatives de reproduction plus ou moins fidèles des différents mécanismes à l'oeuvre dans le processus d'évolution mettent en avant un objectif de compréhension, alors que la focalisation sur ces mêmes mécanismes pour leur seule capacité d'apprentissage tend à s'éloigner de la réalité biologique pour s'orienter plus vers le développement d'algorithmes désignés comme métaheuristiques. Autrement dit, là ou des chercheurs vont tenter de reproduire au mieux le processus d'évolution dans ce qu'il a de créatif, de non optimisé, de coévolutif car construit par \Anote{note_pattee_semantic_closure} et avec l'environnement, d'autres vont reprendre ce même processus en vue d'une évolution si possible bornée et dirigée par la résolution efficace d'un ou de plusieurs objectifs définis de façon fixe et extrinsèque \autocites{Taylor2001, Taylor2012}.
 
@@ -2660,29 +2658,29 @@ Ce qui signifie que le programme informatique, tout comme le petit garçon ou la
 
 Le premier principe d'inversion de contrôle renvoie à la possibilité d'externalisation du programme ou des composants du programme. Les appels ne sont plus limités à un contrôle interne, statique, et peuvent être commandés par des appels extérieurs, par un utilisateur, ou un autre programme, souvent de façon dynamique. C'est typiquement ce qu'on observe lorsqu'un utilisateur manipule une interface graphique. Chaque action réalisée, par exemple l'appui par l'utilisateur d'un bouton sur cette interface, renvoie à l'exécution d'un ou de plusieurs bouts de code dans le programme, de façon dynamique, sans que cette invocation en particulier soit décrite physiquement dans le programme. De nombreux langages intègrent ou étendent ce principe sous divers noms et techniques : \textit{Events} et \textit{Callbacks}, \textit{Reactive programming}, \textit{Observer Pattern}, etc.
 
-L'inversion de dépendance est un principe un peu plus complexe à comprendre, et celui-ci pourra surement être mieux compris avec l'appel à un schéma simplifié, comme celui de la figure \ref{fig:decouplage_principe}. Celui-ci questionne la façon dont les dépendances sont fixées entre les composants de notre programme informatique. Le fait que les dépendances soient fixées par le composant lui-même est caractéristique d'une inversion de contrôle, et le fait que celui-ci les obtienne de l'extérieur, et non pas par une création interne est une inversion de dépendance (voir \ref{subfig_decouplage:b}).
+L'inversion de dépendance est un principe un peu plus complexe à comprendre, et celui-ci pourra sûrement être mieux compris avec l'appel à un schéma simplifié, comme celui de la figure \ref{fig:decouplage_principe}. Celui-ci questionne la façon dont les dépendances sont fixées entre les composants de notre programme informatique. Le fait que les dépendances soient fixées par le composant lui-même est caractéristique d'une inversion de contrôle, et le fait que celui-ci les obtienne de l'extérieur, et non pas par une création interne est une inversion de dépendance (voir \ref{subfig_decouplage:b}).
 
-L'avantage de voir le déroulement d'un programme de cette façon, c'est que chaque composant est défini en fonction d'une tâche en particulier, si possible la plus atomique possible, afin de maximiser sa réutilisation, et de limiter les effets de bords - c'est-à-dire les comportements imprévus - en cas de remplacement de celui-ci. C'est un jeu de brique, vous définissez les briques de façon à pouvoir les réutiliser si possible dans toutes vos constructions, et si possible sans avoir à les remodifier. Ce faisant vous n'avez pas à vous soucier de ce que font ou permettent les autres briques autour de vous, en dehors de celle dont vous dépendez pour fonctionner correctement.
+L'avantage de voir le déroulement d'un programme de cette façon, c'est que chaque composant est défini en fonction d'une tâche en particulier, si possible la plus atomique possible, afin de maximiser sa réutilisation, et de limiter les effets de bords - c'est-à-dire les comportements imprévus - en cas de remplacement de celui-ci. C'est un jeu de brique, vous définissez les briques de façon à pouvoir les réutiliser si possible dans toutes vos constructions, et si possible sans avoir à les remodifier. Ce faisant vous n'avez pas à vous soucier de ce que font ou permettent les autres briques autour de vous, en dehors de celles dont vous dépendez pour fonctionner correctement.
 
-Le flot d'exécution du programme ne s'appuie plus sur une description statique des dépendances entre objets composants le système, qui rendent au départ sa modification plus difficile. Ainsi, dans notre cadre, l'inversion de contrôle renvoie à l'expression des dépendances entre composants d'un programme, celles-ci étant fournies au cas par cas pour chaque composant de façon automatique par le reste du programme, car nécessaire à son fonctionnement. On lui préfère une description sous forme de graphe de composants. Chaque composant du graphe fait état de ses besoins pour fonctioner, ce qui le rend en partie indépendant du reste du fonctionnement du programme. Lors de l'exécution, le programme se déroule en interprétant de façon dynamique le graphe de composants tel qu'il a été défini par l'utilisateur.
+Le flot d'exécution du programme ne s'appuie plus sur une description statique des dépendances entre objets composants le système, qui rendent au départ sa modification plus difficile. Ainsi, dans notre cadre, l'inversion de contrôle renvoie à l'expression des dépendances entre composants d'un programme, celles-ci étant fournies au cas par cas pour chaque composant de façon automatique par le reste du programme, car nécessaire à son fonctionnement. On lui préfère une description sous forme de graphe de composants. Chaque composant du graphe fait état de ses besoins pour fonctionner, ce qui le rend en partie indépendant du reste du fonctionnement du programme. Lors de l'exécution, le programme se déroule en interprétant de façon dynamique le graphe de composants tel qu'il a été défini par l'utilisateur.
 
 \begin{figure}[!htbp]
   \begin{sidecaption}[Stratégies de découplage de composants logiciels]{Illustrations simplifiées des stratégies possibles pour découpler des composants logiciels entres eux. \parbox{\marginparwidth}{
 	\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-	        \item Le composant \sqbox{tangoBlue1} défini ses dépendances à \sqbox{tangoOrange1} et \sqbox{tangoRed1} de façon interne, le couplage entre les composants est très fort. Si ces deux dépendances sont présentes dans de très nombreux autres composants, alors un changement même mineur dans la forme d'un de ces deux composants entraine de nombreuses modifications du programme.
+	        \item Le composant \sqbox{tangoBlue1} définit ses dépendances à \sqbox{tangoOrange1} et \sqbox{tangoRed1} de façon interne, le couplage entre les composants est très fort. Si ces deux dépendances sont présentes dans de très nombreux autres composants, alors un changement même mineur dans la forme d'un de ces deux composants entraîne de nombreuses modifications du programme.
 	        \item Une première solution pour rendre les composants plus indépendants est de déclarer les dépendances au niveau de \sqbox{tangoBlue1}, et de fournir ces composants de façon externe à celui-ci. Cette solution ne résout toutefois pas le problème d'un changement de forme.
 	        \item Une solution s'appuyant sur (b) est d'utiliser un composant abstrait intermédiaire, qui reste toujours valable du point de vue de la forme attendue par \sqbox{tangoBlue1}. A charge des composants \sqbox{tangoOrange1} et \sqbox{tangoRed1} d'implémenter le minimum requis par ce composant abstrait.
 	\end{enumerate}}}[fig:decouplage_principe]
   \centering
-  \subbottom[]{
+  \subbottom[\label{subfig_decouplage:a}]{
   	\includegraphics[width=.7\linewidth]{composants_principes_a.pdf}
-  	\label{subfig_decouplage:a}}\qquad
-  \subbottom[]{
+  	}\qquad
+  \subbottom[\label{subfig_decouplage:b}]{
 	\includegraphics[width=.8\linewidth]{composants_principes_c.pdf}
-  	\label{subfig_decouplage:b}}
-  \subbottom[]{
+  	}
+  \subbottom[\label{subfig_decouplage:c}]{
 	\includegraphics[width=.8\linewidth]{composants_principes_d.pdf}
-  	\label{subfig_decouplage:c}}
+  	}
  \end{sidecaption}
 \end{figure}
 
@@ -2696,13 +2694,13 @@ Si on recontextualise ces principes dans le cadre de notre problématique, les c
   \end{sidecaption}
 \end{figure}
 
-Chacune de ces classes de composants est définie comme nécessaire pour le fonctionnement d'un algorithme d'évolution, dont la mise en dynamique du comportement générique est implémentée dans le composant \keyword{Evolution}. Tant que l'utilisateur n'aura pas fourni un composant compatible avec chacun de ces types de composants, alors le composant \keyword{Evolution} ne pourra pas s'exécuter. Le programme est défini comme un texte à trou, les boites sont bien placées, et le programme prêt à être exécuté suivant cet ordre, seulement ce n'est qu'un patron, une image, et cet ensemble de boites dont seule une partie de la logique a été intégrée, doit encore être complété par l'utilisateur. C'est un peu comme un puzzle dans lequel il manque des pièces, vous devez soit créer de nouvelles pièces, soit retrouver les pièces qui respectent la forme de chaque emplacement pour que le puzzle soit de nouveau complet.
+Chacune de ces classes de composants est définie comme nécessaire pour le fonctionnement d'un algorithme d'évolution, dont la mise en dynamique du comportement générique est implémentée dans le composant \keyword{Evolution}. Tant que l'utilisateur n'aura pas fourni un composant compatible avec chacun de ces types de composants, alors le composant \keyword{Evolution} ne pourra pas s'exécuter. Le programme est défini comme un texte à trou, les boîtes sont bien placées, et le programme prêt à être exécuté suivant cet ordre, seulement ce n'est qu'un patron, une image, et cet ensemble de boîtes dont seule une partie de la logique a été intégrée, doit encore être complété par l'utilisateur. C'est un peu comme un puzzle dans lequel il manque des pièces, vous devez soit créer de nouvelles pièces, soit retrouver les pièces qui respectent la forme de chaque emplacement pour que le puzzle soit de nouveau complet.
 
-L'inversion de contrôle détaillée dans les paragraphes précédents se matérialise de nouveau ici au travers du fait que c'est l'utilisateur qui définit sa composition, en s'assurant avec l'aide des instructions du programme que les dépendances propres au fonctionnement de chacun des composants sont bien fournies. Tout programme ne remplissant pas les conditions renverra un message d'erreur à son execution. En ce sens MGO est probablement plus un \textit{\textit{framework}} qu'une librairie logicielle \Anote{martin_fowler}. L'autre avantage d'une telle approche c'est que l'application peut être livrée avec un vaste catalogue de pièces compatible avec chaque type d'emplacement, laissant à l'utilisateur la possibilité de choisir sa propre combinaison, voire même de créer ses propres pièces s'il estime quelles sont manquantes.
+L'inversion de contrôle détaillée dans les paragraphes précédents se matérialise de nouveau ici au travers du fait que c'est l'utilisateur qui définit sa composition, en s'assurant avec l'aide des instructions du programme que les dépendances propres au fonctionnement de chacun des composants sont bien fournies. Tout programme ne remplissant pas les conditions renverra un message d'erreur à son exécution. En ce sens MGO est probablement plus un \textit{\textit{framework}} qu'une librairie logicielle \Anote{martin_fowler}. L'autre avantage d'une telle approche c'est que l'application peut être livrée avec un vaste catalogue de pièces compatibles avec chaque type d'emplacement, laissant à l'utilisateur la possibilité de choisir sa propre combinaison, voire même de créer ses propres pièces s'il estime qu'elles sont manquantes.
 
 Ils existent différentes techniques pour qu'une telle architecture puisse être mise en oeuvre. Par exemple l'utilisation mixte de \textit{classe abstraite} et d'\textit{interfaces} permettent dans de nombreux langage informatique, comme Java ou C\#, de reproduire le découplage entre composants tel qu'on la vu dans la figure \ref{fig:decouplage_principe}.
 
-En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_note_cake} ce type de techniques, dont l'existence, les avantages et les contraintes ont largement été discutés, ne constitue pas selon lui la meilleure réponse d'un point de vue technique pour garantir une meilleure réutilisabilité des composants informatiques. Il faut savoir à ce sujet qu'il existe en informatique une branche de recherche tournée vers la construction de langage de programmation aux caractéristiques innovantes. Ainsi les propriétés du langage Scala utilisé pour implémenter MGO exposent la solution fournie par Martin Odersky à cette problématique que représente la recherche d'une meilleure modularité des programmes informatiques. Tout comme dans les années 1980, le langage Smalltalk d'Alan Kay a introduit une autre façon de structurer les programmes avec le paradigme Orienté Objet, Scala permet ici de penser de façon originale la modularité des composants en usant d'un tout nouveau couplage de différentes abstractions informatiques ( \textit{abstract type members}, \textit{explicit self-types}, \textit{modular mixin composition}) \Anote{note_informatique_mixin}. Autrement dit, ce que Scala va nous permettre d'exprimer comme degré de modularité lors de la description informatique de nos composants constitue en soit une innovation qui n'est pas présente, ou présente sous des formes trop complexes vis à vis de notre cahier des charges, dans bien d'autres langages informatiques.
+En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_note_cake} ce type de techniques, dont l'existence, les avantages et les contraintes ont largement été discutés, ne constitue pas selon lui la meilleure réponse d'un point de vue technique pour garantir une meilleure réutilisabilité des composants informatiques. Il faut savoir à ce sujet qu'il existe en informatique une branche de recherche tournée vers la construction de langage de programmation aux caractéristiques innovantes. Ainsi les propriétés du langage Scala utilisé pour implémenter MGO exposent la solution fournie par Martin Odersky à cette problématique que représente la recherche d'une meilleure modularité des programmes informatiques. Tout comme dans les années 1980, le langage Smalltalk d'Alan Kay a introduit une autre façon de structurer les programmes avec le paradigme Orienté Objet, Scala permet ici de penser de façon originale la modularité des composants en usant d'un tout nouveau couplage de différentes abstractions informatiques ( \textit{abstract type members}, \textit{explicit self-types}, \textit{modular mixin composition}) \Anote{note_informatique_mixin}. Autrement dit, ce que Scala va nous permettre d'exprimer comme degré de modularité lors de la description informatique de nos composants constitue en soi une innovation qui n'est pas présente, ou présente sous des formes trop complexes vis-à-vis de notre cahier des charges, dans bien d'autres langages informatiques.
 
 %Si l'utilisation de classe abstraite est donc intéressante, elle ne résout pas tout les problèmes à elle seule. Ainsi par exemple, lorsqu'on utilise des classes abstraites, il n'est pas possible d'utiliser des dépendances cycliques entre composants, et la nécessité de respecter un ordre d'initialisation entre composants devient également rapidement une contrainte.
 
@@ -2710,35 +2708,38 @@ En réalité, pour certains programmeurs \textcite{Odersky2005} \Anote{odersky_n
 
 %Il est également possible de définir des traits qui contiennent totalité ou seulement partie d'une implémentation. Ce type de programmation n'est pas permises par d'autres langage informatique, comme Java par exemple.
 
-Souvent apellé de façon jargonnesque \foreignquote{english}{Cake Pattern} pour la possibilité de composition qu'elles offrent (comme dans un cake, un gateau dont la recette peut accueillir une très grande variété d'étapes, de composantes), ces outils aussi connus sous le nom \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection} regroupent  l'ensemble des techniques permettant d'accéder à cette modularité qui est donc présente de façon native dans le langage, car pensée et implémentée par son créateur \autocite{Oderskyxx}. La figure \ref{fig:principe_mixin} expose plus en détail ce principe, et les conséquences que cela peut avoir dans la construction d'un programme.
+Souvent appelé de façon jargonnesque \foreignquote{english}{Cake Pattern} pour la possibilité de composition qu'elles offrent (comme dans un cake, un gateau dont la recette peut accueillir une très grande variété d'étapes, de composantes), ces outils aussi connus sous le nom \foreignquote{english}{Scalable Component Abstractions} ou encore \foreignquote{english}{Component Based Dependency Injection} regroupent  l'ensemble des techniques permettant d'accéder à cette modularité qui est donc présente de façon native dans le langage, car pensée et implémentée par son créateur \autocite{Odersky2005}. La figure \ref{fig:principe_mixin} expose plus en détail ce principe, et les conséquences que cela peut avoir dans la construction d'un programme.
 
-\begin{figure}[!htbp]
-	\begin{sidecaption}[Illustrations des erreurs amenées par la découverte d'éléments manquants]{Un exemple plus proche de l'implémentation, appuyé par une version UML orienté Scala, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveau objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
-\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
-       \item Un diagramme UML pour illustrer un scénario de dépendance entre trois composants exemples \keywordmin{A}, \keywordmin{B}, et \keywordmin{C}. Le composant A utilise une fonction run qui nécessite la définition d'une \keywordmin{methode\_b} et d'une \keywordmin{methode\_c} provenant d'un composant de type \keywordmin{B} et \keywordmin{C}.
-       \item Un premier scenario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1.
-       \item Dans ce deuxième scénario, on illustre la nécessité de rédéfinir dans D2 les attributs, mais également les méthodes, qui n'ont pas été apporté par des composants extérieurs.
-\end{enumerate}}}[fig:principe_mixin]
-	\centering
-	\subbottom[]{
-		\includegraphics[width=0.8\linewidth]{exemple_mixin.pdf}
-		\label{subfig_principe_mixin_a}}
-	\subbottom[]{
-		\includegraphics[width=0.8\linewidth]{exemple_mixin2.pdf}
-		\label{subfig_principe_mixin_b}}
-	\subbottom[]{
-		\includegraphics[width=0.8\linewidth]{exemple_mixin3.pdf}
-		\label{subfig_principe_mixin_c}}
-	\end{sidecaption}
-\end{figure}
 
 %Utilisé de façon complémentaire ces deux techniques permettent une grande flexibilité, une méthode ou un attribut est définit comme abstrait, et son implémentation doit être apportée par un composant externe.
 
 %utilisant le cake pattern ( abstract type members, explicit self-types, modular mixin composition )
+\cite{}
+\begin{figure}[!p]
+	\begin{sidecaption}[Illustrations des erreurs amenées par la découverte d'éléments manquants]{Un exemple plus proche de l'implémentation, appuyé par une version UML orientée Scala \autocite{Rachimow2009}, pour comprendre comment les élements manquants (attributs, méthodes) définis en \sqbox{tangoRed1} dans ce diagramme de classe sont indiqués au programme lors de la création de nouveaux objets. Les boites rouges représentent les erreurs retournés à l'utilisateur lors des tentatives successives de déclaration d'un nouvel élément \keywordmin{D1}, puis \keywordmin{D2}. \parbox{\marginparwidth}{
+\begin{enumerate}[label=(\alph*),labelindent=\parindent,leftmargin=*]
+       \item Un diagramme UML pour illustrer un scénario de dépendance entre trois composants exemples \keywordmin{A}, \keywordmin{B}, et \keywordmin{C}. Le composant A utilise une fonction run qui nécessite la définition d'une \keywordmin{methode\_b} et d'une \keywordmin{methode\_c} provenant d'un composant de type \keywordmin{B} et \keywordmin{C}.
+       \item Un premier scénario illustre de façon simplifié la logique d'héritage permettant la création d'un nouveau composant D1 à partir des composants A, B1 et C1.
+       \item Dans ce deuxième scénario, on illustre la nécessité de redéfinir dans D2 les attributs, mais également les méthodes, qui n'ont pas été apportées par des composants extérieurs.
+\end{enumerate}}}[fig:principe_mixin]
+	\centering
+	\subbottom[\label{subfig_principe_mixin_a}]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin.pdf}
+		}
+	\subbottom[\label{subfig_principe_mixin_b}]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin2.pdf}
+		}
+	\subbottom[\label{subfig_principe_mixin_c}]{
+		\includegraphics[width=0.8\linewidth]{exemple_mixin3.pdf}
+		}
+	\end{sidecaption}
+\end{figure}
+
+\pagebreak
 
 \subsubsection{Mobiliser les bons composants}
 
-Un des grands défauts de cette technique, c'est qu'elle rend souvent la lecture du code source plus difficile du point de vue d'un observateur extérieur. Le programme est en effet morcelé dans un ensemble de composants contenant chacun une petite partie de la logique du programme total, assemblé par le compilateur avant l'execution du programme. De plus lorsque l'utilisateur choisit un composant, celui-ci ne fait pas qu'offrir de nouvelles alternatives à l'utilisateur, il en retire également, comme on pourrait s'y attendre lorsqu'on manipule un arbre de dépendance complexe.
+Un des grands défauts de cette technique, c'est qu'elle rend souvent la lecture du code source plus difficile du point de vue d'un observateur extérieur. Le programme est en effet morcelé dans un ensemble de composants contenant chacun une petite partie de la logique du programme total, assemblé par le compilateur avant l'exécution du programme. De plus lorsque l'utilisateur choisit un composant, celui-ci ne fait pas qu'offrir de nouvelles alternatives à l'utilisateur, il en retire également, comme on pourrait s'y attendre lorsqu'on manipule un arbre de dépendance complexe.
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[Scenario pour la sélection de composants]{Illustration d'un premier scénario dans la selection de composant parmis les types $X$, et $Z$}[fig:composant_expli1]
@@ -2748,7 +2749,7 @@ Un des grands défauts de cette technique, c'est qu'elle rend souvent la lecture
   \end{sidecaption}
 \end{figure}
 
-Si on considère un programme simplifié ayant besoin de deux types de composants pour fonctionner : $X$ et $Z$. Dans le premier scenario \ref{fig:composant_expli1}, l'utilisateur a choisi le composant $Z(a1)$ autonome, ainsi que le composant $X(a3)$. Ce dernier, contrairement au composant $X(a1)$ et $X(a2)$, dépend de nouveaux composant définis sur la ligne $b$ du schéma. On voit que dans les nombreux composants disponibles dans cette catégorie, seuls quelque uns s'avérent compatible avec le reste de la configuration de composant choisi par l'utilisateur. Que se passe-t-il lorsque l'utilisateur choisit pour $Z$ le deuxième composant $Z(2a)$ ?
+Si on considère un programme simplifié ayant besoin de deux types de composants pour fonctionner : $X$ et $Z$. Dans le premier scenario \ref{fig:composant_expli1}, l'utilisateur a choisi le composant $Z(a1)$ autonome, ainsi que le composant $X(a3)$. Ce dernier, contrairement au composant $X(a1)$ et $X(a2)$, dépend de nouveaux composant définis sur la ligne $b$ du schéma. On voit que dans les nombreux composants disponibles dans cette catégorie, seuls quelque-uns s'avérent compatibles avec le reste de la configuration de composants choisis par l'utilisateur. Que se passe-t-il lorsque l'utilisateur choisit pour $Z$ le deuxième composant $Z(2a)$ ?
 
 \begin{figure}[!htbp]
 	\begin{sidecaption}[Deuxième scénario pour la sélection de composant]{Illustration d'un deuxième scénario dans la selection de composant parmis les types $X$, et $Z$.}[fig:composant_expli2]
@@ -2789,9 +2790,9 @@ trait NSGAII <: Evolution
 \label{alg:nsga2}
 \end{listing}
 
-La structure interne des composants constitutifs de l'algorithme NSGA2 est lisible dès lors qu'on a déjà étudié le fonctionnement de métaheuristique. Chacune des briques (ici une par ligne) peut être remplacée ou modifiée à partir du moment ou les conditions de dépendance entre composants sont respectés.
+La structure interne des composants constitutifs de l'algorithme NSGA2 est lisible dès lors qu'on a déjà étudié le fonctionnement de métaheuristique. Chacune des briques (ici une par ligne) peut être remplacée ou modifiée à partir du moment ou les conditions de dépendance entre composants sont respectés (voir la figure \ref{fig:nsga_mgo} pour un exemple)
 
-\begin{figure}[!htbp]
+\begin{figure}[ht]
 	\begin{sidecaption}[Représentation de NSGA2 dans MGO sous forme de composants]{Schéma de dépendance existant entre les différents types de composants pour la définition de l'algorithme NSGA2 sous MGO}[fig:nsga_mgo]
 		\centering
 		\includegraphics[width=0.9\linewidth]{diagrammeclassemgo.pdf}{
@@ -2799,34 +2800,32 @@ La structure interne des composants constitutifs de l'algorithme NSGA2 est lisib
   \end{sidecaption}
 \end{figure}
 
-Avoir accès de façon lisible permet de mieux comprendre les différences entre les différents algorithmes. Prenons un exemple simple de construction d'algorithme génétique multi-objectif utilisant l'algorithme de classement de solution candidates dites du \textit{Non Dominated Sorting} (NDS), tiré de \autocite{Goldberg1989} et implémenté par Deb dans NSGA \autocite{Deb1994} puis NSGA2 \autocite{Deb2001}. Pour fonctionner dans ces deux variantes, élitistes ou non élitistes, ce composant à besoin que l'utilisateur choisisse deux autres composants de type \keyword{Ranking}, et de type \keyword{Diversity}. Dans sa version non elitiste, le composant \keyword{Diversity} n'est pas utilisé.
+Avoir accès de façon aussi lisible à la structure interne des algorithmes métaheuristiques permet de mieux comprendre ce qui les différencie. Prenons un exemple simple de construction d'algorithme génétique multi-objectif utilisant l'algorithme de classement de solution candidates dites du \textit{Non Dominated Sorting} (NDS), tiré de \autocite{Goldberg1989} et implémenté par Deb dans NSGA \autocite{Srinivas1994} puis NSGA2 \autocite{Deb2001}. Pour fonctionner dans ces deux variantes, \enquote{élitistes} ou \enquote{non élitistes}, ce composant NDS à besoin que l'utilisateur choisisse deux autres composants de type \keyword{Ranking}, et de type \keyword{Diversity}. Dans sa version non elitiste, le composant \keyword{Diversity} n'est pas utilisé.
 
-Dans cet algorithme, les individus $x$ de la population $p_1$ sont partitionés selon un premier critère $c_1$, et de l'ensemble de partitions ainsi formé, on ne retient que la premiere pour former un front $f$. Les individus de ce front sont supprimés de la population $p$, puis on recommence cette opération $n$ fois, cela jusqu'à ce que la somme des individus contenu dans l'ensemble des fronts $f_n$ soit égale à la population attendue pour $p_2$.
+Dans cette brique NDS, les individus $x$ de la population $p_1$ sont partitionnés selon un premier critère $c_1$, et de l'ensemble de partitions ainsi formées, on ne retient que la première pour former un front $f$. Les individus qui intègre ce front sont supprimés de la population $p_1$, puis on recommence cette opération $n$ fois, cela jusqu'à ce que la somme des individus contenus dans l'ensemble des fronts $f_n$ soit égale à la population attendue à la fin de cette opération, c'est à dire $p_2$.
 
 \begin{itemize}
-\item Dans une utilisation non élitiste de cet algorithme, comme NSGA, la population $p_1 = p_2$.
-\item Dans une version élitiste, comme celle de NSGA2, la population $p_1$ contient également la progéniture (\textit{offspring}), donc $p_2 = p_1 / 2$. Comme tout les individus de $p_1$ ne pourront pas participer à $p_2$, l'inclusion du dernier front dans $p_2$ doit être géré comme un cas particulier, et nécessite potentiellement d'être tronqué de façon intelligente, pour éviter de perdre en diversité. On fait donc appel à une méthode supplémentaire de calcul de diversité qui constitue en soit un deuxième critère de selection $c_2$ définissant les individus les uns par rapport aux autres.
+\item Dans une utilisation non élitiste de cet algorithme, comme NSGA, la population au départ et la même qu'à la fin : $p_1 = p_2$. On a juste effectué un classement de cette population.
+\item Dans une version élitiste, comme celle de NSGA2, la population $p_1$ est supérieur en taille à la population $p_2$. $p_1$ accueille ainsi la population $p_2$ précédemment évalué auquel on ajoute les résultats de sa progéniture (\textit{offspring}) évalué à $t + 1$. Comme tous les individus de $p_1$ ne pourront pas participer à $p_2$ car $p_2 = p_1 / 2$, l'inclusion du dernier front dans $p_2$ doit être géré comme un cas particulier (exemple, si le dernier front calculé dans $p_1$ contient $5$ individus, mais que la place disponible dans $p_2$ est de $3$ individus seulement) et $p_1$ doit être tronqué de façon intelligente, pour éviter de perdre en diversité de solution. On fait donc appel à une méthode supplémentaire de calcul de diversité qui constitue en soit un deuxième critère de selection $c_2$ discriminant les individus les uns par rapport aux autres.
 \end{itemize}
 
-Le choix d'un composant \keyword{Ranking} va déterminer quel va être le critère $c_1$ utilisé, et le choix d'un composant \keyword{Diversity} va déterminer selon quel critère $c_2$ les individus participant au dernier front vont être selectionnés.
+Le choix d'un composant \keyword{Ranking} va déterminer quel va être le critère $c_1$ utilisé, et le choix d'un composant \keyword{Diversity} va déterminer selon quel critère $c_2$ les individus participant au dernier front vont être sélectionnés.
 
-On voit bien que les stratégies permettant de fixer ces deux critères peuvent être de nature très différentes. Pour $c_1$ le critère permettant de créer les ensembles le plus classique est le critère de dominance de Pareto définit par le composant du même nom \keyword{ParetoRanking}, mais d'autres critères sont tout à fait envisageable.
+On voit bien que les stratégies permettant de fixer ces deux critères peuvent être de nature très différentes. Pour $c_1$ le critère le plus classique est le critère de dominance de Pareto défini par le composant du même nom \keyword{ParetoRanking}, mais d'autres critères sont tout à fait envisageables.
 
-Inversement, la même brique atomique définissant le calcul de dominance de Pareto est ainsi utilisé pour différents algorithmes canoniques, comme MOGA ou bien NSGA2. Ainsi là ou NSGA2 va utiliser cette brique plusieurs fois dans le composant NDS (le calcul de dominance est réalisé plusieurs fois à chaque retrait d'individus), MOGA va utiliser ce composant une seule fois en l'encapsulant dans un autre composant qui implémente la façon dont MOGA partitionne les individus.
+Inversement, la même brique atomique \keyword{ParetoRanking} définissant le calcul de dominance de Pareto est ainsi utilisé pour différents algorithmes canoniques, comme MOGA ou bien NSGA2. Seulement là ou NSGA2 va faire appel à cette brique plusieurs fois dans le composant NDS (le calcul de dominance est réalisé à chaque retrait d'individus de la population $p_1$ afin de recalculer les nouveaux individus non dominés), MOGA va utiliser ce composant une seule fois en l'encapsulant dans un autre composant qui implémente la façon dont MOGA partitionne les individus. On peut voir le détail de ces calculs et leur impact sur la valeur de \textit{fitness} associée à chaque individu dans le tableau \ref{pranking:b} déjà présenté.
 
-Pour $c_2$, le critère utilisé par NSGA2 est une distance de \textit{crowding}, mais là aussi d'autres variantes existent, comme par exemple le calcul d'Hypervolume \autocite{Fonseca2006}
+Pour $c_2$, le critère utilisé par NSGA2 est une distance de \textit{crowding}, mais là aussi d'autres variantes existent, comme par exemple le calcul d'Hypervolume \autocite{Fonseca2006}. Cette brique \keyword{HypervolumeMetric} est aussi implémenté dans MGO, et participe à différentes étapes dans l'algorithme métaheuristique SMS-EMOA de \textcite{Emmerich2005}.
 
-Le défaut majeur d'une telle approche, c'est qu'elle ne renseigne immédiatemment l'expérimentateur sur les choix valides ou invalides qui sont à sa disposition, et celui-ci peut alors se perdre dans une logique d'execution du code très éclaté. Pour résoudre ce problème, deux stratégies sont mise en oeuvre, la première c'est celle que l'on observe dans le listing \ref{alg:nsga2}, à savoir l'implémentation pré-existante dans le \textit{framework} de plusieurs algorithmes évolutionnaires canonique prêt à l'emploi, et donc également prêt à être modifié, comme CMAES \autocite{Hansen2001}, NSGA2 \autocite{Deb2001}, ou SMS-EMOA \autocite{Beume2007}.
+Le défaut majeur d'une telle approche, c'est qu'elle ne renseigne pas immédiatemment l'expérimentateur sur les choix valides ou invalides qui sont à sa disposition, et celui-ci peut alors se perdre dans une logique d'exécution du code très éclaté. Pour résoudre ce problème, deux stratégies sont mises en oeuvre, la première c'est celle que l'on observe dans le listing \ref{alg:nsga2}, à savoir l'implémentation pré-existante dans le \textit{framework} de plusieurs algorithmes évolutionnaires canoniques prêt à l'emploi, et donc également prêt à être modifié, comme CMAES \autocite{Hansen2001}, NSGA2 \autocite{Deb2001}, ou SMS-EMOA \autocite{Emmerich2005}. La deuxième stratégie repose sur un outil en cours de développement par Mathieu Leclaire. Nommé \textit{JANET}, cette application est capable de lire et de reconstruire le graphe de dépendance entre les différents composants d'un programme qu'on lui donne à explorer. A partir de là, il autorise l'expérimentateur à composer son propre graphe de façon totalement interactive, en cliquant sur les composants du graphe.
 
-%%JANET est en cours.
-
-Un outil est également en cours de développement par Mathieu Leclaire pour explorer ce type de graphe. Nommé \textit{JANET}, cette application est capable de lire et de reconstruire le graphe de dépendance entre les différents composants d'un programme qu'on lui donne à explorer. A partir de là, il autorise l'experimentateur à composer son propre graphe de façon totalement interactive, en cliquant sur les composants du graphe.
-
-A chaque selection de composant dans le graphe, l'ensemble des dépendances est recalculé afin de montrer à l'utilisateur quelle dépendance sont accessible de façon valide à partir de ses choix. Enfin \textit{JANET} est capable de générer un squelette de code similaire à celui exprimé dans le listing \ref{alg:nsga2}, utilisable directement comme nouvel algorithme.
+A chaque sélection de composant dans le graphe, l'ensemble des dépendances est recalculé afin de montrer à l'utilisateur quelles dépendances sont accessibles et valides/invalides à partir de son choix. Enfin \textit{JANET} est capable de générer un squelette de code à partir de la sélection réalisée par l'utilisateur, similaire à celui exprimé dans le listing \ref{alg:nsga2}, utilisable directement comme nouvel algorithme.
 
 \subsubsection{Définition d'un problème d'optimisation}
 
-\hl{a finir peut etre avec un exemple concret de définition d'algorithme génétique usant d'une fonction test.}
+La librairie est conçu de façon à être totalement indépendante, car elle intègre à la fois les concepts nécessaires à la définition, et la résolution de problèmes d'optimisations. En ce sens, elle peut être utilisée ou intégrée à n'importe quel autre logiciel qui respecte le formalisme mis en place.
+
+Le listing \ref{alg:Schaffer} est un exemple de définition d'un problème d'optimisation dans MGO. Dans celui-ci, il s'agit de résoudre la fonction test F2 multi-objectif de Schaffer \textcite[94]{Schaffer1985}, déjà définie dans l'équation \ref{eq:schaffer}.
 
 \begin{listing}[!htbp]
 
@@ -2853,41 +2852,37 @@ trait Schaffer extends GAProblem with MGFitness {
 \label{alg:Schaffer}
 \end{listing}
 
-La librairie est conçu de façon à être totalement indépendante, car elle intègre à la fois les concepts nécessaire à la définition du problème, et la résolution d'un problème. En ce sens, elle peut donc être utilisé ou intégré à n'importe quel autre logiciel qui respecte le formalisme mis en place.
-
-Le listing \ref{alg:Schaffer} est un exemple de définition d'un problème d'optimisation dans MGO. Dans celui-ci, il s'agit de résoudre la fonction test F2 multi-objectif de Schaffer \textcite[94]{Schaffer1985}, déjà définit dans l'équation \ref{eq:schaffer}.
-
 La ligne 5 contient la signature du composant, et indique à MGO qu'il s'agit d'un problème de type algorithmes génétique \keyword{GAProblem} de type multi-objectif \keyword{MGFitness}.
 
-Pour que le composant \keyword{GAProblem} soit opérationel, celui-ci a besoin que l'utilisateur lui fournisse un certain nombre d'élements en entrée : une taille de génome \keyword{genomeSize}, une type de Phenotype \keyword{P}, la définition des fonctions \keyword{express(...)} et \keyword{evaluate(...)}.
+Pour que le composant \keyword{GAProblem} soit opérationnel, celui-ci a besoin que l'utilisateur lui fournisse un certain nombre d'éléments en entrée : une taille de génome \keyword{genomeSize}, un type de Phenotype \keyword{P}, la définition des fonctions \keyword{express(...)} et \keyword{evaluate(...)}.
 
 \begin{figure}[ht]
-	\begin{sidecaption}[Hierarchie entre les composants pour la fonction test F2 de Schaffer]{Hierarchie entre les composants pour la définition d'un problème, un exemple avec la fonction de test F2 de Schaffer}[fig:hierarchieComposants]
+	\begin{sidecaption}[Hiérarchie entre les composants pour la fonction test F2 de Schaffer]{Hiérarchie entre les composants pour la définition d'un problème, un exemple avec la fonction de test F2 de Schaffer}[fig:hierarchieComposants]
 	 \centering
-	 	\includegraphics[width=.7\linewidth]{HierarchieComposants.pdf}
+	 	\includegraphics[width=.5\linewidth]{HierarchieComposants.pdf}
 	\end{sidecaption}
 \end{figure}
 
-Si on regarde les dépendances de \keyword{GAProblem}, alors on voit qu'il dépend de \keyword{Problem}, lui même étant défini comme étant une extension d'\keyword{Evolution}. Concrétement cela veut dire que le problème Schaffer ne pourra être résolu que si l'ensemble des composantes cumulées de \keyword{GAProblem} , \keyword{Problem} et \keyword{Evolution} sont satisfaites au moment de la résolution, défini dans la section ci dessous.
+Si on regarde les dépendances de \keyword{GAProblem}, alors on voit qu'il dépend de \keyword{Problem}, lui même étant défini comme étant une extension d'\keyword{Evolution}. Concrétement cela veut dire que le problème Schaffer ne pourra être résolu que si l'ensemble des composantes cumulées de \keyword{GAProblem} , \keyword{Problem} et \keyword{Evolution} sont satisfaites au moment de la résolution du programme par le compilateur, défini dans la section ci-dessous.
 
-Les fonctions $f1$ et $f2$ prennent un seul et même paramètre de variation $x$ non contraint. La taille \keyword{genomeSize} du génome est donc fixé à 1, et la définition \keyword{min} et \keyword{max} de sa variation est fixé ici à $-10^{5}$ et $10^{5}$.
+Les fonctions $f1$ et $f2$ prennent un seul et même paramètre de variation $x$ non contraint. La taille \keyword{genomeSize} du génome est donc fixé à $1$, et la définition des variables \keyword{min} et \keyword{max} permet d'associer à $x$ un intervalle de variation autorisé compris entre $[-10^{5}$, $10^{5}]$.
 
 Le type \emph{P} indique la nature du phénotype attendu pour ce problème. Dans notre cas la représentation d'une solution candidate dans l'espace de solution $\mathbb{X}$ correspond à un vecteur de réels \emph{Seq[Double]} qui accueille le résultat des fonctions objectifs $f1$ et $f2$.
 
-Les deux fonctions \keyword{express(...)} et \keyword{evaluate(...)} doivent également être définies car elles sont utilisés par le composant \keyword{Evolution}, et fixe les règles de constitution d'un \keyword{Individu}, une structure de données permettant de regrouper le génome, le résultat des fonctions objectifs pour ce genome, ainsi que le résultat de la future fitness.
+Les deux fonctions \keyword{express(...)} et \keyword{evaluate(...)} doivent également être définies car elles sont utilisées par le composant \keyword{Evolution}, et fixe les règles de constitution d'un \keyword{Individu}, une structure de données permettant de regrouper le génome, le résultat des fonctions objectifs pour ce génome, ainsi que le résultat de la future \textit{fitness}.
 
 \begin{itemize}[label=\textbullet, noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]
-\litem{\keyword{express}} prend en paramètre un vecteur de double qui correspond à la taille du génome. Dans le cas de Schaffer, il n'y a qu'un seul paramètre $x$, donc le génome $g$ est de taille 1, et donc $g(0)$ correspond forcément à la seule valeur $x$ contenu dans le génome. Cette fonction retourne l'expression de la fonction objective à évaluer, donc un vecteur contenant l'expression des deux fonctions objectives $f1$ et $f2$.
+\litem{\keyword{express()}} prend en paramètre un vecteur de double qui correspond à la taille du génome. Dans le cas de Schaffer, il n'y a qu'un seul paramètre $x$, donc le génome $g$ est de taille 1, et donc $g(0)$ correspond forcément à la seule valeur $x$ contenu dans le génome. Cette fonction retourne l'\enquote{expression de la fonction objective à évaluer}, donc un vecteur contenant l'expression (ou la définition) des deux fonctions objectives $f1$ et $f2$ à évaluer. Cette fonction n'évalue pas, mais définit quelle est la marche à suivre pour évaluer.
 
-\litem{\keyword{evaluate}} est une fonction qui prend un phénotype et renvoie un vecteur de valeur correspondant à l'évaluation des fonctions objectifs. Ici les valeurs de $f1$ et $f2$
+\litem{\keyword{evaluate()}} est une fonction qui prend un phénotype en entrée et renvoie en sortie un vecteur de valeur correspondant à l'évaluation des fonctions objectifs. Ici les valeurs de $f1$ et $f2$
 
 \end{itemize}
 
-Dans le cas d'une simulation, \keyword{express} est la fonction qui va exécuter le modèle de simulation et récupèrer les valeurs en sortie, qui constitue le Phénotype. On voit bien ici que le phénotype ne permet pas forcément de discriminer les résultats de deux simulations, autant il peut s'agir d'indicateur réutilisable directement comme fonction objectifs, autant il peut également s'agir de données brutes qui peuvent être analysé en de multiples façons.  La fonction \keyword{evaluate} applique le vecteur de fonctions objectifs sur ces mesures en sortie de simulation. Un \keyword{Individu} dans la \keyword{Population} est une structure de données composée d'un Genome (paramètres du modèles), du résultat de la fonction \keyword{express} qui transforme un Génome en Phénotype, et du résultat de la fonction \keyword{evaluate} qui transforme un Phenotype en vecteur de valeurs d'objectifs.
+Dans le cas d'une simulation, \keyword{express()} est la fonction qui va \textbf{exécuter le modèle de simulation} et récupérer les valeurs résultats en sortie, qui constitue le Phénotype. Dans ce cas-là le phénotype ne permet pas forcément de discriminer les résultats de deux simulations. Ces sorties peuvent donc prendre la forme d'indicateurs directement utilisable comme fonction objectifs, mais elles peuvent également n'être que des données brutes dont il faut encore faire l'analyse pour dériver des fonctions objectifs. La fonction \keyword{evaluate()} \textbf{renvoie le vecteur résultat des fonctions objectifs après application sur les sorties de simulation}. Un \keyword{Individu} dans la \keyword{Population} est une structure de données composée d'un Genome (paramètres du modèle de simulation), du résultat de la fonction \keyword{express} qui transforme un Génome en Phénotype (exécution de la simulation et récupération des résultats), et du résultat de la fonction \keyword{evaluate} qui transforme un Phenotype en vecteur de valeurs d'objectifs.
 
 %difference par rapport aux autres librairies ?
 
-\paragraph{Execution d'un problème d'optimisation}
+\paragraph{Exécution d'un problème d'optimisation avec MGO}
 
 \begin{listing}[H]
 
@@ -2912,23 +2907,23 @@ object TestNSGAII extends App {
 }
 
 \end{minted}
-\caption{Evaluation d'un problème multi-objectif à l'aide de l'algorithme NSGA2}
+\caption{Evaluation d'un problème multi-objectifs à l'aide de l'algorithme NSGA2}
 \label{alg:Evaluation_Schaffer}
 \end{listing}
 
-Dans l'implémentation \ref{alg:Evaluation_Schaffer}, la variable \keyword{resolve}  contient la définition de la marche à suivre : il s'agit ici de résoudre le problème \keyword{Schaffer} (voir \ref{alg:Schaffer}) en utilisant la métaheuristique \keyword{NSGA2} (voir \ref{alg:nsga2}) en utilisant un indicateur de fin d'optimisation de type compteur de génération \keyword{CounterTermination}.
+Dans l'implémentation \ref{alg:Evaluation_Schaffer}, la variable \keyword{resolve} contient la définition de la marche à suivre : il s'agit ici de résoudre le problème \keyword{Schaffer} (voir \ref{alg:Schaffer}) en utilisant la métaheuristique \keyword{NSGA2} (voir \ref{alg:nsga2}) en utilisant un indicateur de fin d'optimisation de type compteur de générations \keyword{CounterTermination}. 
 
-\hl{verifier mu et lambda dans le code MGO}
-Les variables \keyword{steps} (nombre d'itération avant arrêt de la métaheuristique), \keyword{mu} (), \keyword{lambda} (), \keyword{genomeSize} (taille du génome) sont des variables qui n'ont pas trouvé de valeur dans la composition du graphe de dépendance reliant les différents composants, le compilateur fait donc remonter (sous forme d'erreur à la compilation) la nécessité de définir ces variables aux derniers niveau de définition, qui constitue la tête de l'arbre, afin que ceux ci soient renseignés par l'utilisateur.
+Les variables \keyword{steps} (nombre d'itérations avant arrêt de la métaheuristique), \keyword{mu} (taille de la population), \keyword{lambda} (taille de la progéniture), \keyword{genomeSize} (taille du génome) sont des variables qui n'ont pas trouvé de valeurs dans la résolution du graphe de dépendance reliant les différents composants. 
 
+En cas de non-définition de ces quatre variables (ce qui n'est pas le cas ici, comme on le voit dans \keyword{resolve}), le compilateur fera remonter sous forme d'erreurs à la compilation la nécessité pour l'utilisateur de définir ces variables.
 
-\subsubsection{La mise en oeuvre du couplage MGO - openMOLE }
+\subsubsection{La mise en oeuvre du couplage MGO - OpenMOLE }
 
-Dans la section justifiant la création d'une nouveau \textit{framework} dédié aux méta-heuristiques, on a abordé des points d'objectifs à la fois centrés sur les capacités finales de MGO en tant que \textit{framework} flexible, extensible, autonome; mais également sur les capacités tout autres attendues pour une utilisation de ce \textit{framework} dans un outil spécialisé dans la distribution transparente des calculs, openMOLE.
+Dans la section justifiant la création d'une nouveau \textit{framework} dédié aux méta-heuristiques, on a abordé des points d'objectifs à la fois centrés sur les capacités finales de MGO en tant que \textit{framework} flexible, extensible, autonome; mais également sur les capacités tout autres attendues pour une utilisation de ce \textit{framework} dans un outil spécialisé dans la distribution transparente des calculs sur environnement HPC, à savoir OpenMOLE.
 
-Concevoir des logiciels capable de s'exectuer sur des environnement distribués est une spécialité informatique en tant que telle, usant de technologie et de jargon déjà difficile d'accès à des développeurs spécialisés, et donc encore moins accessible à un public plus interdisciplinaire comme les chercheurs en SHS.
+Concevoir des logiciels capables de s'exécuter sur des environnement distribués est une spécialité informatique en tant que telle, usant de technologie et de jargon déjà difficile d'accès à des développeurs spécialisés, et donc encore moins accessible à un public plus interdisciplinaire comme les chercheurs en SHS.
 
-Il n'est donc pas question d'associer, du moins dans un premier temps, une myriade d'interface au \textit{framework} MGO à destination d'un couplage direct avec les technologies \textit{HPC} ou de \textit{Grid Computing}. Il me semble être beaucoup plus intéressant de ne pas complexifier outre mesure la librairie MGO, et de profiter du fait qu'il s'agit d'un \textit{\textit{framework}} pour composer des métaheuristiques plus adaptées à l'usage maximum qui peut être fait des ressources disponibles. En soit, MGO peut dans sa version autonome satisfaire un public scientifique exigeant sur le volet d'une recherche théorique dans le domaine des méta-heuristiques, tout en proposant dans un plugin pour openMOLE, des métaheuristiques adaptés à un tout autre public, attiré par l'efficience de ces algorithmes pour des cas d'utilisation très spécifique qui n'ont que très peu avoir avec les \textit{benchmarks} que l'on trouve par exemple dans la littérature des EA. Dans cette configuration, composer ses propres métaheuristiques reste toujours possible, mais demande un peu plus de connaissance technique pour modifier le code du plugin faisant l'interface entre MGO et openMOLE. Le tableau \ref{tab:resume_public_cible} aborde de façon synthétique ces deux points de vue utilisateurs par rapport aux principales qualités attendues du programme : Flexibilité, Extensibilité, Utilisabilité.
+Il n'est donc pas question d'associer, du moins dans un premier temps, une myriade d'interfaces au \textit{framework} MGO à destination d'un couplage direct avec les technologies \textit{HPC} ou de \textit{Grid Computing}. Il me semble être beaucoup plus intéressant de ne pas complexifier outre mesure la librairie MGO, et de profiter du fait qu'il s'agit d'un \textit{\textit{framework}} pour composer des métaheuristiques plus adaptées à l'usage maximum qui peut être fait des ressources disponibles. En soit, MGO peut dans sa version autonome satisfaire un public scientifique exigeant sur le volet d'une recherche théorique dans le domaine des méta-heuristiques, tout en proposant dans un plugin pour OpenMOLE, des métaheuristiques adaptées à un tout autre public. Les modélisateurs sont attirés par l'efficience de ces algorithmes et leurs utilisations dans des cas d'utilisations spécifiques, souvent très différents des \textit{benchmarks} que l'on trouve par exemple dans la littérature des EA. Dans cette configuration, composer ses propres métaheuristiques reste toujours possible, mais demande un peu plus de connaissance technique pour modifier le code du plugin faisant l'interface entre MGO et openMOLE. Le tableau \ref{tab:resume_public_cible} aborde de façon synthétique ces deux points de vue utilisateurs par rapport aux principales qualités attendues du programme : Flexibilité, Extensibilité, Utilisabilité.
 
 % http://www.tablesgenerator.com/latex_tables#
 % Ajouter une couleur sur la partie +++ a mettre en valeur coté plugin MGO
@@ -2959,17 +2954,17 @@ Il n'est donc pas question d'associer, du moins dans un premier temps, une myria
 \end{table}
 
 \begin{enumerate}[label=(\arabic*)]
-\item Du point de vue de la flexibilité des métaheuristiques proposés, c'est-à-dire de la possibilité de combinaisons de composants offertes par MGO, elle est censé être identique que cela soit dans le plugin ou directement avec MGO. Toutefois, cette flexibilité est beaucoup plus difficile à mettre en oeuvre dans le plugin pour des non informaticiens, car la logique d'exécution des métaheuristiques est éclatée dans différentes tâches d'un \textit{workflow} OpenMOLE afin que certaines d'entre elles soient parallélisées (voir la section suivante \ref{p:prototype_fonctionel}). De nouveaux algorithmes métaheuristiques spécialisés pour une utilisation sur grille de calcul font également leur apparition dans le plugin, et constituent des \textit{worflows} beaucoup plus complexes, assez difficilement accessibles à la modification par des modélisateurs géographes.
+\item du point de vue de la flexibilité des métaheuristiques proposées, c'est-à-dire de la possibilité de combinaisons de composants offertes par MGO, celle-ci  doit être identique avec le plugin OpenMOLE ou directement dans MGO. Pour des non informaticiens, cette flexibilité reste beaucoup plus difficile à mettre en oeuvre avec le plugin OpenMOLE, car la logique d'exécution des métaheuristiques est \enquote{éclatée} dans différentes tâches d'un \textit{workflow} OpenMOLE afin que certaines d'entre elles soient parallélisées (voir la section suivante \ref{p:prototype_fonctionel}). De nouveaux algorithmes métaheuristiques plus spécialisés pour une utilisation sur grille de calcul font également leur apparition dans le plugin, et constituent des \textit{worflows} beaucoup plus complexes, assez difficilement accessibles à la modification par des modélisateurs géographes.
 
-\item Ajouter ou modifier de nouveaux algorithmes dans le plugin openMOLE nécessite de maitriser sufisament bien à la fois l'ensemble du vocabulaire (aussi apellé \textit{Domain Specific Language} DSL openMOLE) nécessaire pour définir des workflows, mais également le langage de programmation Scala qui dans le plugin est mélé de façon beaucoup plus complexe à ce vocabulaire. Une fois ces premières connaissances acquise, et avant même de pouvoir créer de nouvelles méta-heuristiques, il faudra comprendre en observant les métaheuristiques déjà implémenté comment d'une part les composants MGO sont encapsulés et chainés dans un \textit{workflow} complexe mélant Scala et le DSL OpenMOLE, et d'autre part comment ce \textit{workflow} voit sa complexité encapsulé dans un élément de vocabulaire nouveau accessible directement au niveau du DSL. Si ce travail peut effectivement être réalisé sans trop de difficulté par un informaticien un peu expérimenté, l'exercice paraitra très difficile voire hors de portée à un modélisateur géographe.
+\item ajouter ou modifier de nouveaux algorithmes dans le plugin OpenMOLE nécessite de maîtriser suffisamment bien à la fois l'ensemble du vocabulaire (aussi apellé \textit{Domain Specific Language} DSL OpenMOLE) nécessaire pour définir des \textit{workflows}, mais également le langage de programmation Scala qui le supporte. Une fois ces premières connaissances acquises, et avant même de pouvoir créer de nouvelles métaheuristiques, il faudra comprendre en observant les métaheuristiques déjà implémentées comment d'une part, les composants MGO sont encapsulés et chaînés dans un \textit{workflow} complexe mêlant Scala et DSL OpenMOLE, et d'autre part, comment ce \textit{workflow} définissant l'algorithme peut être encapsulé dans une nouvelle primitive accessible directement au niveau du DSL (une forme \textit{workflow} paramétrable permis par les \textit{PuzzleWorkflows}). Si ce travail peut effectivement être réalisé sans trop de difficulté par un informaticien un peu expérimenté, l'exercice paraîtra très difficile voire hors de portée à un modélisateur géographe.
 
-\item L'utilisation du plugin dans OpenMOLE doit être rendue le plus simple possible pour le modélisateur et l'informaticien. En revanche l'utilisation du \textit{framework} de façon autonome demande pour un modélisateur quelque compétences techniques supplémentaires pour installer les logiciels adéquats permettant de modifier et compiler MGO. Une fois cette barrière technique dépassée, la connaissance du langage Java ou Scala est certe nécessaire pour modifier ou ajouter des composants, mais elle ne l'est pas forcément lorsqu'il s'agit d'imbriquer et de paramétrer les composants correctement.
+\item l'utilisation du plugin dans OpenMOLE doit être rendue le plus simple possible pour le modélisateur et l'informaticien. En revanche l'utilisation du \textit{framework} de façon autonome demande pour un modélisateur quelques compétences techniques supplémentaires pour installer les logiciels adéquats permettant de modifier et compiler MGO. Une fois cette barrière technique dépassée, la connaissance du langage Java ou Scala est certes nécessaire pour modifier ou ajouter des composants, mais elle ne l'est pas forcément lorsqu'il s'agit d'imbriquer et de paramétrer les composants correctement.
 
 \end{enumerate}
 
-Si le \textit{framework} MGO est parfaitement utilisable de façon autonome, celui-ci ne bénéficie pas dans ce mode d'utilisation des algorithmes dédiés pour une utilisation sur des environnements distribués. Or c'est bien cette utilisation que nous voulons rendre disponible aux modélisateurs, à la différence des librairies intégrés existantes, comme par exemple dans le \textit{behaviorSearch} de Netlogo \autocite{Stonedahl2011a}.
+Si le \textit{framework} MGO est parfaitement utilisable de façon autonome, celui-ci ne bénéficie pas dans ce mode d'utilisation des algorithmes dédiés pour une utilisation sur des environnements distribués. Or c'est bien ce cas d'utilisation que nous voulons rendre disponible aux modélisateurs, à la différence des librairies intégrées existantes, par exemple dans le \textit{behaviorSearch} de Netlogo \autocite{Stonedahl2011a}.
 
-La mise à disposition de ce \textit{framework} dans le cadre d'un plugin pour OpenMOLE fait intervenir de tout nouveaux objectifs, cette fois-ci relatifs aux intéréts des modélisateurs. En effet, si les métaheuristiques se doivent effectivement d'être modifiables, ce n'est pas forcément cet aspect qui prime pour une utilisation dans la modélisation; qui subit une fois la base du modèle réalisée des cycles de développements assez courts, ceux ci se limitant la plupart du temps à des ajouts, des modifications, ou des retraits d'hypothèses. L'utilisation de méta-heuristique, même canonique, est un premier palier d'utilisation utile pour tenter de discriminer au plus vite les modèles de simulation. Dans ce cas c'est bien les propriétés d'efficacité et d'indépendance au problème que l'on mobilise dans l'utilisation de métaheuristique.
+La mise à disposition de ce \textit{framework} dans le cadre d'un plugin pour OpenMOLE fait intervenir de tout nouveaux objectifs, cette fois-ci relatifs aux intérêts des modélisateurs. En effet, si les métaheuristiques se doivent effectivement d'être modifiables, ce n'est pas forcément cet aspect qui prime pour une utilisation dans la modélisation; qui appelle une fois la base du modèle réalisée, des cycles de développements assez courts, ceux-ci se limitant la plupart du temps à des ajouts, des modifications, ou des retraits d'hypothèses. L'utilisation de métaheuristiques, même canoniques, est un premier palier d'utilisation utile pour tenter de discriminer au plus vite les modèles de simulation. Dans ce cas c'est bien les propriétés d'efficacité et d'indépendance au problème que l'on mobilise dans l'utilisation de métaheuristique. 
 
 La modification de la structure interne d'une métaheuristique est un cas d'utilisation qui vise l'adaptation plus précise et ciblé de la réponse d'une métaheuristique pour un problème donné. Il en résulte une perte de généralité nécessaire.
 
@@ -2978,13 +2973,13 @@ La modification de la structure interne d'une métaheuristique est un cas d'util
 
 La constitution d'un premier prototype fonctionnel constitue pour l'équipe un triple retour d'expérience, pour MGO, pour OpenMOLE, et évidemment pour le modèle utilisé, à savoir SimpopLocal.
 
-Avant mars 2012, le couplage entre MGO et OpenMOLE est réalisé par l'utilisateur lors de la définition des \textit{workflows}. Grâce à la nature autonome et modulaire des composantes fournis par l'univers du \textit{framework} MGO, la logique d'execution d'une métaheuristique peut facilement être retranscrite dans le référentiel d'OpenMOLE. Les tâches d'un \textit{workflow} vont tout simplement encapsuler les appels et les objets spécifiques aux différentes composantes de la métaheuristique, en apportant la logique nécessaire à une execution de certaines de ces composantes dans un environnement de calcul distribué.
+Avant mars 2012, le couplage entre MGO et OpenMOLE est réalisé par l'utilisateur lors de la définition des \textit{workflows}. Grâce à la nature autonome et modulaire des composantes fournis par l'univers du \textit{framework} MGO, la logique d'execution d'une métaheuristique peut facilement être retranscrite dans le référentiel d'OpenMOLE. Les tâches d'un \textit{workflow} vont tout simplement encapsuler les appels et les objets spécifiques aux différentes composantes de la métaheuristique, en apportant la logique nécessaire à une exécution de certaines de ces composantes dans un environnement de calcul distribué.
 
-Autrement dit, la logique d'execution générique d'une métaheuristique décrite dans la composante \keyword{Evolution} est instanciée (par exemple on choisit d'implémenter NSGA2) puis éclatée dans un ensemble de tâches dont l'organisation est guidée à la fois par la reproduction de cette optimisation, mais aussi par la parallélisation de certaines de ces tâches.
+Autrement dit, la logique d'exécution générique d'une métaheuristique décrite dans la composante \keyword{Evolution} est d'abord instanciée (par exemple on choisit d'utiliser les composants de NSGA2) puis éclatée dans un ensemble de tâches dont l'organisation est guidée à la fois par la reproduction de cette optimisation, mais aussi par la parallélisation de certaines de ces tâches.
 
-Un tel \textit{workflow} doit également s'aclimater de toute la logique d'experimentation pour un modèle de simulation. Des tâches intermédiaires font donc leur apparition dans le \textit{workflow} pour gérer un plan d'expérience particulier.
+Un tel \textit{workflow} doit également s'acclimater de toute la logique d'expérimentation pour un modèle de simulation. Des tâches intermédiaires font donc leur apparition dans le \textit{workflow} pour gérer ce tout nouveau plan d'expérience particulier.
 
-La nature intrinsèquement parallèle des algorithmes evolutionnaires tient dans la possibilité d'évaluer non pas les solutions candidates une par une, mais bien d'un seul coup, par l'évaluation de l'ensemble des solutions candidates d'une population à un instant $t$. La première étape a donc été de distribuer l'évaluation des solutions candidates sur un environnement distribué, afin de bénéficier d'une execution quasi simultanée de l'ensemble de la population.
+La nature intrinsèquement parallèle des algorithmes évolutionnaires tient dans la possibilité d'évaluer non pas les solutions candidates une par une, mais bien d'un seul coup, par l'évaluation de l'ensemble des solutions candidates d'une population à un instant $t$. La première étape a donc été de distribuer l'évaluation des solutions candidates sur un environnement distribué, afin de bénéficier d'une exécution quasi-simultanée de l'ensemble des solutions candidates de la population.
 
 \begin{figure}[H]
 	\begin{sidecaption}[Le premier workflow prototype pour utiliser des algorithmes évolutionnaire avec MGO dans OpenMOLE]{La tâche d'exploration est en bleu \sqbox{tangoBlue1}, celle d'agrégation en rouge \sqbox{tangoRed1}}[fig:openmole_wf]
@@ -2996,7 +2991,7 @@ La nature intrinsèquement parallèle des algorithmes evolutionnaires tient dans
 
 On considère les paramètres suivants, une population initiale de génomes $n$, et le nombre de réplications à exécuter pour chacun de ces génomes équivalent à $r$; Autrement dit, à chaque itération $t$ de l'algorithme d'optimisation, c'est $n$ jeu de valeurs de paramètres différents ($= n$ génomes) qui vont chacuns être testés $r$ fois avec des graines aléatoires différentes. Soit un total final de $n * r * t$ simulations.
 
-Avant de rentrer dans les détails du \textit{workflow}, il est également important de rapeller que dans celui-ci, un \keyword{Genome}, et par la suite un \keyword{Individu} dans une \keyword{Population}, sont deux dénominations qui désignent avant tout un jeu de valeurs de paramètres, même si un individu représente on va le voir un peu plus que çà. Autrement dit, quant on discute ici de la qualité d'un \keyword{Individu} et de son positionnement dans l'espace des objectifs $\mathbb{Y}$, c'est sous entendu en référence au jeu de valeur de paramètre qui a permis d'obtenir ce même \keyword{Individu}.
+Avant de rentrer dans les détails du \textit{workflow}, il est également important de rapeller que dans celui-ci, un \keyword{Genome}, et par la suite un \keyword{Individu} dans une \keyword{Population}, sont deux dénominations qui désignent avant tout un jeu de valeurs de paramètres, même si un individu représente on va le voir un peu plus que çà. Autrement dit, quand on discute ici de la qualité d'un \keyword{Individu} et de son positionnement dans l'espace des objectifs $\mathbb{Y}$, c'est sous-entendu en référence au jeu de valeurs de paramètres qui a permis d'obtenir ce même \keyword{Individu}.
 
 Le premier niveau de \textit{workflow} (étape \circled{1} dans la figure \ref{fig:openmole_wf}) opérant de façon locale sur la machine ou le serveur de l'utilisateur est décrit ainsi :
 
@@ -3025,9 +3020,9 @@ Le deuxième niveau de workflow (étape \circled{3} dans la figure \ref{fig:open
 
 \item[Obj] applique aux résultats de la simulation les fonctions objectifs définis par l'utilisateur dans le \textit{workflow}
 
-\item[As] récupère les vecteurs de valeurs objectifs associées à chaque réplication du modèle de simulation, et les aggrege selon une fonction statistique choisi par l'utilisateur, une moyenne ou une médiane par exemple.
+\item[As] récupère les vecteurs de valeurs objectifs associées à chaque réplication du modèle de simulation, et les agrège selon une fonction statistique choisie par l'utilisateur, une moyenne ou une médiane par exemple.
 
-\item[Ind] crée un \keyword{Individu}, une structure de donnée associant le \keyword{Genome} $g_i$ évalué et le vecteur objectifs précédemment agregé. La \textit{seed} n'est pas conservé dans cette expérience ou on recherche avant tout un comportement robuste à l'aléa.
+\item[Ind] crée un \keyword{Individu}, une structure de donnée associant le \keyword{Genome} $g_i$ évalué et les valeurs d'objectifs. La \textit{seed} n'est pas conservé dans cette expérience ou on recherche avant tout un comportement robuste à l'aléa.
 
 \end{myitemize}
 
@@ -3035,14 +3030,14 @@ Le deuxième niveau de workflow (étape \circled{3} dans la figure \ref{fig:open
 
 Les premières explorations du modèle SimpopLocal ont été faites suivant ce \textit{workflow} à partir d'avril 2011, mais c'est seulement en septembre 2011 que le couplage est présenté aux géographes à l'ECQTG d'Athènes, puis à des informaticiens à la conférence V2CS à Paris.
 
-Les premiers \textit{workflows} \Anote{cas_utilisation_wfom}, assez complexes et uniquement accessibles au format \enquote{scripts}, ont rapidement constitués des fichiers de plusieurs centaines de lignes. Cette évolution dans la taille des \textit{workflows} est rapidement devenue problématique à la fois pour la maintenance mais également pour la lisibilité de telle expérimentations. Un obstacle vis à vis de notre principal objectif, mettre à disposition des modélisateurs un outil dont le premier avantage est sa facilité de mise en oeuvre et sa réutilisabilité.
+Les premiers \textit{workflows} \Anote{cas_utilisation_wfom}, assez complexes et uniquement accessibles au format \enquote{scripts}, ont rapidement constitués des fichiers de plusieurs centaines de lignes (voir le site compagnon de la thèse). Cette évolution dans la taille des \textit{workflows} est rapidement devenue problématique à la fois pour la maintenance mais également pour la lisibilité de telle expérimentations. Un obstacle vis à vis de notre principal objectif, mettre à disposition des modélisateurs un outil dont le premier avantage est sa facilité de mise en oeuvre et sa réutilisabilité.
 
 En mars 2012, Romain Reuillon décide d'intégrer ce \textit{workflow} présenté dans la figure \ref{fig:openmole_wf} directement dans OpenMOLE sous la forme d'un \textit{workflow} paramétrable (concept de \textit{Puzzle Workflow}). Il devient alors très facile de déclarer une exploration utilisant des Algorithmes Evolutionnaires au format scripts, quelques lignes suffisent, comme le montre l'encadré sur Ants. L'avantage d'une telle solution c'est qu'elle permet d'encapsuler cette complexité dans un workflow \enquote{prêt à lancer} tout en laissant la possibilité aux utilisateurs plus avancé de continuer à créer leur propres workflows d'Algorithmes Evolutionnaire si ils le souhaitent.
 
-Si l'exécution d'un tel \textit{workflow} est déjà un premier pas vers une systématisation dans l'application de ces techniques d'optimisation à l'exploration des modèles de simulations, il faut soulever un autre point important aux yeux de l'utilisateur. Quelle performance peut on en effet attendre d'un tel \textit{workflow} d'optimisation distribué lorsqu'il est appliqué sur un modèle de simulation relativement rapide en Netlogo ?
+Si l'exécution d'un tel \textit{workflow} est déjà un premier pas vers une systématisation dans l'application de ces techniques d'optimisation à l'exploration des modèles de simulations, il faut soulever un autre point important aux yeux de l'utilisateur. Quelle performance peut-on en effet attendre d'un tel \textit{workflow} d'optimisation distribué lorsqu'il est appliqué sur un modèle de simulation relativement rapide en Netlogo ?
 
-Si $n=200$, $r = 30$, $t=2000$, cela équivaut donc à 12 millions de simulations. Pour nous donner une durée, il faut encore multiplier par la durée d'exécution du modèle : un modèle jugé relativement rapide s'exécutant en moyenne en 2 minute sous Netlogo revient à cumuler environ 46 années de calcul sur un seul processeur. Sur une grille de calcul disposant de 1000 processeurs, cette durée descend à 17 jours. Sachant que de tels Algorithmes Evolutionnaires ne garantissent pas d'optimum global, ceux ci doivent également être répliqués afin de vérifier si l'algorithme, malgré notre vigilance sur les paramètres de celui-ci, ne serait pas malheureusement tombé dans un optimum local.
+Si $n=200$, $r = 30$, $t=2000$, cela équivaut donc à $12$ millions de simulations. Pour nous donner une durée, il faut encore multiplier par la durée d'exécution du modèle : un modèle jugé relativement rapide s'exécutant en moyenne en $2$ minutes sous Netlogo revient à cumuler environ $46$ années de calcul sur un seul processeur. Sur une grille de calcul disposant de $1000$ processeurs, cette durée descend à $17$ jours. Sachant que de tels Algorithmes Evolutionnaires ne garantissent pas d'optimum global, ceux-ci doivent également être répliqués afin de vérifier si l'algorithme, ne serait pas malheureusement tombé dans un optimum local.
 
-Il y a deux possibilités pour gagner en temps de calcul et permettre un retour d'expérience sur leur modèle plus rapide pour les modélisateurs. En effet, soit le modèle de simulation peut être optimisé ou réécrit, soit l'algorithme métaheuristique distribuant les simulations peut encore être amélioré. Seule la deuxième voie offre un gain de temps générique, quelque soit le modèle. C'est pourquoi Romain Reuillon développe dès Aout 2012 une version des algorithmes évolutionnaire en îlots \autocite{Whitley1997}. L'idée est relativement simple (il existe plusieurs versions, on développe seulement la plus simple ici), au lieu d'avoir une seule population centrale, on propose d'avoir une population par noeud exploité sur l'environnement distribué. Chacune de ces populations fonctionne de façon autonome sur le noeud, en exploitant les ressources disponibles sur celui-ci (les simulations sont lancés en parallèle si le noeud dispose de plusieurs processeurs/coeurs), et s'exécute ainsi jusqu'à ce que la condition d'arrêt soit remplie (durée, nombre de génération, convergence, etc.). Dès que l'un de ces noeud termine, les meilleures solutions de cette population sont immédiatement rapatriés, puis comparés et hybridés avec une population centralisé sur l'ordinateur ou le serveur qui execute le \textit{workflow}. Une nouvelle population de génome (valeurs de paramètres) est généré à partir de la population centrale, puis celle-ci est envoyé pour exécution autonome sur un noeud disponible dans l'environnement distribué. Il n y a donc quasiment plus de temps de latence dans le déroulement du \textit{workflow}, et le parallélisme de chaque noeud est exploité de façon maximale.
+Il y a deux possibilités pour gagner en temps de calcul et permettre un retour d'expérience sur les modèles plus rapide pour les modélisateurs. En effet, soit le modèle de simulation peut être optimisé ou réécrit, soit l'algorithme métaheuristique distribuant les simulations peut encore être amélioré. Seule la deuxième voie offre un gain de temps générique, quel que soit le modèle. C'est pourquoi Romain Reuillon développe dès le mois d'Aout 2012 une version des algorithmes évolutionnaire en îlots \autocite{Whitley1997}. L'idée est relativement simple (il existe plusieurs versions, on développe seulement la plus simple ici), au lieu d'avoir une seule population centrale, on propose d'avoir une population par noeud exploité sur l'environnement distribué. Chacune de ces populations fonctionne de façon autonome sur le noeud, en exploitant les ressources disponibles sur celui-ci (les simulations sont lancées en parallèle si le noeud dispose de plusieurs processeurs/coeurs), et s'exécute ainsi jusqu'à ce que la condition d'arrêt soit remplie (durée, nombre de génération, convergence, etc.). Dès que l'un de ces noeuds termine, les meilleures solutions de cette population sont immédiatement rapatriées, puis comparés et hybridés avec une population centralisée sur l'ordinateur ou le serveur qui exécute le \textit{workflow}. Une nouvelle population de génome (valeurs de paramètres) est générée à partir de la population centrale, puis celle-ci est envoyée pour exécution autonome sur un noeud disponible dans l'environnement distribué. Avec cette stratégie, il n'y a plus aucun temps de latence dans le déroulement du \textit{workflow}, et le parallélisme des Algorithmes Evolutionnaires est exploité de façon maximale sur chaque noeud.
 
-Dans le cas de SimpopLocal, la première voie a également été exploré, et le modèle écrit initialement en Netlogo, a d'abord accueilli un plugin en Scala pour externaliser les traitements les plus long, avant d'être finalement réécrit complétement en Scala. Les Algorithmes Evolutionnaires en îlots ont également été utilisés pour l'exploration de SimpopLocal. On trouvera le \textit{workflow} correspondant à la publication \autocite{Schmitt2015} sur le ( \href{http://iscpif.github.io/ simpoplocal-epb/}{@site}.
+Dans le cas de SimpopLocal, la première voie a également été explorée, et le modèle écrit initialement en Netlogo, a d'abord accueilli un plugin en Scala pour externaliser les traitements les plus longs, avant d'être finalement réécrit complétement en Scala. Les Algorithmes Evolutionnaires en îlots ont également été utilisés pour l'exploration de SimpopLocal. On trouvera le \textit{workflow} correspondant à la publication \autocite{Schmitt2015} sur le ( \href{http://iscpif.github.io/ simpoplocal-epb/}{@site}.

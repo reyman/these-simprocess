@@ -29,12 +29,14 @@
 \usepackage[many]{tcolorbox}  
 \usepackage{morewrites} %slow slow slow
 \usepackage[section]{placeins}
-\usepackage{pgf,tikz}
 \usetikzlibrary{arrows}
 \usepackage{multirow,multicol}
 \usepackage[load-configurations = abbreviations]{siunitx}
 \usepackage[flushleft]{threeparttable}
 %\usepackage[hang]{footmisc}
+
+\checkandfixthelayout %or perhaps \checkandfixthelayout[lines]
+\setlength{\evensidemargin}{\oddsidemargin}% after \checkandfix......
 
 % SPACE
 % http://tex.stackexchange.com/questions/148337/remove-space-below-section-in-memoir
@@ -118,9 +120,10 @@
 
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
+\linepenalty=100
 \widowpenalty=10000
 \clubpenalty=10000
-\brokenpenalty=8000\relax
+\brokenpenalty=8000%\relax
 
 %http://tex.stackexchange.com/questions/103139/modify-bigfoot-rules-for-footnote-page-breaks
 %\footnotewidowpenalty=6000
@@ -410,7 +413,7 @@
 
 %Only for doubleside
 %\sidecapmargin{outer}
-\sidecapmargin{outer}
+\sidecapmargin{right}
 \setsidecappos{t}
 %\setsidecaps{\marginparsep}{\marginparwidth}
 
@@ -695,6 +698,8 @@ Ligatures=Common,
 \usepackage[hidelinks, pdfusetitle]{hyperref} % Creates hyperlinks and index in the PDF document, preferably load after biblatex
 \usepackage{ifnextok}
 \usepackage{xcolor}
+
+\usepackage{pgf,tikz}
 
 \def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
 \newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1} {\raggedright\mybibdoicolor{DOI: \detokenize{#1}}}}}
