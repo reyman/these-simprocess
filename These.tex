@@ -1,6 +1,6 @@
 % !TEX encoding =  UTF-8 Unicode
 % -*- program: xelatex -*-
-\documentclass[a4paper, 11pt,oneside, openright]{memoir}
+\documentclass[a4paper, 11pt, openany, openright]{memoir}
 %http://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen
 \usepackage{etex}
 \reserveinserts{28}
@@ -35,8 +35,48 @@
 \usepackage[flushleft]{threeparttable}
 %\usepackage[hang]{footmisc}
 
+\makeatletter
+\renewcommand*{\m@mscapcheckregside}{%
+    \if@twoside
+      \checkoddpage
+      \ifnum\m@mscapmarg<\@ne%      % left
+        \scapmarglefttrue
+      \else
+        \ifnum\m@mscapmarg=\@ne%    % right
+          \scapmargleftfalse
+        \else
+          \ifnum\m@mscapmarg=\tw@%  % outer
+            \scapmarglefttrue
+            \ifoddpage
+              \scapmargleftfalse
+            \fi
+          \else%                  % inner
+            \scapmargleftfalse
+            \ifoddpage
+              \scapmarglefttrue
+            \fi
+          \fi
+        \fi
+      \fi
+    \else%     oneside
+    % left and inner should be the same
+    % right and outer should be the same
+    \ifcase\m@mscapmarg\relax% 0
+      \scapmarglefttrue
+    \or% 1
+      \scapmargleftfalse
+    \or% 2
+      \scapmargleftfalse
+    \or% 3
+      \scapmarglefttrue
+    \fi
+\fi}
+
+\makeatother
+
 \checkandfixthelayout %or perhaps \checkandfixthelayout[lines]
 \setlength{\evensidemargin}{\oddsidemargin}% after \checkandfix......
+\sidecapmargin{right}
 
 % SPACE
 % http://tex.stackexchange.com/questions/148337/remove-space-below-section-in-memoir
