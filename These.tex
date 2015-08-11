@@ -130,10 +130,10 @@
 \renewcommand{\maketitlehooka}{%
   %\license %COMMENT THIS TO REMOVE THE DISCLAIMER NOTE
   \centering
-  \includegraphics[width=5cm]{logo/pantheon.jpg}\\[.5cm]
+  \includegraphics[width=5cm]{logo/pantheon.jpg}\\[1.0cm]
   \POLIMI\\
   \emph{\dei}\\[.2cm]
- Thèse de doctorat pour obtenir le grade de Docteur de l'Université Paris 1 en géographie, présentée et soutenue le 13 octobre 2015.
+ Thèse de doctorat pour obtenir le grade de Docteur de l'Université Paris 1 en géographie, présentée et soutenue le 13 octobre 2015
   \par
   \hrulefill
   \vfill}
@@ -592,14 +592,17 @@
 \setlength{\footnotesep}{\onelineskip}
 
 %% FOOTNOTE COLORING START
-\makeatletter
-\renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{BurntOrange}\@thefnmark}}}
-%\renewcommand\@makefntext[1]{%
-%  \parindent 1em\noindent
-%            \hb@xt@1.8em{%
-%                \hss\@textsuperscript{\normalfont\@thefnmark}}#1}
-%% FOOTNOTE COLORING END
-\makeatother
+%% COMMENT FOR IMPRESSION START
+% \makeatletter
+% \renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{BurntOrange}\@thefnmark}}}
+% %\renewcommand\@makefntext[1]{%
+% %  \parindent 1em\noindent
+% %            \hb@xt@1.8em{%
+% %                \hss\@textsuperscript{\normalfont\@thefnmark}}#1}
+% %% FOOTNOTE COLORING END
+% \makeatother
+
+%% COMMENT FOR IMPRESSION END
 
 %\makeatletter
 %	\renewcommand*\@makefnmark{{\normalfont (\@thefnmark)}}
@@ -741,10 +744,22 @@ Ligatures=Common,
 
 \usepackage{pgf,tikz}
 
-\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
+%\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
+\def\mybibdoicolor{\color{Black}} %change color to suit.
+
 \newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1} {\raggedright\mybibdoicolor{DOI: \detokenize{#1}}}}}
 
-\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage[colorinlistoftodos]{todonotes}
+
+% %%START ORANGE TEXT FOR LINK
+% \makeatletter
+% \def\tilblank#1{#1\IfNextToken\@sptoken{ \color{black}}{%
+%   \IfNextToken\egroup{}{\tilblank}}}
+% \makeatother
+% \let\svat @
+% \catcode`@=\active
+% \def@{\color{BurntOrange}\svat\tilblank}
+% %%END ORANGE TEXT FOR LINK
 
 %%START ORANGE TEXT FOR LINK
 \makeatletter
@@ -753,8 +768,10 @@ Ligatures=Common,
 \makeatother
 \let\svat @
 \catcode`@=\active
-\def@{\color{BurntOrange}\svat\tilblank}
+\def@{\color{Black}\svat\tilblank}
 %%END ORANGE TEXT FOR LINK
+
+
 
 \begin{document}
 
@@ -777,6 +794,19 @@ Ligatures=Common,
 \addcontentsline{toc}{chapter}{Notes de lecture}
 \chapter*{Notes de lecture}
 
+\begin{framewithtitle}{}{}
+\begin{itemize}
+  \item Le signe \href{http://www.google.fr}{@} indique la présence d'un lien Internet dans la version numérique (pdf) de cette thèse.
+
+  \item Un site compagnon régulièrement mis à jour est disponible avec des ressources complémentaires, et la dernière version de cette thèse à l'adresse Internet suivante : 
+  \\ http://these.sebastienreycoyrehourcq.fr 
+  \\ ou directement en cliquant sur \href{http://these.sebastienreycoyrehourcq.fr}{@Site}
+
+  \item Les ressources bibliographiques sont pour certaines téléchargeables depuis le pdf en cliquant sur le lien \textit{Téléchargement} à coté de chaque entrée dans la bibliographie. Afin de limiter l'accès aux personnes intéressées, un mot de passe vous sera demandé, disponible sur demande par email à l'auteur : \\ rey.sebastien[at]yahoo.fr
+\end{itemize}
+
+\end{framewithtitle}
+
 \cleardoublepage
 
 \chapterstyle{bringhurst}
@@ -789,6 +819,7 @@ Ligatures=Common,
 
 \mainmatter
 
+
 %\listoftables
 %\listoffigures
 
@@ -800,11 +831,12 @@ Ligatures=Common,
 
 \include{conclusion}
 
-\include{Annexes}
-
 \listoftables
 
 \listoffigures
+
+
+\include{Annexes}
 
 \printbibliography
 

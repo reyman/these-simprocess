@@ -50,7 +50,7 @@ Peut-être n'était-ce simplement pas le moment pour intégrer cette hypothèse 
 Inversement une hypothèse ou un critère valable à un instant $t$ ne le sera peut-être plus à un instant $t + 1$. L'explication et la mise en place cohérentes des hypothèses et des critères se fait donc dans ces aller-retour, dans ces multiples essais. La construction d'un modèle de simulation ne semble pas tenir d'un raisonnement linéaire, car les interactions entre le modélisateur et le modèle sont complexes, et opèrent, comme on le perçoit dans toutes ces questions, à de multiples niveaux, parfois de façon simultanée.
 
 \begin{figure}[htbp]
-	\begin{sidecaption}[fortoc]{Exemple d'une démarche de construction cumulative}[fig:S_cumulative]
+	\begin{sidecaption}[Exemple d'une démarche de construction cumulative]{Exemple d'une démarche de construction cumulative}[fig:S_cumulative]
 	 \centering
 	 \subbottom[Pendant la construction d'un modèle (\textit{building step}) ce sont différentes hypothèses (ici $A$ et $B$) et différentes versions d'hypothèses (ici versions $\{A_1 \dotsc A_n\}$ et versions $\{B_1 \dotsc B_n\}$) qui vont être développées. Si on veut mettre en oeuvre une approche cumulative et mobiliser toute la combinatoire possible entre les différentes versions des hypothèses implémentées durant la construction du modèle, alors il faut considérer la création d'un graphe de dépendances (\textit{graph dependency}). On s'aperçoit alors que certaines versions des hypothèses ne sont pas compatibles les unes avec les autres (ex $A_1$ avec $B_2$). Les figures \ref{fig:S_twomeca} et \ref{fig:S_buildmeca} proposent d'instancier cet exemple dans deux familles d'hypothèses régissant les échanges d'innovations entre des villes dans un système de villes.\label{fig:cumulative_a}]{
 	 	\includegraphics[width=1.0\linewidth]{schema_dependency.pdf}
@@ -62,7 +62,7 @@ Inversement une hypothèse ou un critère valable à un instant $t$ ne le sera p
 \end{figure}
 
 \begin{figure}[p]
-	\begin{sidecaption}[fortoc]{Présentations des implémentations et des inter-dépendances entre ces implémentations dans le cas des deux familles d'hypothèses $A = \{A_1,A_2\}$ et $B = \{B_1, B_2\}$}[fig:S_buildmeca]
+	\begin{sidecaption}[Exemple d'implémentations de plusieurs familles d'hypothèses]{Présentations des implémentations et des inter-dépendances entre ces implémentations dans le cas des deux familles d'hypothèses $A = \{A_1,A_2\}$ et $B = \{B_1, B_2\}$}[fig:S_buildmeca]
 	 \centering
 	 \subbottom[Les versions $A_1$ et $A_2$ mobilisent chacune des règles très différentes pour définir la règle de sélection et d'intégration de l'objet innovation échangé entre deux villes $i$ et $j$. La couleur est en effet introduite comme une nouvelle propriété des innovations dans la deuxième version $A_2$ de cette hypothèse $A$.\label{mechanisme1}]{
 	 	\includegraphics[width=0.9\linewidth]{a1a2mechanism.pdf}
