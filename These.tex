@@ -161,14 +161,14 @@
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \linepenalty=100
-\widowpenalty=10000
-\clubpenalty=10000
+\widowpenalty=9000
+\clubpenalty=9000
 \brokenpenalty=8000%\relax
 
 %http://tex.stackexchange.com/questions/103139/modify-bigfoot-rules-for-footnote-page-breaks
 %\footnotewidowpenalty=6000
-%\footnoteclubpenalty=6000
-%\finalfootnotewidowpenalty=6000
+\footnoteclubpenalty=3000
+\finalfootnotewidowpenalty=7000
 %\interfootnotelinepenalty=3000
 
 %http://tex.stackexchange.com/questions/20585/fixing-an-overfull-box/20610#20610
@@ -615,7 +615,7 @@
 %\makeatother
 
 \newcommand{\longfullcite}{%
-\AtNextCite{\defcounter{maxnames}{99}}%
+\AtNextCite{\defcounter{maxnames}{10}}%
 \fullcite}
 
 \setsecnumdepth{paragraph}
@@ -745,7 +745,7 @@ Ligatures=Common,
 \usepackage{pgf,tikz}
 
 %\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
-\def\mybibdoicolor{\color{Black}} %change color to suit.
+\def\mybibdoicolor{\color{black}} %change color to suit.
 
 \newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1} {\raggedright\mybibdoicolor{DOI: \detokenize{#1}}}}}
 
@@ -768,7 +768,7 @@ Ligatures=Common,
 \makeatother
 \let\svat @
 \catcode`@=\active
-\def@{\color{Black}\svat\tilblank}
+\def@{\color{black}\svat\tilblank}
 %%END ORANGE TEXT FOR LINK
 
 
@@ -786,7 +786,7 @@ Ligatures=Common,
 \addcontentsline{toc}{chapter}{Remerciements}
 \chapter*{Remerciements}
 
-
+\input{remerciements}
 
 \cleardoublepage
 
@@ -802,7 +802,7 @@ Ligatures=Common,
   \\ http://these.sebastienreycoyrehourcq.fr 
   \\ ou directement en cliquant sur \href{http://these.sebastienreycoyrehourcq.fr}{@Site}
 
-  \item Les ressources bibliographiques sont pour certaines téléchargeables depuis le pdf en cliquant sur le lien \textit{Téléchargement} à coté de chaque entrée dans la bibliographie. Afin de limiter l'accès aux personnes intéressées, un mot de passe vous sera demandé, disponible sur demande par email à l'auteur : \\ rey.sebastien[at]yahoo.fr
+  \item Les ressources bibliographiques sont pour certaines téléchargeables depuis le pdf en cliquant sur le lien \textit{Téléchargement} à côté de chaque entrée dans la bibliographie. Afin de limiter l'accès aux personnes intéressées, un mot de passe vous sera demandé, disponible sur demande par email à l'auteur : \\ rey.sebastien[at]yahoo.fr
 \end{itemize}
 
 \end{framewithtitle}
@@ -834,7 +834,7 @@ Ligatures=Common,
 \listoftables
 
 \listoffigures
-
+\nopartblankpage
 
 \include{Annexes}
 
