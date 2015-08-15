@@ -23,7 +23,6 @@ log.txt
 *.*~
 /ignore
 *.odt
-/Library/
 /old_tex/
 .idea
 scripts/project/

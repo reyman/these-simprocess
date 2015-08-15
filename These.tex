@@ -533,7 +533,7 @@
 %%SIDE CAPTION LITTLE END
 
 
-\addbibresource[datatype=bibtex]{Library/library.bib}
+\addbibresource[datatype=bibtex]{Library/these.bib}
 
 %\tolerance=1000
 
@@ -591,18 +591,18 @@
 %\setlength{\belowcaptionskip}{\onelineskip}
 \setlength{\footnotesep}{\onelineskip}
 
-%% FOOTNOTE COLORING START
-%% COMMENT FOR IMPRESSION START
-% \makeatletter
-% \renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{BurntOrange}\@thefnmark}}}
-% %\renewcommand\@makefntext[1]{%
-% %  \parindent 1em\noindent
-% %            \hb@xt@1.8em{%
-% %                \hss\@textsuperscript{\normalfont\@thefnmark}}#1}
-% %% FOOTNOTE COLORING END
-% \makeatother
+% FOOTNOTE COLORING START
+% COMMENT FOR IMPRESSION START
+\makeatletter
+\renewcommand\@makefnmark{\hbox{\@textsuperscript{\normalfont\color{BurntOrange}\@thefnmark}}}
+%\renewcommand\@makefntext[1]{%
+%  \parindent 1em\noindent
+%            \hb@xt@1.8em{%
+%                \hss\@textsuperscript{\normalfont\@thefnmark}}#1}
+%% FOOTNOTE COLORING END
+\makeatother
 
-%% COMMENT FOR IMPRESSION END
+% COMMENT FOR IMPRESSION END
 
 %\makeatletter
 %	\renewcommand*\@makefnmark{{\normalfont (\@thefnmark)}}
@@ -744,22 +744,12 @@ Ligatures=Common,
 
 \usepackage{pgf,tikz}
 
-%\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
-\def\mybibdoicolor{\color{black}} %change color to suit.
+\def\mybibdoicolor{\color{BurntOrange}} %change color to suit.
+%\def\mybibdoicolor{\color{black}} %change color to suit.
 
 \newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1} {\raggedright\mybibdoicolor{DOI: \detokenize{#1}}}}}
 
 %\usepackage[colorinlistoftodos]{todonotes}
-
-% %%START ORANGE TEXT FOR LINK
-% \makeatletter
-% \def\tilblank#1{#1\IfNextToken\@sptoken{ \color{black}}{%
-%   \IfNextToken\egroup{}{\tilblank}}}
-% \makeatother
-% \let\svat @
-% \catcode`@=\active
-% \def@{\color{BurntOrange}\svat\tilblank}
-% %%END ORANGE TEXT FOR LINK
 
 %%START ORANGE TEXT FOR LINK
 \makeatletter
@@ -768,8 +758,9 @@ Ligatures=Common,
 \makeatother
 \let\svat @
 \catcode`@=\active
-\def@{\color{black}\svat\tilblank}
+\def@{\color{BurntOrange}\svat\tilblank}
 %%END ORANGE TEXT FOR LINK
+
 
 
 
