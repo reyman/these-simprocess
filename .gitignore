@@ -25,7 +25,7 @@ log.txt
 *.*~
 /ignore
 *.odt
-/old_tex/
+/OLD/
 .idea
 scripts/project/
 scripts/target/
