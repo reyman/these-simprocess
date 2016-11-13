@@ -23,6 +23,7 @@ log.txt
 *.pygstyle
 *.lot
 *.*~
+*.These.func*
 _minted-These/
 /ignore
 *.odt
