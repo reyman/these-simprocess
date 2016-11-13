@@ -19,6 +19,8 @@ log.txt
 *.fdb*
 *.run*
 *.synctex*
+*.pygtex*
+*.pygstyle
 *.lot
 *.*~
 /ignore
