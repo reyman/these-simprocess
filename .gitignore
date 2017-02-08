@@ -20,6 +20,7 @@ log.txt
 *.run*
 *.synctex*
 *.pygtex*
+*.pyc
 *.pygstyle
 *.lot
 *.*~
@@ -31,3 +32,4 @@ _minted-These/
 .idea
 scripts/project/
 scripts/target/
+scripts_old/
