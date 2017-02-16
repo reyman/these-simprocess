@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Ed.</title>
+ <link href="http://elotroalex.github.io/ed/atom.xml" rel="self"/>
+ <link href="http://elotroalex.github.io/ed/"/>
+ <updated>2017-02-09T17:03:21+01:00</updated>
+ <id>http://elotroalex.github.io</id>
+ <author>
+   <name>Alex Gil</name>
+   <email>colibri.alex@gmail.com</email>
+ </author>
+
+ 
+
+</feed>
